@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<OpenRosaResponse xmlns="http://openrosa.org/http/response">
+    <message>Successfully restored account duser!</message>
+    <Sync xmlns="http://commcarehq.org/sync">
+        <restore_id>c79f21f9f5ddb847a5ceea1781cfcc06</restore_id> 
+    </Sync>
+    <Registration xmlns="http://openrosa.org/user/registration">
+        <username>duser</username>
+        <password>sha1$6d551$973a956d30f572ef13f3d878cddd673f50f84ce9</password>
+        <uuid>FXFWL4WMYTOVFKFO4K9SFDTSZ</uuid>
+        <date>2011-11-04</date>
+        <user_data>
+            <data key="phone_number">5053638405</data>
+            <data key="user_id">POD</data>
+            <data key="user_type">standard</data>
+        </user_data>
+    </Registration>
+    <case case_id="9e916733-b8da-4370-afd1-58e6669fe45f" date_modified="2011-12-13" user_id="FXFWL4WMYTOVFKFO4K9SFDTSZ">
+        <create>
+            <case_type>cc_bihar_pregnancy</case_type>
+            <owner_id>FXFWL4WMYTOVFKFO4K9SFDPPP</owner_id>
+            <case_name>one</case_name>
+        </create>
+        <update>
+            <village>Chiregaov</village>
+            <edd>2012-10-26</edd>
+            <partner_name>Ram</partner_name>
+            <date_next_bp>2012-02-08</date_next_bp>
+            <last_visit_type>reg</last_visit_type>
+            <date_last_visit>2012-02-01</date_last_visit>
+            <mother_alive>yes</mother_alive>
+        </update>
+    </case>
+    <case case_id="9e916733-b8da-4370-afd1-58e9999fe45f" date_modified="2011-12-13" user_id="FXFWL4WMYTOVFKFO4K9SFDTSZ">
+        <create>
+            <case_type>cc_bihar_pregnancy</case_type>
+            <owner_id>FXFWL4WMYTOVFKFO4K9SFDPPP</owner_id>
+            <case_name>two</case_name>
+        </create>
+        <update>
+            <village>Chiregaov</village>
+            <edd>2012-03-26</edd>
+            <partner_name>Ram</partner_name>
+            <date_next_bp>2012-02-08</date_next_bp>
+            <last_visit_type>reg</last_visit_type>
+            <date_last_visit>2012-02-01</date_last_visit>
+            <mother_alive>yes</mother_alive>
+        </update>
+    </case>
+        <case case_id="9e916733-b8da-4370-afd1-58e2223fe45f" date_modified="2011-12-13" user_id="FXFWL4WMYTOVFKFO4K9SFDTSZ">
+        <create>
+            <case_type>cc_bihar_pregnancy</case_type>
+            <owner_id>FXFWL4WMYTOVFKFO4K9SFDPPP</owner_id>
+            <case_name>three</case_name>
+        </create>
+        <update>
+            <village>Chiregaov</village>
+            <add>2012-03-15</add>
+            <partner_name>Ram</partner_name>
+            <date_next_bp>2012-02-08</date_next_bp>
+            <last_visit_type>del</last_visit_type>
+            <date_last_visit>2012-02-01</date_last_visit>
+            <mother_alive>yes</mother_alive>
+        </update>
+    </case>
+    <case case_id="9e916733-b8da-4370-afd1-58e2224fe45f" date_modified="2011-12-13" user_id="FXFWL4WMYTOVFKFO4K9SFDTSZ">
+        <create>
+            <case_type>cc_bihar_pregnancy</case_type>
+            <owner_id>FXFWL4WMYTOVFKFO4K9SFDPPP</owner_id>
+            <case_name>four</case_name>
+        </create>
+        <update>
+            <village>Chiregaov</village>
+            <add>2012-03-09</add>
+            <partner_name>Ram</partner_name>
+            <date_next_bp>2012-02-08</date_next_bp>
+            <last_visit_type>del</last_visit_type>
+            <date_last_visit>2012-02-01</date_last_visit>
+            <mother_alive>yes</mother_alive>
+        </update>
+    </case>
+    <case case_id="9e916733-b8da-4370-afd1-58e2225fe45f" date_modified="2011-12-13" user_id="FXFWL4WMYTOVFKFO4K9SFDTSZ">
+        <create>
+            <case_type>cc_bihar_pregnancy</case_type>
+            <owner_id>FXFWL4WMYTOVFKFO4K9SFDPPP</owner_id>
+            <case_name>five</case_name>
+        </create>
+        <update>
+            <village>Chiregaov</village>
+            <add>2012-02-27</add>
+            <partner_name>Ram</partner_name>
+            <date_next_bp>2012-02-08</date_next_bp>
+            <last_visit_type>del</last_visit_type>
+            <date_last_visit>2012-02-01</date_last_visit>
+            <mother_alive>yes</mother_alive>
+        </update>
+    </case>
+        <case case_id="9e916733-b8da-4370-afd1-58e2226fe45f" date_modified="2011-12-13" user_id="FXFWL4WMYTOVFKFO4K9SFDTSZ">
+        <create>
+            <case_type>cc_bihar_pregnancy</case_type>
+            <owner_id>FXFWL4WMYTOVFKFO4K9SFDPPP</owner_id>
+            <case_name>six</case_name>
+        </create>
+        <update>
+            <village>Chiregaov</village>
+            <add>2011-07-19</add>
+            <partner_name>Ram</partner_name>
+            <date_next_bp>2012-02-08</date_next_bp>
+            <last_visit_type>del</last_visit_type>
+            <date_last_visit>2012-02-01</date_last_visit>
+            <mother_alive>yes</mother_alive>
+        </update>
+    </case>
+    
+
+    <fixture id="user-groups" user_id="FXFWL4WMYTOVFKFO4K9SFDTSZ">
+        <groups>
+            <group id="FXFWL4WMYTOVFKFO4K9SFDPPP">
+                <name>Lucknow North</name>
+            </group>
+        </groups>
+    </fixture>
+</OpenRosaResponse>

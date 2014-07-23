@@ -1,0 +1,302 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Anzisha rufaa ya mama</h:title>
+		<model><instance>
+
+                <data
+                    xmlns:jrm="http://dev.commcarehq.org/jr/xforms"
+                    name="Anzisha rufaa ya mama"
+                    uiVersion="1"
+                    version="812"
+                    xmlns="http://openrosa.org/formdesigner/DB1C6A3F-559A-47AA-83AF-534C29C55831" >
+
+                    <reason_for_referral />
+
+                    <accept_referral />
+
+                    <accept_referral_group>
+
+                        <date_transport />
+
+                        <car_type />
+
+                        <driver_name />
+
+                        <route />
+
+                        <origin_of_trip />
+
+                        <destination_facility />
+
+                        <cost_of_trip />
+
+                        <confirm_taxi_not />
+
+                        <confirm_taxi />
+
+                        <question43 />
+                    </accept_referral_group>
+
+                    <end_of_form />
+
+                    <mother_name />
+
+                    <route_price />
+
+                    <orx:meta xmlns:cc="http://commcarehq.org/xforms" >
+
+                        <orx:deviceID />
+
+                        <orx:timeStart />
+
+                        <orx:timeEnd />
+
+                        <orx:username />
+
+                        <orx:userID />
+
+                        <orx:instanceID />
+
+                        <cc:appVersion />
+                    </orx:meta>
+                </data>
+            </instance>
+
+            <instance
+                id="commcaresession"
+                src="jr://instance/session" />
+
+			<bind nodeset="/data/reason_for_referral" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/accept_referral" required="true()"/>
+			<bind nodeset="/data/accept_referral_group" relevant="/data/accept_referral = 'yes'" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/date_transport" type="xsd:date" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/car_type" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/driver_name" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/route" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/origin_of_trip" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/destination_facility" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/confirm_taxi_not" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/confirm_taxi" required="true()"/>
+			<bind nodeset="/data/accept_referral_group/question43"/>
+			<bind nodeset="/data/end_of_form" required="true()"/>
+			<bind nodeset="/data/mother_name" />
+			<bind nodeset="/data/accept_referral_group/cost_of_trip" required="true()"/>
+			
+			<bind nodeset="/data/route_price" calculate="if(/data/accept_referral_group/route='','',instance('casedb')/casedb/case[@case_id=/data/accept_referral_group/route]/cost)"/>
+
+			<itext>
+				<translation lang="sw" default="">
+					<text id="reason_for_referral-label">
+						<value>Ingiza sababu ya rufaahii. </value>
+					</text>
+					<text id="accept_referral-label">
+						<value>Unaanzisha rufaa kwa <output value="/data/mother_name"/>. Je mama anakubali kupewa rufaa?</value>
+					</text>
+					<text id="accept_referral-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="accept_referral-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="date_transport-label">
+						<value>Ingiza tarehe ya kutoa usafiri</value>
+					</text>
+					<text id="car_type-label">
+						<value>Ingiza aina ya gari</value>
+					</text>
+					<text id="question8-taxi-label">
+						<value>Taxi au gari la binafsi</value>
+					</text>
+					<text id="question8-ambulance-label">
+						<value>Gari la wagonjwa</value>
+					</text>
+					<text id="question8-boat-label">
+						<value>Boti</value>
+					</text>
+					<text id="question8-other-label">
+						<value>Nyingine</value>
+					</text>
+					<text id="driver_name-label">
+						<value>Chagua jina la dereva</value>
+					</text>
+					<text id="driver_name-item53-label">
+						<value>item53</value>
+					</text>
+					<text id="driver_name-item54-label">
+						<value>item54</value>
+					</text>
+					<text id="route-label">
+						<value>Chagua njia atakayotumia dereva kumpeleka mama.</value>
+					</text>
+					<text id="origin_of_trip-label">
+						<value>Ingiza mwanzo wa safari.</value>
+					</text>
+					<text id="destination_facility-label">
+						<value>ingiza kituo cha afya ambako mama atapelekwa</value>
+					</text>
+					<text id="cost_of_trip-label">
+						<value>Ingiza gharama ya safari (Kati ya Tshs 5,000 - 100,000)</value>
+					</text>
+					<text id="confirm_taxi_not-label">
+						<value>KUTHIBITISHA: Unaanzisha rufaa ya <output value="/data/mother_name"/> kwenda  <output value="/data/accept_referral_group/destination_facility"/> utalipa <output value="/data/accept_referral_group/cost_of_trip"/> siku ya <output value="/data/accept_referral_group/date_transport"/>. Je, hii ni sahihi?</value>
+					</text>
+					<text id="confirm_taxi-label">
+						<value>KUTHIBITISHA: Wewe ni kuanzisha rufaa kwa <output value="/data/mother_name"/> ambaye alikuwa kusafirishwa na <output value="/data/accept_referral_group/driver_name"/> kwa <output value="/data/accept_referral_group/route_price"/> juu ya <output value="/data/accept_referral_group/date_transport"/>. Je, hii ni sahihi?</value>
+					</text>
+					<text id="question43-label">
+						<value>PIGA *150*02#. TUMA ...KIWANGO Tshs...YA <output value="/data/accept_referral_group/driver_name"/>, ...namba ya simu la dereva.. . JAZA FOMU ya kwenye kitoa ya afya.</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Fomu yako imekamilika.</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="reason_for_referral-label">
+						<value>Enter the reason for referral of the woman</value>
+					</text>
+					<text id="accept_referral-label">
+						<value>You are initiating a referral for <output value="/data/mother_name"/>. Does the mother accept the referral?</value>
+					</text>
+					<text id="accept_referral-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="accept_referral-no-label">
+						<value>No</value>
+					</text>
+					<text id="date_transport-label">
+						<value>Enter date of referral transport.</value>
+					</text>
+					<text id="car_type-label">
+						<value> Enter type of vehicle</value>
+					</text>
+					<text id="question8-taxi-label">
+						<value>Taxi or private car</value>
+					</text>
+					<text id="question8-ambulance-label">
+						<value>Ambulance</value>
+					</text>
+					<text id="question8-boat-label">
+						<value>Boat</value>
+					</text>
+					<text id="question8-other-label">
+						<value>Other</value>
+					</text>
+					<text id="driver_name-label">
+						<value>Choose name of driver. </value>
+					</text>
+					<text id="driver_name-item53-label">
+						<value>item53</value>
+					</text>
+					<text id="driver_name-item54-label">
+						<value>item54</value>
+					</text>
+					<text id="route-label">
+						<value>Select which route the driver will take the woman.</value>
+					</text>
+					<text id="origin_of_trip-label">
+						<value>Enter the origin of the trip.</value>
+					</text>
+					<text id="destination_facility-label">
+						<value>Enter the facility where the woman will be transported.</value>
+					</text>
+					<text id="cost_of_trip-label">
+						<value>Enter the cost of the trip (limit range to 5,000 to 100,000)</value>
+					</text>
+					<text id="confirm_taxi_not-label">
+						<value>CONFIRM: You are initiating a referral for <output value="/data/mother_name"/> for transport to <output value="/data/accept_referral_group/destination_facility"/> for <output value="/data/accept_referral_group/cost_of_trip"/> on <output value="/data/accept_referral_group/date_transport"/> Is this correct?</value>
+					</text>
+					<text id="confirm_taxi-label">
+						<value>CONFIRM: you are initiating a referral for <output value="/data/mother_name"/> for transport by <output value="/data/accept_referral_group/driver_name"/> for <output value="/data/accept_referral_group/route_price"/> on <output value="/data/accept_referral_group/date_transport"/>. Is this correct? </value>
+					</text>
+					<text id="question43-label">
+						<value>Call *150*02# to send AMOUNT TSH from transport cost form for route selected in.... to <output value="/data/accept_referral_group/driver_name"/>&gt; with account number ..........phone number based on driver selected in transport reg...... Fill the paper verification form inside the facility. </value>
+					</text>
+					<text id="end_of_form-label">
+						<value> Your form is now complete.</value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/reason_for_referral">
+			<label ref="jr:itext('reason_for_referral-label')"/>
+		</input>
+		<select1 ref="/data/accept_referral">
+			<label ref="jr:itext('accept_referral-label')"/>
+			<item>
+				<label ref="jr:itext('accept_referral-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('accept_referral-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<group ref="/data/accept_referral_group">
+			<input ref="/data/accept_referral_group/date_transport">
+				<label ref="jr:itext('date_transport-label')"/>
+			</input>
+			<select1 ref="/data/accept_referral_group/car_type">
+				<label ref="jr:itext('car_type-label')"/>
+				<item>
+					<label ref="jr:itext('question8-taxi-label')"/>
+					<value>taxi</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question8-ambulance-label')"/>
+					<value>ambulance</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question8-boat-label')"/>
+					<value>boat</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question8-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/accept_referral_group/driver_name">
+				<label ref="jr:itext('driver_name-label')"/>
+				<item>
+					<label ref="jr:itext('driver_name-item53-label')"/>
+					<value>item53</value>
+				</item>
+				<item>
+					<label ref="jr:itext('driver_name-item54-label')"/>
+					<value>item54</value>
+				</item>
+			</select1>
+			
+			<select1 ref="/data/accept_referral_group/route">
+				<label ref="jr:itext('state-label')" />
+				<itemset nodeset="instance('casedb')/casedb/case[@case_type='route']">
+					<label ref="route_name"/>
+					<value ref="@case_id"/>
+				</itemset>
+			</select1>
+			
+			<input ref="/data/accept_referral_group/origin_of_trip">
+				<label ref="jr:itext('origin_of_trip-label')"/>
+			</input>
+			<input ref="/data/accept_referral_group/destination_facility">
+				<label ref="jr:itext('destination_facility-label')"/>
+			</input>
+			<input ref="/data/accept_referral_group/cost_of_trip">
+				<label ref="jr:itext('cost_of_trip-label')"/>
+			</input>
+			<trigger ref="/data/accept_referral_group/confirm_taxi_not">
+				<label ref="jr:itext('confirm_taxi_not-label')"/>
+			</trigger>
+			<trigger ref="/data/accept_referral_group/confirm_taxi">
+				<label ref="jr:itext('confirm_taxi-label')"/>
+			</trigger>
+			<trigger ref="/data/accept_referral_group/question43">
+				<label ref="jr:itext('question43-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

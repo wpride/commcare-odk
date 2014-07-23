@@ -1,0 +1,150 @@
+menu.protocols.title=2. Home Visits
+
+menu.protocols.new=${0}. New Beneficiary
+menu.protocols.registration=${0}. Registration
+menu.protocols.bp=${0}. Birth Preparedness
+menu.protocols.del=${0}. Delivery
+menu.protocols.pnc=${0}. Post-Natal Care
+menu.protocols.ebf=${0}. Exclusive Breastfeeding
+menu.protocols.cf=${0}. Complementary Feeding
+
+menu.growth.monitoring=${0}. Growth Monitoring
+menu.growth.title=3. Growth Monitoring
+
+growth.list.title=Growth Monitoring
+growth.child.name=Child Name
+growth.parent.name=Mother Name
+growth.child.dob=Date of Birth
+growth.child.last=Last Visit
+growth.child.gender=Sex
+growth.child.last=Last Visit
+growth.child.agemos=Age (months)
+growth.child.weight=Weight (kg)
+growth.child.class=Growth Class
+growth.child.prevdate=Previous Visit
+growth.child.prevagemos=Age (months)
+growth.child.prevweight=Weight (kg)
+growth.child.prevclass=Growth Class
+
+
+menu.client.management=4. Client Management
+menu.client.management.mtp_abort=${0}. MTP Abortion
+menu.client.management.death=${0}. Death Registration
+menu.client.management.refer=${0}. Refer Client
+menu.client.management.update_vaccinations=${0}. Update Vaccinations
+menu.client.management.mother_edit=${0}. Mother Edit
+menu.client.management.close=${0}. Close Case
+menu.client.management.migrate.out=${0}. Migrate Client Out
+menu.client.management.migrate.in=${0}. Migrate Client In
+menu.client.management.ration=${0}. Takehome Ration
+menu.client.management.move=${0}. Move Client
+
+home.updates=1. Check for Updates
+commcare.tools.network=2. Network Test
+commcare.tools.permissions=3. Permissions Test
+
+menu.tools=6. Tools
+menu.tools.ref=${0}. Referral Data
+menu.tools.bmi=${0}. BMI Calculator
+menu.tools.edd=${0}. EDD Calculator
+menu.tools.assistance=${0}. Technical Assistance
+
+menu.duelist.menu=6. Due List
+
+menu.tasks.deliver_result=Delivery Result
+
+menu.schedule.entry=Planning
+menu.task.list=5. View Tasks
+menu.sync=7. Sync with Server
+
+entity.pregnancy=Home Visit List
+entity.pregnancy.detail=Client Detail
+
+entity.plan=2. Home Visit
+entity.task=Tasks
+
+header.name=Name
+header.group=Group
+header.opened=Registration
+header.edd=EDD
+header.add=Date of Delivery
+header.husband=Husband
+header.village=Village
+header.phone=Mobile Number
+header.hh_number=Household Number
+header.ward_number=Ward Number
+header.last.visit=Last Visit On
+header.last.visit.type=Last Visit
+header.next.visit=Next Visit On
+header.next.visit.type=Next Visit
+
+visit.type.new=New Beneficiary
+visit.type.reg=Registration
+visit.type.bp=Birth Preparedness
+visit.type.del=Delivery
+visit.type.pnc=Post-Natal Care
+visit.type.eb=Exclusive Breastfeeding
+visit.type.cf=Complementary Feeding
+visit.type.unknown=?????
+
+header.form=Form
+header.due=Days
+
+select.due.late=!
+select.due.late.two=!!
+select.due.late.more=!!!
+select.due.today=TODAY
+select.due.migrated=Out
+
+header.migration.status=Migration Status
+select.detail.migrated=Current Migrated
+
+#NOTE: There's a NBSP here!
+select.due.list.due= 
+select.due.list.priority= 
+#NOTE: There's a NBSP above!
+
+task.list.when=Date of VHSND/RI
+task.list.d0=Today
+task.list.d1=Tomorrow
+task.list.d2=In 2 Days
+task.list.d3=In 3 Days
+task.list.d4=In 4 Days
+task.list.d5=In 5 Days
+task.list.d6=In 6 Days
+
+task.list.who=Due list for VHSND
+task.list.who.title.mother=Mother
+task.list.who.title.child=Child
+task.list.who.title.husband=Husband
+
+task.list.what=Care Due
+
+task.list.who.mother.imms=Name of Woman
+task.list.who.father.imms=Name of Father
+task.list.who.child.imms=Child's name
+task.list.age=Child's age in months
+task.list.who.imm.anc_1=ANC 1
+task.list.who.imm.anc_2=ANC 2
+task.list.who.imm.anc_3=ANC 3
+task.list.who.imm.anc_4=ANC 4
+task.list.who.imm.tt_1=TT 1
+task.list.who.imm.tt_2=TT 2
+task.list.who.imm.tt_b=TT Booster
+task.list.who.imm.bcg=BCG
+task.list.who.imm.opv_0=OPV 0
+task.list.who.imm.opv_1=OPV 1
+task.list.who.imm.opv_2=OPV 2
+task.list.who.imm.opv_3=OPV 3
+task.list.who.imm.opv_b=OPV Booster
+task.list.who.imm.dpt_1=DPT 1
+task.list.who.imm.dpt_2=DPT 2
+task.list.who.imm.dpt_3=DPT 3
+task.list.who.imm.dpt_b=DPT Booster
+task.list.who.imm.hep_b_0=Hep b 0
+task.list.who.imm.hep_b_1=Hep b 1
+task.list.who.imm.hep_b_2=Hep b 2
+task.list.who.imm.hep_b_3=Hep b 3
+task.list.who.imm.measles=Measles
+task.list.who.imm.measles_b=Measles Booster
+task.list.who.imm.vit_a_1=Vitamin A

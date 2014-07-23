@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Move beneficiary</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns="http://bihar.commcarehq.org/tools/move_beneficiary" uiVersion="1" version="2" name="Move beneficiary">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""/>
+					<confirm_move/>
+					<new_ward/>
+					<new_awcc/>
+					<confirm_again/>
+					<success/>
+				</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>		
+			
+			<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+			
+			<setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id"/>
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/confirm_move" />
+			<bind nodeset="/data/new_ward" type="xsd:int" constraint="string-length(.) &lt;= 2 and . &gt; 0" jr:constraintMsg="jr:itext('ward_number-constraintMsg')" relevant="/data/confirm_move='yes'" required="true()" />
+			<bind nodeset="/data/new_awcc" type="xsd:int" constraint = "string-length(.) &lt;= 3 and . &gt; 0" jr:constraintMsg="jr:itext('awcc_number-constraintMsg')" relevant="/data/confirm_move='yes'" required="true()" />
+			<bind nodeset="/data/confirm_again" relevant="/data/confirm_move='yes'"/>
+			<bind nodeset="/data/success" />
+			
+			
+			<itext>
+				<translation lang="hin" default="">
+					<text id="confirm_move-label">
+						<value>क्या आप इस लाभार्थी को अपने पोषक क्षेत्र से हटाना चाहती हैं?</value>
+						<value form="image">jr://file/commcare/media/images/move/confirm_move.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/confirm_move_hin.mp3</value>
+					</text>
+					<text id="new_ward-label">
+						<value>नये पोषक क्षेत्र का वार्ड संख्या भरें</value>
+						<value form="image">jr://file/commcare/media/images/move/new_ward.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/new_ward_hin.mp3</value>
+					</text>
+					<text id="ward_number-constraintMsg">
+						<value>संख्या दो अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/move/ward_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="new_awcc-label">
+						<value>नये पोषक क्षेत्र का आँगनवाड़ी केंद्र कोड भरें</value>
+						<value form="image">jr://file/commcare/media/images/move/new_awcc.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/new_awcc_hin.mp3</value>
+					</text>
+					<text id="awcc_number-constraintMsg">
+						<value>ससंख्या तीन अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/move/awcc_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="confirm_again-label">
+						<value>क्या आप सही मे इस लाभार्थी को अपने पोषक क्षेत्र से हटाना चाहती हैं?</value>
+						<value form="image">jr://file/commcare/media/images/move/confirm_again.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/confirm_again_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतापूर्वक फार्म समाप्त।</value>
+						<value form="image">jr://file/commcare/media/images/move/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/success_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. हॉ</value>
+						<value form="audio">jr://file/commcare/media/audio/move/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. नही</value>
+						<value form="audio">jr://file/commcare/media/audio/move/no_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="confirm_move-label">
+						<value>Confirm you want to move this client out of your catchment area  </value>
+						<value form="image">jr://file/commcare/media/images/move/confirm_move.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/confirm_move_hin.mp3</value>
+					</text>
+					<text id="new_ward-label">
+						<value>Enter Ward Number for new area</value>
+						<value form="image">jr://file/commcare/media/images/move/new_ward.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/new_ward_hin.mp3</value>
+					</text>
+					<text id="ward_number-constraintMsg">
+						<value>Must be 2 digits or fewer</value>
+						<value form="audio">jr://file/commcare/media/audio/move/ward_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="new_awcc-label">
+						<value>Enter AWCC for new area </value>
+						<value form="image">jr://file/commcare/media/images/move/new_awcc.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/new_awcc_hin.mp3</value>
+					</text>
+					<text id="awcc_number-constraintMsg">
+						<value>Must be 3 digits or fewer</value>
+						<value form="audio">jr://file/commcare/media/audio/move/awcc_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="confirm_again-label">
+						<value>Are you really sure you want to do remove this beneficiary from your catchment area? </value>
+						<value form="image">jr://file/commcare/media/images/move/confirm_again.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/confirm_again_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. Yes</value>
+						<value form="audio">jr://file/commcare/media/audio/move/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. No</value>
+						<value form="audio">jr://file/commcare/media/audio/move/no_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="image">jr://file/commcare/media/images/move/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/move/success_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/confirm_move">
+			<label ref="jr:itext('confirm_move-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/new_ward">
+			<label ref="jr:itext('new_ward-label')" />
+		</input>
+		<input ref="/data/new_awcc">
+			<label ref="jr:itext('new_awcc-label')" />
+		</input>
+		<select1 ref="/data/confirm_again">
+			<label ref="jr:itext('confirm_again-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+		
+	</h:body>
+</h:html>

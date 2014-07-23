@@ -1,0 +1,147 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>MTP Abort</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/mtp_abort" uiVersion="1" version="2" name="MTP Abort">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						<update>
+							<birth_status/>
+						</update>
+						<close/>
+						
+					</case>
+					<abortion_type />
+					<date_aborted />
+					<success />
+				</data>
+			</instance>
+			
+			<!-- accessing session data and case data -->
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+			<!-- metadata preloads -->	
+	    	<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+	    	<setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id"/>
+	
+	    	<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+			
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/case/update/birth_status" calculate="if(/data/date_aborted &gt;= date(instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/lmp) + 91, 'still_birth', 'abortion')" />
+			<bind nodeset="/data/abortion_type" required="true()" />
+			<bind nodeset="/data/date_aborted" type="xsd:date" constraint=". &lt;= today() and . &gt;= today() - 365" jr:constraintMsg="jr:itext('date_aborted-constraintMsg')" required="true()" />
+			<bind nodeset="/data/success" />
+			<itext>
+				<translation lang="hin" default="">
+					<text id="abortion_type-label">
+						<value>गर्भपात कब हुआ</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/abort/abortion_type.png</value>
+					</text>
+					<text id="abortion_type-less_12_weeks-label">
+						<value>1. 12 सप्ताह से पहले डॉक्टर द्वारा ग़र्भसमापन (गर्भपात) किया</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type-less_12_weeks_hin.mp3</value>
+					</text>
+					<text id="abortion_type-over_12_weeks-label">
+						<value>2. 12 सप्ताह के बाद डॉक्टर द्वारा ग़र्भसमापन (गर्भपात) किया</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type-over_12_weeks_hin.mp3</value>
+					</text>
+					<text id="abortion_type-spontaneous-label">
+						<value>3. स्वतः गर्भपात</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type-spontaneous_hin.mp3</value>
+					</text>
+					<text id="date_aborted-label">
+						<value>गर्भपात की तारिख</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/date_aborted_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/abort/date_aborted.png</value>
+					</text>
+					<text id="date_aborted-constraintMsg">
+						<value>तारिख एक साल के अन्दर  की होनी चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/date_aborted-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतः फार्म समाप्त</value>
+						<value form="image">jr://file/commcare/media/images/abort/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/success_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="abortion_type-label">
+						<value>When Aborted?</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/abort/abortion_type.png</value>
+					</text>
+					<text id="abortion_type-less_12_weeks-label">
+						<value>1. MTP less than 12 Weeks</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type-less_12_weeks_hin.mp3</value>
+					</text>
+					<text id="abortion_type-over_12_weeks-label">
+						<value>2. MTP greater than 12 Weeks</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type-over_12_weeks_hin.mp3</value>
+					</text>
+					<text id="abortion_type-spontaneous-label">
+						<value>3. Spontaneous</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/abortion_type-spontaneous_hin.mp3</value>
+					</text>
+					<text id="date_aborted-label">
+						<value>Date of Abortion</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/date_aborted_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/abort/date_aborted.png</value>
+					</text>
+					<text id="date_aborted-constraintMsg">
+						<value>Date must be within last year</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/date_aborted-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="image">jr://file/commcare/media/images/abort/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/abort/success_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/abortion_type">
+			<label ref="jr:itext('abortion_type-label')" />
+			<item>
+				<label ref="jr:itext('abortion_type-less_12_weeks-label')" />
+				<value>less_12_weeks</value>
+			</item>
+			<item>
+				<label ref="jr:itext('abortion_type-over_12_weeks-label')" />
+				<value>over_12_weeks</value>
+			</item>
+			<item>
+				<label ref="jr:itext('abortion_type-spontaneous-label')" />
+				<value>spontaneous</value>
+			</item>
+		</select1>
+		<input ref="/data/date_aborted">
+			<label ref="jr:itext('date_aborted-label')" />
+		</input>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+	</h:body>
+</h:html>

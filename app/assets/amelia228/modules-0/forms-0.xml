@@ -1,0 +1,52 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Form</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/22586529-8D61-4B44-AB26-7D0406018377" uiVersion="1" version="11" name="New Form">
+					<gender/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>test</case_type></create><update><gender/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/gender" required="true()"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="gender-label">
+						<value>gender</value>
+					</text>
+					<text id="gender-f-label">
+						<value>Female</value>
+					</text>
+					<text id="gender-m-label">
+						<value>Male</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/>
+		<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+		<setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/>
+		<bind nodeset="/data/case/create/case_name" calculate="/data/gender"/>
+		<bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/>
+		<bind nodeset="/data/case/update/gender" relevant="count(/data/gender) &gt; 0" calculate="/data/gender"/>
+		<setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/>
+		<setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/>
+		<setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/>
+		<setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/>
+		<setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/>
+		<setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/>
+		<setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/>
+	</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/gender">
+			<label ref="jr:itext('gender-label')"/>
+			<item>
+				<label ref="jr:itext('gender-f-label')"/>
+				<value>f</value>
+			</item>
+			<item>
+				<label ref="jr:itext('gender-m-label')"/>
+				<value>m</value>
+			</item>
+		</select1>
+	</h:body>
+</h:html>

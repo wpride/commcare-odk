@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Referral Info</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns="http://bihar.commcarehq.org/tools/assistance" uiVersion="1" version="2" name="Technical Assistance">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					<technical_assistance_info/>
+					</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			
+			
+			<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+			
+			<bind nodeset="/data/technical_assistance_info" />
+			<itext>
+				<translation lang="hin" default="">
+					<text id="technical_assistance_info-label">
+						<value>तकनीकी सहायता के लिए 1800 102 5442 डायल करें। इस कॉल के लिए आपको कोई शुल्क नही लगेगा। </value>
+						<value form="audio">jr://file/commcare/media/audio/techas/technical_assistance_info_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="technical_assistance_info-label">
+						<value>For technical assistance, call this phone number.  It will not cost you anything. 1800 102 5442. </value>
+						<value form="audio">jr://file/commcare/media/audio/techas/technical_assistance_info_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/technical_assistance_info">
+			<label ref="jr:itext('technical_assistance_info-label')" />
+		</trigger>
+	</h:body>
+</h:html>

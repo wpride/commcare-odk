@@ -1,0 +1,68 @@
+<casedb>
+    <case case_id="98435" case_type="route" owner_id="user1" status="open">
+                               <!-- case_id: The unique GUID of this case -->
+                               <!-- case_type: The id of this case's type -->
+                               <!-- owner_id: The GUID of the case or group which owns this case -->
+                               <!-- status: 'open' if the case has not been closed. 'closed' if the case has -->
+        <case_name>  bihar  </case_name>        <!-- The name of the case-->
+        <date_opened> 1/18/2012 </date_opened>         <!-- The date this case was opened -->
+        <last_modified>  1/18/2012</last_modified>     <!-- The date of the case's last transaction -->
+        <price> 198 </price>
+        <destination> patna </destination>
+        <origin> lucknow </origin>                   <!-- An arbitrary data value set in this case -->
+        <index></index>
+    </case>
+        <case case_id="98435" case_type="route" owner_id="user1" status="open">
+                               <!-- case_id: The unique GUID of this case -->
+                               <!-- case_type: The id of this case's type -->
+                               <!-- owner_id: The GUID of the case or group which owns this case -->
+                               <!-- status: 'open' if the case has not been closed. 'closed' if the case has -->
+        <case_name>  bihar  </case_name>        <!-- The name of the case-->
+        <date_opened> 1/18/2012 </date_opened>         <!-- The date this case was opened -->
+        <last_modified>  1/18/2012</last_modified>     <!-- The date of the case's last transaction -->
+        <price> 198 </price>
+        <destination> patna </destination>
+        <origin> lucknow </origin>                   <!-- An arbitrary data value set in this case -->
+        <index></index>
+    </case>
+        <case case_id="98435" case_type="route" owner_id="user1" status="open">
+                               <!-- case_id: The unique GUID of this case -->
+                               <!-- case_type: The id of this case's type -->
+                               <!-- owner_id: The GUID of the case or group which owns this case -->
+                               <!-- status: 'open' if the case has not been closed. 'closed' if the case has -->
+        <case_name>  bihar  </case_name>        <!-- The name of the case-->
+        <date_opened> 1/18/2012 </date_opened>         <!-- The date this case was opened -->
+        <last_modified>  1/18/2012</last_modified>     <!-- The date of the case's last transaction -->
+        <price> 198 </price>
+        <destination> patna </destination>
+        <origin> lucknow </origin>                   <!-- An arbitrary data value set in this case -->
+        <index></index>
+    </case>
+        <case case_id="98435" case_type="route" owner_id="user1" status="open">
+                               <!-- case_id: The unique GUID of this case -->
+                               <!-- case_type: The id of this case's type -->
+                               <!-- owner_id: The GUID of the case or group which owns this case -->
+                               <!-- status: 'open' if the case has not been closed. 'closed' if the case has -->
+        <case_name>  bihar  </case_name>        <!-- The name of the case-->
+        <date_opened> 1/18/2012 </date_opened>         <!-- The date this case was opened -->
+        <last_modified>  1/18/2012</last_modified>     <!-- The date of the case's last transaction -->
+        <price> 198 </price>
+        <destination> patna </destination>
+        <origin> lucknow </origin>                   <!-- An arbitrary data value set in this case -->
+        <index></index>
+    </case>
+        <case case_id="98435" case_type="route" owner_id="user1" status="open">
+                               <!-- case_id: The unique GUID of this case -->
+                               <!-- case_type: The id of this case's type -->
+                               <!-- owner_id: The GUID of the case or group which owns this case -->
+                               <!-- status: 'open' if the case has not been closed. 'closed' if the case has -->
+        <case_name>  bihar  </case_name>        <!-- The name of the case-->
+        <date_opened> 1/18/2012 </date_opened>         <!-- The date this case was opened -->
+        <last_modified>  1/18/2012</last_modified>     <!-- The date of the case's last transaction -->
+        <price> 198 </price>
+        <destination> patna </destination>
+        <origin> lucknow </origin>                   <!-- An arbitrary data value set in this case -->
+        <index></index>
+    </case>
+</casedb>
+

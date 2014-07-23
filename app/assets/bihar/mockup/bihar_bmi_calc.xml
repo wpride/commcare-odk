@@ -1,0 +1,145 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>3. BMI Calculator</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://bihar.commcarehq.org/tools/bmi" uiVersion="1" version="2" name="BMI Calculator">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					<weight/>
+					<bmi_calc/>
+					<height/>
+					<bmi_display/>
+					<bmi_underweight/>
+					<bmi_normal/>
+					<bmi_overweight/>
+					<bmi_obese/>
+				</data>
+			</instance>
+			<instance id="commcaresession" src="jr://instance/session"/>
+			
+			
+			<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+     		
+			<bind nodeset="/data/weight" type="xsd:decimal"/>
+			<bind nodeset="/data/bmi_calc" calculate="/data/weight div ((/data/height div 100) * (/data/height div 100))" />
+			<bind nodeset="/data/height" type="xsd:int" />
+			<bind nodeset="/data/bmi_display"/>
+			<bind nodeset="/data/bmi_underweight" relevant="/data/bmi_calc &lt; 18.5"/>
+			<bind nodeset="/data/bmi_normal" relevant="/data/bmi_calc &lt;= 24.9 and /data/bmi_calc &gt;= 18.5"/>
+			<bind nodeset="/data/bmi_overweight" relevant="/data/bmi_calc &lt;= 29.9 and /data/bmi_calc &gt;= 25"/>
+			<bind nodeset="/data/bmi_obese" relevant="/data/bmi_calc &gt; 30"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="weight-label">
+						<value>Weight in Kilograms</value>
+						<value form="image">jr://file/commcare/media/images/bmi/weight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/weight_hin.mp3</value>
+					</text>
+					<text id="height-label">
+						<value>Height in Centimeters</value>
+						<value form="image">jr://file/commcare/media/images/bmi/height.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/height_hin.mp3</value>
+					</text>
+					<text id="bmi_display-label">
+						<value>BMI is: <output ref="/data/bmi_calc"/></value>
+					</text>
+					<text id="bmi_underweight-label">
+						<value>Underweight</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_underweight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_underweight_hin.mp3</value>
+					</text>
+					<text id="bmi_normal-label">
+						<value>Normal weight</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_normal.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_normal_hin.mp3</value>
+					</text>
+					<text id="bmi_overweight-label">
+						<value>Over-weight</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_overweight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_overweight_hin.mp3</value>
+					</text>
+					<text id="bmi_obese-label">
+						<value>Obese</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_obese.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_obese_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="weight-label">
+						<value>वजन किलो ग्राम मे कितना है?</value>
+						<value form="image">jr://file/commcare/media/images/bmi/weight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/weight_hin.mp3</value>
+					</text>
+					<text id="height-label">
+						<value>उचाई सेंटीमीटर मे कितनी है?</value>
+						<value form="image">jr://file/commcare/media/images/bmi/height.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/height_hin.mp3</value>
+					</text>
+					<text id="bmi_display-label">
+						<value>BMI: <output ref="/data/bmi_calc"/> &#2361;&#2376;.</value>
+					</text>
+					<text id="bmi_underweight-label">
+						<value>वजन कम है</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_underweight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_underweight_hin.mp3</value>
+					</text>
+					<text id="bmi_normal-label">
+						<value>वजन साधारण है</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_normal.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_normal_hin.mp3</value>
+					</text>
+					<text id="bmi_overweight-label">
+						<value>अधिक वज़नदार है</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_overweight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_overweight_hin.mp3</value>
+					</text>
+					<text id="bmi_obese-label">
+						<value>मोटा है</value>
+						<value form="image">jr://file/commcare/media/images/bmi/bmi_obese.png</value>
+						<value form="audio">jr://file/commcare/media/audio/bmi/bmi_obese_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/weight">
+			<label ref="jr:itext('weight-label')"/>
+		</input>
+		<input ref="/data/height">
+			<label ref="jr:itext('height-label')"/>
+		</input>
+		<trigger ref="/data/bmi_display">
+			<label ref="jr:itext('bmi_display-label')"/>
+		</trigger>
+		<trigger ref="/data/bmi_underweight">
+			<label ref="jr:itext('bmi_underweight-label')"/>
+		</trigger>
+		<trigger ref="/data/bmi_normal">
+			<label ref="jr:itext('bmi_normal-label')"/>
+		</trigger>
+		<trigger ref="/data/bmi_overweight">
+			<label ref="jr:itext('bmi_overweight-label')"/>
+		</trigger>
+		<trigger ref="/data/bmi_obese">
+			<label ref="jr:itext('bmi_obese-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

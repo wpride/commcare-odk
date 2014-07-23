@@ -1,0 +1,11 @@
+--- CommCareFormDumpActivity.java
++++ CommCareFormDumpActivity.java
+@@ -116,7 +116,7 @@
+ 				
+ 	    		SharedPreferences settings = CommCareApplication._().getCurrentApp().getAppPreferences();
+ 				SendTask mSendTask = new SendTask<CommCareFormDumpActivity>(getApplicationContext(), CommCareApplication._().getCurrentApp().getCommCarePlatform(), 
+-						settings.getString("PostURL", url), txtInteractiveMessages, getFolderPath()){
++						settings.getString("PostURL", url), getFolderPath()){
+ 					
+ 					protected int taskId = BULK_SEND_ID;
+ 					

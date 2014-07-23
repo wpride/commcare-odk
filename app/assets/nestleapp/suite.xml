@@ -1,0 +1,962 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite version="1494">
+  <xform>
+    <resource id="3922ce8618e5f915d1d903367a6d1a674b6244ef" version="954">
+      <location authority="local">./modules-0/forms-0.xml</location>
+      <location authority="remote">./modules-0/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="79055661fca511f6ce6c9359be385d6477d3da75" version="1494">
+      <location authority="local">./modules-1/forms-0.xml</location>
+      <location authority="remote">./modules-1/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="2d09d7ad3f11c4fd89e4f45acf0dae85f3490c58" version="1493">
+      <location authority="local">./modules-1/forms-1.xml</location>
+      <location authority="remote">./modules-1/forms-1.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="25f2882cae56d47defea3c9f280c1a1e5d5f4a83" version="1494">
+      <location authority="local">./modules-2/forms-0.xml</location>
+      <location authority="remote">./modules-2/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="23bf7b5cce50411e0023053bb44015fc0ebcdf6d" version="1493">
+      <location authority="local">./modules-2/forms-1.xml</location>
+      <location authority="remote">./modules-2/forms-1.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="39dfd95a28be2ed8084b1d4eff2315fa94151660" version="560">
+      <location authority="local">./modules-2/forms-2.xml</location>
+      <location authority="remote">./modules-2/forms-2.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="9af1c9272875983b2b95ad3389f2705ddc2dd1f4" version="1494">
+      <location authority="local">./modules-3/forms-0.xml</location>
+      <location authority="remote">./modules-3/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="ba5feb9f7529d5081234abb981effd89a7291053" version="942">
+      <location authority="local">./modules-3/forms-1.xml</location>
+      <location authority="remote">./modules-3/forms-1.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="be1ea5cfdf8a62942659d8595155e0d39f98e2dc" version="1493">
+      <location authority="local">./modules-4/forms-0.xml</location>
+      <location authority="remote">./modules-4/forms-0.xml</location>
+    </resource>
+  </xform>
+  <locale language="default">
+    <resource id="app_default_strings" version="1494">
+      <location authority="local">./default/app_strings.txt</location>
+      <location authority="remote">./default/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="en">
+    <resource id="app_en_strings" version="1494">
+      <location authority="local">./en/app_strings.txt</location>
+      <location authority="remote">./en/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="men">
+    <resource id="app_men_strings" version="1494">
+      <location authority="local">./men/app_strings.txt</location>
+      <location authority="remote">./men/app_strings.txt</location>
+    </resource>
+  </locale>
+  <detail id="m0_case_short">
+    <title>
+      <text>
+        <locale id="m0.case_short.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m0.case_short.case_next_visit_date_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(next_visit_date = '', '', string(int((today() - date(next_visit_date)) div 1.0)))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_mother_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_mother_id_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_id"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m0_case_long">
+    <title>
+      <text>
+        <locale id="m0.case_long.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m0.case_long.case_next_visit_date_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(next_visit_date = '', '', string(int((today() - date(next_visit_date)) div 1.0)))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_mother_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_mother_id_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_mother_phone_number_4.header"/>
+        </text>
+      </header>
+      <template form="phone">
+        <text>
+          <xpath function="mother_phone_number"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_next_visit_date_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(next_visit_date = '', '', format_date(date(if(next_visit_date = '', 0, next_visit_date)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_next_visit_type_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="next_visit_type"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_house_number_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="house_number"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m1_case_short">
+    <title>
+      <text>
+        <locale id="m1.case_short.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m1.case_short.case_mother_id_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_mother_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m1_case_long">
+    <title>
+      <text>
+        <locale id="m1.case_long.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m1.case_long.case_mother_id_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_mother_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_edd_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(edd = '', '', format_date(date(if(edd = '', 0, edd)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_phu_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="phu"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m2_case_short">
+    <title>
+      <text>
+        <locale id="m2.case_short.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header width="0">
+        <text>
+          <locale id="m2.case_short.case_next_visit_date_1.header"/>
+        </text>
+      </header>
+      <template width="10%">
+        <text>
+          <xpath function="if(next_visit_date = '', '*', if(today() - date(next_visit_date) &gt; 1, '*', ''))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_mother_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_next_visit_date_3.header"/>
+        </text>
+      </header>
+      <template width="0">
+        <text>
+          <xpath function="next_visit_date"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header width="0">
+        <text/>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(next_visit_date = '', '', format_date(date(if(next_visit_date = '', 0, next_visit_date)),'short'))"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m2_case_long">
+    <title>
+      <text>
+        <locale id="m2.case_long.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m2.case_long.case_next_visit_date_1.header"/>
+        </text>
+      </header>
+      <template width="10%">
+        <text>
+          <xpath function="if(next_visit_date = '', '*', if(today() - date(next_visit_date) &gt; 1, '*', ''))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_mother_id_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_mother_name_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_next_visit_date_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(next_visit_date = '', '', format_date(date(if(next_visit_date = '', 0, next_visit_date)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_next_visit_type_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="next_visit_type"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_edd_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(edd = '', '', format_date(date(if(edd = '', 0, edd)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_is_pregnant_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="is_pregnant"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_total_preg_visits_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="total_preg_visits"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_total_anc_visits_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="total_anc_visits"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_mother_phone_number_10.header"/>
+        </text>
+      </header>
+      <template form="phone">
+        <text>
+          <xpath function="mother_phone_number"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_house_number_11.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="house_number"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m3_case_short">
+    <title>
+      <text>
+        <locale id="m3.case_short.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header width="0">
+        <text>
+          <locale id="m3.case_short.case_next_child_visit_1.header"/>
+        </text>
+      </header>
+      <template width="10%">
+        <text>
+          <xpath function="if(next_child_visit = '', '*', if(today() - date(next_child_visit) &gt; 1, '*', ''))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_short.case_parent/mother_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="instance('casedb')/casedb/case[@case_id=index/parent]/mother_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_short.case_child_name_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="child_name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m3_case_long">
+    <title>
+      <text>
+        <locale id="m3.case_long.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m3.case_long.case_next_child_visit_1.header"/>
+        </text>
+      </header>
+      <template width="10%">
+        <text>
+          <xpath function="if(next_child_visit = '', '*', if(today() - date(next_child_visit) &gt; 1, '*', ''))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_parent/mother_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="instance('casedb')/casedb/case[@case_id=index/parent]/mother_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_child_name_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="child_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_mother_id_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="mother_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_next_child_visit_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(next_child_visit = '', '', format_date(date(if(next_child_visit = '', 0, next_child_visit)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_child_id_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="child_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_gender_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="gender"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_next_visit_type_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="next_visit_type"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_dob_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(dob = '', '', format_date(date(if(dob = '', 0, dob)),'short'))"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m4_case_short">
+    <title>
+      <text>
+        <locale id="m4.case_short.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m4.case_short.case_referral_id_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="referral_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_short.case_referral_date_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(referral_date = '', '', string(int((today() - date(referral_date)) div 1.0)))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header width="0">
+        <text>
+          <locale id="m4.case_short.case_referral_date_3.header"/>
+        </text>
+      </header>
+      <template width="10%">
+        <text>
+          <xpath function="if(referral_date = '', '*', if(today() - date(referral_date) &gt; 1, '*', ''))"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m4_case_long">
+    <title>
+      <text>
+        <locale id="m4.case_long.title"/>
+      </text>
+    </title>
+    <field sort="default">
+      <header>
+        <text>
+          <locale id="m4.case_long.case_referral_id_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="referral_id"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_patient_name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="patient_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_referral_date_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(referral_date = '', '', string(int((today() - date(referral_date)) div 1.0)))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_referral_date_4.header"/>
+        </text>
+      </header>
+      <template width="10%">
+        <text>
+          <xpath function="if(referral_date = '', '*', if(today() - date(referral_date) &gt; 1, '*', ''))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_referred_to_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="referred_to"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <entry>
+    <form>http://openrosa.org/formdesigner/3922ce8618e5f915d1d903367a6d1a674b6244ef</form>
+    <command id="m0-f0">
+      <display>
+        <text>
+          <locale id="forms.m0f0"/>
+        </text>
+        <media image="jr://file/commcare/image/data/alert.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother'][@status='open'][(date(next_visit_date) &lt;= today())]" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <command id="m0-case-list">
+      <text>
+        <locale id="case_lists.m0"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/79055661fca511f6ce6c9359be385d6477d3da75</form>
+    <command id="m1-f0">
+      <display>
+        <text>
+          <locale id="forms.m1f0"/>
+        </text>
+        <media image="jr://file/commcare/image/data/register_mother.png"/>
+      </display>
+    </command>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/2d09d7ad3f11c4fd89e4f45acf0dae85f3490c58</form>
+    <command id="m1-f1">
+      <display>
+        <text>
+          <locale id="forms.m1f1"/>
+        </text>
+        <media image="jr://file/commcare/image/data/register_child.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/25f2882cae56d47defea3c9f280c1a1e5d5f4a83</form>
+    <command id="m2-f0">
+      <display>
+        <text>
+          <locale id="forms.m2f0"/>
+        </text>
+        <media image="jr://file/commcare/image/data/pregnancy_visit.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/23bf7b5cce50411e0023053bb44015fc0ebcdf6d</form>
+    <command id="m2-f1">
+      <display>
+        <text>
+          <locale id="forms.m2f1"/>
+        </text>
+        <media image="jr://file/commcare/image/data/postpartum_visit.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/3EB741FF-43FD-42D6-91E1-8C93DE82EE6F</form>
+    <command id="m2-f2">
+      <display>
+        <text>
+          <locale id="forms.m2f2"/>
+        </text>
+        <media image="jr://file/commcare/image/data/deregister.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/490D263F-05A6-468F-9FCB-EA186EB2CC01</form>
+    <command id="m3-f0">
+      <text>
+        <locale id="forms.m3f0"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='child'][@status='open']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/ba5feb9f7529d5081234abb981effd89a7291053</form>
+    <command id="m3-f1">
+      <text>
+        <locale id="forms.m3f1"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='child'][@status='open']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <command id="m3-case-list">
+      <text>
+        <locale id="case_lists.m3"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='child'][@status='open']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/1B8BECBA-AB97-4D8F-BF1B-A5F4B76BA18E</form>
+    <command id="m4-f0">
+      <text>
+        <locale id="forms.m4f0"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='referral'][@status='open']" value="./@case_id" detail-select="m4_case_short" detail-confirm="m4_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <command id="m4-case-list">
+      <text>
+        <locale id="case_lists.m4"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='referral'][@status='open']" value="./@case_id" detail-select="m4_case_short" detail-confirm="m4_case_long"/>
+    </session>
+  </entry>
+  <menu id="m0">
+    <display>
+      <text>
+        <locale id="modules.m0"/>
+      </text>
+      <media image="jr://file/commcare/image/data/alert.png"/>
+    </display>
+    <command id="m0-f0"/>
+    <command id="m0-case-list"/>
+  </menu>
+  <menu id="m1">
+    <display>
+      <text>
+        <locale id="modules.m1"/>
+      </text>
+      <media image="jr://file/commcare/image/data/register_module.png"/>
+    </display>
+    <command id="m1-f0"/>
+    <command id="m1-f1"/>
+  </menu>
+  <menu id="m2">
+    <display>
+      <text>
+        <locale id="modules.m2"/>
+      </text>
+      <media image="jr://file/commcare/image/data/woman.png"/>
+    </display>
+    <command id="m2-f0"/>
+    <command id="m2-f1"/>
+    <command id="m2-f2"/>
+  </menu>
+  <menu id="m3">
+    <display>
+      <text>
+        <locale id="modules.m3"/>
+      </text>
+      <media image="jr://file/commcare/image/data/baby.png"/>
+    </display>
+    <command id="m3-f0"/>
+    <command id="m3-f1"/>
+    <command id="m3-case-list"/>
+  </menu>
+  <menu id="m4">
+    <display>
+      <text>
+        <locale id="modules.m4"/>
+      </text>
+      <media image="jr://file/commcare/image/data/referral.png"/>
+    </display>
+    <command id="m4-f0"/>
+    <command id="m4-case-list"/>
+  </menu>
+</suite>

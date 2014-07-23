@@ -1,0 +1,162 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Migrate Out</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/migrate_out" uiVersion="1" version="2" name="Migrate Out">
+				
+				<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						<update>
+							<migrated_status>migrated</migrated_status>
+							<migrate_out_date/>
+							<status>migrate_out</status>
+						</update>
+					</case>
+					
+					<date_learned/>
+					<date_left/>
+					<note_given/>
+					<success/>
+					<name/>
+				</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+			<bind nodeset="/data/date_learned" type="xsd:date" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('date_learned-constraintMsg')"/>
+			<bind nodeset="/data/date_left" type="xsd:date" required="true()" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('date_left-constraintMsg')"/>
+			<bind nodeset="/data/note_given"/>
+			<bind nodeset="/data/success"/>
+			
+			
+			<setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id"/>
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/case/update/migrate_out_date" calculate="/data/date_left"/>
+			
+			<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+			
+			<itext>
+				<translation lang="en" default="">
+					<text id="date_learned-label">
+						<value>Date learned <output ref="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/case_name"/> Left:</value>
+						<value form="image">jr://file/commcare/media/images/migout/date_learned_migrate_out.png</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_learned_migrate_out_hin.mp3</value>
+					</text>
+					<text id="date_learned-constraintMsg">
+						<value>Date cannot be in future</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_learned-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="date_left-label">
+						<value>Date left village:</value>
+						<value form="image">jr://file/commcare/media/images/migout/date_left.png</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_left_hin.mp3</value>
+					</text>
+					<text id="date_left-constraintMsg">
+						<value>Date cannot be in future</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_left-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="note_given-label">
+						<value>'Migration Note' given to woman?</value>
+						<value form="image">jr://file/commcare/media/images/migout/note_given.png</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/note_given_hin.mp3</value>
+					</text>
+					<text id="note_given-yes-label">
+						<value>1. Yes</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/yes_hin.mp3</value>
+					</text>
+					<text id="note_given-no-label">
+						<value>2. No</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/no_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/success_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/migout/success.png</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="date_learned-label">
+						<value>&#2340;&#2366;&#2352;&#2368;&#2326; &#2332;&#2348; &#2350;&#2366;&#2354;&#2370;&#2350; &#2361;&#2369;&#2310; &#2325;&#2375; <output ref="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/case_name"/> &#2327;&#2366;&#2305;&#2357; &#2360;&#2375; &#2348;&#2366;&#2361;&#2352; &#2327;&#2312;</value>
+						<value form="image">jr://file/commcare/media/images/migout/date_learned_migrate_out.png</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_learned_migrate_out_hin.mp3</value>
+					</text>
+					<text id="date_learned-constraintMsg">
+						<value>&#2349;&#2357;&#2367;&#2359;&#2381;&#2351; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326; &#2344;&#2361;&#2368;&#2306; &#2354;&#2367;&#2326; &#2360;&#2325;&#2340;&#2375;</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_learned-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="date_left-label">
+						<value>&#2327;&#2366;&#2305;&#2357; &#2331;&#2379;&#2337;&#2344;&#2375; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326; </value>
+						<value form="image">jr://file/commcare/media/images/migout/date_left.png</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_left_hin.mp3</value>
+					</text>
+					<text id="date_left-constraintMsg">
+						<value>&#2349;&#2357;&#2367;&#2359;&#2381;&#2351; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326; &#2344;&#2361;&#2368;&#2306; &#2354;&#2367;&#2326; &#2360;&#2325;&#2340;&#2375;</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/date_left-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="note_given-label">
+						<value>'&#2346;&#2381;&#2352;&#2357;&#2366;&#2360; &#2330;&#2367;&#2336;&#2381;&#2336;&#2368;' &#2350;&#2361;&#2367;&#2354;&#2366; &#2325;&#2379; &#2342;&#2367;&#2351;&#2366;? </value>
+						<value form="image">jr://file/commcare/media/images/migout/note_given.png</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/note_given_hin.mp3</value>
+					</text>
+					<text id="note_given-yes-label">
+						<value>1. &#2361;&#2366;&#2305; </value>
+						<value form="audio">jr://file/commcare/media/audio/migout/yes_hin.mp3</value>
+					</text>
+					<text id="note_given-no-label">
+						<value>2. &#2344;&#2361;&#2368;</value>
+						<value form="audio">jr://file/commcare/media/audio/migout/no_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>&#2360;&#2347;&#2354;&#2340;&#2366;&#2346;&#2370;&#2352;&#2381;&#2357;&#2325; &#2347;&#2366;&#2352;&#2381;&#2350; &#2360;&#2350;&#2366;&#2346;&#2381;&#2340;&#2404; </value>
+						<value form="audio">jr://file/commcare/media/audio/migout/success_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/migout/success.png</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/date_learned">
+			<label ref="jr:itext('date_learned-label')"/>
+		</input>
+		<input ref="/data/date_left">
+			<label ref="jr:itext('date_left-label')"/>
+		</input>
+		<select1 ref="/data/note_given">
+			<label ref="jr:itext('note_given-label')"/>
+			<item>
+				<label ref="jr:itext('note_given-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('note_given-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

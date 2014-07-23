@@ -1,0 +1,75 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>2. EDD Calculator</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://bihar.commcarehq.org/tools/edd" uiVersion="1" version="2" name="EDD Calculator">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					<lmp_entered/>
+					<display_edd/>
+					<date_calc/>
+				</data>
+			</instance>
+			<instance id="commcaresession" src="jr://instance/session"/>
+			
+			
+			<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+			
+			
+			<bind nodeset="/data/lmp_entered" type="xsd:date"/>
+			<bind nodeset="/data/display_edd"/>
+			<bind nodeset="/data/date_calc" calculate="date(/data/lmp_entered + 280)"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="lmp_entered-label">
+						<value>Enter LMP</value>
+						<value form="audio">jr://file/commcare/media/audio/edd/lmp_entered_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edd/lmp_entered.png</value>
+					</text>
+					<text id="display_edd-label">
+						<value>EDD is: <output value="format-date(/data/date_calc, '%e/%n/%y')"/></value>
+						<value form="image">jr://file/commcare/media/images/edd/display_edd.png</value>
+						<value form="audio">jr://file/commcare/media/audio/edd/display_edd_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="lmp_entered-label">
+						<value>आखरी माहवारी </value>
+						<value form="audio">jr://file/commcare/media/audio/edd/lmp_entered_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edd/lmp_entered.png</value>
+					</text>
+					<text id="display_edd-label">
+						<value>प्रसव की सम्भावित तारीख:<output value="format-date(/data/date_calc, '%e/%n/%y')"/></value>
+						<value form="image">jr://file/commcare/media/images/edd/display_edd.png</value>
+						<value form="audio">jr://file/commcare/media/audio/edd/display_edd_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/lmp_entered">
+			<label ref="jr:itext('lmp_entered-label')"/>
+		</input>
+		<trigger ref="/data/display_edd">
+			<label ref="jr:itext('display_edd-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

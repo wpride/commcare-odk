@@ -1,0 +1,256 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>senegal operateur form</h:title>
+    <model>
+      <instance>
+        <data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7330597b92db84b1a33c7596bb7b1813502879be" uiVersion="1" version="1" name="Bon de commande-livraison Real">
+          <total_amt_owed/>
+          <disp_total_amt_owed/>
+          <num_products />
+
+          <products index="" jr:template="">
+            <old_stock_total />
+            <old_stock_pps />
+            <disp_old_stock_total />
+            <disp_old_stock_pps />
+            <disp_ideal_stock />
+
+            <outside_receipts_amt>0</outside_receipts_amt>
+            <loss_amt >0</loss_amt>
+
+            <total_stock /> <!-- interim value to avoid (errant) circular ref error -->
+            <pps_stock /> <!-- interim value that can go negative -->
+            <billed_consumption />
+
+            <ideal_stock />
+            <ideal_topup />
+            <dispensed_ideal />
+            <dispense_amt />
+            <actual_consumption />
+
+            <outside_receipts>
+              <transfer xmlns="http://commcarehq.org/ledger/v1" dest="" type="other" date="">
+                <entry id="">
+                  <value section-id="stock" quantity=""/>
+                  <value section-id="stock-pps" quantity=""/>
+                </entry >
+              </transfer>
+            </outside_receipts>
+            <losses>
+              <transfer xmlns="http://commcarehq.org/ledger/v1" src="" type="loss" date="">
+                <entry id="">
+                  <value section-id="stock" quantity=""/>
+                  <value section-id="stock-pps" quantity=""/>
+                </entry >
+              </transfer>
+            </losses>
+            <balance xmlns="http://commcarehq.org/ledger/v1" entity-id="" date="">
+              <entry id="">
+                <value section-id="stock" quantity="" />
+                <value section-id="stock-pps" quantity="" />
+              </entry>
+            </balance>
+            <top_up>
+              <transfer xmlns="http://commcarehq.org/ledger/v1" dest="" date="">
+                <entry id="">
+                  <value section-id="stock" quantity=""/>
+                </entry >
+              </transfer>
+            </top_up>
+            
+            <price_per_unit />
+            <amount_owed />
+            <review>
+              <disp_ideal_stock />
+              <disp_pps_stock_old />
+              <disp_total_stock_old />
+              <disp_total_stock_new />
+              <disp_pps_stock_new />
+              <disp_billable_consumption />
+              <disp_amount_owed />
+              <disp_outside_receipts />
+              <disp_losses />
+              <disp_actual_consumption />
+              <disp_dispensed />
+	      <disp_price_per_unit/>
+            </review>
+          </products>
+          
+          <product_ix_1 />
+        </data>
+      </instance>
+      <instance id="commcaresession" src="jr://instance/session" />
+      <instance id="products" src="jr://fixture/commtrack:products" />
+      <instance id="ledger" src="jr://instance/ledgerdb" />
+
+      <bind nodeset="/data/num_products" calculate="count(instance('products')/products/product)" />
+      <bind nodeset="/data/product_ix_1" calculate="count(/data/products)"/>
+      <setvalue event="jr-insert" ref="/data/products/@index" value="int(/data/product_ix_1) + 1"/>
+
+      <setvalue event="jr-insert" ref="/data/products/price_per_unit" value="instance('products')/products/product[position()=current()/../@index]/cost"/>
+
+	  <setvalue event="jr-insert" ref="/data/products/balance/@date" value="today()" />
+      <setvalue event="jr-insert" ref="/data/products/balance/@entity-id" value="instance('commcaresession')/session/data/case_id" />
+	  
+      <setvalue event="jr-insert" ref="/data/products/outside_receipts/transfer/@dest" value="instance('commcaresession')/session/data/case_id" />
+	  <setvalue event="jr-insert" ref="/data/products/outside_receipts/transfer/@date" value="today()" />
+      <setvalue event="jr-insert" ref="/data/products/top_up/transfer/@dest" value="instance('commcaresession')/session/data/case_id" />
+	  <setvalue event="jr-insert" ref="/data/products/top_up/transfer/@date" value="today()" />
+      <setvalue event="jr-insert" ref="/data/products/losses/transfer/@src" value="instance('commcaresession')/session/data/case_id" />
+	  <setvalue event="jr-insert" ref="/data/products/losses/transfer/@date" value="today()" />
+	  
+      <setvalue event="jr-insert" ref="/data/products/balance/entry/@id" value="instance('products')/products/product[position()=current()/../../../@index]/@id" />
+      <setvalue event="jr-insert" ref="/data/products/outside_receipts/transfer/entry/@id" value="instance('products')/products/product[position()=current()/../../../../@index]/@id" />
+      <setvalue event="jr-insert" ref="/data/products/losses/transfer/entry/@id" value="instance('products')/products/product[position()=current()/../../../../@index]/@id" />
+      <setvalue event="jr-insert" ref="/data/products/top_up/transfer/entry/@id" value="instance('products')/products/product[position()=current()/../../../../@index]/@id" />
+      <setvalue event="jr-insert" ref="/data/products/top_up/transfer/entry/@id" value="instance('products')/products/product[position()=current()/../../../../@index]/@id" />
+
+      <bind nodeset="/data/products/old_stock_total" calculate="coalesce(instance('ledger')/ledgerdb/ledger[@entity-id=instance('commcaresession')/session/data/case_id]/section[@section-id='stock']/entry[@id=instance('products')/products/product[position()=current()/../@index]/@id], 0)" />
+      <bind nodeset="/data/products/old_stock_pps" calculate="coalesce(instance('ledger')/ledgerdb/ledger[@entity-id=instance('commcaresession')/session/data/case_id]/section[@section-id='stock-pps']/entry[@id=instance('products')/products/product[position()=current()/../@index]/@id], 0)" />
+      
+      <!-- note: these binds duplicate the transfer for both the 'stock' and 'stock-pps' sections -->
+      <bind nodeset="/data/products/outside_receipts/transfer/entry/value/@quantity" calculate="/data/products/outside_receipts_amt" />
+      <bind nodeset="/data/products/losses/transfer/entry/value/@quantity" calculate="/data/products/loss_amt" />
+      
+      <bind nodeset="/data/products/pps_stock" calculate="../old_stock_pps + /data/products/total_stock - ../old_stock_total" />
+      <bind nodeset="/data/products/billed_consumption" calculate="max(-../pps_stock, 0)" />
+      <bind nodeset="/data/products/balance/entry/value[@section-id='stock']/@quantity" calculate="/data/products/total_stock" />
+      <bind nodeset="/data/products/balance/entry/value[@section-id='stock-pps']/@quantity" calculate="max(/data/products/pps_stock, 0)" />
+
+      <bind nodeset="/data/products/ideal_stock" calculate="int(3.5 * instance('ledger')/ledgerdb/ledger[@entity-id=instance('commcaresession')/session/data/case_id]/section[@section-id='consumption']/entry[@id=instance('products')/products/product[position()=current()/../@index]/@id] + .999)" />
+      <bind nodeset="/data/products/ideal_topup" calculate="max(/data/products/ideal_stock - /data/products/balance/entry/value[@section-id='stock']/@quantity, 0)" />
+      <bind nodeset="/data/products/dispense_amt" type="int" relevant="../dispensed_ideal = 'n'" />
+
+      <bind nodeset="/data/products/top_up/transfer/entry/value/@quantity" calculate="if(/data/products/dispensed_ideal = 'y', /data/products/ideal_topup, /data/products/dispense_amt)" />
+      <bind nodeset="/data/products/actual_consumption" calculate="if(../old_stock_total - /data/products/balance/entry/value[@section-id='stock']/@quantity + /data/products/outside_receipts_amt - /data/products/loss_amt > 0, ../old_stock_total - /data/products/balance/entry/value[@section-id='stock']/@quantity + /data/products/outside_receipts_amt - /data/products/loss_amt, 0)"/>
+
+      <bind nodeset="/data/products/amount_owed" calculate="/data/products/billed_consumption * /data/products/price_per_unit" />
+
+      <bind nodeset="/data/products/total_stock" type="int" required="true()"/>
+      <bind nodeset="/data/products/outside_receipts_amt" type="int" constraint=". &gt;= /data/products/total_stock - /data/products/old_stock_total"/>
+      <bind nodeset="/data/products/loss_amt" type="int" />
+      <bind nodeset="/data/total_amt_owed" calculate="sum(current()/../products/amount_owed)"/>
+
+    </model>
+  </h:head>
+  <h:body>
+
+    <!-- add q: visit is for which month? -->
+
+    <group>
+    <label><output value="instance('products')/products/product[position()=current()/@index]/name"/></label>
+    <repeat nodeset="/data/products" jr:count="/data/num_products">
+
+      <group appearance="field-list">
+
+      <jr:entryHeader><output value="$name"/></jr:entryHeader>
+
+      <trigger ref="/data/products/disp_old_stock_total">
+        <label>Total SOH after last visit: <output value="../old_stock_total" /></label>
+      </trigger>
+      <trigger ref="/data/products/disp_old_stock_pps">
+        <label>Of which portion is the PPS's own stash: <output value="../old_stock_pps" /></label>
+      </trigger>
+      
+      <input ref="/data/products/total_stock">
+        <label>Current total stock</label>
+      </input>
+      <input ref="/data/products/outside_receipts_amt">
+        <label>Receipts from outside sources</label>
+      </input>
+      <input ref="/data/products/loss_amt">
+        <label>Losses/adjustments</label>
+      </input>
+
+      </group>
+
+      <group appearance="field-list">
+      
+      <trigger ref="/data/products/disp_ideal_stock">
+        <label>Ideal stock is: <output value="/data/products/ideal_stock" /> (dispense <output value="/data/products/ideal_topup" />)</label>
+      </trigger>
+
+      <select1 ref="/data/products/dispensed_ideal">
+        <label>Did you dispense this much?</label>
+        <item><label>Yes</label><value>y</value></item>
+        <item><label>No</label><value>n</value></item>
+      </select1>
+
+      <input ref="/data/products/dispense_amt">
+        <label>How much did you dispense?</label>
+      </input>
+
+      </group>
+
+      <!-- add q: lot number/expiration date(s) -->
+
+    </repeat>
+    </group>
+
+    <group>
+    <label><output value="instance('products')/products/product[position()=current()/@index]/name"/></label>
+    <repeat nodeset="/data/products" jr:noAddRemove="true">
+
+      <group appearance="field-list">
+
+      <jr:entryHeader><output value="$name"/></jr:entryHeader>
+
+      <trigger ref="/data/products/review/disp_ideal_stock">
+        <label>Ideal stock level: <output value="/data/products/ideal_stock" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_pps_stock_old">
+        <label>Stock belonging to PPS a/o last visit: <output value="/data/products/old_stock_pps" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_total_stock_old">
+        <label>Total stock a/o last visit: <output value="/data/products/old_stock_total" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_total_stock_new">
+        <label>Current total stock: <output value="/data/products/balance/entry/value[@section-id='stock']/@quantity" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_pps_stock_new">
+        <label>Current stock belonging to PPS: <output value="/data/products/balance/entry/value[@section-id='stock-pps']/@quantity" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_billable_consumption">
+        <label>Billable consumption: <output value="/data/products/billed_consumption" /></label>
+      </trigger>
+	  
+	  <trigger ref="/data/products/review/disp_price_per_unit">
+        <label>Price per unit: <output value="/data/products/price_per_unit" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_amount_owed">
+        <label>Amount owed: <output value="/data/products/amount_owed" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_outside_receipts">
+        <label>Receipts from other sources: <output value="/data/products/outside_receipts_amt" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_losses">
+        <label>Losses/Adjustments: <output value="/data/products/loss_amt" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_actual_consumption">
+        <label>Actual consumption: <output value="/data/products/actual_consumption" /></label>
+      </trigger>
+
+      <trigger ref="/data/products/review/disp_dispensed">
+        <label>Amount delivered: <output value="if(/data/products/dispensed_ideal = 'y', /data/products/ideal_topup, /data/products/dispense_amt)" /></label>
+      </trigger>
+
+      </group>
+
+    </repeat>
+    </group>
+	
+	<trigger ref="/data/disp_total_amt_owed">
+        <label>Total amount owed: <output value="/data/total_amt_owed" /></label>
+    </trigger>
+
+  </h:body>
+</h:html>

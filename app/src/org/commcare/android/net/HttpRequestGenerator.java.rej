@@ -1,0 +1,13 @@
+--- HttpRequestGenerator.java
++++ HttpRequestGenerator.java
+@@ -54,8 +58,10 @@
+ 	public static final String LOG_COMMCARE_NETWORK = "commcare-network";
+ 	private Credentials credentials;
+ 	private String username;
++	
+ 
+ 	public HttpRequestGenerator(User user) {
++		
+ 		this(user.getUsername(), user.getPassword());
+ 	}
+ 	public HttpRequestGenerator(String username, String password) {

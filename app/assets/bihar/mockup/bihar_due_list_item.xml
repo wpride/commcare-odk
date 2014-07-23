@@ -1,0 +1,622 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.w3.org/2002/xforms"
+	  xmlns:ev="http://www.w3.org/2001/xml-events"
+	  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	  xmlns:jr="http://openrosa.org/javarosa"
+	  xmlns:orx="http://openrosa.org/jr/xforms">
+<h:head>
+    <h:title>Due List</h:title>
+    <model>
+		<instance>
+			<data xmlns="http://bihar.commcarehq.org/close/item" xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" version="6" uiVersion="5" name="Due List">
+				<orx:meta>
+					<orx:deviceID/>
+					<orx:timeStart/>
+					<orx:timeEnd/>
+					<orx:username/>
+					<orx:userID/>
+					<orx:instanceID/>
+					<cc:appVersion/>
+				</orx:meta>
+				
+				<task_target/>
+				<due_list_date/>
+				
+				<mother>
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						<update>
+							<tt_1_date />
+		    				<tt_2_date />
+							<tt_booster_date />
+							<anc_1_date />
+							<anc_2_date />
+							<anc_3_date />
+							<anc_4_date />
+						</update>
+					</case>
+				</mother> 
+				
+				<child>
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						<update>
+							<bcg_date />
+							<opv_0_date />
+							<opv_1_date />
+							<opv_2_date />
+							<opv_3_date />
+							<opv_booster_date />
+							<dpt_1_date />
+							<dpt_2_date />
+							<dpt_3_date />
+							<dpt_booster_date />
+							<hep_b_0_date />
+							<hep_b_1_date />
+							<hep_b_2_date />
+							<hep_b_3_date />
+							<measles_date />
+							<date_measles_booster />
+							<vit_a_1_date />
+							<vit_a_2_date />
+							<vit_a_3_date />
+							<date_je />
+						</update>
+					</case>
+				</child>
+				
+				<pending_tasks/>
+				<num_tasks/>
+				<cur_tasks/>
+
+				<punch_data />				
+				<not_vhsnd />
+				<tasks>
+					<task jr:template="">
+						<index/>
+						<cid/>
+						<received/>
+						<task_id/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<close/>
+						</case>
+						
+						<not_anc/>
+						<is_anc/>
+						<ancvisit/>
+						<anc>
+							<anc_blood_pressure />
+							<anc_abdominal_exam />
+							<anc_abnormalities />
+						</anc>
+					
+					</task>
+				</tasks>
+						
+			</data>
+		</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+			
+			<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>
+			
+			<setvalue event="xforms-ready" ref="/data/due_list_date" value="date(today() + instance('commcaresession')/session/data/checked_delta)"/>
+			
+			<setvalue event="xforms-ready" ref="/data/pending_tasks" value="join(' ',instance('casedb')/casedb/case[@case_type='task'][index/person_id=instance('commcaresession')/session/data/person_id][@status='open'][date(date_eligible) &lt;= date(today() + instance('commcaresession')/session/data/checked_delta) and date(date_expires) &gt; date(today() + instance('commcaresession')/session/data/checked_delta)]/@case_id)"/>
+			
+			<bind nodeset="/data/tasks/task/task_id" calculate="depend(instance('casedb')/casedb/case[@case_id=current()/../cid]/task_id, ../cid)"/>
+			
+			<bind nodeset="/data/task_target" calculate="instance('commcaresession')/session/data/person_id"/>
+			
+			<bind nodeset="/data/mother" relevant="instance('casedb')/casedb/case[@case_id=/data/task_target]/@case_type = 'cc_bihar_pregnancy'"/>
+			<bind nodeset="/data/child" relevant="instance('casedb')/casedb/case[@case_id=/data/task_target]/@case_type = 'cc_bihar_newborn'"/>
+			
+			
+			<bind nodeset="/data/mother/case/update/tt_1_date"  relevant="count(/data/tasks/task[task_id = 'tt_1'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/tt_2_date"  relevant="count(/data/tasks/task[task_id = 'tt_2'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/tt_booster_date"  relevant="count(/data/tasks/task[task_id = 'tt_booster'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_1_date"  relevant="count(/data/tasks/task[task_id = 'anc_1'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_2_date"  relevant="count(/data/tasks/task[task_id = 'anc_2'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_3_date"  relevant="count(/data/tasks/task[task_id = 'anc_3'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_4_date"  relevant="count(/data/tasks/task[task_id = 'anc_4'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			
+			<bind nodeset="/data/child/case/update/bcg_date"  relevant="count(/data/tasks/task[task_id = 'bcg'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_0_date" relevant="count(/data/tasks/task[task_id = 'opv_0'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_1_date" relevant="count(/data/tasks/task[task_id = 'opv_1'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_2_date" relevant="count(/data/tasks/task[task_id = 'opv_2'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_3_date" relevant="count(/data/tasks/task[task_id = 'opv_3'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_booster_date" relevant="count(/data/tasks/task[task_id = 'opv_booster'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_1_date" relevant="count(/data/tasks/task[task_id = 'dpt_1'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_2_date" relevant="count(/data/tasks/task[task_id = 'dpt_2'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_3_date" relevant="count(/data/tasks/task[task_id = 'dpt_3'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_booster_date" relevant="count(/data/tasks/task[task_id = 'dpt_booster'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_0_date" relevant="count(/data/tasks/task[task_id = 'hep_0'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_1_date" relevant="count(/data/tasks/task[task_id = 'hep_1'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_2_date" relevant="count(/data/tasks/task[task_id = 'hep_2'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_3_date" relevant="count(/data/tasks/task[task_id = 'hep_3'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/measles_date" relevant="count(/data/tasks/task[task_id = 'measles'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/date_measles_booster" relevant="count(/data/tasks/task[task_id = 'measles_booster'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/vit_a_1_date" relevant="count(/data/tasks/task[task_id = 'vita_1'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/vit_a_2_date" relevant="count(/data/tasks/task[task_id = 'vita_2'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/vit_a_3_date" relevant="count(/data/tasks/task[task_id = 'vita_3'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/date_je" relevant="count(/data/tasks/task[task_id = 'je'][received='yes']) &gt; 0" calculate="/data/due_list_date"/>
+			
+			<!-- bind nodeset="/data/mother/case/update/tt_1_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'tt_1'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/tt_2_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'tt_2'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/tt_booster_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'tt_booster'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_1_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'anc_1'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_2_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'anc_2'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_3_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'anc_3'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/mother/case/update/anc_4_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'anc_4'" calculate="/data/due_list_date"/>
+			
+			<bind nodeset="/data/child/case/update/bcg_date"  relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'bcg'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_0_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'opv_0'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_1_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'opv_1'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_2_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'opv_2'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_3_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'opv_3'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/opv_booster_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'opv_booster'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_1_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'dpt_1'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_2_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'dpt_2'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_3_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'dpt_3'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/dpt_booster_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'dpt_booster'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_0_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'hep_b_0'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_1_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'hep_b_1'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_2_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'hep_b_2'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/hep_b_3_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'hep_b_3'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/measles_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'measles'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/date_measles_booster" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'measles_booster'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/vit_a_1_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'vit_a_1'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/vit_a_2_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'vit_a_2'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/vit_a_3_date" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'vit_a_3'" calculate="/data/due_list_date"/>
+			<bind nodeset="/data/child/case/update/date_je" relevant="not(/data/received = 'no') and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/task_id = 'je'" calculate="/data/due_list_date"/ -->
+			 
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+			
+			<bind nodeset="/data/mother/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/mother/case/@user_id" calculate="/data/meta/userID"/>
+			<bind nodeset="/data/mother/case/@case_id" calculate="/data/task_target"/>
+			
+			<bind nodeset="/data/child/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/child/case/@user_id" calculate="/data/meta/userID"/>
+			<bind nodeset="/data/child/case/@case_id" calculate="/data/task_target"/>
+			
+			<bind nodeset="/data/due_list_date" required="true()" type="xsd:date"/>
+			
+			
+			
+			<bind nodeset="/data/num_tasks" type="int" calculate="count-selected(/data/pending_tasks)"/>
+			<bind nodeset="/data/cur_tasks" calculate="count(/data/tasks/task)"/>
+			
+			<setvalue event="jr-insert" ref="/data/tasks/task/index" value="int(/data/cur_tasks) - int(selected-at('0 1'),1)"/>
+			
+			<bind nodeset="/data/tasks/task/cid" calculate="selected-at(/data/pending_tasks,../index)"/>
+			
+			<bind nodeset="/data/tasks/task/case/@case_id" type="xsd:string" calculate="../../cid"/>
+			<bind nodeset="/data/tasks/task/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/tasks/task/case/@user_id" type="xsd:string" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/tasks/task/case/close" type="xsd:string" relevant="../../received='yes'"/>
+			
+			<bind nodeset="/data/punch_data" calculate="if(/data/due_list_date != date(today()),'no','yes')" />
+			<bind nodeset="/data/not_vhsnd" relevant="/data/punch_data = 'no'"/>
+			<bind nodeset="/data/tasks/task/not_anc" relevant="not(/data/tasks/task/is_anc = 'yes')"/>
+			
+			<bind nodeset="/data/tasks/task/is_anc" calculate="if(../task_id='anc_1' or 
+																						   ../task_id='anc_2' or
+																						   ../task_id='anc_3' or
+																						   ../task_id='anc_4', 'yes', 'no')"/>
+			
+			<!--  anc_1 -->
+			<bind nodeset="/data/tasks/task/ancvisit" relevant="/data/punch_data = 'yes' and /data/tasks/task/is_anc = 'yes'" />
+			<bind nodeset="/data/tasks/task/anc" relevant="/data/tasks/task/is_anc = 'yes' and /data/tasks/task/received = 'yes'"/>
+			
+			<bind nodeset="/data/tasks/task" relevant="/data/punch_data = 'yes'"/>			
+					
+			<itext>
+				<translation lang="hin" default="">
+						<text id="not_vhsnd-label">
+							<value>आज वी. एच. एस. एन. डी नहीं है. इस लाभार्थी के लिए कोई डाटा नहीं भर सकते</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/not_vhsnd.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/not_vhsnd.png</value>
+						</text>
+						<text id="anc_blood_pressure-label">
+							<value>रक्तचाप</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_blood_pressure.png</value>
+						</text>
+						<text id="blood_pressure-normal-label">
+							<value>1. सामान्य</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure-normal_hin.mp3</value>
+						</text>
+						<text id="blood_pressure-high_bloodpressure-label">
+							<value>2. उच्च </value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure-high_bloodpressure_hin.mp3</value>
+						</text>
+						<text id="blood_pressure-not_measured-label">
+							<value>3. मापा नही</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure-not_measured_hin.mp3</value>
+						</text>
+						<text id="anc_abdominal_exam-label">
+							<value>पेट की जॉच</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abdominal_exam_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_abdominal_exam.png</value>
+						</text>
+						<text id="abdominal_exam-performed-label">
+							<value>1. की</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abdominal_exam-performed_hin.mp3</value>
+						</text>
+						<text id="abdominal_exam-not_performed-label">
+							<value>2. नही की</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abdominal_exam-not_performed_hin.mp3</value>
+						</text>
+						<text id="anc_abnormalities-label">
+							<value>कोई दिक्कत पाई गई?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abnormalities_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_abnormalities.png</value>
+						</text>
+						
+						<text id="received_label">
+							<value><output ref="jr:itext(concat(../task_id, '_received'))"/></value>
+							<value form="audio"><output ref="jr:itext(concat(../task_id, '_received;audio'))"/></value>
+							<value form="image"><output ref="jr:itext(concat(../task_id, '_received;image'))"/></value>
+						</text>
+						
+						
+						<text id="yes-label">
+							<value>1. हॉ</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/yes_hin.mp3</value>
+						</text>
+						<text id="no-label">
+							<value>2. नही</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/no_hin.mp3</value>
+						</text>
+					
+						<text id="anc_1_received">
+							<value>प्रसव पूर्व जाँच 1 पूरी हुई?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_details_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="anc_2_received">
+							<value>प्रसव पूर्व जाँच 2 पूरी हुई?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_details_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="anc_3_received">
+							<value>प्रसव पूर्व जाँच 3 पूरी हुई?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_details_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="anc_4_received">
+							<value>प्रसव पूर्व जाँच 4 पूरी हुई?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_details_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="tt_1_received">							
+							<value>क्या टी.टी - 1 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_tt_1_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_tt_1.png</value>
+						</text>	
+						<text id="tt_2_received">	
+							<value>क्या टी.टी - 2 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_tt_2_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_tt_2.png</value>
+						</text>	
+						<text id="tt_booster_received">	
+							<value>क्या टी.टी - बूस्टर मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_tt_b_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_tt_b.png</value>
+						</text>	
+						<text id="bcg_received">	
+							<value>क्या बी.सी.जी. मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_bcg_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_bcg.png</value>
+						</text>	
+						<text id="opv_0_received">	
+							<value>क्या पोलियो खुराख - 0 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_opv_0_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_opv_0.png</value>
+						</text>	
+						<text id="opv_1_received">	
+							<value>क्या पोलियो खुराख - 1 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_opv_1_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_opv_1.png</value>
+						</text>	
+						<text id="opv_2_received">	
+							<value>क्या पोलियो खुराख - 2 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_opv_2_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_opv_2.png</value>
+						</text>	
+						<text id="opv_3_received">	
+							<value>क्या पोलियो खुराख - 3 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_opv_3_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_opv_3.png</value>
+						</text>	
+						<text id="opv_b_received">	
+							<value>क्या पोलियो - बूस्टर मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_opv_b_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_opv_b.png</value>
+						</text>	
+						<text id="dpt_1_received">	
+							<value>क्या डी. पी. टी. - 1 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_dpt_1_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_dpt_1.png</value>
+						</text>	
+						<text id="dpt_2_received">	
+							<value>क्या डी. पी. टी. - 2 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_dpt_2_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_dpt_2.png</value>
+						</text>	
+						<text id="dpt_3_received">	
+							<value>क्या डी. पी. टी. - 3 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_dpt_3_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_dpt_3.png</value>
+						</text>	
+						<text id="dpt_b_received">	
+							<value>क्या डी. पी. टी - बूस्टर मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_dpt_b_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_dpt_b.png</value>
+						</text>	
+						<text id="hep_0_received">	
+							<value>क्या हेपेटाइटिस बी - 0 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_hep_b_0_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_hep_b_0.png</value>
+						</text>	
+						<text id="hep_1_received">	
+							<value>क्या हेपेटाइटिस बी - 1 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_hep_b_1_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_hep_b_1.png</value>
+						</text>	
+						<text id="hep_2_received">	
+							<value>क्या हेपेटाइटिस बी - 2 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_hep_b_2_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_hep_b_2.png</value>
+						</text>	
+						<text id="hep_3_received">	
+							<value>क्या हेपेटाइटिस बी - 3 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_hep_b_3_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_hep_b_3.png</value>
+						</text>	
+						<text id="measles_received">	
+							<value>क्या खसरे का टीका मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_measles_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_measles.png</value>
+						</text>	
+						<text id="measles_b_received">	
+							<value>क्या खसरे का बूस्टर टीका मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_measles_b_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_measles_b.png</value>
+						</text>	
+						<text id="vita_1_received">	
+							<value>क्या विटामिन ए -1 मिला?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/received_vit_a_1_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received_vit_a_1.png</value>
+						</text>	
+
+					
+											
+						
+				</translation>
+				<translation lang="en">
+						<text id="not_vhsnd-label">
+							<value>Today is not VHSND.  No data can be entered for this client.</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/not_vhsnd.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/not_vhsnd.png</value>
+						</text>
+						<text id="anc_blood_pressure-label">
+							<value>Blood pressure: </value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_blood_pressure.png</value>
+						</text>
+						<text id="blood_pressure-normal-label">
+							<value>1. Normal</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure-normal_hin.mp3</value>
+						</text>
+						<text id="blood_pressure-high_bloodpressure-label">
+							<value>2. High</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure-high_bloodpressure_hin.mp3</value>
+						</text>
+						<text id="blood_pressure-not_measured-label">
+							<value>3. Not measured</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_blood_pressure-not_measured_hin.mp3</value>
+						</text>
+						<text id="anc_abdominal_exam-label">
+							<value>Abdominal Examination: </value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abdominal_exam_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_abdominal_exam.png</value>
+						</text>
+						<text id="abdominal_exam-performed-label">
+							<value>1. Performed</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abdominal_exam-performed_hin.mp3</value>
+						</text>
+						<text id="abdominal_exam-not_performed-label">
+							<value>2. Not performed</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abdominal_exam-not_performed_hin.mp3</value>
+						</text>
+						<text id="anc_abnormalities-label">
+							<value>Any abnormalities detected?</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/anc_abnormalities_hin.mp3</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_abnormalities.png</value>
+						</text>
+						
+						<text id="received_label">
+							<value><output ref="jr:itext(concat(../task_id, '_received'))"/></value>
+							<value form="audio"><output ref="jr:itext(concat(../task_id, '_received;audio'))"/></value>
+							<value form="image"><output ref="jr:itext(concat(../task_id, '_received;image'))"/></value>
+						</text>
+		
+						<text id="yes-label">
+							<value>1. Yes</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/yes_hin.mp3</value>
+						</text>
+						<text id="no-label">
+							<value>2. No</value>
+							<value form="audio">jr://file/commcare/media/audio/duelist/no_hin.mp3</value>
+						</text>
+						
+						<text id="anc_1_received">
+							<value>ANC 1 visit completed?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="anc_2_received">
+							<value>ANC 2 visit completed?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="anc_3_received">
+							<value>ANC 3 visit completed?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="anc_4_received">
+							<value>ANC 4 visit completed?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/anc_details.png</value>
+						</text>
+						<text id="tt_1_received">
+							<value>TT 1 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="tt_2_received">
+							<value>TT 2 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="tt_booster_received">
+							<value>TT Booster received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="bcg_received">
+							<value>BCG received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="opv_0_received">
+							<value>OPV 0 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="opv_1_received">
+							<value>OPV 1 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="opv_2_received">
+							<value>OPV 2 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="opv_3_received">
+							<value>OPV 3 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="opv_b_received">
+							<value>OPV Booster received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="dpt_1_received">
+							<value>DPT 1 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="dpt_2_received">
+							<value>DPT 2 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="dpt_3_received">
+							<value>DPT 3 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="dpt_b_received">
+							<value>DPT Booster received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="hep_0_received">
+							<value>Hep b 0 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="hep_1_received">
+							<value>Hep b 1 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="hep_2_received">
+							<value>Hep b 2 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="hep_3_received">
+							<value>Hep b 3 received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="measles_received">
+							<value>Measles received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="measles_b_received">
+							<value>Measles Booster received?</value>
+							<value form="image">jr://file/commcare/media/images/duelist/received.png</value>
+						</text>
+						<text id="vita_1_received">
+							<value>Vitamin A received?</value>
+						</text>
+				</translation>
+			</itext>
+	</model>
+</h:head>			
+<h:body>
+	<trigger ref="/data/not_vhsnd">
+		<label ref="jr:itext('not_vhsnd-label')" />
+	</trigger>
+	<repeat nodeset="/data/tasks/task" jr:count="/data/num_tasks"> 
+
+			<select1 ref="/data/tasks/task/received">
+				<label ref="jr:itext('received_label')"></label>
+				<item>
+					<label ref="jr:itext('yes-label')" />
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('no-label')" />
+					<value>no</value>
+				</item>
+			</select1>
+		
+		<group ref="anc">
+		<select1 ref="anc_blood_pressure">
+			<label ref="jr:itext('anc_blood_pressure-label')" />
+			<item>
+				<label ref="jr:itext('blood_pressure-normal-label')" />
+				<value>normal</value>
+			</item>
+			<item>
+				<label ref="jr:itext('blood_pressure-high_bloodpressure-label')" />
+				<value>high_bloodpressure</value>
+			</item>
+			<item>
+				<label ref="jr:itext('blood_pressure-not_measured-label')" />
+				<value>not_measured</value>
+			</item>
+		</select1>
+		<select1 ref="anc_abdominal_exam">
+			<label ref="jr:itext('anc_abdominal_exam-label')" />
+			<item>
+				<label ref="jr:itext('abdominal_exam-performed-label')" />
+				<value>performed</value>
+			</item>
+			<item>
+				<label ref="jr:itext('abdominal_exam-not_performed-label')" />
+				<value>not_performed</value>
+			</item>
+		</select1>
+		<select1 ref="anc_abnormalities">
+			<label ref="jr:itext('anc_abnormalities-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+	</group>
+	</repeat>
+</h:body>
+</h:html>

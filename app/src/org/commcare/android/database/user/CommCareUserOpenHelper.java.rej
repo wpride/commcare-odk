@@ -1,0 +1,10 @@
+--- CommCareUserOpenHelper.java
++++ CommCareUserOpenHelper.java
+@@ -90,7 +90,6 @@
+ 	 */
+ 	@Override
+ 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+-		System.out.println("617 onUpgrade");
+ 		boolean inSenseMode = false;
+ 		//TODO: Not a great way to get the current app! Pass this in to the constructor.
+ 		//I am preeeeeety sure that we can't get here without _having_ an app/platform, but not 100%

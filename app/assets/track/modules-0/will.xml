@@ -1,0 +1,2924 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Servery Questionnaire [en]</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/889E2BF1-1AAD-449E-91C0-237C282FA0CE" uiVersion="1" version="688" name="Servery Questionnaire [en]">
+					<interivew_start/>
+					<co_name/>
+					<hp_name/>
+					<ciuster_name/>
+					<resp_number/>
+					<question_complete/>
+					<how_many_times/>
+					<reason_incompletess/>
+					<section_a/>
+					<mu_cor_name/>
+					<interviewers_name/>
+					<interview_date/>
+					<respondent_name/>
+					<res_add/>
+					<res_telephone_no/>
+					<res_pregent_last_12_mon/>
+					<preg_outcome/>
+					<other_exp/>
+					<spend_month_locality/>
+					<child_status/>
+					<mother_status/>
+					<consent/>
+					<interview_language/>
+					<other_text/>
+					<preg_realated_paper_shown/>
+					<other_paper/>
+					<section_b/>
+					<know_age/>
+					<what_was_age/>
+					<religion/>
+					<other_religion/>
+					<ration_card/>
+					<your_education_level/>
+					<explain/>
+					<husband_education_levels/>
+					<exp_items_and_other/>
+					<house_type/>
+					<Other_deat/>
+					<section_c/>
+					<reg_name_regular_anc_checkup/>
+					<do_u_know_which_mon_reg_name/>
+					<which_month/>
+					<reg_ur_name_regular_anc_checkup/>
+					<which_facility_type/>
+					<loc_name/>
+					<mu_cor_name_write/>
+					<not_reg_reason/>
+					<other_expl/>
+					<reg_name_delivery/>
+					<month_deliv_reg/>
+					<which_mon_reg_name_delivery/>
+					<reg_hos_name_for_delivery/>
+					<write_facility_type/>
+					<hos_loc_name/>
+					<hos_mu_cor_name/>
+					<what_is_the_reason_did_not_reg_name_for_del/>
+					<other_tx/>
+					<during_preg_health_prob/>
+					<othr_problems/>
+					<Do_know_how_many_times_visit_treat/>
+					<yes_how_many_times/>
+					<given_terat_first_hos_name/>
+					<first_hos_name/>
+					<which_fac_type/>
+					<fac_loc_name/>
+					<loclity_cor_name/>
+					<give_treat_second_hos_name/>
+					<second_hos_faci_type/>
+					<second_hos_loc_name/>
+					<question166/>
+					<Write_others_information/>
+					<write_treat_your_health_problem/>
+					<question169/>
+					<question170/>
+					<how_many_times_visit_regu_anc_checkup/>
+					<first_trimester/>
+					<question180/>
+					<question181/>
+					<which_type_hos_visit_anc_checkup/>
+					<how_many_times_visited_each_hos/>
+					<hospital_name_1/>
+					<first_hos_facility_type/>
+					<write_first_locality_type/>
+					<write_first_hos_mu_cor_name/>
+					<Which_services_did_u_receive_at_hos/>
+					<if_visit_second_hos_plz_write_hos_name/>
+					<second_hos_services/>
+					<If_visit_third_hos_deatials/>
+					<third_hos_services/>
+					<did_not_reg_anc_checkup_what_reason/>
+					<other_res/>
+					<during_last_preg_visit_health_worker/>
+					<what_tell_u/>
+					<who_visited_u/>
+					<Other_visited_explain/>
+					<ngo_name_explain/>
+					<section_d/>
+					<delivery_date/>
+					<labour_pain_started_whr_did_u_go_first/>
+					<other_place_explain/>
+					<did_u_go_any_hos/>
+					<which_hos/>
+					<write_facil_type/>
+					<facility_locality_name/>
+					<loc_mu_cor_name/>
+					<other_detail_exp/>
+					<why_u_decided_go_to_another_hos/>
+					<Other_rea/>
+					<after_labou_pain_did_u_go_to_anoher_/>
+					<other_det_exp/>
+					<what_was_reason_did_goto_any_hos/>
+					<other_exp_reason/>
+					<whr_was_baby_born/>
+					<other_place/>
+					<deli_baby_home_were_u_assisted/>
+					<y_by_whom/>
+					<section_e/>
+					<why_wr_u_sent_to_another_hos/>
+					<why_sent_yo_ano_hos_rea/>
+					<equp_details/>
+					<which_hos_were_u_sent/>
+					<which_is_hos_u_sent_write_name/>
+					<write_facility_and_types/>
+					<fac_loc_name_write/>
+					<wri_loc_mu_car_name/>
+					<were_u_go/>
+					<whr_did_u_go/>
+					<write_hos_faci_type/>
+					<location_locality/>
+					<lacility_cor_name/>
+					<reason_for_going_different_hos/>
+					<exp_reason_for_going_different_hos/>
+					<first_to_second_hos_travel_time/>
+					<exp_time/>
+					<how_did_u_travel_these_hospital/>
+					<how_long_did_wait_receiveing_care/>
+					<explain_time/>
+					<go_to_another_hos_second_time/>
+					<which_hos_u_went/>
+					<write_hospital_fcility_type/>
+					<wri_fac_loc_type/>
+					<wrt_loc_mu_cor_name/>
+					<what_was_reason_u_sent_different_hos/>
+					<other_res_exp/>
+					<exp_equp_list/>
+					<do_u_go_to_were_told_the_second_time/>
+					<whi_hos_did_u_go_to/>
+					<facility_type/>
+					<lcality_name/>
+					<mu_coe_name/>
+					<why_did_u_go_reason/>
+					<other_exp_reass/>
+					<question615/>
+					<third_hos_how_long_time/>
+					<section_f/>
+					<which_vaccination_baby_received/>
+					<date_bcg/>
+					<date_measles/>
+					<municipal_corporation_name/>
+				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/interivew_start" type="xsd:time" required="true()"/>
+			<bind nodeset="/data/co_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/hp_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/ciuster_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/resp_number" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/question_complete" required="true()"/>
+			<bind nodeset="/data/how_many_times" type="xsd:int" relevant="/data/question_complete = 'yes'"/>
+			<bind nodeset="/data/reason_incompletess" type="xsd:string" relevant="/data/question_complete = 'no'"/>
+			<bind nodeset="/data/section_a"/>
+			<bind nodeset="/data/mu_cor_name" required="true()"/>
+			<bind nodeset="/data/interviewers_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/interview_date" type="xsd:date" required="true()"/>
+			<bind nodeset="/data/respondent_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/res_add" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/res_telephone_no" type="xsd:string" constraint=". &gt; 99999999 and . &lt;= 9999999999" jr:constraintMsg="jr:itext('res_telephone_no-constraintMsg')"/>
+			<bind nodeset="/data/res_pregent_last_12_mon" required="true()"/>
+			<bind nodeset="/data/preg_outcome" required="true()"/>
+			<bind nodeset="/data/other_exp" type="xsd:string" relevant="/data/preg_outcome = 'other'"/>
+			<bind nodeset="/data/spend_month_locality" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/child_status" required="true()"/>
+			<bind nodeset="/data/mother_status" required="true()"/>
+			<bind nodeset="/data/consent" required="true()"/>
+			<bind nodeset="/data/interview_language" required="true()"/>
+			<bind nodeset="/data/other_text" type="xsd:string" relevant="/data/interview_language = 'other'"/>
+			<bind nodeset="/data/preg_realated_paper_shown" required="true()"/>
+			<bind nodeset="/data/other_paper" type="xsd:string" relevant="/data/preg_realated_paper_shown = 'other_tx'"/>
+			<bind nodeset="/data/section_b"/>
+			<bind nodeset="/data/know_age" required="true()"/>
+			<bind nodeset="/data/what_was_age" type="xsd:int" relevant="/data/know_age = 'yes'" required="true()"/>
+			<bind nodeset="/data/religion" required="true()"/>
+			<bind nodeset="/data/other_religion" type="xsd:string" relevant="/data/religion = 'other'"/>
+			<bind nodeset="/data/ration_card" required="true()"/>
+			<bind nodeset="/data/your_education_level"/>
+			<bind nodeset="/data/explain" type="xsd:string" relevant="/data/your_education_level = 'other' or /data/your_education_level = 'class_up_to' or /data/your_education_level = 'college'" required="true()"/>
+			<bind nodeset="/data/husband_education_levels" required="true()"/>
+			<bind nodeset="/data/exp_items_and_other" type="xsd:string" relevant="/data/husband_education_levels = 'class_up_to' or /data/husband_education_levels = 'other' or /data/husband_education_levels = 'college'"/>
+			<bind nodeset="/data/house_type" required="true()"/>
+			<bind nodeset="/data/Other_deat" type="xsd:string" relevant="/data/house_type = 'other'"/>
+			<bind nodeset="/data/section_c"/>
+			<bind nodeset="/data/reg_name_regular_anc_checkup" required="true()"/>
+			<bind nodeset="/data/do_u_know_which_mon_reg_name" relevant="/data/reg_name_regular_anc_checkup = 'yes'"/>
+			<bind nodeset="/data/which_month" type="xsd:int" relevant="/data/do_u_know_which_mon_reg_name = 'yes'"/>
+			<bind nodeset="/data/reg_ur_name_regular_anc_checkup" type="xsd:string" relevant="/data/do_u_know_which_mon_reg_name = 'yes'"/>
+			<bind nodeset="/data/which_facility_type" type="xsd:string" relevant="/data/do_u_know_which_mon_reg_name = 'yes'"/>
+			<bind nodeset="/data/loc_name" type="xsd:string" relevant="/data/do_u_know_which_mon_reg_name = 'yes'"/>
+			<bind nodeset="/data/mu_cor_name_write" type="xsd:string" relevant="/data/do_u_know_which_mon_reg_name = 'yes'"/>
+			<bind nodeset="/data/not_reg_reason" relevant="/data/reg_name_regular_anc_checkup = 'no'"/>
+			<bind nodeset="/data/other_expl" type="xsd:string" relevant="/data/not_reg_reason = 'other'"/>
+			<bind nodeset="/data/reg_name_delivery" required="true()"/>
+			<bind nodeset="/data/month_deliv_reg" relevant="/data/reg_name_delivery = 'yes'" required="true()"/>
+			<bind nodeset="/data/which_mon_reg_name_delivery" type="xsd:int" relevant="/data/month_deliv_reg = 'yes'"/>
+			<bind nodeset="/data/reg_hos_name_for_delivery" type="xsd:string" relevant="/data/month_deliv_reg = 'yes'"/>
+			<bind nodeset="/data/write_facility_type" type="xsd:string" relevant="/data/month_deliv_reg = 'yes'"/>
+			<bind nodeset="/data/hos_loc_name" type="xsd:string" relevant="/data/month_deliv_reg = 'yes'"/>
+			<bind nodeset="/data/hos_mu_cor_name" type="xsd:string" relevant="/data/month_deliv_reg = 'yes'"/>
+			<bind nodeset="/data/what_is_the_reason_did_not_reg_name_for_del" relevant="/data/reg_name_delivery = 'no'"/>
+			<bind nodeset="/data/other_tx" type="xsd:string" relevant="/data/what_is_the_reason_did_not_reg_name_for_del = 'other'"/>
+			<bind nodeset="/data/during_preg_health_prob" required="true()"/>
+			<bind nodeset="/data/othr_problems" type="xsd:string" relevant="/data/during_preg_health_prob = 'othe'"/>
+			<bind nodeset="/data/Do_know_how_many_times_visit_treat"/>
+			<bind nodeset="/data/yes_how_many_times" type="xsd:int" relevant="/data/Do_know_how_many_times_visit_treat = 'yes'"/>
+			<bind nodeset="/data/given_terat_first_hos_name" relevant="/data/yes_how_many_times &gt;= 1"/>
+			<bind nodeset="/data/first_hos_name" type="xsd:string" relevant="/data/given_terat_first_hos_name = 'yes'"/>
+			<bind nodeset="/data/which_fac_type" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 1"/>
+			<bind nodeset="/data/fac_loc_name" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 1"/>
+			<bind nodeset="/data/loclity_cor_name" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 1"/>
+			<bind nodeset="/data/give_treat_second_hos_name" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 2"/>
+			<bind nodeset="/data/second_hos_faci_type" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 2"/>
+			<bind nodeset="/data/second_hos_loc_name" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 2"/>
+			<bind nodeset="/data/question166" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 2"/>
+			<bind nodeset="/data/Write_others_information" type="xsd:string" relevant="/data/yes_how_many_times &gt;= 1"/>
+			<bind nodeset="/data/write_treat_your_health_problem" type="xsd:string" relevant="/data/yes_how_many_times = 0"/>
+			<bind nodeset="/data/question169"/>
+			<bind nodeset="/data/question170" type="xsd:string" relevant="/data/question169 = 'other_tex'"/>
+			<bind nodeset="/data/how_many_times_visit_regu_anc_checkup" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/first_trimester" type="xsd:int" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/question180" type="xsd:int" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/question181" type="xsd:int" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/which_type_hos_visit_anc_checkup" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/how_many_times_visited_each_hos" type="xsd:int" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/hospital_name_1" type="xsd:string" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/first_hos_facility_type" type="xsd:string" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/write_first_locality_type" type="xsd:string" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/write_first_hos_mu_cor_name" type="xsd:string" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/Which_services_did_u_receive_at_hos" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 1"/>
+			<bind nodeset="/data/if_visit_second_hos_plz_write_hos_name" type="xsd:string" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 2"/>
+			<bind nodeset="/data/second_hos_services" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 2"/>
+			<bind nodeset="/data/If_visit_third_hos_deatials" type="xsd:string" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 3"/>
+			<bind nodeset="/data/third_hos_services" relevant="/data/how_many_times_visit_regu_anc_checkup &gt;= 3"/>
+			<bind nodeset="/data/did_not_reg_anc_checkup_what_reason" relevant="/data/how_many_times_visit_regu_anc_checkup = 0"/>
+			<bind nodeset="/data/other_res" type="xsd:string" relevant="/data/did_not_reg_anc_checkup_what_reason = 'otr'"/>
+			<bind nodeset="/data/during_last_preg_visit_health_worker" required="true()"/>
+			<bind nodeset="/data/what_tell_u" type="xsd:string" relevant="/data/during_last_preg_visit_health_worker = 'yes'"/>
+			<bind nodeset="/data/who_visited_u" relevant="/data/during_last_preg_visit_health_worker = 'yes'"/>
+			<bind nodeset="/data/Other_visited_explain" type="xsd:string" relevant="/data/who_visited_u = 'other'"/>
+			<bind nodeset="/data/ngo_name_explain" type="xsd:string" relevant="/data/who_visited_u = 'ngo'"/>
+			<bind nodeset="/data/section_d"/>
+			<bind nodeset="/data/delivery_date" type="xsd:date" required="true()"/>
+			<bind nodeset="/data/labour_pain_started_whr_did_u_go_first" required="true()"/>
+			<bind nodeset="/data/other_place_explain" type="xsd:string" relevant="/data/labour_pain_started_whr_did_u_go_first = 'other_place'"/>
+			<bind nodeset="/data/did_u_go_any_hos" relevant="/data/labour_pain_started_whr_did_u_go_first = 'did_not_reg_name_for_delivery'"/>
+			<bind nodeset="/data/which_hos" type="xsd:string" relevant="/data/did_u_go_any_hos = 'yes'"/>
+			<bind nodeset="/data/write_facil_type" type="xsd:string" relevant="/data/did_u_go_any_hos = 'yes'"/>
+			<bind nodeset="/data/facility_locality_name" type="xsd:string" relevant="/data/did_u_go_any_hos = 'yes'"/>
+			<bind nodeset="/data/loc_mu_cor_name" type="xsd:string" relevant="/data/did_u_go_any_hos = 'yes'"/>
+			<bind nodeset="/data/other_detail_exp" type="xsd:string" relevant="/data/did_u_go_any_hos = 'yes'"/>
+			<bind nodeset="/data/why_u_decided_go_to_another_hos" relevant="/data/labour_pain_started_whr_did_u_go_first = 'did_not_reg_name_for_delivery'"/>
+			<bind nodeset="/data/Other_rea" type="xsd:string" relevant="/data/why_u_decided_go_to_another_hos = 'other'"/>
+			<bind nodeset="/data/after_labou_pain_did_u_go_to_anoher_" relevant="/data/labour_pain_started_whr_did_u_go_first = 'reg_name_for_deliver' and /data/labour_pain_started_whr_did_u_go_first = 'did_not_reg_name_for_delivery'"/>
+			<bind nodeset="/data/other_det_exp" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'other'"/>
+			<bind nodeset="/data/what_was_reason_did_goto_any_hos" relevant="/data/labour_pain_started_whr_did_u_go_first = 'stay_at_home'"/>
+			<bind nodeset="/data/other_exp_reason" type="xsd:string" relevant="selected(/data/what_was_reason_did_goto_any_hos,  'other')"/>
+			<bind nodeset="/data/whr_was_baby_born" relevant="/data/labour_pain_started_whr_did_u_go_first = 'stay_at_home' or /data/labour_pain_started_whr_did_u_go_first = 'other_place'"/>
+			<bind nodeset="/data/other_place" type="xsd:string" relevant="/data/whr_was_baby_born = 'other'"/>
+			<bind nodeset="/data/deli_baby_home_were_u_assisted" relevant="/data/whr_was_baby_born = 'at_home'"/>
+			<bind nodeset="/data/y_by_whom" type="xsd:string" relevant="/data/deli_baby_home_were_u_assisted = 'yes'"/>
+			<bind nodeset="/data/section_e" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/why_wr_u_sent_to_another_hos" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'" required="true()"/>
+			<bind nodeset="/data/why_sent_yo_ano_hos_rea" type="xsd:string" relevant="/data/why_wr_u_sent_to_another_hos = 'other'"/>
+			<bind nodeset="/data/equp_details" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/which_hos_were_u_sent" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'" required="true()"/>
+			<bind nodeset="/data/which_is_hos_u_sent_write_name" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/write_facility_and_types" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/fac_loc_name_write" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/wri_loc_mu_car_name" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/were_u_go" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/whr_did_u_go" type="xsd:string" relevant="/data/were_u_go = 'no'"/>
+			<bind nodeset="/data/write_hos_faci_type" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/location_locality" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/lacility_cor_name" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/reason_for_going_different_hos" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/exp_reason_for_going_different_hos" type="xsd:string" relevant="/data/reason_for_going_different_hos = 'other'"/>
+			<bind nodeset="/data/first_to_second_hos_travel_time" type="xsd:time" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/exp_time" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/how_did_u_travel_these_hospital" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'" required="true()"/>
+			<bind nodeset="/data/how_long_did_wait_receiveing_care" type="xsd:time" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/explain_time" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/go_to_another_hos_second_time" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'" required="true()"/>
+			<bind nodeset="/data/which_hos_u_went" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/write_hospital_fcility_type" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/wri_fac_loc_type" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/wrt_loc_mu_cor_name" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/what_was_reason_u_sent_different_hos" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/other_res_exp" type="xsd:string" relevant="/data/what_was_reason_u_sent_different_hos = 'othr'"/>
+			<bind nodeset="/data/exp_equp_list" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/do_u_go_to_were_told_the_second_time" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/whi_hos_did_u_go_to" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes' or /data/do_u_go_to_were_told_the_second_time = 'no'"/>
+			<bind nodeset="/data/facility_type" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes' or /data/do_u_go_to_were_told_the_second_time = 'no'"/>
+			<bind nodeset="/data/lcality_name" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes' or /data/do_u_go_to_were_told_the_second_time = 'no'"/>
+			<bind nodeset="/data/mu_coe_name" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes' or /data/do_u_go_to_were_told_the_second_time = 'no'"/>
+			<bind nodeset="/data/why_did_u_go_reason" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes' or /data/do_u_go_to_were_told_the_second_time = 'no'"/>
+			<bind nodeset="/data/other_exp_reass" type="xsd:string" relevant="/data/why_did_u_go_reason = 'othr'"/>
+			<bind nodeset="/data/question615" type="xsd:string" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/third_hos_how_long_time" type="xsd:time" relevant="/data/after_labou_pain_did_u_go_to_anoher_ = 'yes'"/>
+			<bind nodeset="/data/section_f"/>
+			<bind nodeset="/data/which_vaccination_baby_received" required="true()"/>
+			<bind nodeset="/data/date_bcg" type="xsd:date" relevant="/data/which_vaccination_baby_received = 'bcg'"/>
+			<bind nodeset="/data/date_measles" type="xsd:date" relevant="/data/which_vaccination_baby_received = 'measles'"/>
+			<bind nodeset="/data/municipal_corporation_name"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="interview_start_time-label">
+						<value>Interview start time</value>
+					</text>
+					<text id="Name_co-label">
+						<value>Name of the CO's</value>
+					</text>
+					<text id="hp_name-label">
+						<value>Name of the Health Post</value>
+					</text>
+					<text id="ciuster_name-label">
+						<value>Name of the cluster</value>
+					</text>
+					<text id="resp_number-label">
+						<value>Respondent Number</value>
+					</text>
+					<text id="question_complete-label">
+						<value>Questionnaire completed   </value>
+					</text>
+					<text id="question_complete-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="question_complete-no-label">
+						<value>No</value>
+					</text>
+					<text id="how_many_times-label">
+						<value>How many times did the link worker visit this household to finish the questionnaire?</value>
+					</text>
+					<text id="reason_incompletess-label">
+						<value>Reason for incompleteness</value>
+					</text>
+					<text id="section_a-label">
+						<value>Section A: Administrative</value>
+					</text>
+					<text id="mu_cor_name-label">
+						<value>Municipal corporation name</value>
+					</text>
+					<text id="mu_cor_name-tmc-label">
+						<value>TMC</value>
+					</text>
+					<text id="mu_cor_name-mbmc-label">
+						<value>MBMC</value>
+					</text>
+					<text id="mu_cor_name-kdmc-label">
+						<value>KDMC</value>
+					</text>
+					<text id="interviewers_name-label">
+						<value>Interviewer&#8217;s Name</value>
+					</text>
+					<text id="interview_date-label">
+						<value> Date of Interview</value>
+					</text>
+					<text id="respondent_name-label">
+						<value>Respondent Name</value>
+					</text>
+					<text id="res_add-label">
+						<value>Respondent Address</value>
+					</text>
+					<text id="res_telephone_no-label">
+						<value>Respondent&#8217;s Telephone Number </value>
+					</text>
+					<text id="res_telephone_no-constraintMsg">
+						<value>Must be enter 10 degit number</value>
+					</text>
+					<text id="res_pregent_last_12_mon-label">
+						<value>Respondent pregnant in the last 12 months?</value>
+					</text>
+					<text id="res_pregent_last_12_mon-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="res_pregent_last_12_mon-no-label">
+						<value>No</value>
+					</text>
+					<text id="preg_outcome-label">
+						<value>What was the outcome of your last pregnancy? </value>
+					</text>
+					<text id="preg_outcome-live-label">
+						<value>Live Birth</value>
+					</text>
+					<text id="preg_outcome-still-label">
+						<value>Still Birth</value>
+					</text>
+					<text id="preg_outcome-abortion-label">
+						<value>Abortion</value>
+					</text>
+					<text id="preg_outcome-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_exp-label">
+						<value>Other (explain)</value>
+					</text>
+					<text id="spend_month_locality-label">
+						<value>How many month of your last pregnancy did you spend in this locality?                             </value>
+					</text>
+					<text id="child_status-label">
+						<value>Child&#8217;s status</value>
+					</text>
+					<text id="child_status-living-label">
+						<value>Living</value>
+					</text>
+					<text id="child_status-dead-label">
+						<value>Dead</value>
+					</text>
+					<text id="mother_status-label">
+						<value>Mother's status</value>
+					</text>
+					<text id="mother_status-living-label">
+						<value>Living</value>
+					</text>
+					<text id="mother_status-dead-label">
+						<value>Dead</value>
+					</text>
+					<text id="consent-label">
+						<value>Consent</value>
+					</text>
+					<text id="consent-given-label">
+						<value>Given</value>
+					</text>
+					<text id="consent-not_giiven-label">
+						<value>Not Given</value>
+					</text>
+					<text id="interview_language-label">
+						<value>Interview language</value>
+					</text>
+					<text id="interview_language-hindi-label">
+						<value>Hindi</value>
+					</text>
+					<text id="interview_language-marathi-label">
+						<value>Marathi</value>
+					</text>
+					<text id="interview_language-gujarati-label">
+						<value>Gujarati </value>
+					</text>
+					<text id="interview_language-english-label">
+						<value>English</value>
+					</text>
+					<text id="interview_language-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_text-label">
+						<value>Other (explain)</value>
+					</text>
+					<text id="preg_realated_paper_shown-label">
+						<value>Which pregnancy- and childbirth-related papers were shown to you?</value>
+					</text>
+					<text id="preg_realated_paper_shown-protestion_card-label">
+						<value>Mother and Child Protection Card </value>
+					</text>
+					<text id="preg_realated_paper_shown-paper_written_dr-label">
+						<value>Papers written by doctor</value>
+					</text>
+					<text id="preg_realated_paper_shown-medical_test_result-label">
+						<value>Medical test results</value>
+					</text>
+					<text id="preg_realated_paper_shown-none-label">
+						<value>None</value>
+					</text>
+					<text id="preg_realated_paper_shown-other_tx-label">
+						<value>Other</value>
+					</text>
+					<text id="other_paper-label">
+						<value>Other paper</value>
+					</text>
+					<text id="section_b-label">
+						<value>Section B: Background</value>
+					</text>
+					<text id="know_age-label">
+						<value>Do you know your age at last birthday?</value>
+					</text>
+					<text id="know_age-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="know_age-no-label">
+						<value>No</value>
+					</text>
+					<text id="what_was_age-label">
+						<value>What was your age on your last birthday?       </value>
+					</text>
+					<text id="religion-label">
+						<value>What is your religion?</value>
+					</text>
+					<text id="religion-Hindu-label">
+						<value>Hindu</value>
+					</text>
+					<text id="religion-christian-label">
+						<value>Christian</value>
+					</text>
+					<text id="religion-buddhist-label">
+						<value>Buddhist</value>
+					</text>
+					<text id="religion-parsi-label">
+						<value>Parsi</value>
+					</text>
+					<text id="religion-muslim-label">
+						<value>Muslim</value>
+					</text>
+					<text id="religion-sikh-label">
+						<value>Sikh</value>
+					</text>
+					<text id="religion-jain-label">
+						<value>Jain</value>
+					</text>
+					<text id="religion-no_religion-label">
+						<value>No religion</value>
+					</text>
+					<text id="religion-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_religion-label">
+						<value>Other (religion)</value>
+					</text>
+					<text id="ration_card-label">
+						<value>Which ration card does your family have?</value>
+					</text>
+					<text id="ration_card-white-label">
+						<value>White</value>
+					</text>
+					<text id="ration_card-yellow-label">
+						<value>Yellow</value>
+					</text>
+					<text id="ration_card-orange-label">
+						<value>Orange</value>
+					</text>
+					<text id="ration_card-none-label">
+						<value>None</value>
+					</text>
+					<text id="your_education_level-label">
+						<value>Your education levels</value>
+					</text>
+					<text id="your_education_level-informal_education-label">
+						<value>Informal education </value>
+					</text>
+					<text id="your_education_level-class_up_to-label">
+						<value>Class up to</value>
+					</text>
+					<text id="your_education_level-college-label">
+						<value>College</value>
+					</text>
+					<text id="your_education_level-illiterate-label">
+						<value>Illiterate</value>
+					</text>
+					<text id="your_education_level-dot_know-label">
+						<value>Don&#8217;t know                     </value>
+					</text>
+					<text id="your_education_level-other-label">
+						<value>Other</value>
+					</text>
+					<text id="explain-label">
+						<value>Explain education</value>
+					</text>
+					<text id="husband_education_levels-label">
+						<value>Husband education levels</value>
+					</text>
+					<text id="husband_education_levels-informal_education-label">
+						<value>Informal education </value>
+					</text>
+					<text id="husband_education_levels-class_up_to-label">
+						<value>Class up to</value>
+					</text>
+					<text id="husband_education_levels-college-label">
+						<value>College</value>
+					</text>
+					<text id="husband_education_levels-illiterate-label">
+						<value>Illiterate</value>
+					</text>
+					<text id="husband_education_levels-dont_know-label">
+						<value>Don't know</value>
+					</text>
+					<text id="husband_education_levels-other-label">
+						<value>Other</value>
+					</text>
+					<text id="exp_items_and_other-label">
+						<value>Explain education</value>
+					</text>
+					<text id="house_type-label">
+						<value>House type (Interviewer to observe)</value>
+					</text>
+					<text id="house_type-pacca-label">
+						<value>Pacca</value>
+					</text>
+					<text id="house_type-semi_pacca-label">
+						<value>Semi-pacca</value>
+					</text>
+					<text id="house_type-kaccha-label">
+						<value>Kaccha</value>
+					</text>
+					<text id="house_type-other-label">
+						<value>Other</value>
+					</text>
+					<text id="Other_deat-label">
+						<value>explain house type</value>
+					</text>
+					<text id="section_c-label">
+						<value>Section C: Antenatal Care </value>
+					</text>
+					<text id="reg_name_regular_anc_checkup-label">
+						<value>Did you register your name for regular ANC check-ups? </value>
+					</text>
+					<text id="reg_name_regular_anc_checkup-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="reg_name_regular_anc_checkup-no-label">
+						<value>No</value>
+					</text>
+					<text id="reg_name_regular_anc_checkup-dont_know-label">
+						<value>Don&#8217;t remember </value>
+					</text>
+					<text id="do_u_know_which_mon_reg_name-label">
+						<value>Do u know which month did you register your name for regular ANC check-ups? </value>
+					</text>
+					<text id="which_month_register_name-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="which_month_register_name-no-label">
+						<value>No</value>
+					</text>
+					<text id="which_month-label">
+						<value>Which month registered name for regular anc check-ups? </value>
+					</text>
+					<text id="reg_ur_name_regular_anc_checkup-label">
+						<value>Where Register your hospital name for regular ANC checkup?</value>
+					</text>
+					<text id="which_facility_type-label">
+						<value>Which facility type</value>
+					</text>
+					<text id="loc_name-label">
+						<value>near by hospital Locality Name </value>
+					</text>
+					<text id="mu_cor_name_write-label">
+						<value>Municipal corporation name</value>
+					</text>
+					<text id="not_reg_reason-label">
+						<value>What was the reason for not registering?</value>
+					</text>
+					<text id="not_reg_reason-fear_of_hospital-label">
+						<value>Fear of hospital</value>
+					</text>
+					<text id="not_reg_reason-did_not_see_need-label">
+						<value>Did not see need</value>
+					</text>
+					<text id="not_reg_reason-concerned_about_cost-label">
+						<value>Concerned about cost</value>
+					</text>
+					<text id="not_reg_reason-family_did_no_allow-label">
+						<value>Family did no allow</value>
+					</text>
+					<text id="not_reg_reason-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_expl-label">
+						<value>Other reason (explain)</value>
+					</text>
+					<text id="reg_name_delivery-label">
+						<value>Did you register your name for delivery?</value>
+					</text>
+					<text id="reg_name_delivery-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="reg_name_delivery-no-label">
+						<value>No</value>
+					</text>
+					<text id="reg_name_delivery-dont_re-label">
+						<value>Don't remember</value>
+					</text>
+					<text id="month_deliv_reg-label">
+						<value>Do you know  which month or pregnancy did you register your name for delivery? </value>
+					</text>
+					<text id="which_mon_reg_name_delivery-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="which_mon_reg_name_delivery-no-label">
+						<value>No</value>
+					</text>
+					<text id="which_mon_reg_name_delivery-label">
+						<value>Which month reg name for delivery?</value>
+					</text>
+					<text id="reg_hos_name_for_delivery-label">
+						<value>Write the hospital name for register delivery?</value>
+					</text>
+					<text id="write_facility_type-label">
+						<value>Write hospital facility type</value>
+					</text>
+					<text id="hos_loc_name-label">
+						<value>Hospital Locality name</value>
+					</text>
+					<text id="hos_mu_cor_name-label">
+						<value>Municipal corporation name</value>
+					</text>
+					<text id="what_is_the_reason_did_not_reg_name_for_del-label">
+						<value>If you did not register your name for delivery, what was the reason?</value>
+					</text>
+					<text id="what_is_the_reason_did_not_reg_name_for_del-fear-label">
+						<value>Fear of hospital</value>
+					</text>
+					<text id="what_is_the_reason_did_not_reg_name_for_del-not_need-label">
+						<value>Did not see need</value>
+					</text>
+					<text id="what_is_the_reason_did_not_reg_name_for_del-cost-label">
+						<value>Concerned about cost</value>
+					</text>
+					<text id="what_is_the_reason_did_not_reg_name_for_del-fam_did_not_allow-label">
+						<value>Family did no allow</value>
+					</text>
+					<text id="what_is_the_reason_did_not_reg_name_for_del-other-label">
+						<value>Other </value>
+					</text>
+					<text id="other_tx-label">
+						<value>Other reason (explain)</value>
+					</text>
+					<text id="during_preg_health_prob-label">
+						<value>Did you experience any health problems during your pregnancy? </value>
+					</text>
+					<text id="during_preg_health_prob-exce_vomiting-label">
+						<value>Excessive vomiting</value>
+					</text>
+					<text id="during_preg_health_prob-veg_bleeding-label">
+						<value>Vaginal bleeding </value>
+					</text>
+					<text id="during_preg_health_prob-abd_pain-label">
+						<value>Abdominal Pain</value>
+					</text>
+					<text id="during_preg_health_prob-white_discharge-label">
+						<value>White discharge</value>
+					</text>
+					<text id="during_preg_health_prob-anemia-label">
+						<value>Anemia</value>
+					</text>
+					<text id="during_preg_health_prob-fatigue-label">
+						<value>Fatigue</value>
+					</text>
+					<text id="during_preg_health_prob-swelling-label">
+						<value>Swelling of body parts or face</value>
+					</text>
+					<text id="during_preg_health_prob-convulsion-label">
+						<value>Convulsion</value>
+					</text>
+					<text id="during_preg_health_prob-vision_prob-label">
+						<value>Vision problem</value>
+					</text>
+					<text id="during_preg_health_prob-no_health_prob-label">
+						<value>No health problem </value>
+					</text>
+					<text id="during_preg_health_prob-othe-label">
+						<value>Other</value>
+					</text>
+					<text id="othr_problems-label">
+						<value>Other problems (explain)</value>
+					</text>
+					<text id="Do_know_how_many_times_visit_treat-label">
+						<value>Do u know how many times visit for treatment?</value>
+					</text>
+					<text id="how_many_times_visit_treatment-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="how_many_times_visit_treatment-no-label">
+						<value>No</value>
+					</text>
+					<text id="yes_how_many_times-label">
+						<value>If yes how many times?</value>
+					</text>
+					<text id="do_u_know_hospital_name-label">
+						<value>Do u know hospital name?</value>
+					</text>
+					<text id="given_terat_first_hos_name-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="given_terat_first_hos_name-no-label">
+						<value>No</value>
+					</text>
+					<text id="first_hos_name-label">
+						<value>First hospital name</value>
+					</text>
+					<text id="which_fac_type-label">
+						<value>Write First hos facility type</value>
+					</text>
+					<text id="fac_loc_name-label">
+						<value>Write frist hospital locality name</value>
+					</text>
+					<text id="loclity_cor_name-label">
+						<value>Write frist hospital locality corporation name</value>
+					</text>
+					<text id="give_treat_second_hos_name-label">
+						<value>Given treatment second hospital name</value>
+					</text>
+					<text id="second_hos_faci_type-label">
+						<value>Second hos write facility type</value>
+					</text>
+					<text id="second_hos_loc_name-label">
+						<value>Second hospital locality name</value>
+					</text>
+					<text id="question166-label">
+						<value>Second hospital locality corporation name</value>
+					</text>
+					<text id="Write_others_information-label">
+						<value>Write other information</value>
+					</text>
+					<text id="write_treat_your_health_problem-label">
+						<value>If you did not go to any hospital or doctor, please tell us what you did to treat your health problems</value>
+					</text>
+					<text id="question169-label">
+						<value>What was the reason you did not go to any hospital after having health problems</value>
+					</text>
+					<text id="question169-fear_hos-label">
+						<value>Fear of hospital</value>
+					</text>
+					<text id="question169-did_not_need-label">
+						<value>Did not feel the need</value>
+					</text>
+					<text id="question169-cost-label">
+						<value>Concerned about cost</value>
+					</text>
+					<text id="question169-family_not_allow-label">
+						<value>Family did not allow</value>
+					</text>
+					<text id="question169-other_tex-label">
+						<value>Other </value>
+					</text>
+					<text id="other-label">
+						<value>Other reason (explain)</value>
+					</text>
+					<text id="how_many_times_visit_regu_anc_checkup-label">
+						<value>how many times in total did you visit health facilities for regular ANC check-ups?</value>
+					</text>
+					<text id="first_trimester-label">
+						<value>First trimester</value>
+					</text>
+					<text id="second_trimester-label">
+						<value>Second trimester</value>
+					</text>
+					<text id="third_trimester-label">
+						<value>Third trimester</value>
+					</text>
+					<text id="which_type_hos_visit_anc_checkup-label">
+						<value>Which types of hospitals did you visit for regular ANC check-ups? </value>
+					</text>
+					<text id="which_type_hos_visit_anc_checkup-only_gov_hos-label">
+						<value>Only government hospital(s)</value>
+					</text>
+					<text id="which_type_hos_visit_anc_checkup-only_priv_hos-label">
+						<value>Only private hospital(s) </value>
+					</text>
+					<text id="which_type_hos_visit_anc_checkup-both_gov_and_pri_hos-label">
+						<value>Both government and private hospitals</value>
+					</text>
+					<text id="which_type_hos_visit_anc_checkup-dr_know_or_don_rem-label">
+						<value>Don&#8217;t know or Don&#8217;t remember</value>
+					</text>
+					<text id="how_many_times_visited_each_hos-label">
+						<value>How many times visited each hos</value>
+					</text>
+					<text id="hospital_name_1-label">
+						<value>1. Hospital name</value>
+					</text>
+					<text id="first_hos_facility_type-label">
+						<value>Write first hospital facility type</value>
+					</text>
+					<text id="write_first_locality_type-label">
+						<value>Write first hospital locality name</value>
+					</text>
+					<text id="write_first_hos_mu_cor_name-label">
+						<value>Write first hospital Municipal corporation name</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-label">
+						<value>Which services did you receive at the hospital</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-weight-label">
+						<value>Weight measured</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-bp-label">
+						<value>B.P taken</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-tt_inj-label">
+						<value>TT Inj</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-ifa_tab-label">
+						<value>IFA tablets</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-abd_check-label">
+						<value>Abdominal check</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-urine_test-label">
+						<value>Urine test</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-blood_test-label">
+						<value>Blood test</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-mother_child_protection_card-label">
+						<value>Mother and  Child Protection Card given</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-none_of_the_above-label">
+						<value>None of the above</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-drr_remember-label">
+						<value>Don't remember</value>
+					</text>
+					<text id="Which_services_did_u_receive_at_hos-height_measured-label">
+						<value>Height measured</value>
+					</text>
+					<text id="if_visit_second_hos_plz_write_hos_name-label">
+						<value>2. hospital name (explain other details)</value>
+					</text>
+					<text id="second_hos_services-label">
+						<value>second hospital services</value>
+					</text>
+					<text id="second_hos_services-weight-label">
+						<value>Weight measured</value>
+					</text>
+					<text id="second_hos_services-bp-label">
+						<value>B.P taken</value>
+					</text>
+					<text id="second_hos_services-tt_inj-label">
+						<value>TT Inj</value>
+					</text>
+					<text id="second_hos_services-ifa_tab-label">
+						<value>IFA tablets</value>
+					</text>
+					<text id="second_hos_services-abd_check-label">
+						<value>Abdominal check</value>
+					</text>
+					<text id="second_hos_services-urine_test-label">
+						<value>Urine test</value>
+					</text>
+					<text id="second_hos_services-blood_test-label">
+						<value>Blood test</value>
+					</text>
+					<text id="second_hos_services-mother_child_protection_card-label">
+						<value>Mother and  Child Protection Card given</value>
+					</text>
+					<text id="second_hos_services-none_of_the_above-label">
+						<value>None of the above</value>
+					</text>
+					<text id="second_hos_services-drr_remember-label">
+						<value>Don't remember</value>
+					</text>
+					<text id="second_hos_services-height_measured-label">
+						<value>Height measured</value>
+					</text>
+					<text id="If_visit_third_hos_deatials-label">
+						<value>3. hospital name (explain other details)</value>
+					</text>
+					<text id="third_hos_services-label">
+						<value>Third hospital services</value>
+					</text>
+					<text id="third_hos_services-weight-label">
+						<value>Weight measured</value>
+					</text>
+					<text id="third_hos_services-bp-label">
+						<value>B.P taken</value>
+					</text>
+					<text id="third_hos_services-tt_inj-label">
+						<value>TT Inj</value>
+					</text>
+					<text id="third_hos_services-ifa_tab-label">
+						<value>IFA tablets</value>
+					</text>
+					<text id="third_hos_services-abd_check-label">
+						<value>Abdominal check</value>
+					</text>
+					<text id="third_hos_services-urine_test-label">
+						<value>Urine test</value>
+					</text>
+					<text id="third_hos_services-blood_test-label">
+						<value>Blood test</value>
+					</text>
+					<text id="third_hos_services-mother_child_protection_card-label">
+						<value>Mother and  Child Protection Card given</value>
+					</text>
+					<text id="third_hos_services-none_of_the_above-label">
+						<value>None of the above</value>
+					</text>
+					<text id="third_hos_services-drr_remember-label">
+						<value>Don't remember</value>
+					</text>
+					<text id="third_hos_services-height_measured-label">
+						<value>Height measured</value>
+					</text>
+					<text id="did_not_reg_anc_checkup_what_reason-label2">
+						<value>If you did not go for any regular ANC check-ups, what was the reason?</value>
+					</text>
+					<text id="did_not_reg_anc_checkup_what_reason-fear-label">
+						<value>Fear of hospital</value>
+					</text>
+					<text id="did_not_reg_anc_checkup_what_reason-no_need-label">
+						<value>Did not see the need</value>
+					</text>
+					<text id="did_not_reg_anc_checkup_what_reason-concerned_cost-label">
+						<value>Concerned about cost</value>
+					</text>
+					<text id="did_not_reg_anc_checkup_what_reason-family_not_allow-label">
+						<value>Family did not allow</value>
+					</text>
+					<text id="did_not_reg_anc_checkup_what_reason-otr-label">
+						<value>Other</value>
+					</text>
+					<text id="other_res-label">
+						<value>Other reason</value>
+					</text>
+					<text id="during_last_preg_visit_health_worker-label">
+						<value>During your last pregnancy, did a health worker visit you at your home?</value>
+					</text>
+					<text id="during_last_preg_visit_health_worker-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="during_last_preg_visit_health_worker-no-label">
+						<value>No</value>
+					</text>
+					<text id="what_tell_u-label">
+						<value>What did she/he tell you?</value>
+					</text>
+					<text id="who_visited_u-label">
+						<value>Who visited you?</value>
+					</text>
+					<text id="who_visited_u-lw-label">
+						<value>Link Worker</value>
+					</text>
+					<text id="who_visited_u-anganwadi-label">
+						<value>Anganwadi Worker</value>
+					</text>
+					<text id="who_visited_u-ngo-label">
+						<value>NGO</value>
+					</text>
+					<text id="who_visited_u-anm-label">
+						<value>ANM</value>
+					</text>
+					<text id="who_visited_u-mahila_samiti-label">
+						<value>Mahila Samiti member</value>
+					</text>
+					<text id="who_visited_u-drknow_drrem-label">
+						<value>Don&#8217;t know or don&#8217;t remember</value>
+					</text>
+					<text id="who_visited_u-other-label">
+						<value>Other</value>
+					</text>
+					<text id="Other_visited_explain-label">
+						<value>Other Who visited (explain)</value>
+					</text>
+					<text id="ngo_name_explain-label">
+						<value>NGO name (explain)</value>
+					</text>
+					<text id="section_d-label">
+						<value>Section D: Delivery</value>
+					</text>
+					<text id="delivery_date-label">
+						<value>Date of delivery </value>
+					</text>
+					<text id="labour_pain_started_whr_did_u_go_first-label">
+						<value>After you labour pain started, where did you go first? </value>
+					</text>
+					<text id="labour_pain_started_whr_did_u_go_first-reg_name_for_deliver-label">
+						<value>Hospital at which I had registered my name for delivery</value>
+					</text>
+					<text id="labour_pain_started_whr_did_u_go_first-did_not_reg_name_for_delivery-label">
+						<value>Hospital at which I had not registered my name for delivery </value>
+					</text>
+					<text id="labour_pain_started_whr_did_u_go_first-stay_at_home-label">
+						<value>Stayed at home </value>
+					</text>
+					<text id="labour_pain_started_whr_did_u_go_first-other_place-label">
+						<value>Other</value>
+					</text>
+					<text id="other_place_explain-label">
+						<value>Other place (explain)</value>
+					</text>
+					<text id="did_u_go_any_hos-label">
+						<value>did you go any hospital?</value>
+					</text>
+					<text id="did_u_go_any_hos-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="did_u_go_any_hos-no-label">
+						<value>No</value>
+					</text>
+					<text id="which_hos-label">
+						<value>Which hospital (write name) </value>
+					</text>
+					<text id="write_facil_type-label">
+						<value>Write hospital facility type</value>
+					</text>
+					<text id="facility_locality_name-label">
+						<value>Write facility locality name</value>
+					</text>
+					<text id="loc_mu_cor_name-label">
+						<value>Write locality municipal corporation name</value>
+					</text>
+					<text id="other_detail_exp-label">
+						<value>Other details </value>
+					</text>
+					<text id="why_u_decided_go_to_another_hos-label">
+						<value>Why did u decided another hospital? </value>
+					</text>
+					<text id="why_u_decided_go_to_another_hos-hos_was_closed-label">
+						<value>Hospital where I had registered was closed</value>
+					</text>
+					<text id="why_u_decided_go_to_another_hos-closer_by-label">
+						<value>Found a hospital closer by.</value>
+					</text>
+					<text id="why_u_decided_go_to_another_hos-not_satisfied_by_the_services-label">
+						<value>Was not satisfied by the service of the hospital where I had registered</value>
+					</text>
+					<text id="why_u_decided_go_to_another_hos-move_residence_during_preg-label">
+						<value>Moved residence during my pregnancy</value>
+					</text>
+					<text id="why_u_decided_go_to_another_hos-other-label">
+						<value>Other</value>
+					</text>
+					<text id="Other_rea-label">
+						<value>Other reason (explain)</value>
+					</text>
+					<text id="after_labou_pain_did_u_go_to_anoher_-label">
+						<value>At the hospital where u went first after labour pain started did anyone request you go to another hos?</value>
+					</text>
+					<text id="after_labou_pain_did_u_go_to_anoher_-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="after_labou_pain_did_u_go_to_anoher_-no-label">
+						<value>No: The baby was born at this hospital</value>
+					</text>
+					<text id="after_labou_pain_did_u_go_to_anoher_-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_det_exp-label">
+						<value>Other details </value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-label">
+						<value>If you did not go to any hospital or doctor when labour pain started, what was the reason?</value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-hos_fear-label">
+						<value>Fear of hospital</value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-cost_concern-label">
+						<value>Concerns about cost</value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-did_not_family_allow-label">
+						<value>Family did not allow</value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-not_transport-label">
+						<value>Could not find transport</value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-did_not_have_good_experience-label">
+						<value>Did not have good experience at the hospital where I had registered. </value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-doct_was_not_there-label">
+						<value>The hospital where I had registered was closed / doctor was not there</value>
+					</text>
+					<text id="what_was_reason_did_goto_any_hos-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_exp_reason-label">
+						<value>Other reason (explain)</value>
+					</text>
+					<text id="whr_was_baby_born-label">
+						<value>Where was your baby born?</value>
+					</text>
+					<text id="whr_was_baby_born-at_home-label">
+						<value>At home</value>
+					</text>
+					<text id="whr_was_baby_born-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_place-label">
+						<value>Other place (explain)</value>
+					</text>
+					<text id="deli_baby_home_were_u_assisted-label">
+						<value>If you delivered your baby at home, were you assisted by any health worker?</value>
+					</text>
+					<text id="deli_baby_home_were_u_assisted-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="deli_baby_home_were_u_assisted-no-label">
+						<value>No</value>
+					</text>
+					<text id="y_by_whom-label">
+						<value>Yes, By Whom?</value>
+					</text>
+					<text id="section_e-label">
+						<value>Section E: Emergency Obstetric Referrals</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-label">
+						<value>Why were you sent to another hospital? </value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-no_doctor-label">
+						<value>No doctor</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-no_req_equpments-label">
+						<value>No required equipment </value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-for_opertion-label">
+						<value>For operation</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-blood_tran-label">
+						<value>For blood transfusion</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-icu_mother-label">
+						<value>Needed ICU for mother</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-need_icu_baby-label">
+						<value>Needed ICU for baby</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-managem_comple-label">
+						<value>Management of complications</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-dont_rem_don_know-label">
+						<value>Don&#8217;t know or don&#8217;t remember</value>
+					</text>
+					<text id="why_wr_u_sent_to_another_hos-other-label">
+						<value>Other</value>
+					</text>
+					<text id="why_sent_yo_ano_hos_rea-label">
+						<value>Other reason explain why sent to another hos</value>
+					</text>
+					<text id="equp_details-label">
+						<value>Equipment details</value>
+					</text>
+					<text id="which_hos_were_u_sent-label">
+						<value>Which hospital were you sent to? </value>
+					</text>
+					<text id="which_hos_were_u_sent-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="which_hos_were_u_sent-dr_rem-label">
+						<value>Don't remember</value>
+					</text>
+					<text id="which_is_hos_u_sent_write_name-label">
+						<value>Which is hospital you sent? (Write name)</value>
+					</text>
+					<text id="write_facility_and_types-label">
+						<value>Write hos facility type</value>
+					</text>
+					<text id="fac_loc_name_write-label">
+						<value>Write facility locality name</value>
+					</text>
+					<text id="wri_loc_mu_car_name-label">
+						<value>Write locality Municipal corporation name</value>
+					</text>
+					<text id="were_u_go-label">
+						<value>Did you go to the hospital you were told to go to?</value>
+					</text>
+					<text id="were_u_go-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="were_u_go-no-label">
+						<value>No</value>
+					</text>
+					<text id="whr_did_u_go-label">
+						<value>If u did not go where u were told, where did you go? Write hospital name</value>
+					</text>
+					<text id="write_hos_faci_type-label">
+						<value>Write hospital facility type</value>
+					</text>
+					<text id="location_locality-label">
+						<value>Write facility locality</value>
+					</text>
+					<text id="lacility_cor_name-label">
+						<value>Write locality municipal corporation name</value>
+					</text>
+					<text id="reason_for_going_different_hos-label">
+						<value>What was the reason for going to a different hospital?  </value>
+					</text>
+					<text id="reason_for_going_different_hos-closer_distance-label">
+						<value>Closer in distance</value>
+					</text>
+					<text id="reason_for_going_different_hos-better_reputation-label">
+						<value>Better reputation</value>
+					</text>
+					<text id="reason_for_going_different_hos-other-label">
+						<value>Other</value>
+					</text>
+					<text id="exp_reason_for_going_different_hos-label">
+						<value>Eplain reason the going different hospital</value>
+					</text>
+					<text id="first_to_second_hos_travel_time-label">
+						<value>how long did take travel time from first hospital to second hospital? </value>
+					</text>
+					<text id="exp_time-label">
+						<value>Explain travel time</value>
+					</text>
+					<text id="exp_time-below_30min-label">
+						<value>below 30 minutes </value>
+					</text>
+					<text id="exp_time-30min_to_1hr-label">
+						<value>30 minutes to 1 hour</value>
+					</text>
+					<text id="exp_time-1hr_to_2hr-label">
+						<value>1 hour to 2 hours</value>
+					</text>
+					<text id="exp_time-2hr-label">
+						<value>2 hours</value>
+					</text>
+					<text id="exp_time-dontb_rem-label">
+						<value>Don't remember</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-label">
+						<value>How did you travel between these two hospitals?</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-ambulance-label">
+						<value>Ambulance</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-taxi_or_richshw-label">
+						<value>Taxi or rickshaw</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-taxi-label">
+						<value>Taxi </value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-train-label">
+						<value>Train</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-bus-label">
+						<value>Bus</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-foot-label">
+						<value>Foot</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-relative_car-label">
+						<value>Family, friend or relative&#8217;s car</value>
+					</text>
+					<text id="how_did_u_travel_these_hospital-other-label">
+						<value>Other </value>
+					</text>
+					<text id="how_long_did_wait_receiveing_care-label">
+						<value>At the second hospital u went to how long did you have to wait before receiving care? </value>
+					</text>
+					<text id="explain_time-label">
+						<value>Explain time</value>
+					</text>
+					<text id="go_to_another_hos_second_time-label">
+						<value>At the second hospital u went to did anyone tell you to go to another hospital for the second time? </value>
+					</text>
+					<text id="go_to_another_hos_second_time-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="go_to_another_hos_second_time-no-label">
+						<value>No, I received care at the second hospital </value>
+					</text>
+					<text id="go_to_another_hos_second_time-other-label">
+						<value>Other</value>
+					</text>
+					<text id="which_hos_u_went-label">
+						<value>Write hospital name </value>
+					</text>
+					<text id="write_hospital_fcility_type-label">
+						<value>Write hospital facility type</value>
+					</text>
+					<text id="wri_fac_loc_type-label">
+						<value>Write hospital locality type</value>
+					</text>
+					<text id="wrt_loc_mu_cor_name-label">
+						<value>Write Municipal corporation name</value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-label">
+						<value>What was the reason why you were sent to a different hospital the second time? </value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-no_dro-label">
+						<value>No doctor              </value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-no_equ-label">
+						<value>No required equipment </value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-for_ope-label">
+						<value>For operation</value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-bod_tran-label">
+						<value>For blood transfusion</value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-mothr_ned_icu-label">
+						<value>Needed ICU for mother</value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-baby_nd_icu-label">
+						<value>Needed ICU for baby</value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-mang_compl-label">
+						<value>Management of complications</value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-do_no_do_nt_rem-label">
+						<value>Don&#8217;t know / don&#8217;t remember     </value>
+					</text>
+					<text id="what_was_reason_u_sent_different_hos-othr-label">
+						<value>Other</value>
+					</text>
+					<text id="other_res_exp-label">
+						<value>Explain oher reason</value>
+					</text>
+					<text id="exp_equp_list-label">
+						<value>Explain no req equipment</value>
+					</text>
+					<text id="do_u_go_to_were_told_the_second_time-label">
+						<value>Did you go to the hospital you were told to go for the second time?</value>
+					</text>
+					<text id="do_u_go_to_were_told_the_second_time-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="do_u_go_to_were_told_the_second_time-no-label">
+						<value>No</value>
+					</text>
+					<text id="whi_hos_did_u_go_to-label">
+						<value>Which hospital did you go to? </value>
+					</text>
+					<text id="facility_type-label">
+						<value>Write hos facility type</value>
+					</text>
+					<text id="lcality_name-label">
+						<value>Write facility locality name</value>
+					</text>
+					<text id="mu_coe_name-label">
+						<value>Write locality municipal corporation name</value>
+					</text>
+					<text id="why_did_u_go_reason-label">
+						<value>Why did you go to third hospital? </value>
+					</text>
+					<text id="why_did_u_go_reason-closer_dist-label">
+						<value>Closer in distance</value>
+					</text>
+					<text id="why_did_u_go_reason-reptu-label">
+						<value> Better reputation</value>
+					</text>
+					<text id="why_did_u_go_reason-othr-label">
+						<value>Other</value>
+					</text>
+					<text id="other_exp_reass-label">
+						<value>Explain other reason</value>
+					</text>
+					<text id="write_time_1st_ref_hos_to_2nd_ref_hos-label">
+						<value>How long did it take you to travel from the first referred hospital to second hospital?</value>
+					</text>
+					<text id="third_hos_how_long_time-label">
+						<value>At the third hospital  how long did you have to wait before receiving care?                                             </value>
+					</text>
+					<text id="section_f-label2">
+						<value>Section F: Postnatal and Newborn Care</value>
+					</text>
+					<text id="which_vaccination_baby_received-label">
+						<value>Which vaccinations has your baby received?</value>
+					</text>
+					<text id="which_vaccination_baby_received-bcg-label">
+						<value>BCG</value>
+					</text>
+					<text id="which_vaccination_baby_received-measles-label">
+						<value>Measles</value>
+					</text>
+					<text id="which_vaccination_baby_received-opv_0-label">
+						<value>OPV 0</value>
+					</text>
+					<text id="which_vaccination_baby_received-opv_1-label">
+						<value>OPV 1</value>
+					</text>
+					<text id="which_vaccination_baby_received-opv_2-label">
+						<value>OPV 2 </value>
+					</text>
+					<text id="which_vaccination_baby_received-opv_3-label">
+						<value>OPV 3 </value>
+					</text>
+					<text id="which_vaccination_baby_received-hpt_a_birth-label">
+						<value>Hep B at birth </value>
+					</text>
+					<text id="which_vaccination_baby_received-hep_1-label">
+						<value>Hep B 1 </value>
+					</text>
+					<text id="which_vaccination_baby_received-hep_2-label2">
+						<value>Hep B 2 </value>
+					</text>
+					<text id="which_vaccination_baby_received-hep_3-label">
+						<value>Hep B 3</value>
+					</text>
+					<text id="which_vaccination_baby_received-dpt_1-label">
+						<value>DPT 1</value>
+					</text>
+					<text id="which_vaccination_baby_received-dpt_2-label">
+						<value>DPT 2</value>
+					</text>
+					<text id="which_vaccination_baby_received-dpt_3-label">
+						<value>DPT 3</value>
+					</text>
+					<text id="which_vaccination_baby_received-none-label">
+						<value>None</value>
+					</text>
+					<text id="date_bcg-label">
+						<value>Date of BCG vaccine</value>
+					</text>
+					<text id="date_measles-label">
+						<value>Date of measles vaccine</value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/interivew_start">
+			<label ref="jr:itext('interview_start_time-label')"/>
+		</input>
+		<input ref="/data/co_name">
+			<label ref="jr:itext('Name_co-label')"/>
+		</input>
+		<input ref="/data/hp_name">
+			<label ref="jr:itext('hp_name-label')"/>
+		</input>
+		<input ref="/data/ciuster_name">
+			<label ref="jr:itext('ciuster_name-label')"/>
+		</input>
+		<input ref="/data/resp_number">
+			<label ref="jr:itext('resp_number-label')"/>
+		</input>
+		<select1 ref="/data/question_complete">
+			<label ref="jr:itext('question_complete-label')"/>
+			<item>
+				<label ref="jr:itext('question_complete-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question_complete-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/how_many_times">
+			<label ref="jr:itext('how_many_times-label')"/>
+		</input>
+		<input ref="/data/reason_incompletess">
+			<label ref="jr:itext('reason_incompletess-label')"/>
+		</input>
+		<trigger ref="/data/section_a">
+			<label ref="jr:itext('section_a-label')"/>
+		</trigger>
+		<select1 ref="/data/mu_cor_name">
+			<label ref="jr:itext('mu_cor_name-label')"/>
+			<item>
+				<label ref="jr:itext('mu_cor_name-tmc-label')"/>
+				<value>tmc</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mu_cor_name-mbmc-label')"/>
+				<value>mbmc</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mu_cor_name-kdmc-label')"/>
+				<value>kdmc</value>
+			</item>
+		</select1>
+		<input ref="/data/interviewers_name">
+			<label ref="jr:itext('interviewers_name-label')"/>
+		</input>
+		<input ref="/data/interview_date">
+			<label ref="jr:itext('interview_date-label')"/>
+		</input>
+		<input ref="/data/respondent_name">
+			<label ref="jr:itext('respondent_name-label')"/>
+		</input>
+		<input ref="/data/res_add">
+			<label ref="jr:itext('res_add-label')"/>
+		</input>
+		<input ref="/data/res_telephone_no" appearance="numeric">
+			<label ref="jr:itext('res_telephone_no-label')"/>
+		</input>
+		<select1 ref="/data/res_pregent_last_12_mon">
+			<label ref="jr:itext('res_pregent_last_12_mon-label')"/>
+			<item>
+				<label ref="jr:itext('res_pregent_last_12_mon-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('res_pregent_last_12_mon-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/preg_outcome">
+			<label ref="jr:itext('preg_outcome-label')"/>
+			<item>
+				<label ref="jr:itext('preg_outcome-live-label')"/>
+				<value>live</value>
+			</item>
+			<item>
+				<label ref="jr:itext('preg_outcome-still-label')"/>
+				<value>still</value>
+			</item>
+			<item>
+				<label ref="jr:itext('preg_outcome-abortion-label')"/>
+				<value>abortion</value>
+			</item>
+			<item>
+				<label ref="jr:itext('preg_outcome-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/other_exp">
+			<label ref="jr:itext('other_exp-label')"/>
+		</input>
+		<input ref="/data/spend_month_locality">
+			<label ref="jr:itext('spend_month_locality-label')"/>
+		</input>
+		<select1 ref="/data/child_status">
+			<label ref="jr:itext('child_status-label')"/>
+			<item>
+				<label ref="jr:itext('child_status-living-label')"/>
+				<value>living</value>
+			</item>
+			<item>
+				<label ref="jr:itext('child_status-dead-label')"/>
+				<value>dead</value>
+			</item>
+		</select1>
+		<select1 ref="/data/mother_status">
+			<label ref="jr:itext('mother_status-label')"/>
+			<item>
+				<label ref="jr:itext('mother_status-living-label')"/>
+				<value>living</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mother_status-dead-label')"/>
+				<value>dead</value>
+			</item>
+		</select1>
+		<select1 ref="/data/consent">
+			<label ref="jr:itext('consent-label')"/>
+			<item>
+				<label ref="jr:itext('consent-given-label')"/>
+				<value>given</value>
+			</item>
+			<item>
+				<label ref="jr:itext('consent-not_giiven-label')"/>
+				<value>not_giiven</value>
+			</item>
+		</select1>
+		<select1 ref="/data/interview_language">
+			<label ref="jr:itext('interview_language-label')"/>
+			<item>
+				<label ref="jr:itext('interview_language-hindi-label')"/>
+				<value>hindi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('interview_language-marathi-label')"/>
+				<value>marathi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('interview_language-gujarati-label')"/>
+				<value>gujarati</value>
+			</item>
+			<item>
+				<label ref="jr:itext('interview_language-english-label')"/>
+				<value>english</value>
+			</item>
+			<item>
+				<label ref="jr:itext('interview_language-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/other_text">
+			<label ref="jr:itext('other_text-label')"/>
+		</input>
+		<select ref="/data/preg_realated_paper_shown">
+			<label ref="jr:itext('preg_realated_paper_shown-label')"/>
+			<item>
+				<label ref="jr:itext('preg_realated_paper_shown-protestion_card-label')"/>
+				<value>protestion_card</value>
+			</item>
+			<item>
+				<label ref="jr:itext('preg_realated_paper_shown-paper_written_dr-label')"/>
+				<value>paper_written_dr</value>
+			</item>
+			<item>
+				<label ref="jr:itext('preg_realated_paper_shown-medical_test_result-label')"/>
+				<value>medical_test_result</value>
+			</item>
+			<item>
+				<label ref="jr:itext('preg_realated_paper_shown-none-label')"/>
+				<value>none</value>
+			</item>
+			<item>
+				<label ref="jr:itext('preg_realated_paper_shown-other_tx-label')"/>
+				<value>other_tx</value>
+			</item>
+		</select>
+		<input ref="/data/other_paper">
+			<label ref="jr:itext('other_paper-label')"/>
+		</input>
+		<trigger ref="/data/section_b">
+			<label ref="jr:itext('section_b-label')"/>
+		</trigger>
+		<select1 ref="/data/know_age">
+			<label ref="jr:itext('know_age-label')"/>
+			<item>
+				<label ref="jr:itext('know_age-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('know_age-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/what_was_age">
+			<label ref="jr:itext('what_was_age-label')"/>
+		</input>
+		<select1 ref="/data/religion">
+			<label ref="jr:itext('religion-label')"/>
+			<item>
+				<label ref="jr:itext('religion-Hindu-label')"/>
+				<value>Hindu</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-christian-label')"/>
+				<value>christian</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-buddhist-label')"/>
+				<value>buddhist</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-parsi-label')"/>
+				<value>parsi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-muslim-label')"/>
+				<value>muslim</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-sikh-label')"/>
+				<value>sikh</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-jain-label')"/>
+				<value>jain</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-no_religion-label')"/>
+				<value>no_religion</value>
+			</item>
+			<item>
+				<label ref="jr:itext('religion-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/other_religion">
+			<label ref="jr:itext('other_religion-label')"/>
+		</input>
+		<select1 ref="/data/ration_card">
+			<label ref="jr:itext('ration_card-label')"/>
+			<item>
+				<label ref="jr:itext('ration_card-white-label')"/>
+				<value>white</value>
+			</item>
+			<item>
+				<label ref="jr:itext('ration_card-yellow-label')"/>
+				<value>yellow</value>
+			</item>
+			<item>
+				<label ref="jr:itext('ration_card-orange-label')"/>
+				<value>orange</value>
+			</item>
+			<item>
+				<label ref="jr:itext('ration_card-none-label')"/>
+				<value>none</value>
+			</item>
+		</select1>
+		<select1 ref="/data/your_education_level">
+			<label ref="jr:itext('your_education_level-label')"/>
+			<item>
+				<label ref="jr:itext('your_education_level-informal_education-label')"/>
+				<value>informal_education</value>
+			</item>
+			<item>
+				<label ref="jr:itext('your_education_level-class_up_to-label')"/>
+				<value>class_up_to</value>
+			</item>
+			<item>
+				<label ref="jr:itext('your_education_level-college-label')"/>
+				<value>college</value>
+			</item>
+			<item>
+				<label ref="jr:itext('your_education_level-illiterate-label')"/>
+				<value>illiterate</value>
+			</item>
+			<item>
+				<label ref="jr:itext('your_education_level-dot_know-label')"/>
+				<value>dot_know</value>
+			</item>
+			<item>
+				<label ref="jr:itext('your_education_level-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/explain">
+			<label ref="jr:itext('explain-label')"/>
+		</input>
+		<select1 ref="/data/husband_education_levels">
+			<label ref="jr:itext('husband_education_levels-label')"/>
+			<item>
+				<label ref="jr:itext('husband_education_levels-informal_education-label')"/>
+				<value>informal_education</value>
+			</item>
+			<item>
+				<label ref="jr:itext('husband_education_levels-class_up_to-label')"/>
+				<value>class_up_to</value>
+			</item>
+			<item>
+				<label ref="jr:itext('husband_education_levels-college-label')"/>
+				<value>college</value>
+			</item>
+			<item>
+				<label ref="jr:itext('husband_education_levels-illiterate-label')"/>
+				<value>illiterate</value>
+			</item>
+			<item>
+				<label ref="jr:itext('husband_education_levels-dont_know-label')"/>
+				<value>dont_know</value>
+			</item>
+			<item>
+				<label ref="jr:itext('husband_education_levels-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/exp_items_and_other">
+			<label ref="jr:itext('exp_items_and_other-label')"/>
+		</input>
+		<select1 ref="/data/house_type">
+			<label ref="jr:itext('house_type-label')"/>
+			<item>
+				<label ref="jr:itext('house_type-pacca-label')"/>
+				<value>pacca</value>
+			</item>
+			<item>
+				<label ref="jr:itext('house_type-semi_pacca-label')"/>
+				<value>semi_pacca</value>
+			</item>
+			<item>
+				<label ref="jr:itext('house_type-kaccha-label')"/>
+				<value>kaccha</value>
+			</item>
+			<item>
+				<label ref="jr:itext('house_type-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/Other_deat">
+			<label ref="jr:itext('Other_deat-label')"/>
+		</input>
+		<trigger ref="/data/section_c">
+			<label ref="jr:itext('section_c-label')"/>
+		</trigger>
+		<select1 ref="/data/reg_name_regular_anc_checkup">
+			<label ref="jr:itext('reg_name_regular_anc_checkup-label')"/>
+			<item>
+				<label ref="jr:itext('reg_name_regular_anc_checkup-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_name_regular_anc_checkup-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_name_regular_anc_checkup-dont_know-label')"/>
+				<value>dont_know</value>
+			</item>
+		</select1>
+		<select1 ref="/data/do_u_know_which_mon_reg_name">
+			<label ref="jr:itext('do_u_know_which_mon_reg_name-label')"/>
+			<item>
+				<label ref="jr:itext('which_month_register_name-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_month_register_name-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/which_month">
+			<label ref="jr:itext('which_month-label')"/>
+		</input>
+		<input ref="/data/reg_ur_name_regular_anc_checkup">
+			<label ref="jr:itext('reg_ur_name_regular_anc_checkup-label')"/>
+		</input>
+		<input ref="/data/which_facility_type">
+			<label ref="jr:itext('which_facility_type-label')"/>
+		</input>
+		<input ref="/data/loc_name">
+			<label ref="jr:itext('loc_name-label')"/>
+		</input>
+		<input ref="/data/mu_cor_name_write">
+			<label ref="jr:itext('mu_cor_name_write-label')"/>
+		</input>
+		<select ref="/data/not_reg_reason">
+			<label ref="jr:itext('not_reg_reason-label')"/>
+			<item>
+				<label ref="jr:itext('not_reg_reason-fear_of_hospital-label')"/>
+				<value>fear_of_hospital</value>
+			</item>
+			<item>
+				<label ref="jr:itext('not_reg_reason-did_not_see_need-label')"/>
+				<value>did_not_see_need</value>
+			</item>
+			<item>
+				<label ref="jr:itext('not_reg_reason-concerned_about_cost-label')"/>
+				<value>concerned_about_cost</value>
+			</item>
+			<item>
+				<label ref="jr:itext('not_reg_reason-family_did_no_allow-label')"/>
+				<value>family_did_no_allow</value>
+			</item>
+			<item>
+				<label ref="jr:itext('not_reg_reason-other-label')"/>
+				<value>other</value>
+			</item>
+		</select>
+		<input ref="/data/other_expl">
+			<label ref="jr:itext('other_expl-label')"/>
+		</input>
+		<select1 ref="/data/reg_name_delivery">
+			<label ref="jr:itext('reg_name_delivery-label')"/>
+			<item>
+				<label ref="jr:itext('reg_name_delivery-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_name_delivery-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_name_delivery-dont_re-label')"/>
+				<value>dont_re</value>
+			</item>
+		</select1>
+		<select1 ref="/data/month_deliv_reg">
+			<label ref="jr:itext('month_deliv_reg-label')"/>
+			<item>
+				<label ref="jr:itext('which_mon_reg_name_delivery-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_mon_reg_name_delivery-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/which_mon_reg_name_delivery">
+			<label ref="jr:itext('which_mon_reg_name_delivery-label')"/>
+		</input>
+		<input ref="/data/reg_hos_name_for_delivery">
+			<label ref="jr:itext('reg_hos_name_for_delivery-label')"/>
+		</input>
+		<input ref="/data/write_facility_type">
+			<label ref="jr:itext('write_facility_type-label')"/>
+		</input>
+		<input ref="/data/hos_loc_name">
+			<label ref="jr:itext('hos_loc_name-label')"/>
+		</input>
+		<input ref="/data/hos_mu_cor_name">
+			<label ref="jr:itext('hos_mu_cor_name-label')"/>
+		</input>
+		<select1 ref="/data/what_is_the_reason_did_not_reg_name_for_del">
+			<label ref="jr:itext('what_is_the_reason_did_not_reg_name_for_del-label')"/>
+			<item>
+				<label ref="jr:itext('what_is_the_reason_did_not_reg_name_for_del-fear-label')"/>
+				<value>fear</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_reason_did_not_reg_name_for_del-not_need-label')"/>
+				<value>not_need</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_reason_did_not_reg_name_for_del-cost-label')"/>
+				<value>cost</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_reason_did_not_reg_name_for_del-fam_did_not_allow-label')"/>
+				<value>fam_did_not_allow</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_reason_did_not_reg_name_for_del-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/other_tx">
+			<label ref="jr:itext('other_tx-label')"/>
+		</input>
+		<select ref="/data/during_preg_health_prob">
+			<label ref="jr:itext('during_preg_health_prob-label')"/>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-exce_vomiting-label')"/>
+				<value>exce_vomiting</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-veg_bleeding-label')"/>
+				<value>veg_bleeding</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-abd_pain-label')"/>
+				<value>abd_pain</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-white_discharge-label')"/>
+				<value>white_discharge</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-anemia-label')"/>
+				<value>anemia</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-fatigue-label')"/>
+				<value>fatigue</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-swelling-label')"/>
+				<value>swelling</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-convulsion-label')"/>
+				<value>convulsion</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-vision_prob-label')"/>
+				<value>vision_prob</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-no_health_prob-label')"/>
+				<value>no_health_prob</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_preg_health_prob-othe-label')"/>
+				<value>othe</value>
+			</item>
+		</select>
+		<input ref="/data/othr_problems">
+			<label ref="jr:itext('othr_problems-label')"/>
+		</input>
+		<select1 ref="/data/Do_know_how_many_times_visit_treat">
+			<label ref="jr:itext('Do_know_how_many_times_visit_treat-label')"/>
+			<item>
+				<label ref="jr:itext('how_many_times_visit_treatment-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_many_times_visit_treatment-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/yes_how_many_times">
+			<label ref="jr:itext('yes_how_many_times-label')"/>
+		</input>
+		<select1 ref="/data/given_terat_first_hos_name">
+			<label ref="jr:itext('do_u_know_hospital_name-label')"/>
+			<item>
+				<label ref="jr:itext('given_terat_first_hos_name-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('given_terat_first_hos_name-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/first_hos_name">
+			<label ref="jr:itext('first_hos_name-label')"/>
+		</input>
+		<input ref="/data/which_fac_type">
+			<label ref="jr:itext('which_fac_type-label')"/>
+		</input>
+		<input ref="/data/fac_loc_name">
+			<label ref="jr:itext('fac_loc_name-label')"/>
+		</input>
+		<input ref="/data/loclity_cor_name">
+			<label ref="jr:itext('loclity_cor_name-label')"/>
+		</input>
+		<input ref="/data/give_treat_second_hos_name">
+			<label ref="jr:itext('give_treat_second_hos_name-label')"/>
+		</input>
+		<input ref="/data/second_hos_faci_type">
+			<label ref="jr:itext('second_hos_faci_type-label')"/>
+		</input>
+		<input ref="/data/second_hos_loc_name">
+			<label ref="jr:itext('second_hos_loc_name-label')"/>
+		</input>
+		<input ref="/data/question166">
+			<label ref="jr:itext('question166-label')"/>
+		</input>
+		<input ref="/data/Write_others_information">
+			<label ref="jr:itext('Write_others_information-label')"/>
+		</input>
+		<input ref="/data/write_treat_your_health_problem">
+			<label ref="jr:itext('write_treat_your_health_problem-label')"/>
+		</input>
+		<select ref="/data/question169">
+			<label ref="jr:itext('question169-label')"/>
+			<item>
+				<label ref="jr:itext('question169-fear_hos-label')"/>
+				<value>fear_hos</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question169-did_not_need-label')"/>
+				<value>did_not_need</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question169-cost-label')"/>
+				<value>cost</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question169-family_not_allow-label')"/>
+				<value>family_not_allow</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question169-other_tex-label')"/>
+				<value>other_tex</value>
+			</item>
+		</select>
+		<input ref="/data/question170">
+			<label ref="jr:itext('other-label')"/>
+		</input>
+		<input ref="/data/how_many_times_visit_regu_anc_checkup">
+			<label ref="jr:itext('how_many_times_visit_regu_anc_checkup-label')"/>
+		</input>
+		<input ref="/data/first_trimester">
+			<label ref="jr:itext('first_trimester-label')"/>
+		</input>
+		<input ref="/data/question180">
+			<label ref="jr:itext('second_trimester-label')"/>
+		</input>
+		<input ref="/data/question181">
+			<label ref="jr:itext('third_trimester-label')"/>
+		</input>
+		<select1 ref="/data/which_type_hos_visit_anc_checkup">
+			<label ref="jr:itext('which_type_hos_visit_anc_checkup-label')"/>
+			<item>
+				<label ref="jr:itext('which_type_hos_visit_anc_checkup-only_gov_hos-label')"/>
+				<value>only_gov_hos</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_type_hos_visit_anc_checkup-only_priv_hos-label')"/>
+				<value>only_priv_hos</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_type_hos_visit_anc_checkup-both_gov_and_pri_hos-label')"/>
+				<value>both_gov_and_pri_hos</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_type_hos_visit_anc_checkup-dr_know_or_don_rem-label')"/>
+				<value>dr_know_or_don_rem</value>
+			</item>
+		</select1>
+		<input ref="/data/how_many_times_visited_each_hos">
+			<label ref="jr:itext('how_many_times_visited_each_hos-label')"/>
+		</input>
+		<input ref="/data/hospital_name_1">
+			<label ref="jr:itext('hospital_name_1-label')"/>
+		</input>
+		<input ref="/data/first_hos_facility_type">
+			<label ref="jr:itext('first_hos_facility_type-label')"/>
+		</input>
+		<input ref="/data/write_first_locality_type">
+			<label ref="jr:itext('write_first_locality_type-label')"/>
+		</input>
+		<input ref="/data/write_first_hos_mu_cor_name">
+			<label ref="jr:itext('write_first_hos_mu_cor_name-label')"/>
+		</input>
+		<select ref="/data/Which_services_did_u_receive_at_hos">
+			<label ref="jr:itext('Which_services_did_u_receive_at_hos-label')"/>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-weight-label')"/>
+				<value>weight</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-bp-label')"/>
+				<value>bp</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-tt_inj-label')"/>
+				<value>tt_inj</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-ifa_tab-label')"/>
+				<value>ifa_tab</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-abd_check-label')"/>
+				<value>abd_check</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-urine_test-label')"/>
+				<value>urine_test</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-blood_test-label')"/>
+				<value>blood_test</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-mother_child_protection_card-label')"/>
+				<value>mother_child_protection_card</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-none_of_the_above-label')"/>
+				<value>none_of_the_above</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-drr_remember-label')"/>
+				<value>drr_remember</value>
+			</item>
+			<item>
+				<label ref="jr:itext('Which_services_did_u_receive_at_hos-height_measured-label')"/>
+				<value>height_measured</value>
+			</item>
+		</select>
+		<input ref="/data/if_visit_second_hos_plz_write_hos_name">
+			<label ref="jr:itext('if_visit_second_hos_plz_write_hos_name-label')"/>
+		</input>
+		<select ref="/data/second_hos_services">
+			<label ref="jr:itext('second_hos_services-label')"/>
+			<item>
+				<label ref="jr:itext('second_hos_services-weight-label')"/>
+				<value>weight</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-bp-label')"/>
+				<value>bp</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-tt_inj-label')"/>
+				<value>tt_inj</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-ifa_tab-label')"/>
+				<value>ifa_tab</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-abd_check-label')"/>
+				<value>abd_check</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-urine_test-label')"/>
+				<value>urine_test</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-blood_test-label')"/>
+				<value>blood_test</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-mother_child_protection_card-label')"/>
+				<value>mother_child_protection_card</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-none_of_the_above-label')"/>
+				<value>none_of_the_above</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-drr_remember-label')"/>
+				<value>drr_remember</value>
+			</item>
+			<item>
+				<label ref="jr:itext('second_hos_services-height_measured-label')"/>
+				<value>height_measured</value>
+			</item>
+		</select>
+		<input ref="/data/If_visit_third_hos_deatials">
+			<label ref="jr:itext('If_visit_third_hos_deatials-label')"/>
+		</input>
+		<select ref="/data/third_hos_services">
+			<label ref="jr:itext('third_hos_services-label')"/>
+			<item>
+				<label ref="jr:itext('third_hos_services-weight-label')"/>
+				<value>weight</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-bp-label')"/>
+				<value>bp</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-tt_inj-label')"/>
+				<value>tt_inj</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-ifa_tab-label')"/>
+				<value>ifa_tab</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-abd_check-label')"/>
+				<value>abd_check</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-urine_test-label')"/>
+				<value>urine_test</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-blood_test-label')"/>
+				<value>blood_test</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-mother_child_protection_card-label')"/>
+				<value>mother_child_protection_card</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-none_of_the_above-label')"/>
+				<value>none_of_the_above</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-drr_remember-label')"/>
+				<value>drr_remember</value>
+			</item>
+			<item>
+				<label ref="jr:itext('third_hos_services-height_measured-label')"/>
+				<value>height_measured</value>
+			</item>
+		</select>
+		<select1 ref="/data/did_not_reg_anc_checkup_what_reason">
+			<label ref="jr:itext('did_not_reg_anc_checkup_what_reason-label2')"/>
+			<item>
+				<label ref="jr:itext('did_not_reg_anc_checkup_what_reason-fear-label')"/>
+				<value>fear</value>
+			</item>
+			<item>
+				<label ref="jr:itext('did_not_reg_anc_checkup_what_reason-no_need-label')"/>
+				<value>no_need</value>
+			</item>
+			<item>
+				<label ref="jr:itext('did_not_reg_anc_checkup_what_reason-concerned_cost-label')"/>
+				<value>concerned_cost</value>
+			</item>
+			<item>
+				<label ref="jr:itext('did_not_reg_anc_checkup_what_reason-family_not_allow-label')"/>
+				<value>family_not_allow</value>
+			</item>
+			<item>
+				<label ref="jr:itext('did_not_reg_anc_checkup_what_reason-otr-label')"/>
+				<value>otr</value>
+			</item>
+		</select1>
+		<input ref="/data/other_res">
+			<label ref="jr:itext('other_res-label')"/>
+		</input>
+		<select1 ref="/data/during_last_preg_visit_health_worker">
+			<label ref="jr:itext('during_last_preg_visit_health_worker-label')"/>
+			<item>
+				<label ref="jr:itext('during_last_preg_visit_health_worker-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('during_last_preg_visit_health_worker-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/what_tell_u">
+			<label ref="jr:itext('what_tell_u-label')"/>
+		</input>
+		<select ref="/data/who_visited_u">
+			<label ref="jr:itext('who_visited_u-label')"/>
+			<item>
+				<label ref="jr:itext('who_visited_u-lw-label')"/>
+				<value>lw</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_visited_u-anganwadi-label')"/>
+				<value>anganwadi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_visited_u-ngo-label')"/>
+				<value>ngo</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_visited_u-anm-label')"/>
+				<value>anm</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_visited_u-mahila_samiti-label')"/>
+				<value>mahila_samiti</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_visited_u-drknow_drrem-label')"/>
+				<value>drknow_drrem</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_visited_u-other-label')"/>
+				<value>other</value>
+			</item>
+		</select>
+		<input ref="/data/Other_visited_explain">
+			<label ref="jr:itext('Other_visited_explain-label')"/>
+		</input>
+		<input ref="/data/ngo_name_explain">
+			<label ref="jr:itext('ngo_name_explain-label')"/>
+		</input>
+		<trigger ref="/data/section_d">
+			<label ref="jr:itext('section_d-label')"/>
+		</trigger>
+		<input ref="/data/delivery_date">
+			<label ref="jr:itext('delivery_date-label')"/>
+		</input>
+		<select1 ref="/data/labour_pain_started_whr_did_u_go_first">
+			<label ref="jr:itext('labour_pain_started_whr_did_u_go_first-label')"/>
+			<item>
+				<label ref="jr:itext('labour_pain_started_whr_did_u_go_first-reg_name_for_deliver-label')"/>
+				<value>reg_name_for_deliver</value>
+			</item>
+			<item>
+				<label ref="jr:itext('labour_pain_started_whr_did_u_go_first-did_not_reg_name_for_delivery-label')"/>
+				<value>did_not_reg_name_for_delivery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('labour_pain_started_whr_did_u_go_first-stay_at_home-label')"/>
+				<value>stay_at_home</value>
+			</item>
+			<item>
+				<label ref="jr:itext('labour_pain_started_whr_did_u_go_first-other_place-label')"/>
+				<value>other_place</value>
+			</item>
+		</select1>
+		<input ref="/data/other_place_explain">
+			<label ref="jr:itext('other_place_explain-label')"/>
+		</input>
+		<select1 ref="/data/did_u_go_any_hos">
+			<label ref="jr:itext('did_u_go_any_hos-label')"/>
+			<item>
+				<label ref="jr:itext('did_u_go_any_hos-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('did_u_go_any_hos-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/which_hos">
+			<label ref="jr:itext('which_hos-label')"/>
+		</input>
+		<input ref="/data/write_facil_type">
+			<label ref="jr:itext('write_facil_type-label')"/>
+		</input>
+		<input ref="/data/facility_locality_name">
+			<label ref="jr:itext('facility_locality_name-label')"/>
+		</input>
+		<input ref="/data/loc_mu_cor_name">
+			<label ref="jr:itext('loc_mu_cor_name-label')"/>
+		</input>
+		<input ref="/data/other_detail_exp">
+			<label ref="jr:itext('other_detail_exp-label')"/>
+		</input>
+		<select1 ref="/data/why_u_decided_go_to_another_hos">
+			<label ref="jr:itext('why_u_decided_go_to_another_hos-label')"/>
+			<item>
+				<label ref="jr:itext('why_u_decided_go_to_another_hos-hos_was_closed-label')"/>
+				<value>hos_was_closed</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_u_decided_go_to_another_hos-closer_by-label')"/>
+				<value>closer_by</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_u_decided_go_to_another_hos-not_satisfied_by_the_services-label')"/>
+				<value>not_satisfied_by_the_services</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_u_decided_go_to_another_hos-move_residence_during_preg-label')"/>
+				<value>move_residence_during_preg</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_u_decided_go_to_another_hos-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/Other_rea">
+			<label ref="jr:itext('Other_rea-label')"/>
+		</input>
+		<select1 ref="/data/after_labou_pain_did_u_go_to_anoher_">
+			<label ref="jr:itext('after_labou_pain_did_u_go_to_anoher_-label')"/>
+			<item>
+				<label ref="jr:itext('after_labou_pain_did_u_go_to_anoher_-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('after_labou_pain_did_u_go_to_anoher_-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('after_labou_pain_did_u_go_to_anoher_-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/other_det_exp">
+			<label ref="jr:itext('other_det_exp-label')"/>
+		</input>
+		<select ref="/data/what_was_reason_did_goto_any_hos">
+			<label ref="jr:itext('what_was_reason_did_goto_any_hos-label')"/>
+			<item>
+				<label ref="jr:itext('what_was_reason_did_goto_any_hos-hos_fear-label')"/>
+				<value>hos_fear</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_did_goto_any_hos-cost_concern-label')"/>
+				<value>cost_concern</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_did_goto_any_hos-did_not_family_allow-label')"/>
+				<value>did_not_family_allow</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_did_goto_any_hos-not_transport-label')"/>
+				<value>not_transport</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_did_goto_any_hos-did_not_have_good_experience-label')"/>
+				<value>did_not_have_good_experience</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_did_goto_any_hos-doct_was_not_there-label')"/>
+				<value>doct_was_not_there</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_did_goto_any_hos-other-label')"/>
+				<value>other</value>
+			</item>
+		</select>
+		<input ref="/data/other_exp_reason">
+			<label ref="jr:itext('other_exp_reason-label')"/>
+		</input>
+		<select1 ref="/data/whr_was_baby_born">
+			<label ref="jr:itext('whr_was_baby_born-label')"/>
+			<item>
+				<label ref="jr:itext('whr_was_baby_born-at_home-label')"/>
+				<value>at_home</value>
+			</item>
+			<item>
+				<label ref="jr:itext('whr_was_baby_born-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/other_place">
+			<label ref="jr:itext('other_place-label')"/>
+		</input>
+		<select1 ref="/data/deli_baby_home_were_u_assisted">
+			<label ref="jr:itext('deli_baby_home_were_u_assisted-label')"/>
+			<item>
+				<label ref="jr:itext('deli_baby_home_were_u_assisted-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('deli_baby_home_were_u_assisted-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/y_by_whom">
+			<label ref="jr:itext('y_by_whom-label')"/>
+		</input>
+		<trigger ref="/data/section_e">
+			<label ref="jr:itext('section_e-label')"/>
+		</trigger>
+		<select ref="/data/why_wr_u_sent_to_another_hos">
+			<label ref="jr:itext('why_wr_u_sent_to_another_hos-label')"/>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-no_doctor-label')"/>
+				<value>no_doctor</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-no_req_equpments-label')"/>
+				<value>no_req_equpments</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-for_opertion-label')"/>
+				<value>for_opertion</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-blood_tran-label')"/>
+				<value>blood_tran</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-icu_mother-label')"/>
+				<value>icu_mother</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-need_icu_baby-label')"/>
+				<value>need_icu_baby</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-managem_comple-label')"/>
+				<value>managem_comple</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-dont_rem_don_know-label')"/>
+				<value>dont_rem_don_know</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_wr_u_sent_to_another_hos-other-label')"/>
+				<value>other</value>
+			</item>
+		</select>
+		<input ref="/data/why_sent_yo_ano_hos_rea">
+			<label ref="jr:itext('why_sent_yo_ano_hos_rea-label')"/>
+		</input>
+		<input ref="/data/equp_details">
+			<label ref="jr:itext('equp_details-label')"/>
+		</input>
+		<select1 ref="/data/which_hos_were_u_sent">
+			<label ref="jr:itext('which_hos_were_u_sent-label')"/>
+			<item>
+				<label ref="jr:itext('which_hos_were_u_sent-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_hos_were_u_sent-dr_rem-label')"/>
+				<value>dr_rem</value>
+			</item>
+		</select1>
+		<input ref="/data/which_is_hos_u_sent_write_name">
+			<label ref="jr:itext('which_is_hos_u_sent_write_name-label')"/>
+		</input>
+		<input ref="/data/write_facility_and_types">
+			<label ref="jr:itext('write_facility_and_types-label')"/>
+		</input>
+		<input ref="/data/fac_loc_name_write">
+			<label ref="jr:itext('fac_loc_name_write-label')"/>
+		</input>
+		<input ref="/data/wri_loc_mu_car_name">
+			<label ref="jr:itext('wri_loc_mu_car_name-label')"/>
+		</input>
+		<select1 ref="/data/were_u_go">
+			<label ref="jr:itext('were_u_go-label')"/>
+			<item>
+				<label ref="jr:itext('were_u_go-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('were_u_go-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/whr_did_u_go">
+			<label ref="jr:itext('whr_did_u_go-label')"/>
+		</input>
+		<input ref="/data/write_hos_faci_type">
+			<label ref="jr:itext('write_hos_faci_type-label')"/>
+		</input>
+		<input ref="/data/location_locality">
+			<label ref="jr:itext('location_locality-label')"/>
+		</input>
+		<input ref="/data/lacility_cor_name">
+			<label ref="jr:itext('lacility_cor_name-label')"/>
+		</input>
+		<select1 ref="/data/reason_for_going_different_hos">
+			<label ref="jr:itext('reason_for_going_different_hos-label')"/>
+			<item>
+				<label ref="jr:itext('reason_for_going_different_hos-closer_distance-label')"/>
+				<value>closer_distance</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_for_going_different_hos-better_reputation-label')"/>
+				<value>better_reputation</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_for_going_different_hos-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/exp_reason_for_going_different_hos">
+			<label ref="jr:itext('exp_reason_for_going_different_hos-label')"/>
+		</input>
+		<input ref="/data/first_to_second_hos_travel_time">
+			<label ref="jr:itext('first_to_second_hos_travel_time-label')"/>
+		</input>
+		<select1 ref="/data/exp_time">
+			<label ref="jr:itext('exp_time-label')"/>
+			<item>
+				<label ref="jr:itext('exp_time-below_30min-label')"/>
+				<value>below_30min</value>
+			</item>
+			<item>
+				<label ref="jr:itext('exp_time-30min_to_1hr-label')"/>
+				<value>30min_to_1hr</value>
+			</item>
+			<item>
+				<label ref="jr:itext('exp_time-1hr_to_2hr-label')"/>
+				<value>1hr_to_2hr</value>
+			</item>
+			<item>
+				<label ref="jr:itext('exp_time-2hr-label')"/>
+				<value>2hr</value>
+			</item>
+			<item>
+				<label ref="jr:itext('exp_time-dontb_rem-label')"/>
+				<value>dontb_rem</value>
+			</item>
+		</select1>
+		<select1 ref="/data/how_did_u_travel_these_hospital">
+			<label ref="jr:itext('how_did_u_travel_these_hospital-label')"/>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-ambulance-label')"/>
+				<value>ambulance</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-taxi_or_richshw-label')"/>
+				<value>taxi_or_richshw</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-taxi-label')"/>
+				<value>taxi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-train-label')"/>
+				<value>train</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-bus-label')"/>
+				<value>bus</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-foot-label')"/>
+				<value>foot</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-relative_car-label')"/>
+				<value>relative_car</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_did_u_travel_these_hospital-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/how_long_did_wait_receiveing_care">
+			<label ref="jr:itext('how_long_did_wait_receiveing_care-label')"/>
+		</input>
+		<input ref="/data/explain_time">
+			<label ref="jr:itext('explain_time-label')"/>
+		</input>
+		<select1 ref="/data/go_to_another_hos_second_time">
+			<label ref="jr:itext('go_to_another_hos_second_time-label')"/>
+			<item>
+				<label ref="jr:itext('go_to_another_hos_second_time-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('go_to_another_hos_second_time-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('go_to_another_hos_second_time-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<input ref="/data/which_hos_u_went">
+			<label ref="jr:itext('which_hos_u_went-label')"/>
+		</input>
+		<input ref="/data/write_hospital_fcility_type">
+			<label ref="jr:itext('write_hospital_fcility_type-label')"/>
+		</input>
+		<input ref="/data/wri_fac_loc_type">
+			<label ref="jr:itext('wri_fac_loc_type-label')"/>
+		</input>
+		<input ref="/data/wrt_loc_mu_cor_name">
+			<label ref="jr:itext('wrt_loc_mu_cor_name-label')"/>
+		</input>
+		<select1 ref="/data/what_was_reason_u_sent_different_hos">
+			<label ref="jr:itext('what_was_reason_u_sent_different_hos-label')"/>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-no_dro-label')"/>
+				<value>no_dro</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-no_equ-label')"/>
+				<value>no_equ</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-for_ope-label')"/>
+				<value>for_ope</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-bod_tran-label')"/>
+				<value>bod_tran</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-mothr_ned_icu-label')"/>
+				<value>mothr_ned_icu</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-baby_nd_icu-label')"/>
+				<value>baby_nd_icu</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-mang_compl-label')"/>
+				<value>mang_compl</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-do_no_do_nt_rem-label')"/>
+				<value>do_no_do_nt_rem</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_was_reason_u_sent_different_hos-othr-label')"/>
+				<value>othr</value>
+			</item>
+		</select1>
+		<input ref="/data/other_res_exp">
+			<label ref="jr:itext('other_res_exp-label')"/>
+		</input>
+		<input ref="/data/exp_equp_list">
+			<label ref="jr:itext('exp_equp_list-label')"/>
+		</input>
+		<select1 ref="/data/do_u_go_to_were_told_the_second_time">
+			<label ref="jr:itext('do_u_go_to_were_told_the_second_time-label')"/>
+			<item>
+				<label ref="jr:itext('do_u_go_to_were_told_the_second_time-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('do_u_go_to_were_told_the_second_time-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/whi_hos_did_u_go_to">
+			<label ref="jr:itext('whi_hos_did_u_go_to-label')"/>
+		</input>
+		<input ref="/data/facility_type">
+			<label ref="jr:itext('facility_type-label')"/>
+		</input>
+		<input ref="/data/lcality_name">
+			<label ref="jr:itext('lcality_name-label')"/>
+		</input>
+		<input ref="/data/mu_coe_name">
+			<label ref="jr:itext('mu_coe_name-label')"/>
+		</input>
+		<select1 ref="/data/why_did_u_go_reason">
+			<label ref="jr:itext('why_did_u_go_reason-label')"/>
+			<item>
+				<label ref="jr:itext('why_did_u_go_reason-closer_dist-label')"/>
+				<value>closer_dist</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_did_u_go_reason-reptu-label')"/>
+				<value>reptu</value>
+			</item>
+			<item>
+				<label ref="jr:itext('why_did_u_go_reason-othr-label')"/>
+				<value>othr</value>
+			</item>
+		</select1>
+		<input ref="/data/other_exp_reass">
+			<label ref="jr:itext('other_exp_reass-label')"/>
+		</input>
+		<input ref="/data/question615">
+			<label ref="jr:itext('write_time_1st_ref_hos_to_2nd_ref_hos-label')"/>
+		</input>
+		<input ref="/data/third_hos_how_long_time">
+			<label ref="jr:itext('third_hos_how_long_time-label')"/>
+		</input>
+		<trigger ref="/data/section_f">
+			<label ref="jr:itext('section_f-label2')"/>
+		</trigger>
+		<select ref="/data/which_vaccination_baby_received">
+			<label ref="jr:itext('which_vaccination_baby_received-label')"/>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-bcg-label')"/>
+				<value>bcg</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-measles-label')"/>
+				<value>measles</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-opv_0-label')"/>
+				<value>opv_0</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-opv_1-label')"/>
+				<value>opv_1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-opv_2-label')"/>
+				<value>opv_2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-opv_3-label')"/>
+				<value>opv_3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-hpt_a_birth-label')"/>
+				<value>hpt_a_birth</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-hep_1-label')"/>
+				<value>hep_1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-hep_2-label2')"/>
+				<value>hep_2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-hep_3-label')"/>
+				<value>hep_3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-dpt_1-label')"/>
+				<value>dpt_1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-dpt_2-label')"/>
+				<value>dpt_2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-dpt_3-label')"/>
+				<value>dpt_3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('which_vaccination_baby_received-none-label')"/>
+				<value>none</value>
+			</item>
+		</select>
+		<input ref="/data/date_bcg">
+			<label ref="jr:itext('date_bcg-label')"/>
+		</input>
+		<input ref="/data/date_measles">
+			<label ref="jr:itext('date_measles-label')"/>
+		</input>
+	</h:body>
+</h:html>

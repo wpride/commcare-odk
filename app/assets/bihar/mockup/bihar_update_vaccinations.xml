@@ -1,0 +1,1174 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Update Vaccinations</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/update_vaccinations" uiVersion="1" version="2" name="Update Vaccinations">
+					<!-- metadata -->
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					
+					
+					<details_available/>
+					<details_needed/>
+					<update_mother/>
+					<mother_caseid/>
+					
+					<mother>
+					
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<update>
+								<tt_2_date />
+								<tt_1_date />
+								<tt_booster_date />
+							</update>
+						</case>
+						
+						<up_to_date/>
+						<received_tt1 />
+						<received_tt2 />
+						<tt_booster />
+						
+					</mother>
+					
+					<cur_children/>
+					<num_children />
+					<children/>
+					<child_info jr:template="">
+						<display_child/>
+						<add_vaccinations />
+						
+						<cid/>
+					    <index/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<update>
+								<bcg_date />
+								<opv_0_date />
+								<opv_1_date />
+								<opv_2_date />
+								<opv_3_date />
+								<opv_booster_date/>
+								<dpt_1_date />
+								<dpt_2_date />
+								<dpt_3_date />
+								<dpt_booster_date/>
+								<hep_b_0_date />
+								<hep_b_1_date />
+								<hep_b_2_date />
+								<hep_b_3_date />
+								<measles_date />
+								<date_measles_booster />
+								<vit_a_1_date />
+								<vit_a_2_date />
+								<vit_a_3_date />
+								<date_je />
+							</update>
+						</case>
+						
+						<up_to_date/>
+						<baby_bcg />
+						<baby_opv0 />
+						<baby_opv1 />
+						<baby_opv2 />
+						<baby_opv3 />
+						<baby_opv_booster />
+						<baby_dpt1 />
+						<baby_dpt2 />
+						<baby_dpt3 />
+						<baby_dpt_booster />
+						<baby_hep_b_0 />
+						<baby_hep_b_1 />
+						<baby_hep_b_2 />
+						<baby_hep_b_3 />
+						<baby_measles />
+						<baby_measles_booster />
+						<baby_vita1 />
+						<baby_vita2 />
+						<baby_vita3 />
+						<baby_je />	
+					</child_info>
+					
+					<success />
+				</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+	    	<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+	
+    		<setvalue event="xforms-ready" ref="/data/mother_caseid" value="instance('commcaresession')/session/data/case_id"/>
+    		
+    		<setvalue event="xforms-ready" ref="/data/children" value="join(' ',instance('casedb')/casedb/case[@case_type='cc_bihar_newborn'][index/mother_id=/data/mother_caseid][@status='open']/@case_id)"/>
+    		
+	    	<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<!-- preloading case properties into the vaccination date questions-->
+			
+			<setvalue event="xforms-ready" ref="/data/mother_caseid" value="instance('commcaresession')/session/data/case_id"/>
+			
+			<setvalue event="xforms-ready" ref="/data/mother/case/update/tt_1_date" value="date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_1_date)" />
+			<setvalue event="xforms-ready" ref="/data/mother/case/update/tt_2_date" value="date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_2_date)" />
+			<setvalue event="xforms-ready" ref="/data/mother/case/update/tt_booster_date" value="date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_booster_date)" />
+			<!-- end preloaders -->
+	
+
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>	    	
+			
+			<bind nodeset="/data/mother/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/mother/case/@user_id" calculate="/data/meta/userID"/>
+			<bind nodeset="/data/mother/case/@case_id" calculate="/data/mother_caseid"/>
+			
+			<bind nodeset="/data/num_children" type="int" calculate="count-selected(/data/children)"/>
+			<bind nodeset="/data/cur_children" calculate="count(/data/child_info)"/>
+			
+			<setvalue event="jr-insert" ref="/data/child_info/index" value="int(/data/cur_children) - int(selected-at('0 1'),1)"/>
+			
+			<setvalue event="jr-insert" ref="/data/child_info/cid" value="selected-at(/data/children,../index)"/>
+
+			
+			<bind nodeset="/data/child_info/case/@case_id" type="xsd:string" calculate="../../cid"/>
+			<bind nodeset="/data/child_info/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/child_info/case/@user_id" type="xsd:string" calculate="/data/meta/userID"/>
+			
+			
+			
+		    <!-- child property preloaders -->
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/bcg_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/bcg_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/opv_0_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/opv_0_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/opv_1_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/opv_1_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/opv_2_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/opv_2_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/opv_3_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/opv_3_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/opv_booster_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/opv_booster_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/dpt_1_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/dpt_1_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/dpt_2_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/dpt_2_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/dpt_3_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/dpt_3_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/dpt_booster_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/dpt_booster_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/hep_b_0_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/hep_b_0_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/hep_b_1_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/hep_b_1_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/hep_b_2_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/hep_b_2_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/hep_b_3_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/hep_b_3_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/measles_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/measles_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/date_measles_booster" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/date_measles_booster" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/vit_a_1_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/vit_a_1_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/vit_a_2_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/vit_a_2_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/vit_a_3_date" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/vit_a_3_date" />
+			<setvalue event="jr-insert" ref="/data/child_info/case/update/date_je" value="instance('casedb')/casedb/case[@case_id=current()/../../../cid]/date_je" />
+			<!-- end child property preloaders -->
+			
+			
+			
+			<bind nodeset="/data/details_available" required="true()" />
+			<bind nodeset="/data/details_needed" relevant="/data/details_available='no'"/>
+
+			<bind nodeset="/data/update_mother" relevant="/data/details_available='yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/edd) &gt;= today()" required="true()" />
+			<bind nodeset="/data/mother" relevant="/data/update_mother = 'yes'"/>
+			<bind nodeset="/data/mother/up_to_date" relevant="(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_booster_date != '' and(today() - date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_booster_date) &lt;= 730)) or instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_2_date != ''"/>
+			<bind nodeset="/data/mother/received_tt1" relevant="instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/last_preg_tt != 'yes'" />
+			<bind nodeset="/data/mother/case/update/tt_1_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= today() - 730" relevant="/data/mother/received_tt1 = 'yes'" required="true()" />
+			<bind nodeset="/data/mother/received_tt2" relevant="if(/data/mother/received_tt1 = 'yes', today() &gt;= date(/data/mother/case/update/tt_1_date + 30), today() &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_1_date)+ 30))" />
+			<bind nodeset="/data/mother/case/update/tt_2_date" type="xsd:date" constraint=". &lt;= today() and if(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_1_date != '', . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_1_date) + 30), . &gt;= date(/data/mother/case/update/tt_1_date + 30))" relevant="/data/mother/received_tt2 = 'yes'" required="true()" />
+			<bind nodeset="/data/mother/tt_booster" relevant="instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/last_preg_tt = 'yes' or (instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_booster_date != '' and (today() - date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/tt_booster_date) &gt; 730))"/>
+			<bind nodeset="/data/mother/case/update/tt_booster_date" type="xsd:date" relevant="/data/mother/tt_booster = 'yes'" />
+
+			<bind nodeset="/data/child_info" relevant="/data/details_available = 'yes'"/>
+			<bind nodeset="/data/child_info/add_vaccinations" required="true()" />
+			<bind nodeset="/data/child_info/up_to_date" relevant="/data/child_info/add_vaccinations = 'yes' and instance('casedb')/casedb/case[@case_id=current()/../cid]/date_je != '' and instance('casedb')/casedb/case[@case_id=current()/../cid]/vit_a_3_date != '' and instance('casedb')/casedb/case[@case_id=current()/../cid]/date_measles_booster != '' and instance('casedb')/casedb/case[@case_id=current()/../cid]/hep_b_3_date != ''
+				and instance('casedb')/casedb/case[@case_id=current()/../cid]/dpt_booster_date != '' and instance('casedb')/casedb/case[@case_id=current()/../cid]/opv_booster_date != '' and instance('casedb')/casedb/case[@case_id=current()/../cid]/bcg_date != ''"/>
+			
+			<bind nodeset="/data/child_info/baby_bcg" relevant="/data/child_info/add_vaccinations = 'yes' " />
+			<bind nodeset="/data/child_info/case/update/bcg_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add)" relevant="/data/child_info/baby_bcg = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_opv0" relevant="/data/child_info/add_vaccinations = 'yes' " />
+			<bind nodeset="/data/child_info/case/update/opv_0_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add)" relevant="/data/child_info/baby_opv0 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_opv1" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 42 &lt;= today()" />
+			<bind nodeset="/data/child_info/case/update/opv_1_date" type="xsd:date" constraint=". &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 42) and . &lt;= today()" relevant="/data/child_info/baby_opv1 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_opv2" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 70 &lt;= today()" />
+			<bind nodeset="/data/child_info/case/update/opv_2_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 70)" relevant="/data/child_info/baby_opv2 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_opv3" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 98 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/opv_3_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 98)" relevant="/data/child_info/baby_opv3 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_opv_booster" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/opv_booster_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480)" relevant="/data/child_info/baby_opv_booster = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_dpt1" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 42 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/dpt_1_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 42)" relevant="/data/child_info/baby_dpt1 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_dpt2" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 70 &lt;= today()" />
+			<bind nodeset="/data/child_info/case/update/dpt_2_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 70)" relevant="/data/child_info/baby_dpt2 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_dpt3" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 98 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/dpt_3_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 98)" relevant="/data/child_info/baby_dpt3 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_dpt_booster" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/dpt_booster_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480)" relevant="/data/child_info/baby_dpt_booster = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_hep_b_0" relevant="/data/child_info/add_vaccinations = 'yes'" />
+			<bind nodeset="/data/child_info/case/update/hep_b_0_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add)" relevant="/data/child_info/baby_hep_b_0 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_hep_b_1" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 42 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/hep_b_1_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 42)" relevant="/data/child_info/baby_hep_b_1 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_hep_b_2" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 70 &lt;= today()" />
+			<bind nodeset="/data/child_info/case/update/hep_b_2_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 70)" relevant="/data/child_info/baby_hep_b_2 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_hep_b_3" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 98 &lt;= today()" />
+			<bind nodeset="/data/child_info/case/update/hep_b_3_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 98)" relevant="/data/child_info/baby_hep_b_3 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_measles" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 273 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/measles_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 273)" relevant="/data/child_info/baby_measles = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_measles_booster" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/date_measles_booster" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480)" relevant="/data/child_info/baby_measles_booster = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_vita1" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 273 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/vit_a_1_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 273)" relevant="/data/child_info/baby_vita1 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_vita2" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/vit_a_2_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480)" relevant="/data/child_info/baby_vita2 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_vita3" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480 &lt;= today() " />
+			<bind nodeset="/data/child_info/case/update/vit_a_3_date" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480)" relevant="/data/child_info/baby_vita3 = 'yes'"  />
+			<bind nodeset="/data/child_info/baby_je" relevant="/data/child_info/add_vaccinations = 'yes' and date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480 &lt;= today() and /data/child_info/add_vaccinations = 'yes'" />
+			<bind nodeset="/data/child_info/case/update/date_je" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(date(instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/add) + 480)" relevant="/data/child_info/baby_je = 'yes'"  />
+			
+		
+			<itext>
+				<translation lang="hin" default="">
+					<text id="details_available-label">
+						<value>टीकाकरण विवरण उपलब्ध है?</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/details_available_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/details_available.png</value>
+					</text>
+					<text id="details_needed-label">
+						<value>टीकाकरण विवरण को भरना आवश्यक है।</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/details_needed_hin.mp3</value>
+					</text>
+					<text id="update_mother-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/case_name"/> का टीकाकरण विवरण भरना है? </value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/update_mother_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/update_mother.png</value>
+					</text>
+					<text id="received_tt1-label">
+						<value>टी.टी-1 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/received_tt1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/received_tt1.png</value>
+					</text>
+					<text id="tt1_date-label">
+						<value>टी.टी - 1 की तारीख</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt1_date.png</value>
+					</text>
+					<text id="received_tt2-label">
+						<value>टी.टी - 2 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/received_tt2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/received_tt2.png</value>
+					</text>
+					<text id="tt2_date-label">
+						<value>टी.टी - 2 की तारीख</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt2_date.png</value>
+					</text>
+					<text id="tt_booster-label">
+						<value>टी.टी - बूस्टर भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt_booster.png</value>
+					</text>
+					<text id="tt_booster_date-label">
+						<value>टी.टी - बूस्टर की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt_booster_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt_booster_date.png</value>
+					</text>
+					<text id="yes-label">
+						<value>1. हॉ</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. नही</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/no_hin.mp3</value>
+					</text>
+					<text id="display_child-label">
+						<value><output ref="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/child_immun/display_child.png</value>
+					</text>
+					<text id="add_vaccinations-label">
+						<value><output ref="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/> का टीकाकरण विवरण भरना है? </value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/add_vaccinations_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/add_vaccinations.png</value>
+					</text>
+					<text id="baby_bcg-label">
+						<value>बी.सी.जी. भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_bcg_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_bcg.png</value>
+					</text>
+					<text id="bcg_date-label">
+						<value>बी.सी.जी. की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/bcg_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/bcg_date.png</value>
+					</text>
+					<text id="baby_opv0-label">
+						<value>पोलियो खुराख भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv0_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv0.png</value>
+					</text>
+					<text id="opv_0_date-label">
+						<value>पोलियो खुराख की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_0_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_0_date.png</value>
+					</text>
+					<text id="baby_opv1-label">
+						<value>पोलियो खुराख-1 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv1.png</value>
+					</text>
+					<text id="opv_1_date-label">
+						<value>पोलियो खुराख-1 .की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_1_date.png</value>
+					</text>
+					<text id="baby_opv2-label">
+						<value>पोलियो खुराख-2 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv2.png</value>
+					</text>
+					<text id="opv_2_date-label">
+						<value>पोलियो खुराख-2  की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_2_date.png</value>
+					</text>
+					<text id="baby_opv3-label">
+						<value>पोलियो खुराख -3 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv3.png</value>
+					</text>
+					<text id="opv_3_date-label">
+						<value>पोलियो खुराख- 3 की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_3_date.png</value>
+					</text>
+					<text id="baby_opv_booster-label">
+						<value>पोलियो बूस्टर भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv_booster.png</value>
+					</text>
+					<text id="opv_booster_date-label">
+						<value>पोलियो बूस्टर तारीख  ?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_booster_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_booster_date.png</value>
+					</text>
+					<text id="baby_dpt1-label">
+						<value>डी. पी. टी. -1 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt1.png</value>
+					</text>
+					<text id="dpt_1_date-label">
+						<value>डी. पी. टी - 1  की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/dpt_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/dpt_1_date.png</value>
+					</text>
+					<text id="baby_dpt2-label">
+						<value>डी. पी. टी. -2 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt2.png</value>
+					</text>
+					<text id="dpt_2_date-label">
+						<value>डी. पी. टी - 2  की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/dpt_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/dpt_2_date.png</value>
+					</text>
+					<text id="baby_dpt3-label">
+						<value>डी. पी. टी. -3 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt3.png</value>
+					</text>
+					<text id="dpt_3_date-label">
+						<value>डी. पी. टी - 3  की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/dpt_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/dpt_3_date.png</value>
+					</text>
+					<text id="baby_dpt_booster-label">
+						<value>डी. पी. टी - बूस्टर भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt_booster.png</value>
+					</text>
+					<text id="date_dpt_booster-label">
+						<value>डी. पी. टी - बूसटर की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/date_dpt_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/date_dpt_booster.png</value>
+					</text>
+					<text id="baby_hep_b_0-label">
+						<value>हेपेटाइटिस बी - 0 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_0_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_0.png</value>
+					</text>
+					<text id="hep_b_0_date-label">
+						<value>हेपेटाइटिस-बी की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_0_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_0_date.png</value>
+					</text>
+					<text id="baby_hep_b_1-label">
+						<value>हेपेटाइटिस बी - 1 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_1.png</value>
+					</text>
+					<text id="hep_b_1_date-label">
+						<value>हेपेटाइटिस-बी 1 की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_1_date.png</value>
+					</text>
+					<text id="baby_hep_b_2-label">
+						<value>हेपेटाइटिस बी - 2 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_2.png</value>
+					</text>
+					<text id="hep_b_2_date-label">
+						<value>हेपेटाइटिस-बी - 2  की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_2_date.png</value>
+					</text>
+					<text id="baby_hep_b_3-label">
+						<value>हेपेटाइटिस बी - 3 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_3.png</value>
+					</text>
+					<text id="hep_b_3_date-label">
+						<value>हेपेटाइटिस बी - 3  की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_3_date.png</value>
+					</text>
+					<text id="baby_measles-label">
+						<value>खसरे का टीका भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_measles_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_measles.png</value>
+					</text>
+					<text id="measles_date-label">
+						<value>खसरे की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/measles_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/measles_date.png</value>
+					</text>
+					<text id="baby_measles_booster-label">
+						<value>खसरे का बूस्टर टीका भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_measles_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_measles_booster.png</value>
+					</text>
+					<text id="date_measles_booster-label">
+						<value>खसरे का बूस्टर टीका की तारीख?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/date_measles_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/date_measles_booster.png</value>
+					</text>
+					<text id="baby_vita1-label">
+						<value>विटामिन ए -1 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_vita1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_vita1.png</value>
+					</text>
+					<text id="vit_a_1_date-label">
+						<value>विटामिन ए-1  की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/vit_a_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/vit_a_1_date.png</value>
+					</text>
+					<text id="baby_vita2-label">
+						<value>विटामिन ए -2 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_vita2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_vita2.png</value>
+					</text>
+					<text id="vit_a_2_date-label">
+						<value>विटामिन ए -2  की तारीख</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/vit_a_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/vit_a_2_date.png</value>
+					</text>
+					<text id="baby_vita3-label">
+						<value>विटामिन ए -3 भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_vita3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_vita3.png</value>
+					</text>
+					<text id="vit_a_3_date-label">
+						<value>विटामिन ए -3 की तारीख  </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/vit_a_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/vit_a_3_date.png</value>
+					</text>
+					<text id="baby_je-label">
+						<value>जे. ई. का टीका भरें?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_je_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_je.png</value>
+					</text>
+					<text id="date_je-label">
+						<value>जे. ई. की तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/date_je_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/date_je.png</value>
+					</text>
+					<text id="up_to_date-label">
+						<value>टीकाकरण कार्ड अपडेट</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतापूर्वक फॉर्म समाप्त</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/success_hin.mp3</value>
+					</text>
+					<text id="child_info-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/child_immun/child_info.png</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="details_available-label">
+						<value>Are immunization details available?</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/details_available_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/details_available.png</value>
+					</text>
+					<text id="details_needed-label">
+						<value>Details are needed to update the immunization record!</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/details_needed_hin.mp3</value>
+					</text>
+					<text id="update_mother-label">
+						<value>Update immunizations for <output value="instance('casedb')/casedb/case[@case_id=/data/mother_caseid]/case_name"/> ?</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/update_mother_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/update_mother.png</value>
+					</text>
+					<text id="received_tt1-label">
+						<value>Received TT1 Injection</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/received_tt1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/received_tt1.png</value>
+					</text>
+					<text id="tt1_date-label">
+						<value>Date of TT1</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt1_date.png</value>
+					</text>
+					<text id="received_tt2-label">
+						<value>Received TT2 injection</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/received_tt2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/received_tt2.png</value>
+					</text>
+					<text id="tt2_date-label">
+						<value>Date of TT2</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt2_date.png</value>
+					</text>
+					<text id="tt_booster-label">
+						<value>Received tt booster dosage?</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt_booster.png</value>
+					</text>
+					<text id="tt_booster_date-label">
+						<value>Date of TT Booster</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/tt_booster_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/bp/tt_booster_date.png</value>
+					</text>
+					<text id="yes-label">
+						<value>1. yes</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. no</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/no_hin.mp3</value>
+					</text>
+					<text id="display_child-label">
+						<value><output ref="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/child_immun/display_child.png</value>
+					</text>
+					<text id="add_vaccinations-label">
+						<value>Update immunizations for  <output ref="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/>?</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/add_vaccinations_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/add_vaccinations.png</value>
+					</text>
+					<text id="baby_bcg-label">
+						<value>Received BCG m0?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_bcg_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_bcg.png</value>
+					</text>
+					<text id="bcg_date-label">
+						<value>Date of BCG: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/bcg_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/bcg_date.png</value>
+					</text>
+					<text id="baby_opv0-label">
+						<value>Received OPV 0?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv0_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv0.png</value>
+					</text>
+					<text id="opv_0_date-label">
+						<value>Date of OPV 0:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_0_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_0_date.png</value>
+					</text>
+					<text id="baby_opv1-label">
+						<value>Received OPV I?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv1.png</value>
+					</text>
+					<text id="opv_1_date-label">
+						<value>Date of OPV I:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_1_date.png</value>
+					</text>
+					<text id="baby_opv2-label">
+						<value>Received OPV II?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv2.png</value>
+					</text>
+					<text id="opv_2_date-label">
+						<value>Date of OPV II:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_2_date.png</value>
+					</text>
+					<text id="baby_opv3-label">
+						<value>Received OPV III? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv3.png</value>
+					</text>
+					<text id="opv_3_date-label">
+						<value>Date of OPV III: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_3_date.png</value>
+					</text>
+					<text id="baby_opv_booster-label">
+						<value>Received OPV Booster?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_opv_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_opv_booster.png</value>
+					</text>
+					<text id="opv_booster_date-label">
+						<value>Date of OPV Booster:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/opv_booster_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/opv_booster_date.png</value>
+					</text>
+					<text id="baby_dpt1-label">
+						<value>Received DPT I? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt1.png</value>
+					</text>
+					<text id="dpt_1_date-label">
+						<value>Date of DPT I: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/dpt_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/dpt_1_date.png</value>
+					</text>
+					<text id="baby_dpt2-label">
+						<value>Received DPT II?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt2.png</value>
+					</text>
+					<text id="dpt_2_date-label">
+						<value>Date of DPT II:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/dpt_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/dpt_2_date.png</value>
+					</text>
+					<text id="baby_dpt3-label">
+						<value>Received DPT III? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt3.png</value>
+					</text>
+					<text id="dpt_3_date-label">
+						<value>Date of DPT III:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/dpt_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/dpt_3_date.png</value>
+					</text>
+					<text id="baby_dpt_booster-label">
+						<value>Received DPT Booster?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_dpt_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_dpt_booster.png</value>
+					</text>
+					<text id="date_dpt_booster-label">
+						<value>Date of DPT Booster:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/date_dpt_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/date_dpt_booster.png</value>
+					</text>
+					<text id="baby_hep_b_0-label">
+						<value>Received Hepatitis B 0?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_0_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_0.png</value>
+					</text>
+					<text id="hep_b_0_date-label">
+						<value>Date of Hepatitis B 0: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_0_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_0_date.png</value>
+					</text>
+					<text id="baby_hep_b_1-label">
+						<value>Received Hepatitis B I? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_1.png</value>
+					</text>
+					<text id="hep_b_1_date-label">
+						<value>Date of Hepatitis B I:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_1_date.png</value>
+					</text>
+					<text id="baby_hep_b_2-label">
+						<value>Received Hepatitis B II?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_2.png</value>
+					</text>
+					<text id="hep_b_2_date-label">
+						<value>Date of Hepatitis B II:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_2_date.png</value>
+					</text>
+					<text id="baby_hep_b_3-label">
+						<value>Received Hepatitis B III?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_hep_b_3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_hep_b_3.png</value>
+					</text>
+					<text id="hep_b_3_date-label">
+						<value>Date of Hepatitis B III: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/hep_b_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/hep_b_3_date.png</value>
+					</text>
+					<text id="baby_measles-label">
+						<value>Received measles? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_measles_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_measles.png</value>
+					</text>
+					<text id="measles_date-label">
+						<value>Date of Measles: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/measles_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/measles_date.png</value>
+					</text>
+					<text id="baby_measles_booster-label">
+						<value>Received Measles Booster?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_measles_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_measles_booster.png</value>
+					</text>
+					<text id="date_measles_booster-label">
+						<value>Date of Measles Booster:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/date_measles_booster_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/date_measles_booster.png</value>
+					</text>
+					<text id="baby_vita1-label">
+						<value>Received Vitamin A I? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_vita1_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_vita1.png</value>
+					</text>
+					<text id="vit_a_1_date-label">
+						<value>Date of Vitamin A I: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/vit_a_1_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/vit_a_1_date.png</value>
+					</text>
+					<text id="baby_vita2-label">
+						<value>Received Vitamin A II? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_vita2_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_vita2.png</value>
+					</text>
+					<text id="vit_a_2_date-label">
+						<value>Date of Vitamin A II: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/vit_a_2_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/vit_a_2_date.png</value>
+					</text>
+					<text id="baby_vita3-label">
+						<value>Received Vitamin A III? </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_vita3_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_vita3.png</value>
+					</text>
+					<text id="vit_a_3_date-label">
+						<value>Date of Vitamin A III: </value>
+						<value form="audio">jr://file/commcare/media/audio/cf/vit_a_3_date_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/vit_a_3_date.png</value>
+					</text>
+					<text id="baby_je-label">
+						<value>Received JE Vaccine?</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/baby_je_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/baby_je.png</value>
+					</text>
+					<text id="date_je-label">
+						<value>Date of JE:</value>
+						<value form="audio">jr://file/commcare/media/audio/cf/date_je_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/cf/date_je.png</value>
+					</text>
+					<text id="up_to_date-label">
+						<value>Immunization card up to date</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="image">jr://file/commcare/media/images/child_immun/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/child_immun/success_hin.mp3</value>
+					</text>
+					<text id="child_info-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/child_immun/child_info.png</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		
+		<select1 ref="/data/details_available" >
+			<label ref="jr:itext('details_available-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>	
+		<trigger ref="/data/details_needed">
+			<label ref="jr:itext('details_needed-label')"/>
+		</trigger>
+		<select1 ref="/data/update_mother">
+			<label ref="jr:itext('update_mother-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>	
+		<group ref="/data/mother">
+			<trigger ref="/data/mother/up_to_date">
+				<label ref="jr:itext('up_to_date-label')" />
+			</trigger>
+			<select1 ref="/data/mother/received_tt1">
+				<label ref="jr:itext('received_tt1-label')" />
+				<item>
+					<label ref="jr:itext('yes-label')" />
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('no-label')" />
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/mother/case/update/tt_1_date">
+				<label ref="jr:itext('tt1_date-label')" />
+			</input>
+			<select1 ref="/data/mother/received_tt2">
+				<label ref="jr:itext('received_tt2-label')" />
+				<item>
+					<label ref="jr:itext('yes-label')" />
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('no-label')" />
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/mother/case/update/tt_2_date">
+				<label ref="jr:itext('tt2_date-label')" />
+			</input>
+			<select1 ref="/data/mother/tt_booster">
+				<label ref="jr:itext('tt_booster-label')" />
+				<item>
+					<label ref="jr:itext('yes-label')" />
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('no-label')" />
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/mother/case/update/tt_booster_date">
+				<label ref="jr:itext('tt_booster_date-label')" />
+			</input>	
+					
+		</group>
+			
+		<group>
+			<label ref="jr:itext('child_info-label')" />
+			<repeat nodeset="/data/child_info" jr:count="/data/num_children">
+				<jr:entryHeader><output value="$name"/></jr:entryHeader>
+				<trigger ref="/data/child_info/display_child">
+					<label ref="jr:itext('display_child-label')" />
+				</trigger>
+				<select1 ref="/data/child_info/add_vaccinations">
+					<label ref="jr:itext('add_vaccinations-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<trigger ref="/data/child_info/up_to_date">
+					<label ref="jr:itext('up_to_date-label')" />
+				</trigger>
+				<select1 ref="/data/child_info/baby_bcg">
+					<label ref="jr:itext('baby_bcg-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/bcg_date">
+					<label ref="jr:itext('bcg_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_opv0">
+					<label ref="jr:itext('baby_opv0-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/opv_0_date">
+					<label ref="jr:itext('opv_0_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_opv1">
+					<label ref="jr:itext('baby_opv1-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/opv_1_date">
+					<label ref="jr:itext('opv_1_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_opv2">
+					<label ref="jr:itext('baby_opv2-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/opv_2_date">
+					<label ref="jr:itext('opv_2_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_opv3">
+					<label ref="jr:itext('baby_opv3-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/opv_3_date">
+					<label ref="jr:itext('opv_3_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_opv_booster">
+					<label ref="jr:itext('baby_opv_booster-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/opv_booster_date">
+					<label ref="jr:itext('opv_booster_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_dpt1">
+					<label ref="jr:itext('baby_dpt1-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/dpt_1_date">
+					<label ref="jr:itext('dpt_1_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_dpt2">
+					<label ref="jr:itext('baby_dpt2-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/dpt_2_date">
+					<label ref="jr:itext('dpt_2_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_dpt3">
+					<label ref="jr:itext('baby_dpt3-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/dpt_3_date">
+					<label ref="jr:itext('dpt_3_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_dpt_booster">
+					<label ref="jr:itext('baby_dpt_booster-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/dpt_booster_date">
+					<label ref="jr:itext('date_dpt_booster-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_hep_b_0">
+					<label ref="jr:itext('baby_hep_b_0-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/hep_b_0_date">
+					<label ref="jr:itext('hep_b_0_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_hep_b_1">
+					<label ref="jr:itext('baby_hep_b_1-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/hep_b_1_date">
+					<label ref="jr:itext('hep_b_1_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_hep_b_2">
+					<label ref="jr:itext('baby_hep_b_2-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/hep_b_2_date">
+					<label ref="jr:itext('hep_b_2_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_hep_b_3">
+					<label ref="jr:itext('baby_hep_b_3-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/hep_b_3_date">
+					<label ref="jr:itext('hep_b_3_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_measles">
+					<label ref="jr:itext('baby_measles-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/measles_date">
+					<label ref="jr:itext('measles_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_measles_booster">
+					<label ref="jr:itext('baby_measles_booster-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/date_measles_booster">
+					<label ref="jr:itext('date_measles_booster-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_vita1">
+					<label ref="jr:itext('baby_vita1-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/vit_a_1_date">
+					<label ref="jr:itext('vit_a_1_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_vita2">
+					<label ref="jr:itext('baby_vita2-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/vit_a_2_date">
+					<label ref="jr:itext('vit_a_2_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_vita3">
+					<label ref="jr:itext('baby_vita3-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/vit_a_3_date">
+					<label ref="jr:itext('vit_a_3_date-label')" />
+				</input>
+				<select1 ref="/data/child_info/baby_je">
+					<label ref="jr:itext('baby_je-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/case/update/date_je">
+					<label ref="jr:itext('date_je-label')" />
+				</input>
+				
+			</repeat>
+			
+		</group>
+		
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+	</h:body>
+</h:html>

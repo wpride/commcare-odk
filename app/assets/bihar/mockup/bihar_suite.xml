@@ -1,0 +1,1306 @@
+<suite version="4">
+
+    <!-- Parse and cache the XForm -->
+    <xform>
+        <resource id="bihar_pregnancy_new" version="3">
+           <location authority="local">./bihar_new_beneficiary.xml</location>
+           <location authority="remote">./bihar_new_beneficiary.xml?latest=true</location>
+        </resource>
+    </xform>
+	
+	
+	<!-- Parse and cache the XForm -->
+    <xform>
+        <resource id="bihar_pregnancy_registration" version="3">
+           <location authority="local">./bihar_registration.xml</location>
+           <location authority="remote">./bihar_registration.xml?latest=true</location>
+        </resource>
+    </xform>	
+
+    <!-- Parse and cache the XForm -->
+    <xform>
+        <resource id="bihar_pregnancy_bp" version="3">
+           <location authority="local">./bihar_bp.xml</location>
+           <location authority="remote">./bihar_bp.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    <!-- Parse and cache the XForm -->
+    <xform>
+        <resource id="bihar_pregnancy_del" version="3">
+           <location authority="local">./bihar_del.xml</location>
+           <location authority="remote">./bihar_del.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    <!-- Parse and cache the XForm -->
+    <xform>
+        <resource id="bihar_pregnancy_pnc" version="3">
+           <location authority="local">./bihar_pnc.xml</location>
+           <location authority="remote">./bihar_pnc.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    <xform>
+        <resource id="bihar_pregnancy_ebf" version="3">
+           <location authority="local">./bihar_ebf.xml</location>
+           <location authority="remote">./bihar_ebf.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    <xform>
+        <resource id="bihar_pregnancy_cf" version="3">
+           <location authority="local">./bihar_cf.xml</location>
+           <location authority="remote">./bihar_cf.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    
+    <!-- Client Management forms -->
+     <xform>
+        <resource id="bihar_death_reg" version="3">
+           <location authority="local">./bihar_death_reg.xml</location>
+           <location authority="remote">./bihar_death_reg.xml?latest=true</location>
+        </resource>
+    </xform>
+	
+	 <xform>
+        <resource id="bihar_mtp_abort" version="3">
+           <location authority="local">./bihar_mtp_abort.xml</location>
+           <location authority="remote">./bihar_mtp_abort.xml?latest=true</location>
+        </resource>
+    </xform>
+	
+	<xform>
+        <resource id="bihar_refer" version="3">
+           <location authority="local">./bihar_refer.xml</location>
+           <location authority="remote">./bihar_refer.xml?latest=true</location>
+        </resource>
+    </xform>
+	
+	<xform>
+        <resource id="bihar_update_vaccinations" version="3">
+           <location authority="local">./bihar_update_vaccinations.xml</location>
+           <location authority="remote">./bihar_update_vaccinations.xml?latest=true</location>
+        </resource>
+    </xform>
+
+	<xform>
+        <resource id="bihar_mother_edit" version="4">
+           <location authority="local">./bihar_mother_edit.xml</location>
+           <location authority="remote">./bihar_mother_edit.xml?latest=true</location>
+        </resource>
+    </xform>
+	
+	<xform>
+        <resource id="bihar_close" version="3">
+           <location authority="local">./bihar_close.xml</location>
+           <location authority="remote">./bihar_close.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    <xform>
+        <resource id="bihar_tools_ref" version="3">
+           <location authority="local">./bihar_refer_info.xml</location>
+           <location authority="remote">./bihar_refer_info.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    <xform>
+        <resource id="bihar_tools_bmi" version="3">
+           <location authority="local">./bihar_bmi_calc.xml</location>
+           <location authority="remote">./bihar_bmi_calc.xml?latest=true</location>
+        </resource>
+    </xform>
+    
+    <xform>
+        <resource id="bihar_tools_edd" version="3">
+           <location authority="local">./bihar_edd_calc.xml</location>
+           <location authority="remote">./bihar_edd_calc.xml?latest=true</location>
+        </resource>
+    </xform>
+	
+	<xform>
+		<resource id="bihar_task_list_form" version="3">
+			<location authority="local">./bihar_due_list_item.xml</location>
+        	<location authority="remote">./bihar_due_list_item.xml?latest=true</location>
+		</resource>
+	</xform>
+	
+	<xform>
+		<resource id="bihar_migrate_out_form" version="3">
+			<location authority="local">./bihar_migrate_out.xml</location>
+        	<location authority="remote">./bihar_migrate_out.xml?latest=true</location>
+		</resource>
+	</xform>
+	
+	<xform>
+		<resource id="bihar_migrate_in_form" version="3">
+			<location authority="local">./bihar_migrate_in.xml</location>
+        	<location authority="remote">./bihar_migrate_in.xml?latest=true</location>
+		</resource>
+	</xform>
+	
+	<xform>
+		<resource id="bihar_technical_assistance_form" version="3">
+			<location authority="local">./bihar_technical_assistance.xml</location>
+        	<location authority="remote">./bihar_technical_assistance.xml?latest=true</location>
+		</resource>
+	</xform>
+	
+	<xform>
+		<resource id="bihar_move_beneficiary_form" version="3">
+			<location authority="local">./bihar_move_beneficiary.xml</location>
+        	<location authority="remote">./bihar_move_beneficiary.xml?latest=true</location>
+		</resource>
+	</xform>
+	
+	<xform>
+		<resource id="bihar_ration" version="3">
+			<location authority="local">./bihar_ration.xml</location>
+        	<location authority="remote">./bihar_ration.xml?latest=true</location>
+		</resource>
+	</xform>
+	
+	<xform>
+		<resource id="bihar_growth" version="3">
+			<location authority="local">./bihar_growth.xml</location>
+        	<location authority="remote">./bihar_growth.xml?latest=true</location>
+		</resource>
+	</xform>
+	
+
+	
+    <!-- Read and locally store the translation strings-->
+    <locale language="default">
+        <resource id="demo_cc_strings_default" version="3">
+           <location authority="local">./demo_cc_en.txt</location>
+           <location authority="remote">./demo_cc_en.txt?latest=true</location>
+        </resource>
+    </locale>
+
+	<!-- Read and locally store the translation strings-->
+    <locale language="hin">
+        <resource id="demo_cc_strings_hin" version="3">
+           <location authority="local">./demo_cc_hin.txt</location>
+           <location authority="remote">./demo_cc_hin.txt?latest=true</location>
+        </resource>
+    </locale>
+    
+
+    <!-- Define the short detail model for household cases -->
+    <detail id="pregnancy_short">
+        <title><text><locale id="entity.pregnancy"/></text></title>
+        <field>
+            <header width="100"><text><locale id="header.name"/></text></header>
+            <template width="100"><text><xpath function="case_name"/></text></template>
+        </field>
+    </detail>
+    
+    
+    <!-- Define the short detail model for household cases -->
+    <detail id="schedule_short">
+        <title><text><locale id="entity.plan"/></text></title>
+        <variables>
+        	<!-- group by type. 1 through 5 -->
+        	<adddate function="add"/>       
+        	<reggroup function="if($adddate = '' and edd = '' , 1, 0)"/>
+
+        	<delfdate function="if(date_del_fu = '', edd, date_del_fu)"/>
+ 	
+        	<bpgroup function="if(edd != '' and $adddate = '', if(date_bp_3 = '' and (date($delfdate) - today() - 7 &gt; (date(date_next_bp) - today())), 2, 3), 0)"/>
+        	<delgroup function="if(edd != '' and $adddate = '' and (date($delfdate) - today()) &lt; 7, 3, 0)"/>
+        	<dayspastadd function="if($adddate != '', int(today() - date($adddate)), 0)"/>
+            <pncgroup function="if($adddate != '' and $dayspastadd &lt; 14, 
+                                   if(date_pnc_3 = '' and 
+                                   not(date(coalesce(date_next_pnc, date($adddate) + 1)) - date($adddate) &gt;= 14)
+                                   , 4, 5),
+                                   0)"/>
+         	<ebgroup function="if($adddate != '' and $dayspastadd &gt;= 14 and $dayspastadd &lt; 183, 
+                                   if(date_eb_6 = '' , 5, 6),
+                                   0)"/>
+            <cfgroup function="if($adddate != '' and (($dayspastadd &gt;= 183 and $dayspastadd &lt; 730) or date_next_cf != ''), 
+                                   if(date_cf_7 = '' , 6, 7),
+                                   0)"/>
+            <miggroup function="if(migrated_status = 'migrated', 8, 0)"/>
+        	<group   function="max($reggroup, $bpgroup, $delgroup, $pncgroup, $ebgroup, $cfgroup, $miggroup)"/>
+        	
+        	<iconsrc function="concat('jr://file/commcare/media/images/menu/sched_icon_', $group, '.png')"/>
+        	
+        	<nextdue function="if($group = 1, int((date(date_last_visit) +7) - today()), 
+        					   if($group = 2, int(date(date_next_bp) - today()),
+        					   if($group = 3, int((date($delfdate) - today())- 7),
+        					   if($group = 4, int(date(coalesce(date_next_pnc, date($adddate) + 1)) - today()),
+        					   if($group = 5, int(date(coalesce(date_next_eb, date($adddate) + 14)) - today()),
+        					   if($group = 6, int(date(coalesce(date_next_cf, date($adddate) + 183)) - today()),
+        					   if($group = 7, int(date(coalesce(date_next_cf, date($adddate) + 730)) - today()),
+        					   5000)))))))"/>
+        </variables>
+        <field>
+            <header width="55"><text><locale id="header.name"/></text></header>
+            <template width="55"><text><xpath function="case_name"/></text></template>
+        </field>
+        <field>
+            <header width="10"><text/></header>
+            <template form="image" width="10"><text><xpath function="$iconsrc"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="header.due"/></text></header>
+            <template><text><xpath function="if($nextdue &lt;= -14, $latest,
+            								 if($nextdue &lt;= -7, $later,
+            								 if($nextdue &lt; 0, $late,
+                                             if($nextdue = 0, $todaymessage,
+                                             if($nextdue = 5000, $migratedmessage,
+                                                $nextdue)))))">
+                                                <variable name="late">
+            										<!-- First of the month -->
+            					    				<locale id="select.due.late"/>
+            									</variable>
+            									<variable name="later">
+            										<!-- First of the month -->
+            					    				<locale id="select.due.late.two"/>
+            									</variable>
+            									<variable name="latest">
+            										<!-- First of the month -->
+            					    				<locale id="select.due.late.more"/>
+            									</variable>
+            									<variable name="todaymessage">
+            										<!-- First of the month -->
+            					    				<locale id="select.due.today"/>
+            									</variable>
+            									<variable name="migratedmessage">
+            										<!-- First of the month -->
+            					    				<locale id="select.due.migrated"/>
+            									</variable>
+                            </xpath>
+                                                       
+                      </text></template>
+        </field>
+        <!--  for sorting -->
+        <field sort="default">
+            <header width="0"><text>Priority Order</text></header>
+            <template width="0"><text><xpath function="case_name"/></text></template>
+        </field>
+    </detail>
+    
+    <detail id="growth_short">
+        <title><text><locale id="growth.list.title"/></text></title>
+        <field>
+            <header><text><locale id="growth.child.name"/></text></header>
+            <template><text><xpath function="case_name"/></text></template>
+        </field>
+        <field>
+            <header><text/></header>
+            <template form="image" width="10"><text>jr://file/commcare/media/images/menu/growth_<xpath function="current_growth"/>.png</text></template>
+        </field>
+        <field>
+            <header><text/></header>
+            <template form="image" width="10"><text>jr://file/commcare/media/images/menu/growth_<xpath function="last_growth_1"/>.png</text></template>
+        </field>
+        <field>
+            <header><text/></header>
+            <template form="image" width="10"><text>jr://file/commcare/media/images/menu/growth_<xpath function="last_growth_2"/>.png</text></template>
+        </field>
+        <field>
+            <header><text/></header>
+            <template form="image" width="10"><text>jr://file/commcare/media/images/menu/growth_<xpath function="last_growth_3"/>.png</text></template>
+        </field>
+    </detail>
+    
+     <detail id="growth_long">
+        <title><text><locale id="growth.list.title"/></text></title>
+        <variables>
+        	<motherid function="index/mother_id"/>
+        </variables>
+        <field>
+            <header><text><locale id="growth.child.name"/></text></header>
+            <template><text><xpath function="case_name"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.parent.name"/></text></header>
+            <template><text><xpath function="instance('casedb')/casedb/case[@case_id=$motherid]/case_name"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.dob"/></text></header>
+            <template><text><xpath function="if(dob = '', '', format_date(date(dob),'short'))"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.gender"/></text></header>
+            <template><text><xpath function="gender"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.last"/></text></header>
+            <template><text><xpath function="if(current_weight_date = '', '', format_date(date(current_weight_date),'short'))"/></text></template>
+        </field>
+                <field>
+            <header><text><locale id="growth.child.agemos"/></text></header>
+            <template><text><xpath function="if(current_weight_date = '', '',int((date(current_weight_date) - date(dob)) div 30)   )"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.weight"/></text></header>
+            <template><text><xpath function="current_weight"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.class"/></text></header>
+            <template><text><xpath function="current_growth"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.prevdate"/></text></header>
+            <template><text><xpath function="if(last_weight_date = '', '', format_date(date(last_weight_date),'short'))"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.prevagemos"/></text></header>
+            <template><text><xpath function="if(last_weight_date = '', '',int((date(last_weight_date) - date(dob)) div 30)   )"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.prevweight"/></text></header>
+            <template><text><xpath function="last_weight"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="growth.child.prevclass"/></text></header>
+            <template><text><xpath function="last_growth_1"/></text></template>
+        </field>
+
+        
+    </detail>
+    
+    <detail id="task_person_short">
+        <title><text><locale id="task.list.who"/>(<xpath function="format_date(date(today() + instance('session')/session/data/checked_delta),'short')"/>)</text></title>
+        <variables>
+        	<motherid function="index/mother_id"/>
+        </variables>
+        <field>
+            <header width="55"><text><locale id="task.list.who.title.mother"/></text></header>
+            <template width="55"><text><xpath function="if(@case_type != 'cc_bihar_newborn', case_name, instance('casedb')/casedb/case[@case_id=$motherid]/case_name)"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="task.list.who.title.husband"/></text></header>
+            <template><text><xpath function="if(@case_type != 'cc_bihar_newborn', husband_name, instance('casedb')/casedb/case[@case_id=$motherid]/husband_name)"/></text></template>
+        </field>
+    </detail>
+    
+    <detail id="task_person_detail">
+        <title><text><locale id="task.list.who"/></text></title>
+        <variables>
+        	<cid function="@case_id"/>
+        	<delta function="instance('session')/session/data/checked_delta"/>
+        	
+        	<anc_1 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='anc_1']/@case_id"/>
+        	<anc_2 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='anc_2']/@case_id"/>
+        	<anc_3 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='anc_3']/@case_id"/>
+        	<anc_4 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='anc_4']/@case_id"/>
+        	
+        	<tt_1 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='tt_1']/@case_id"/>
+        	<tt_2 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='tt_2']/@case_id"/>
+        	<tt_b function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='tt_booster']/@case_id"/>
+        	
+        	<bcg function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='bcg']/@case_id"/>
+        	
+        	<opv_0 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='opv_0']/@case_id"/>
+        	<opv_1 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='opv_1']/@case_id"/>
+        	<opv_2 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='opv_2']/@case_id"/>
+        	<opv_3 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='opv_3']/@case_id"/>
+        	<opv_b function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='opv_booster']/@case_id"/>
+        	
+        	<dpt_1 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='dpt_1']/@case_id"/>
+        	<dpt_2 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='dpt_2']/@case_id"/>
+        	<dpt_3 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='dpt_3']/@case_id"/>
+        	<dpt_b function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='dpt_booster']/@case_id"/>
+        	
+        	<hep_b_0 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='hep_0']/@case_id"/>
+        	<hep_b_1 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='hep_1']/@case_id"/>
+        	<hep_b_2 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='hep_2']/@case_id"/>
+        	<hep_b_3 function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='hep_3']/@case_id"/>
+        	
+        	<measles function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='measles']/@case_id"/>
+        	<measles_b function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='measles_b']/@case_id"/>
+        	
+        	<vit_a_1  function="instance('casedb')/casedb/case[@case_type='task'][@status='open'][index/person_id =$cid][task_id='vita_1']/@case_id"/>
+        	
+        	
+        	<!-- [date(date_eligible) &lt;= date(today() + instance('session')/session/data/checked_delta) and date(date_expires) &gt; date(today() + instance('session')/session/data/checked_delta)]) &gt; 0 -->        	
+        </variables>
+        	
+        <field>
+        	<header><text><locale id="task.list.who.mother.imms"/></text></header>
+        	<template><text><xpath function="if(@case_type = 'cc_bihar_newborn', instance('casedb')/casedb/case[@case_id = index/mother_id]/case_name, case_name)"/></text></template>
+        </field>
+                
+        <field>
+        	<header><text><locale id="task.list.who.father.imms"/></text></header>
+        	<template><text><xpath function="if(@case_type = 'cc_bihar_newborn', instance('casedb')/casedb/case[@case_id = index/mother_id]/husband_name, husband_name)"/></text></template>
+        </field>        
+        
+        <field>
+        	<header><text><locale id="task.list.who.child.imms"/></text></header>
+        	<template><text><xpath function="if(@case_type = 'cc_bihar_newborn', case_name, '')"/></text></template>
+        </field>
+        
+        <field>
+        	<header><text><locale id="task.list.age"/></text></header>
+        	<template><text><xpath function="if(@case_type = 'cc_bihar_newborn', int((today() - int(date(dob))) div 30.4368), '')"/></text></template>
+        </field>
+        
+<field>
+            <header><text><locale id="task.list.who.imm.anc_1"/></text></header>
+            <template><text><xpath function="if($anc_1='' or  (date(instance('casedb')/casedb/case[@case_id=$anc_1]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$anc_1]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$anc_1]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.anc_2"/></text></header>
+            <template><text><xpath function="if($anc_2='' or  (date(instance('casedb')/casedb/case[@case_id=$anc_2]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$anc_2]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$anc_2]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.anc_3"/></text></header>
+            <template><text><xpath function="if($anc_3='' or  (date(instance('casedb')/casedb/case[@case_id=$anc_3]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$anc_3]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$anc_3]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+                
+        <field>
+            <header><text><locale id="task.list.who.imm.anc_4"/></text></header>
+            <template><text><xpath function="if($anc_4='' or  (date(instance('casedb')/casedb/case[@case_id=$anc_4]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$anc_4]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$anc_4]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.tt_1"/></text></header>
+            <template><text><xpath function="if($tt_1='' or  (date(instance('casedb')/casedb/case[@case_id=$tt_1]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$tt_1]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$tt_1]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.tt_2"/></text></header>
+            <template><text><xpath function="if($tt_2='' or  (date(instance('casedb')/casedb/case[@case_id=$tt_2]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$tt_2]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$tt_2]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.tt_b"/></text></header>
+            <template><text><xpath function="if($tt_b='' or  (date(instance('casedb')/casedb/case[@case_id=$tt_b]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$tt_b]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$tt_b]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.bcg"/></text></header>
+            <template><text><xpath function="if($bcg=''   or  (date(instance('casedb')/casedb/case[@case_id=$bcg]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$bcg]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$bcg]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.opv_0"/></text></header>
+            <template><text><xpath function="if($opv_0='' or  (date(instance('casedb')/casedb/case[@case_id=$opv_0]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$opv_0]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$opv_0]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.opv_1"/></text></header>
+            <template><text><xpath function="if($opv_1='' or  (date(instance('casedb')/casedb/case[@case_id=$opv_1]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$opv_1]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$opv_1]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.opv_2"/></text></header>
+            <template><text><xpath function="if($opv_2='' or  (date(instance('casedb')/casedb/case[@case_id=$opv_2]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$opv_2]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$opv_2]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.opv_3"/></text></header>
+            <template><text><xpath function="if($opv_3='' or  (date(instance('casedb')/casedb/case[@case_id=$opv_3]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$opv_3]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$opv_3]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.opv_b"/></text></header>
+            <template><text><xpath function="if($opv_b='' or  (date(instance('casedb')/casedb/case[@case_id=$opv_b]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$opv_b]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$opv_b]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+                
+        <field>
+            <header><text><locale id="task.list.who.imm.dpt_1"/></text></header>
+            <template><text><xpath function="if($dpt_1='' or  (date(instance('casedb')/casedb/case[@case_id=$dpt_1]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$dpt_1]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$dpt_1]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.dpt_2"/></text></header>
+            <template><text><xpath function="if($dpt_2='' or  (date(instance('casedb')/casedb/case[@case_id=$dpt_2]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$dpt_2]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$dpt_2]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.dpt_3"/></text></header>
+            <template><text><xpath function="if($dpt_3='' or  (date(instance('casedb')/casedb/case[@case_id=$dpt_3]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$dpt_3]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$dpt_3]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.dpt_b"/></text></header>
+            <template><text><xpath function="if($dpt_b='' or  (date(instance('casedb')/casedb/case[@case_id=$dpt_b]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$dpt_b]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$dpt_b]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>                
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.hep_b_0"/></text></header>
+            <template><text><xpath function="if($hep_b_0='' or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_0]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_0]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$hep_b_0]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.hep_b_1"/></text></header>
+            <template><text><xpath function="if($hep_b_1='' or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_1]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_1]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$hep_b_1]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.hep_b_2"/></text></header>
+            <template><text><xpath function="if($hep_b_2='' or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_2]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_2]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$hep_b_2]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.hep_b_3"/></text></header>
+            <template><text><xpath function="if($hep_b_3='' or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_3]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$hep_b_3]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$hep_b_3]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.measles"/></text></header>
+            <template><text><xpath function="if($measles='' or  (date(instance('casedb')/casedb/case[@case_id=$measles]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$measles]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$measles]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.measles_b"/></text></header>
+            <template><text><xpath function="if($measles_b='' or  (date(instance('casedb')/casedb/case[@case_id=$measles_b]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$measles_b]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$measles_b]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+        <field>
+            <header><text><locale id="task.list.who.imm.vit_a_1"/></text></header>
+            <template><text><xpath function="if($vit_a_1='' or  (date(instance('casedb')/casedb/case[@case_id=$vit_a_1]/date_expires) &lt;= date(today() + $delta))
+                                                          or  (date(instance('casedb')/casedb/case[@case_id=$vit_a_1]/date_eligible) &gt; date(today() + $delta)),
+                                                '',
+                                                if(int(date(instance('casedb')/casedb/case[@case_id=$vit_a_1]/date_expires) - today()) &lt; (7 * 8), $priority, $due)
+                                                )
+           "><variable name="priority"><locale id="select.due.list.priority"/></variable><variable name="due"><locale id="select.due.list.due"/></variable></xpath></text></template>
+        </field>
+        
+    </detail>
+
+
+
+
+    
+    <detail id="date_range_short">
+        <title><text><locale id="task.list.when"/></text></title>
+        <field>
+            <header><text></text></header>
+            <template><text><locale><id><xpath function="name"/></id></locale></text></template>
+        </field>
+    </detail>
+    
+    <detail id="task_short">
+        <title><text><locale id="task.list.what"/></text></title>
+        <field>
+            <header><text></text></header>
+            <template><text><xpath function="case_name"/></text></template>
+        </field>
+    </detail>    
+    
+
+    <!-- Define the long detail model for household cases -->
+    <detail id="pregnancy_long">
+        <title><text><locale id="entity.pregnancy.detail"/></text></title>            
+                <variables>
+            <mid function="@case_id"/>
+        	<!-- group by type. 1 through 5 -->
+        	
+        	<adddate function="add"/>       
+        	<reggroup function="if($adddate = '' and edd = '' , 1, 0)"/>
+        	<delfdate function="if(date_del_fu = '', edd, date_del_fu)"/>
+ 	
+        	<bpgroup function="if(edd != '' and $adddate = '', if(date_bp_3 = '' and (date($delfdate) - today() - 7 &gt; (date(date_next_bp) - today())), 2, 3), 0)"/>
+        	<delgroup function="if(edd != '' and $adddate = '' and (date($delfdate) - today()) &lt; 7, 3, 0)"/>
+        	<dayspastadd function="if($adddate != '', int(today() - date($adddate)), 0)"/>
+            <pncgroup function="if($adddate != '' and $dayspastadd &lt; 14, 
+                                   if(date_pnc_3 = '' and
+                                   not(date(coalesce(date_next_pnc, date($adddate) + 1)) - date($adddate) &gt;= 14)
+                                   , 4, 5),
+                                   0)"/>
+         	<ebgroup function="if($adddate != '' and $dayspastadd &gt;= 14 and $dayspastadd &lt; 183, 
+                                   if(date_eb_6 = '' , 5, 6),
+                                   0)"/>
+            <cfgroup function="if($adddate != '' and (($dayspastadd &gt;= 183 and $dayspastadd &lt; 730) or date_next_cf != ''), 
+                                   if(date_cf_7 = '' , 6, 7),
+                                   0)"/>
+        	<group   function="max($reggroup, $bpgroup, $delgroup, $pncgroup, $ebgroup, $cfgroup)"/>
+        	
+        	<nextdue function="if($group = 1, date(date_last_visit) +7, 
+        					   if($group = 2, date(date_next_bp),
+        					   if($group = 3, date(date($delfdate)- 7),
+        					   if($group = 4, date(coalesce(date_next_pnc, date($adddate) + 1)),
+        					   if($group = 5, date(coalesce(date_next_eb, date($adddate) + 14)),
+        					   if($group = 6, date(coalesce(date_next_cf, date($adddate) + 183)),
+							   if($group = 7, date(coalesce(date_next_cf, date($adddate) + 730)),
+        					   'none')))))))"/>
+        					   
+    		<nexttype function="if($group = 1, 'reg',
+    						   if($group = 2, 'bp',
+        					   if($group = 3, 'del',
+        					   if($group = 4, 'pnc',
+        					   if($group = 5, 'eb',
+        					   if($group = 6, 'cf',
+							   if($group = 7, 'cf',
+        					   'unknown')))))))"/>
+        </variables>
+        <field>
+            <header><text><locale id="header.name"/></text></header>
+            <template><text><xpath function="case_name"/></text></template>
+        </field>
+        <field>
+            <header><text><locale id="header.migration.status"/></text></header>
+            <template><text><xpath function="if(not(migrated_status = 'migrated'), '', $migstatus)">
+	                                            <variable name="migstatus">
+            										<!-- First of the month -->
+            					    				<locale id="select.detail.migrated"/>
+            									</variable>
+            								</xpath>
+            				</text></template>
+        </field>
+				<field>
+            <header><text><locale id="header.husband"/></text></header>
+            <template><text><xpath function="husband_name"/></text></template>
+        </field>
+		<field>
+            <header><text><locale id="header.next.visit.type"/></text></header>
+            <template><text><locale><id><xpath function="concat('visit.type.', $nexttype)"/></id></locale></text></template>
+        </field>
+        <field>
+            <header><text><locale id="header.next.visit"/></text></header>
+            <template><text><xpath function="format_date(date($nextdue),'short')"/></text></template>
+        </field>
+		<field>
+            <header><text><locale id="header.last.visit.type"/></text></header>
+            <template><text><locale><id><xpath function="if(last_visit_type ='', 'visit.type.unknown', concat('visit.type.', last_visit_type))"/></id></locale></text></template>
+        </field>        
+        <field>
+            <header><text><locale id="header.last.visit"/></text></header>
+            <template><text><xpath function="format_date(date(date_last_visit),'short')"/></text></template>
+        </field>              
+        <field>
+            <header><text><locale id="header.edd"/></text></header>
+            <template><text><xpath function="format_date(date(edd),'short')"/></text></template>
+        </field>
+                
+        <field>
+            <header><text><locale id="header.add"/></text></header>
+            <template><text><xpath function="format_date(date(add),'short')"/></text></template>
+        </field>
+
+        <field>
+        	<header><text><locale id="header.phone"/></text></header>
+            <template form="phone"><text><xpath function="mobile_number"/></text></template>
+        </field>	
+		<field>
+            <header><text><locale id="header.ward_number"/></text></header>
+            <template><text><xpath function="ward_number"/></text></template>
+        </field>		
+		<field>
+            <header><text><locale id="header.hh_number"/></text></header>
+            <template><text><xpath function="hh_number"/></text></template>
+        </field>
+    </detail>
+
+    <!-- Define entry actions for Household Visit Cases -->
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/new</form>
+		
+        <command id="pregnancy-new">
+			<display>
+				<text><locale id="menu.protocols.new"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/form_create_new_client_hin.mp3"/>
+			</display>
+        </command>
+    </entry>
+	
+	<entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/registration</form>
+        <command id="pregnancy-reg">
+			<display>
+				<text><locale id="menu.protocols.registration"/></text>
+				<media audio="jr://file/commcare/media/audio/menu/menu_option_registration_hin.mp3"/>
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/bp</form>
+        <command id="pregnancy-bp">
+			<display>
+				<text><locale id="menu.protocols.bp"/></text>
+				<media audio="jr://file/commcare/media/audio/menu/menu_option_birth_preparedness_hin.mp3"/>
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/del</form>
+        <command id="pregnancy-del">
+			<display>
+            <text><locale id="menu.protocols.del"/></text>
+			        <media audio="jr://file/commcare/media/audio/menu/menu_option_delivery_hin.mp3"/>
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/pnc</form>
+        <command id="pregnancy-pnc">
+			<display>
+            <text><locale id="menu.protocols.pnc"/></text>
+			        <media audio="jr://file/commcare/media/audio/menu/menu_option_pnc_hin.mp3"/>
+
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/ebf</form>
+        <command id="pregnancy-ebf">
+		<display>
+            <text><locale id="menu.protocols.ebf"/></text>
+			        <media audio="jr://file/commcare/media/audio/menu/menu_option_exclusive_breastfeeding_hin.mp3"/>
+		</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/cf</form>
+        <command id="pregnancy-cf">
+			<display>
+				<text><locale id="menu.protocols.cf"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_complimentary_breastfeeding_hin.mp3"/>
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+	
+	 <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/growth_monitoring</form>
+		
+        <command id="growth-monitoring">
+			<display>
+				<text><locale id="menu.growth.monitoring"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/form_growth_monitoring.mp3"/>
+			</display>
+        </command>
+        
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+        <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_newborn'][@status='open']" value="./@case_id" detail-select="growth_short" detail-confirm="growth_long"/>
+        </session>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/migrate_in</form>
+        <command id="migrate-in-scheduler">
+			<display>
+				<text><locale id="menu.client.management.migrate.in"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_migrate_in_hin.mp3"/>
+			</display>		
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+    <!-- entry>                   
+        <command id="pregnancy-schedule">
+            <text><locale id="menu.schedule.entry"/></text>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open'][next_form != ''][(int(date(next_due)) - today()) &lt; 14]" value="./@case_id" detail-select="schedule_short" detail-confirm="pregnancy_long"/>
+        	<form function="concat('http://bihar.commcarehq.org/pregnancy/',instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/next_form)"/>
+        </session>
+    </entry -->
+    
+	<entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/death</form>
+        <command id="death-reg">
+			<display>
+				<text><locale id="menu.client.management.death"/></text>
+				<media audio="jr://file/commcare/media/audio/menu/menu_option_death_hin.mp3"/>		
+			</display>
+		</command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+	
+	<entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/mtp_abort</form>
+        <command id="mtp-abort">
+			<display>
+				<text><locale id="menu.client.management.mtp_abort"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_abortion_hin.mp3"/>
+			</display>				
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+	<entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/refer</form>
+        <command id="refer">
+			<display>
+				<text><locale id="menu.client.management.refer"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_refer_hin.mp3"/>
+			</display>		
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+	
+	<entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/update_vaccinations</form>
+        <command id="update_vaccinations">
+			<display>
+				<text><locale id="menu.client.management.update_vaccinations"/></text>	
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_update_immun_hin.mp3"/>
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+	<entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/mother_edit</form>
+        <command id="mother_edit">
+			<display>
+				<text><locale id="menu.client.management.mother_edit"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_mother_edit_hin.mp3"/>
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+	
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/close</form>
+        <command id="close">
+			<display>
+				<text><locale id="menu.client.management.close"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_close_hin.mp3"/>
+			</display>		
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/migrate_out</form>
+        <command id="migrate-out">
+			<display>
+				<text><locale id="menu.client.management.migrate.out"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_migrate_out_hin.mp3"/>
+			</display>		
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+        
+    <entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/migrate_in</form>
+        <command id="migrate-in">
+			<display>
+				<text><locale id="menu.client.management.migrate.in"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_migrate_in_hin.mp3"/>
+			</display>		
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+	
+	<entry>                   
+        <form>http://bihar.commcarehq.org/pregnancy/takehome_ration</form>
+        <command id="takehome-ration">
+			<display>
+				<text><locale id="menu.client.management.ration"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_ration.mp3"/>
+			</display>		
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/tools/move_beneficiary</form>
+        <command id="move-beneficiary">
+			<display>
+				<text><locale id="menu.client.management.move"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/menu_option_move.mp3"/>
+			</display>		
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+         <session>
+        	<datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='cc_bihar_pregnancy'][@status='open']" value="./@case_id" detail-select="pregnancy_short" detail-confirm="pregnancy_long"/>
+        </session>
+    </entry>
+	
+
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/tools/refer</form>
+        
+        <command id="tools-refer">
+			<display>
+				<text><locale id="menu.tools.ref"/></text>
+				<media audio="jr://file/commcare/media/audio/menu/menu_option_refer_hin.mp3"/>
+			</display>
+        </command>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/tools/bmi</form>
+        
+        <command id="tools-bmi">
+			<display>
+				<text><locale id="menu.tools.bmi"/></text>
+				<media audio="jr://file/commcare/media/audio/menu/menu_option_bmi_hin.mp3"/>
+			</display>
+        </command>
+    </entry>
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/tools/assistance</form>
+        
+        <command id="tools-assistance">
+			<display>
+				<text><locale id="menu.tools.assistance"/></text>
+				<media audio="jr://file/commcare/media/audio/menu/menu_option_assistance_hin.mp3"/>
+			</display>
+        </command>
+    </entry>
+    
+    
+    
+    <entry>                   
+        <form>http://bihar.commcarehq.org/tools/edd</form>
+        
+        <command id="tools-edd">
+			<display>
+				<text><locale id="menu.tools.edd"/></text>
+				<media audio="jr://file/commcare/media/audio/menu/menu_option_edd_hin.mp3"/>
+			</display>
+        </command>
+    </entry>
+	
+	
+    
+    <entry>
+        <form>http://bihar.commcarehq.org/close/item</form>
+        <command id="task-list">
+			<display>
+				<text><locale id="menu.task.list"/></text>
+			    <media audio="jr://file/commcare/media/audio/menu/module_due_list_hin.mp3"/>
+			</display>
+        </command>
+        <instance id="casedb" src="jr://instance/casedb"/>
+        <instance id="session" src="jr://instance/session"/>
+        <instance id="due-list-dates" src="jr://fixture/due-list-dates"/>
+        <session>
+        	<datum id="checked_delta" nodeset="instance('due-list-dates')/ranges/range"  value="date_delta" detail-select="date_range_short"/> 
+        	<datum id="person_id" nodeset="instance('casedb')/casedb/case
+        	[@status='open']
+        	[@case_type='cc_bihar_pregnancy' or @case_type='cc_bihar_newborn']
+        	[count(instance('casedb')/casedb/case
+        										 [@case_type='task']
+        										 [index/person_id = current()/@case_id]
+        										 [@status='open']
+        										 [date(date_eligible) &lt;= date(today() + instance('session')/session/data/checked_delta) and date(date_expires) &gt; date(today() + instance('session')/session/data/checked_delta)])
+        	&gt; 0]        										 
+        	[if(@case_type='cc_bihar_newborn',
+        									  not(instance('casedb')/casedb/case[@case_id = current()/index/mother_id]/migrated_status = 'migrated'),
+        									  not(migrated_status = 'migrated'))
+        	]
+        	" value="./@case_id" detail-select="task_person_short" detail-confirm="task_person_detail"/>
+        </session>
+    </entry>
+
+    <menu id="root">
+    	<text>Schedules</text>
+    	<command id="pregnancy-new"/>
+    </menu>
+        
+    <menu id="pregnancy-visit">
+		<display>
+			<text><locale id="menu.protocols.title"/></text>
+			<media audio="jr://file/commcare/media/audio/menu/module_home_visit_hin.mp3" />
+		</display>
+    	<command id="pregnancy-reg" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated') and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add = '' and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/edd = ''"/>
+    	<command id="pregnancy-bp" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated') and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add = '' and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/edd != ''"/>
+    	<command id="pregnancy-del" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated') and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add = '' and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/edd != '' and (int(today()) &gt;= date(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/edd) - 91)"/>
+    	<command id="pregnancy-pnc" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated') and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add != '' and int(today()) &lt; date(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add) + 14"/>
+    	<command id="pregnancy-ebf" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated') and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add != '' and int(today()) &gt; date(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add) + 7 and int(today()) &lt; date(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add) + 183"/>
+    	<command id="pregnancy-cf" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated') and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add != '' and int(today()) &gt;= date(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add) + 150"/>
+    	<command id="migrate-in-scheduler"  relevant="instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated'"/>
+    </menu>
+	
+	<menu id="growth">
+		<display>
+			<text><locale id="menu.growth.title"/></text>
+			<media audio="jr://file/commcare/media/audio/menu/module_growth.mp3" />
+		</display>
+ 
+    	<command id="growth-monitoring"/>
+    </menu>
+    
+	<menu id="client-management">
+		<display>
+			<text><locale id="menu.client.management"/></text>
+			<media audio="jr://file/commcare/media/audio/menu/module_client_management_hin.mp3" />
+		</display>
+		<command id="refer" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated')"/>
+		<command id="update_vaccinations" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated')"/>
+		<command id="migrate-in" relevant="instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated'"/>
+		<command id="migrate-out" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated')"/>
+		<command id="close"/>
+    	<command id="mtp-abort" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated') and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/add = '' and instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/edd != ''"/>
+    	<command id="death-reg"/>
+		<command id="takehome-ration"/>
+    	<command id="move-beneficiary"/>
+		<command id="mother_edit" relevant="not(instance('casedb')/casedb/case[@case_id = instance('session')/session/data/case_id]/migrated_status = 'migrated')"/>
+	</menu>
+		
+    <menu id="root">
+    	<text><locale id="menu.duelist.menu"/></text>
+    	<command id="task-list"/>
+    </menu>
+	
+	<menu id="tools">
+		<display>
+			<text><locale id="menu.tools"/></text>
+			<media audio="jr://file/commcare/media/audio/menu/module_tools_hin.mp3" />
+		</display>
+		<command id="tools-refer"/>
+		<command id="tools-bmi"/>
+		<command id="tools-edd"/>
+		<command id="tools-assistance"/>
+	</menu>
+    
+    <fixture id="user-groups" user_id="demo_user">
+        <groups>
+            <group id="demo_user_group_bihar">
+                <name>Demo Group</name>
+            </group>
+        </groups>
+    </fixture>
+    
+	<fixture id="item-list:contact">
+		<contact_list>
+			<contact>
+				<name>Sample Facility</name>
+				<number>+910000000000</number>
+				<type>private</type>
+			</contact>
+			<contact>
+				<name>Sample Transport</name>
+				<number>+910000000000</number>
+				<type>transport</type>
+			</contact>
+		</contact_list>
+	</fixture>
+	
+	<fixture id="due-list-dates">
+		<ranges>
+			<range>
+				<name>task.list.d0</name>
+				<date_delta>0</date_delta>
+			</range>
+			<range>
+				<name>task.list.d1</name>
+				<date_delta>1</date_delta>
+			</range>
+			<range>
+				<name>task.list.d2</name>
+				<date_delta>2</date_delta>
+			</range>
+			<range>
+				<name>task.list.d3</name>
+				<date_delta>3</date_delta>
+			</range>
+			<range>
+				<name>task.list.d4</name>
+				<date_delta>4</date_delta>
+			</range>
+			<range>
+				<name>task.list.d5</name>
+				<date_delta>5</date_delta>
+			</range>
+			<range>
+				<name>task.list.d6</name>
+				<date_delta>6</date_delta>
+			</range>
+		</ranges>
+	</fixture>
+    
+</suite>

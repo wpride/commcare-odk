@@ -1,0 +1,63 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Usajili - Madereva</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/5b29754676c18579c95f4687ced3bf3b75ea54f4" uiVersion="1" version="812" name="Usajili - Madereva">
+					<driver_name/>
+					<driver_phone_number/>
+					<driver_shehia/>
+					<end_of_form/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>usafiri</case_type></create><update><driver_shehia/><driver_name/><driver_phone_number/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/driver_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/driver_phone_number" type="xsd:long" required="true()"/>
+			<bind nodeset="/data/driver_shehia" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/end_of_form" required="true()"/>
+			<itext>
+				<translation lang="sw" default="">
+					<text id="driver_name-label">
+						<value>Ingiza jina la dereva</value>
+					</text>
+					<text id="driver_phone_number-label">
+						<value>Ingiza namba ya simu</value>
+					</text>
+					<text id="driver_shehia-label">
+						<value>ingiza jina la shehia anayoishi dereva</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Fomu yako imekamilika.</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="driver_name-label">
+						<value>Enter name of driver</value>
+					</text>
+					<text id="driver_phone_number-label">
+						<value>Enter phone number</value>
+					</text>
+					<text id="driver_shehia-label">
+						<value>Enter name of Shehia that driver lives</value>
+					</text>
+					<text id="end_of_form-label">
+						<value> Your form is now complete.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/driver_name"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/update/driver_shehia" relevant="count(/data/driver_shehia) &gt; 0" calculate="/data/driver_shehia"/><bind nodeset="/data/case/update/driver_name" relevant="count(/data/driver_name) &gt; 0" calculate="/data/driver_name"/><bind nodeset="/data/case/update/driver_phone_number" relevant="count(/data/driver_phone_number) &gt; 0" calculate="/data/driver_phone_number"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/driver_name">
+			<label ref="jr:itext('driver_name-label')"/>
+		</input>
+		<input ref="/data/driver_phone_number">
+			<label ref="jr:itext('driver_phone_number-label')"/>
+		</input>
+		<input ref="/data/driver_shehia">
+			<label ref="jr:itext('driver_shehia-label')"/>
+		</input>
+		<trigger ref="/data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

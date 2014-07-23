@@ -1,0 +1,707 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Growth Monitoring</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/growth_monitoring" uiVersion="1" version="1" name="Growth Monitoring">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						<update>
+							<current_growth />
+							<last_growth_1 />
+							<last_growth_2 />
+							<last_growth_3 />
+							<current_weight_date />
+							<last_weight_date />
+							<current_weight />
+							<last_weight />
+						</update>
+					</case>
+					
+					<take_weight />
+					<child_weight />
+					<show_grade />
+					<display_calc_grade />
+					<requires_attention />
+					<success />
+					
+					<calc_grade />
+					<calc_growth />
+					<child_gender />
+					<child_age />
+					<dob />
+					<gender />
+					<change_from_normal />
+					<change_from_muw />
+					<change_from_suw />
+				</data>
+			</instance>
+			<instance id="chart"><zscore>
+  <gender id="2">
+    <age id="0.0">
+      <weight high="2.1" low="0">-4</weight>
+      <weight high="2.5" low="2.1">-3</weight>
+      <weight high="2.9" low="2.5">-2</weight>
+      <weight high="3.3" low="2.9">-1</weight>
+      <weight high="3.9" low="3.3">0</weight>
+      <weight high="4.4" low="3.9">1</weight>
+      <weight high="5.0" low="4.4">2</weight>
+      <weight high="none" low="5.0">3</weight>
+    </age>
+    <age id="1.0">
+      <weight high="2.9" low="0">-4</weight>
+      <weight high="3.4" low="2.9">-3</weight>
+      <weight high="3.9" low="3.4">-2</weight>
+      <weight high="4.5" low="3.9">-1</weight>
+      <weight high="5.1" low="4.5">0</weight>
+      <weight high="5.8" low="5.1">1</weight>
+      <weight high="6.6" low="5.8">2</weight>
+      <weight high="none" low="6.6">3</weight>
+    </age>
+    <age id="2.0">
+      <weight high="3.8" low="0">-4</weight>
+      <weight high="4.3" low="3.8">-3</weight>
+      <weight high="4.9" low="4.3">-2</weight>
+      <weight high="5.6" low="4.9">-1</weight>
+      <weight high="6.3" low="5.6">0</weight>
+      <weight high="7.1" low="6.3">1</weight>
+      <weight high="8.0" low="7.1">2</weight>
+      <weight high="none" low="8.0">3</weight>
+    </age>
+    <age id="3.0">
+      <weight high="4.4" low="0">-4</weight>
+      <weight high="5.0" low="4.4">-3</weight>
+      <weight high="5.7" low="5.0">-2</weight>
+      <weight high="6.4" low="5.7">-1</weight>
+      <weight high="7.2" low="6.4">0</weight>
+      <weight high="8.0" low="7.2">1</weight>
+      <weight high="9.0" low="8.0">2</weight>
+      <weight high="none" low="9.0">3</weight>
+    </age>
+    <age id="4.0">
+      <weight high="4.9" low="0">-4</weight>
+      <weight high="5.6" low="4.9">-3</weight>
+      <weight high="6.2" low="5.6">-2</weight>
+      <weight high="7.0" low="6.2">-1</weight>
+      <weight high="7.8" low="7.0">0</weight>
+      <weight high="8.7" low="7.8">1</weight>
+      <weight high="9.7" low="8.7">2</weight>
+      <weight high="none" low="9.7">3</weight>
+    </age>
+    <age id="5.0">
+      <weight high="5.3" low="0">-4</weight>
+      <weight high="6.0" low="5.3">-3</weight>
+      <weight high="6.7" low="6.0">-2</weight>
+      <weight high="7.5" low="6.7">-1</weight>
+      <weight high="8.4" low="7.5">0</weight>
+      <weight high="9.3" low="8.4">1</weight>
+      <weight high="10.4" low="9.3">2</weight>
+      <weight high="none" low="10.4">3</weight>
+    </age>
+    <age id="6.0">
+      <weight high="5.7" low="0">-4</weight>
+      <weight high="6.4" low="5.7">-3</weight>
+      <weight high="7.1" low="6.4">-2</weight>
+      <weight high="7.9" low="7.1">-1</weight>
+      <weight high="8.8" low="7.9">0</weight>
+      <weight high="9.8" low="8.8">1</weight>
+      <weight high="10.9" low="9.8">2</weight>
+      <weight high="none" low="10.9">3</weight>
+    </age>
+    <age id="7.0">
+      <weight high="5.9" low="0">-4</weight>
+      <weight high="6.7" low="5.9">-3</weight>
+      <weight high="7.4" low="6.7">-2</weight>
+      <weight high="8.3" low="7.4">-1</weight>
+      <weight high="9.2" low="8.3">0</weight>
+      <weight high="10.3" low="9.2">1</weight>
+      <weight high="11.4" low="10.3">2</weight>
+      <weight high="none" low="11.4">3</weight>
+    </age>
+    <age id="8.0">
+      <weight high="6.2" low="0">-4</weight>
+      <weight high="6.9" low="6.2">-3</weight>
+      <weight high="7.7" low="6.9">-2</weight>
+      <weight high="8.6" low="7.7">-1</weight>
+      <weight high="9.6" low="8.6">0</weight>
+      <weight high="10.7" low="9.6">1</weight>
+      <weight high="11.9" low="10.7">2</weight>
+      <weight high="none" low="11.9">3</weight>
+    </age>
+    <age id="9.0">
+      <weight high="6.4" low="0">-4</weight>
+      <weight high="7.1" low="6.4">-3</weight>
+      <weight high="8.0" low="7.1">-2</weight>
+      <weight high="8.9" low="8.0">-1</weight>
+      <weight high="9.9" low="8.9">0</weight>
+      <weight high="11.0" low="9.9">1</weight>
+      <weight high="12.3" low="11.0">2</weight>
+      <weight high="none" low="12.3">3</weight>
+    </age>
+    <age id="10.0">
+      <weight high="6.6" low="0">-4</weight>
+      <weight high="7.4" low="6.6">-3</weight>
+      <weight high="8.2" low="7.4">-2</weight>
+      <weight high="9.2" low="8.2">-1</weight>
+      <weight high="10.2" low="9.2">0</weight>
+      <weight high="11.4" low="10.2">1</weight>
+      <weight high="12.7" low="11.4">2</weight>
+      <weight high="none" low="12.7">3</weight>
+    </age>
+    <age id="11.0">
+      <weight high="6.8" low="0">-4</weight>
+      <weight high="7.6" low="6.8">-3</weight>
+      <weight high="8.4" low="7.6">-2</weight>
+      <weight high="9.4" low="8.4">-1</weight>
+      <weight high="10.5" low="9.4">0</weight>
+      <weight high="11.7" low="10.5">1</weight>
+      <weight high="13.0" low="11.7">2</weight>
+      <weight high="none" low="13.0">3</weight>
+    </age>
+    <age id="12.0">
+      <weight high="6.9" low="0">-4</weight>
+      <weight high="7.7" low="6.9">-3</weight>
+      <weight high="8.6" low="7.7">-2</weight>
+      <weight high="9.6" low="8.6">-1</weight>
+      <weight high="10.8" low="9.6">0</weight>
+      <weight high="12.0" low="10.8">1</weight>
+      <weight high="13.3" low="12.0">2</weight>
+      <weight high="none" low="13.3">3</weight>
+    </age>
+    <age id="13.0">
+      <weight high="7.1" low="0">-4</weight>
+      <weight high="7.9" low="7.1">-3</weight>
+      <weight high="8.8" low="7.9">-2</weight>
+      <weight high="9.9" low="8.8">-1</weight>
+      <weight high="11.0" low="9.9">0</weight>
+      <weight high="12.3" low="11.0">1</weight>
+      <weight high="13.7" low="12.3">2</weight>
+      <weight high="none" low="13.7">3</weight>
+    </age>
+    <age id="14.0">
+      <weight high="7.2" low="0">-4</weight>
+      <weight high="8.1" low="7.2">-3</weight>
+      <weight high="9.0" low="8.1">-2</weight>
+      <weight high="10.1" low="9.0">-1</weight>
+      <weight high="11.3" low="10.1">0</weight>
+      <weight high="12.6" low="11.3">1</weight>
+      <weight high="14.0" low="12.6">2</weight>
+      <weight high="none" low="14.0">3</weight>
+    </age>
+    <age id="15.0">
+      <weight high="7.4" low="0">-4</weight>
+      <weight high="8.3" low="7.4">-3</weight>
+      <weight high="9.2" low="8.3">-2</weight>
+      <weight high="10.3" low="9.2">-1</weight>
+      <weight high="11.5" low="10.3">0</weight>
+      <weight high="12.8" low="11.5">1</weight>
+      <weight high="14.3" low="12.8">2</weight>
+      <weight high="none" low="14.3">3</weight>
+    </age>
+    <age id="16.0">
+      <weight high="7.5" low="0">-4</weight>
+      <weight high="8.4" low="7.5">-3</weight>
+      <weight high="9.4" low="8.4">-2</weight>
+      <weight high="10.5" low="9.4">-1</weight>
+      <weight high="11.7" low="10.5">0</weight>
+      <weight high="13.1" low="11.7">1</weight>
+      <weight high="14.6" low="13.1">2</weight>
+      <weight high="none" low="14.6">3</weight>
+    </age>
+    <age id="17.0">
+      <weight high="7.7" low="0">-4</weight>
+      <weight high="8.6" low="7.7">-3</weight>
+      <weight high="9.6" low="8.6">-2</weight>
+      <weight high="10.7" low="9.6">-1</weight>
+      <weight high="12.0" low="10.7">0</weight>
+      <weight high="13.4" low="12.0">1</weight>
+      <weight high="14.9" low="13.4">2</weight>
+      <weight high="none" low="14.9">3</weight>
+    </age>
+    <age id="18.0">
+      <weight high="7.8" low="0">-4</weight>
+      <weight high="8.8" low="7.8">-3</weight>
+      <weight high="9.8" low="8.8">-2</weight>
+      <weight high="10.9" low="9.8">-1</weight>
+      <weight high="12.2" low="10.9">0</weight>
+      <weight high="13.7" low="12.2">1</weight>
+      <weight high="15.3" low="13.7">2</weight>
+      <weight high="none" low="15.3">3</weight>
+    </age>
+    <age id="19.0">
+      <weight high="8.0" low="0">-4</weight>
+      <weight high="8.9" low="8.0">-3</weight>
+      <weight high="10.0" low="8.9">-2</weight>
+      <weight high="11.1" low="10.0">-1</weight>
+      <weight high="12.5" low="11.1">0</weight>
+      <weight high="13.9" low="12.5">1</weight>
+      <weight high="15.6" low="13.9">2</weight>
+      <weight high="none" low="15.6">3</weight>
+    </age>
+    <age id="20.0">
+      <weight high="8.1" low="0">-4</weight>
+      <weight high="9.1" low="8.1">-3</weight>
+      <weight high="10.1" low="9.1">-2</weight>
+      <weight high="11.3" low="10.1">-1</weight>
+      <weight high="12.7" low="11.3">0</weight>
+      <weight high="14.2" low="12.7">1</weight>
+      <weight high="15.9" low="14.2">2</weight>
+      <weight high="none" low="15.9">3</weight>
+    </age>
+    <age id="21.0">
+      <weight high="8.2" low="0">-4</weight>
+      <weight high="9.2" low="8.2">-3</weight>
+      <weight high="10.3" low="9.2">-2</weight>
+      <weight high="11.5" low="10.3">-1</weight>
+      <weight high="12.9" low="11.5">0</weight>
+      <weight high="14.5" low="12.9">1</weight>
+      <weight high="16.2" low="14.5">2</weight>
+      <weight high="none" low="16.2">3</weight>
+    </age>
+    <age id="22.0">
+      <weight high="8.4" low="0">-4</weight>
+      <weight high="9.4" low="8.4">-3</weight>
+      <weight high="10.5" low="9.4">-2</weight>
+      <weight high="11.8" low="10.5">-1</weight>
+      <weight high="13.2" low="11.8">0</weight>
+      <weight high="14.7" low="13.2">1</weight>
+      <weight high="16.5" low="14.7">2</weight>
+      <weight high="none" low="16.5">3</weight>
+    </age>
+    <age id="23.0">
+      <weight high="8.5" low="0">-4</weight>
+      <weight high="9.5" low="8.5">-3</weight>
+      <weight high="10.7" low="9.5">-2</weight>
+      <weight high="12.0" low="10.7">-1</weight>
+      <weight high="13.4" low="12.0">0</weight>
+      <weight high="15.0" low="13.4">1</weight>
+      <weight high="16.8" low="15.0">2</weight>
+      <weight high="none" low="16.8">3</weight>
+    </age>
+    <age id="24.0">
+      <weight high="8.6" low="0">-4</weight>
+      <weight high="9.7" low="8.6">-3</weight>
+      <weight high="10.8" low="9.7">-2</weight>
+      <weight high="12.2" low="10.8">-1</weight>
+      <weight high="13.6" low="12.2">0</weight>
+      <weight high="15.3" low="13.6">1</weight>
+      <weight high="17.1" low="15.3">2</weight>
+      <weight high="none" low="17.1">3</weight>
+    </age>
+  </gender>
+  <gender id="1">
+    <age id="0.0">
+      <weight high="2.0" low="0">-4</weight>
+      <weight high="2.4" low="2.0">-3</weight>
+      <weight high="2.8" low="2.4">-2</weight>
+      <weight high="3.2" low="2.8">-1</weight>
+      <weight high="3.7" low="3.2">0</weight>
+      <weight high="4.2" low="3.7">1</weight>
+      <weight high="4.8" low="4.2">2</weight>
+      <weight high="none" low="4.8">3</weight>
+    </age>
+    <age id="1.0">
+      <weight high="2.7" low="0">-4</weight>
+      <weight high="3.2" low="2.7">-3</weight>
+      <weight high="3.6" low="3.2">-2</weight>
+      <weight high="4.2" low="3.6">-1</weight>
+      <weight high="4.8" low="4.2">0</weight>
+      <weight high="5.5" low="4.8">1</weight>
+      <weight high="6.2" low="5.5">2</weight>
+      <weight high="none" low="6.2">3</weight>
+    </age>
+    <age id="2.0">
+      <weight high="3.4" low="0">-4</weight>
+      <weight high="3.9" low="3.4">-3</weight>
+      <weight high="4.5" low="3.9">-2</weight>
+      <weight high="5.1" low="4.5">-1</weight>
+      <weight high="5.8" low="5.1">0</weight>
+      <weight high="6.6" low="5.8">1</weight>
+      <weight high="7.5" low="6.6">2</weight>
+      <weight high="none" low="7.5">3</weight>
+    </age>
+    <age id="3.0">
+      <weight high="4.0" low="0">-4</weight>
+      <weight high="4.5" low="4.0">-3</weight>
+      <weight high="5.2" low="4.5">-2</weight>
+      <weight high="5.8" low="5.2">-1</weight>
+      <weight high="6.6" low="5.8">0</weight>
+      <weight high="7.5" low="6.6">1</weight>
+      <weight high="8.5" low="7.5">2</weight>
+      <weight high="none" low="8.5">3</weight>
+    </age>
+    <age id="4.0">
+      <weight high="4.4" low="0">-4</weight>
+      <weight high="5.0" low="4.4">-3</weight>
+      <weight high="5.7" low="5.0">-2</weight>
+      <weight high="6.4" low="5.7">-1</weight>
+      <weight high="7.3" low="6.4">0</weight>
+      <weight high="8.2" low="7.3">1</weight>
+      <weight high="9.3" low="8.2">2</weight>
+      <weight high="none" low="9.3">3</weight>
+    </age>
+    <age id="5.0">
+      <weight high="4.8" low="0">-4</weight>
+      <weight high="5.4" low="4.8">-3</weight>
+      <weight high="6.1" low="5.4">-2</weight>
+      <weight high="6.9" low="6.1">-1</weight>
+      <weight high="7.8" low="6.9">0</weight>
+      <weight high="8.8" low="7.8">1</weight>
+      <weight high="10.0" low="8.8">2</weight>
+      <weight high="none" low="10.0">3</weight>
+    </age>
+    <age id="6.0">
+      <weight high="5.1" low="0">-4</weight>
+      <weight high="5.7" low="5.1">-3</weight>
+      <weight high="6.5" low="5.7">-2</weight>
+      <weight high="7.3" low="6.5">-1</weight>
+      <weight high="8.2" low="7.3">0</weight>
+      <weight high="9.3" low="8.2">1</weight>
+      <weight high="10.6" low="9.3">2</weight>
+      <weight high="none" low="10.6">3</weight>
+    </age>
+    <age id="7.0">
+      <weight high="5.3" low="0">-4</weight>
+      <weight high="6.0" low="5.3">-3</weight>
+      <weight high="6.8" low="6.0">-2</weight>
+      <weight high="7.6" low="6.8">-1</weight>
+      <weight high="8.6" low="7.6">0</weight>
+      <weight high="9.8" low="8.6">1</weight>
+      <weight high="11.1" low="9.8">2</weight>
+      <weight high="none" low="11.1">3</weight>
+    </age>
+    <age id="8.0">
+      <weight high="5.6" low="0">-4</weight>
+      <weight high="6.3" low="5.6">-3</weight>
+      <weight high="7.0" low="6.3">-2</weight>
+      <weight high="7.9" low="7.0">-1</weight>
+      <weight high="9.0" low="7.9">0</weight>
+      <weight high="10.2" low="9.0">1</weight>
+      <weight high="11.6" low="10.2">2</weight>
+      <weight high="none" low="11.6">3</weight>
+    </age>
+    <age id="9.0">
+      <weight high="5.8" low="0">-4</weight>
+      <weight high="6.5" low="5.8">-3</weight>
+      <weight high="7.3" low="6.5">-2</weight>
+      <weight high="8.2" low="7.3">-1</weight>
+      <weight high="9.3" low="8.2">0</weight>
+      <weight high="10.5" low="9.3">1</weight>
+      <weight high="12.0" low="10.5">2</weight>
+      <weight high="none" low="12.0">3</weight>
+    </age>
+    <age id="10.0">
+      <weight high="5.9" low="0">-4</weight>
+      <weight high="6.7" low="5.9">-3</weight>
+      <weight high="7.5" low="6.7">-2</weight>
+      <weight high="8.5" low="7.5">-1</weight>
+      <weight high="9.6" low="8.5">0</weight>
+      <weight high="10.9" low="9.6">1</weight>
+      <weight high="12.4" low="10.9">2</weight>
+      <weight high="none" low="12.4">3</weight>
+    </age>
+    <age id="11.0">
+      <weight high="6.1" low="0">-4</weight>
+      <weight high="6.9" low="6.1">-3</weight>
+      <weight high="7.7" low="6.9">-2</weight>
+      <weight high="8.7" low="7.7">-1</weight>
+      <weight high="9.9" low="8.7">0</weight>
+      <weight high="11.2" low="9.9">1</weight>
+      <weight high="12.8" low="11.2">2</weight>
+      <weight high="none" low="12.8">3</weight>
+    </age>
+    <age id="12.0">
+      <weight high="6.3" low="0">-4</weight>
+      <weight high="7.0" low="6.3">-3</weight>
+      <weight high="7.9" low="7.0">-2</weight>
+      <weight high="8.9" low="7.9">-1</weight>
+      <weight high="10.1" low="8.9">0</weight>
+      <weight high="11.5" low="10.1">1</weight>
+      <weight high="13.1" low="11.5">2</weight>
+      <weight high="none" low="13.1">3</weight>
+    </age>
+    <age id="13.0">
+      <weight high="6.4" low="0">-4</weight>
+      <weight high="7.2" low="6.4">-3</weight>
+      <weight high="8.1" low="7.2">-2</weight>
+      <weight high="9.2" low="8.1">-1</weight>
+      <weight high="10.4" low="9.2">0</weight>
+      <weight high="11.8" low="10.4">1</weight>
+      <weight high="13.5" low="11.8">2</weight>
+      <weight high="none" low="13.5">3</weight>
+    </age>
+    <age id="14.0">
+      <weight high="6.6" low="0">-4</weight>
+      <weight high="7.4" low="6.6">-3</weight>
+      <weight high="8.3" low="7.4">-2</weight>
+      <weight high="9.4" low="8.3">-1</weight>
+      <weight high="10.6" low="9.4">0</weight>
+      <weight high="12.1" low="10.6">1</weight>
+      <weight high="13.8" low="12.1">2</weight>
+      <weight high="none" low="13.8">3</weight>
+    </age>
+    <age id="15.0">
+      <weight high="6.7" low="0">-4</weight>
+      <weight high="7.6" low="6.7">-3</weight>
+      <weight high="8.5" low="7.6">-2</weight>
+      <weight high="9.6" low="8.5">-1</weight>
+      <weight high="10.9" low="9.6">0</weight>
+      <weight high="12.4" low="10.9">1</weight>
+      <weight high="14.1" low="12.4">2</weight>
+      <weight high="none" low="14.1">3</weight>
+    </age>
+    <age id="16.0">
+      <weight high="6.9" low="0">-4</weight>
+      <weight high="7.7" low="6.9">-3</weight>
+      <weight high="8.7" low="7.7">-2</weight>
+      <weight high="9.8" low="8.7">-1</weight>
+      <weight high="11.1" low="9.8">0</weight>
+      <weight high="12.6" low="11.1">1</weight>
+      <weight high="14.5" low="12.6">2</weight>
+      <weight high="none" low="14.5">3</weight>
+    </age>
+    <age id="17.0">
+      <weight high="7.0" low="0">-4</weight>
+      <weight high="7.9" low="7.0">-3</weight>
+      <weight high="8.9" low="7.9">-2</weight>
+      <weight high="10.0" low="8.9">-1</weight>
+      <weight high="11.4" low="10.0">0</weight>
+      <weight high="12.9" low="11.4">1</weight>
+      <weight high="14.8" low="12.9">2</weight>
+      <weight high="none" low="14.8">3</weight>
+    </age>
+    <age id="18.0">
+      <weight high="7.2" low="0">-4</weight>
+      <weight high="8.1" low="7.2">-3</weight>
+      <weight high="9.1" low="8.1">-2</weight>
+      <weight high="10.2" low="9.1">-1</weight>
+      <weight high="11.6" low="10.2">0</weight>
+      <weight high="13.2" low="11.6">1</weight>
+      <weight high="15.1" low="13.2">2</weight>
+      <weight high="none" low="15.1">3</weight>
+    </age>
+    <age id="19.0">
+      <weight high="7.3" low="0">-4</weight>
+      <weight high="8.2" low="7.3">-3</weight>
+      <weight high="9.2" low="8.2">-2</weight>
+      <weight high="10.4" low="9.2">-1</weight>
+      <weight high="11.8" low="10.4">0</weight>
+      <weight high="13.5" low="11.8">1</weight>
+      <weight high="15.4" low="13.5">2</weight>
+      <weight high="none" low="15.4">3</weight>
+    </age>
+    <age id="20.0">
+      <weight high="7.5" low="0">-4</weight>
+      <weight high="8.4" low="7.5">-3</weight>
+      <weight high="9.4" low="8.4">-2</weight>
+      <weight high="10.6" low="9.4">-1</weight>
+      <weight high="12.1" low="10.6">0</weight>
+      <weight high="13.7" low="12.1">1</weight>
+      <weight high="15.7" low="13.7">2</weight>
+      <weight high="none" low="15.7">3</weight>
+    </age>
+    <age id="21.0">
+      <weight high="7.6" low="0">-4</weight>
+      <weight high="8.6" low="7.6">-3</weight>
+      <weight high="9.6" low="8.6">-2</weight>
+      <weight high="10.9" low="9.6">-1</weight>
+      <weight high="12.3" low="10.9">0</weight>
+      <weight high="14.0" low="12.3">1</weight>
+      <weight high="16.0" low="14.0">2</weight>
+      <weight high="none" low="16.0">3</weight>
+    </age>
+    <age id="22.0">
+      <weight high="7.8" low="0">-4</weight>
+      <weight high="8.7" low="7.8">-3</weight>
+      <weight high="9.8" low="8.7">-2</weight>
+      <weight high="11.1" low="9.8">-1</weight>
+      <weight high="12.5" low="11.1">0</weight>
+      <weight high="14.3" low="12.5">1</weight>
+      <weight high="16.4" low="14.3">2</weight>
+      <weight high="none" low="16.4">3</weight>
+    </age>
+    <age id="23.0">
+      <weight high="7.9" low="0">-4</weight>
+      <weight high="8.9" low="7.9">-3</weight>
+      <weight high="10.0" low="8.9">-2</weight>
+      <weight high="11.3" low="10.0">-1</weight>
+      <weight high="12.8" low="11.3">0</weight>
+      <weight high="14.6" low="12.8">1</weight>
+      <weight high="16.7" low="14.6">2</weight>
+      <weight high="none" low="16.7">3</weight>
+    </age>
+    <age id="24.0">
+      <weight high="8.1" low="0">-4</weight>
+      <weight high="9.0" low="8.1">-3</weight>
+      <weight high="10.2" low="9.0">-2</weight>
+      <weight high="11.5" low="10.2">-1</weight>
+      <weight high="13.0" low="11.5">0</weight>
+      <weight high="14.8" low="13.0">1</weight>
+      <weight high="17.0" low="14.8">2</weight>
+      <weight high="none" low="17.0">3</weight>
+    </age>
+  </gender>
+</zscore></instance>
+
+<instance id="commcaresession" src="jr://instance/session"/>
+			
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+	    	<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+    		<setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id"/>
+    		
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>	    				
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/take_weight" required="true()" />
+			<bind nodeset="/data/child_weight" type="xsd:double" constraint=". &gt;= 0 and . &lt;= 30" jr:constraintMsg="jr:itext('child_weight-constraintMsg')" relevant="/data/take_weight = 'yes'" required="true()" />
+			<bind nodeset="/data/show_grade" relevant="/data/take_weight = 'yes'"/>
+			<bind nodeset="/data/display_calc_grade" relevant="/data/take_weight = 'yes'" />
+			<bind nodeset="/data/requires_attention" relevant="/data/change_from_normal = 'yes' or /data/change_from_muw = 'yes' or /data/change_from_suw = 'yes'" />
+			<bind nodeset="/data/success" />
+			<bind nodeset="/data/calc_grade" calculate="if(count(instance('chart')/zscore/gender[@id=/data/child_gender]/age[@id = /data/child_age]/weight[@low &lt;= /data/child_weight][@high = 'none' or @high &gt; /data/child_weight]) = 1, instance('chart')/zscore/gender[@id=/data/child_gender]/age[@id = /data/child_age]/weight[@low &lt;= /data/child_weight][@high = 'none' or @high &gt; /data/child_weight], 'invalid entry')" />
+			<bind nodeset="/data/calc_growth" calculate="if((/data/calc_grade=1 or /data/calc_grade=0 or /data/calc_grade=-1 or /data/calc_grade=-2),'growth_normal',if(/data/calc_grade=-3,'moderately_underweight',if(/data/calc_grade=-4, 'severely_underweight', if(/data/calc_grade=2, 'obese', if(/data/calc_grade=3,'overweight','invalid')))))" />
+			<bind nodeset="/data/child_gender" calculate="if(/data/gender='male', 2, 1)" />
+			<bind nodeset="/data/child_age" calculate="int((today() - /data/dob) div 30)" />
+			<bind nodeset="/data/dob" calculate="date(instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/dob)" />
+			<bind nodeset="/data/gender" calculate="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/gender" />
+			<bind nodeset="/data/case/update/current_growth" calculate="if(/data/child_weight != '', /data/calc_growth, '')" />
+			<bind nodeset="/data/case/update/last_growth_1" calculate="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/current_growth" />
+			<bind nodeset="/data/case/update/last_growth_2" calculate="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/last_growth_1" />
+			<bind nodeset="/data/case/update/last_growth_3" calculate="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/last_growth_2" />
+			<bind nodeset="/data/case/update/current_weight_date" calculate="if(/data/child_weight != '', today(), '')" />
+			<bind nodeset="/data/case/update/last_weight_date" calculate="if(instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/current_weight_date = '' and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/baby_weight != '', instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/add, instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/current_weight_date)" />
+			<bind nodeset="/data/case/update/current_weight" calculate="if(/data/child_weight != '', /data/child_weight, '')" />
+			<bind nodeset="/data/case/update/last_weight" calculate="if(instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/current_weight = '' and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/baby_weight != '', instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/baby_weight, instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/current_weight)" />
+			<bind nodeset="/data/change_from_normal" calculate="if(/data/case/update/last_growth_1 != '' and /data/case/update/last_growth_1 = 'growth_normal' and (/data/case/update/current_growth = 'moderately_underweight' or /data/case/update/current_growth = 'severely_underweight'), 'yes', 'no')" />
+			<bind nodeset="/data/change_from_muw" calculate="if(/data/case/update/last_growth_1 != '' and /data/case/update/last_growth_1 = 'moderately_underweight' and (/data/case/update/current_growth = 'moderately_underweight' or /data/case/update/current_growth = 'severely_underweight'), 'yes', 'no')" />
+			<bind nodeset="/data/change_from_suw" calculate="if(/data/case/update/last_growth_1 != '' and /data/case/update/last_growth_1 = 'severely_underweight' and /data/case/update/current_growth = 'severely_underweight', 'yes', 'no')" />
+			<itext>
+				<translation lang="en" default="">
+					<text id="take_weight-label">
+						<value>Have you weighed the child?</value>
+						<value form="image">jr://file/commcare/media/images/growth/take_weight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/take_weight_hin.mp3</value>
+					</text>
+					<text id="take_weight-yes-label">
+						<value>1. Yes</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/yes_hin.mp3</value>
+					</text>
+					<text id="take_weight-no-label">
+						<value>2. No</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/no_hin.mp3</value>
+					</text>
+					<text id="child_weight-label">
+						<value>Enter Weight in KG</value>
+						<value form="image">jr://file/commcare/media/images/growth/child_weight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/child_weight_hin.mp3</value>
+					</text>
+					<text id="child_weight-constraintMsg">
+						<value>Weight must be between 0 and 30 kg</value>
+					</text>
+					<text id="show_grade-label">
+						<value>Grade: <output ref="if(/data/calc_growth = 'growth_normal', 'Normal', if(/data/calc_growth = 'moderately_underweight', 'Moderately Underweight', if(/data/calc_growth = 'severely_underweight', 'Severely Underweight', if(/data/calc_growth = 'obese', 'Obese', if(/data/calc_growth = 'overweight', 'Overweight', 'Invalid')))))"/></value>
+					</text>
+					<text id="display_calc_grade-label">
+						<value>Calculated SD Range: <output ref="/data/calc_grade"/></value>
+					</text>
+					<text id="requires_attention-label">
+						<value>This child requires your attention.  They are getting worse.</value>
+						<value form="image">jr://file/commcare/media/images/growth/requires_attention.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/requires_attention_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="image">jr://file/commcare/media/images/growth/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/success_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="take_weight-label">
+						<value>Have you weighed the child?</value>
+						<value form="image">jr://file/commcare/media/images/growth/take_weight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/take_weight_hin.mp3</value>
+					</text>
+					<text id="take_weight-yes-label">
+						<value>1. हॉ</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/yes_hin.mp3</value>
+					</text>
+					<text id="take_weight-no-label">
+						<value>2. नही</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/no_hin.mp3</value>
+					</text>
+					<text id="child_weight-label">
+						<value>बच्चा का वजन (Kg) </value>
+						<value form="image">jr://file/commcare/media/images/growth/child_weight.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/child_weight_hin.mp3</value>
+					</text>
+					<text id="child_weight-constraintMsg">
+						<value>Weight must be between 0 and 30 kg</value>
+					</text>
+					<text id="show_grade-label">
+						<value>Grade: <output ref="if(/data/calc_growth = 'growth_normal', 'Normal', if(/data/calc_growth = 'moderately_underweight', 'Moderately Underweight', if(/data/calc_growth = 'severely_underweight', 'Severely Underweight', if(/data/calc_growth = 'obese', 'Obese', if(/data/calc_growth = 'overweight', 'Overweight', 'Invalid')))))"/></value>
+					</text>
+					<text id="display_calc_grade-label">
+						<value>Calculated SD Range: <output ref="/data/calc_grade"/></value>
+					</text>
+					<text id="requires_attention-label">
+						<value>This child requires your attention.  They are getting worse.</value>
+						<value form="image">jr://file/commcare/media/images/growth/requires_attention.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/requires_attention_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतापूर्वक फार्म समाप्त।</value>
+						<value form="image">jr://file/commcare/media/images/growth/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/growth/success_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/take_weight">
+			<label ref="jr:itext('take_weight-label')" />
+			<item>
+				<label ref="jr:itext('take_weight-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('take_weight-no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/child_weight">
+			<label ref="jr:itext('child_weight-label')" />
+		</input>
+		<trigger ref="/data/show_grade">
+			<label ref="jr:itext('show_grade-label')" />
+		</trigger>
+		<trigger ref="/data/display_calc_grade">
+			<label ref="jr:itext('display_calc_grade-label')" />
+		</trigger>
+		<trigger ref="/data/requires_attention">
+			<label ref="jr:itext('requires_attention-label')" />
+		</trigger>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+	</h:body>
+</h:html>

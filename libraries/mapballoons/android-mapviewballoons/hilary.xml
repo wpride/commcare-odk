@@ -1,0 +1,2503 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Primeiro</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/1DB6E1EF-AEE4-47BF-A13C-1B6CD79E8199" uiVersion="1" version="1" name="Primeiro">
+					<name />
+					<sex />
+					<dob_known />
+					<dob />
+					<age />
+					<confirm_dob />
+					<locality />
+					<village />
+					<home_visit />
+					<sick_child />
+					<ask_danger_signs />
+					<ds_general>
+						<ds_no_eat_drink />
+						<ds_not_wake />
+						<ds_convulsions />
+						<ds_vomiting />
+					</ds_general>
+					<ds_severe_pneumonia>
+						<ds_chest_indraw />
+						<ds_extended_cough />
+					</ds_severe_pneumonia>
+					<ds_severe_diarrhoea>
+						<ds_drinks_eagerly />
+						<ds_sunken_eyes />
+						<ds_diarrhoea_14_days />
+						<ds_diarrhoea_bloody />
+						<ds_skin_pinch />
+					</ds_severe_diarrhoea>
+					<ds_severe_fever>
+						<ds_fever_7_days />
+						<ds_rigid_neck />
+						<ds_red_eyes />
+						<ds_skin_pustules />
+					</ds_severe_fever>
+					<non_severe_symptoms>
+						<ask_non_severe />
+						<fever />
+						<diarrhoea />
+						<cough />
+						<other_problem />
+						<describe_other_problem />
+					</non_severe_symptoms>
+					<treatment_ds>
+						<treatment_pneumonia_2_to_12 />
+						<treatment_pneumonia_12_to_60 />
+						<treatment_diarrhoea_2_to_12 />
+						<treatment_diarrhoea_12_to_60 />
+						<treatment_malaria_2_to_12 />
+						<treatment_malaria_12_to_36 />
+						<treatment_malaria_36_to_42 />
+						<treatment_malaria_42_to_60 />
+						<treatment_general_ds />
+					</treatment_ds>
+					<consult>
+						<perform_resp_count />
+						<results_resp_count />
+						<educ_pneumonia />
+						<treatment_diarrhoea />
+						<educ_dehydration />
+						<perform_rdt />
+						<educ_rdt />
+						<educ_malaria_kills />
+						<malnutrition />
+						<oedema />
+						<perform_muac />
+						<results_muac />
+						<vac_check />
+						<vac_newborn />
+						<vac_2month />
+						<vac_3month />
+						<vac_4month />
+						<vac_9month />
+						<results_rdt />
+						<results_rdt_indet />
+					</consult>
+					<treatment_resp_less_than_12 />
+					<treatment_resp_more_than_12 />
+					<treatment_resp_slow />
+					<educ_pneumonia_prev />
+					<treatment_diarrhoea_2_to_6 />
+					<treatment_diarrhoea_6_to_24 />
+					<treatment_diarrhoea_24_to_60 />
+					<educ_diarrhoea_prevent />
+					<treatment_malaria_neg />
+					<treatment_malaria_6mo />
+					<treatment_malaria_6_to_36 />
+					<treatment_malaria_36_to_60 />
+					<educ_bednet />
+					<treatment_malnutrition />
+					<treatment_incomplete_vac />
+					<educ_vaccination />
+					<treatment_other />
+					<educ_take_meds />
+					<educ_continue_breast_feed />
+					<educ_continue_feed />
+					<educ_follow_up />
+					<referral_advice>
+						<referral_2_days />
+						<referral_1_5_30_days />
+						<referral_1_5_days />
+					</referral_advice>
+					<self_report>
+						<diagnosis_given />
+						<treatment_given />
+						<treatment_given_other />
+						<referral_given />
+						<referral_given_reason />
+					</self_report>
+					<fill_referral />
+					<referral_summary />
+					<fill_registry />
+					<registry_display />
+					<general_ds />
+					<calc_age_months />
+					<has_danger_sign />
+					<incomplete_vac />
+					<calc_resp_rate />
+					<referral_needed />
+					<has_pneumonia />
+					<malnourished />
+					<pneumonia_ds />
+					<diarrhoea_ds />
+					<malaria_ds />
+					<ds_display />
+					<referral_display />
+					<treatment_display />
+					<rdt_display />
+					<diagnosis_display />
+				</data>
+			</instance>
+			<bind nodeset="/data/name" type="xsd:string" required="true()" />
+			<bind nodeset="/data/sex" required="true()" />
+			<bind nodeset="/data/dob_known" required="true()" />
+			<bind nodeset="/data/dob" type="xsd:date" constraint=". &gt;= today() - 1826.25 and . &lt; today() - 59" jr:constraintMsg="jr:itext('dob-constraintMsg')" relevant="/data/dob_known = '1'" required="true()" />
+			<bind nodeset="/data/age" type="xsd:int" constraint=". &lt; '60' and . &gt;= '2'" jr:constraintMsg="jr:itext('age-constraintMsg')" relevant="/data/dob_known = '0'" required="true()" />
+			<bind nodeset="/data/confirm_dob" />
+			<bind nodeset="/data/locality" required="true()" />
+			<bind nodeset="/data/village" required="true()" />
+			<bind nodeset="/data/home_visit" />
+			<bind nodeset="/data/sick_child" />
+			<bind nodeset="/data/ask_danger_signs" />
+			<bind nodeset="/data/ds_general" />
+			<bind nodeset="/data/ds_general/ds_no_eat_drink" required="true()" />
+			<bind nodeset="/data/ds_general/ds_not_wake" required="true()" />
+			<bind nodeset="/data/ds_general/ds_convulsions" required="true()" />
+			<bind nodeset="/data/ds_general/ds_vomiting" required="true()" />
+			<bind nodeset="/data/ds_severe_pneumonia" />
+			<bind nodeset="/data/ds_severe_pneumonia/ds_chest_indraw" required="true()" />
+			<bind nodeset="/data/ds_severe_pneumonia/ds_extended_cough" required="true()" />
+			<bind nodeset="/data/ds_severe_diarrhoea" />
+			<bind nodeset="/data/ds_severe_diarrhoea/ds_drinks_eagerly" required="true()" />
+			<bind nodeset="/data/ds_severe_diarrhoea/ds_sunken_eyes" required="true()" />
+			<bind nodeset="/data/ds_severe_diarrhoea/ds_diarrhoea_14_days" required="true()" />
+			<bind nodeset="/data/ds_severe_diarrhoea/ds_diarrhoea_bloody" required="true()" />
+			<bind nodeset="/data/ds_severe_diarrhoea/ds_skin_pinch" required="true()" />
+			<bind nodeset="/data/ds_severe_fever" />
+			<bind nodeset="/data/ds_severe_fever/ds_fever_7_days" required="true()" />
+			<bind nodeset="/data/ds_severe_fever/ds_rigid_neck" required="true()" />
+			<bind nodeset="/data/ds_severe_fever/ds_red_eyes" required="true()" />
+			<bind nodeset="/data/ds_severe_fever/ds_skin_pustules" required="true()" />
+			<bind nodeset="/data/non_severe_symptoms" />
+			<bind nodeset="/data/non_severe_symptoms/ask_non_severe" />
+			<bind nodeset="/data/non_severe_symptoms/fever" relevant="/data/ds_severe_fever/ds_fever_7_days = '0'" required="true()" />
+			<bind nodeset="/data/non_severe_symptoms/diarrhoea" relevant="/data/ds_severe_diarrhoea/ds_diarrhoea_14_days = '0' or /data/ds_severe_diarrhoea/ds_diarrhoea_bloody = '0'" required="true()" />
+			<bind nodeset="/data/non_severe_symptoms/cough" relevant="/data/ds_severe_pneumonia/ds_extended_cough = '0'" required="true()" />
+			<bind nodeset="/data/non_severe_symptoms/other_problem" relevant="/data/has_danger_sign = 'no'" required="true()" />
+			<bind nodeset="/data/non_severe_symptoms/describe_other_problem" type="xsd:string" relevant="/data/non_severe_symptoms/other_problem = '1'" />
+			<bind nodeset="/data/treatment_ds" relevant="/data/has_danger_sign = 'yes'" />
+			<bind nodeset="/data/treatment_ds/treatment_pneumonia_2_to_12" relevant="/data/calc_age_months &gt;= '2' and /data/calc_age_months &lt; '12' and /data/pneumonia_ds = 'yes'" />
+			<bind nodeset="/data/treatment_ds/treatment_pneumonia_12_to_60" relevant="(/data/ds_severe_pneumonia/ds_chest_indraw = '1' or /data/ds_severe_pneumonia/ds_extended_cough = '1') and (/data/calc_age_months &gt;= '12' and/data/calc_age_months &lt; '60')" />
+			<bind nodeset="/data/treatment_ds/treatment_diarrhoea_2_to_12" relevant="(/data/ds_severe_diarrhoea/ds_drinks_eagerly = '1' or /data/ds_severe_diarrhoea/ds_sunken_eyes = '1' or /data/ds_severe_diarrhoea/ds_diarrhoea_14_days = '1' or /data/ds_severe_diarrhoea/ds_diarrhoea_bloody = '1' or /data/ds_severe_diarrhoea/ds_skin_pinch = '1') and (/data/calc_age_months &gt;= '2' and/data/calc_age_months = '12')" />
+			<bind nodeset="/data/treatment_ds/treatment_diarrhoea_12_to_60" relevant="(/data/ds_severe_diarrhoea/ds_drinks_eagerly = '1' or /data/ds_severe_diarrhoea/ds_sunken_eyes = '1' or /data/ds_severe_diarrhoea/ds_diarrhoea_14_days = '1' or /data/ds_severe_diarrhoea/ds_diarrhoea_bloody = '1' or /data/ds_severe_diarrhoea/ds_skin_pinch = '1') and (/data/calc_age_months &gt;= '12' and/data/calc_age_months = '60')" />
+			<bind nodeset="/data/treatment_ds/treatment_malaria_2_to_12" relevant="(/data/non_severe_symptoms/fever = '1' and /data/general_ds = 'yes' and /data/calc_age_months &lt;= '12')  or (/data/ds_severe_fever/ds_fever_7_days = '1' and /data/calc_age_months &lt;= '12')" />
+			<bind nodeset="/data/treatment_ds/treatment_malaria_12_to_36" relevant="(/data/non_severe_symptoms/fever = '1' and /data/general_ds = 'yes' and /data/calc_age_months &gt;= '12' and /data/calc_age_months &lt;= '36') or (/data/ds_severe_fever/ds_fever_7_days = '1' and /data/calc_age_months &gt;= '12' and /data/calc_age_months &lt;= '36')" />
+			<bind nodeset="/data/treatment_ds/treatment_malaria_36_to_42" relevant="(/data/non_severe_symptoms/fever = '1' and /data/general_ds = 'yes' and /data/calc_age_months &gt;= '36' and /data/calc_age_months &lt;= '42') or (/data/ds_severe_fever/ds_fever_7_days = '1' and /data/calc_age_months &gt;= '36' and /data/calc_age_months &lt;= '42')" />
+			<bind nodeset="/data/treatment_ds/treatment_malaria_42_to_60" relevant="(/data/non_severe_symptoms/fever = '1' and /data/general_ds = 'yes' and /data/calc_age_months &gt;= '42' and /data/calc_age_months &lt;= '60') or (/data/ds_severe_fever/ds_fever_7_days = '1' and /data/calc_age_months &gt;= '42' and /data/calc_age_months &lt;= '60')" />
+			<bind nodeset="/data/treatment_ds/treatment_general_ds" relevant="/data/has_danger_sign = 'yes'" />
+			<bind nodeset="/data/consult" />
+			<bind nodeset="/data/consult/perform_resp_count" relevant="/data/non_severe_symptoms/cough = '1' and /data/has_danger_sign = 'no'" />
+			<bind nodeset="/data/consult/results_resp_count" type="xsd:int" relevant="/data/non_severe_symptoms/cough = '1' and /data/has_danger_sign = 'no'" required="true()" />
+			<bind nodeset="/data/consult/educ_pneumonia" relevant="/data/non_severe_symptoms/cough = '1' and /data/has_danger_sign = 'no'" />
+			<bind nodeset="/data/consult/treatment_diarrhoea" relevant="/data/non_severe_symptoms/diarrhoea = '1' and /data/has_danger_sign = 'no'" />
+			<bind nodeset="/data/consult/educ_dehydration" relevant="/data/non_severe_symptoms/diarrhoea = '1' and /data/has_danger_sign = 'no'" />
+			<bind nodeset="/data/consult/perform_rdt" relevant="/data/non_severe_symptoms/fever = '1' or /data/malaria_ds = 'yes'" />
+			<bind nodeset="/data/consult/educ_rdt" relevant="/data/non_severe_symptoms/fever = '1' or /data/malaria_ds = 'yes'" />
+			<bind nodeset="/data/consult/educ_malaria_kills" relevant="/data/non_severe_symptoms/fever = '1'" />
+			<bind nodeset="/data/consult/malnutrition" relevant="/data/has_danger_sign = 'no'" required="true()" />
+			<bind nodeset="/data/consult/oedema" relevant="/data/has_danger_sign = 'no' and /data/consult/malnutrition = '1'" required="true()" />
+			<bind nodeset="/data/consult/perform_muac" relevant="/data/has_danger_sign = 'no' and /data/consult/malnutrition = '1'" />
+			<bind nodeset="/data/consult/results_muac" relevant="/data/has_danger_sign = 'no' and /data/consult/malnutrition = '1'" required="true()" />
+			<bind nodeset="/data/consult/vac_check" relevant="/data/has_danger_sign = 'no'" />
+			<bind nodeset="/data/consult/vac_newborn" relevant="/data/has_danger_sign = 'no' and /data/calc_age_months &gt;= '2'" required="true()" />
+			<bind nodeset="/data/consult/vac_2month" relevant="/data/has_danger_sign = 'no' and /data/calc_age_months &gt;= '2'" required="true()" />
+			<bind nodeset="/data/consult/vac_3month" relevant="/data/has_danger_sign = 'no' and /data/calc_age_months &gt;= '3'" required="true()" />
+			<bind nodeset="/data/consult/vac_4month" relevant="/data/has_danger_sign = 'no' and /data/calc_age_months &gt;= '4'" required="true()" />
+			<bind nodeset="/data/consult/vac_9month" relevant="/data/has_danger_sign = 'no' and /data/calc_age_months &gt;= '9'" required="true()" />
+			<bind nodeset="/data/consult/results_rdt" relevant="/data/non_severe_symptoms/fever = '1' or /data/malaria_ds = 'yes'" required="true()" />
+			<bind nodeset="/data/consult/results_rdt_indet" relevant="/data/consult/results_rdt = '3'" />
+			<bind nodeset="/data/treatment_resp_less_than_12" relevant="/data/consult/results_resp_count &gt;= '50' and /data/calc_age_months &lt; '12'" />
+			<bind nodeset="/data/treatment_resp_more_than_12" relevant="/data/consult/results_resp_count &gt;= '40' and /data/calc_age_months &gt;= '12'" />
+			<bind nodeset="/data/treatment_resp_slow" relevant="(/data/consult/results_resp_count &lt; '40' and /data/calc_age_months &gt;= '12') or (/data/consult/results_resp_count &lt; '50' and /data/calc_age_months &lt; '12')" />
+			<bind nodeset="/data/educ_pneumonia_prev" relevant="(/data/consult/results_resp_count &gt;= '50' and /data/calc_age_months &lt; '12') or (/data/consult/results_resp_count &gt;= '40' and /data/calc_age_months &gt;= '12')" />
+			<bind nodeset="/data/treatment_diarrhoea_2_to_6" relevant="/data/calc_age_months &gt;= '2' and /data/non_severe_symptoms/diarrhoea = '1' and /data/calc_age_months &lt; '6'" />
+			<bind nodeset="/data/treatment_diarrhoea_6_to_24" relevant="/data/non_severe_symptoms/diarrhoea = '1' and /data/calc_age_months &gt;= '6' and /data/calc_age_months &lt; '24'" />
+			<bind nodeset="/data/treatment_diarrhoea_24_to_60" relevant="/data/calc_age_months &gt;= '24' and /data/non_severe_symptoms/diarrhoea = '1' and /data/calc_age_months &lt; '60'" />
+			<bind nodeset="/data/educ_diarrhoea_prevent" relevant="/data/non_severe_symptoms/diarrhoea = '1'" />
+			<bind nodeset="/data/treatment_malaria_neg" relevant="/data/consult/results_rdt = '2' or /data/consult/results_rdt = '3'" />
+			<bind nodeset="/data/treatment_malaria_6mo" relevant="/data/consult/results_rdt = '1' and /data/calc_age_months &lt; '6'" />
+			<bind nodeset="/data/treatment_malaria_6_to_36" relevant="/data/consult/results_rdt = '1' and /data/calc_age_months &gt;= '6' and /data/calc_age_months &lt; '36'" />
+			<bind nodeset="/data/treatment_malaria_36_to_60" relevant="/data/consult/results_rdt = '1' and /data/calc_age_months &gt;= '36' and /data/calc_age_months &lt; '60'" />
+			<bind nodeset="/data/educ_bednet" relevant="/data/non_severe_symptoms/fever = '1'" />
+			<bind nodeset="/data/treatment_malnutrition" relevant="/data/consult/oedema = '1' or /data/consult/results_muac = '3'" />
+			<bind nodeset="/data/treatment_incomplete_vac" relevant="/data/incomplete_vac = 'yes'" />
+			<bind nodeset="/data/educ_vaccination" relevant="/data/incomplete_vac = 'yes'" />
+			<bind nodeset="/data/treatment_other" relevant="/data/non_severe_symptoms/other_problem = '1'" />
+			<bind nodeset="/data/educ_take_meds" relevant="/data/calc_age_months &lt; '24'" />
+			<bind nodeset="/data/educ_continue_breast_feed" relevant="/data/non_severe_symptoms/diarrhoea = '1' and /data/calc_age_months &lt; '24'" required="true()" />
+			<bind nodeset="/data/educ_continue_feed" required="true()" />
+			<bind nodeset="/data/educ_follow_up" required="true()" />
+			<bind nodeset="/data/referral_advice" relevant="/data/referral_needed = 'yes'" />
+			<bind nodeset="/data/referral_advice/referral_2_days" relevant="/data/non_severe_symptoms/fever = '1' or /data/non_severe_symptoms/diarrhoea = '1' or /data/has_pneumonia = 'yes' or /data/has_danger_sign = 'no'" />
+			<bind nodeset="/data/referral_advice/referral_1_5_30_days" relevant="/data/malnourished = 'yes'" />
+			<bind nodeset="/data/referral_advice/referral_1_5_days" relevant="(/data/consult/results_rdt = '1' and /data/calc_age_months &lt; '6') or /data/has_danger_sign = 'yes'" />
+			<bind nodeset="/data/self_report" />
+			<bind nodeset="/data/self_report/diagnosis_given" required="true()" />
+			<bind nodeset="/data/self_report/treatment_given" required="true()" />
+			<bind nodeset="/data/self_report/treatment_given_other" type="xsd:string" relevant="/data/self_report/treatment_given = '0'" />
+			<bind nodeset="/data/self_report/referral_given" required="true()" />
+			<bind nodeset="/data/self_report/referral_given_reason" relevant="/data/self_report/referral_given = '1'" required="true()" />
+			<bind nodeset="/data/fill_referral" />
+			<bind nodeset="/data/referral_summary" relevant="/data/self_report/referral_given = '1'" required="true()" />
+			<bind nodeset="/data/fill_registry" />
+			<bind nodeset="/data/registry_display" />
+			<bind nodeset="/data/general_ds" calculate="if(/data/ds_general/ds_convulsions = '1' or /data/ds_general/ds_not_wake = '0' or /data/ds_general/ds_no_eat_drink = '0' or /data/ds_general/ds_vomiting = '1', 'yes', 'no')" />
+			<bind nodeset="/data/calc_age_months" calculate="if(/data/age != '', /data/age, int((today() - /data/dob) div 30.4))" />
+			<bind nodeset="/data/has_danger_sign" calculate="if(/data/general_ds = 'yes' or /data/pneumonia_ds = 'yes' or /data/diarrhoea_ds = 'yes' or /data/malaria_ds = 'yes', 'yes', 'no')" />
+			<bind nodeset="/data/incomplete_vac" calculate="if(/data/consult/vac_newborn = '0' or /data/consult/vac_2month = '0' or /data/consult/vac_3month = '0' or /data/consult/vac_4month = '0' or /data/consult/vac_9month = '0', 'yes', 'no')" />
+			<bind nodeset="/data/calc_resp_rate" />
+			<bind nodeset="/data/referral_needed" calculate="if(/data/non_severe_symptoms/fever = '1' or /data/non_severe_symptoms/diarrhoea = '1' or /data/has_pneumonia = 'yes' or /data/malnourished = 'yes' or (/data/consult/results_rdt = '1' and /data/calc_age_months &lt; '6') or /data/has_danger_sign = 'yes', 'yes', 'no')" />
+			<bind nodeset="/data/has_pneumonia" calculate="if ((/data/consult/results_resp_count &gt;= '50' and /data/calc_age_months &lt; '12') or (/data/consult/results_resp_count &gt;= '40' and /data/calc_age_months &gt;= '12'), 'yes', 'no')" />
+			<bind nodeset="/data/malnourished" calculate="if (/data/consult/oedema = '1' or /data/consult/results_muac = '3', 'yes', 'no')" />
+			<bind nodeset="/data/pneumonia_ds" calculate="if(/data/ds_severe_pneumonia/ds_chest_indraw = '1' or /data/ds_severe_pneumonia/ds_extended_cough = '1', 'yes', 'no')" />
+			<bind nodeset="/data/diarrhoea_ds" calculate="if (/data/ds_severe_diarrhoea/ds_drinks_eagerly = '1' or /data/ds_severe_diarrhoea/ds_sunken_eyes = '1' or /data/ds_severe_diarrhoea/ds_diarrhoea_14_days = '1' or /data/ds_severe_diarrhoea/ds_diarrhoea_bloody = '1' or /data/ds_severe_diarrhoea/ds_skin_pinch = '1', 'yes', 'no')" />
+			<bind nodeset="/data/malaria_ds" calculate="if(/data/ds_severe_fever/ds_fever_7_days = '1' or /data/ds_severe_fever/ds_rigid_neck = '1' or /data/ds_severe_fever/ds_red_eyes = '1' or /data/ds_severe_fever/ds_skin_pustules = '1', 'yes', 'no')" />
+			<bind nodeset="/data/ds_display" calculate="if(/data/ds_general/ds_no_eat_drink= '0', 'Não beber ou mamar', if(/data/ds_general/ds_not_wake= '0', 'Frequeza marcada ou inconsciente', if(/data/ds_general/ds_convulsions= '1', 'Teve convulsões', if(/data/ds_general/ds_vomiting = '1', 'Vomita toda', if(/data/ds_severe_pneumonia/ds_chest_indraw = '1', 'Tiragem', if(/data/ds_severe_pneumonia/ds_extended_cough='1', 'Tosse por mais de 21 dias', if(/data/ds_severe_diarrhoea/ds_drinks_eagerly ='1', 'Bebe con avidêz', if(/data/ds_severe_diarrhoea/ds_sunken_eyes = '1', 'Ohlos encovados', if(/data/ds_severe_diarrhoea/ds_diarrhoea_14_days ='1', 'Diarreia por mais de 14 dias', if(/data/ds_severe_diarrhoea/ds_diarrhoea_bloody ='1', 'Diarreia com sangue', if(/data/ds_severe_diarrhoea/ds_skin_pinch ='1', 'Prega cutanea volta lentamente', if(/data/ds_severe_fever/ds_fever_7_days='1', '7 dias ou mais com febre', if(/data/ds_severe_fever/ds_rigid_neck='1', 'Rigidez na nuca', if(/data/ds_severe_fever/ds_red_eyes ='1', 'Olhos avermelhados', if(/data/ds_severe_fever/ds_skin_pustules ='1', 'Borbulhas pelo corpo todo', 'Não tem sinal de perigo')))))))))))))))" />
+			<bind nodeset="/data/referral_display" calculate="if(/data/self_report/referral_given_reason = '5', 'Problemas de mal nutrição', if(/data/self_report/referral_given_reason = '3', 'Vacina incompleta', if(/data/self_report/referral_given_reason = '1', 'Sinais de perigo', if(/data/self_report/referral_given_reason = '0', 'Outro motivo', if(/data/self_report/referral_given_reason = '6', 'Desparasitação', 'Não transferido')))))" />
+			<bind nodeset="/data/treatment_display" calculate="if(/data/self_report/treatment_given = '11', 'Paracetamol', if((/data/self_report/treatment_given = '7' or /data/self_report/treatment_given = '8' or /data/self_report/treatment_given = '9' or /data/self_report/treatment_given = '10'), 'Artemeter-lumefantrine', if((/data/self_report/treatment_given = '4' or /data/self_report/treatment_given = '5'), 'Artesunato supositorios', if((/data/self_report/treatment_given ='1' or /data/self_report/treatment_given = '2'), 'Amoxicilina', if(/data/self_report/treatment_given = '3', 'Sais de rehidratacao oral (SRO)', if(/data/self_report/treatment_given ='6', 'Zinco', if(/data/self_report/treatment_given = '0', 'Outro tratamento', 'não deu tratamento')))))))" />
+			<bind nodeset="/data/rdt_display" calculate="if(/data/consult/results_rdt = '1', 'Postivo menos de 59 meses', if(/data/consult/results_rdt = '2', 'Negativo', if(/data/consult/results_rdt = '3', 'Indeterminado', 'não aplicável')))" />
+			<bind nodeset="/data/diagnosis_display" calculate="if(/data/self_report/diagnosis_given= '1', 'Malária confirmada menos de 59 meses', if(/data/self_report/diagnosis_given= '2', 'Diarreia', if(/data/self_report/diagnosis_given= '3', 'Pneumonia', if(/data/self_report/diagnosis_given= '4', 'Malnutrição', if(/data/self_report/diagnosis_given= '5', 'Malária não confirmada', 'Outro'))))) " />
+			<itext>
+				<translation lang="por" default="">
+					<text id="name-label">
+						<value>Nome completo do paciente</value>
+						<value form="image">jr://file/commcare/image/data/name_child.png</value>
+					</text>
+					<text id="sex-label">
+						<value>Sexo</value>
+						<value form="image">jr://file/commcare/image/data/sex.png</value>
+					</text>
+					<text id="sex-1-label">
+						<value>Masculino</value>
+					</text>
+					<text id="sex-0-label">
+						<value>Feminino</value>
+					</text>
+					<text id="dob_known-label">
+						<value>Sabe a data de nascimento?</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+					</text>
+					<text id="dob_known-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="dob_known-0-label">
+						<value>Não</value>
+					</text>
+					<text id="dob-label">
+						<value>Data de nascimento</value>
+					</text>
+					<text id="dob-constraintMsg">
+						<value>Idade deve ser entre 2 - 59 meses</value>
+					</text>
+					<text id="age-label">
+						<value>Idade en meses</value>
+					</text>
+					<text id="age-constraintMsg">
+						<value>Idade deve ser entre 2 - 59 meses</value>
+					</text>
+					<text id="confirm_dob-label">
+						<value>Idade da criança em meses  é <output ref="/data/calc_age_months"/>. Se não, por favor, volte e responda novamente</value>
+					</text>
+					<text id="locality-label">
+						<value>Localidade</value>
+					</text>
+					<text id="question12-1-label">
+						<value>Cidade de Maxixe</value>
+					</text>
+					<text id="village-label">
+						<value>Comunidade</value>
+					</text>
+					<text id="question12-1-1-label">
+						<value>Bembe</value>
+					</text>
+					<text id="question12-1-2-label">
+						<value>Mabil</value>
+					</text>
+					<text id="question12-1-3-label">
+						<value>Macuamene</value>
+					</text>
+					<text id="village-4-label">
+						<value>Macupula</value>
+					</text>
+					<text id="village-5-label">
+						<value>Malalane</value>
+					</text>
+					<text id="village-6-label">
+						<value>Manhala</value>
+					</text>
+					<text id="village-7-label">
+						<value>Nhabanda</value>
+					</text>
+					<text id="village-8-label">
+						<value>Nhamaxaxa</value>
+					</text>
+					<text id="village-9-label">
+						<value>Rumbana</value>
+					</text>
+					<text id="village-10-label">
+						<value>Chambone</value>
+					</text>
+					<text id="village-11-label">
+						<value>Tinga Tinga</value>
+					</text>
+					<text id="village-12-label">
+						<value>Bato</value>
+					</text>
+					<text id="village-13-label">
+						<value>Agostinho Neto</value>
+					</text>
+					<text id="village-14-label">
+						<value>Dambo</value>
+					</text>
+					<text id="village-15-label">
+						<value>Barrane</value>
+					</text>
+					<text id="home_visit-label">
+						<value>É uma visita domiciliária?</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="home_visit-1-label2">
+						<value>Sim</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>Não</value>
+					</text>
+					<text id="sick_child-label">
+						<value>Preguntar o que tem a criança?</value>
+						<value form="image">jr://file/commcare/image/data/sick_child.png</value>
+					</text>
+					<text id="ask_danger_signs-label">
+						<value>Agora vamos verificar se tem sinais de perigo.</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="ds_general-label">
+						<value>Sinais gerais de perigo</value>
+					</text>
+					<text id="ds_no_eat_drink-label">
+						<value>Consegue beber ou comer?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_difficulty.png</value>
+					</text>
+					<text id="other_problem-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="other_problem-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_not_wake-label">
+						<value>Acorda?</value>
+						<value form="image">jr://file/commcare/image/data/ds_not_wake.png</value>
+					</text>
+					<text id="ds_no_eat_drink-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_no_eat_drink-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_convulsions-label">
+						<value>Tem convulsões ou ataques?</value>
+						<value form="image">jr://file/commcare/image/data/ds_convulsions.png</value>
+					</text>
+					<text id="ds_not_wake-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_not_wake-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_vomiting-label">
+						<value>Vomita tudo o que come ou bebe?</value>
+						<value form="image">jr://file/commcare/image/data/ds_vomiting.png</value>
+					</text>
+					<text id="ds_convulsions-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_convulsions-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_severe_pneumonia-label">
+						<value>Pneumonia grave</value>
+					</text>
+					<text id="ds_chest_indraw-label">
+						<value>Tiragem?</value>
+						<value form="image">jr://file/commcare/image/data/moaning.png</value>
+					</text>
+					<text id="ds_vomiting-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_vomiting-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_extended_cough-label">
+						<value>Tosse por mais de 21 dias?</value>
+						<value form="image">jr://file/commcare/image/data/ds_cough.png</value>
+					</text>
+					<text id="ds_chest_indraw-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_chest_indraw-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_severe_diarrhoea-label">
+						<value>Diarreia grave</value>
+					</text>
+					<text id="ds_drinks_eagerly-label">
+						<value>A criança bebe com avidez?</value>
+						<value form="image">jr://file/commcare/image/data/child_drinking.png</value>
+					</text>
+					<text id="ds_extended_cough-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_extended_cough-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_sunken_eyes-label">
+						<value>Olhos encovados?</value>
+						<value form="image">jr://file/commcare/image/data/ds_sunken_eyes.png</value>
+					</text>
+					<text id="ds_drinks_eagerly-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_drinks_eagerly-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_diarrhoea_14_days-label">
+						<value>Diarreia por mais de 14 dias?</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="ds_bloody_diarrhoea-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_bloody_diarrhoea-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_diarrhoea_bloody-label">
+						<value>Diarreia com sangue?</value>
+						<value form="image">jr://file/commcare/image/data/ds_diarrhoea_bloody.png</value>
+					</text>
+					<text id="ds_diarrhoea_14_days-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_diarrhoea_14_days-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_skin_pinch-label">
+						<value>Prega cutânea volta lentamente?</value>
+						<value form="image">jr://file/commcare/image/data/ds_skin_pinch.png</value>
+					</text>
+					<text id="ds_diarrhoea_bloody-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_diarrhoea_bloody-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_severe_fever-label">
+						<value>Febre grave/Malária grave</value>
+					</text>
+					<text id="ds_fever_7_days-label">
+						<value>7 dias ou mais com febre?</value>
+						<value form="image">jr://file/commcare/image/data/fever_newborn.png</value>
+					</text>
+					<text id="ds_skin_pinch-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_skin_pinch-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_rigid_neck-label">
+						<value>Rigedez na nuca?</value>
+						<value form="image">jr://file/commcare/image/data/ds_rigid_neck.png</value>
+					</text>
+					<text id="ds_fever_7_days-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_fever_7_days-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_red_eyes-label">
+						<value>Olhos avermelhados?</value>
+						<value form="image">jr://file/commcare/image/data/red_eyes.png</value>
+					</text>
+					<text id="ds_rigid_neck-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_rigid_neck-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="ds_skin_pustules-label">
+						<value>Borbulhas pelo corpo todo?</value>
+						<value form="image">jr://file/commcare/image/data/ds_skin_pustules.png</value>
+					</text>
+					<text id="ds_red_eyes-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="ds_red_eyes-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="non_severe_symptoms-label">
+						<value>Sintomas náo graves</value>
+					</text>
+					<text id="ask_non_severe-label">
+						<value>Agora vamos verificar se tem outras sintomas.</value>
+					</text>
+					<text id="fever-label">
+						<value>Febre?</value>
+						<value form="image">jr://file/commcare/image/data/fever_child.png</value>
+					</text>
+					<text id="fever-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="fever-0-label">
+						<value>Não</value>
+					</text>
+					<text id="diarrhoea-label">
+						<value>Diarreia?</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="fever-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="fever-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="cough-label">
+						<value>Tosse?</value>
+						<value form="image">jr://file/commcare/image/data/ds_cough.png</value>
+					</text>
+					<text id="diarrhoea-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="diarrhoea-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="other_problem-label">
+						<value>Outro problema?</value>
+					</text>
+					<text id="cough-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="cough-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="describe_other_problem-label">
+						<value>Descreva outro problema:</value>
+					</text>
+					<text id="treatment_ds-label">
+						<value>Diagnóstico e Tratament</value>
+					</text>
+					<text id="treatment_pneumonia_2_to_12-label">
+						<value>Sintoma de: pnuemonia grave
+Idade: <output ref="/data/calc_age_months"/> meses
+Tratamento:  1 comprimido de amoxicilina cor de rosa</value>
+					</text>
+					<text id="treatment_pneumonia_12_to_60-label">
+						<value>Sintoma de: pnuemonia grave
+Idade: <output ref="/data/calc_age_months"/> meses
+Tratamento:  2 comprimidos de amoxicilina verde</value>
+					</text>
+					<text id="treatment_diarrhoea_2_to_12-label">
+						<value>Sintoma de: diarreia grave
+Idade: <output ref="/data/calc_age_months"/> meses
+Tratamento:  metade de copo mixtura</value>
+					</text>
+					<text id="treatment_diarrhoea_12_to_60-label">
+						<value>Sintoma de: diarreia grave
+Idade: <output ref="/data/calc_age_months"/> meses
+Tratamento:  1 copo cheio de mixtura</value>
+					</text>
+					<text id="treatment_malaria_2_to_12-label">
+						<value>Sintoma de: febre grave/malária
+Idade: <output ref="/data/calc_age_months"/> meses
+Tratamento:  1/4 de paracetamol, 1 supositório de Artesunato 50mg</value>
+					</text>
+					<text id="treatment_malaria_12_to_36-label">
+						<value>Sintoma de: febre grave/malária
+Idade: <output ref="/data/calc_age_months"/> meses
+Tratamento:  1/4 de paracetamol, 2 supositórios de Artesunato 50mg</value>
+					</text>
+					<text id="treatment_malaria_36_to_42-label">
+						<value>Sintoma de: febre grave/maláriaIdade: <output ref="/data/calc_age_months"/> mesesTratamento:  1/2 de paracetamol, 2 supositórios de Artesunato 50mg</value>
+					</text>
+					<text id="treatment_malaria_42_to_60-label">
+						<value>Sintoma de: febre grave/malária
+Idade: <output ref="/data/calc_age_months"/> meses
+Tratamento:  1/2 de paracetamol, 1 supositório de Artesunato 200mg</value>
+					</text>
+					<text id="treatment_general_ds-label">
+						<value>Tem um sinal de perigo.  Tranferir urgentemente para a US.</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="perform_resp_count-label">
+						<value>Você registou que esta criança tem tosse. Por favor faça a contagem respiratória.</value>
+						<value form="image">jr://file/commcare/image/data/resp_count.png</value>
+					</text>
+					<text id="results_resp_count-label">
+						<value>Quais são os resultados da contagem respiratória? (en respirações por minuto)</value>
+					</text>
+					<text id="educ_pneumonia-label">
+						<value>A pneumonia é uma doença grave. É bom levar a criança de imediato ao APE  para tratamento.</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="treatment_diarrhoea-label">
+						<value>Você registou que esta criança tem diarreia. Por favor aconselha a mãe em como prevenir a diarreia.</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="educ_dehydration-label">
+						<value>Uma criança com diarreia perde muita água. Dar muitos líquidos como o leite materno, logo que a diarreia começa.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding.png</value>
+					</text>
+					<text id="perform_rdt-label">
+						<value>Você registou que esta criança tem febre. Por favor o teste da malária(TDR)</value>
+						<value form="image">jr://file/commcare/image/data/rdt.png</value>
+					</text>
+					<text id="educ_rdt-label">
+						<value>Leve a criança ao APE logo que tiver febre. Só um teste rápido pode confirmar se é malária ou não.</value>
+						<value form="image">jr://file/commcare/image/data/rdt_child.png</value>
+					</text>
+					<text id="educ_malaria_kills-label">
+						<value>A malária pode matar a criança em menos de 2 dias. Se a criança tomar o medicamento imediatamente a malária vai passar em 3 dias.</value>
+						<value form="image">jr://file/commcare/image/data/coartem_yellow.png</value>
+					</text>
+					<text id="malnutrition-label">
+						<value>A criança tem sinais de nalnutrição?</value>
+						<value form="image">jr://file/commcare/image/data/malnutrition.png</value>
+					</text>
+					<text id="malnutrition-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="malnutrition-0-label">
+						<value>Não</value>
+					</text>
+					<text id="oedema-label">
+						<value>A criança tem edema nos nos pés?</value>
+						<value form="image">jr://file/commcare/image/data/oedema.png</value>
+					</text>
+					<text id="malnutrition-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="malnutrition-1-0-label">
+						<value>Não</value>
+					</text>
+					<text id="perform_muac-label">
+						<value>Por favor faça a medição do perímetro braquial da criança e registe os resultados.</value>
+						<value form="image">jr://file/commcare/image/data/muac.png</value>
+					</text>
+					<text id="results_muac-label">
+						<value>Quais são os resultados da medição do perímetro braquial da criança?</value>
+					</text>
+					<text id="results_muac-1-label">
+						<value>Verde</value>
+					</text>
+					<text id="results_muac-2-label">
+						<value>Amarelo</value>
+					</text>
+					<text id="results_muac-3-label">
+						<value>Vermelho</value>
+					</text>
+					<text id="vac_check-label">
+						<value>Por favor consulte o cartão da criança para verificar se as vacinas estão completas.</value>
+						<value form="image">jr://file/commcare/image/data/vaccination.png</value>
+					</text>
+					<text id="vac_newborn-label2">
+						<value>Idade:  <output ref="/data/calc_age_months"/> meses
+Recebeu: BCG e Pólio
+Está correcto?</value>
+						<value form="image">jr://file/commcare/image/data/vaccination_newborn.png</value>
+					</text>
+					<text id="vac_newborn-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="vac_newborn-0-label">
+						<value>Não</value>
+					</text>
+					<text id="vac_2month-label2">
+						<value>Idade:  <output ref="/data/calc_age_months"/> meses
+Recebeu: 1a dose (DPT + Hep B, Pólio + Hib1)
+Está correcto?</value>
+						<value form="image">jr://file/commcare/image/data/vac_2month.png</value>
+					</text>
+					<text id="vac_2month-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="vac_2month-2-label">
+						<value>Não</value>
+					</text>
+					<text id="vac_3month-label">
+						<value>Idade:  <output ref="/data/calc_age_months"/> meses
+Recebeu: 2a dose (DPT + Hep B, Pólio + Hib1)
+Está correcto?</value>
+						<value form="image">jr://file/commcare/image/data/vac_3month.png</value>
+					</text>
+					<text id="vac_2month-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="vac_2month-1-2-label">
+						<value>Não</value>
+					</text>
+					<text id="vac_4month-label">
+						<value>Idade:  <output ref="/data/calc_age_months"/> meses
+Recebeu: 3a dose (DPT + Hep B, Pólio + Hib1)
+Está correcto?</value>
+						<value form="image">jr://file/commcare/image/data/vac_4month.png</value>
+					</text>
+					<text id="vac_3month-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="vac_3month-1-2-label">
+						<value>Não</value>
+					</text>
+					<text id="vac_9month-label">
+						<value>Idade:  <output ref="/data/calc_age_months"/> meses
+Recebeu: Sarampo 
+Está correcto?</value>
+						<value form="image">jr://file/commcare/image/data/vac_9month.png</value>
+					</text>
+					<text id="vac_4month-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="vac_4month-1-2-label">
+						<value>Não</value>
+					</text>
+					<text id="results_rdt-label">
+						<value>Qual é o resultado do teste TDR?</value>
+						<value form="image">jr://file/commcare/image/data/rdt.png</value>
+					</text>
+					<text id="results_rdt-1-label">
+						<value>Positivo</value>
+					</text>
+					<text id="results_rdt-2-label">
+						<value>Negativo</value>
+					</text>
+					<text id="results_rdt-3-label">
+						<value>Indeterminado</value>
+					</text>
+					<text id="results_rdt_indet-label">
+						<value>Por favor, registrar os resultados como "indeterminado" e realizar outro teste TDR. Por favor, volte e responda novamente.</value>
+					</text>
+					<text id="treatment_resp_less_than_12-label">
+						<value>Sintoma: frequência respiratória de <output ref="/data/consult/results_resp_count"/>Idade: <output ref="/data/calc_age_months"/> mesesDiagnótico: PnuemoniaTratamento:  1 comprimido amoxicilina cor de rosa3vezes ao diadurante 5 dias</value>
+						<value form="image">jr://file/commcare/image/data/amox_pink.png</value>
+					</text>
+					<text id="treatment_resp_more_than_12-label">
+						<value>Sintoma: frequência respiratória de <output ref="/data/consult/results_resp_count"/>Idade: <output ref="/data/calc_age_months"/> mesesDiagnótico: PnuemoniaTratamento:  2 comprimidos amoxicilina verde3vezes ao diadurante 5 dias</value>
+						<value form="image">jr://file/commcare/image/data/amox_green.png</value>
+					</text>
+					<text id="treatment_resp_slow-label">
+						<value>Sintoma: tosse mais não tem respiração rápida
+Idade: <output ref="/data/calc_age_months"/> meses
+Diagnótico: Tosse o gripe
+Tratamento:  Xaropes casieros de cebola com açucar, mel com limão</value>
+					</text>
+					<text id="educ_pneumonia_prev-label">
+						<value>O fumo pode provocar a pneumonia nas crianças. Manter as crianças longe das cozinhas and fogueiras.</value>
+						<value form="image">jr://file/commcare/image/data/educ_pneumonia_prev.png</value>
+					</text>
+					<text id="treatment_diarrhoea_2_to_6-label">
+						<value>Sintomas de: diarreia
+Idade: <output ref="/data/calc_age_months"/> meses
+Diagnótico: diarreia
+Tratamento:  metade de copo mistura
+metade de comprimido de zinco
+por dia durante 10 dias.</value>
+					</text>
+					<text id="treatment_diarrhoea_6_to_24-label">
+						<value>Sintomas de: diarreia
+Idade: <output ref="/data/calc_age_months"/> meses
+Diagnótico: diarreia
+Tratamento:  metade de copo mistura
+1 comprimido de zinco
+por dia durante 10 dias.</value>
+					</text>
+					<text id="treatment_diarrhoea_24_to_60-label">
+						<value>Sintomas de: diarreia
+Idade: <output ref="/data/calc_age_months"/> meses
+Diagnótico: diarreia
+Tratamento:  1 copo cheio de mistura
+1 comprimido de zinco
+por dia durante 10 dias.</value>
+					</text>
+					<text id="educ_diarrhoea_prevent-label">
+						<value> A diarreia é transmitida por mãos sujas. Lavar  as mãos com água  e sabão depois de usar a latrina e antes de tocar comida.</value>
+						<value form="image">jr://file/commcare/image/data/wash_hands.png</value>
+					</text>
+					<text id="treatment_malaria_neg-label">
+						<value>Sintomas: febre, TDR negativo ou indeterminadoIdade: <output ref="/data/calc_age_months"/> mesesTratamento:  1a dose de paracetamolTransferir para a US.</value>
+					</text>
+					<text id="treatment_malaria_6mo-label">
+						<value>Sintomas: febre, TDR postivito Idade: <output ref="/data/calc_age_months"/> mesesDiagnóstico: Malária Tratamento:  1/4 comprimido paracetamoltomar 3 vezes ao diadurante 3 diasArrefecer o corpo da criançaTransferir urgentamente para a US.</value>
+					</text>
+					<text id="treatment_malaria_6_to_36-label">
+						<value>Sintomas: febre, TDR postivito Idade: <output ref="/data/calc_age_months"/> mesesDiagnóstico: Malária Tratamento: Coartem amarelo2 vezes ao diadurante 3 dias 1/4 comprimido paracetamoltomar 3 vezes ao diadurante 3 diasArrefecer o corpo da criançaTransferir urgentamente para a US.</value>
+					</text>
+					<text id="treatment_malaria_36_to_60-label">
+						<value>Sintomas: febre, TDR postivito Idade: <output ref="/data/calc_age_months"/> mesesDiagnóstico: Malária Tratamento: Coartem azul2 vezes ao diadurante 3 dias 1/2 comprimido paracetamoltomar 3 vezes ao diadurante 3 diasArrefecer o corpo da criançaTransferir urgentamente para a US.</value>
+					</text>
+					<text id="educ_bednet-label">
+						<value>É importante toda a familia dormir debaixo da rede mosquiteira todas as noites para evitar a picada do mosquito que causa a malária.</value>
+						<value form="image">jr://file/commcare/image/data/educ_bednet.png</value>
+					</text>
+					<text id="treatment_malnutrition-label">
+						<value>Parece malnutrida. É uma doença grave e precisa de um tratamento especial na US. Transferir para a US.</value>
+					</text>
+					<text id="treatment_incomplete_vac-label">
+						<value>Não completou todas as vacinas. Transferir para a US.</value>
+					</text>
+					<text id="educ_vaccination-label">
+						<value>A vacinação protégé e reforça o corpo da criança para combater das doenças.</value>
+					</text>
+					<text id="treatment_other-label">
+						<value>Tem outros problemas de saúde que não pode ser tratado pelo APE. Transferir para a US.</value>
+					</text>
+					<text id="educ_take_meds-label">
+						<value>Sempre acabar com os medicamentos recitados!</value>
+					</text>
+					<text id="educ_continue_breast_feed-label">
+						<value>Amamente mais vezes que o normal de dia e de noite quando a criança tiver diarreia. </value>
+					</text>
+					<text id="educ_continue_feed-label">
+						<value> Para a criança recuperar as forças dar a criança comida e bebida varias vezes por dia.</value>
+					</text>
+					<text id="educ_follow_up-label">
+						<value>Voltar ao APE no dia marcado para o seguimento.</value>
+					</text>
+					<text id="referral_advice-label">
+						<value>Seguimento</value>
+					</text>
+					<text id="referral_2_days-label">
+						<value>Seguimento: depois de 2 dias para ter a certeza de que a mãe está a cumprir com o tratamento e se a criança está a melhorar</value>
+					</text>
+					<text id="referral_1_5_30_days-label">
+						<value>Seguimento 1: depois de 1 dia 
+Confirmar: a mãe levou a criança para a US 
+
+Seguimento 2: despois de 5 dias 
+Confirmar: a criança está a melhorar 
+
+Seguimento 3: depois de 1 mês 
+Confirmar:a criança está bem.</value>
+					</text>
+					<text id="referral_1_5_days-label">
+						<value>Seguimento 1: depois de 1 dia 
+Confirmar: a mãe levou a criança para a US 
+
+Seguimento 2: despois de 5 dias 
+Confirmar: a criança está a melhorar</value>
+					</text>
+					<text id="diagnosis_given-label">
+						<value>Qual foi o diagnóstico?</value>
+					</text>
+					<text id="diagnosis_given-1-label">
+						<value>Malária confirmada</value>
+					</text>
+					<text id="diagnosis_given-2-label">
+						<value>Diarreia</value>
+					</text>
+					<text id="diagnosis_given-3-label">
+						<value>Pneumonia</value>
+					</text>
+					<text id="diagnosis_given-4-label">
+						<value>Malnutrição</value>
+					</text>
+					<text id="diagnosis_given-5-label">
+						<value>Malária não confirmada</value>
+					</text>
+					<text id="diagnosis_given-0-label">
+						<value>Outro</value>
+					</text>
+					<text id="treatment_given-label">
+						<value>Qual foi o tratamento que deu?</value>
+					</text>
+					<text id="treatment_given-1-label">
+						<value>Amoxicilina cor de rosa</value>
+					</text>
+					<text id="treatment_given-2-label">
+						<value>Amoxicilina verde</value>
+					</text>
+					<text id="treatment_given-3-label">
+						<value>SRO</value>
+					</text>
+					<text id="treatment_given-4-label">
+						<value> Artesunato Rectal (50 mg)</value>
+					</text>
+					<text id="treatment_given-5-label">
+						<value> Artesunato Rectal (200 mg)</value>
+					</text>
+					<text id="treatment_given-6-label">
+						<value>Zinco</value>
+					</text>
+					<text id="treatment_given-7-label">
+						<value>Coartem amarelo</value>
+					</text>
+					<text id="treatment_given-8-label">
+						<value>Coartem azul</value>
+					</text>
+					<text id="treatment_given-9-label">
+						<value>Coartem verde</value>
+					</text>
+					<text id="treatment_given-10-label">
+						<value>Coartem castanho</value>
+					</text>
+					<text id="treatment_given-11-label">
+						<value>Parecetamol</value>
+					</text>
+					<text id="treatment_given-0-label">
+						<value>Outro</value>
+					</text>
+					<text id="treatment_given-99-label">
+						<value>Não deu tratamento</value>
+					</text>
+					<text id="treatment_given_other-label">
+						<value>Descreva outro tratamento</value>
+					</text>
+					<text id="referral_given-label">
+						<value>A criança foi transferida para uma US?</value>
+					</text>
+					<text id="referral_given-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="referral_given-0-label">
+						<value>Não</value>
+					</text>
+					<text id="referral_given_reason-label">
+						<value>Porquê a criança foi transferida?</value>
+					</text>
+					<text id="referral_given_reason-1-label">
+						<value>Sinais de perigo</value>
+					</text>
+					<text id="referral_given_reason-3-label">
+						<value>Vacinação incompleta</value>
+					</text>
+					<text id="referral_given_reason-5-label">
+						<value>Malnutrição</value>
+					</text>
+					<text id="referral_given_reason-6-label">
+						<value>Desparasitação</value>
+					</text>
+					<text id="referral_given_reason-0-label">
+						<value>Outra causa</value>
+					</text>
+					<text id="referral_form-label2">
+						<value>Preencha o guia de referência com dos dados do ecrã seguinte.</value>
+					</text>
+					<text id="referral_summary-label">
+						<value>Guia de Referência 
+
+Data: <output value="today()"/> 
+Nome de doente: <output value="/data/name"/> 
+Idade: <output value="/data/calc_age_months"/> 
+Comunidade: <output value="/data/village"/> 
+Sinal geral de perigo: <output value="/data/ds_display"/>  
+Motivo de transferência: <output value="/data/referral_display"/> 
+Tratamento: <output value="/data/treatment_display"/></value>
+					</text>
+					<text id="fill_registry-label">
+						<value>Preencha o livro de registo do paciente com dos dados do ecrã seguinte.</value>
+					</text>
+					<text id="registry_display-label">
+						<value>Livro de Registro Data: <output value="today()"/> Nome completo: <output value="/data/name"/> Residencia (localidade): Cidade de Maxixe Residencia (comunidade): <output value="/data/village"/> Atendimento: Primeiro Grupo-alvo: Criança Laboratorio TDR: <output value="/data/rdt_display"/> Diagnóstico: <output value="/data/diagnosis_display"/> Tratamento: <output value="/data/treatment_display"/> Resultado final: não aplicável Transferência: <output value="/data/referral_display"/></value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="name-label">
+						<value>Complete patient name</value>
+						<value form="image">jr://file/commcare/image/data/name_child.png</value>
+					</text>
+					<text id="sex-label">
+						<value>Sex</value>
+						<value form="image">jr://file/commcare/image/data/sex.png</value>
+					</text>
+					<text id="sex-1-label">
+						<value>Male</value>
+					</text>
+					<text id="sex-0-label">
+						<value>Female</value>
+					</text>
+					<text id="dob_known-label">
+						<value>Is the date of birth known?</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+					</text>
+					<text id="dob_known-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="dob_known-0-label">
+						<value>No</value>
+					</text>
+					<text id="dob-label">
+						<value>Date of birth</value>
+					</text>
+					<text id="dob-constraintMsg">
+						<value>Age should be between 2 - 59 months</value>
+					</text>
+					<text id="age-label">
+						<value>Age in months</value>
+					</text>
+					<text id="age-constraintMsg">
+						<value>Age should be between 2 - 59 months.</value>
+					</text>
+					<text id="confirm_dob-label">
+						<value>Child's age in months is <output ref="/data/calc_age_months"/>. If not, please go back and answer again. </value>
+					</text>
+					<text id="locality-label">
+						<value>Locality</value>
+					</text>
+					<text id="question12-1-label">
+						<value>City of Maxixe</value>
+					</text>
+					<text id="village-label">
+						<value>Village</value>
+					</text>
+					<text id="question12-1-1-label">
+						<value>Bembe</value>
+					</text>
+					<text id="question12-1-2-label">
+						<value>Mabil</value>
+					</text>
+					<text id="question12-1-3-label">
+						<value>Macuamene</value>
+					</text>
+					<text id="village-4-label">
+						<value>Macupula</value>
+					</text>
+					<text id="village-5-label">
+						<value>Malalane</value>
+					</text>
+					<text id="village-6-label">
+						<value>Manhala</value>
+					</text>
+					<text id="village-7-label">
+						<value>Nhabanda</value>
+					</text>
+					<text id="village-8-label">
+						<value>Nhamaxaxa</value>
+					</text>
+					<text id="village-9-label">
+						<value>Rumbana</value>
+					</text>
+					<text id="village-10-label">
+						<value>Chambone</value>
+					</text>
+					<text id="village-11-label">
+						<value>Tinga Tinga</value>
+					</text>
+					<text id="village-12-label">
+						<value>Bato</value>
+					</text>
+					<text id="village-13-label">
+						<value>Agostinho Neto</value>
+					</text>
+					<text id="village-14-label">
+						<value>Dambo</value>
+					</text>
+					<text id="village-15-label">
+						<value>Barrane</value>
+					</text>
+					<text id="home_visit-label">
+						<value>Is it a home visit?</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="home_visit-1-label2">
+						<value>Yes</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>No</value>
+					</text>
+					<text id="sick_child-label">
+						<value>Ask what the child has.</value>
+						<value form="image">jr://file/commcare/image/data/sick_child.png</value>
+					</text>
+					<text id="ask_danger_signs-label">
+						<value>Now we will check for danger signs.</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="ds_general-label">
+						<value>General Danger Signs</value>
+					</text>
+					<text id="ds_no_eat_drink-label">
+						<value>Able to eat or drink?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_difficulty.png</value>
+					</text>
+					<text id="other_problem-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="other_problem-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_not_wake-label">
+						<value>Able to wake?</value>
+						<value form="image">jr://file/commcare/image/data/ds_not_wake.png</value>
+					</text>
+					<text id="ds_no_eat_drink-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_no_eat_drink-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_convulsions-label">
+						<value>Convulsions/fits?</value>
+						<value form="image">jr://file/commcare/image/data/ds_convulsions.png</value>
+					</text>
+					<text id="ds_not_wake-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_not_wake-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_vomiting-label">
+						<value>Vomiting everything?</value>
+						<value form="image">jr://file/commcare/image/data/ds_vomiting.png</value>
+					</text>
+					<text id="ds_convulsions-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_convulsions-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_severe_pneumonia-label">
+						<value>Severe Pneumonia</value>
+					</text>
+					<text id="ds_chest_indraw-label">
+						<value>Chest indrawing?</value>
+						<value form="image">jr://file/commcare/image/data/moaning.png</value>
+					</text>
+					<text id="ds_vomiting-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_vomiting-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_extended_cough-label">
+						<value>Cough for more than 21 days?</value>
+						<value form="image">jr://file/commcare/image/data/ds_cough.png</value>
+					</text>
+					<text id="ds_chest_indraw-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_chest_indraw-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_severe_diarrhoea-label">
+						<value>Severe diarrhoea</value>
+					</text>
+					<text id="ds_drinks_eagerly-label">
+						<value>Child drinks eagerly?</value>
+						<value form="image">jr://file/commcare/image/data/child_drinking.png</value>
+					</text>
+					<text id="ds_extended_cough-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_extended_cough-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_sunken_eyes-label">
+						<value>Sunken eyes?</value>
+						<value form="image">jr://file/commcare/image/data/ds_sunken_eyes.png</value>
+					</text>
+					<text id="ds_drinks_eagerly-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_drinks_eagerly-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_diarrhoea_14_days-label">
+						<value>Diarrhoea for more than 14 days?</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="ds_bloody_diarrhoea-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_bloody_diarrhoea-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_diarrhoea_bloody-label">
+						<value>Bloody diarrheoa?</value>
+						<value form="image">jr://file/commcare/image/data/ds_diarrhoea_bloody.png</value>
+					</text>
+					<text id="ds_diarrhoea_14_days-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_diarrhoea_14_days-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_skin_pinch-label">
+						<value>Skin pinch goes back slowly?</value>
+						<value form="image">jr://file/commcare/image/data/ds_skin_pinch.png</value>
+					</text>
+					<text id="ds_diarrhoea_bloody-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_diarrhoea_bloody-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_severe_fever-label">
+						<value>Severe fever/malaria</value>
+					</text>
+					<text id="ds_fever_7_days-label">
+						<value>7 days or more with fever?</value>
+						<value form="image">jr://file/commcare/image/data/fever_newborn.png</value>
+					</text>
+					<text id="ds_skin_pinch-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_skin_pinch-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_rigid_neck-label">
+						<value>Stiff neck?</value>
+						<value form="image">jr://file/commcare/image/data/ds_rigid_neck.png</value>
+					</text>
+					<text id="ds_fever_7_days-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_fever_7_days-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_red_eyes-label">
+						<value>Red eyes?</value>
+						<value form="image">jr://file/commcare/image/data/red_eyes.png</value>
+					</text>
+					<text id="ds_rigid_neck-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_rigid_neck-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="ds_skin_pustules-label">
+						<value>Skin pustules?</value>
+						<value form="image">jr://file/commcare/image/data/ds_skin_pustules.png</value>
+					</text>
+					<text id="ds_red_eyes-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="ds_red_eyes-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="non_severe_symptoms-label">
+						<value>Non-severe symptoms</value>
+					</text>
+					<text id="ask_non_severe-label">
+						<value>Now we will check for other symptoms.</value>
+					</text>
+					<text id="fever-label">
+						<value>Fever?</value>
+						<value form="image">jr://file/commcare/image/data/fever_child.png</value>
+					</text>
+					<text id="fever-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="fever-0-label">
+						<value>No</value>
+					</text>
+					<text id="diarrhoea-label">
+						<value>Diarrhoea?</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="fever-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="fever-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="cough-label">
+						<value>Cough?</value>
+						<value form="image">jr://file/commcare/image/data/ds_cough.png</value>
+					</text>
+					<text id="diarrhoea-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="diarrhoea-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="other_problem-label">
+						<value>Other problem?</value>
+					</text>
+					<text id="cough-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="cough-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="describe_other_problem-label">
+						<value>Describe other problem</value>
+					</text>
+					<text id="treatment_ds-label">
+						<value>Diagnosis and Treatment</value>
+					</text>
+					<text id="treatment_pneumonia_2_to_12-label">
+						<value>Symptoms of: severe pneumonia
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: 1 tab pink amoxicillin</value>
+					</text>
+					<text id="treatment_pneumonia_12_to_60-label">
+						<value>Symptoms of: severe pneumonia
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: 2 tabs green amoxicillin</value>
+					</text>
+					<text id="treatment_diarrhoea_2_to_12-label">
+						<value>Symptoms of: severe diarrhoea
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: half glass ORS</value>
+					</text>
+					<text id="treatment_diarrhoea_12_to_60-label">
+						<value>Symptoms of: severe diarrhoea
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: full glass ORS</value>
+					</text>
+					<text id="treatment_malaria_2_to_12-label">
+						<value>Symptoms of: severe fever/malaria
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: 1/4 tab paracetamol, 1 RA 50mg</value>
+					</text>
+					<text id="treatment_malaria_12_to_36-label">
+						<value>Symptoms of: severe fever/malaria
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: 1/4 tab paracetamol, 2 RA 50mg</value>
+					</text>
+					<text id="treatment_malaria_36_to_42-label">
+						<value>Symptoms of: severe fever/malaria
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: 1/2 tab paracetamol, 2 RA 50mg</value>
+					</text>
+					<text id="treatment_malaria_42_to_60-label">
+						<value>Symptoms of: severe fever/malaria
+Age: <output ref="/data/calc_age_months"/> months
+Treatment: 1/2 tab paracetamol, 1 RA 200mg</value>
+					</text>
+					<text id="treatment_general_ds-label">
+						<value>This child has a danger sign. Refer to the HF urgently.</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="perform_resp_count-label">
+						<value>You have entered that this child has cough. Please check their respiratory rate.</value>
+						<value form="image">jr://file/commcare/image/data/resp_count.png</value>
+					</text>
+					<text id="results_resp_count-label">
+						<value>What are the results of the respiratory count? (breaths per minute)</value>
+					</text>
+					<text id="educ_pneumonia-label">
+						<value>Pnuemonia is a serious illness. It is good to take the child immediately to the APE for treatment.</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="treatment_diarrhoea-label">
+						<value>You have entered that this child has diarrhoea. Counsel the mother on how to prevent diarrhoea.</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="educ_dehydration-label">
+						<value>A child with diarrhoea loses a lot of water.  Give lots of liquids like breastmilk, as soon as the diarrhoea starts.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding.png</value>
+					</text>
+					<text id="perform_rdt-label">
+						<value>You have entered that this child has fever. Please perform an RDT test.</value>
+						<value form="image">jr://file/commcare/image/data/rdt.png</value>
+					</text>
+					<text id="educ_rdt-label">
+						<value>Take the child to the APE when he/she has a fever. Only a rapid test can confirm if it is malaria or not.</value>
+						<value form="image">jr://file/commcare/image/data/rdt_child.png</value>
+					</text>
+					<text id="educ_malaria_kills-label">
+						<value>Malaria can kill a child in less than 2 days but if a child takes medicine immediately, the malaria will be cured in 3 days.</value>
+						<value form="image">jr://file/commcare/image/data/coartem_yellow.png</value>
+					</text>
+					<text id="malnutrition-label">
+						<value>Does the child have signs of malnutrition?</value>
+						<value form="image">jr://file/commcare/image/data/malnutrition.png</value>
+					</text>
+					<text id="malnutrition-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="malnutrition-0-label">
+						<value>No</value>
+					</text>
+					<text id="oedema-label">
+						<value>Presence of oedema?</value>
+						<value form="image">jr://file/commcare/image/data/oedema.png</value>
+					</text>
+					<text id="malnutrition-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="malnutrition-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="perform_muac-label">
+						<value>Please measure upper arm circumference (MUAC) and record the results.</value>
+						<value form="image">jr://file/commcare/image/data/muac.png</value>
+					</text>
+					<text id="results_muac-label">
+						<value>What are the results of the MUAC test?</value>
+					</text>
+					<text id="results_muac-1-label">
+						<value>Green</value>
+					</text>
+					<text id="results_muac-2-label">
+						<value>Yellow</value>
+					</text>
+					<text id="results_muac-3-label">
+						<value>Red</value>
+					</text>
+					<text id="vac_check-label">
+						<value>Please check the child's card to see if their vaccinations are complete.</value>
+						<value form="image">jr://file/commcare/image/data/vaccination.png</value>
+					</text>
+					<text id="vac_newborn-label2">
+						<value>Age:  <output ref="/data/calc_age_months"/> monthsReceived: BCG and PolioIs this correct?</value>
+						<value form="image">jr://file/commcare/image/data/vaccination_newborn.png</value>
+					</text>
+					<text id="vac_newborn-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="vac_newborn-0-label">
+						<value>No</value>
+					</text>
+					<text id="vac_2month-label2">
+						<value>Age:  <output ref="/data/calc_age_months"/> months
+Received: 1st dose (DPT + Hep B, Pólio + Hib1)
+Is this correct?</value>
+						<value form="image">jr://file/commcare/image/data/vac_2month.png</value>
+					</text>
+					<text id="vac_2month-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="vac_2month-2-label">
+						<value>No</value>
+					</text>
+					<text id="vac_3month-label">
+						<value>Age:  <output ref="/data/calc_age_months"/> months
+Received: 2nd dose (DPT + Hep B, Pólio + Hib1)
+Is this correct?</value>
+						<value form="image">jr://file/commcare/image/data/vac_3month.png</value>
+					</text>
+					<text id="vac_2month-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="vac_2month-1-2-label">
+						<value>No</value>
+					</text>
+					<text id="vac_4month-label">
+						<value>Age:  <output ref="/data/calc_age_months"/> months
+Received: 3rd dose (DPT + Hep B, Pólio + Hib1)
+Is this correct?</value>
+						<value form="image">jr://file/commcare/image/data/vac_4month.png</value>
+					</text>
+					<text id="vac_3month-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="vac_3month-1-2-label">
+						<value>No</value>
+					</text>
+					<text id="vac_9month-label">
+						<value>Age:  <output ref="/data/calc_age_months"/> months
+Received: Measles 
+Is this correct?</value>
+						<value form="image">jr://file/commcare/image/data/vac_9month.png</value>
+					</text>
+					<text id="vac_4month-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="vac_4month-1-2-label">
+						<value>No</value>
+					</text>
+					<text id="results_rdt-label">
+						<value>What are the results of the RDT test?</value>
+						<value form="image">jr://file/commcare/image/data/rdt.png</value>
+					</text>
+					<text id="results_rdt-1-label">
+						<value>Positive</value>
+					</text>
+					<text id="results_rdt-2-label">
+						<value>Negative</value>
+					</text>
+					<text id="results_rdt-3-label">
+						<value>Indeterminate</value>
+					</text>
+					<text id="results_rdt_indet-label">
+						<value>Please register the results as indeterminate and perform another RDT test. Go back and enter the results.</value>
+					</text>
+					<text id="treatment_resp_less_than_12-label">
+						<value>Symptoms: respiratory rate of <output ref="/data/consult/results_resp_count"/>#10;Age: <output ref="/data/calc_age_months"/> monthsDiagnosis: PnuemoniaTreatment: 1 tab pink amoxicillin3 times a day5 days</value>
+						<value form="image">jr://file/commcare/image/data/amox_pink.png</value>
+					</text>
+					<text id="treatment_resp_more_than_12-label">
+						<value>Symptoms: respiratory rate of <output ref="/data/consult/results_resp_count"/>#10;Age: <output ref="/data/calc_age_months"/> monthsDiagnosis: PnuemoniaTreatment: 2 tabs green amoxicillin3 times a day5 days</value>
+						<value form="image">jr://file/commcare/image/data/amox_green.png</value>
+					</text>
+					<text id="treatment_resp_slow-label">
+						<value>Symptoms: cough but not fast breathing #10;Age: <output ref="/data/calc_age_months"/> months
+Diagnosis: Cough or cold
+Treatment: Home remedies of onion with sugar or honey with lime</value>
+					</text>
+					<text id="educ_pneumonia_prev-label">
+						<value>Smoke can accelerate pneumonia in children. Keep children away from smokey kitchens and fires. </value>
+						<value form="image">jr://file/commcare/image/data/educ_pneumonia_prev.png</value>
+					</text>
+					<text id="treatment_diarrhoea_2_to_6-label">
+						<value>Symptoms of: diarrhoea#10;Age: <output ref="/data/calc_age_months"/> months
+Diagnosis: diarrhoea
+Treatment: half cup ORS
+1/2 tab zinc
+per day for 10 days</value>
+					</text>
+					<text id="treatment_diarrhoea_6_to_24-label">
+						<value>Symptoms of: diarrhoea#10;Age: <output ref="/data/calc_age_months"/> months
+Diagnosis: diarrhoea
+Treatment: half cup ORS
+1 tab zinc
+per day for 10 days</value>
+					</text>
+					<text id="treatment_diarrhoea_24_to_60-label">
+						<value>Symptoms of: diarrhoea#10;Age: <output ref="/data/calc_age_months"/> months
+Diagnosis: diarrhoea
+Treatment: full cup ORS
+1 tab zinc
+per day for 10 days</value>
+					</text>
+					<text id="educ_diarrhoea_prevent-label">
+						<value>Diarrhoea is transmitted by dirty hands.  Wash hands with clean water and soap after using the latrina and before touching food.</value>
+						<value form="image">jr://file/commcare/image/data/wash_hands.png</value>
+					</text>
+					<text id="treatment_malaria_neg-label">
+						<value>Symptoms: fever, RDT negative or indeterminate#10;Age: <output ref="/data/calc_age_months"/> months
+
+Treatment: first dose of paracetamol
+Refer to HF</value>
+					</text>
+					<text id="treatment_malaria_6mo-label">
+						<value>Symptoms: fever, RDT postive#10;Age: <output ref="/data/calc_age_months"/> months
+Diagnosis: Malaria
+Treatment: 1/4 tab paracetamol
+3 times per day
+for 3 days
+Wash with body with cool water
+Refer urgently to HF.</value>
+					</text>
+					<text id="treatment_malaria_6_to_36-label">
+						<value>Symptoms: fever, RDT postive#10;Age: <output ref="/data/calc_age_months"/> months
+Diagnosis: Malaria
+Treatment:Yellow Coartem
+2 times per day
+for 3 days
+ 1/4 tab paracetamol
+3 times per day
+for 3 days
+Wash with body with cool water
+Refer urgently to HF.</value>
+					</text>
+					<text id="treatment_malaria_36_to_60-label">
+						<value>Symptoms: fever, RDT postive#10;Age: <output ref="/data/calc_age_months"/> months
+Diagnosis: Malaria
+Treatment:Blue Coartem
+2 times per day
+for 3 days
+ 1/2 tab paracetamol
+3 times per day
+for 3 days
+Wash with body with cool water
+Refer urgently to HF.</value>
+					</text>
+					<text id="educ_bednet-label">
+						<value>The entire family should sleep under a mosquito net every night to avoid getting bitten by the mosquito that causes malaria.</value>
+						<value form="image">jr://file/commcare/image/data/educ_bednet.png</value>
+					</text>
+					<text id="treatment_malnutrition-label">
+						<value>He/she is malnourished. It is a serious disease and needs special treatment in the HF. Refer to HF.</value>
+					</text>
+					<text id="treatment_incomplete_vac-label">
+						<value>He/she has not completed all vaccinations. Refer to HF.</value>
+					</text>
+					<text id="educ_vaccination-label">
+						<value>Vaccionation protects and reinforces the child's body to fight against other diseases.</value>
+					</text>
+					<text id="treatment_other-label">
+						<value>He/she has another problem that cannot be treated by the APE. Refer to HF.</value>
+					</text>
+					<text id="educ_take_meds-label">
+						<value>Make sure to take prescribed medicine!</value>
+					</text>
+					<text id="educ_continue_breast_feed-label">
+						<value>Breastfeed more than usual during the day and night, when the child has diarrhea.</value>
+					</text>
+					<text id="educ_continue_feed-label">
+						<value> Give the child more food and drink than usual so that he/she can recover.</value>
+					</text>
+					<text id="educ_follow_up-label">
+						<value>Return to the APE on the designated day for follow-up.</value>
+					</text>
+					<text id="referral_advice-label">
+						<value>Follow-up</value>
+					</text>
+					<text id="referral_2_days-label">
+						<value>Follow up on the child after two days to make sure that the caregiver is continuing treatment correctly and that the child is improving.</value>
+					</text>
+					<text id="referral_1_5_30_days-label">
+						<value>Seguimento 1: depois de 1 dia 
+Confirmar: a mãe levou a criança para a US 
+
+Seguimento 2: despois de 5 dias 
+Confirmar: a criança está a melhorar 
+
+Seguimento 3: depois de 1 mês 
+Confirmar:a criança está bem.</value>
+					</text>
+					<text id="referral_1_5_days-label">
+						<value>Seguimento 1: depois de 1 dia 
+Confirmar: a mãe levou a criança para a US 
+
+Seguimento 2: despois de 5 dias 
+Confirmar: a criança está a melhorar</value>
+					</text>
+					<text id="diagnosis_given-label">
+						<value>What was the diagnosis?</value>
+					</text>
+					<text id="diagnosis_given-1-label">
+						<value>Malaria confirmada</value>
+					</text>
+					<text id="diagnosis_given-2-label">
+						<value>Diarrhoea</value>
+					</text>
+					<text id="diagnosis_given-3-label">
+						<value>Pneumonia</value>
+					</text>
+					<text id="diagnosis_given-4-label">
+						<value>Malnutrition</value>
+					</text>
+					<text id="diagnosis_given-5-label">
+						<value>Malaria not confirmed</value>
+					</text>
+					<text id="diagnosis_given-0-label">
+						<value>Other</value>
+					</text>
+					<text id="treatment_given-label">
+						<value>What was the treatment you gave?</value>
+					</text>
+					<text id="treatment_given-1-label">
+						<value>Pink amoxicillin</value>
+					</text>
+					<text id="treatment_given-2-label">
+						<value>Green amoxicillin</value>
+					</text>
+					<text id="treatment_given-3-label">
+						<value>ORS</value>
+					</text>
+					<text id="treatment_given-4-label">
+						<value>RA (50mg)</value>
+					</text>
+					<text id="treatment_given-5-label">
+						<value>RA (200mg)</value>
+					</text>
+					<text id="treatment_given-6-label">
+						<value>Zinc</value>
+					</text>
+					<text id="treatment_given-7-label">
+						<value>Yellow Coartem</value>
+					</text>
+					<text id="treatment_given-8-label">
+						<value>Blue Coartem</value>
+					</text>
+					<text id="treatment_given-9-label">
+						<value>Green Coartem</value>
+					</text>
+					<text id="treatment_given-10-label">
+						<value>Brown Coartem</value>
+					</text>
+					<text id="treatment_given-11-label">
+						<value>Parecetamol</value>
+					</text>
+					<text id="treatment_given-0-label">
+						<value>Other</value>
+					</text>
+					<text id="treatment_given-99-label">
+						<value>No treatment</value>
+					</text>
+					<text id="treatment_given_other-label">
+						<value>Describe other treatment</value>
+					</text>
+					<text id="referral_given-label">
+						<value>Was the child referred to a HF?</value>
+					</text>
+					<text id="referral_given-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="referral_given-0-label">
+						<value>No</value>
+					</text>
+					<text id="referral_given_reason-label">
+						<value>Why was the child transferred?</value>
+					</text>
+					<text id="referral_given_reason-1-label">
+						<value>Danger sign</value>
+					</text>
+					<text id="referral_given_reason-3-label">
+						<value>Incomplete vaccination</value>
+					</text>
+					<text id="referral_given_reason-5-label">
+						<value>Malnutricion</value>
+					</text>
+					<text id="referral_given_reason-6-label">
+						<value>Intestinal parasites</value>
+					</text>
+					<text id="referral_given_reason-0-label">
+						<value>Other cause</value>
+					</text>
+					<text id="referral_form-label2">
+						<value>Fill in the referral form using the following screen.</value>
+					</text>
+					<text id="referral_summary-label">
+						<value>Guia de Referência 
+
+Data: <output value="today()"/> 
+Nome de doente: <output value="/data/name"/> 
+Idade: <output value="/data/calc_age_months"/> 
+Comunidade: <output value="/data/village"/> 
+Sinal geral de perigo: <output value="/data/ds_display"/>  
+Motivo de transferência: <output value="/data/referral_display"/> 
+Tratamento: <output value="/data/treatment_display"/></value>
+					</text>
+					<text id="fill_registry-label">
+						<value>Fill in the registry using the following screen.</value>
+					</text>
+					<text id="registry_display-label">
+						<value>Livro de Registro 
+
+Data: <output value="today()"/> 
+Nome completo: <output value="/data/name"/> 
+Residencia (localidade): Cidade de Maxixe 
+Residencia (comunidade): <output value="/data/village"/> 
+Atendimento: Primeiro 
+Grupo-alvo: Criança 
+Laboratorio TDR: <output value="/data/rdt_display"/> 
+Diagnóstico: <output value="/data/diagnosis_display"/> 
+Tratamento: <output value="/data/treatment_display"/> 
+Resultado final: não aplicável 
+Transferência: <output value="/data/referral_display"/></value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/name">
+			<label ref="jr:itext('name-label')" />
+		</input>
+		<select1 ref="/data/sex">
+			<label ref="jr:itext('sex-label')" />
+			<item>
+				<label ref="jr:itext('sex-1-label')" />
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('sex-0-label')" />
+				<value>0</value>
+			</item>
+		</select1>
+		<select1 ref="/data/dob_known">
+			<label ref="jr:itext('dob_known-label')" />
+			<item>
+				<label ref="jr:itext('dob_known-1-label')" />
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('dob_known-0-label')" />
+				<value>0</value>
+			</item>
+		</select1>
+		<input ref="/data/dob">
+			<label ref="jr:itext('dob-label')" />
+		</input>
+		<input ref="/data/age">
+			<label ref="jr:itext('age-label')" />
+		</input>
+		<trigger ref="/data/confirm_dob">
+			<label ref="jr:itext('confirm_dob-label')" />
+		</trigger>
+		<select1 ref="/data/locality">
+			<label ref="jr:itext('locality-label')" />
+			<item>
+				<label ref="jr:itext('question12-1-label')" />
+				<value>1</value>
+			</item>
+		</select1>
+		<select1 ref="/data/village">
+			<label ref="jr:itext('village-label')" />
+			<item>
+				<label ref="jr:itext('question12-1-1-label')" />
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question12-1-2-label')" />
+				<value>2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question12-1-3-label')" />
+				<value>3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-4-label')" />
+				<value>4</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-5-label')" />
+				<value>5</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-6-label')" />
+				<value>6</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-7-label')" />
+				<value>7</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-8-label')" />
+				<value>8</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-9-label')" />
+				<value>9</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-10-label')" />
+				<value>10</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-11-label')" />
+				<value>11</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-12-label')" />
+				<value>12</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-13-label')" />
+				<value>13</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-14-label')" />
+				<value>14</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-15-label')" />
+				<value>15</value>
+			</item>
+		</select1>
+		<select1 ref="/data/home_visit">
+			<label ref="jr:itext('home_visit-label')" />
+			<item>
+				<label ref="jr:itext('home_visit-1-label2')" />
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('home_visit-0-label')" />
+				<value>0</value>
+			</item>
+		</select1>
+		<trigger ref="/data/sick_child">
+			<label ref="jr:itext('sick_child-label')" />
+		</trigger>
+		<trigger ref="/data/ask_danger_signs">
+			<label ref="jr:itext('ask_danger_signs-label')" />
+		</trigger>
+		<group ref="/data/ds_general">
+			<label ref="jr:itext('ds_general-label')" />
+			<select1 ref="/data/ds_general/ds_no_eat_drink">
+				<label ref="jr:itext('ds_no_eat_drink-label')" />
+				<item>
+					<label ref="jr:itext('other_problem-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('other_problem-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_general/ds_not_wake">
+				<label ref="jr:itext('ds_not_wake-label')" />
+				<item>
+					<label ref="jr:itext('ds_no_eat_drink-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_no_eat_drink-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_general/ds_convulsions">
+				<label ref="jr:itext('ds_convulsions-label')" />
+				<item>
+					<label ref="jr:itext('ds_not_wake-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_not_wake-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_general/ds_vomiting">
+				<label ref="jr:itext('ds_vomiting-label')" />
+				<item>
+					<label ref="jr:itext('ds_convulsions-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_convulsions-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/ds_severe_pneumonia">
+			<label ref="jr:itext('ds_severe_pneumonia-label')" />
+			<select1 ref="/data/ds_severe_pneumonia/ds_chest_indraw">
+				<label ref="jr:itext('ds_chest_indraw-label')" />
+				<item>
+					<label ref="jr:itext('ds_vomiting-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_vomiting-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_pneumonia/ds_extended_cough">
+				<label ref="jr:itext('ds_extended_cough-label')" />
+				<item>
+					<label ref="jr:itext('ds_chest_indraw-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_chest_indraw-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/ds_severe_diarrhoea">
+			<label ref="jr:itext('ds_severe_diarrhoea-label')" />
+			<select1 ref="/data/ds_severe_diarrhoea/ds_drinks_eagerly">
+				<label ref="jr:itext('ds_drinks_eagerly-label')" />
+				<item>
+					<label ref="jr:itext('ds_extended_cough-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_extended_cough-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_diarrhoea/ds_sunken_eyes">
+				<label ref="jr:itext('ds_sunken_eyes-label')" />
+				<item>
+					<label ref="jr:itext('ds_drinks_eagerly-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_drinks_eagerly-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_diarrhoea/ds_diarrhoea_14_days">
+				<label ref="jr:itext('ds_diarrhoea_14_days-label')" />
+				<item>
+					<label ref="jr:itext('ds_bloody_diarrhoea-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_bloody_diarrhoea-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_diarrhoea/ds_diarrhoea_bloody">
+				<label ref="jr:itext('ds_diarrhoea_bloody-label')" />
+				<item>
+					<label ref="jr:itext('ds_diarrhoea_14_days-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_diarrhoea_14_days-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_diarrhoea/ds_skin_pinch">
+				<label ref="jr:itext('ds_skin_pinch-label')" />
+				<item>
+					<label ref="jr:itext('ds_diarrhoea_bloody-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_diarrhoea_bloody-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/ds_severe_fever">
+			<label ref="jr:itext('ds_severe_fever-label')" />
+			<select1 ref="/data/ds_severe_fever/ds_fever_7_days">
+				<label ref="jr:itext('ds_fever_7_days-label')" />
+				<item>
+					<label ref="jr:itext('ds_skin_pinch-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_skin_pinch-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_fever/ds_rigid_neck">
+				<label ref="jr:itext('ds_rigid_neck-label')" />
+				<item>
+					<label ref="jr:itext('ds_fever_7_days-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_fever_7_days-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_fever/ds_red_eyes">
+				<label ref="jr:itext('ds_red_eyes-label')" />
+				<item>
+					<label ref="jr:itext('ds_rigid_neck-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_rigid_neck-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/ds_severe_fever/ds_skin_pustules">
+				<label ref="jr:itext('ds_skin_pustules-label')" />
+				<item>
+					<label ref="jr:itext('ds_red_eyes-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ds_red_eyes-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/non_severe_symptoms">
+			<label ref="jr:itext('non_severe_symptoms-label')" />
+			<trigger ref="/data/non_severe_symptoms/ask_non_severe">
+				<label ref="jr:itext('ask_non_severe-label')" />
+			</trigger>
+			<select1 ref="/data/non_severe_symptoms/fever">
+				<label ref="jr:itext('fever-label')" />
+				<item>
+					<label ref="jr:itext('fever-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fever-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/non_severe_symptoms/diarrhoea">
+				<label ref="jr:itext('diarrhoea-label')" />
+				<item>
+					<label ref="jr:itext('fever-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fever-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/non_severe_symptoms/cough">
+				<label ref="jr:itext('cough-label')" />
+				<item>
+					<label ref="jr:itext('diarrhoea-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diarrhoea-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/non_severe_symptoms/other_problem">
+				<label ref="jr:itext('other_problem-label')" />
+				<item>
+					<label ref="jr:itext('cough-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('cough-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<input ref="/data/non_severe_symptoms/describe_other_problem">
+				<label ref="jr:itext('describe_other_problem-label')" />
+			</input>
+		</group>
+		<group ref="/data/treatment_ds">
+			<label ref="jr:itext('treatment_ds-label')" />
+			<trigger ref="/data/treatment_ds/treatment_pneumonia_2_to_12">
+				<label ref="jr:itext('treatment_pneumonia_2_to_12-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_pneumonia_12_to_60">
+				<label ref="jr:itext('treatment_pneumonia_12_to_60-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_diarrhoea_2_to_12">
+				<label ref="jr:itext('treatment_diarrhoea_2_to_12-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_diarrhoea_12_to_60">
+				<label ref="jr:itext('treatment_diarrhoea_12_to_60-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_malaria_2_to_12">
+				<label ref="jr:itext('treatment_malaria_2_to_12-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_malaria_12_to_36">
+				<label ref="jr:itext('treatment_malaria_12_to_36-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_malaria_36_to_42">
+				<label ref="jr:itext('treatment_malaria_36_to_42-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_malaria_42_to_60">
+				<label ref="jr:itext('treatment_malaria_42_to_60-label')" />
+			</trigger>
+			<trigger ref="/data/treatment_ds/treatment_general_ds">
+				<label ref="jr:itext('treatment_general_ds-label')" />
+			</trigger>
+		</group>
+		<group ref="/data/consult">
+			<trigger ref="/data/consult/perform_resp_count">
+				<label ref="jr:itext('perform_resp_count-label')" />
+			</trigger>
+			<input ref="/data/consult/results_resp_count">
+				<label ref="jr:itext('results_resp_count-label')" />
+			</input>
+			<trigger ref="/data/consult/educ_pneumonia">
+				<label ref="jr:itext('educ_pneumonia-label')" />
+			</trigger>
+			<trigger ref="/data/consult/treatment_diarrhoea">
+				<label ref="jr:itext('treatment_diarrhoea-label')" />
+			</trigger>
+			<trigger ref="/data/consult/educ_dehydration">
+				<label ref="jr:itext('educ_dehydration-label')" />
+			</trigger>
+			<trigger ref="/data/consult/perform_rdt">
+				<label ref="jr:itext('perform_rdt-label')" />
+			</trigger>
+			<trigger ref="/data/consult/educ_rdt">
+				<label ref="jr:itext('educ_rdt-label')" />
+			</trigger>
+			<trigger ref="/data/consult/educ_malaria_kills">
+				<label ref="jr:itext('educ_malaria_kills-label')" />
+			</trigger>
+			<select1 ref="/data/consult/malnutrition">
+				<label ref="jr:itext('malnutrition-label')" />
+				<item>
+					<label ref="jr:itext('malnutrition-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('malnutrition-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consult/oedema">
+				<label ref="jr:itext('oedema-label')" />
+				<item>
+					<label ref="jr:itext('malnutrition-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('malnutrition-1-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consult/perform_muac">
+				<label ref="jr:itext('perform_muac-label')" />
+			</trigger>
+			<select1 ref="/data/consult/results_muac">
+				<label ref="jr:itext('results_muac-label')" />
+				<item>
+					<label ref="jr:itext('results_muac-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('results_muac-2-label')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('results_muac-3-label')" />
+					<value>3</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consult/vac_check">
+				<label ref="jr:itext('vac_check-label')" />
+			</trigger>
+			<select1 ref="/data/consult/vac_newborn">
+				<label ref="jr:itext('vac_newborn-label2')" />
+				<item>
+					<label ref="jr:itext('vac_newborn-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vac_newborn-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consult/vac_2month">
+				<label ref="jr:itext('vac_2month-label2')" />
+				<item>
+					<label ref="jr:itext('vac_2month-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vac_2month-2-label')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consult/vac_3month">
+				<label ref="jr:itext('vac_3month-label')" />
+				<item>
+					<label ref="jr:itext('vac_2month-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vac_2month-1-2-label')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consult/vac_4month">
+				<label ref="jr:itext('vac_4month-label')" />
+				<item>
+					<label ref="jr:itext('vac_3month-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vac_3month-1-2-label')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consult/vac_9month">
+				<label ref="jr:itext('vac_9month-label')" />
+				<item>
+					<label ref="jr:itext('vac_4month-1-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vac_4month-1-2-label')" />
+					<value>2</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consult/results_rdt">
+				<label ref="jr:itext('results_rdt-label')" />
+				<item>
+					<label ref="jr:itext('results_rdt-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('results_rdt-2-label')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('results_rdt-3-label')" />
+					<value>3</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consult/results_rdt_indet">
+				<label ref="jr:itext('results_rdt_indet-label')" />
+			</trigger>
+		</group>
+		<trigger ref="/data/treatment_resp_less_than_12">
+			<label ref="jr:itext('treatment_resp_less_than_12-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_resp_more_than_12">
+			<label ref="jr:itext('treatment_resp_more_than_12-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_resp_slow">
+			<label ref="jr:itext('treatment_resp_slow-label')" />
+		</trigger>
+		<trigger ref="/data/educ_pneumonia_prev">
+			<label ref="jr:itext('educ_pneumonia_prev-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_diarrhoea_2_to_6">
+			<label ref="jr:itext('treatment_diarrhoea_2_to_6-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_diarrhoea_6_to_24">
+			<label ref="jr:itext('treatment_diarrhoea_6_to_24-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_diarrhoea_24_to_60">
+			<label ref="jr:itext('treatment_diarrhoea_24_to_60-label')" />
+		</trigger>
+		<trigger ref="/data/educ_diarrhoea_prevent">
+			<label ref="jr:itext('educ_diarrhoea_prevent-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_malaria_neg">
+			<label ref="jr:itext('treatment_malaria_neg-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_malaria_6mo">
+			<label ref="jr:itext('treatment_malaria_6mo-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_malaria_6_to_36">
+			<label ref="jr:itext('treatment_malaria_6_to_36-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_malaria_36_to_60">
+			<label ref="jr:itext('treatment_malaria_36_to_60-label')" />
+		</trigger>
+		<trigger ref="/data/educ_bednet">
+			<label ref="jr:itext('educ_bednet-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_malnutrition">
+			<label ref="jr:itext('treatment_malnutrition-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_incomplete_vac">
+			<label ref="jr:itext('treatment_incomplete_vac-label')" />
+		</trigger>
+		<trigger ref="/data/educ_vaccination">
+			<label ref="jr:itext('educ_vaccination-label')" />
+		</trigger>
+		<trigger ref="/data/treatment_other">
+			<label ref="jr:itext('treatment_other-label')" />
+		</trigger>
+		<trigger ref="/data/educ_take_meds">
+			<label ref="jr:itext('educ_take_meds-label')" />
+		</trigger>
+		<trigger ref="/data/educ_continue_breast_feed">
+			<label ref="jr:itext('educ_continue_breast_feed-label')" />
+		</trigger>
+		<trigger ref="/data/educ_continue_feed">
+			<label ref="jr:itext('educ_continue_feed-label')" />
+		</trigger>
+		<trigger ref="/data/educ_follow_up">
+			<label ref="jr:itext('educ_follow_up-label')" />
+		</trigger>
+		<group ref="/data/referral_advice">
+			<label ref="jr:itext('referral_advice-label')" />
+			<trigger ref="/data/referral_advice/referral_2_days">
+				<label ref="jr:itext('referral_2_days-label')" />
+			</trigger>
+			<trigger ref="/data/referral_advice/referral_1_5_30_days">
+				<label ref="jr:itext('referral_1_5_30_days-label')" />
+			</trigger>
+			<trigger ref="/data/referral_advice/referral_1_5_days">
+				<label ref="jr:itext('referral_1_5_days-label')" />
+			</trigger>
+		</group>
+		<group ref="/data/self_report">
+			<select ref="/data/self_report/diagnosis_given">
+				<label ref="jr:itext('diagnosis_given-label')" />
+				<item>
+					<label ref="jr:itext('diagnosis_given-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diagnosis_given-2-label')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diagnosis_given-3-label')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diagnosis_given-4-label')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diagnosis_given-5-label')" />
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diagnosis_given-0-label')" />
+					<value>0</value>
+				</item>
+			</select>
+			<select ref="/data/self_report/treatment_given">
+				<label ref="jr:itext('treatment_given-label')" />
+				<item>
+					<label ref="jr:itext('treatment_given-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-2-label')" />
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-3-label')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-4-label')" />
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-5-label')" />
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-6-label')" />
+					<value>6</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-7-label')" />
+					<value>7</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-8-label')" />
+					<value>8</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-9-label')" />
+					<value>9</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-10-label')" />
+					<value>10</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-11-label')" />
+					<value>11</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-0-label')" />
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-99-label')" />
+					<value>99</value>
+				</item>
+			</select>
+			<input ref="/data/self_report/treatment_given_other">
+				<label ref="jr:itext('treatment_given_other-label')" />
+			</input>
+			<select1 ref="/data/self_report/referral_given">
+				<label ref="jr:itext('referral_given-label')" />
+				<item>
+					<label ref="jr:itext('referral_given-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/self_report/referral_given_reason">
+				<label ref="jr:itext('referral_given_reason-label')" />
+				<item>
+					<label ref="jr:itext('referral_given_reason-1-label')" />
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-3-label')" />
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-5-label')" />
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-6-label')" />
+					<value>6</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-0-label')" />
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<trigger ref="/data/fill_referral">
+			<label ref="jr:itext('referral_form-label2')" />
+		</trigger>
+		<trigger ref="/data/referral_summary">
+			<label ref="jr:itext('referral_summary-label')" />
+		</trigger>
+		<trigger ref="/data/fill_registry">
+			<label ref="jr:itext('fill_registry-label')" />
+		</trigger>
+		<trigger ref="/data/registry_display">
+			<label ref="jr:itext('registry_display-label')" />
+		</trigger>
+	</h:body>
+</h:html>

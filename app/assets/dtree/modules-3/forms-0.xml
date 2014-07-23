@@ -1,0 +1,1407 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Usajili - Mama</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/1236CE84-C84F-4820-B420-C9C9398B6AA5" uiVersion="1" version="812" name="Usajili - Mama">
+					<explain_phone_purpose/>
+					<explain_about_asking_questions/>
+					<consent_use_phone/>
+					<provide_usual_care/>
+					<end_of_form/>
+					<consent_yes>
+						<district_name/>
+						<mother_name/>
+						<phone_number/>
+						<mother_age/>
+						<reg_number/>
+						<clinic_name/>
+						<nearest_dc_health_facility/>
+						<nearest_PHCC/>
+						<nearest_referral_hospital/>
+						<shehia/>
+						<village_or_street/>
+						<local_leader_name/>
+						<explain_ask_about_pregnancies/>
+						<lnmp_date/>
+						<edd_listed_on_card/>
+						<card_edd/>
+						<number_of_pregnancies/>
+						<abortions_or_miscarriages/>
+						<deliveries/>
+						<c_section_delivery/>
+						<vacuum_delivery/>
+						<stillbirth/>
+						<problems_previous_deliveries/>
+						<prolonged_labour/>
+						<perineal_tear/>
+						<retained_placenta/>
+						<placenta_previa/>
+						<post_partum_hemorrhage/>
+						<eclampsia/>
+						<expecting_twins/>
+						<breech_position/>
+						<big_baby/>
+						<medical_conditions/>
+						<high_bp/>
+						<diabetes/>
+						<sickle_cell/>
+						<cardiac_disease/>
+						<advised_deliver_facility/>
+						<where/>
+						<advise_place_delivery_dc/>
+						<advise_place_delivery_phcc/>
+						<advise_hospital_delivery_risk/>
+						<advise_pay_transport/>
+						<advise_eat_well/>
+						<advise_prepare_flask/>
+						<decide_support/>
+						<advise_comeback_anysigns/>
+						<tested_hiv/>
+						<advise_toget_medicine/>
+						<advise_toknow_hiv_atpmtct/>
+						<agree_deliver_atfacility/>
+						<impor_deliver_facility/>
+						<can_talk_permission_giver/>
+						<remember_register_permission/>
+						<remember_talk_to_permissiongiver/>
+						<registration_complete/>
+					</consent_yes>
+					<tmp_medical_conditions_highbp/>
+					<tmp_medical_conditions_diabetes/>
+					<tmp_medical_conditions_sicklecell/>
+					<tmp_medical_conditions_cardiac_disease/>
+					<preferred_delivery_facility/>
+					<dc_phcc/>
+					<dc_phcc_phcu_and_hospital/>
+					<permission_giver_name/>
+					<permission_giver_phone/>
+					<whose_permission/>
+					<ask_transport_anytime/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>mother_care</case_type></create><update><phone_number/><permission_giver_phone/><whose_permission/><nearest_PHCC/><permission_giver_name/><nearest_referral_hospital/><village_or_street/><tmp_medical_conditions_cardiac_disease/><ask_transport_anytime/><tmp_medical_conditions_sicklecell/><abortions_or_miscarriages/><number_of_pregnancies/><preferred_delivery_facility/><tmp_medical_conditions_diabetes/><tmp_medical_conditions_highbp/><mother_name/><district_name/><nearest_dc_health_facility/><lnmp_date/><clinic_name/><card_edd/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<instance id="district" src="jr://fixture/item-list:district"/>
+			<instance id="health_facility" src="jr://fixture/item-list:health_facility"/>
+			<bind nodeset="/data/explain_phone_purpose" required="true()"/>
+			<bind nodeset="/data/explain_about_asking_questions" required="true()"/>
+			<bind nodeset="/data/consent_use_phone" required="true()"/>
+			<bind nodeset="/data/provide_usual_care" relevant="/data/consent_use_phone = 'no'" required="true()"/>
+			<bind nodeset="/data/end_of_form" relevant="/data/consent_use_phone = 'no'" required="true()"/>
+			<bind nodeset="/data/consent_yes" relevant="/data/consent_use_phone=&quot;yes&quot;" required="true()"/>
+			<bind nodeset="/data/consent_yes/district_name" required="true()"/>
+			<bind nodeset="/data/consent_yes/mother_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/consent_yes/phone_number" type="xsd:long" required="true()"/>
+			<bind nodeset="/data/consent_yes/mother_age" type="xsd:int" constraint=". &gt; 10 and . &lt; 60" jr:constraintMsg="jr:itext('mother_age-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/consent_yes/reg_number" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/consent_yes/clinic_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/consent_yes/nearest_dc_health_facility" required="true()"/>
+			<bind nodeset="/data/consent_yes/nearest_PHCC" required="true()"/>
+			<bind nodeset="/data/consent_yes/nearest_referral_hospital" required="true()"/>
+			<bind nodeset="/data/consent_yes/shehia" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/consent_yes/village_or_street" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/consent_yes/local_leader_name" type="xsd:string" required="false()"/>
+			<bind nodeset="/data/consent_yes/explain_ask_about_pregnancies" required="true()"/>
+			<bind nodeset="/data/consent_yes/lnmp_date" type="xsd:date" constraint=". &gt; today() - 300 and . &lt; today()" jr:constraintMsg="jr:itext('lnmp_date-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/consent_yes/edd_listed_on_card" required="true()"/>
+			<bind nodeset="/data/consent_yes/card_edd" type="xsd:date" constraint=". &gt;= today() and . &lt; today() + 300" jr:constraintMsg="jr:itext('card_edd-constraintMsg')" relevant="/data/consent_yes/edd_listed_on_card = 'yes'" required="true()"/>
+			<bind nodeset="/data/consent_yes/number_of_pregnancies" type="xsd:int" constraint=". &gt; 0" jr:constraintMsg="jr:itext('number_of_pregnancies-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/consent_yes/abortions_or_miscarriages" type="xsd:int" constraint=". &lt; /data/consent_yes/number_of_pregnancies" jr:constraintMsg="jr:itext('abortions_or_miscarriages-constraintMsg')" relevant="/data/consent_yes/number_of_pregnancies &gt; 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/deliveries" type="xsd:int" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/c_section_delivery" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/vacuum_delivery" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/stillbirth" type="xsd:int" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/problems_previous_deliveries" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/prolonged_labour" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/perineal_tear" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/retained_placenta" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/placenta_previa" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/post_partum_hemorrhage" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/eclampsia" relevant="/data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/abortions_or_miscarriages &lt; /data/consent_yes/number_of_pregnancies - 1" required="true()"/>
+			<bind nodeset="/data/consent_yes/expecting_twins" required="true()"/>
+			<bind nodeset="/data/consent_yes/breech_position" required="true()"/>
+			<bind nodeset="/data/consent_yes/big_baby" required="true()"/>
+			<bind nodeset="/data/consent_yes/medical_conditions"/>
+			<bind nodeset="/data/consent_yes/high_bp"/>
+			<bind nodeset="/data/consent_yes/diabetes" required="true()"/>
+			<bind nodeset="/data/consent_yes/sickle_cell" required="true()"/>
+			<bind nodeset="/data/consent_yes/cardiac_disease" required="true()"/>
+			<bind nodeset="/data/consent_yes/advised_deliver_facility" required="true()"/>
+			<bind nodeset="/data/consent_yes/where" relevant="/data/consent_yes/advised_deliver_facility = 'yes'" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_place_delivery_dc" relevant="/data/consent_yes/breech_position = 'no' and /data/consent_yes/post_partum_hemorrhage != 'yes' and /data/consent_yes/placenta_previa != 'yes' and /data/consent_yes/retained_placenta != 'yes' and /data/consent_yes/prolonged_labour != 'yes' and /data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/mother_age &gt;= 18 and /data/consent_yes/eclampsia != 'yes' and /data/consent_yes/big_baby = 'no' and /data/consent_yes/high_bp = 'no' and /data/consent_yes/diabetes = 'no' and /data/consent_yes/sickle_cell = 'no'" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_place_delivery_phcc" relevant="/data/consent_yes/breech_position = 'yes' or /data/consent_yes/post_partum_hemorrhage = 'yes' or /data/consent_yes/placenta_previa = 'yes' or /data/consent_yes/retained_placenta = 'yes' or /data/consent_yes/prolonged_labour = 'yes' or /data/consent_yes/number_of_pregnancies = 1 or /data/consent_yes/mother_age &lt; 18 or /data/consent_yes/mother_age &gt; 35 or /data/consent_yes/eclampsia = 'yes' or /data/consent_yes/big_baby = 'yes' or /data/consent_yes/high_bp = 'yes' or /data/consent_yes/diabetes = 'yes' or /data/consent_yes/sickle_cell = 'yes'" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_hospital_delivery_risk" relevant="(/data/consent_yes/c_section_delivery = 'yes' or /data/consent_yes/abortions_or_miscarriages &gt; 1 or /data/consent_yes/deliveries &gt; 5 or /data/consent_yes/stillbirth &gt; 1 or /data/consent_yes/perineal_tear = 'yes' or /data/consent_yes/cardiac_disease = 'yes') and /data/consent_yes/breech_position = 'no' and /data/consent_yes/post_partum_hemorrhage = 'no' and /data/consent_yes/placenta_previa = 'no' and /data/consent_yes/retained_placenta = 'no' and /data/consent_yes/prolonged_labour = 'no' and /data/consent_yes/number_of_pregnancies &gt; 1 and /data/consent_yes/mother_age &gt;= 18 and /data/consent_yes/eclampsia = 'no' and /data/consent_yes/big_baby = 'no' and /data/consent_yes/high_bp = 'no' and /data/consent_yes/diabetes = 'no' and /data/consent_yes/sickle_cell = 'no'" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_pay_transport" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_eat_well" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_prepare_flask" required="true()"/>
+			<bind nodeset="/data/consent_yes/decide_support" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_comeback_anysigns" required="true()"/>
+			<bind nodeset="/data/consent_yes/tested_hiv" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_toget_medicine" relevant="/data/consent_yes/tested_hiv = 'yes'" required="true()"/>
+			<bind nodeset="/data/consent_yes/advise_toknow_hiv_atpmtct" relevant="/data/consent_yes/tested_hiv = 'no'" required="true()"/>
+			<bind nodeset="/data/consent_yes/agree_deliver_atfacility" required="true()"/>
+			<bind nodeset="/data/consent_yes/impor_deliver_facility" relevant="/data/consent_yes/agree_deliver_atfacility = 'no'" required="true()"/>
+			<bind nodeset="/data/consent_yes/can_talk_permission_giver" required="true()"/>
+			<bind nodeset="/data/consent_yes/remember_register_permission" relevant="/data/consent_yes/can_talk_permission_giver = 'yes'" required="true()"/>
+			<bind nodeset="/data/consent_yes/remember_talk_to_permissiongiver" relevant="/data/consent_yes/can_talk_permission_giver = 'not_now'" required="true()"/>
+			<bind nodeset="/data/consent_yes/registration_complete" required="true()"/>
+			<bind nodeset="/data/tmp_medical_conditions_highbp" calculate="if(/data/consent_yes/high_bp = 'yes', 'Shinikizo la damu', ' ')"/>
+			<bind nodeset="/data/tmp_medical_conditions_diabetes" calculate="if(/data/consent_yes/diabetes = 'yes','Kisukari',' ')"/>
+			<bind nodeset="/data/tmp_medical_conditions_sicklecell" calculate="if(/data/consent_yes/sickle_cell = 'yes','Cell mundu (sickle_cell)',' ')"/>
+			<bind nodeset="/data/tmp_medical_conditions_cardiac_disease" calculate="if(/data/consent_yes/cardiac_disease = 'yes','Ugonjwa wa moyo',' ')"/>
+			<bind nodeset="/data/preferred_delivery_facility" calculate="if(/data/consent_yes/advised_deliver_facility = 'yes',/data/consent_yes/where,/data/dc_phcc_phcu_and_hospital)"/>
+			<bind nodeset="/data/dc_phcc" calculate="if(/data/consent_yes/breech_position = 'yes' or /data/consent_yes/post_partum_hemorrhage = 'yes' or /data/consent_yes/placenta_previa = 'yes' or /data/consent_yes/retained_placenta = 'yes' or /data/consent_yes/prolonged_labour = 'yes' or /data/consent_yes/number_of_pregnancies = 1 or /data/consent_yes/mother_age &lt; 18 or /data/consent_yes/mother_age &gt; 35 or /data/consent_yes/eclampsia = 'yes' or /data/consent_yes/big_baby = 'yes' or /data/consent_yes/high_bp = 'yes' or /data/consent_yes/diabetes = 'yes' or /data/consent_yes/sickle_cell = 'yes', /data/consent_yes/nearest_PHCC, /data/consent_yes/nearest_dc_health_facility)"/>
+			<bind nodeset="/data/dc_phcc_phcu_and_hospital" calculate="if(/data/consent_yes/cardiac_disease = 'yes' or /data/consent_yes/deliveries  &gt; 5 or /data/consent_yes/perineal_tear = 'yes' or /data/consent_yes/c_section_delivery = 'yes' or  /data/consent_yes/abortions_or_miscarriages &gt; 1 or /data/consent_yes/stillbirth &gt; 1 or (/data/consent_yes/abortions_or_miscarriages &gt; 0 and /data/consent_yes/stillbirth &gt;0) ,/data/consent_yes/nearest_referral_hospital,/data/dc_phcc)"/>
+			<bind nodeset="/data/permission_giver_name"/>
+			<bind nodeset="/data/permission_giver_phone"/>
+			<bind nodeset="/data/whose_permission"/>
+			<bind nodeset="/data/ask_transport_anytime"/>
+			<itext>
+				<translation lang="sw" default="">
+					<text id="explain_phone_purpose-label">
+						<value>ELEZEA KWA MAMA: Madhumuni ya simu hii ni kuimarisha kuwasiliana na kubadilishana taarifa ili uweze kuwa na uzazi salama.</value>
+					</text>
+					<text id="explain_about_asking_questions-label">
+						<value>ELEZEA KWA MAMA: Ningependa kukuuliza kuhusu wewe mwenyewe na afya yako. Kama kuna maswali ambayo hutaki kujibu, huna sababu ya kujibu.</value>
+					</text>
+					<text id="consent_use_phone-label">
+						<value>MUULIZE MAMA: Je unakubali muhudumu kutumia simu?</value>
+					</text>
+					<text id="consent_use_phone-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="consent_use_phone-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="provide_usual_care-label">
+						<value>WEKA SIMU PEMBENI NA UTOE HUDUMA KAMA KAWAIDA. </value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Fomu imefikia mwisho.</value>
+					</text>
+					<text id="district_name-label">
+						<value>Jina la wilaya</value>
+					</text>
+					<text id="mother_name-label">
+						<value>Jina la mama</value>
+					</text>
+					<text id="phone_number-label">
+						<value>Namba ya simu</value>
+					</text>
+					<text id="mother_age-label">
+						<value>Umri wa mama</value>
+					</text>
+					<text id="mother_age-constraintMsg">
+						<value>Umri wa mama uliongiza sio sahihi</value>
+					</text>
+					<text id="reg_number-label">
+						<value>Muulize Mama RCH CARD. INGIZA namba ya usajili ya mama kutoka katika kadi ya kilinik ya wajawazito kama ipo</value>
+					</text>
+					<text id="clinic_name-label">
+						<value>Jina la kituo mama anachotumia wakati wa uja uzito na baada ya kujifungua.</value>
+					</text>
+					<text id="nearest_dc_health_facility-label">
+						<value>Jina la Kituo cha Afya kilichokaribu kwa kujifungua.</value>
+					</text>
+					<text id="nearest_PHCC-label">
+						<value>Jina la PHCC iliyokaribu. Kama hakuna PHCC, chagua hospitali ya karibu.</value>
+					</text>
+					<text id="nearest_PHCC-abdallah_mzee-label">
+						<value>Abdallah Mzee</value>
+					</text>
+					<text id="nearest_PHCC-chake_chake-label">
+						<value>Chake Chake</value>
+					</text>
+					<text id="nearest_PHCC-kivunge-label">
+						<value>Kivunge</value>
+					</text>
+					<text id="nearest_PHCC-makunduchi-label">
+						<value>Makunduchi</value>
+					</text>
+					<text id="nearest_PHCC-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="nearest_PHCC-mwembeladu-label">
+						<value>Mwembeladu</value>
+					</text>
+					<text id="nearest_PHCC-vitongoji-label">
+						<value>Vitongoji</value>
+					</text>
+					<text id="nearest_PHCC-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="nearest_referral_hospital-label">
+						<value>Jina la Hospitali iliyokaribu</value>
+					</text>
+					<text id="nearest_referral_hospital-abdallah_mzee-label">
+						<value>Abdallah Mzee</value>
+					</text>
+					<text id="nearest_referral_hospital-chake_chake-label">
+						<value>Chake Chake</value>
+					</text>
+					<text id="nearest_referral_hospital-mnazi_moja-label">
+						<value>Mnazi Moja</value>
+					</text>
+					<text id="nearest_referral_hospital-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="shehia-label">
+						<value>Shehia</value>
+					</text>
+					<text id="village_or_street-label">
+						<value>Jina la mtaa/kitongoji </value>
+					</text>
+					<text id="local_leader_name-label">
+						<value>Jina la Sheha</value>
+					</text>
+					<text id="explain_ask_about_pregnancies-label">
+						<value>Mueleze MAMA: Sasa Nitakuuliza maswali kuhusu mimba yako ya sasa na mimba zilizopita.</value>
+					</text>
+					<text id="lnmp_date-label">
+						<value>Angalia kadi yake ya kilinic. Ni lini alipata siku zake kwa mara ya mwisho iliyoandikwa kwenye kadi? Kama haijaandikwa muulize mama ni lini alipata siku zake kwa mara ya mwisho </value>
+					</text>
+					<text id="lnmp_date-constraintMsg">
+						<value>Tarehe uliyoingiza sio sahihi</value>
+					</text>
+					<text id="edd_listed_on_card-label">
+						<value>Angalia kadi yake ya kliniki ya ujawazito. Matazamio ya kujigugua yaliopo iko kwenye kadi?</value>
+					</text>
+					<text id="edd_listed_on_card-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="edd_listed_on_card-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="card_edd-label">
+						<value>Ni lini matazamio ya kujifungua  yaliopo kwenye kadi? </value>
+					</text>
+					<text id="card_edd-constraintMsg">
+						<value>Tarehe ya matazamio haiwezi kuwa siku za nyuma</value>
+					</text>
+					<text id="number_of_pregnancies-label">
+						<value>Hii ni mimba yako ya ngapi?</value>
+					</text>
+					<text id="number_of_pregnancies-constraintMsg">
+						<value>Idadi ya mimba haiwezi kuwa chini ya 1</value>
+					</text>
+					<text id="abortions_or_miscarriages-label">
+						<value>Ni mimba ngapi zimeharibika/zimetoka chini ya miezi 6?</value>
+					</text>
+					<text id="abortions_or_miscarriages-constraintMsg">
+						<value>Idadi ya mimba zilizoharibika haziwezi kua zaidi ya idadi ya mimba</value>
+					</text>
+					<text id="deliveries-label">
+						<value>Je umeshawahi kujifungua mara ngapi?</value>
+					</text>
+					<text id="c_section_delivery-label">
+						<value>Je ulishawahi kujifungua kwa kupasuliwa? </value>
+					</text>
+					<text id="c_section_delivery-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="c_section_delivery-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="vacuum_delivery-label">
+						<value>Je ulishawahi kujifungua kwa kusaidiwa kuvutwa na mashine?</value>
+					</text>
+					<text id="vacuum_delivery-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="vacuum_delivery-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="stillbirth-label">
+						<value>Umepoteza watoto wangapi katika ujauzito usiozidi miezi 6?</value>
+					</text>
+					<text id="problems_previous_deliveries-label">
+						<value>Je umeshawahi kuwa na haya yafuatayo wakati ukijifungua katika mimba zilizopita?  </value>
+					</text>
+					<text id="prolonged_labour-label">
+						<value>Uchungu wa muda mrefu( 12 masaa au zaidi)</value>
+					</text>
+					<text id="prolonged_labour-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="prolonged_labour-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="perineal_tear-label">
+						<value>Kuchanika njia ya uzazi(karibia ya njia ya choo kikubwa)</value>
+					</text>
+					<text id="perineal_tear-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="perineal_tear-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="retained_placenta-label">
+						<value>Kondo la nyuma kukataa kutoka</value>
+					</text>
+					<text id="retained_placenta-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="retained_placenta-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="placenta_previa-label">
+						<value>Kutangulia kondo la nyuma</value>
+					</text>
+					<text id="placenta_previa-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="placenta_previa-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="post_partum_hemorrhage-label">
+						<value>Kutokwa damu nyingi baada ya kujifungua</value>
+					</text>
+					<text id="post_partum_hemorrhage-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="post_partum_hemorrhage-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="eclampsia-label">
+						<value> Kifafa cha mimba</value>
+					</text>
+					<text id="eclampsia-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="eclampsia-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="expecting_twins-label">
+						<value>Je unatarajia kuwa na mapacha?</value>
+					</text>
+					<text id="expecting_twins-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="expecting_twins-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="expecting_twins-dont_know-label">
+						<value>Sijui</value>
+					</text>
+					<text id="breech_position-label">
+						<value>Muulize mama au angalia kadi yake ya kilinik: Je umeambiwa kuwa huu uja uzito wako mtoto katanguliza makalio?</value>
+					</text>
+					<text id="breached_position-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="breached_position-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="big_baby-label">
+						<value>Muulize mama au angalia kadi yake ya kilinik: Je umeambiwa kuwa huu uja uzito wako mtoto atakuwa mkubwa(Zaidi ya 4kg)</value>
+					</text>
+					<text id="big_baby-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="big_baby-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="medical_conditions-label">
+						<value>Je unamatatizo yoyote ya kiafya, kati ya yafuatayo?</value>
+					</text>
+					<text id="high_bp-label">
+						<value>Shindikizo la damu?</value>
+					</text>
+					<text id="high_bd-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="high_bd-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="diabetes-label">
+						<value>Kisukari?</value>
+					</text>
+					<text id="diabetes-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="diabetes-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="sickle_cell-label">
+						<value>Sickle cell(seli mundu)?</value>
+					</text>
+					<text id="sickle_cell-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="sickle_cell-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="cardiac_disease-label">
+						<value>Ugonjwa wa moyo?</value>
+					</text>
+					<text id="cardiac_disease-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="cardiac_disease-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="advised_deliver_facility-label">
+						<value>Je umeshauriwa na Mhudumu wa Afya kujifungulia kituo kikubwa zaidi ya hicho unachopatia huduma kama hospitali?</value>
+					</text>
+					<text id="advised_deliver_facility-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="advised_deliver_facility-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="where-label">
+						<value>Wapi? </value>
+					</text>
+					<text id="where-abdalla_mzee-label">
+						<value>Abdallah Mzee</value>
+					</text>
+					<text id="where-chake_chake-label">
+						<value>Chake Chake</value>
+					</text>
+					<text id="where-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="where-kivunge-label">
+						<value>Kivunge</value>
+					</text>
+					<text id="where-mwembeladu-label">
+						<value>Mwembeladu</value>
+					</text>
+					<text id="where-mnazi_moja-label">
+						<value>Mnazi Mmoja</value>
+					</text>
+					<text id="where-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="where-vitongoji-label">
+						<value>Vitongoji</value>
+					</text>
+					<text id="advise_place_delivery_dc-label">
+						<value>MSHAURI MAMA: Asante kwa majibu yako. Kwa afya yako na mtoto ni vizuri mwanao kumzalia <output value="/data/preferred_delivery_facility"/></value>
+					</text>
+					<text id="advise_place_delivery_phcc-label">
+						<value>MSHAURI MAMA: Asante kwa majibu yako.Wewe na mwanao mnaweza kuwa kwenye hali ya hatari zaidi kuliko ujauzito wa kawaida hivyo unatakiwa kuzalia <output value="/data/preferred_delivery_facility"/>.</value>
+					</text>
+					<text id="advise_hospital_delivery_risk-label">
+						<value>MSHAURI MAMA: Asante kwa majibu yako. Wewe pamoja na mtoto mpo kwenye matatizo na unatakiwa kupanga kuzalia HOSPITALI ya <output value="/data/consent_yes/nearest_referral_hospital"/></value>
+					</text>
+					<text id="advise_pay_transport-label">
+						<value>MSHAURI MAMA: Sisi tutalipa gharama za usafiri katika kukupeleka kwenye kituo cha afya au hospitali. Hivyo utahitajika kuhifadhi pesa kwa ajili ya vitu vingine kama vitahitajika ili wewe na mtoto kuwa na afya bora.</value>
+					</text>
+					<text id="advise_eat_well-label">
+						<value>MSHAURI MAMA: Hakikisha unakula vizuri,punguza kufanya kazi ngumu na pata mapumziko kwa wingi wakati wa ujauzito.</value>
+					</text>
+					<text id="advise_prepare_flask-label">
+						<value>MSHAURI MAMA: Andaa chupa ya uji,kanga safi pamoja na mpira wa kulalia wakati wakwenda kituoni.</value>
+					</text>
+					<text id="decide_support-label">
+						<value>MSHAURI MAMA: Utaamua nani atakaa nyumbani kuangalia familia na nani atakae kusindikiza kwenye kituo.</value>
+					</text>
+					<text id="advise_comeback_anysigns-label">
+						<value>MSHAURI MAMA:Kama utahisi dalili za hatari zifuatazo niite mara moja niandae usafiri kwenda kituoni -kutokwa na maji au damu -kuvimba uso na mikono -kukakamaa -homa kali -mtoto kutokucheza -kuumwa kichwa sana au kizunguzungu.</value>
+					</text>
+					<text id="tested_hiv-label">
+						<value>MUULIZE MAMA: Sitaki kujua matokeo, lakini umewahi kupima VVU (virusi vya Ukimwi) kama sehemu ya huduma yako kiliniki?</value>
+					</text>
+					<text id="tested_hiv-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="tested_hiv-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="advise_toget_medicine-label">
+						<value>MSHAURI MAMA: Kama ndiyo mama mjamzito anajua kuwa ana VVU au Ukimwi, anaweza kupata dawa yake na kwa kutunza  afya yake, na mtoto wake akaweza kuzaliwa bila VVU.</value>
+					</text>
+					<text id="advise_toknow_hiv_atpmtct-label">
+						<value>MSHAURI MAMA: Kila mama mjamzito anapaswa kujua hali yake ya maambukizo ya VVU. Unaweza kupata taarifa zaidi kuhusu VVU na Ukimwi na kuweza kupima katika kilinik yako ya karibu ya PMTCT.</value>
+					</text>
+					<text id="agree_deliver_atfacility-label">
+						<value>Je unakubali kuzalia katika kituo cha afya kama tulivyo jadiliana?</value>
+					</text>
+					<text id="agree_deliver_atfacility-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="agree_deliver_atfacility-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="impor_deliver_facility-label">
+						<value>Mkumbushe mama umuhimu wa kuzalia kituo cha afya kwa sababu zifuatazo: -  Ni salama kwa afya yako na mtoto. - Kuna ushirikiano wa wataalam wa huduma za afya. - Huwezi kujua ni bahati mbaya gani inaweza kujitokeza. - Huduma za kujifungua ni bure. - Vituo ni visafi na vina dawa halisi.</value>
+					</text>
+					<text id="can_talk_permission_giver-label">
+						<value>Je naweza kuongea na mwenye kukutolea ruhusa ya kwenda kujifungulia kule? </value>
+					</text>
+					<text id="question233-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="question233-no-label">
+						<value>Hapana (Sitaki kwenda)</value>
+					</text>
+					<text id="question233-not_now-label">
+						<value>Sio sasa hivi</value>
+					</text>
+					<text id="question233-permission_not_needed-label">
+						<value>ruhusa haihitajiki</value>
+					</text>
+					<text id="remember_register_permission-label">
+						<value>Tafhadali sajili ruhusa. </value>
+					</text>
+					<text id="remember_talk_to_permissiongiver-label">
+						<value>Tafadhali kumbuka kuongea na huyu mtu baadae na ujaze fomu ya ruhusa.</value>
+					</text>
+					<text id="registration_complete-label">
+						<value>Usajili umekamilika.</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="explain_phone_purpose-label">
+						<value>EXPLAIN TO MOTHER: The purpose of this phone is to better communicate, collect and share information so that you can have a safer birth.</value>
+					</text>
+					<text id="explain_about_asking_questions-label">
+						<value>EXPLAIN TO MOTHER: I would like to ask you some questions about yourself and your health. If there are questions that you do not want to answer, you do not have to answer them.</value>
+					</text>
+					<text id="consent_use_phone-label">
+						<value>ASK MOTHER: Do you consent to use phone?</value>
+					</text>
+					<text id="consent_use_phone-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="consent_use_phone-no-label">
+						<value>No</value>
+					</text>
+					<text id="provide_usual_care-label">
+						<value>PUT PHONE DOWN AND PROVIDE CARE AS USUAL.</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>End of the form.</value>
+					</text>
+					<text id="district_name-label">
+						<value>District name </value>
+					</text>
+					<text id="mother_name-label">
+						<value>Mother's Name</value>
+					</text>
+					<text id="phone_number-label">
+						<value>Phone number</value>
+					</text>
+					<text id="mother_age-label">
+						<value>Mother's age</value>
+					</text>
+					<text id="mother_age-constraintMsg">
+						<value>Age entered in not correct</value>
+					</text>
+					<text id="reg_number-label">
+						<value>Ask to see mother's RCH4 card. ENTER mother's Registration number from RCH4 card if available</value>
+					</text>
+					<text id="clinic_name-label">
+						<value>Client's facility name based on RCH4 card or ask mother where she attends prenatal/postnatal care.</value>
+					</text>
+					<text id="nearest_dc_health_facility-label">
+						<value>Name of nearest facility for delivery</value>
+					</text>
+					<text id="nearest_PHCC-label">
+						<value>Name of nearest cottage hospital (PHCC). Choose district hospital if no close cottage hospital.</value>
+					</text>
+					<text id="nearest_PHCC-abdallah_mzee-label">
+						<value>Abdallah_mzee</value>
+					</text>
+					<text id="nearest_PHCC-chake_chake-label">
+						<value>Chake Chake</value>
+					</text>
+					<text id="nearest_PHCC-kivunge-label">
+						<value>Kivunge</value>
+					</text>
+					<text id="nearest_PHCC-makunduchi-label">
+						<value>Makunduchi</value>
+					</text>
+					<text id="nearest_PHCC-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="nearest_PHCC-mwembeladu-label">
+						<value>Mwembeladu</value>
+					</text>
+					<text id="nearest_PHCC-vitongoji-label">
+						<value>Vitongoji</value>
+					</text>
+					<text id="nearest_PHCC-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="nearest_referral_hospital-label">
+						<value>Name of nearest district/referral hospital</value>
+					</text>
+					<text id="nearest_referral_hospital-abdallah_mzee-label">
+						<value>Abdallah Mzee</value>
+					</text>
+					<text id="nearest_referral_hospital-chake_chake-label">
+						<value>Chake Chake</value>
+					</text>
+					<text id="nearest_referral_hospital-mnazi_moja-label">
+						<value>Mnazi Moja</value>
+					</text>
+					<text id="nearest_referral_hospital-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="shehia-label">
+						<value>Shehia</value>
+					</text>
+					<text id="village_or_street-label">
+						<value>Sub village/street name.</value>
+					</text>
+					<text id="local_leader_name-label">
+						<value>Local leader name.</value>
+					</text>
+					<text id="explain_ask_about_pregnancies-label">
+						<value>EXPLAIN TO MOTHER: Now I will ask you about your pregnancy and any of your previous pregnancies.</value>
+					</text>
+					<text id="lnmp_date-label">
+						<value> Check the mother's ANC card. What is the LMP (last menstral period) listed on the card? (If not listed, ask the woman the first day of her last meanstrual period).</value>
+					</text>
+					<text id="lnmp_date-constraintMsg">
+						<value>Date entered is not correct</value>
+					</text>
+					<text id="edd_listed_on_card-label">
+						<value>Check the mother's RCH4 card. Is there an EDD listed?</value>
+					</text>
+					<text id="edd_listed_on_card-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="edd_listed_on_card-no-label">
+						<value>No</value>
+					</text>
+					<text id="card_edd-label">
+						<value>What is the EDD (expected date of delivery) list in card?</value>
+					</text>
+					<text id="card_edd-constraintMsg">
+						<value>Expected date of delivery should be in future</value>
+					</text>
+					<text id="number_of_pregnancies-label">
+						<value>How many pregnancies have you had including this one?</value>
+					</text>
+					<text id="number_of_pregnancies-constraintMsg">
+						<value>Number of pregnancy can not be less than 1</value>
+					</text>
+					<text id="abortions_or_miscarriages-label">
+						<value>How many miscarriages/abortions have you had (loss of pregnancy at under 6 months gestation)? </value>
+					</text>
+					<text id="abortions_or_miscarriages-constraintMsg">
+						<value>Number of abortion can not exceed the number of pregnancies</value>
+					</text>
+					<text id="deliveries-label">
+						<value>How many previous deliveries have you had?</value>
+					</text>
+					<text id="c_section_delivery-label">
+						<value>Have you previously delivered by C-section? </value>
+					</text>
+					<text id="c_section_delivery-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="c_section_delivery-no-label">
+						<value>No</value>
+					</text>
+					<text id="vacuum_delivery-label">
+						<value>Have you previously delivered by vacuum?</value>
+					</text>
+					<text id="vacuum_delivery-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="vacuum_delivery-no-label">
+						<value>No</value>
+					</text>
+					<text id="stillbirth-label">
+						<value>How many stillbirths have you had (loss of pregnancy over 6 months gestation)?  </value>
+					</text>
+					<text id="problems_previous_deliveries-label">
+						<value>Have you had any of the following during previous deliveries?</value>
+					</text>
+					<text id="prolonged_labour-label">
+						<value>Prolonged Labor (12 hours or more)?</value>
+					</text>
+					<text id="prolonged_labour-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="prolonged_labour-no-label">
+						<value>No</value>
+					</text>
+					<text id="perineal_tear-label">
+						<value>Large perineal tear (close to anus)</value>
+					</text>
+					<text id="perineal_tear-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="perineal_tear-no-label">
+						<value>No</value>
+					</text>
+					<text id="retained_placenta-label">
+						<value>Retained Placenta</value>
+					</text>
+					<text id="retained_placenta-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="retained_placenta-no-label">
+						<value>No</value>
+					</text>
+					<text id="placenta_previa-label">
+						<value>Placenta Previa</value>
+					</text>
+					<text id="placenta_previa-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="placenta_previa-no-label">
+						<value>No</value>
+					</text>
+					<text id="post_partum_hemorrhage-label">
+						<value>Post partum hemorrhage</value>
+					</text>
+					<text id="post_partum_hemorrhage-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="post_partum_hemorrhage-no-label">
+						<value>No</value>
+					</text>
+					<text id="eclampsia-label">
+						<value>Eclampsia</value>
+					</text>
+					<text id="eclampsia-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="eclampsia-no-label">
+						<value>No</value>
+					</text>
+					<text id="expecting_twins-label">
+						<value>Are you expecting twins? </value>
+					</text>
+					<text id="expecting_twins-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="expecting_twins-no-label">
+						<value>No</value>
+					</text>
+					<text id="expecting_twins-dont_know-label">
+						<value>Don't know</value>
+					</text>
+					<text id="breech_position-label">
+						<value>Ask mother or look at RCH card: Have you been told your current pregnancy is in a breech position? </value>
+					</text>
+					<text id="breached_position-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="breached_position-no-label">
+						<value>No</value>
+					</text>
+					<text id="big_baby-label">
+						<value>Ask mother or look at RCH card: Have you been told your current pregnancy will be a big baby (more than 4kg)</value>
+					</text>
+					<text id="big_baby-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="big_baby-no-label">
+						<value>No</value>
+					</text>
+					<text id="medical_conditions-label">
+						<value>Do you have any of the following medical conditions?</value>
+					</text>
+					<text id="high_bp-label">
+						<value>High blood pressure [BP]? </value>
+					</text>
+					<text id="high_bd-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="high_bd-no-label">
+						<value>No</value>
+					</text>
+					<text id="diabetes-label">
+						<value>Diabetes?</value>
+					</text>
+					<text id="diabetes-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="diabetes-no-label">
+						<value>No</value>
+					</text>
+					<text id="sickle_cell-label">
+						<value>sickle cell?</value>
+					</text>
+					<text id="sickle_cell-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="sickle_cell-no-label">
+						<value>No</value>
+					</text>
+					<text id="cardiac_disease-label">
+						<value>cardiac disease?</value>
+					</text>
+					<text id="cardiac_disease-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="cardiac_disease-no-label">
+						<value>No</value>
+					</text>
+					<text id="advised_deliver_facility-label">
+						<value>Has a health worker advised you deliver at a higher level facility than your local health facility such as a hospital?</value>
+					</text>
+					<text id="advised_deliver_facility-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="advised_deliver_facility-no-label">
+						<value>No</value>
+					</text>
+					<text id="where-label">
+						<value> Where?</value>
+					</text>
+					<text id="where-abdalla_mzee-label">
+						<value>Abdallah Mzee</value>
+					</text>
+					<text id="where-chake_chake-label">
+						<value>Chake Chake</value>
+					</text>
+					<text id="where-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="where-kivunge-label">
+						<value>Kivunge</value>
+					</text>
+					<text id="where-mwembeladu-label">
+						<value>Mwembeladu</value>
+					</text>
+					<text id="where-mnazi_moja-label">
+						<value>Mnazi mmoja</value>
+					</text>
+					<text id="where-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="where-vitongoji-label">
+						<value>Vitongoji</value>
+					</text>
+					<text id="advise_place_delivery_dc-label">
+						<value>ADVISE MOTHER: Thank you for your answers. For you and your baby's health, it is good to deliver your baby at <output value="/data/preferred_delivery_facility"/></value>
+					</text>
+					<text id="advise_place_delivery_phcc-label">
+						<value>ADVISE MOTHER: Thank you for your answers. You and your baby may be at higher risk than a normal pregnancy so you should give birth at  <output value="/data/preferred_delivery_facility"/>.</value>
+					</text>
+					<text id="advise_hospital_delivery_risk-label">
+						<value>ADVISE MOTHER: Thank you for your answers. You and your baby are at risk of complications and should plan to give birth at <output value="/data/consent_yes/nearest_referral_hospital"/></value>
+					</text>
+					<text id="advise_pay_transport-label">
+						<value>ADVISE MOTHER: We will pay for your transport to the health facility or hospital. Save money for other things that you and your baby will need to have a safe delivery and stay healthy.</value>
+					</text>
+					<text id="advise_eat_well-label">
+						<value>ADVISE MOTHER: Make sure to eat well, reduce your workload, and get plenty of rest during pregnancy.</value>
+					</text>
+					<text id="advise_prepare_flask-label">
+						<value>ADVISE MOTHER: Prepare a flask of porridge, clean kangas and a makintosh to bring with you to the facility</value>
+					</text>
+					<text id="decide_support-label">
+						<value>ADVISE MOTHER: Decide who will stay home to take care of the rest of your family and who will escort you to the facility. </value>
+					</text>
+					<text id="advise_comeback_anysigns-label">
+						<value>ADVISE MOTHER: If you experience any of the following danger signs call me immediately and I will arrange transport to the facility because they are very dangerous. - leakage of fluid or blood. - swollen face and hands.  - fits/convulsions. - high fever. - lack of fetal movement.- severe headache or dizziness.</value>
+					</text>
+					<text id="tested_hiv-label">
+						<value>ASK MOTHER: I do not want to know the results, but have you been tested for HIV (the AIDS virus) as part of your antenatal care?</value>
+					</text>
+					<text id="tested_hiv-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="tested_hiv-no-label">
+						<value>No</value>
+					</text>
+					<text id="advise_toget_medicine-label">
+						<value>ADVISE MOTHER: If a pregnant mother knows she has HIV or AIDS, she can get medicine to keep her healthy, and her baby can be born without HIV.</value>
+					</text>
+					<text id="advise_toknow_hiv_atpmtct-label">
+						<value>ADVISE MOTHER: Every pregnant mother should know her HIV status. You can find out more about HIV/AIDS and get tested at your nearest PMTCT clinic.</value>
+					</text>
+					<text id="agree_deliver_atfacility-label">
+						<value>Do you agree to give birth at a health facility as we have discussed?</value>
+					</text>
+					<text id="agree_deliver_atfacility-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="agree_deliver_atfacility-no-label">
+						<value>No</value>
+					</text>
+					<text id="impor_deliver_facility-label">
+						<value>Remind mother of the importance of facility delivery for the following reasons: - It's safer for your health and your baby. - There is a team of skilled health workers. - You cannot predict what might go wrong.- Delivery is free. - Facility is clean and hygienic and has the right medicines.</value>
+					</text>
+					<text id="can_talk_permission_giver-label">
+						<value>Can I talk with the person who can grant you permission to go to the facility for delivery? </value>
+					</text>
+					<text id="question233-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="question233-no-label">
+						<value>No (not planning to go)</value>
+					</text>
+					<text id="question233-not_now-label">
+						<value>Not now</value>
+					</text>
+					<text id="question233-permission_not_needed-label">
+						<value>Permission not needed</value>
+					</text>
+					<text id="remember_register_permission-label">
+						<value>Please remember to register permissions. </value>
+					</text>
+					<text id="remember_talk_to_permissiongiver-label">
+						<value>Please remember to talk to this person later and fill the permission form.</value>
+					</text>
+					<text id="registration_complete-label">
+						<value>Registration is complete.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case" relevant="/data/consent_use_phone = 'yes'"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/consent_yes/mother_name"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/update/phone_number" relevant="count(/data/consent_yes/phone_number) &gt; 0" calculate="/data/consent_yes/phone_number"/><bind nodeset="/data/case/update/permission_giver_phone" relevant="count(/data/permission_giver_phone) &gt; 0" calculate="/data/permission_giver_phone"/><bind nodeset="/data/case/update/whose_permission" relevant="count(/data/whose_permission) &gt; 0" calculate="/data/whose_permission"/><bind nodeset="/data/case/update/nearest_PHCC" relevant="count(/data/consent_yes/nearest_PHCC) &gt; 0" calculate="/data/consent_yes/nearest_PHCC"/><bind nodeset="/data/case/update/permission_giver_name" relevant="count(/data/permission_giver_name) &gt; 0" calculate="/data/permission_giver_name"/><bind nodeset="/data/case/update/nearest_referral_hospital" relevant="count(/data/consent_yes/nearest_referral_hospital) &gt; 0" calculate="/data/consent_yes/nearest_referral_hospital"/><bind nodeset="/data/case/update/village_or_street" relevant="count(/data/consent_yes/village_or_street) &gt; 0" calculate="/data/consent_yes/village_or_street"/><bind nodeset="/data/case/update/tmp_medical_conditions_cardiac_disease" relevant="count(/data/tmp_medical_conditions_cardiac_disease) &gt; 0" calculate="/data/tmp_medical_conditions_cardiac_disease"/><bind nodeset="/data/case/update/ask_transport_anytime" relevant="count(/data/ask_transport_anytime) &gt; 0" calculate="/data/ask_transport_anytime"/><bind nodeset="/data/case/update/tmp_medical_conditions_sicklecell" relevant="count(/data/tmp_medical_conditions_sicklecell) &gt; 0" calculate="/data/tmp_medical_conditions_sicklecell"/><bind nodeset="/data/case/update/abortions_or_miscarriages" relevant="count(/data/consent_yes/abortions_or_miscarriages) &gt; 0" calculate="/data/consent_yes/abortions_or_miscarriages"/><bind nodeset="/data/case/update/number_of_pregnancies" relevant="count(/data/consent_yes/number_of_pregnancies) &gt; 0" calculate="/data/consent_yes/number_of_pregnancies"/><bind nodeset="/data/case/update/preferred_delivery_facility" relevant="count(/data/preferred_delivery_facility) &gt; 0" calculate="/data/preferred_delivery_facility"/><bind nodeset="/data/case/update/tmp_medical_conditions_diabetes" relevant="count(/data/tmp_medical_conditions_diabetes) &gt; 0" calculate="/data/tmp_medical_conditions_diabetes"/><bind nodeset="/data/case/update/tmp_medical_conditions_highbp" relevant="count(/data/tmp_medical_conditions_highbp) &gt; 0" calculate="/data/tmp_medical_conditions_highbp"/><bind nodeset="/data/case/update/mother_name" relevant="count(/data/consent_yes/mother_name) &gt; 0" calculate="/data/consent_yes/mother_name"/><bind nodeset="/data/case/update/district_name" relevant="count(/data/consent_yes/district_name) &gt; 0" calculate="/data/consent_yes/district_name"/><bind nodeset="/data/case/update/nearest_dc_health_facility" relevant="count(/data/consent_yes/nearest_dc_health_facility) &gt; 0" calculate="/data/consent_yes/nearest_dc_health_facility"/><bind nodeset="/data/case/update/lnmp_date" relevant="count(/data/consent_yes/lnmp_date) &gt; 0" calculate="/data/consent_yes/lnmp_date"/><bind nodeset="/data/case/update/clinic_name" relevant="count(/data/consent_yes/clinic_name) &gt; 0" calculate="/data/consent_yes/clinic_name"/><bind nodeset="/data/case/update/card_edd" relevant="count(/data/consent_yes/card_edd) &gt; 0" calculate="/data/consent_yes/card_edd"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/explain_phone_purpose">
+			<label ref="jr:itext('explain_phone_purpose-label')"/>
+		</trigger>
+		<trigger ref="/data/explain_about_asking_questions">
+			<label ref="jr:itext('explain_about_asking_questions-label')"/>
+		</trigger>
+		<select1 ref="/data/consent_use_phone">
+			<label ref="jr:itext('consent_use_phone-label')"/>
+			<item>
+				<label ref="jr:itext('consent_use_phone-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('consent_use_phone-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/provide_usual_care">
+			<label ref="jr:itext('provide_usual_care-label')"/>
+		</trigger>
+		<trigger ref="/data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+		<group ref="/data/consent_yes">
+			<select1 ref="/data/consent_yes/district_name">
+				<label ref="jr:itext('district_name-label')"/>
+				<itemset nodeset="instance('district')/district_list/district">
+                <label ref="name"/>
+                <value ref="id"/>
+                </itemset>
+			</select1>
+			<input ref="/data/consent_yes/mother_name">
+				<label ref="jr:itext('mother_name-label')"/>
+			</input>
+			<input ref="/data/consent_yes/phone_number">
+				<label ref="jr:itext('phone_number-label')"/>
+			</input>
+			<input ref="/data/consent_yes/mother_age">
+				<label ref="jr:itext('mother_age-label')"/>
+			</input>
+			<input ref="/data/consent_yes/reg_number">
+				<label ref="jr:itext('reg_number-label')"/>
+			</input>
+			<input ref="/data/consent_yes/clinic_name">
+				<label ref="jr:itext('clinic_name-label')"/>
+			</input>
+			<select1 ref="/data/consent_yes/nearest_dc_health_facility">
+				<label ref="jr:itext('nearest_dc_health_facility-label')"/>
+				<itemset nodeset="instance('health_facility')/health_facility_list/health_facility[district_id=/data/consent_yes/district_name]">
+                <label ref="name"/>
+                <value ref="id"/>
+                </itemset>
+			</select1>
+			<select1 ref="/data/consent_yes/nearest_PHCC">
+				<label ref="jr:itext('nearest_PHCC-label')"/>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-abdallah_mzee-label')"/>
+					<value>abdallah_mzee</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-chake_chake-label')"/>
+					<value>chake_chake</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-kivunge-label')"/>
+					<value>kivunge</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-makunduchi-label')"/>
+					<value>makunduchi</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-micheweni-label')"/>
+					<value>micheweni</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-mwembeladu-label')"/>
+					<value>mwembeladu</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-vitongoji-label')"/>
+					<value>vitongoji</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_PHCC-wete-label')"/>
+					<value>wete</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/nearest_referral_hospital">
+				<label ref="jr:itext('nearest_referral_hospital-label')"/>
+				<item>
+					<label ref="jr:itext('nearest_referral_hospital-abdallah_mzee-label')"/>
+					<value>abdallah_mzee</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_referral_hospital-chake_chake-label')"/>
+					<value>chake_chake</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_referral_hospital-mnazi_moja-label')"/>
+					<value>mnazi_moja</value>
+				</item>
+				<item>
+					<label ref="jr:itext('nearest_referral_hospital-wete-label')"/>
+					<value>wete</value>
+				</item>
+			</select1>
+			<input ref="/data/consent_yes/shehia">
+				<label ref="jr:itext('shehia-label')"/>
+			</input>
+			<input ref="/data/consent_yes/village_or_street">
+				<label ref="jr:itext('village_or_street-label')"/>
+			</input>
+			<input ref="/data/consent_yes/local_leader_name">
+				<label ref="jr:itext('local_leader_name-label')"/>
+			</input>
+			<trigger ref="/data/consent_yes/explain_ask_about_pregnancies">
+				<label ref="jr:itext('explain_ask_about_pregnancies-label')"/>
+			</trigger>
+			<input ref="/data/consent_yes/lnmp_date">
+				<label ref="jr:itext('lnmp_date-label')"/>
+			</input>
+			<select1 ref="/data/consent_yes/edd_listed_on_card">
+				<label ref="jr:itext('edd_listed_on_card-label')"/>
+				<item>
+					<label ref="jr:itext('edd_listed_on_card-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('edd_listed_on_card-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/consent_yes/card_edd">
+				<label ref="jr:itext('card_edd-label')"/>
+			</input>
+			<input ref="/data/consent_yes/number_of_pregnancies">
+				<label ref="jr:itext('number_of_pregnancies-label')"/>
+			</input>
+			<input ref="/data/consent_yes/abortions_or_miscarriages">
+				<label ref="jr:itext('abortions_or_miscarriages-label')"/>
+			</input>
+			<input ref="/data/consent_yes/deliveries">
+				<label ref="jr:itext('deliveries-label')"/>
+			</input>
+			<select1 ref="/data/consent_yes/c_section_delivery">
+				<label ref="jr:itext('c_section_delivery-label')"/>
+				<item>
+					<label ref="jr:itext('c_section_delivery-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('c_section_delivery-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/vacuum_delivery">
+				<label ref="jr:itext('vacuum_delivery-label')"/>
+				<item>
+					<label ref="jr:itext('vacuum_delivery-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vacuum_delivery-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/consent_yes/stillbirth">
+				<label ref="jr:itext('stillbirth-label')"/>
+			</input>
+			<trigger ref="/data/consent_yes/problems_previous_deliveries">
+				<label ref="jr:itext('problems_previous_deliveries-label')"/>
+			</trigger>
+			<select1 ref="/data/consent_yes/prolonged_labour">
+				<label ref="jr:itext('prolonged_labour-label')"/>
+				<item>
+					<label ref="jr:itext('prolonged_labour-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prolonged_labour-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/perineal_tear">
+				<label ref="jr:itext('perineal_tear-label')"/>
+				<item>
+					<label ref="jr:itext('perineal_tear-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('perineal_tear-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/retained_placenta">
+				<label ref="jr:itext('retained_placenta-label')"/>
+				<item>
+					<label ref="jr:itext('retained_placenta-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('retained_placenta-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/placenta_previa">
+				<label ref="jr:itext('placenta_previa-label')"/>
+				<item>
+					<label ref="jr:itext('placenta_previa-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('placenta_previa-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/post_partum_hemorrhage">
+				<label ref="jr:itext('post_partum_hemorrhage-label')"/>
+				<item>
+					<label ref="jr:itext('post_partum_hemorrhage-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('post_partum_hemorrhage-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/eclampsia">
+				<label ref="jr:itext('eclampsia-label')"/>
+				<item>
+					<label ref="jr:itext('eclampsia-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('eclampsia-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/expecting_twins">
+				<label ref="jr:itext('expecting_twins-label')"/>
+				<item>
+					<label ref="jr:itext('expecting_twins-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('expecting_twins-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('expecting_twins-dont_know-label')"/>
+					<value>dont_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/breech_position">
+				<label ref="jr:itext('breech_position-label')"/>
+				<item>
+					<label ref="jr:itext('breached_position-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('breached_position-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/big_baby">
+				<label ref="jr:itext('big_baby-label')"/>
+				<item>
+					<label ref="jr:itext('big_baby-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('big_baby-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consent_yes/medical_conditions">
+				<label ref="jr:itext('medical_conditions-label')"/>
+			</trigger>
+			<select1 ref="/data/consent_yes/high_bp">
+				<label ref="jr:itext('high_bp-label')"/>
+				<item>
+					<label ref="jr:itext('high_bd-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('high_bd-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/diabetes">
+				<label ref="jr:itext('diabetes-label')"/>
+				<item>
+					<label ref="jr:itext('diabetes-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diabetes-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/sickle_cell">
+				<label ref="jr:itext('sickle_cell-label')"/>
+				<item>
+					<label ref="jr:itext('sickle_cell-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('sickle_cell-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/cardiac_disease">
+				<label ref="jr:itext('cardiac_disease-label')"/>
+				<item>
+					<label ref="jr:itext('cardiac_disease-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('cardiac_disease-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/advised_deliver_facility">
+				<label ref="jr:itext('advised_deliver_facility-label')"/>
+				<item>
+					<label ref="jr:itext('advised_deliver_facility-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('advised_deliver_facility-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/consent_yes/where">
+				<label ref="jr:itext('where-label')"/>
+				<item>
+					<label ref="jr:itext('where-abdalla_mzee-label')"/>
+					<value>abdalla_mzee</value>
+				</item>
+				<item>
+					<label ref="jr:itext('where-chake_chake-label')"/>
+					<value>chake_chake</value>
+				</item>
+				<item>
+					<label ref="jr:itext('where-micheweni-label')"/>
+					<value>micheweni</value>
+				</item>
+				<item>
+					<label ref="jr:itext('where-kivunge-label')"/>
+					<value>kivunge</value>
+				</item>
+				<item>
+					<label ref="jr:itext('where-mwembeladu-label')"/>
+					<value>mwembeladu</value>
+				</item>
+				<item>
+					<label ref="jr:itext('where-mnazi_moja-label')"/>
+					<value>mnazi_moja</value>
+				</item>
+				<item>
+					<label ref="jr:itext('where-wete-label')"/>
+					<value>wete</value>
+				</item>
+				<item>
+					<label ref="jr:itext('where-vitongoji-label')"/>
+					<value>vitongoji</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consent_yes/advise_place_delivery_dc">
+				<label ref="jr:itext('advise_place_delivery_dc-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/advise_place_delivery_phcc">
+				<label ref="jr:itext('advise_place_delivery_phcc-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/advise_hospital_delivery_risk">
+				<label ref="jr:itext('advise_hospital_delivery_risk-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/advise_pay_transport">
+				<label ref="jr:itext('advise_pay_transport-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/advise_eat_well">
+				<label ref="jr:itext('advise_eat_well-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/advise_prepare_flask">
+				<label ref="jr:itext('advise_prepare_flask-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/decide_support">
+				<label ref="jr:itext('decide_support-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/advise_comeback_anysigns">
+				<label ref="jr:itext('advise_comeback_anysigns-label')"/>
+			</trigger>
+			<select1 ref="/data/consent_yes/tested_hiv">
+				<label ref="jr:itext('tested_hiv-label')"/>
+				<item>
+					<label ref="jr:itext('tested_hiv-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('tested_hiv-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consent_yes/advise_toget_medicine">
+				<label ref="jr:itext('advise_toget_medicine-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/advise_toknow_hiv_atpmtct">
+				<label ref="jr:itext('advise_toknow_hiv_atpmtct-label')"/>
+			</trigger>
+			<select1 ref="/data/consent_yes/agree_deliver_atfacility">
+				<label ref="jr:itext('agree_deliver_atfacility-label')"/>
+				<item>
+					<label ref="jr:itext('agree_deliver_atfacility-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('agree_deliver_atfacility-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consent_yes/impor_deliver_facility">
+				<label ref="jr:itext('impor_deliver_facility-label')"/>
+			</trigger>
+			<select1 ref="/data/consent_yes/can_talk_permission_giver">
+				<label ref="jr:itext('can_talk_permission_giver-label')"/>
+				<item>
+					<label ref="jr:itext('question233-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question233-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question233-not_now-label')"/>
+					<value>not_now</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question233-permission_not_needed-label')"/>
+					<value>permission_not_needed</value>
+				</item>
+			</select1>
+			<trigger ref="/data/consent_yes/remember_register_permission">
+				<label ref="jr:itext('remember_register_permission-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/remember_talk_to_permissiongiver">
+				<label ref="jr:itext('remember_talk_to_permissiongiver-label')"/>
+			</trigger>
+			<trigger ref="/data/consent_yes/registration_complete">
+				<label ref="jr:itext('registration_complete-label')"/>
+			</trigger>
+		</group>
+	</h:body>
+</h:html>

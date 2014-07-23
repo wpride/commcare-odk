@@ -1,0 +1,1484 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Child Visit</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/490D263F-05A6-468F-9FCB-EA186EB2CC01" uiVersion="1" version="1494" name="Child Visit">
+					<father_present/>
+					<dob_check/>
+					<dob/>
+					<birthweight/>
+					<registration>
+						<child_name/>
+						<gender/>
+					</registration>
+					<newborn>
+						<exclusively_breasfed/>
+						<difficulties_breast_feeding/>
+						<bf_difficulties/>
+						<newborn_high_risk/>
+						<why_high_risk/>
+						<kangaroo_care/>
+						<newborn_bednet/>
+						<newborn_vaccine/>
+						<neonatal_danger_signs/>
+						<which_danger_sign/>
+					</newborn>
+					<infant>
+						<infant_high_risk/>
+						<why_infant_high_risk/>
+						<birth_certificate/>
+						<vitamin_a/>
+						<deworming/>
+						<ITN/>
+						<infant_immunizations/>
+						<measles_immunization/>
+						<using_fp/>
+						<which_fp/>
+						<infant_danger_signs/>
+						<what_danger_signs/>
+						<ors_given/>
+						<wash_hands/>
+						<breastfed_twice/>
+						<semi_solid_feeds/>
+						<three_food_groups/>
+						<eating_iron_rich_food/>
+						<half_cup_iron/>
+						<one_cup_iron/>
+						<six_times_per_day/>
+						<needs_referral/>
+					</infant>
+					<referral/>
+					<Debug>
+						<question320/>
+						<question320-11-3/>
+						<question320-11/>
+						<question320-11-4/>
+						<question320-11-2/>
+						<question320-11-5/>
+						<question320-11-1/>
+						<question320-11-6/>
+						<question320-1/>
+						<question320-10-2/>
+						<question320-2/>
+						<question320-8/>
+						<question320-3/>
+						<question320-4/>
+						<question320-5/>
+						<question320-6/>
+						<question320-7/>
+						<question320-9/>
+						<question320-10/>
+						<question320-10-1/>
+					</Debug>
+					<completed/>
+					<days_since_birth/>
+					<child_id/>
+					<prev_birth_cert/>
+					<mother_id/>
+					<visit_type/>
+					<needs_followup/>
+					<follow_up_date/>
+					<next_child_visit/>
+					<next_visit_type/>
+					<child_v5a_date/>
+					<child_v5b_date/>
+					<child_v5c_date/>
+					<child_v5d_date/>
+					<child_v6_date/>
+					<child_v7_date/>
+					<child_v8_date/>
+					<child_v9_date/>
+					<child_v10_date/>
+					<child_v11_date/>
+					<total_newborn_visits/>
+					<total_infant_visits/>
+					<prev_total_infant_visits/>
+					<prev_exclusively_breastfed/>
+					<prev_total_newborn_visits/>
+					<prev_difficulties_breast_feeding/>
+					<prev_kangaroo_care/>
+					<prev_newborn_bednet/>
+					<prev_neonatal_danger_signs/>
+					<create_referral/>
+					<place_of_birth/>
+					<newborn_vaccine_complete/>
+					<prev_newborn_vaccine/>
+					<prev_infant_immunizations/>
+					<prev_measles_immunization/>
+					<weight_at_birth/>
+					<bf_alert/>
+					<dtp_vaccine/>
+					<date_of_visit/>
+					<mother_alive/>
+					<child_alive/>
+					<prev_dob/>
+					<prev_deworm/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><prev_measles_immunization/><infant_danger_signs/><kangaroo_care/><visit_type/><using_fp/><father_present/><ors_given/><mother_id/><child_v10_date/><prev_newborn_vaccine/><child_v5a_date/><next_visit_type/><exclusively_breasfed/><total_newborn_visits/><six_times_per_day/><child_v5b_date/><child_id/><prev_newborn_bednet/><prev_neonatal_danger_signs/><bf_alert/><which_fp/><newborn_bednet/><prev_total_infant_visits/><vitamin_a/><which_danger_sign/><prev_birth_cert/><why_high_risk/><neonatal_danger_signs/><child_v5c_date/><difficulties_breast_feeding/><half_cup_iron/><total_infant_visits/><next_child_visit/><child_name/><newborn_vaccine_complete/><child_alive/><mother_alive/><child_v7_date/><newborn_vaccine/><breastfed_twice/><child_v8_date/><date_of_visit/><why_infant_high_risk/><child_v6_date/><prev_total_newborn_visits/><wash_hands/><newborn_high_risk/><child_v9_date/><three_food_groups/><days_since_birth/><needs_followup/><one_cup_iron/><bf_difficulties/><child_v11_date/><infant_immunizations/><ITN/><infant_high_risk/><semi_solid_feeds/><needs_referral/><dob/><gender/><eating_iron_rich_food/><measles_immunization/><what_danger_signs/><deworming/><prev_kangaroo_care/><birth_certificate/><follow_up_date/><place_of_birth/><prev_exclusively_breastfed/><child_v5d_date/><create_referral/><weight_at_birth/><prev_difficulties_breast_feeding/><prev_infant_immunizations/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/father_present"/>
+			<bind nodeset="/data/dob_check" relevant="/data/prev_dob != ''"/>
+			<bind nodeset="/data/dob" type="xsd:date" relevant="/data/dob_check = 'yes' or /data/prev_dob = ''"/>
+			<bind nodeset="/data/birthweight" type="xsd:double" relevant="/data/total_newborn_visits = 1"/>
+			<bind nodeset="/data/registration" relevant="1=2"/>
+			<bind nodeset="/data/registration/child_name" type="xsd:string"/>
+			<bind nodeset="/data/registration/gender"/>
+			<bind nodeset="/data/newborn" relevant="/data/visit_type = 'newborn' or /data/visit_type = 'newborn_followup'"/>
+			<bind nodeset="/data/newborn/exclusively_breasfed" relevant="/data/prev_exclusively_breastfed = 'no' or /data/visit_type = 'newborn'"/>
+			<bind nodeset="/data/newborn/difficulties_breast_feeding" relevant="/data/visit_type = 'newborn' or /data/prev_difficulties_breast_feeding = 'yes'"/>
+			<bind nodeset="/data/newborn/bf_difficulties" relevant="/data/newborn/difficulties_breast_feeding = 'yes'"/>
+			<bind nodeset="/data/newborn/newborn_high_risk" relevant="/data/total_newborn_visits = 1 and /data/visit_type = 'newborn'"/>
+			<bind nodeset="/data/newborn/why_high_risk" relevant="/data/newborn/newborn_high_risk = 'yes'"/>
+			<bind nodeset="/data/newborn/kangaroo_care" relevant="/data/total_newborn_visits = 1 or /data/prev_kangaroo_care = 'no'"/>
+			<bind nodeset="/data/newborn/newborn_bednet" relevant="/data/visit_type = 'newborn' or /data/prev_newborn_bednet = 'no'"/>
+			<bind nodeset="/data/newborn/newborn_vaccine" relevant="/data/prev_newborn_vaccine != 'yes'"/>
+			<bind nodeset="/data/newborn/neonatal_danger_signs" relevant="/data/visit_type = 'newborn' or /data/prev_neonatal_danger_signs = 'yes'"/>
+			<bind nodeset="/data/newborn/which_danger_sign" relevant="/data/newborn/neonatal_danger_signs = 'yes'"/>
+			<bind nodeset="/data/infant" relevant="/data/visit_type = 'infant'"/>
+			<bind nodeset="/data/infant/infant_high_risk"/>
+			<bind nodeset="/data/infant/why_infant_high_risk" relevant="/data/infant/infant_high_risk = 'yes'"/>
+			<bind nodeset="/data/infant/birth_certificate" relevant="/data/prev_birth_cert = 'no'"/>
+			<bind nodeset="/data/infant/vitamin_a"/>
+			<bind nodeset="/data/infant/deworming" relevant="/data/prev_deworm != 'yes'"/>
+			<bind nodeset="/data/infant/ITN"/>
+			<bind nodeset="/data/infant/infant_immunizations"/>
+			<bind nodeset="/data/infant/measles_immunization"/>
+			<bind nodeset="/data/infant/using_fp"/>
+			<bind nodeset="/data/infant/which_fp" relevant="/data/infant/using_fp = 'yes'"/>
+			<bind nodeset="/data/infant/infant_danger_signs"/>
+			<bind nodeset="/data/infant/what_danger_signs" relevant="/data/infant/infant_danger_signs = 'yes'"/>
+			<bind nodeset="/data/infant/ors_given" relevant="/data/infant/what_danger_signs = 'diarrhea_dehydration' or /data/infant/what_danger_signs = 'diarrhea_blood'"/>
+			<bind nodeset="/data/infant/wash_hands"/>
+			<bind nodeset="/data/infant/breastfed_twice"/>
+			<bind nodeset="/data/infant/semi_solid_feeds"/>
+			<bind nodeset="/data/infant/three_food_groups"/>
+			<bind nodeset="/data/infant/eating_iron_rich_food"/>
+			<bind nodeset="/data/infant/half_cup_iron"/>
+			<bind nodeset="/data/infant/one_cup_iron"/>
+			<bind nodeset="/data/infant/six_times_per_day"/>
+			<bind nodeset="/data/infant/needs_referral" calculate="/data/infant/infant_danger_signs = 'yes'"/>
+			<bind nodeset="/data/referral" relevant="/data/create_referral = 'yes'"/>
+			<bind nodeset="/data/Debug" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-11-3" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-11" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-11-4" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-11-2" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-11-5" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-11-1" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-11-6" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-1" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-10-2" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-2" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-8" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-3" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-4" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-5" relevant="1=2"/>
+			<bind nodeset="/data/Debug/question320-6"/>
+			<bind nodeset="/data/Debug/question320-7"/>
+			<bind nodeset="/data/Debug/question320-9"/>
+			<bind nodeset="/data/Debug/question320-10"/>
+			<bind nodeset="/data/Debug/question320-10-1"/>
+			<bind nodeset="/data/completed"/>
+			<bind nodeset="/data/days_since_birth" calculate="today() - date(/data/dob)"/>
+			<bind nodeset="/data/child_id"/>
+			<bind nodeset="/data/prev_birth_cert"/>
+			<bind nodeset="/data/mother_id"/>
+			<bind nodeset="/data/visit_type" calculate="if(today() - date(/data/dob) &gt; 150, 'infant', 'newborn')"/>
+			<bind nodeset="/data/needs_followup" calculate="if((/data/weight_at_birth &lt; 2.5 and /data/days_since_birth &lt; 30) or (/data/newborn/newborn_high_risk = 'yes' and /data/days_since_birth &lt; 150) or (/data/dtp_vaccine = 'no' and /data/days_since_birth &gt; 150) or  (/data/bf_alert = 'yes'  and /data/days_since_birth &lt; 150) or /data/newborn_vaccine_complete = 'no' or  (/data/infant/measles_immunization = 'no' and /data/days_since_birth &gt; 365), 'yes','no')"/>
+			<bind nodeset="/data/follow_up_date" calculate="if((/data/weight_at_birth &lt; 2.5) and /data/days_since_birth &lt; 7,  date(today() + 1),  if(/data/newborn/newborn_high_risk = 'yes' and /data/days_since_birth &lt; 28,   date(today() + 2),   if(/data/dtp_vaccine = 'no' and /data/days_since_birth &gt; 150,    date(today() + 3),    if((/data/weight_at_birth &lt; 2.5) and /data/days_since_birth &lt; 30,     date(today() + 3),     if(/data/bf_alert = 'yes',      date(today() + 3),      if(/data/newborn_vaccine_complete = 'no',       date(today() + 7),       if(/data/infant/measles_immunization = 'no' and /data/days_since_birth &gt; 365,        date(today() + 30),        if(/data/newborn/newborn_high_risk = 'yes', date(today() + 30), date(today() + 1000)))))))))"/>
+			<bind nodeset="/data/next_child_visit" calculate="if(/data/next_visit_type = 'newborn',   if(/data/total_newborn_visits = 1, /data/child_v5b_date,  if(/data/total_newborn_visits = 2, /data/child_v5c_date, /data/child_v5d_date)),  if(/data/next_visit_type = 'infant',  if(/data/total_infant_visits = 1,  /data/child_v7_date,  if(/data/total_infant_visits = 2, /data/child_v8_date,  if(/data/total_infant_visits = 3, /data/child_v9_date,  if(/data/total_infant_visits = 4, /data/child_v10_date, /data/child_v11_date)))), /data/follow_up_date))"/>
+			<bind nodeset="/data/next_visit_type" calculate="if( /data/needs_followup = 'yes', 'followup', if(/data/days_since_birth &gt; 150 or /data/total_newborn_visits &gt; 3, 'infant', 'newborn'))"/>
+			<bind nodeset="/data/child_v5a_date" calculate="/data/dob"/>
+			<bind nodeset="/data/child_v5b_date" calculate="date(/data/dob + 2)"/>
+			<bind nodeset="/data/child_v5c_date" calculate="date(/data/dob + 5)"/>
+			<bind nodeset="/data/child_v5d_date" calculate="date(/data/dob + 21)"/>
+			<bind nodeset="/data/child_v6_date" calculate="date(/data/dob + 150)"/>
+			<bind nodeset="/data/child_v7_date" calculate="date(/data/dob + 180)"/>
+			<bind nodeset="/data/child_v8_date" calculate="date(/data/dob + 270)"/>
+			<bind nodeset="/data/child_v9_date" calculate="date(/data/dob + 365)"/>
+			<bind nodeset="/data/child_v10_date" calculate="date(/data/dob + 547)"/>
+			<bind nodeset="/data/child_v11_date" calculate="date(/data/dob + 690)"/>
+			<bind nodeset="/data/total_newborn_visits" calculate="if(/data/visit_type = 'newborn', coalesce(/data/prev_total_newborn_visits,0) + 1, coalesce(/data/prev_total_newborn_visits,0))"/>
+			<bind nodeset="/data/total_infant_visits" calculate="if(/data/visit_type = 'infant', coalesce(/data/prev_total_infant_visits,0) + 1, coalesce(/data/prev_total_infant_visits,0))"/>
+			<bind nodeset="/data/prev_total_infant_visits"/>
+			<bind nodeset="/data/prev_exclusively_breastfed"/>
+			<bind nodeset="/data/prev_total_newborn_visits"/>
+			<bind nodeset="/data/prev_difficulties_breast_feeding"/>
+			<bind nodeset="/data/prev_kangaroo_care"/>
+			<bind nodeset="/data/prev_newborn_bednet"/>
+			<bind nodeset="/data/prev_neonatal_danger_signs"/>
+			<bind nodeset="/data/create_referral" calculate="/data/newborn/neonatal_danger_signs"/>
+			<bind nodeset="/data/place_of_birth"/>
+			<bind nodeset="/data/newborn_vaccine_complete" calculate="if(count-selected(/data/newborn/newborn_vaccine) = 2, 'yes','no')"/>
+			<bind nodeset="/data/prev_newborn_vaccine"/>
+			<bind nodeset="/data/prev_infant_immunizations"/>
+			<bind nodeset="/data/prev_measles_immunization"/>
+			<bind nodeset="/data/weight_at_birth" calculate="/data/birthweight"/>
+			<bind nodeset="/data/bf_alert" calculate="if(/data/newborn/exclusively_breasfed = 'no' or /data/newborn/difficulties_breast_feeding = 'yes','yes','no')"/>
+			<bind nodeset="/data/dtp_vaccine" calculate="if(count-selected(/data/infant/infant_immunizations) =5, 'yes', 'no')"/>
+			<bind nodeset="/data/date_of_visit" calculate="today()"/>
+			<bind nodeset="/data/mother_alive" calculate="'yes'"/>
+			<bind nodeset="/data/child_alive" calculate="'yes'"/>
+			<bind nodeset="/data/prev_dob"/>
+			<bind nodeset="/data/prev_deworm"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="father_present-label">
+						<value>Was the father or chosen supporter present during this visit?</value>
+						<value form="image">jr://file/commcare/image/data/male_child_visit.png</value>
+					</text>
+					<text id="newborn_bednet-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="newborn_bednet-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="dob_check-label">
+						<value>The child's date of birth is <output value="format-date(/data/dob, '%e/%n/%y')"/>. Would you like to change it?</value>
+					</text>
+					<text id="dob_chekc-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="dob_chekc-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="dob_register-label">
+						<value>Date of birth</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+					</text>
+					<text id="birthweight-label">
+						<value>Weight at birth</value>
+						<value form="image">jr://file/commcare/image/data/weight_at_birth.png</value>
+					</text>
+					<text id="registration-label">
+						<value>Registration</value>
+					</text>
+					<text id="child_name-label2">
+						<value>Name</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+					</text>
+					<text id="gender-label">
+						<value>Sex</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender-male-label">
+						<value>Male</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender-female-label">
+						<value>Female</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="newborn-label">
+						<value>Newborn</value>
+					</text>
+					<text id="exclusively_breasfed-label">
+						<value>Exclusively breastfed?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_continuous.png</value>
+					</text>
+					<text id="exclusive_breasfed-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="exclusive_breasfed-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="difficulties_breast_feeding-label">
+						<value>Experiencing difficulties breastfeeding?</value>
+						<value form="image">jr://file/commcare/image/data/diff_breastfeeding.png</value>
+					</text>
+					<text id="exclusive_breasfed-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="exclusive_breasfed-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="bf_difficulties-label">
+						<value>Which difficulties</value>
+						<value form="image">jr://file/commcare/image/data/diff_breastfeeding.png</value>
+					</text>
+					<text id="bf_difficulties-pain-label">
+						<value>Pain</value>
+					</text>
+					<text id="bf_difficulties-low_milk-label">
+						<value>Low milk</value>
+					</text>
+					<text id="bf_difficulties-cracked_nipples-label">
+						<value>Cracked nipples</value>
+					</text>
+					<text id="bf_difficulties-infection-label">
+						<value>Infection</value>
+					</text>
+					<text id="bf_difficulties-baby_refuses-label">
+						<value>Baby refuses / cries</value>
+					</text>
+					<text id="newborn_high_risk-label">
+						<value>Is the newborn high risk?</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_baby.png</value>
+					</text>
+					<text id="newborn_high_risk-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="newborn_high_risk-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="why_high_risk-label">
+						<value>Why is the newborn high risk?</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_baby.png</value>
+					</text>
+					<text id="why_high_risk-low_birthweight-label">
+						<value>Low birthweight</value>
+						<value form="image">jr://file/commcare/image/data/weight_at_birth.png</value>
+					</text>
+					<text id="why_high_risk-premature-label">
+						<value>Born premature</value>
+						<value form="image">jr://file/commcare/image/data/premature.png</value>
+					</text>
+					<text id="why_high_risk-congenital_malformation-label">
+						<value>Congenital malformation</value>
+					</text>
+					<text id="why_high_risk-maternal_death-label">
+						<value>Maternal death</value>
+						<value form="image">jr://file/commcare/image/data/maternal_death.png</value>
+					</text>
+					<text id="why_high_risk-other-label">
+						<value>Other</value>
+					</text>
+					<text id="kangaroo_care-label">
+						<value>Has the mother been instructed by kangaroo mother care?</value>
+						<value form="image">jr://file/commcare/image/data/kangaroo.png</value>
+					</text>
+					<text id="newborn_high_risk-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="newborn_high_risk-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="newborn_bednet-label">
+						<value>Did the newborn sleep under a bednet last night?</value>
+						<value form="image">jr://file/commcare/image/data/sleeps_under_net.png</value>
+					</text>
+					<text id="kangaroo_care-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="kangaroo_care-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="newborn_vaccine-label">
+						<value>OPV-0 and BCG immunizations received?</value>
+						<value form="image">jr://file/commcare/image/data/opv_bcg.png</value>
+					</text>
+					<text id="newborn_vaccine-opv0-label">
+						<value>OPV-0</value>
+					</text>
+					<text id="newborn_vaccine-bcg-label">
+						<value>BCG</value>
+					</text>
+					<text id="neonatal_danger_signs-label">
+						<value>Neonatal danger signs</value>
+						<value form="image">jr://file/commcare/image/data/danger_sign_baby.png</value>
+					</text>
+					<text id="father_present-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="father_present-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="which_danger_sign-label">
+						<value>What danger signs?</value>
+						<value form="image">jr://file/commcare/image/data/danger_sign_baby.png</value>
+					</text>
+					<text id="which_danger_sign-breasfeeding-label">
+						<value>Unable or difficulty breastfeeding</value>
+					</text>
+					<text id="which_danger_sign-convulsion-label">
+						<value>Convulsion (fits)</value>
+					</text>
+					<text id="which_danger_sign-lethargy-label">
+						<value>Lethargy, unconscious</value>
+					</text>
+					<text id="which_danger_sign-fever-label">
+						<value>Fever (baby warm to touch)</value>
+					</text>
+					<text id="which_danger_sign-shrill_cry-label">
+						<value>Shrill cry</value>
+					</text>
+					<text id="which_danger_sign-respiratory-label">
+						<value>Acute respiratory infection (fast, noisy or difficult breathing, lower chest indrawing)</value>
+					</text>
+					<text id="which_danger_sign-cord_stump_smell-label">
+						<value>Cord stump with pus or foul smell</value>
+					</text>
+					<text id="which_danger_sign-no_movement-label">
+						<value>Movement only when stimulated</value>
+					</text>
+					<text id="which_danger_sign-hypothermia-label">
+						<value>Hypothermia (baby cold to touch)</value>
+					</text>
+					<text id="which_danger_sign-jaundice-label">
+						<value>Yellow discoloration before 24 hours (jaundice observed on the palms and soles)</value>
+					</text>
+					<text id="which_danger_sign-cord_stump_red-label">
+						<value>Cord stump with redness, or selling extending to the skin</value>
+					</text>
+					<text id="which_danger_sign-postules-label">
+						<value>More than 10 pustules (or spots) found in the skin</value>
+					</text>
+					<text id="which_danger_sign-swollen_abdomen-label">
+						<value>Swollen abdomen</value>
+					</text>
+					<text id="which_danger_sign-no_stool-label">
+						<value>No stool after 1 day</value>
+					</text>
+					<text id="which_danger_sign-no_urine-label">
+						<value>No urine after 2 days</value>
+					</text>
+					<text id="which_danger_sign-other-label">
+						<value>Other</value>
+					</text>
+					<text id="infant-label">
+						<value>Infant</value>
+					</text>
+					<text id="infant_high_risk-label">
+						<value>Is the infant high risk?</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_baby.png</value>
+					</text>
+					<text id="infant_high_risk-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="infant_high_risk-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="why_infant_high_risk-label">
+						<value>Why is the infant high risk?</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_baby.png</value>
+					</text>
+					<text id="why_infant_high_risk-ovc-label">
+						<value>OVC</value>
+					</text>
+					<text id="why_infant_high_risk-hiv_positive-label">
+						<value>HIV positive</value>
+					</text>
+					<text id="why_infant_high_risk-malnutrition-label">
+						<value>Malnutrition</value>
+					</text>
+					<text id="why_infant_high_risk-congenital_malformation-label">
+						<value>Congenital malformation</value>
+					</text>
+					<text id="why_infant_high_risk-disability-label">
+						<value>Disability</value>
+					</text>
+					<text id="why_infant_high_risk-other-label">
+						<value>Other</value>
+					</text>
+					<text id="birth_certificate-label">
+						<value>Does the infant have a birth certificate?</value>
+						<value form="image">jr://file/commcare/image/data/birth registration.png</value>
+					</text>
+					<text id="infant_high_risk-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="infant_high_risk-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="vitamin_a-label">
+						<value>Child received vitamin A once in last 6 months</value>
+						<value form="image">jr://file/commcare/image/data/vitamin_a.png</value>
+					</text>
+					<text id="birth_certificate-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="birth_certificate-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="vitamin_a-dont_know-label">
+						<value>Don't know</value>
+					</text>
+					<text id="deworming-label">
+						<value>Child received deworming once in last 6 months</value>
+						<value form="image">jr://file/commcare/image/data/deworming_infant.png</value>
+					</text>
+					<text id="vitamin_a-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="vitamin_a-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="deworming-dont_know-label">
+						<value>Don't know</value>
+					</text>
+					<text id="ITN-label">
+						<value>Child slept under an ITN last night?</value>
+						<value form="image">jr://file/commcare/image/data/baby_bednet.png</value>
+					</text>
+					<text id="deworming-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="deworming-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="infant_immunizations-label">
+						<value>Which immunizations has the infant received</value>
+						<value form="image">jr://file/commcare/image/data/immunizations.png</value>
+					</text>
+					<text id="immunizations_received-bcg-label">
+						<value>BCG</value>
+						<value form="image">jr://file/commcare/image/data/bcg.png</value>
+					</text>
+					<text id="immunizations_received-opv0-label">
+						<value>OPV-0</value>
+						<value form="image">jr://file/commcare/image/data/opv0.png</value>
+					</text>
+					<text id="immunizations_received-opv1-label">
+						<value>OPV-1 / Penta 1 OR DTP1</value>
+						<value form="image">jr://file/commcare/image/data/opv1.png</value>
+					</text>
+					<text id="immunizations_received-opv2-label">
+						<value>OPV-2 / Penta 2 or DTP2</value>
+						<value form="image">jr://file/commcare/image/data/opv2.png</value>
+					</text>
+					<text id="immunizations_received-opv3-label">
+						<value>OPV-3 / Penta 3 or DTP3</value>
+						<value form="image">jr://file/commcare/image/data/opv3.png</value>
+					</text>
+					<text id="measles_immunization-label">
+						<value>Measles / Yellow fever vaccine?</value>
+						<value form="image">jr://file/commcare/image/data/measles.png</value>
+					</text>
+					<text id="measles_vaccine-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="measles_vaccine-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="using_fp-label">
+						<value>Is the mother using a family planning method?</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+					</text>
+					<text id="ITN-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="ITN-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="which_fp-label">
+						<value>What family planning method?</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+					</text>
+					<text id="which_fp-condom-label">
+						<value>Male/female condom</value>
+						<value form="image">jr://file/commcare/image/data/condom.png</value>
+					</text>
+					<text id="which_fp-iud-label">
+						<value>IUD</value>
+						<value form="image">jr://file/commcare/image/data/iud.png</value>
+					</text>
+					<text id="which_fp-contraceptive-label">
+						<value>Contraceptive pill</value>
+						<value form="image">jr://file/commcare/image/data/pill.png</value>
+					</text>
+					<text id="which_fp-depo_provera-label">
+						<value>Depo-provera injection or implant</value>
+						<value form="image">jr://file/commcare/image/data/depo.png</value>
+					</text>
+					<text id="which_fp-permanent-label">
+						<value>Permanent method (vasectomy / ligation)</value>
+					</text>
+					<text id="infant_danger_signs-label">
+						<value>Does the infant have any danger signs?</value>
+						<value form="image">jr://file/commcare/image/data/danger_sign_baby.png</value>
+					</text>
+					<text id="infant_danger_signs-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="infant_danger_signs-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="what_danger_signs-label">
+						<value>What are the danger signs</value>
+					</text>
+					<text id="what_danger_signs-fever-label">
+						<value>Fever</value>
+						<value form="image">jr://file/commcare/image/data/thermometer.png</value>
+					</text>
+					<text id="what_danger_signs-respiratory-label">
+						<value>Acute respiratory infection</value>
+					</text>
+					<text id="what_danger_signs-diarrhea_dehydration-label">
+						<value>Diarrhea with dehydration</value>
+						<value form="image">jr://file/commcare/image/data/dehydration.png</value>
+					</text>
+					<text id="what_danger_signs-diarrhea_blood-label">
+						<value>Diarrhea with blood in stool</value>
+						<value form="image">jr://file/commcare/image/data/diarrhea.png</value>
+					</text>
+					<text id="what_danger_signs-other-label">
+						<value>Other</value>
+					</text>
+					<text id="what_danger_signs-unable_to_feed-label">
+						<value>Unable to feed</value>
+					</text>
+					<text id="what_danger_signs-convulsion-label">
+						<value>Convulsions</value>
+					</text>
+					<text id="what_danger_signs-lethargy-label">
+						<value>Lethargy, unconcious</value>
+					</text>
+					<text id="what_danger_signs-vomit-label">
+						<value>Vomit everything ingested</value>
+						<value form="image">jr://file/commcare/image/data/vomits_everything.png</value>
+					</text>
+					<text id="ors_given-label">
+						<value>Was ORS given?</value>
+						<value form="image">jr://file/commcare/image/data/ors.png</value>
+					</text>
+					<text id="ors_given-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="ors_given-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="wash_hands-label">
+						<value>Wash hands with soap at 3 critical times?</value>
+						<value form="image">jr://file/commcare/image/data/wash_hands.png</value>
+					</text>
+					<text id="ors_given-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="ors_given-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="breastfed_twice-label">
+						<value>Being breastfed twice per day?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_continuous.png</value>
+					</text>
+					<text id="wash_hands-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="wash_hands-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="semi_solid_feeds-label">
+						<value>Receiving semi-solid complementary feeds 3 times per day?</value>
+						<value form="image">jr://file/commcare/image/data/comp_feeding.png</value>
+					</text>
+					<text id="breastfed_twice-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="breastfed_twice-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="three_food_groups-label">
+						<value>Eating from the three food groups?</value>
+						<value form="image">jr://file/commcare/image/data/food_groups.png</value>
+					</text>
+					<text id="semi_solid_feeds-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="semi_solid_feeds-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="eating_iron_rich_food-label">
+						<value>Eating iron rich foods every day?</value>
+						<value form="image">jr://file/commcare/image/data/iron_rich_foods.png</value>
+					</text>
+					<text id="three_food_groups-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="three_food_groups-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="half_cup_iron-label">
+						<value>Feeds 1/2 cup iron-rich food each meal?</value>
+					</text>
+					<text id="eating_iron_rich_food-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="eating_iron_rich_food-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="one_cup_iron-label">
+						<value>Feeds 1 cup iron-rich food each meal?</value>
+					</text>
+					<text id="half_cup_iron-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="half_cup_iron-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="six_times_per_day-label">
+						<value>Feeds 6 times per day?</value>
+						<value form="image">jr://file/commcare/image/data/feed_6.png</value>
+					</text>
+					<text id="half_cup_iron-2-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="half_cup_iron-2-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="needs_referral-label">
+						<value>Needs referral</value>
+						<value form="image">jr://file/commcare/image/data/referral_child.png</value>
+					</text>
+					<text id="infant_danger_signs-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="infant_danger_signs-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="referral-label">
+						<value>Referral</value>
+					</text>
+					<text id="Debug-label">
+						<value>Debug</value>
+					</text>
+					<text id="question320-label">
+						<value>dob: <output value="format-date(/data/dob, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-11-3-label">
+						<value>days_since_birth: <output value="/data/days_since_birth"/></value>
+					</text>
+					<text id="question320-11-label">
+						<value>visit_type: <output value="/data/visit_type"/></value>
+					</text>
+					<text id="question320-11-4-label">
+						<value>needs_followup: <output value="/data/needs_followup"/></value>
+					</text>
+					<text id="question320-11-2-label">
+						<value>total_newborn_visits: <output value="/data/total_newborn_visits"/></value>
+					</text>
+					<text id="question320-11-5-label">
+						<value>total_infant_visits: <output value="/data/total_infant_visits"/></value>
+					</text>
+					<text id="question320-11-1-label">
+						<value>next_visit_type: <output value="/data/next_visit_type"/></value>
+					</text>
+					<text id="question320-11-6-label">
+						<value>weight_at_birth: <output value="/data/weight_at_birth"/></value>
+					</text>
+					<text id="question320-1-label">
+						<value>follow_up_date: <output value="format-date(/data/follow_up_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-10-2-label">
+						<value>next_child_visit: <output value="format-date(/data/next_child_visit, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-2-label">
+						<value>child_v5a_date: <output value="format-date(/data/child_v5a_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-8-label">
+						<value>child_v5b_date: <output value="format-date(/data/child_v5b_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-3-label">
+						<value>child_v5c_date: <output value="format-date(/data/child_v5c_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-4-label">
+						<value>child_v5d_date: <output value="format-date(/data/child_v5d_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-5-label">
+						<value>child_v6_date: <output value="format-date(/data/child_v6_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-6-label">
+						<value>child_v7_date: <output value="format-date(/data/child_v7_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-7-label">
+						<value>child_v8_date: <output value="format-date(/data/child_v8_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-9-label">
+						<value>child_v9_date: <output value="format-date(/data/child_v9_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-10-label">
+						<value>child_v10_date: <output value="format-date(/data/child_v10_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question320-10-1-label">
+						<value>child_v11_date: <output value="format-date(/data/child_v11_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="completed-label">
+						<value>Thank you. This visit is completed.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/prev_measles_immunization" relevant="count(/data/prev_measles_immunization) &gt; 0" calculate="/data/prev_measles_immunization"/><bind nodeset="/data/case/update/infant_danger_signs" relevant="count(/data/infant/infant_danger_signs) &gt; 0" calculate="/data/infant/infant_danger_signs"/><bind nodeset="/data/case/update/kangaroo_care" relevant="count(/data/newborn/kangaroo_care) &gt; 0" calculate="/data/newborn/kangaroo_care"/><bind nodeset="/data/case/update/visit_type" relevant="count(/data/visit_type) &gt; 0" calculate="/data/visit_type"/><bind nodeset="/data/case/update/using_fp" relevant="count(/data/infant/using_fp) &gt; 0" calculate="/data/infant/using_fp"/><bind nodeset="/data/case/update/father_present" relevant="count(/data/father_present) &gt; 0" calculate="/data/father_present"/><bind nodeset="/data/case/update/ors_given" relevant="count(/data/infant/ors_given) &gt; 0" calculate="/data/infant/ors_given"/><bind nodeset="/data/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/case/update/child_v10_date" relevant="count(/data/child_v10_date) &gt; 0" calculate="/data/child_v10_date"/><bind nodeset="/data/case/update/prev_newborn_vaccine" relevant="count(/data/prev_newborn_vaccine) &gt; 0" calculate="/data/prev_newborn_vaccine"/><bind nodeset="/data/case/update/child_v5a_date" relevant="count(/data/child_v5a_date) &gt; 0" calculate="/data/child_v5a_date"/><bind nodeset="/data/case/update/next_visit_type" relevant="count(/data/next_visit_type) &gt; 0" calculate="/data/next_visit_type"/><bind nodeset="/data/case/update/exclusively_breasfed" relevant="count(/data/newborn/exclusively_breasfed) &gt; 0" calculate="/data/newborn/exclusively_breasfed"/><bind nodeset="/data/case/update/total_newborn_visits" relevant="count(/data/total_newborn_visits) &gt; 0" calculate="/data/total_newborn_visits"/><bind nodeset="/data/case/update/six_times_per_day" relevant="count(/data/infant/six_times_per_day) &gt; 0" calculate="/data/infant/six_times_per_day"/><bind nodeset="/data/case/update/child_v5b_date" relevant="count(/data/child_v5b_date) &gt; 0" calculate="/data/child_v5b_date"/><bind nodeset="/data/case/update/child_id" relevant="count(/data/child_id) &gt; 0" calculate="/data/child_id"/><bind nodeset="/data/case/update/prev_newborn_bednet" relevant="count(/data/prev_newborn_bednet) &gt; 0" calculate="/data/prev_newborn_bednet"/><bind nodeset="/data/case/update/prev_neonatal_danger_signs" relevant="count(/data/prev_neonatal_danger_signs) &gt; 0" calculate="/data/prev_neonatal_danger_signs"/><bind nodeset="/data/case/update/bf_alert" relevant="count(/data/bf_alert) &gt; 0" calculate="/data/bf_alert"/><bind nodeset="/data/case/update/which_fp" relevant="count(/data/infant/which_fp) &gt; 0" calculate="/data/infant/which_fp"/><bind nodeset="/data/case/update/newborn_bednet" relevant="count(/data/newborn/newborn_bednet) &gt; 0" calculate="/data/newborn/newborn_bednet"/><bind nodeset="/data/case/update/prev_total_infant_visits" relevant="count(/data/prev_total_infant_visits) &gt; 0" calculate="/data/prev_total_infant_visits"/><bind nodeset="/data/case/update/vitamin_a" relevant="count(/data/infant/vitamin_a) &gt; 0" calculate="/data/infant/vitamin_a"/><bind nodeset="/data/case/update/which_danger_sign" relevant="count(/data/newborn/which_danger_sign) &gt; 0" calculate="/data/newborn/which_danger_sign"/><bind nodeset="/data/case/update/prev_birth_cert" relevant="count(/data/prev_birth_cert) &gt; 0" calculate="/data/prev_birth_cert"/><bind nodeset="/data/case/update/why_high_risk" relevant="count(/data/newborn/why_high_risk) &gt; 0" calculate="/data/newborn/why_high_risk"/><bind nodeset="/data/case/update/neonatal_danger_signs" relevant="count(/data/newborn/neonatal_danger_signs) &gt; 0" calculate="/data/newborn/neonatal_danger_signs"/><bind nodeset="/data/case/update/child_v5c_date" relevant="count(/data/child_v5c_date) &gt; 0" calculate="/data/child_v5c_date"/><bind nodeset="/data/case/update/difficulties_breast_feeding" relevant="count(/data/newborn/difficulties_breast_feeding) &gt; 0" calculate="/data/newborn/difficulties_breast_feeding"/><bind nodeset="/data/case/update/half_cup_iron" relevant="count(/data/infant/half_cup_iron) &gt; 0" calculate="/data/infant/half_cup_iron"/><bind nodeset="/data/case/update/total_infant_visits" relevant="count(/data/total_infant_visits) &gt; 0" calculate="/data/total_infant_visits"/><bind nodeset="/data/case/update/next_child_visit" relevant="count(/data/next_child_visit) &gt; 0" calculate="/data/next_child_visit"/><bind nodeset="/data/case/update/child_name" relevant="count(/data/registration/child_name) &gt; 0" calculate="/data/registration/child_name"/><bind nodeset="/data/case/update/newborn_vaccine_complete" relevant="count(/data/newborn_vaccine_complete) &gt; 0" calculate="/data/newborn_vaccine_complete"/><bind nodeset="/data/case/update/child_alive" relevant="count(/data/child_alive) &gt; 0" calculate="/data/child_alive"/><bind nodeset="/data/case/update/mother_alive" relevant="count(/data/mother_alive) &gt; 0" calculate="/data/mother_alive"/><bind nodeset="/data/case/update/child_v7_date" relevant="count(/data/child_v7_date) &gt; 0" calculate="/data/child_v7_date"/><bind nodeset="/data/case/update/newborn_vaccine" relevant="count(/data/newborn/newborn_vaccine) &gt; 0" calculate="/data/newborn/newborn_vaccine"/><bind nodeset="/data/case/update/breastfed_twice" relevant="count(/data/infant/breastfed_twice) &gt; 0" calculate="/data/infant/breastfed_twice"/><bind nodeset="/data/case/update/child_v8_date" relevant="count(/data/child_v8_date) &gt; 0" calculate="/data/child_v8_date"/><bind nodeset="/data/case/update/date_of_visit" relevant="count(/data/date_of_visit) &gt; 0" calculate="/data/date_of_visit"/><bind nodeset="/data/case/update/why_infant_high_risk" relevant="count(/data/infant/why_infant_high_risk) &gt; 0" calculate="/data/infant/why_infant_high_risk"/><bind nodeset="/data/case/update/child_v6_date" relevant="count(/data/child_v6_date) &gt; 0" calculate="/data/child_v6_date"/><bind nodeset="/data/case/update/prev_total_newborn_visits" relevant="count(/data/prev_total_newborn_visits) &gt; 0" calculate="/data/prev_total_newborn_visits"/><bind nodeset="/data/case/update/wash_hands" relevant="count(/data/infant/wash_hands) &gt; 0" calculate="/data/infant/wash_hands"/><bind nodeset="/data/case/update/newborn_high_risk" relevant="count(/data/newborn/newborn_high_risk) &gt; 0" calculate="/data/newborn/newborn_high_risk"/><bind nodeset="/data/case/update/child_v9_date" relevant="count(/data/child_v9_date) &gt; 0" calculate="/data/child_v9_date"/><bind nodeset="/data/case/update/three_food_groups" relevant="count(/data/infant/three_food_groups) &gt; 0" calculate="/data/infant/three_food_groups"/><bind nodeset="/data/case/update/days_since_birth" relevant="count(/data/days_since_birth) &gt; 0" calculate="/data/days_since_birth"/><bind nodeset="/data/case/update/needs_followup" relevant="count(/data/needs_followup) &gt; 0" calculate="/data/needs_followup"/><bind nodeset="/data/case/update/one_cup_iron" relevant="count(/data/infant/one_cup_iron) &gt; 0" calculate="/data/infant/one_cup_iron"/><bind nodeset="/data/case/update/bf_difficulties" relevant="count(/data/newborn/bf_difficulties) &gt; 0" calculate="/data/newborn/bf_difficulties"/><bind nodeset="/data/case/update/child_v11_date" relevant="count(/data/child_v11_date) &gt; 0" calculate="/data/child_v11_date"/><bind nodeset="/data/case/update/infant_immunizations" relevant="count(/data/infant/infant_immunizations) &gt; 0" calculate="/data/infant/infant_immunizations"/><bind nodeset="/data/case/update/ITN" relevant="count(/data/infant/ITN) &gt; 0" calculate="/data/infant/ITN"/><bind nodeset="/data/case/update/infant_high_risk" relevant="count(/data/infant/infant_high_risk) &gt; 0" calculate="/data/infant/infant_high_risk"/><bind nodeset="/data/case/update/semi_solid_feeds" relevant="count(/data/infant/semi_solid_feeds) &gt; 0" calculate="/data/infant/semi_solid_feeds"/><bind nodeset="/data/case/update/needs_referral" relevant="count(/data/infant/needs_referral) &gt; 0" calculate="/data/infant/needs_referral"/><bind nodeset="/data/case/update/dob" relevant="count(/data/dob) &gt; 0" calculate="/data/dob"/><bind nodeset="/data/case/update/gender" relevant="count(/data/registration/gender) &gt; 0" calculate="/data/registration/gender"/><bind nodeset="/data/case/update/eating_iron_rich_food" relevant="count(/data/infant/eating_iron_rich_food) &gt; 0" calculate="/data/infant/eating_iron_rich_food"/><bind nodeset="/data/case/update/measles_immunization" relevant="count(/data/infant/measles_immunization) &gt; 0" calculate="/data/infant/measles_immunization"/><bind nodeset="/data/case/update/what_danger_signs" relevant="count(/data/infant/what_danger_signs) &gt; 0" calculate="/data/infant/what_danger_signs"/><bind nodeset="/data/case/update/deworming" relevant="count(/data/infant/deworming) &gt; 0" calculate="/data/infant/deworming"/><bind nodeset="/data/case/update/prev_kangaroo_care" relevant="count(/data/prev_kangaroo_care) &gt; 0" calculate="/data/prev_kangaroo_care"/><bind nodeset="/data/case/update/birth_certificate" relevant="count(/data/infant/birth_certificate) &gt; 0" calculate="/data/infant/birth_certificate"/><bind nodeset="/data/case/update/follow_up_date" relevant="count(/data/follow_up_date) &gt; 0" calculate="/data/follow_up_date"/><bind nodeset="/data/case/update/place_of_birth" relevant="count(/data/place_of_birth) &gt; 0" calculate="/data/place_of_birth"/><bind nodeset="/data/case/update/prev_exclusively_breastfed" relevant="count(/data/prev_exclusively_breastfed) &gt; 0" calculate="/data/prev_exclusively_breastfed"/><bind nodeset="/data/case/update/child_v5d_date" relevant="count(/data/child_v5d_date) &gt; 0" calculate="/data/child_v5d_date"/><bind nodeset="/data/case/update/create_referral" relevant="count(/data/create_referral) &gt; 0" calculate="/data/create_referral"/><bind nodeset="/data/case/update/weight_at_birth" relevant="count(/data/weight_at_birth) &gt; 0" calculate="/data/weight_at_birth"/><bind nodeset="/data/case/update/prev_difficulties_breast_feeding" relevant="count(/data/prev_difficulties_breast_feeding) &gt; 0" calculate="/data/prev_difficulties_breast_feeding"/><bind nodeset="/data/case/update/prev_infant_immunizations" relevant="count(/data/prev_infant_immunizations) &gt; 0" calculate="/data/prev_infant_immunizations"/><setvalue ref="/data/infant/which_fp" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/which_fp"/><setvalue ref="/data/infant/infant_high_risk" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/infant_high_risk"/><setvalue ref="/data/infant/one_cup_iron" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/one_cup_iron"/><setvalue ref="/data/newborn/newborn_vaccine" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/newborn_vaccine"/><setvalue ref="/data/newborn/neonatal_danger_signs" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_neonatal_danger_signs"/><setvalue ref="/data/prev_newborn_bednet" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/newborn_bednet"/><setvalue ref="/data/newborn/difficulties_breast_feeding" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/difficulties_breast_feeding"/><setvalue ref="/data/mother_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_id"/><setvalue ref="/data/newborn/newborn_high_risk" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/newborn_high_risk"/><setvalue ref="/data/weight_at_birth" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight_at_birth"/><setvalue ref="/data/newborn/why_high_risk" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/why_high_risk"/><setvalue ref="/data/child_alive" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/child_alive"/><setvalue ref="/data/infant/measles_immunization" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/measles_immunization"/><setvalue ref="/data/place_of_birth" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/place_of_birth"/><setvalue ref="/data/dob" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/dob"/><setvalue ref="/data/infant/infant_immunizations" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/infant_immunizations"/><setvalue ref="/data/newborn/kangaroo_care" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/kangaroo_care"/><setvalue ref="/data/prev_dob" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/dob"/><setvalue ref="/data/prev_birth_cert" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/birth_certificate"/><setvalue ref="/data/registration/child_name" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/child_name"/><setvalue ref="/data/infant/ITN" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/ITN"/><setvalue ref="/data/infant/eating_iron_rich_food" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/eating_iron_rich_food"/><setvalue ref="/data/mother_alive" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_alive"/><setvalue ref="/data/infant/semi_solid_feeds" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/semi_solid_feeds"/><setvalue ref="/data/newborn/bf_difficulties" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/bf_difficulties"/><setvalue ref="/data/infant/breastfed_twice" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/breastfed_twice"/><setvalue ref="/data/infant/three_food_groups" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/three_food_groups"/><setvalue ref="/data/infant/using_fp" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/using_fp"/><setvalue ref="/data/child_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/child_id"/><setvalue ref="/data/prev_newborn_vaccine" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_newborn_vaccine"/><setvalue ref="/data/infant/half_cup_iron" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/half_cup_iron"/><setvalue ref="/data/total_infant_visits" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_total_infant_visits"/><setvalue ref="/data/bf_alert" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/bf_alert"/><setvalue ref="/data/infant/vitamin_a" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/vitamin_a"/><setvalue ref="/data/newborn/exclusively_breasfed" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/exclusively_breasfed"/><setvalue ref="/data/infant/deworming" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/deworming"/><setvalue ref="/data/prev_difficulties_breast_feeding" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/difficulties_breast_feeding"/><setvalue ref="/data/infant/birth_certificate" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/birth_certificate"/><setvalue ref="/data/newborn_vaccine_complete" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/newborn_vaccine_complete"/><setvalue ref="/data/infant/what_danger_signs" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/what_danger_signs"/><setvalue ref="/data/prev_deworm" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/deworming"/><setvalue ref="/data/prev_kangaroo_care" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/kangaroo_care"/><setvalue ref="/data/birthweight" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight_at_birth"/><setvalue ref="/data/infant/six_times_per_day" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/six_times_per_day"/><setvalue ref="/data/prev_exclusively_breastfed" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/exclusively_breasfed"/><setvalue ref="/data/newborn/newborn_bednet" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/newborn_bednet"/><setvalue ref="/data/infant/infant_danger_signs" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/infant_danger_signs"/><setvalue ref="/data/total_newborn_visits" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_total_newborn_visits"/><setvalue ref="/data/infant/ors_given" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/ors_given"/><setvalue ref="/data/infant/wash_hands" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/wash_hands"/><setvalue ref="/data/newborn/which_danger_sign" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/which_danger_sign"/><setvalue ref="/data/registration/gender" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/father_present"/><setvalue ref="/data/infant/why_infant_high_risk" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/why_infant_high_risk"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/father_present">
+			<label ref="jr:itext('father_present-label')"/>
+			<item>
+				<label ref="jr:itext('newborn_bednet-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('newborn_bednet-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/dob_check">
+			<label ref="jr:itext('dob_check-label')"/>
+			<item>
+				<label ref="jr:itext('dob_chekc-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('dob_chekc-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/dob">
+			<label ref="jr:itext('dob_register-label')"/>
+		</input>
+		<input ref="/data/birthweight">
+			<label ref="jr:itext('birthweight-label')"/>
+		</input>
+		<group ref="/data/registration">
+			<label ref="jr:itext('registration-label')"/>
+			<input ref="/data/registration/child_name">
+				<label ref="jr:itext('child_name-label2')"/>
+			</input>
+			<select1 ref="/data/registration/gender">
+				<label ref="jr:itext('gender-label')"/>
+				<item>
+					<label ref="jr:itext('gender-male-label')"/>
+					<value>male</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gender-female-label')"/>
+					<value>female</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/newborn">
+			<label ref="jr:itext('newborn-label')"/>
+			<select1 ref="/data/newborn/exclusively_breasfed">
+				<label ref="jr:itext('exclusively_breasfed-label')"/>
+				<item>
+					<label ref="jr:itext('exclusive_breasfed-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('exclusive_breasfed-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/newborn/difficulties_breast_feeding">
+				<label ref="jr:itext('difficulties_breast_feeding-label')"/>
+				<item>
+					<label ref="jr:itext('exclusive_breasfed-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('exclusive_breasfed-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/newborn/bf_difficulties">
+				<label ref="jr:itext('bf_difficulties-label')"/>
+				<item>
+					<label ref="jr:itext('bf_difficulties-pain-label')"/>
+					<value>pain</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bf_difficulties-low_milk-label')"/>
+					<value>low_milk</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bf_difficulties-cracked_nipples-label')"/>
+					<value>cracked_nipples</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bf_difficulties-infection-label')"/>
+					<value>infection</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bf_difficulties-baby_refuses-label')"/>
+					<value>baby_refuses</value>
+				</item>
+			</select>
+			<select1 ref="/data/newborn/newborn_high_risk">
+				<label ref="jr:itext('newborn_high_risk-label')"/>
+				<item>
+					<label ref="jr:itext('newborn_high_risk-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('newborn_high_risk-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/newborn/why_high_risk">
+				<label ref="jr:itext('why_high_risk-label')"/>
+				<item>
+					<label ref="jr:itext('why_high_risk-low_birthweight-label')"/>
+					<value>low_birthweight</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_high_risk-premature-label')"/>
+					<value>premature</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_high_risk-congenital_malformation-label')"/>
+					<value>congenital_malformation</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_high_risk-maternal_death-label')"/>
+					<value>maternal_death</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_high_risk-other-label')"/>
+					<value>other</value>
+				</item>
+			</select>
+			<select1 ref="/data/newborn/kangaroo_care">
+				<label ref="jr:itext('kangaroo_care-label')"/>
+				<item>
+					<label ref="jr:itext('newborn_high_risk-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('newborn_high_risk-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/newborn/newborn_bednet">
+				<label ref="jr:itext('newborn_bednet-label')"/>
+				<item>
+					<label ref="jr:itext('kangaroo_care-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('kangaroo_care-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/newborn/newborn_vaccine">
+				<label ref="jr:itext('newborn_vaccine-label')"/>
+				<item>
+					<label ref="jr:itext('newborn_vaccine-opv0-label')"/>
+					<value>opv0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('newborn_vaccine-bcg-label')"/>
+					<value>bcg</value>
+				</item>
+			</select>
+			<select1 ref="/data/newborn/neonatal_danger_signs">
+				<label ref="jr:itext('neonatal_danger_signs-label')"/>
+				<item>
+					<label ref="jr:itext('father_present-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('father_present-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/newborn/which_danger_sign">
+				<label ref="jr:itext('which_danger_sign-label')"/>
+				<item>
+					<label ref="jr:itext('which_danger_sign-breasfeeding-label')"/>
+					<value>breasfeeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-convulsion-label')"/>
+					<value>convulsion</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-lethargy-label')"/>
+					<value>lethargy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-fever-label')"/>
+					<value>fever</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-shrill_cry-label')"/>
+					<value>shrill_cry</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-respiratory-label')"/>
+					<value>respiratory</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-cord_stump_smell-label')"/>
+					<value>cord_stump_smell</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-no_movement-label')"/>
+					<value>no_movement</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-hypothermia-label')"/>
+					<value>hypothermia</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-jaundice-label')"/>
+					<value>jaundice</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-cord_stump_red-label')"/>
+					<value>cord_stump_red</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-postules-label')"/>
+					<value>postules</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-swollen_abdomen-label')"/>
+					<value>swollen_abdomen</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-no_stool-label')"/>
+					<value>no_stool</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-no_urine-label')"/>
+					<value>no_urine</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_danger_sign-other-label')"/>
+					<value>other</value>
+				</item>
+			</select>
+		</group>
+		<group ref="/data/infant">
+			<label ref="jr:itext('infant-label')"/>
+			<select1 ref="/data/infant/infant_high_risk">
+				<label ref="jr:itext('infant_high_risk-label')"/>
+				<item>
+					<label ref="jr:itext('infant_high_risk-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('infant_high_risk-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/infant/why_infant_high_risk">
+				<label ref="jr:itext('why_infant_high_risk-label')"/>
+				<item>
+					<label ref="jr:itext('why_infant_high_risk-ovc-label')"/>
+					<value>ovc</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_infant_high_risk-hiv_positive-label')"/>
+					<value>hiv_positive</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_infant_high_risk-malnutrition-label')"/>
+					<value>malnutrition</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_infant_high_risk-congenital_malformation-label')"/>
+					<value>congenital_malformation</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_infant_high_risk-disability-label')"/>
+					<value>disability</value>
+				</item>
+				<item>
+					<label ref="jr:itext('why_infant_high_risk-other-label')"/>
+					<value>other</value>
+				</item>
+			</select>
+			<select1 ref="/data/infant/birth_certificate">
+				<label ref="jr:itext('birth_certificate-label')"/>
+				<item>
+					<label ref="jr:itext('infant_high_risk-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('infant_high_risk-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/vitamin_a">
+				<label ref="jr:itext('vitamin_a-label')"/>
+				<item>
+					<label ref="jr:itext('birth_certificate-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('birth_certificate-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vitamin_a-dont_know-label')"/>
+					<value>dont_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/deworming">
+				<label ref="jr:itext('deworming-label')"/>
+				<item>
+					<label ref="jr:itext('vitamin_a-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('vitamin_a-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('deworming-dont_know-label')"/>
+					<value>dont_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/ITN">
+				<label ref="jr:itext('ITN-label')"/>
+				<item>
+					<label ref="jr:itext('deworming-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('deworming-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/infant/infant_immunizations">
+				<label ref="jr:itext('infant_immunizations-label')"/>
+				<item>
+					<label ref="jr:itext('immunizations_received-bcg-label')"/>
+					<value>bcg</value>
+				</item>
+				<item>
+					<label ref="jr:itext('immunizations_received-opv0-label')"/>
+					<value>opv0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('immunizations_received-opv1-label')"/>
+					<value>opv1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('immunizations_received-opv2-label')"/>
+					<value>opv2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('immunizations_received-opv3-label')"/>
+					<value>opv3</value>
+				</item>
+			</select>
+			<select1 ref="/data/infant/measles_immunization">
+				<label ref="jr:itext('measles_immunization-label')"/>
+				<item>
+					<label ref="jr:itext('measles_vaccine-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('measles_vaccine-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/using_fp">
+				<label ref="jr:itext('using_fp-label')"/>
+				<item>
+					<label ref="jr:itext('ITN-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ITN-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/infant/which_fp">
+				<label ref="jr:itext('which_fp-label')"/>
+				<item>
+					<label ref="jr:itext('which_fp-condom-label')"/>
+					<value>condom</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_fp-iud-label')"/>
+					<value>iud</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_fp-contraceptive-label')"/>
+					<value>contraceptive</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_fp-depo_provera-label')"/>
+					<value>depo_provera</value>
+				</item>
+				<item>
+					<label ref="jr:itext('which_fp-permanent-label')"/>
+					<value>permanent</value>
+				</item>
+			</select>
+			<select1 ref="/data/infant/infant_danger_signs">
+				<label ref="jr:itext('infant_danger_signs-label')"/>
+				<item>
+					<label ref="jr:itext('infant_danger_signs-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('infant_danger_signs-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/infant/what_danger_signs">
+				<label ref="jr:itext('what_danger_signs-label')"/>
+				<item>
+					<label ref="jr:itext('what_danger_signs-fever-label')"/>
+					<value>fever</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-respiratory-label')"/>
+					<value>respiratory</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-diarrhea_dehydration-label')"/>
+					<value>diarrhea_dehydration</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-diarrhea_blood-label')"/>
+					<value>diarrhea_blood</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-other-label')"/>
+					<value>other</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-unable_to_feed-label')"/>
+					<value>unable_to_feed</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-convulsion-label')"/>
+					<value>convulsion</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-lethargy-label')"/>
+					<value>lethargy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('what_danger_signs-vomit-label')"/>
+					<value>vomit</value>
+				</item>
+			</select>
+			<select1 ref="/data/infant/ors_given">
+				<label ref="jr:itext('ors_given-label')"/>
+				<item>
+					<label ref="jr:itext('ors_given-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ors_given-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/wash_hands">
+				<label ref="jr:itext('wash_hands-label')"/>
+				<item>
+					<label ref="jr:itext('ors_given-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('ors_given-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/breastfed_twice">
+				<label ref="jr:itext('breastfed_twice-label')"/>
+				<item>
+					<label ref="jr:itext('wash_hands-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('wash_hands-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/semi_solid_feeds">
+				<label ref="jr:itext('semi_solid_feeds-label')"/>
+				<item>
+					<label ref="jr:itext('breastfed_twice-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('breastfed_twice-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/three_food_groups">
+				<label ref="jr:itext('three_food_groups-label')"/>
+				<item>
+					<label ref="jr:itext('semi_solid_feeds-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('semi_solid_feeds-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/eating_iron_rich_food">
+				<label ref="jr:itext('eating_iron_rich_food-label')"/>
+				<item>
+					<label ref="jr:itext('three_food_groups-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('three_food_groups-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/half_cup_iron">
+				<label ref="jr:itext('half_cup_iron-label')"/>
+				<item>
+					<label ref="jr:itext('eating_iron_rich_food-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('eating_iron_rich_food-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/one_cup_iron">
+				<label ref="jr:itext('one_cup_iron-label')"/>
+				<item>
+					<label ref="jr:itext('half_cup_iron-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('half_cup_iron-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/six_times_per_day">
+				<label ref="jr:itext('six_times_per_day-label')"/>
+				<item>
+					<label ref="jr:itext('half_cup_iron-2-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('half_cup_iron-2-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/infant/needs_referral">
+				<label ref="jr:itext('needs_referral-label')"/>
+				<item>
+					<label ref="jr:itext('infant_danger_signs-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('infant_danger_signs-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/referral">
+			<label ref="jr:itext('referral-label')"/>
+		</group>
+		<group ref="/data/Debug">
+			<label ref="jr:itext('Debug-label')"/>
+			<trigger ref="/data/Debug/question320">
+				<label ref="jr:itext('question320-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-11-3">
+				<label ref="jr:itext('question320-11-3-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-11">
+				<label ref="jr:itext('question320-11-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-11-4">
+				<label ref="jr:itext('question320-11-4-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-11-2">
+				<label ref="jr:itext('question320-11-2-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-11-5">
+				<label ref="jr:itext('question320-11-5-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-11-1">
+				<label ref="jr:itext('question320-11-1-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-11-6">
+				<label ref="jr:itext('question320-11-6-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-1">
+				<label ref="jr:itext('question320-1-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-10-2">
+				<label ref="jr:itext('question320-10-2-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-2">
+				<label ref="jr:itext('question320-2-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-8">
+				<label ref="jr:itext('question320-8-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-3">
+				<label ref="jr:itext('question320-3-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-4">
+				<label ref="jr:itext('question320-4-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-5">
+				<label ref="jr:itext('question320-5-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-6">
+				<label ref="jr:itext('question320-6-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-7">
+				<label ref="jr:itext('question320-7-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-9">
+				<label ref="jr:itext('question320-9-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-10">
+				<label ref="jr:itext('question320-10-label')"/>
+			</trigger>
+			<trigger ref="/data/Debug/question320-10-1">
+				<label ref="jr:itext('question320-10-1-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/completed">
+			<label ref="jr:itext('completed-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

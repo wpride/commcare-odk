@@ -1,0 +1,1055 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite descriptor="Suite File" version="33">
+  <xform>
+    <resource id="15a8553ea85db0dadad1508b1cceb4393203a1ac" version="33" descriptor="Form: (Module Basic Layout) - Basic Case">
+      <location authority="local">./modules-0/forms-0.xml</location>
+      <location authority="remote">./modules-0/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="cfc8555a933ba3a1599e8e8caa5528adc500bb44" version="33" descriptor="Form: (Module Layout 2) - Case Create">
+      <location authority="local">./modules-1/forms-0.xml</location>
+      <location authority="remote">./modules-1/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="6617b7b779d6cec2bdacf13604738aef3126d8c9" version="33" descriptor="Form: (Module Layout 2) - Case Edit">
+      <location authority="local">./modules-1/forms-1.xml</location>
+      <location authority="remote">./modules-1/forms-1.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="81be114d46859421a81ee24114e822878be92e70" version="33" descriptor="Form: (Module Layout 2) - Add Parents">
+      <location authority="local">./modules-1/forms-2.xml</location>
+      <location authority="remote">./modules-1/forms-2.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="baff6c2f0d3789e9cc887a4c4ef1b5f9715d7f22" version="33" descriptor="Form: (Module Layout 3) - Case Edit 3">
+      <location authority="local">./modules-2/forms-0.xml</location>
+      <location authority="remote">./modules-2/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="a77ebbc5107caa5ff298318e68c709c59c93d153" version="33" descriptor="Form: (Module Layout 4) - Case Edit 4">
+      <location authority="local">./modules-3/forms-0.xml</location>
+      <location authority="remote">./modules-3/forms-0.xml</location>
+    </resource>
+  </xform>
+  <locale language="default">
+    <resource id="app_default_strings" version="33" descriptor="Translations: Default Language">
+      <location authority="local">./default/app_strings.txt</location>
+      <location authority="remote">./default/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="en">
+    <resource id="app_en_strings" version="33" descriptor="Translations: English">
+      <location authority="local">./en/app_strings.txt</location>
+      <location authority="remote">./en/app_strings.txt</location>
+    </resource>
+  </locale>
+  <detail id="m0_case_short">
+    <title>
+      <text>
+        <locale id="m0.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_firstName_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_lastEvaluation_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="lastEvaluation"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_attachment:pictureChild_3.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/pictureChild"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m0_case_long">
+    <title>
+      <text>
+        <locale id="m0.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_firstName_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_lastEvaluation_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="lastEvaluation"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_attachment:pictureChild_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="attachment/pictureChild"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m1_case_short">
+	<title>
+      <text>
+        <locale id="m1.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <style
+          horz-align="center"
+          font-size="large">
+      	<grid
+            grid-height="2"
+            grid-width="8"
+            grid-x="3"
+            grid-y="0" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_firstName_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_lastName_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="lastName"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="3"
+            grid-x="8"
+            grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_age_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat(age, ' years')"/>
+        </text>
+      </template>
+    </field>
+    <field>
+       <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="3"
+            grid-x="8"
+            grid-y="2" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_conditionLastVisit_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(conditionLastVisit = 'fair', 'Fair', if(conditionLastVisit = 'good', 'Good', if(conditionLastVisit = 'bad', 'Bad', if(conditionLastVisit = 'severe', 'Severe', ''))))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="3"
+            grid-x="8"
+            grid-y="4" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_dob_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="dob"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="3"
+            grid-x="4"
+            grid-y="2" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_gender_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(gender = 'm', 'Male', if(gender = 'f', 'Female', ''))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_lastEvaluation_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="lastEvaluation"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_nationalID_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nationalID"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="3"
+            grid-x="8"
+            grid-y="5" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_phoneNumber_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="phoneNumber"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="3"
+            grid-x="4"
+            grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_village_10.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(village = 'lanfiera', 'Lanfiera', if(village = 'di', 'Di', if(village = 'toeni', 'Toeni', if(village = 'kiembara', 'Kiembara', if(village = 'lankoue', 'Lankoue', if(village = 'gomboro', 'Gomboro', if(village = 'tougan', 'Tougan', '')))))))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style>
+      	<grid
+            grid-height="6"
+            grid-width="3"
+            grid-x="0"
+            grid-y="0" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_attachment:pictureChild_11.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/pictureChild"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="4"
+            grid-y="5" />
+       </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_nameFather_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nameFather"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="4"
+            grid-y="4" />
+       </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_nameFather_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nameMother"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m1_case_long">
+    <title>
+      <text>
+        <locale id="m1.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_firstName_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_lastName_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="lastName"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_age_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="age"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_conditionLastVisit_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(conditionLastVisit = 'fair', $kfair, if(conditionLastVisit = 'good', $kgood, if(conditionLastVisit = 'bad', $kbad, if(conditionLastVisit = 'severe', $ksevere, ''))))">
+            <variable name="kbad">
+              <locale id="m1.case_long.case_conditionLastVisit_5.enum.kbad"/>
+            </variable>
+            <variable name="kfair">
+              <locale id="m1.case_long.case_conditionLastVisit_5.enum.kfair"/>
+            </variable>
+            <variable name="kgood">
+              <locale id="m1.case_long.case_conditionLastVisit_5.enum.kgood"/>
+            </variable>
+            <variable name="ksevere">
+              <locale id="m1.case_long.case_conditionLastVisit_5.enum.ksevere"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_dob_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="dob"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_gender_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(gender = 'm', $km, if(gender = 'f', $kf, ''))">
+            <variable name="kf">
+              <locale id="m1.case_long.case_gender_7.enum.kf"/>
+            </variable>
+            <variable name="km">
+              <locale id="m1.case_long.case_gender_7.enum.km"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_lastEvaluation_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="lastEvaluation"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_nationalID_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nationalID"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_phoneNumber_10.header"/>
+        </text>
+      </header>
+      <template form="phone">
+        <text>
+          <xpath function="phoneNumber"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_village_11.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(village = 'lanfiera', $klanfiera, if(village = 'di', $kdi, if(village = 'toeni', $ktoeni, if(village = 'kiembara', $kkiembara, if(village = 'lankoue', $klankoue, if(village = 'gomboro', $kgomboro, if(village = 'tougan', $ktougan, '')))))))">
+            <variable name="kdi">
+              <locale id="m1.case_long.case_village_11.enum.kdi"/>
+            </variable>
+            <variable name="kgomboro">
+              <locale id="m1.case_long.case_village_11.enum.kgomboro"/>
+            </variable>
+            <variable name="kkiembara">
+              <locale id="m1.case_long.case_village_11.enum.kkiembara"/>
+            </variable>
+            <variable name="klanfiera">
+              <locale id="m1.case_long.case_village_11.enum.klanfiera"/>
+            </variable>
+            <variable name="klankoue">
+              <locale id="m1.case_long.case_village_11.enum.klankoue"/>
+            </variable>
+            <variable name="ktoeni">
+              <locale id="m1.case_long.case_village_11.enum.ktoeni"/>
+            </variable>
+            <variable name="ktougan">
+              <locale id="m1.case_long.case_village_11.enum.ktougan"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_attachment:pictureChild_12.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/pictureChild"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m2_case_short">
+    <title>
+      <text>
+        <locale id="m2.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <style>
+      	<grid
+            grid-height="4"
+            grid-width="3"
+            grid-x="0"
+            grid-y="1" />
+       </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_attachment:pictureChild_2.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/pictureChild"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          font-size="medium"
+          horz-align="left">
+      	<grid
+            grid-height="2"
+            grid-width="3"
+            grid-x="9"
+            grid-y="2" />
+      </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_age_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat(age, ' years')"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="3"
+            grid-y="2" />
+      </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_village_10.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(village = 'lanfiera', 'Lanfiera', if(village = 'di', 'Di', if(village = 'toeni', 'Toeni', if(village = 'kiembara', 'Kiembara', if(village = 'lankoue', 'Lankoue', if(village = 'gomboro', 'Gomboro', if(village = 'tougan', 'Tougan', '')))))))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="5"
+            grid-x="3"
+            grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_lastEvaluation_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('Last Visit: ', lastEvaluation)"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="3"
+            grid-y="4" />
+      </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_phoneNumber_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="phoneNumber"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          font-size="medium"
+          horz-align="left">
+      	<grid
+            grid-height="2"
+            grid-width="3"
+            grid-x="9"
+            grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_gender_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(gender = 'm', $km, if(gender = 'f', $kf, ''))">
+            <variable name="kf">
+              <locale id="m2.case_short.case_gender_6.enum.kf"/>
+            </variable>
+            <variable name="km">
+              <locale id="m2.case_short.case_gender_6.enum.km"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+      <sort type="string">
+        <text>
+          <xpath function="if(gender = 'm', 0, if(gender = 'f', 1, ''))"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <style
+          horz-align="center"
+          font-size="large">
+      	<grid
+            grid-height="2"
+            grid-width="8"
+            grid-x="3"
+            grid-y="0" />
+       </style>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_firstName_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_nameFather_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nameFather"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_nameFather_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nameMother"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m2_case_long">
+    <title>
+      <text>
+        <locale id="m2.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_attachment:pictureChild_2.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/pictureChild"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_age_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="age"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_lastEvaluation_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="lastEvaluation"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_phoneNumber_5.header"/>
+        </text>
+      </header>
+      <template form="phone">
+        <text>
+          <xpath function="phoneNumber"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_gender_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(gender = 'm', $km, if(gender = 'f', $kf, ''))">
+            <variable name="kf">
+              <locale id="m2.case_long.case_gender_6.enum.kf"/>
+            </variable>
+            <variable name="km">
+              <locale id="m2.case_long.case_gender_6.enum.km"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_firstName_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="firstName"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_nameFather_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nameFather"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_nameFather_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="nameFather"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m3_case_short">
+    <title>
+      <text>
+        <locale id="m3.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+  </detail>
+  <detail id="m3_case_long">
+    <title>
+      <text>
+        <locale id="m3.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <entry>
+    <form>http://openrosa.org/formdesigner/90F8EDDB-4531-4D1C-B083-94B83ACD9D8A</form>
+    <command id="m0-f0">
+      <text>
+        <locale id="forms.m0f0"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='case'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/2B1BD366-56B4-45AF-B81A-2418A75EE5AF</form>
+    <command id="m1-f0">
+      <text>
+        <locale id="forms.m1f0"/>
+      </text>
+    </command>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/EA80A5D9-65A7-497C-93A5-5FE3D650D48D</form>
+    <command id="m1-f1">
+      <text>
+        <locale id="forms.m1f1"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='case'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/84D0A518-5A80-4333-987B-F9C58CAB41B1</form>
+    <command id="m1-f2">
+      <text>
+        <locale id="forms.m1f2"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='case'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/2570A735-EC0E-4884-9620-945CBE5AC5D1</form>
+    <command id="m2-f0">
+      <text>
+        <locale id="forms.m2f0"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='case'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/6DF3D23B-DF63-438A-B257-9C50C447D302</form>
+    <command id="m3-f0">
+      <text>
+        <locale id="forms.m3f0"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='case'][@status='open']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
+    </session>
+  </entry>
+  <menu id="m0">
+    <text>
+      <locale id="modules.m0"/>
+    </text>
+    <command id="m0-f0"/>
+  </menu>
+  <menu id="m1">
+    <text>
+      <locale id="modules.m1"/>
+    </text>
+    <command id="m1-f0"/>
+    <command id="m1-f1"/>
+    <command id="m1-f2"/>
+  </menu>
+  <menu id="m2">
+    <text>
+      <locale id="modules.m2"/>
+    </text>
+    <command id="m2-f0"/>
+  </menu>
+  <menu id="m3">
+    <text>
+      <locale id="modules.m3"/>
+    </text>
+    <command id="m3-f0"/>
+  </menu>
+</suite>

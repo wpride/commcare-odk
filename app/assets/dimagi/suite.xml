@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite descriptor="Suite File" version="23">
+  <xform>
+    <resource id="d954b3fff0bb217fe69ab4f45ffcb0b9b4e6fdd0" version="20" descriptor="Form: (Module Advanced Case) - Case Create">
+      <location authority="local">./modules-0/forms-0.xml</location>
+      <location authority="remote">./modules-0/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="f0a939ca473f57853b03a6c58d9d7b83759955da" version="20" descriptor="Form: (Module Advanced Case) - Case Update">
+      <location authority="local">./modules-0/forms-1.xml</location>
+      <location authority="remote">./modules-0/forms-1.xml</location>
+    </resource>
+  </xform>
+  <locale language="default">
+    <resource id="app_default_strings" version="23" descriptor="Translations: Default Language">
+      <location authority="local">./default/app_strings.txt</location>
+      <location authority="remote">./default/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="en">
+    <resource id="app_en_strings" version="23" descriptor="Translations: English">
+      <location authority="local">./en/app_strings.txt</location>
+      <location authority="remote">./en/app_strings.txt</location>
+    </resource>
+  </locale>
+  <detail id="m0_case_short">
+    <title>
+      <text>
+        <locale id="m0.case_short.title"/>
+      </text>
+    </title>
+    <field>
+            	<style
+      		font-size="large"
+      		horz-align="center" >
+      		<grid
+      	 		grid-height="1"
+         		grid-width="4"
+         		grid-x="3"
+         		grid-y="0" />
+    	</style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+        <style
+                font-size="small"
+                horz-align="left" >
+
+                <grid
+                    grid-height="2"
+                    grid-width="6"
+                    grid-x="3"
+                    grid-y="1" />
+            </style>
+      <header width="0">
+        <text>
+          <locale id="m0.case_short.case_address_2.header"/>
+        </text>
+      </header>
+      <template width="0" form="address">
+        <text>
+          <xpath function="address"/>
+        </text>
+      </template>
+    </field>
+    <field>
+                           <style>
+
+                <grid
+                    grid-height="1"
+                    grid-width="5"
+                    grid-x="3"
+                    grid-y="3" />
+            </style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_phone_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="phone"/>
+        </text>
+      </template>
+    </field>
+    <field>
+                            <style>
+
+                <grid
+                    grid-height="2"
+                    grid-width="2"
+                    grid-x="10"
+                    grid-y="1" />
+            </style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_attachment:audio_4.header"/>
+        </text>
+      </header>
+      <template form="audio">
+        <text>
+          <xpath function="attachment/audio"/>
+        </text>
+      </template>
+    </field>
+    <field>
+                            <style>
+
+                <grid
+                    grid-height="4"
+                    grid-width="3"
+                    grid-x="0"
+                    grid-y="0" />
+            </style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_attachment:icon_5.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/icon"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  
+  <detail id="m1_case_short">
+    <title>
+      <text>
+        <locale id="m0.case_short.title"/>
+      </text>
+    </title>
+    <field>
+       <style
+      		font-size="large"
+      		horz-align="center" >
+      		<grid
+      	 		grid-height="1"
+         		grid-width="4"
+         		grid-x="3"
+         		grid-y="0" />
+    	</style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+        <style
+                font-size="small"
+                horz-align="left" >
+
+                <grid
+                    grid-height="2"
+                    grid-width="6"
+                    grid-x="3"
+                    grid-y="1" />
+            </style>
+      <header width="0">
+        <text>
+          <locale id="m0.case_short.case_address_2.header"/>
+        </text>
+      </header>
+      <template width="0" form="address">
+        <text>
+          <xpath function="address"/>
+        </text>
+      </template>
+    </field>
+    <field>
+                           <style>
+
+                <grid
+                    grid-height="1"
+                    grid-width="5"
+                    grid-x="3"
+                    grid-y="3" />
+            </style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_phone_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="phone"/>
+        </text>
+      </template>
+    </field>
+    <field>
+                            <style>
+
+                <grid
+                    grid-height="2"
+                    grid-width="2"
+                    grid-x="10"
+                    grid-y="1" />
+            </style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_attachment:audio_4.header"/>
+        </text>
+      </header>
+      <template form="audio">
+        <text>
+          <xpath function="attachment/audio"/>
+        </text>
+      </template>
+    </field>
+    <field>
+                            <style>
+
+                <grid
+                    grid-height="4"
+                    grid-width="3"
+                    grid-x="0"
+                    grid-y="0" />
+            </style>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_attachment:icon_5.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/icon"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m0_case_long">
+    <title>
+      <text>
+        <locale id="m0.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_address_2.header"/>
+        </text>
+      </header>
+      <template width="0" form="address">
+        <text>
+          <xpath function="address"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_phone_3.header"/>
+        </text>
+      </header>
+      <template form="phone">
+        <text>
+          <xpath function="phone"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_attachment:audio_4.header"/>
+        </text>
+      </header>
+      <template form="audio">
+        <text>
+          <xpath function="attachment/audio"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_attachment:icon_5.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="attachment/icon"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <entry>
+    <form>http://openrosa.org/formdesigner/A5DD5F71-2524-4EC7-BE7F-23DB87C2266B</form>
+    <command id="m0-f0">
+      <text>
+        <locale id="forms.m0f0"/>
+      </text>
+    </command>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/97EB469E-C0DD-4C5D-A459-406F4805CC89</form>
+    <command id="m0-f1">
+      <text>
+        <locale id="forms.m0f1"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='case'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <menu id="m0">
+    <text>
+      <locale id="modules.m0"/>
+    </text>
+    <command id="m0-f0"/>
+    <command id="m0-f1"/>
+  </menu>
+</suite>

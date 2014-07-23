@@ -1,0 +1,1349 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Register Mother</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/79055661fca511f6ce6c9359be385d6477d3da75" uiVersion="1" version="1494" name="Register Mother">
+					<adp/>
+					<phu/>
+					<community_name/>
+					<mother_id_numeric/>
+					<mother_id_display/>
+					<mother_name/>
+					<other_name/>
+					<mother_phone_number/>
+					<husband_name/>
+					<house_number/>
+					<age_at_registration/>
+					<maternal_health_card/>
+					<last_menstrual_date/>
+					<is_pregnant/>
+					<edd/>
+					<married/>
+					<using_fp/>
+					<type_of_fp/>
+					<high_risk_warning/>
+					<menstruation/>
+					<number_children/>
+					<reg_child_1/>
+					<child_reg_1>
+						<child_name_1/>
+						<other_name_1/>
+						<gender_1/>
+						<dob_1/>
+						<child_message_1/>
+					</child_reg_1>
+					<reg_child_2/>
+					<child_reg_2>
+						<child_name_2/>
+						<other_name_2/>
+						<gender_2/>
+						<dob_2/>
+						<child_message_2/>
+					</child_reg_2>
+					<reg_child_3/>
+					<child_reg_3>
+						<child_name_3/>
+						<other_name_3/>
+						<gender_3/>
+						<dob_3/>
+						<child_message_3/>
+					</child_reg_3>
+					<reg_child_4/>
+					<child_reg_4>
+						<child_name_4/>
+						<other_name_4/>
+						<gender_4/>
+						<dob_4/>
+						<child_message_4/>
+					</child_reg_4>
+					<birth_this_month/>
+					<visit_reminder/>
+					<debug_conception_date/>
+					<debug_conception_date-1/>
+					<debug_conception_date-4/>
+					<debug_conception_date-5/>
+					<debug_conception_date-6/>
+					<debug_conception_date-7/>
+					<debug_conception_date-8/>
+					<debug_conception_date-9/>
+					<debug_conception_date-3/>
+					<debug_conception_date-2/>
+					<prev_total_preg_checks>0</prev_total_preg_checks>
+					<prev_total_preg_visits>0</prev_total_preg_visits>
+					<prev_total_pp_visits>0</prev_total_pp_visits>
+					<prev_is_pregnant>0</prev_is_pregnant>
+					<total_children/>
+					<child_1_registered/>
+					<child_2_registered/>
+					<child_3_registered/>
+					<child_4_registered/>
+					<child_id_1/>
+					<child_id_2/>
+					<child_id_3/>
+					<child_id_4/>
+					<conception_date/>
+					<pv1_date/>
+					<pv2_date/>
+					<pv3_date/>
+					<pv4_date/>
+					<total_preg_checks/>
+					<total_preg_visits/>
+					<total_pp_visits/>
+					<next_visit_date/>
+					<next_preg_check_date/>
+					<next_preg_visit/>
+					<next_pp_visit_date/>
+					<next_visit_type/>
+					<anc1_date/>
+					<anc2_date/>
+					<anc3_date/>
+					<anc4_date/>
+					<next_anc_date/>
+					<child_next_visit_date/>
+					<high_risk/>
+					<anc1_complete/>
+					<anc2_complete/>
+					<anc3_complete/>
+					<anc4_complete/>
+					<total_anc_visits/>
+					<prev_edd/>
+					<phu_code/>
+					<mother_id/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>child</case_type></create><update><dob/><gender/><mother_id/><other_name/><child_id/><child_name/><phu/></update><index><parent case_type="mother"/></index></case></subcase_0><subcase_1><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>child</case_type></create><update><dob/><gender/><mother_id/><other_name/><child_id/><child_name/><phu/></update><index><parent case_type="mother"/></index></case></subcase_1><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>mother</case_type></create><update><married/><conception_date/><total_preg_visits/><anc2_complete/><mother_id/><next_visit_type/><pv2_date/><total_preg_checks/><other_name/><number_children/><anc4_date/><total_pp_visits/><mother_name/><edd/><adp/><house_number/><anc4_complete/><anc1_date/><anc3_date/><anc2_date/><husband_name/><type_of_fp/><total_anc_visits/><prev_total_preg_checks/><next_preg_check_date/><last_menstrual_date/><next_visit_date/><pv4_date/><pv1_date/><mother_phone_number/><birth_this_month/><next_pp_visit_date/><pv3_date/><maternal_health_card/><phu/><anc3_complete/><community_name/><anc1_complete/><next_preg_visit/><using_fp/><high_risk/><next_anc_date/><total_children/><age_at_registration/><is_pregnant/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<instance id="adp" src="jr://fixture/item-list:adp"/>
+			<instance id="phu" src="jr://fixture/item-list:phu"/>
+			<instance id="community" src="jr://fixture/item-list:community"/>
+			<bind nodeset="/data/adp" required="true()"/>
+			<bind nodeset="/data/phu"/>
+			<bind nodeset="/data/community_name" required="true()"/>
+			<bind nodeset="/data/mother_id_numeric" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/mother_id_display"/>
+			<bind nodeset="/data/mother_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/other_name" type="xsd:string"/>
+			<bind nodeset="/data/mother_phone_number" type="xsd:int"/>
+			<bind nodeset="/data/husband_name" type="xsd:string"/>
+			<bind nodeset="/data/house_number" type="xsd:string"/>
+			<bind nodeset="/data/age_at_registration" type="xsd:int"/>
+			<bind nodeset="/data/maternal_health_card"/>
+			<bind nodeset="/data/last_menstrual_date" type="xsd:date" relevant="1=2" required="false()"/>
+			<bind nodeset="/data/is_pregnant"/>
+			<bind nodeset="/data/edd" type="xsd:date" relevant="/data/is_pregnant = 'yes'"/>
+			<bind nodeset="/data/married"/>
+			<bind nodeset="/data/using_fp" relevant="/data/is_pregnant = 'no'"/>
+			<bind nodeset="/data/type_of_fp" relevant="/data/using_fp = 'yes'"/>
+			<bind nodeset="/data/high_risk_warning" relevant="/data/high_risk = 'yes'"/>
+			<bind nodeset="/data/menstruation" relevant="/data/is_pregnant = 'no'"/>
+			<bind nodeset="/data/number_children" type="xsd:int"/>
+			<bind nodeset="/data/reg_child_1" relevant="/data/number_children &gt; 0"/>
+			<bind nodeset="/data/child_reg_1" relevant="/data/reg_child_1 = 'yes'"/>
+			<bind nodeset="/data/child_reg_1/child_name_1" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/child_reg_1/other_name_1" type="xsd:string"/>
+			<bind nodeset="/data/child_reg_1/gender_1"/>
+			<bind nodeset="/data/child_reg_1/dob_1" type="xsd:date" constraint="0 &lt; today() - date(.) &lt; 730" jr:constraintMsg="jr:itext('dob_1-constraintMsg')"/>
+			<bind nodeset="/data/child_reg_1/child_message_1"/>
+			<bind nodeset="/data/reg_child_2" relevant="/data/number_children &gt; 1 and /data/reg_child_1 = 'yes'"/>
+			<bind nodeset="/data/child_reg_2" relevant="/data/reg_child_2 = 'yes'"/>
+			<bind nodeset="/data/child_reg_2/child_name_2" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/child_reg_2/other_name_2" type="xsd:string"/>
+			<bind nodeset="/data/child_reg_2/gender_2"/>
+			<bind nodeset="/data/child_reg_2/dob_2" type="xsd:date" constraint="0 &lt; today() - date(.) &lt; 730" jr:constraintMsg="jr:itext('dob_2-constraintMsg')"/>
+			<bind nodeset="/data/child_reg_2/child_message_2"/>
+			<bind nodeset="/data/reg_child_3" relevant="/data/number_children &gt; 2 and /data/reg_child_2 = 'yes'"/>
+			<bind nodeset="/data/child_reg_3" relevant="/data/reg_child_3 = 'yes'"/>
+			<bind nodeset="/data/child_reg_3/child_name_3" type="xsd:string"/>
+			<bind nodeset="/data/child_reg_3/other_name_3" type="xsd:string"/>
+			<bind nodeset="/data/child_reg_3/gender_3"/>
+			<bind nodeset="/data/child_reg_3/dob_3" type="xsd:date" constraint="0 &lt; today() - date(.) &lt; 730" jr:constraintMsg="jr:itext('dob_3-constraintMsg')"/>
+			<bind nodeset="/data/child_reg_3/child_message_3"/>
+			<bind nodeset="/data/reg_child_4" relevant="/data/number_children &gt; 3 and /data/reg_child_3 = 'yes'"/>
+			<bind nodeset="/data/child_reg_4" relevant="/data/reg_child_4 = 'yes'"/>
+			<bind nodeset="/data/child_reg_4/child_name_4" type="xsd:string"/>
+			<bind nodeset="/data/child_reg_4/other_name_4" type="xsd:string"/>
+			<bind nodeset="/data/child_reg_4/gender_4"/>
+			<bind nodeset="/data/child_reg_4/dob_4" type="xsd:date" constraint="0 &lt; today() - date(.) &lt; 730" jr:constraintMsg="jr:itext('dob_4-constraintMsg')"/>
+			<bind nodeset="/data/child_reg_4/child_message_4"/>
+			<bind nodeset="/data/birth_this_month" relevant="/data/is_pregnant = 'no' and 1=2"/>
+			<bind nodeset="/data/visit_reminder"/>
+			<bind nodeset="/data/debug_conception_date" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-1" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-4" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-5" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-6" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-7" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-8" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-9" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-3" relevant="1=2"/>
+			<bind nodeset="/data/debug_conception_date-2" relevant="1=2"/>
+			<bind nodeset="/data/prev_total_preg_checks"/>
+			<bind nodeset="/data/prev_total_preg_visits"/>
+			<bind nodeset="/data/prev_total_pp_visits"/>
+			<bind nodeset="/data/prev_is_pregnant"/>
+			<bind nodeset="/data/total_children" calculate="/data/child_1_registered + /data/child_2_registered + /data/child_3_registered + /data/child_4_registered"/>
+			<bind nodeset="/data/child_1_registered" calculate="if(/data/reg_child_1='yes',1,0)"/>
+			<bind nodeset="/data/child_2_registered" calculate="if(/data/reg_child_2='yes',1,0)"/>
+			<bind nodeset="/data/child_3_registered" calculate="if(/data/reg_child_3='yes',1,0)"/>
+			<bind nodeset="/data/child_4_registered" calculate="if(/data/reg_child_4='yes',1,0)"/>
+			<bind nodeset="/data/child_id_1" calculate="concat(/data/mother_id_numeric, '-01')"/>
+			<bind nodeset="/data/child_id_2" calculate="concat(/data/mother_id_numeric, '-02')"/>
+			<bind nodeset="/data/child_id_3" calculate="concat(/data/mother_id_numeric, '-03')"/>
+			<bind nodeset="/data/child_id_4" calculate="concat(/data/mother_id_numeric, '-04')"/>
+			<bind nodeset="/data/conception_date" calculate="date(/data/edd - 280)"/>
+			<bind nodeset="/data/pv1_date" calculate="date(/data/conception_date  + 28)"/>
+			<bind nodeset="/data/pv2_date" calculate="date(/data/conception_date  + 126)"/>
+			<bind nodeset="/data/pv3_date" calculate="date(/data/conception_date  + 196)"/>
+			<bind nodeset="/data/pv4_date" calculate="date(/data/conception_date + 252)"/>
+			<bind nodeset="/data/total_preg_checks" calculate="0"/>
+			<bind nodeset="/data/total_preg_visits" calculate="0"/>
+			<bind nodeset="/data/total_pp_visits" calculate="0"/>
+			<bind nodeset="/data/next_visit_date" calculate="if(/data/next_visit_type = 'check', date(/data/next_preg_check_date), if(/data/next_visit_type = 'pregnancy', today(), date(/data/next_pp_visit_date)))"/>
+			<bind nodeset="/data/next_preg_check_date" calculate="if(/data/high_risk = 'no', date(today() + 180), date(today() + 90))"/>
+			<bind nodeset="/data/next_preg_visit" calculate="/data/pv1_date"/>
+			<bind nodeset="/data/next_pp_visit_date" calculate="today()"/>
+			<bind nodeset="/data/next_visit_type" calculate="if(/data/is_pregnant = &quot;yes&quot; , &quot;pregnancy&quot;, if(/data/birth_this_month = &quot;yes&quot;, &quot;post_partum&quot;, &quot;check&quot;))"/>
+			<bind nodeset="/data/anc1_date" calculate="date(/data/conception_date + 84)"/>
+			<bind nodeset="/data/anc2_date" calculate="date(/data/conception_date + 168)"/>
+			<bind nodeset="/data/anc3_date" calculate="date(/data/conception_date + 224)"/>
+			<bind nodeset="/data/anc4_date" calculate="date(/data/conception_date + 252)"/>
+			<bind nodeset="/data/next_anc_date" calculate="if(/data/is_pregnant = 'yes', if(/data/anc1_complete = 'no', date(/data/anc1_date), if(/data/anc2_complete = 'no', date(/data/anc2_date), if(/data/anc3_complete = 'no', date(/data/anc3_date), if(/data/anc4_complete = 'no', date(/data/anc4_date), format-date('2999-01-01', '%Y-%m-%d'))))), format-date('2999-01-01', '%Y-%m-%d'))"/>
+			<bind nodeset="/data/child_next_visit_date" calculate="today()"/>
+			<bind nodeset="/data/high_risk" calculate="if(/data/married = 'yes' and /data/using_fp = 'no', 'yes', 'no')"/>
+			<bind nodeset="/data/anc1_complete"/>
+			<bind nodeset="/data/anc2_complete"/>
+			<bind nodeset="/data/anc3_complete"/>
+			<bind nodeset="/data/anc4_complete"/>
+			<bind nodeset="/data/total_anc_visits" calculate="0"/>
+			<bind nodeset="/data/prev_edd"/>
+			<bind nodeset="/data/phu_code"/>
+			<bind nodeset="/data/mother_id" calculate="concat(instance('phu')/phu_list/phu[phu_id = /data/phu]/phu_code,'-', /data/mother_id_numeric)" required="true()"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="adp-label2">
+						<value>ADP</value>
+						<value form="audio">jr://file/commcare/audio/data/adp.mp3</value>
+					</text>
+					<text id="phu-label">
+						<value>PHU</value>
+						<value form="audio">jr://file/commcare/audio/data/phu.mp3</value>
+					</text>
+					<text id="community_name-label">
+						<value>Community Name</value>
+						<value form="audio">jr://file/commcare/audio/data/community_name.mp3</value>
+					</text>
+					<text id="mother_id_numeric-label">
+						<value>Mother ID</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_id_numeric.mp3</value>
+					</text>
+					<text id="mother_id_display-label">
+						<value>Mother ID: <output value="/data/mother_id"/></value>
+						<value form="audio">jr://file/commcare/audio/data/mother_id_display.mp3</value>
+					</text>
+					<text id="mother_name-label">
+						<value>Full name of mother</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_name.mp3</value>
+					</text>
+					<text id="other_name-label">
+						<value>Other name (known as)</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name.mp3</value>
+					</text>
+					<text id="mother_phone_number-label">
+						<value>Woman's phone number</value>
+						<value form="image">jr://file/commcare/image/data/phone.png</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_phone_number.mp3</value>
+					</text>
+					<text id="husband_name-label">
+						<value>Name of husband or household head</value>
+						<value form="audio">jr://file/commcare/audio/data/husband_name.mp3</value>
+					</text>
+					<text id="house_number-label">
+						<value>House number or location of house</value>
+						<value form="audio">jr://file/commcare/audio/data/house_number.mp3</value>
+					</text>
+					<text id="age_at_registration-label">
+						<value>Age of mother at registration</value>
+						<value form="audio">jr://file/commcare/audio/data/age_at_registration.mp3</value>
+					</text>
+					<text id="maternal_health_card-label">
+						<value>Maternal Health Card</value>
+						<value form="audio">jr://file/commcare/audio/data/maternal_health_card.mp3</value>
+					</text>
+					<text id="maternal_health_card-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="maternal_health_card-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="last_menstrual_date-label">
+						<value>Last menstrual date</value>
+						<value form="image">jr://file/commcare/image/data/last_menstrual_date.png</value>
+						<value form="audio">jr://file/commcare/audio/data/last_menstrual_date.mp3</value>
+					</text>
+					<text id="is_pregnant-label">
+						<value>Is she currently pregnant?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant.png</value>
+						<value form="audio">jr://file/commcare/audio/data/is_pregnant.mp3</value>
+					</text>
+					<text id="is_pregnant-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="is_pregnant-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="edd-label">
+						<value>Expected Delivery Date</value>
+						<value form="image">jr://file/commcare/image/data/edd.png</value>
+						<value form="audio">jr://file/commcare/audio/data/edd.mp3</value>
+					</text>
+					<text id="married-label">
+						<value>Is married / in a relationship</value>
+						<value form="audio">jr://file/commcare/audio/data/married.mp3</value>
+					</text>
+					<text id="married-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="married-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="using_fp-label">
+						<value>Is currently using family planning method</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+						<value form="audio">jr://file/commcare/audio/data/using_fp.mp3</value>
+					</text>
+					<text id="married-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="married-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="type_of_fp-label2">
+						<value>What family planning method is being used?</value>
+						<value form="audio">jr://file/commcare/audio/data/type_of_fp.mp3</value>
+					</text>
+					<text id="type_of_fp-condom-label">
+						<value>Male/female condom</value>
+						<value form="image">jr://file/commcare/image/data/condom.png</value>
+					</text>
+					<text id="type_of_fp-iud-label">
+						<value>IUD</value>
+						<value form="image">jr://file/commcare/image/data/iud.png</value>
+					</text>
+					<text id="type_of_fp-pill-label">
+						<value>Contraceptive pill</value>
+						<value form="image">jr://file/commcare/image/data/pill.png</value>
+					</text>
+					<text id="type_of_fp-depo-label">
+						<value>Depo-provera injection or implant</value>
+						<value form="image">jr://file/commcare/image/data/depo.png</value>
+					</text>
+					<text id="type_of_fp-permanent-label">
+						<value>Permanent method (vasectomy / ligation)</value>
+					</text>
+					<text id="high_risk_warning-label">
+						<value>This woman is considered high risk of pregnancy and will need to be followed up every 2-3 months.</value>
+						<value form="audio">jr://file/commcare/audio/data/high_risk_warning.mp3</value>
+					</text>
+					<text id="menstruation-label">
+						<value>Has she had menstruation in the last 2 months</value>
+						<value form="audio">jr://file/commcare/audio/data/menstruation.mp3</value>
+					</text>
+					<text id="menstruation-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="menstruation-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="number_children-label">
+						<value>Number of children in her care aged 2 years or less</value>
+						<value form="audio">jr://file/commcare/audio/data/number_children.mp3</value>
+					</text>
+					<text id="reg_child_1-label">
+						<value>Do you want to register the first child?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_1-label">
+						<value>Child 1</value>
+					</text>
+					<text id="child_name_1-label">
+						<value>First Child's Name</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_1-label">
+						<value>First Child's Other Name (also known as)</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_1-label">
+						<value>First Child's Gender</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender_1-male-label">
+						<value>Male</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender_1-female-label">
+						<value>Female</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="dob_1-label">
+						<value>First Child's Date of Birth</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_1-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_1-label">
+						<value>This child has been registered.  Please follow up with this child in the Child Module when this visit is complete.</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="reg_child_2-label">
+						<value>Do you want to register the second child?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_1-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_1-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_2-label">
+						<value>Child 2</value>
+						<value form="image">jr://file/commcare/image/data/child_name.png</value>
+					</text>
+					<text id="child_name_2-label">
+						<value>Second Child's Name</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_2-label">
+						<value>Second Child's Other Name (also known as)</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_2-label">
+						<value>Second Child's Gender</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender_1-1-m-label">
+						<value>Male</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender_1-1-f-label">
+						<value>Female</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="dob_2-label">
+						<value>Second Child's Date of Birth</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_2-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_2-label">
+						<value>This child has been registered.  Please follow up with this child in the Child Module when this visit is complete.</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="reg_child_3-label">
+						<value>Do you want to register the third child?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_2-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_2-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_3-label">
+						<value>Child 3</value>
+					</text>
+					<text id="child_name_3-label">
+						<value>Third Child's Name</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_3-label">
+						<value>Third Child's Other Name (also known as)</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_3-label">
+						<value>Third Child's Gender</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender_2-1-m-label">
+						<value>Male</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender_2-1-f-label">
+						<value>Female</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="dob_3-label">
+						<value>Third Child's Date of Birth</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_3-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_3-label">
+						<value>This child has been registered.  Please follow up with this child in the Child Module when this visit is complete.</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="reg_child_4-label">
+						<value>Do you want to register the fourth child?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_2-2-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_2-2-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_4-label">
+						<value>Child 4</value>
+					</text>
+					<text id="child_name_4-label">
+						<value>Fourth Child's Name</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_4-label">
+						<value>Fourth Child's Other Name (also known as)</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_4-label">
+						<value>Fourth Child's Gender</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+					</text>
+					<text id="gender_3-1-m-label">
+						<value>Male</value>
+					</text>
+					<text id="gender_3-1-f-label">
+						<value>Female</value>
+					</text>
+					<text id="dob_4-label">
+						<value>Fourth Child's Date of Birth</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_4-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_4-label">
+						<value>This child has been registered.  Please follow up with this child in the Child Module when this visit is complete.</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="birth_this_month-label">
+						<value>HIDDEN: Has she given birth in the last 4 weeks?</value>
+					</text>
+					<text id="birth_this_month-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="birth_this_month-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="visit_reminder-label">
+						<value>Registration is complete. Please open the Pregnancy Visit form for this woman.</value>
+						<value form="image">jr://file/commcare/image/data/pregnancy_visit.png</value>
+						<value form="audio">jr://file/commcare/audio/data/visit_reminder.mp3</value>
+					</text>
+					<text id="debug_conception_date-label">
+						<value>DEBUG: conception_date is: <output value="format-date(/data/conception_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-1-label">
+						<value>DEBUG: pv1_date is: <output value="format-date(/data/pv1_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-4-label">
+						<value>DEBUG: pv2_date is: <output value="format-date(/data/pv2_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-5-label">
+						<value>DEBUG: pv3_date is: <output value="format-date(/data/pv3_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-6-label">
+						<value>DEBUG: pv4_date is: <output value="format-date(/data/pv4_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-7-label">
+						<value>DEBUG: next_preg_visit is: <output value="format-date(/data/next_preg_visit, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-8-label">
+						<value>DEBUG: next_pp_visit_date is: <output value="format-date(/data/next_pp_visit_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-9-label">
+						<value>DEBUG: next_preg_check_date is: <output value="format-date(/data/next_preg_check_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-3-label">
+						<value>DEBUG: next_visit_date is: <output value="format-date(/data/next_visit_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-2-label">
+						<value>DEBUG: next_visit_type is: <output value="/data/next_visit_type"/></value>
+					</text>
+				</translation>
+				<translation lang="men">
+					<text id="adp-label2">
+						<value>ADP</value>
+						<value form="audio">jr://file/commcare/audio/data/adp.mp3</value>
+					</text>
+					<text id="phu-label">
+						<value>Primary PHU</value>
+						<value form="audio">jr://file/commcare/audio/data/phu.mp3</value>
+					</text>
+					<text id="community_name-label">
+						<value>fele ngi biyea</value>
+						<value form="audio">jr://file/commcare/audio/data/community_name.mp3</value>
+					</text>
+					<text id="mother_id_numeric-label">
+						<value>Conyahin ji numbeh?</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_id_numeric.mp3</value>
+					</text>
+					<text id="mother_id_display-label">
+						<value>Conyahin ji numbeh <output value="/data/mother_id"/></value>
+						<value form="audio">jr://file/commcare/audio/data/mother_id_display.mp3</value>
+					</text>
+					<text id="mother_name-label">
+						<value>Ngi beya?</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_name.mp3</value>
+					</text>
+					<text id="other_name-label">
+						<value>Beye weaka lor ngi ma?</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name.mp3</value>
+					</text>
+					<text id="mother_phone_number-label">
+						<value>Ngi fone numbeh?</value>
+						<value form="image">jr://file/commcare/image/data/phone.png</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_phone_number.mp3</value>
+					</text>
+					<text id="husband_name-label">
+						<value>Ngi hini beyae?</value>
+						<value form="audio">jr://file/commcare/audio/data/husband_name.mp3</value>
+					</text>
+					<text id="house_number-label">
+						<value>Bae ti hay na ,na beyae?</value>
+						<value form="audio">jr://file/commcare/audio/data/house_number.mp3</value>
+					</text>
+					<text id="age_at_registration-label">
+						<value>Ngi vui nar ar wati gee</value>
+						<value form="audio">jr://file/commcare/audio/data/age_at_registration.mp3</value>
+					</text>
+					<text id="maternal_health_card-label">
+						<value>Cliniki cardi lor ngi yeaya?</value>
+						<value form="audio">jr://file/commcare/audio/data/maternal_health_card.mp3</value>
+					</text>
+					<text id="maternal_health_card-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="maternal_health_card-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="last_menstrual_date-label">
+						<value>Mee gbe lor bi loko leh ni?</value>
+						<value form="image">jr://file/commcare/image/data/last_menstrual_date.png</value>
+						<value form="audio">jr://file/commcare/audio/data/last_menstrual_date.mp3</value>
+					</text>
+					<text id="is_pregnant-label">
+						<value>Ta na kwihun?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant.png</value>
+						<value form="audio">jr://file/commcare/audio/data/is_pregnant.mp3</value>
+					</text>
+					<text id="is_pregnant-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="is_pregnant-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="edd-label">
+						<value>Ngawi yae gbor kugor ee ndui lay?</value>
+						<value form="image">jr://file/commcare/image/data/edd.png</value>
+						<value form="audio">jr://file/commcare/audio/data/edd.mp3</value>
+					</text>
+					<text id="married-label">
+						<value>Ta hini webu or ta ndiamor yahun?</value>
+						<value form="audio">jr://file/commcare/audio/data/married.mp3</value>
+					</text>
+					<text id="married-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="married-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="using_fp-label">
+						<value>Ta loni kpanbi gbima kor ar ngoo?</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+						<value form="audio">jr://file/commcare/audio/data/using_fp.mp3</value>
+					</text>
+					<text id="married-1-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="married-1-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="type_of_fp-label2">
+						<value>Kpanbi yea gboh ee loni ma?</value>
+						<value form="audio">jr://file/commcare/audio/data/type_of_fp.mp3</value>
+					</text>
+					<text id="type_of_fp-condom-label">
+						<value>sanyiki condomi mai ar usie</value>
+						<value form="image">jr://file/commcare/image/data/condom.png</value>
+					</text>
+					<text id="type_of_fp-iud-label">
+						<value>or captin ban mia ngi kpakihum or koili</value>
+						<value form="image">jr://file/commcare/image/data/iud.png</value>
+					</text>
+					<text id="type_of_fp-pill-label">
+						<value>or halie mia ar kpoi</value>
+						<value form="image">jr://file/commcare/image/data/pill.png</value>
+					</text>
+					<text id="type_of_fp-depo-label">
+						<value>or mboi mia ar bumbu</value>
+						<value form="image">jr://file/commcare/image/data/depo.png</value>
+					</text>
+					<text id="type_of_fp-permanent-label">
+						<value>or ngi lolay bolay mia tee poteaa</value>
+					</text>
+					<text id="high_risk_warning-label">
+						<value>Ji bi kwi ji Humbua hale bea ti dia bima ke bi guiji kpundeh lor ma</value>
+						<value form="audio">jr://file/commcare/audio/data/high_risk_warning.mp3</value>
+					</text>
+					<text id="menstruation-label">
+						<value>Bi loko le lor ngawu feele ji hun?</value>
+						<value form="audio">jr://file/commcare/audio/data/menstruation.mp3</value>
+					</text>
+					<text id="menstruation-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="menstruation-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="number_children-label">
+						<value>Ndo loleh mia te ngi yeya tee foe fele bu?</value>
+						<value form="audio">jr://file/commcare/audio/data/number_children.mp3</value>
+					</text>
+					<text id="reg_child_1-label">
+						<value>Be longweh be hale lui regista?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_1-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_1-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_1-label">
+						<value>Child 1</value>
+					</text>
+					<text id="child_name_1-label">
+						<value>Ye ndui beyae?</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_1-label">
+						<value>Mbiyeh waika lor na ta ngi loila?</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_1-label">
+						<value>Ndui ye gbeh mia?</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender_1-male-label">
+						<value>hindo lui</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender_1-female-label">
+						<value>or nyaha lui</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="dob_1-label">
+						<value>Ndui gee lay vuli lor ar gbor?</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_1-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_1-label">
+						<value>Ndui gee biyeh lor colema</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="reg_child_2-label">
+						<value>Bi longweh bi poma lui regista?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_1-1-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_1-1-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_2-label">
+						<value>Child 2</value>
+						<value form="image">jr://file/commcare/image/data/child_name.png</value>
+					</text>
+					<text id="child_name_2-label">
+						<value>Ye ndui beyae?</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_2-label">
+						<value>Mbiyeh waika lor na ta ngi loila?</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_2-label">
+						<value>Ndui ye gbeh mia?</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender_1-1-m-label">
+						<value>hindo lui</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender_1-1-f-label">
+						<value>nyaha lui</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="dob_2-label">
+						<value>Ndui gee lay vuli lor ar gbor?</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_2-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_2-label">
+						<value>Ndui gee biyeh lor colema</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="reg_child_3-label">
+						<value>Bi longweh bi poma lui regista?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_2-1-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_2-1-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_3-label">
+						<value>Child 3</value>
+					</text>
+					<text id="child_name_3-label">
+						<value>Ye ndui beyae?</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_3-label">
+						<value>Mbiyeh waika lor na ta ngi loila?</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_3-label">
+						<value>Ndui ye gbeh mia?</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender_2-1-m-label">
+						<value>hindo lui</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender_2-1-f-label">
+						<value>or nyaha lui</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="dob_3-label">
+						<value>Ndui gee lay vuli lor ar gbor?</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_3-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_3-label">
+						<value>Ndui gee biyeh lor colema</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="reg_child_4-label">
+						<value>Bi longweh bi ndwi yea nani regista?</value>
+						<value form="image">jr://file/commcare/image/data/create_infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/reg_child_1.mp3</value>
+					</text>
+					<text id="reg_child_2-2-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="reg_child_2-2-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="child_reg_4-label">
+						<value>Child 4</value>
+					</text>
+					<text id="child_name_4-label">
+						<value>Ye ndui beyae?</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/child_name_1.mp3</value>
+					</text>
+					<text id="other_name_4-label">
+						<value>Mbiyeh waika lor na ta ngi loila?</value>
+						<value form="audio">jr://file/commcare/audio/data/other_name_1.mp3</value>
+					</text>
+					<text id="gender_4-label">
+						<value>Ndui ye gbeh mia?</value>
+						<value form="audio">jr://file/commcare/audio/data/gender_1.mp3</value>
+					</text>
+					<text id="gender_3-1-m-label">
+						<value>hindo lui</value>
+					</text>
+					<text id="gender_3-1-f-label">
+						<value>nyaha lui</value>
+					</text>
+					<text id="dob_4-label">
+						<value>ndui gee lay vuli lor ar gbor</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_1.mp3</value>
+					</text>
+					<text id="dob_4-constraintMsg">
+						<value>The child must be between 0 and 24 months old to be registered.</value>
+						<value form="audio">jr://file/commcare/audio/data/dob_constraint.mp3</value>
+					</text>
+					<text id="child_message_4-label">
+						<value>Ndui gee biyeh lor colema</value>
+						<value form="audio">jr://file/commcare/audio/data/child_message_1.mp3</value>
+					</text>
+					<text id="birth_this_month-label">
+						<value>HIDDEN: Has she given birth in the last 4 weeks?</value>
+					</text>
+					<text id="birth_this_month-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="birth_this_month-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="visit_reminder-label">
+						<value>Please open the Pregnancy Visit form for this woman.</value>
+						<value form="image">jr://file/commcare/image/data/pregnancy_visit.png</value>
+						<value form="audio">jr://file/commcare/audio/data/visit_reminder.mp3</value>
+					</text>
+					<text id="debug_conception_date-label">
+						<value>DEBUG: conception_date is: <output value="format-date(/data/conception_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-1-label">
+						<value>DEBUG: pv1_date is: <output value="format-date(/data/pv1_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-4-label">
+						<value>DEBUG: pv2_date is: <output value="format-date(/data/pv2_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-5-label">
+						<value>DEBUG: pv3_date is: <output value="format-date(/data/pv3_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-6-label">
+						<value>DEBUG: pv4_date is: <output value="format-date(/data/pv4_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-7-label">
+						<value>DEBUG: next_preg_visit is: <output value="format-date(/data/next_preg_visit, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-8-label">
+						<value>DEBUG: next_pp_visit_date is: <output value="format-date(/data/next_pp_visit_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-9-label">
+						<value>DEBUG: next_preg_check_date is: <output value="format-date(/data/next_preg_check_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-3-label">
+						<value>DEBUG: next_visit_date is: <output value="format-date(/data/next_visit_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="debug_conception_date-2-label">
+						<value>DEBUG: next_visit_type is: <output value="/data/next_visit_type"/></value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/mother_id"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/update/married" relevant="count(/data/married) &gt; 0" calculate="/data/married"/><bind nodeset="/data/case/update/conception_date" relevant="count(/data/conception_date) &gt; 0" calculate="/data/conception_date"/><bind nodeset="/data/case/update/total_preg_visits" relevant="count(/data/total_preg_visits) &gt; 0" calculate="/data/total_preg_visits"/><bind nodeset="/data/case/update/anc2_complete" relevant="count(/data/anc2_complete) &gt; 0" calculate="/data/anc2_complete"/><bind nodeset="/data/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/case/update/next_visit_type" relevant="count(/data/next_visit_type) &gt; 0" calculate="/data/next_visit_type"/><bind nodeset="/data/case/update/pv2_date" relevant="count(/data/pv2_date) &gt; 0" calculate="/data/pv2_date"/><bind nodeset="/data/case/update/total_preg_checks" relevant="count(/data/total_preg_checks) &gt; 0" calculate="/data/total_preg_checks"/><bind nodeset="/data/case/update/other_name" relevant="count(/data/other_name) &gt; 0" calculate="/data/other_name"/><bind nodeset="/data/case/update/number_children" relevant="count(/data/number_children) &gt; 0" calculate="/data/number_children"/><bind nodeset="/data/case/update/anc4_date" relevant="count(/data/anc4_date) &gt; 0" calculate="/data/anc4_date"/><bind nodeset="/data/case/update/total_pp_visits" relevant="count(/data/total_pp_visits) &gt; 0" calculate="/data/total_pp_visits"/><bind nodeset="/data/case/update/mother_name" relevant="count(/data/mother_name) &gt; 0" calculate="/data/mother_name"/><bind nodeset="/data/case/update/edd" relevant="count(/data/edd) &gt; 0" calculate="/data/edd"/><bind nodeset="/data/case/update/adp" relevant="count(/data/adp) &gt; 0" calculate="/data/adp"/><bind nodeset="/data/case/update/house_number" relevant="count(/data/house_number) &gt; 0" calculate="/data/house_number"/><bind nodeset="/data/case/update/anc4_complete" relevant="count(/data/anc4_complete) &gt; 0" calculate="/data/anc4_complete"/><bind nodeset="/data/case/update/anc1_date" relevant="count(/data/anc1_date) &gt; 0" calculate="/data/anc1_date"/><bind nodeset="/data/case/update/anc3_date" relevant="count(/data/anc3_date) &gt; 0" calculate="/data/anc3_date"/><bind nodeset="/data/case/update/anc2_date" relevant="count(/data/anc2_date) &gt; 0" calculate="/data/anc2_date"/><bind nodeset="/data/case/update/husband_name" relevant="count(/data/husband_name) &gt; 0" calculate="/data/husband_name"/><bind nodeset="/data/case/update/type_of_fp" relevant="count(/data/type_of_fp) &gt; 0" calculate="/data/type_of_fp"/><bind nodeset="/data/case/update/total_anc_visits" relevant="count(/data/total_anc_visits) &gt; 0" calculate="/data/total_anc_visits"/><bind nodeset="/data/case/update/prev_total_preg_checks" relevant="count(/data/prev_total_preg_checks) &gt; 0" calculate="/data/prev_total_preg_checks"/><bind nodeset="/data/case/update/next_preg_check_date" relevant="count(/data/next_preg_check_date) &gt; 0" calculate="/data/next_preg_check_date"/><bind nodeset="/data/case/update/last_menstrual_date" relevant="count(/data/last_menstrual_date) &gt; 0" calculate="/data/last_menstrual_date"/><bind nodeset="/data/case/update/next_visit_date" relevant="count(/data/next_visit_date) &gt; 0" calculate="/data/next_visit_date"/><bind nodeset="/data/case/update/pv4_date" relevant="count(/data/pv4_date) &gt; 0" calculate="/data/pv4_date"/><bind nodeset="/data/case/update/pv1_date" relevant="count(/data/pv1_date) &gt; 0" calculate="/data/pv1_date"/><bind nodeset="/data/case/update/mother_phone_number" relevant="count(/data/mother_phone_number) &gt; 0" calculate="/data/mother_phone_number"/><bind nodeset="/data/case/update/birth_this_month" relevant="count(/data/birth_this_month) &gt; 0" calculate="/data/birth_this_month"/><bind nodeset="/data/case/update/next_pp_visit_date" relevant="count(/data/next_pp_visit_date) &gt; 0" calculate="/data/next_pp_visit_date"/><bind nodeset="/data/case/update/pv3_date" relevant="count(/data/pv3_date) &gt; 0" calculate="/data/pv3_date"/><bind nodeset="/data/case/update/maternal_health_card" relevant="count(/data/maternal_health_card) &gt; 0" calculate="/data/maternal_health_card"/><bind nodeset="/data/case/update/phu" relevant="count(/data/phu) &gt; 0" calculate="/data/phu"/><bind nodeset="/data/case/update/anc3_complete" relevant="count(/data/anc3_complete) &gt; 0" calculate="/data/anc3_complete"/><bind nodeset="/data/case/update/community_name" relevant="count(/data/community_name) &gt; 0" calculate="/data/community_name"/><bind nodeset="/data/case/update/anc1_complete" relevant="count(/data/anc1_complete) &gt; 0" calculate="/data/anc1_complete"/><bind nodeset="/data/case/update/next_preg_visit" relevant="count(/data/next_preg_visit) &gt; 0" calculate="/data/next_preg_visit"/><bind nodeset="/data/case/update/using_fp" relevant="count(/data/using_fp) &gt; 0" calculate="/data/using_fp"/><bind nodeset="/data/case/update/high_risk" relevant="count(/data/high_risk) &gt; 0" calculate="/data/high_risk"/><bind nodeset="/data/case/update/next_anc_date" relevant="count(/data/next_anc_date) &gt; 0" calculate="/data/next_anc_date"/><bind nodeset="/data/case/update/total_children" relevant="count(/data/total_children) &gt; 0" calculate="/data/total_children"/><bind nodeset="/data/case/update/age_at_registration" relevant="count(/data/age_at_registration) &gt; 0" calculate="/data/age_at_registration"/><bind nodeset="/data/case/update/is_pregnant" relevant="count(/data/is_pregnant) &gt; 0" calculate="/data/is_pregnant"/><bind nodeset="/data/subcase_0/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/subcase_0/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/subcase_0/case" relevant="/data/reg_child_1 = 'yes'"/><setvalue ref="/data/subcase_0/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/subcase_0/case/create/case_name" calculate="/data/child_reg_1/child_name_1"/><bind nodeset="/data/subcase_0/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/subcase_0/case/update/dob" relevant="count(/data/child_reg_1/dob_1) &gt; 0" calculate="/data/child_reg_1/dob_1"/><bind nodeset="/data/subcase_0/case/update/gender" relevant="count(/data/child_reg_1/gender_1) &gt; 0" calculate="/data/child_reg_1/gender_1"/><bind nodeset="/data/subcase_0/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/subcase_0/case/update/other_name" relevant="count(/data/child_reg_1/other_name_1) &gt; 0" calculate="/data/child_reg_1/other_name_1"/><bind nodeset="/data/subcase_0/case/update/child_id" relevant="count(/data/child_id_1) &gt; 0" calculate="/data/child_id_1"/><bind nodeset="/data/subcase_0/case/update/child_name" relevant="count(/data/child_reg_1/child_name_1) &gt; 0" calculate="/data/child_reg_1/child_name_1"/><bind nodeset="/data/subcase_0/case/update/phu" relevant="count(/data/phu) &gt; 0" calculate="/data/phu"/><bind nodeset="/data/subcase_0/case/index/parent" calculate="/data/case/@case_id"/><bind nodeset="/data/subcase_1/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/subcase_1/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/subcase_1/case" relevant="/data/reg_child_2 = 'yes'"/><setvalue ref="/data/subcase_1/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/subcase_1/case/create/case_name" calculate="/data/child_reg_2/child_name_2"/><bind nodeset="/data/subcase_1/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/subcase_1/case/update/dob" relevant="count(/data/child_reg_2/dob_2) &gt; 0" calculate="/data/child_reg_2/dob_2"/><bind nodeset="/data/subcase_1/case/update/gender" relevant="count(/data/child_reg_2/gender_2) &gt; 0" calculate="/data/child_reg_2/gender_2"/><bind nodeset="/data/subcase_1/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/subcase_1/case/update/other_name" relevant="count(/data/child_reg_2/other_name_2) &gt; 0" calculate="/data/child_reg_2/other_name_2"/><bind nodeset="/data/subcase_1/case/update/child_id" relevant="count(/data/child_id_2) &gt; 0" calculate="/data/child_id_2"/><bind nodeset="/data/subcase_1/case/update/child_name" relevant="count(/data/child_reg_2/child_name_2) &gt; 0" calculate="/data/child_reg_2/child_name_2"/><bind nodeset="/data/subcase_1/case/update/phu" relevant="count(/data/phu) &gt; 0" calculate="/data/phu"/><bind nodeset="/data/subcase_1/case/index/parent" calculate="/data/case/@case_id"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/adp">
+			<label ref="jr:itext('adp-label2')"/>
+			<itemset nodeset="instance('adp')/adp_list/adp">
+				<label ref="adp_name"/>
+				<value ref="adp_id"/>
+			</itemset>
+		</select1>
+		<select1 ref="/data/phu">
+			<label ref="jr:itext('phu-label')"/>
+			<itemset nodeset="instance('phu')/phu_list/phu[adp_id=/data/adp]">
+				<label ref="phu_name"/>
+				<value ref="phu_id"/>
+			</itemset>
+		</select1>
+		<select1 ref="/data/community_name">
+			<label ref="jr:itext('community_name-label')"/>
+			<itemset nodeset="instance('community')/community_list/community[phu_id=/data/phu]">
+				   <label ref="community_name"/>
+				   <value ref="community_id"/>
+			</itemset>
+		</select1>
+		<input ref="/data/mother_id_numeric">
+			<label ref="jr:itext('mother_id_numeric-label')"/>
+		</input>
+		<trigger ref="/data/mother_id_display">
+			<label ref="jr:itext('mother_id_display-label')"/>
+		</trigger>
+		<input ref="/data/mother_name">
+			<label ref="jr:itext('mother_name-label')"/>
+		</input>
+		<input ref="/data/other_name">
+			<label ref="jr:itext('other_name-label')"/>
+		</input>
+		<input ref="/data/mother_phone_number">
+			<label ref="jr:itext('mother_phone_number-label')"/>
+		</input>
+		<input ref="/data/husband_name">
+			<label ref="jr:itext('husband_name-label')"/>
+		</input>
+		<input ref="/data/house_number">
+			<label ref="jr:itext('house_number-label')"/>
+		</input>
+		<input ref="/data/age_at_registration">
+			<label ref="jr:itext('age_at_registration-label')"/>
+		</input>
+		<select1 ref="/data/maternal_health_card">
+			<label ref="jr:itext('maternal_health_card-label')"/>
+			<item>
+				<label ref="jr:itext('maternal_health_card-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('maternal_health_card-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/last_menstrual_date">
+			<label ref="jr:itext('last_menstrual_date-label')"/>
+		</input>
+		<select1 ref="/data/is_pregnant">
+			<label ref="jr:itext('is_pregnant-label')"/>
+			<item>
+				<label ref="jr:itext('is_pregnant-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('is_pregnant-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/edd">
+			<label ref="jr:itext('edd-label')"/>
+		</input>
+		<select1 ref="/data/married">
+			<label ref="jr:itext('married-label')"/>
+			<item>
+				<label ref="jr:itext('married-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('married-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/using_fp">
+			<label ref="jr:itext('using_fp-label')"/>
+			<item>
+				<label ref="jr:itext('married-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('married-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select ref="/data/type_of_fp">
+			<label ref="jr:itext('type_of_fp-label2')"/>
+			<item>
+				<label ref="jr:itext('type_of_fp-condom-label')"/>
+				<value>condom</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_fp-iud-label')"/>
+				<value>iud</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_fp-pill-label')"/>
+				<value>pill</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_fp-depo-label')"/>
+				<value>depo</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_fp-permanent-label')"/>
+				<value>permanent</value>
+			</item>
+		</select>
+		<trigger ref="/data/high_risk_warning">
+			<label ref="jr:itext('high_risk_warning-label')"/>
+		</trigger>
+		<select1 ref="/data/menstruation">
+			<label ref="jr:itext('menstruation-label')"/>
+			<item>
+				<label ref="jr:itext('menstruation-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('menstruation-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/number_children">
+			<label ref="jr:itext('number_children-label')"/>
+		</input>
+		<select1 ref="/data/reg_child_1">
+			<label ref="jr:itext('reg_child_1-label')"/>
+			<item>
+				<label ref="jr:itext('reg_child_1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_child_1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<group ref="/data/child_reg_1">
+			<label ref="jr:itext('child_reg_1-label')"/>
+			<input ref="/data/child_reg_1/child_name_1">
+				<label ref="jr:itext('child_name_1-label')"/>
+			</input>
+			<input ref="/data/child_reg_1/other_name_1">
+				<label ref="jr:itext('other_name_1-label')"/>
+			</input>
+			<select1 ref="/data/child_reg_1/gender_1">
+				<label ref="jr:itext('gender_1-label')"/>
+				<item>
+					<label ref="jr:itext('gender_1-male-label')"/>
+					<value>male</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gender_1-female-label')"/>
+					<value>female</value>
+				</item>
+			</select1>
+			<input ref="/data/child_reg_1/dob_1">
+				<label ref="jr:itext('dob_1-label')"/>
+			</input>
+			<trigger ref="/data/child_reg_1/child_message_1">
+				<label ref="jr:itext('child_message_1-label')"/>
+			</trigger>
+		</group>
+		<select1 ref="/data/reg_child_2">
+			<label ref="jr:itext('reg_child_2-label')"/>
+			<item>
+				<label ref="jr:itext('reg_child_1-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_child_1-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<group ref="/data/child_reg_2">
+			<label ref="jr:itext('child_reg_2-label')"/>
+			<input ref="/data/child_reg_2/child_name_2">
+				<label ref="jr:itext('child_name_2-label')"/>
+			</input>
+			<input ref="/data/child_reg_2/other_name_2">
+				<label ref="jr:itext('other_name_2-label')"/>
+			</input>
+			<select1 ref="/data/child_reg_2/gender_2">
+				<label ref="jr:itext('gender_2-label')"/>
+				<item>
+					<label ref="jr:itext('gender_1-1-m-label')"/>
+					<value>male</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gender_1-1-f-label')"/>
+					<value>female</value>
+				</item>
+			</select1>
+			<input ref="/data/child_reg_2/dob_2">
+				<label ref="jr:itext('dob_2-label')"/>
+			</input>
+			<trigger ref="/data/child_reg_2/child_message_2">
+				<label ref="jr:itext('child_message_2-label')"/>
+			</trigger>
+		</group>
+		<select1 ref="/data/reg_child_3">
+			<label ref="jr:itext('reg_child_3-label')"/>
+			<item>
+				<label ref="jr:itext('reg_child_2-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_child_2-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<group ref="/data/child_reg_3">
+			<label ref="jr:itext('child_reg_3-label')"/>
+			<input ref="/data/child_reg_3/child_name_3">
+				<label ref="jr:itext('child_name_3-label')"/>
+			</input>
+			<input ref="/data/child_reg_3/other_name_3">
+				<label ref="jr:itext('other_name_3-label')"/>
+			</input>
+			<select1 ref="/data/child_reg_3/gender_3">
+				<label ref="jr:itext('gender_3-label')"/>
+				<item>
+					<label ref="jr:itext('gender_2-1-m-label')"/>
+					<value>male</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gender_2-1-f-label')"/>
+					<value>female</value>
+				</item>
+			</select1>
+			<input ref="/data/child_reg_3/dob_3">
+				<label ref="jr:itext('dob_3-label')"/>
+			</input>
+			<trigger ref="/data/child_reg_3/child_message_3">
+				<label ref="jr:itext('child_message_3-label')"/>
+			</trigger>
+		</group>
+		<select1 ref="/data/reg_child_4">
+			<label ref="jr:itext('reg_child_4-label')"/>
+			<item>
+				<label ref="jr:itext('reg_child_2-2-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reg_child_2-2-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<group ref="/data/child_reg_4">
+			<label ref="jr:itext('child_reg_4-label')"/>
+			<input ref="/data/child_reg_4/child_name_4">
+				<label ref="jr:itext('child_name_4-label')"/>
+			</input>
+			<input ref="/data/child_reg_4/other_name_4">
+				<label ref="jr:itext('other_name_4-label')"/>
+			</input>
+			<select1 ref="/data/child_reg_4/gender_4">
+				<label ref="jr:itext('gender_4-label')"/>
+				<item>
+					<label ref="jr:itext('gender_3-1-m-label')"/>
+					<value>male</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gender_3-1-f-label')"/>
+					<value>female</value>
+				</item>
+			</select1>
+			<input ref="/data/child_reg_4/dob_4">
+				<label ref="jr:itext('dob_4-label')"/>
+			</input>
+			<trigger ref="/data/child_reg_4/child_message_4">
+				<label ref="jr:itext('child_message_4-label')"/>
+			</trigger>
+		</group>
+		<select1 ref="/data/birth_this_month">
+			<label ref="jr:itext('birth_this_month-label')"/>
+			<item>
+				<label ref="jr:itext('birth_this_month-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('birth_this_month-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<trigger ref="/data/visit_reminder">
+			<label ref="jr:itext('visit_reminder-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date">
+			<label ref="jr:itext('debug_conception_date-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-1">
+			<label ref="jr:itext('debug_conception_date-1-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-4">
+			<label ref="jr:itext('debug_conception_date-4-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-5">
+			<label ref="jr:itext('debug_conception_date-5-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-6">
+			<label ref="jr:itext('debug_conception_date-6-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-7">
+			<label ref="jr:itext('debug_conception_date-7-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-8">
+			<label ref="jr:itext('debug_conception_date-8-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-9">
+			<label ref="jr:itext('debug_conception_date-9-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-3">
+			<label ref="jr:itext('debug_conception_date-3-label')"/>
+		</trigger>
+		<trigger ref="/data/debug_conception_date-2">
+			<label ref="jr:itext('debug_conception_date-2-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

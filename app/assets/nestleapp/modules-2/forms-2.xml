@@ -1,0 +1,231 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Deregister Mother</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3EB741FF-43FD-42D6-91E1-8C93DE82EE6F" uiVersion="1" version="560" name="Deregister Mother">
+					<mother_id/>
+					<discharge_date/>
+					<reason_for_closure/>
+					<date_of_death/>
+					<name_of_deceased/>
+					<place_of_death/>
+					<type_of_death/>
+					<time_of_death_maternal/>
+					<cause_of_death_maternal/>
+					<are_you_sure/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><type_of_death/><discharge_date/><name_of_deceased/><cause_of_death_maternal/><date_of_death/><time_of_death_maternal/><are_you_sure/><reason_for_closure/><place_of_death/></update><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/mother_id"/>
+			<bind nodeset="/data/discharge_date" type="xsd:date" calculate="today()"/>
+			<bind nodeset="/data/reason_for_closure"/>
+			<bind nodeset="/data/date_of_death" type="xsd:date" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/name_of_deceased" type="xsd:string" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/place_of_death" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/type_of_death" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/time_of_death_maternal" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/cause_of_death_maternal" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/are_you_sure"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="discharge_date-label">
+						<value>Date</value>
+					</text>
+					<text id="reason_for_closure-label">
+						<value>Reason for closure</value>
+					</text>
+					<text id="closure_reason-death-label">
+						<value>Death</value>
+					</text>
+					<text id="reason_for_closure-change_of_location-label">
+						<value>Change of HH location outside of ttC area</value>
+					</text>
+					<text id="reason_for_closure-does_not_want_to_participate-label">
+						<value>HH does not want to participate</value>
+					</text>
+					<text id="reason_for_closure-end_of_pregnancy-label">
+						<value>End of pregnancy</value>
+					</text>
+					<text id="closure_reason-not_pregnant-label">
+						<value>Not pregnant</value>
+					</text>
+					<text id="date_of_death-label">
+						<value>Date of death</value>
+					</text>
+					<text id="name_of_deceased-label">
+						<value>Name of deceased</value>
+					</text>
+					<text id="place_of_death-label">
+						<value>Place of death</value>
+					</text>
+					<text id="place_of_death-home-label">
+						<value>Home</value>
+					</text>
+					<text id="place_of_death-health_centre-label">
+						<value>Health centre</value>
+					</text>
+					<text id="place_of_death-hospital-label">
+						<value>Hospital</value>
+					</text>
+					<text id="place_of_death-other-label">
+						<value>Other</value>
+					</text>
+					<text id="type_of_death-label">
+						<value>Type of death</value>
+					</text>
+					<text id="type_of_death-maternal-label">
+						<value>Maternal death (pregnancy to 45 days post partum)</value>
+					</text>
+					<text id="type_of_death-other-label">
+						<value>Other</value>
+					</text>
+					<text id="time_of_death_maternal-label">
+						<value>Death occurred from pregnancy to 45 days after birth?</value>
+					</text>
+					<text id="time_of_death_maternal-no-label">
+						<value>No</value>
+					</text>
+					<text id="time_of_death_maternal-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="cause_of_death_maternal-label">
+						<value>Cause of death</value>
+					</text>
+					<text id="cause_of_death_maternal-eclampsia-label">
+						<value>Eclampsia</value>
+					</text>
+					<text id="cause_of_death_maternal-hypersensitive-label">
+						<value>Hypersensitive illness</value>
+					</text>
+					<text id="cause_of_death_maternal-hemorrhage-label">
+						<value>Post-partum hemorrhage</value>
+					</text>
+					<text id="cause_of_death_maternal-infection-label">
+						<value>Post-partum infection</value>
+					</text>
+					<text id="cause_of_death_maternal-other-label">
+						<value>Other</value>
+					</text>
+					<text id="are_you_sure-label">
+						<value>Are you sure you wish to deregister this mother?</value>
+					</text>
+					<text id="are_you_sure-no-label">
+						<value>No</value>
+					</text>
+					<text id="are_you_sure-yes-label">
+						<value>Yes</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/type_of_death" relevant="count(/data/type_of_death) &gt; 0" calculate="/data/type_of_death"/><bind nodeset="/data/case/update/discharge_date" relevant="count(/data/discharge_date) &gt; 0" calculate="/data/discharge_date"/><bind nodeset="/data/case/update/name_of_deceased" relevant="count(/data/name_of_deceased) &gt; 0" calculate="/data/name_of_deceased"/><bind nodeset="/data/case/update/cause_of_death_maternal" relevant="count(/data/cause_of_death_maternal) &gt; 0" calculate="/data/cause_of_death_maternal"/><bind nodeset="/data/case/update/date_of_death" relevant="count(/data/date_of_death) &gt; 0" calculate="/data/date_of_death"/><bind nodeset="/data/case/update/time_of_death_maternal" relevant="count(/data/time_of_death_maternal) &gt; 0" calculate="/data/time_of_death_maternal"/><bind nodeset="/data/case/update/are_you_sure" relevant="count(/data/are_you_sure) &gt; 0" calculate="/data/are_you_sure"/><bind nodeset="/data/case/update/reason_for_closure" relevant="count(/data/reason_for_closure) &gt; 0" calculate="/data/reason_for_closure"/><bind nodeset="/data/case/update/place_of_death" relevant="count(/data/place_of_death) &gt; 0" calculate="/data/place_of_death"/><bind nodeset="/data/case/close" relevant="/data/are_you_sure = 'yes'"/><setvalue ref="/data/name_of_deceased" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_name"/><setvalue ref="/data/mother_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_id"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/discharge_date">
+			<label ref="jr:itext('discharge_date-label')"/>
+		</input>
+		<select1 ref="/data/reason_for_closure">
+			<label ref="jr:itext('reason_for_closure-label')"/>
+			<item>
+				<label ref="jr:itext('closure_reason-death-label')"/>
+				<value>death</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_for_closure-change_of_location-label')"/>
+				<value>change_of_location</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_for_closure-does_not_want_to_participate-label')"/>
+				<value>does_not_want_to_participate</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_for_closure-end_of_pregnancy-label')"/>
+				<value>end_of_pregnancy</value>
+			</item>
+			<item>
+				<label ref="jr:itext('closure_reason-not_pregnant-label')"/>
+				<value>not_pregnant</value>
+			</item>
+		</select1>
+		<input ref="/data/date_of_death">
+			<label ref="jr:itext('date_of_death-label')"/>
+		</input>
+		<input ref="/data/name_of_deceased">
+			<label ref="jr:itext('name_of_deceased-label')"/>
+		</input>
+		<select1 ref="/data/place_of_death">
+			<label ref="jr:itext('place_of_death-label')"/>
+			<item>
+				<label ref="jr:itext('place_of_death-home-label')"/>
+				<value>home</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_death-health_centre-label')"/>
+				<value>health_centre</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_death-hospital-label')"/>
+				<value>hospital</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_death-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/type_of_death">
+			<label ref="jr:itext('type_of_death-label')"/>
+			<item>
+				<label ref="jr:itext('type_of_death-maternal-label')"/>
+				<value>maternal</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_death-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/time_of_death_maternal">
+			<label ref="jr:itext('time_of_death_maternal-label')"/>
+			<item>
+				<label ref="jr:itext('time_of_death_maternal-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('time_of_death_maternal-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/cause_of_death_maternal">
+			<label ref="jr:itext('cause_of_death_maternal-label')"/>
+			<item>
+				<label ref="jr:itext('cause_of_death_maternal-eclampsia-label')"/>
+				<value>eclampsia</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_maternal-hypersensitive-label')"/>
+				<value>hypersensitive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_maternal-hemorrhage-label')"/>
+				<value>hemorrhage</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_maternal-infection-label')"/>
+				<value>infection</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_maternal-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/are_you_sure">
+			<label ref="jr:itext('are_you_sure-label')"/>
+			<item>
+				<label ref="jr:itext('are_you_sure-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('are_you_sure-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+	</h:body>
+</h:html>

@@ -1,0 +1,48 @@
+<profile version="4" update="https://www.commcarehq.org/a/bihar/apps/download/5904d6d5d367dea49122153c651652c0/profile.xml?latest=true">
+        
+    <property key="purge-freq" value="7" force="true"/>
+    <property key="PostURL" value="https://www.commcarehq.org/a/bihar/receiver/" force="true"/>
+    <property key="ota-restore-url" value="https://www.commcarehq.org/a/bihar/phone/restore/?version=2.0"/>
+	<property key="cc-review-days" value="7"/>
+
+	<property key="cur_locale" value="en"/>
+	<property key="logenabled" value="Enabled"/>
+	<property key="log_prop_weekly" value="log_short"/>
+	<property key="log_prop_daily" value="log_never"/>
+
+    <property key="ViewStyle" value="v_singlequestionscreen"/>
+
+    <property key="jr_openrosa_api" value="1.0"/>
+        
+    <property key="cc_user_domain" value="bihar.commcarehq.org"/>
+    
+    
+    <property key="server-tether" value="sync"/>
+
+    <!-- turn these on for production -->
+	<property key="cc-autoup-freq" value="freq-weekly"/>
+	<!-- autosync daily -->
+	<property key="cc-autosync-freq" value="freq-daily"/>
+
+	<!-- No-auto-login -->
+	<property key="cc-user-mode" value="cc-u-normal"/>
+	<!-- property key="cc-send-unsent" value="cc-su-man"/ -->
+    
+    <features>
+    
+        <checkoff active="false"/>
+        <reminders active="true">
+            <time>0</time>
+        </reminders>
+        <package active="false"/>
+        <users active="true">
+        	<logo>jr://resource/logos.png</logo>
+        </users>
+        <sense active="true"/>
+    </features>
+    
+    <suite><resource id="bihar_demo" version="4">
+        <location authority="local">jr://resource/bihar_suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/bihar/apps/download/5904d6d5d367dea49122153c651652c0/bihar_suite.xml?latest=true</location>
+    </resource></suite>
+</profile>

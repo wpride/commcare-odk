@@ -1,0 +1,86 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Form</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/39FCCD16-F15A-46C4-88FD-09642912C3BD" uiVersion="1" version="139" name="New Form">
+					<success/>
+					<mcts_id/>
+					<full_mcts_id/>
+					<mcts_match_update/>
+				<parents>
+				    <parent>
+				        <case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+				            <update>
+				                <mcts_match/>
+				                </update>
+				                
+				                </case>
+				                
+				                </parent>
+				                
+				                </parents>
+				                <case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+				                    <update>
+				                        <full_mcts_id/>
+				                        <mcts_id/>
+				                        <mcts_match/>
+				                    </update>
+				                    
+				                    </case>
+				                    <orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta>
+				                    
+				                    </data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
+			<bind nodeset="/data/success"/>
+			<bind nodeset="/data/mcts_id" calculate="substr(/data/full_mcts_id,11,18)"/>
+			<bind nodeset="/data/full_mcts_id"/>
+			<bind nodeset="/data/mcts_match_update" calculate="if(/data/success = 'ok', 'yes', '')"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="success-label">
+						<value>Success! You have matched an MCTS case to an existing Case.</value>
+					</text>
+					<text id="success-ok-label">
+						<value>OK</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/>
+		<bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/>
+		<bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/>
+		
+		
+		<bind calculate="/data/full_mcts_id" nodeset="/data/case/update/full_mcts_id" relevant="count(/data/full_mcts_id) &gt; 0"/>
+		<bind calculate="/data/mcts_id" nodeset="/data/case/update/mcts_id" relevant="count(/data/mcts_id) &gt; 0"/>
+		<bind calculate="/data/mcts_match_update" nodeset="/data/case/update/mcts_match" relevant="count(/data/mcts_match_update) &gt; 0"/>
+		
+		
+		
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/parents/parent/case/@date_modified" type="xsd:dateTime"/>
+		<bind calculate="/data/meta/userID" nodeset="/data/parents/parent/case/@user_id"/>
+		<bind calculate="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/index/parent" nodeset="/data/parents/parent/case/@case_id"/>
+		
+		<bind calculate="/data/mcts_match_update" nodeset="/data/parents/parent/case/update/mcts_match" relevant="count(/data/mcts_match_update) &gt; 0"/>
+		
+		<setvalue event="xforms-ready" ref="/data/full_mcts_id" value="instance('casedb')/casedb/case[@case_id=instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/index/parent]/mcts_id"/>
+		
+		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+		<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/>
+		<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/>
+		<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+		<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+		<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+		<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/success">
+			<label ref="jr:itext('success-label')"/>
+			<item>
+				<label ref="jr:itext('success-ok-label')"/>
+				<value>ok</value>
+			</item>
+		</select1>
+	</h:body>
+</h:html>

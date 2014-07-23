@@ -1,0 +1,294 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Seguimento</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/A4BCDED3-5D58-4312-AF6A-76A97C9530DB" uiVersion="1" version="660" name="Seguimento">
+					<home_visit/>
+					<referral_status/>
+					<health_status_followup/>
+					<status_unknown/>
+					<other_comments/>
+					<educ_same_worse/>
+					<educ_importance_hf/>
+					<referral_form/>
+					<new_registration/>
+					<educ_better/>
+					<educ_followup_again/>
+					<prev_referral_given/>
+					<new_referral_given/>
+					<close_case/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><referral_given/></update><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/home_visit" required="true()"/>
+			<bind nodeset="/data/referral_status" required="true()"/>
+			<bind nodeset="/data/health_status_followup" required="true()"/>
+			<bind nodeset="/data/status_unknown" relevant="/data/health_status_followup = '4'" required="true()"/>
+			<bind nodeset="/data/other_comments" type="xsd:string"/>
+			<bind nodeset="/data/educ_same_worse" relevant="/data/health_status_followup = '2' or /data/health_status_followup = '3'"/>
+			<bind nodeset="/data/educ_importance_hf" relevant="/data/health_status_followup = '2' or /data/health_status_followup = '3'"/>
+			<bind nodeset="/data/referral_form" relevant="/data/health_status_followup = '2' or /data/health_status_followup = '3'"/>
+			<bind nodeset="/data/new_registration" relevant="/data/health_status_followup = '2' or /data/health_status_followup = '3'"/>
+			<bind nodeset="/data/educ_better" relevant="/data/health_status_followup = '1'"/>
+			<bind nodeset="/data/educ_followup_again" relevant="/data/status_unknown = '1'"/>
+			<bind nodeset="/data/prev_referral_given"/>
+			<bind nodeset="/data/new_referral_given" calculate="if(/data/health_status_followup = '2' or /data/health_status_followup = '3' or /data/referral_status = '0', 'yes', 'no')"/>
+			<bind nodeset="/data/close_case" calculate="if(/data/health_status_followup = '1' or /data/health_status_followup = '0' or /data/status_unknown = '2' or /data/status_unknown = '3' or /data/status_unknown = '0', 'yes', 'no')"/>
+			<itext>
+				<translation lang="por" default="">
+					<text id="home_visit-label">
+						<value>&#201; uma visita domicili&#225;ria?</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="home_visit-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>N&#226;o</value>
+					</text>
+					<text id="referral_status-label2">
+						<value>Voc&#234; transferiu este paciente para a US durante a sua &#250;tima consulta. O paciente foi para a US?</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="referral_status-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="referral_status-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="health_status_followup-label">
+						<value>Como &#233; que est&#225; a crian&#231;a?</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="health_status-1-label">
+						<value>Melhor</value>
+					</text>
+					<text id="health_status-2-label">
+						<value>Mesmo</value>
+					</text>
+					<text id="health_status-3-label">
+						<value>Pior</value>
+					</text>
+					<text id="health_status-4-label">
+						<value>Desconhecido</value>
+					</text>
+					<text id="health_status-0-label">
+						<value>Morte</value>
+					</text>
+					<text id="status_unknown-label">
+						<value>Por que &#233; desconhecido?</value>
+					</text>
+					<text id="status_unknpwn-1-label">
+						<value>N&#227;o est&#225; dispon&#237;vel.</value>
+					</text>
+					<text id="status_unknpwn-2-label">
+						<value>M&#227;e n&#227;o quer que o APE observa a crian&#231;a</value>
+					</text>
+					<text id="status_unknpwn-3-label">
+						<value>O paciente se afastou.</value>
+					</text>
+					<text id="status_unknpwn-0-label">
+						<value>Outro motivo.</value>
+					</text>
+					<text id="other_comments-label">
+						<value>Outros coment&#225;rios:</value>
+					</text>
+					<text id="educ_same_worse-label">
+						<value>O bebe n&#227;o est&#225; a se sentir melhor. Transferir urgentamente para a US mais pr&#243;xima.</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="educ_importance_hf-label">
+						<value>Tem alguma dificuldade para levar a sua crian&#231;a &#224; US?   Falar com o seu APE sobre como solucionar o  problema.</value>
+						<value form="image">jr://file/commcare/image/data/remember.png</value>
+					</text>
+					<text id="referral_form-label">
+						<value>Preencha a guia de refer&#234;ncia e fa&#231;a o seguimento depois de 1 dia.</value>
+						<value form="image">jr://file/commcare/image/data/fill_referral.png</value>
+					</text>
+					<text id="new_registration-label">
+						<value>Se tem sintomas novas, por favor preencha outro formulario de primeira visita para este bebe.</value>
+						<value form="image">jr://file/commcare/image/registration.png</value>
+					</text>
+					<text id="educ_better-label">
+						<value>Parabens! O bebe se sente melhor. Aconselhar a mae a cumprir todas as visitas p&#243;s-parto na US.</value>
+						<value form="image">jr://file/commcare/image/data/newborn_hf.png</value>
+					</text>
+					<text id="educ_followup_again-label">
+						<value>Volta a visitar a crian&#231;a depois de 1 dia para dar seguimento.</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="home_visit-label">
+						<value>Is it a home visit?</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="home_visit-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>No</value>
+					</text>
+					<text id="referral_status-label2">
+						<value>You referred this patient to the health facility during your last meeting, did they go?</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="referral_status-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="referral_status-0-label">
+						<value>No</value>
+					</text>
+					<text id="health_status_followup-label">
+						<value>How is the child?</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="health_status-1-label">
+						<value>Better</value>
+					</text>
+					<text id="health_status-2-label">
+						<value>Same</value>
+					</text>
+					<text id="health_status-3-label">
+						<value>Worse</value>
+					</text>
+					<text id="health_status-4-label">
+						<value>Unknown</value>
+					</text>
+					<text id="health_status-0-label">
+						<value>Dead</value>
+					</text>
+					<text id="status_unknown-label">
+						<value>Why is it unknown?</value>
+					</text>
+					<text id="status_unknpwn-1-label">
+						<value>Patient not available</value>
+					</text>
+					<text id="status_unknpwn-2-label">
+						<value>Mother doesn't want APE to treat child</value>
+					</text>
+					<text id="status_unknpwn-3-label">
+						<value>Patient has moved</value>
+					</text>
+					<text id="status_unknpwn-0-label">
+						<value>Other reason</value>
+					</text>
+					<text id="other_comments-label">
+						<value>Other comments:</value>
+					</text>
+					<text id="educ_same_worse-label">
+						<value>The infant is not feeling better. Transfer immediately to the nearest HF.</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="educ_importance_hf-label">
+						<value>Do you have any difficulties in getting your child to a US? Talk to your APE about how to address any challenges.</value>
+						<value form="image">jr://file/commcare/image/data/remember.png</value>
+					</text>
+					<text id="referral_form-label">
+						<value>Fill in the referral form and follow up after 1 day.</value>
+						<value form="image">jr://file/commcare/image/data/fill_referral.png</value>
+					</text>
+					<text id="new_registration-label">
+						<value>If new symtoms have appeared, please fill out another registration form for this infant.</value>
+						<value form="image">jr://file/commcare/image/registration.png</value>
+					</text>
+					<text id="educ_better-label">
+						<value>Congrats! The infant is feeling better. Encourage the mother to take the infant to the HF for post-natal visits.</value>
+						<value form="image">jr://file/commcare/image/data/newborn_hf.png</value>
+					</text>
+					<text id="educ_followup_again-label">
+						<value>Return after 1 day for follow up.</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/referral_given" relevant="count(/data/new_referral_given) &gt; 0" calculate="/data/new_referral_given"/><bind nodeset="/data/case/close" relevant="/data/close_case = 'yes'"/><setvalue ref="/data/prev_referral_given" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/referral_given"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/home_visit">
+			<label ref="jr:itext('home_visit-label')"/>
+			<item>
+				<label ref="jr:itext('home_visit-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('home_visit-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<select1 ref="/data/referral_status">
+			<label ref="jr:itext('referral_status-label2')"/>
+			<item>
+				<label ref="jr:itext('referral_status-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referral_status-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<select1 ref="/data/health_status_followup">
+			<label ref="jr:itext('health_status_followup-label')"/>
+			<item>
+				<label ref="jr:itext('health_status-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('health_status-2-label')"/>
+				<value>2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('health_status-3-label')"/>
+				<value>3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('health_status-4-label')"/>
+				<value>4</value>
+			</item>
+			<item>
+				<label ref="jr:itext('health_status-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<select1 ref="/data/status_unknown">
+			<label ref="jr:itext('status_unknown-label')"/>
+			<item>
+				<label ref="jr:itext('status_unknpwn-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('status_unknpwn-2-label')"/>
+				<value>2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('status_unknpwn-3-label')"/>
+				<value>3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('status_unknpwn-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<input ref="/data/other_comments">
+			<label ref="jr:itext('other_comments-label')"/>
+		</input>
+		<trigger ref="/data/educ_same_worse">
+			<label ref="jr:itext('educ_same_worse-label')"/>
+		</trigger>
+		<trigger ref="/data/educ_importance_hf">
+			<label ref="jr:itext('educ_importance_hf-label')"/>
+		</trigger>
+		<trigger ref="/data/referral_form">
+			<label ref="jr:itext('referral_form-label')"/>
+		</trigger>
+		<trigger ref="/data/new_registration">
+			<label ref="jr:itext('new_registration-label')"/>
+		</trigger>
+		<trigger ref="/data/educ_better">
+			<label ref="jr:itext('educ_better-label')"/>
+		</trigger>
+		<trigger ref="/data/educ_followup_again">
+			<label ref="jr:itext('educ_followup_again-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

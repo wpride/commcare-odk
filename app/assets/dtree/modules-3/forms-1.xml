@@ -1,0 +1,180 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Usajili -Ruhusa</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/DAE12634-A0D3-4B1B-8A2D-41B11C5BB5BB" uiVersion="1" version="723" name="Usajili -Ruhusa">
+					<permission_giver_name/>
+					<permission_giver_phone/>
+					<whose_permission/>
+					<advise_safe_delivery/>
+					<deliver_health_facility/>
+					<will_pay_transport/>
+					<ask_transport_anytime/>
+					<thank_you/>
+					<end_of_form/>
+					<condition_high_bp/>
+					<condition_diabetes/>
+					<condition_sicke_cell/>
+					<condition_cardiac_disease/>
+					<nearest_phcc/>
+					<preferred_delivery_facility/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><permission_giver_phone/><whose_permission/><ask_transport_anytime/><permission_giver_name/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/permission_giver_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/permission_giver_phone" type="xsd:long"/>
+			<bind nodeset="/data/whose_permission" required="true()"/>
+			<bind nodeset="/data/advise_safe_delivery" required="true()"/>
+			<bind nodeset="/data/deliver_health_facility"/>
+			<bind nodeset="/data/will_pay_transport" required="true()"/>
+			<bind nodeset="/data/ask_transport_anytime" required="true()"/>
+			<bind nodeset="/data/thank_you"/>
+			<bind nodeset="/data/end_of_form"/>
+			<bind nodeset="/data/condition_high_bp"/>
+			<bind nodeset="/data/condition_diabetes"/>
+			<bind nodeset="/data/condition_sicke_cell"/>
+			<bind nodeset="/data/condition_cardiac_disease"/>
+			<bind nodeset="/data/nearest_phcc"/>
+			<bind nodeset="/data/preferred_delivery_facility"/>
+			<itext>
+				<translation lang="sw" default="">
+					<text id="permission_giver_name-label">
+						<value>Jina la mtoa maamuzi:</value>
+					</text>
+					<text id="permission_giver_phone-label">
+						<value>Namba ya simu ya mtoa maamuzi.</value>
+					</text>
+					<text id="whose_permission-label">
+						<value>CHAGUA ni ruhusa ya nani unaiandikia taarifa </value>
+					</text>
+					<text id="question3-husband-label">
+						<value>Mume</value>
+					</text>
+					<text id="question3-mother_in_law-label">
+						<value>Mama mkwe</value>
+					</text>
+					<text id="question3-other-label">
+						<value>Wengine</value>
+					</text>
+					<text id="advise_safe_delivery-label">
+						<value>Mwanafamlia/mke wako anatakiwa kujifungua katika kituo cha afya ili kuwa na uhakikka wa kujifungua salamana kuhakikisha mama na mtoto wako salama</value>
+					</text>
+					<text id="deliver_health_facility-label">
+						<value>Kutokana na historia yake na vidokezo vya hatari ni vizuri akajifungulia <output value="/data/preferred_delivery_facility"/></value>
+					</text>
+					<text id="will_pay_transport-label">
+						<value>Sisi tutalipa gharama za usafiri wa mama kwenda kituo cha afya au hospitali. Kuokoa pesa kwa ajili ya mambo mengine mama na mtoto atahitaji kuwa na afya bora.</value>
+					</text>
+					<text id="ask_transport_anytime-label">
+						<value>Muulize mtoa Ruhusa:Je unakubali nimsafirishe mama kwa haraka kwenda kituo cha Afya kwa kujifungua au pindi kunapotokezea matatizo mengine? </value>
+					</text>
+					<text id="ask_permission-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="ask_permission-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="thank_you-label">
+						<value>Asante. </value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Mwisho wa fomu</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="permission_giver_name-label">
+						<value>Name of permission giver. </value>
+					</text>
+					<text id="permission_giver_phone-label">
+						<value>Phone number of permission giver. </value>
+					</text>
+					<text id="whose_permission-label">
+						<value>SELECT whose permission you are recording.</value>
+					</text>
+					<text id="question3-husband-label">
+						<value>Husband</value>
+					</text>
+					<text id="question3-mother_in_law-label">
+						<value>Mother in law</value>
+					</text>
+					<text id="question3-other-label">
+						<value>other</value>
+					</text>
+					<text id="advise_safe_delivery-label">
+						<value>Your family member needs to give birth at the health facility in order to have a safe delivery and make sure the mother and baby are healthy. </value>
+					</text>
+					<text id="deliver_health_facility-label">
+						<value>Due the her history and risk factors, it is best for her to deliver at <output value="/data/preferred_delivery_facility"/></value>
+					</text>
+					<text id="will_pay_transport-label">
+						<value> We will pay for the mother's transport to the health facility or hospital. Save money for other things that your family will need to have a safe delivery and stay healthy. </value>
+					</text>
+					<text id="ask_transport_anytime-label">
+						<value>ASK PERMISSION GIVER: Do you allow me to immediately transport the mother for health facility delivery or other complications if they arise? </value>
+					</text>
+					<text id="ask_permission-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="ask_permission-no-label">
+						<value>No</value>
+					</text>
+					<text id="thank_you-label">
+						<value>Thank you.</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>End of the form</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/permission_giver_phone" relevant="count(/data/permission_giver_phone) &gt; 0" calculate="/data/permission_giver_phone"/><bind nodeset="/data/case/update/whose_permission" relevant="count(/data/whose_permission) &gt; 0" calculate="/data/whose_permission"/><bind nodeset="/data/case/update/ask_transport_anytime" relevant="count(/data/ask_transport_anytime) &gt; 0" calculate="/data/ask_transport_anytime"/><bind nodeset="/data/case/update/permission_giver_name" relevant="count(/data/permission_giver_name) &gt; 0" calculate="/data/permission_giver_name"/><setvalue ref="/data/condition_sicke_cell" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/tmp_medical_conditions_sicklecell"/><setvalue ref="/data/condition_high_bp" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/tmp_medical_conditions_highbp"/><setvalue ref="/data/condition_cardiac_disease" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/tmp_medical_conditions_cardiac_disease"/><setvalue ref="/data/nearest_phcc" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/nearest_PHCC"/><setvalue ref="/data/condition_diabetes" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/tmp_medical_conditions_diabetes"/><setvalue ref="/data/preferred_delivery_facility" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/preferred_delivery_facility"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/permission_giver_name">
+			<label ref="jr:itext('permission_giver_name-label')"/>
+		</input>
+		<input ref="/data/permission_giver_phone">
+			<label ref="jr:itext('permission_giver_phone-label')"/>
+		</input>
+		<select1 ref="/data/whose_permission">
+			<label ref="jr:itext('whose_permission-label')"/>
+			<item>
+				<label ref="jr:itext('question3-husband-label')"/>
+				<value>husband</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question3-mother_in_law-label')"/>
+				<value>mother_in_law</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question3-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<trigger ref="/data/advise_safe_delivery">
+			<label ref="jr:itext('advise_safe_delivery-label')"/>
+		</trigger>
+		<trigger ref="/data/deliver_health_facility">
+			<label ref="jr:itext('deliver_health_facility-label')"/>
+		</trigger>
+		<trigger ref="/data/will_pay_transport">
+			<label ref="jr:itext('will_pay_transport-label')"/>
+		</trigger>
+		<select1 ref="/data/ask_transport_anytime">
+			<label ref="jr:itext('ask_transport_anytime-label')"/>
+			<item>
+				<label ref="jr:itext('ask_permission-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('ask_permission-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/thank_you">
+			<label ref="jr:itext('thank_you-label')"/>
+		</trigger>
+		<trigger ref="/data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

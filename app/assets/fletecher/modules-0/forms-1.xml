@@ -1,0 +1,216 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Status of incident</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/D1649C25-4E37-41B9-B096-D03A565DBAB8" uiVersion="1" version="106" name="Status of incident">
+					<follow_up_assessment/>
+					<authority_resolve_group>
+						<authority_resolve/>
+						<authority_specify/>
+						<municipal_department_specify/>
+						<business_specify_group>
+							<business_specify/>
+							<business_contact_details/>
+						</business_specify_group>
+						<escalated_date_time/>
+						<incident_status/>
+					</authority_resolve_group>
+					<close_case/>
+					<prev_incident_status/>
+					<incident_date/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><incident_status/><incident_date/><escalated_date/></update><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/follow_up_assessment"/>
+			<bind nodeset="/data/authority_resolve_group" relevant="/data/prev_incident_status = ''"/>
+			<bind nodeset="/data/authority_resolve_group/authority_resolve"/>
+			<bind nodeset="/data/authority_resolve_group/authority_specify" type="xsd:string" relevant="/data/authority_resolve_group/authority_resolve = 'authority_other'"/>
+			<bind nodeset="/data/authority_resolve_group/municipal_department_specify" relevant="/data/authority_resolve_group/authority_resolve = 'municipal_department'"/>
+			<bind nodeset="/data/authority_resolve_group/business_specify_group" relevant="/data/authority_resolve_group/authority_resolve = 'business_owner_manager'"/>
+			<bind nodeset="/data/authority_resolve_group/business_specify_group/business_specify" type="xsd:string"/>
+			<bind nodeset="/data/authority_resolve_group/business_specify_group/business_contact_details" type="xsd:string"/>
+			<bind nodeset="/data/authority_resolve_group/escalated_date_time" type="xsd:dateTime" relevant="/data/authority_resolve_group/authority_resolve = ''" required="false()"/>
+			<bind nodeset="/data/authority_resolve_group/incident_status"/>
+			<bind nodeset="/data/close_case" relevant="/data/follow_up_assessment = 'satisfactory_yes' or /data/authority_resolve_group/incident_status = 'incident_resolved'"/>
+			<bind nodeset="/data/prev_incident_status" relevant="/data/authority_resolve_group/incident_status = 'incident_unresolved'"/>
+			<bind nodeset="/data/incident_date"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="follow_up_assessment-label">
+						<value>Incident reported on <output ref="/data/incident_date"/>. Has the incident been satisfactorily resolved?</value>
+					</text>
+					<text id="follow_up_assessment-satisfactory_yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="follow_up_assessment-satisfactory_no-label">
+						<value>No</value>
+					</text>
+					<text id="authority_resolve_group-label">
+						<value>Escalation</value>
+					</text>
+					<text id="authority_resolve-label">
+						<value>Who should be contacted to resolve it?</value>
+					</text>
+					<text id="authority_resolve-saps-label">
+						<value>SAPS</value>
+					</text>
+					<text id="authority_resolve-law_enforcement-label">
+						<value>Law Enforcement</value>
+					</text>
+					<text id="authority_resolve-business_owner_manager-label">
+						<value>Business owner/manager</value>
+					</text>
+					<text id="authority_resolve-municipal_department-label">
+						<value>Municipal Department</value>
+					</text>
+					<text id="authority_resolve-authority_other-label">
+						<value>Other</value>
+					</text>
+					<text id="authority_specify-label">
+						<value>Specify</value>
+					</text>
+					<text id="municipal_department_specify-label">
+						<value>Which Municipal Department?</value>
+					</text>
+					<text id="municipal_department_specify-solid_waste-label">
+						<value>Solid Waste</value>
+					</text>
+					<text id="municipal_department_specify-parks-label">
+						<value>Parks</value>
+					</text>
+					<text id="municipal_department_specify-social_development-label">
+						<value>Social Development</value>
+					</text>
+					<text id="municipal_department_specify-transport-label">
+						<value>Transport</value>
+					</text>
+					<text id="business_specify_group-label">
+						<value>Specify which business</value>
+					</text>
+					<text id="business_specify-label">
+						<value>Specify</value>
+					</text>
+					<text id="business_contact_details-label">
+						<value>Contact number</value>
+					</text>
+					<text id="escalated_date_time-label">
+						<value>Date and time escalated</value>
+					</text>
+					<text id="incident_status-label">
+						<value>Status of incident?</value>
+					</text>
+					<text id="incident_status-incident_resolved-label">
+						<value>Resolved</value>
+					</text>
+					<text id="incident_status-incident_unresolved-label">
+						<value>Unresolved</value>
+					</text>
+					<text id="close_case-label">
+						<value>Are you sure want to resolve this incident?</value>
+					</text>
+					<text id="close_case-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="close_case-no-label">
+						<value>No</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/incident_status" relevant="count(/data/prev_incident_status) &gt; 0" calculate="/data/prev_incident_status"/><bind nodeset="/data/case/update/incident_date" relevant="count(/data/incident_date) &gt; 0" calculate="/data/incident_date"/><bind nodeset="/data/case/update/escalated_date" relevant="count(/data/authority_resolve_group/escalated_date_time) &gt; 0" calculate="/data/authority_resolve_group/escalated_date_time"/><bind nodeset="/data/case/close" relevant="/data/follow_up_assessment = 'satisfactory_yes'"/><setvalue ref="/data/incident_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/incident_date"/><setvalue ref="/data/prev_incident_status" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/incident_status"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/follow_up_assessment">
+			<label ref="jr:itext('follow_up_assessment-label')"/>
+			<item>
+				<label ref="jr:itext('follow_up_assessment-satisfactory_yes-label')"/>
+				<value>satisfactory_yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('follow_up_assessment-satisfactory_no-label')"/>
+				<value>satisfactory_no</value>
+			</item>
+		</select1>
+		<group ref="/data/authority_resolve_group">
+			<label ref="jr:itext('authority_resolve_group-label')"/>
+			<select1 ref="/data/authority_resolve_group/authority_resolve">
+				<label ref="jr:itext('authority_resolve-label')"/>
+				<item>
+					<label ref="jr:itext('authority_resolve-saps-label')"/>
+					<value>saps</value>
+				</item>
+				<item>
+					<label ref="jr:itext('authority_resolve-law_enforcement-label')"/>
+					<value>law_enforcement</value>
+				</item>
+				<item>
+					<label ref="jr:itext('authority_resolve-business_owner_manager-label')"/>
+					<value>business_owner_manager</value>
+				</item>
+				<item>
+					<label ref="jr:itext('authority_resolve-municipal_department-label')"/>
+					<value>municipal_department</value>
+				</item>
+				<item>
+					<label ref="jr:itext('authority_resolve-authority_other-label')"/>
+					<value>authority_other</value>
+				</item>
+			</select1>
+			<input ref="/data/authority_resolve_group/authority_specify">
+				<label ref="jr:itext('authority_specify-label')"/>
+			</input>
+			<select1 ref="/data/authority_resolve_group/municipal_department_specify">
+				<label ref="jr:itext('municipal_department_specify-label')"/>
+				<item>
+					<label ref="jr:itext('municipal_department_specify-solid_waste-label')"/>
+					<value>solid_waste</value>
+				</item>
+				<item>
+					<label ref="jr:itext('municipal_department_specify-parks-label')"/>
+					<value>parks</value>
+				</item>
+				<item>
+					<label ref="jr:itext('municipal_department_specify-social_development-label')"/>
+					<value>social_development</value>
+				</item>
+				<item>
+					<label ref="jr:itext('municipal_department_specify-transport-label')"/>
+					<value>transport</value>
+				</item>
+			</select1>
+			<group ref="/data/authority_resolve_group/business_specify_group">
+				<label ref="jr:itext('business_specify_group-label')"/>
+				<input ref="/data/authority_resolve_group/business_specify_group/business_specify">
+					<label ref="jr:itext('business_specify-label')"/>
+				</input>
+				<input ref="/data/authority_resolve_group/business_specify_group/business_contact_details" appearance="numeric">
+					<label ref="jr:itext('business_contact_details-label')"/>
+				</input>
+			</group>
+			<input ref="/data/authority_resolve_group/escalated_date_time">
+				<label ref="jr:itext('escalated_date_time-label')"/>
+			</input>
+			<select1 ref="/data/authority_resolve_group/incident_status">
+				<label ref="jr:itext('incident_status-label')"/>
+				<item>
+					<label ref="jr:itext('incident_status-incident_resolved-label')"/>
+					<value>incident_resolved</value>
+				</item>
+				<item>
+					<label ref="jr:itext('incident_status-incident_unresolved-label')"/>
+					<value>incident_unresolved</value>
+				</item>
+			</select1>
+		</group>
+		<select1 ref="/data/close_case">
+			<label ref="jr:itext('close_case-label')"/>
+			<item>
+				<label ref="jr:itext('close_case-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('close_case-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+	</h:body>
+</h:html>

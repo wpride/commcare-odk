@@ -1,0 +1,226 @@
+menu.protocols.title=2. गृह भ्रमण
+
+menu.protocols.new=${0}. लाभार्थी सुचि बनाए
+menu.protocols.registration=${0}. पंजीकरण
+menu.protocols.bp=${0}. प्रसव पुर्व तैयारी
+menu.protocols.del=${0}. प्रसव
+menu.protocols.pnc=${0}. प्रसव बाद जाँच
+menu.protocols.ebf=${0}. केवल स्तनपान
+menu.protocols.cf=${0}. ऊपरी आहार
+
+menu.growth.monitoring=${0} Growth Monitoring
+menu.growth.title=3. Growth Monitoring
+
+growth.list.title=Growth Monitoring
+growth.child.name=Child Name
+growth.parent.name=Mother Name
+growth.child.dob=Date of Birth
+growth.child.last=Last Visit
+growth.child.gender=Sex
+growth.child.last=Last Visit
+growth.child.agemos=Age (months)
+growth.child.weight=Weight (kg)
+growth.child.class=Growth Class
+growth.child.prevdate=Previous Visit
+growth.child.prevagemos=Age (months)
+growth.child.prevweight=Weight (kg)
+growth.child.prevclass=Growth Class
+
+
+menu.client.management=4. लाभार्थी प्रबंधन
+menu.client.management.mtp_abort=${0}. गर्भपात
+menu.client.management.death=${0}. मृत्यु
+menu.client.management.refer=${0}. रेफरल
+menu.client.management.update_vaccinations=${0}. टीकाकरण अपडेट
+menu.client.management.mother_edit=${0}. माँ का नाम बदलें
+menu.client.management.close=${0}. फाईल बन्द
+menu.client.management.migrate.out=${0}. गाँव से बाहर जाना
+menu.client.management.migrate.in=${0}. गाँव लौट आना
+menu.client.management.ration=${0}. Takehome Ration
+menu.client.management.move=${0}. लाभार्थी हस्तांतरण
+
+
+
+menu.tools=6. उपकरण 
+menu.tools.ref=${0}. रेफरल जानकारी
+menu.tools.bmi=${0}. बी.एम.आई
+menu.tools.edd=${0}. प्रसव की संभावित तारीख कैल्क्यूलेटर
+menu.tools.assistance=${0}. तकनीकी सहायता
+
+
+menu.tasks.deliver_result=प्रसव परीनाम
+
+menu.schedule.entry=तैयारी
+menu.task.list=4. डूयूलिस्ट
+
+entity.pregnancy=लाभार्थी सुचि
+entity.pregnancy.detail=लाभार्थी जानकारी
+entity.detail.title=${0}
+
+entity.plan=गृह भ्रमण
+entity.task=कार्य
+
+header.name=नाम
+header.group=समू
+header.opened=पंजीकरण
+header.edd=प्रसव की सम्भावित तारीख
+header.add=प्रसव की तारीख
+header.husband=पति 
+header.village=गाँव 
+header.phone=मोबइल नम्बर
+header.hh_number=परिवार संख्या
+header.ward_number=वार्ड संख्या
+header.last.visit=पिछला
+header.last.visit.type=पिछला
+header.next.visit=अगला
+header.next.visit.type=अगलॉ 
+
+visit.type.new=लाभार्थी सुचि बनाए
+visit.type.reg=पंजीकरण
+visit.type.bp=प्रसव पुर्व तैयारी
+visit.type.del=प्रसव
+visit.type.pnc=प्रसव बाद जाँच
+visit.type.eb=केवल स्तनपान
+visit.type.cf=ऊपरी आहार
+visit.type.unknown=अज्ञात
+
+header.form=फार्म
+header.due=दिन
+
+menu.sync=7. आपस में जोरे
+button.Next=आगे
+sending.view.done=धन्यवाद,सफलतापूर्वक समाप्त
+sending.view.done.title=समाप्त
+select.due.late=!
+select.due.today=आज
+select.due.migrated=बाहर
+
+header.migration.status=प्रवास की स्थिति
+select.detail.migrated=वर्तमान में प्रवास
+loading.screen.message=केस अलग किए जा रहे हैं..
+loading.screen.title=लोड हो रहा है..
+
+button.No=नहीं
+question.SendNow=अब सुचना भेजे?
+case.date.opened=तारिख खुला है
+case.status=अब सुचना खुला है
+
+restore.noserveruri=आगे जाने के लिये कोई भी बटन दबाऐ
+restore.key.continue=दुबारा से रीसटोर नहीं कर सकते,पहले से फोन में मौजुद है
+restore.user.exists=पुरा डाटा रीसटोर करने में लम्बा समय लग सकता है
+
+sync.done.noupdate=सफलता पूर्वक अपडेट हो गया
+sync.done.updates=दिन पहले अपडेट हुआ
+sync.done.new=नये ${0} लाभार्थी जोड़े गये
+sync.done.closed=${0}  लाभार्थी का  ग़ृह भ्रमण बंद हो चुका
+sync.done.updated=${0}  लाभार्थी अपडेट हो चुके है
+sync.cancelled=लाभार्थी जोड़ने का प्रयास असफल रहा, दुबारा से प्रयास करें
+sync.send.fail=दूबारा प्रयास करें
+sync.pull.fail=दूबारा प्रयास करें
+sync.unsent.cancel=जोड़ना रद्द हो गया
+menu.sync.prompt=आपस में जोडने की जरुरत है
+menu.sync.last=${0} दिन पहले अपडेट हुआ था
+menu.sync.unsent.one=एक लाभार्थी की सूचना भेजना है
+menu.sync.unsent.mult=${0} लाभार्थी की सूचना भेजना है
+message.timesync=आपके फोन की तारीख एवं समय गलत प्रदर्शित हो रहा है, जिस कारण डाटा सम्मिलित होना संभव नहीं है। अपने मोबाईल का सही तारीख एवं समय दर्ज करें!
+polish.date.select=तारीख चूने
+polish.command.exit=बाहर आएँ
+polish.command.select=चुनिए
+polish.command.cancel=कैंसल
+polish.command.options=विकल्प
+polish.command.back=पीछे जाएँ
+polish.command.delete=मिटा दें
+menu.Back=पीछे जाएँ
+menu.Exit=बाहर आएँ
+command.back=पीछे जाएँ
+command.select=चुनिए
+command.cancel=कैंसल
+
+menu.send.all.val=नहीं भेजे गये सुचना ${0} को भेजे
+sending.status.problem.datasafe=सुचना सफलतापूर्वक प्राप्त लेकिन हमारी ओर से आ रही दिक्कत पर काम हो रही है 
+sending.status.multi=अभी ${0} फॉर्म (${1}  में से) भेजे जा रहे हैं।  ${2} फॉर्म ( ${3} में से)  सफलतापूर्वक भेजे गए हैं। 
+sending.status.title=फॉर्म भेजने की स्तिथि 
+sending.status.failures=कुछ दिक्कतें हुई,  ${0} फॉर्म नहीं भेजा जा पाया
+sending.status.long=फॉर्म भेजने मैं बहुत लम्बा समय लग रहा है
+sending.status.success=सफलतापूर्वक फॉर्म भेजा गया
+sending.status.failed=फॉर्म भेजना असफल रहा
+sending.status.error=फॉर्म भेजने में कुछ अज्ञात दिक्कत है
+home.change.user=लागिन एज एडमीन
+id=आ ई डी
+
+intro.restore=आपस में जोरे
+restore.bypass.instructions=दूबारा प्रयास करें
+restore.message.startdownload=सर्वर से संपर्क करने का प्रयास…
+restore.message.connectionmade=फॉर्म भेजने की स्तिथि 
+restore.message.connection.failed=दूबारा प्रयास करें
+restore.nocache=दूबारा प्रयास करें
+restore.downloaded=सफलता पूर्वक अपडेट हो गया
+restore.starting=फॉर्म भेजने की स्तिथि 
+restore.success=सफलता पूर्वक अपडेट हो गया
+restore.success.partial=दूबारा प्रयास करें
+restore.fail=दूबारा प्रयास करें
+restore.baddownload=दूबारा प्रयास करें
+
+activity.login.tryagain=कृपया दोबारा प्रयास करे
+activity.login.demomode.intro=आप CommCare को 'डेमो' मोड़ में खोल रहे हैं। 'डेमो' मोड़ सिर्फ अभ्यास के लिए है! ग्रिह्भ्रमण करने लिए अपने यूज़रनेम से लॉगिन करें
+activity.login.loginincorrect=लॉगिन सही नहीं है
+form.login.username=यूज़रनेम
+form.login.password=पॉस्वर्ड
+form.login.login=लॉगिन/ काम
+menu.Login=लॉगिन/ काम
+menu.Demo=डेमो/ अभ्यास
+
+homescreen.title=सही समय पर सही सलाह
+
+form.entry.constraint.msg=जवाब अपेक्षित सीमा के बाहर है
+view.sending.RequiredQuestion=आगे जाने के लिये उत्तर देना अनिवार्य हैं
+
+#NOTE: There's a NBSP here!
+select.due.list.due= 
+select.due.list.priority= 
+#NOTE: There's a NBSP above!
+
+task.list.when=वी. एच. एस. एन. डी /आर.आइ की तारीख
+task.list.d0=आज
+task.list.d1=कल
+task.list.d2=2 दिन में
+task.list.d3=3 दिन में
+task.list.d4=4 दिन में
+task.list.d5=5 दिन में
+task.list.d6=6 दिन में
+
+task.list.who=वी. एच. एस. एन. डी के लिए डूयूलिस्ट
+task.list.who.title.mother=माँ
+task.list.who.title.child=बच्चा
+task.list.who.title.husband=पति
+
+task.list.what=बची हुई देखभाल
+
+task.list.who.mother.imms=माँ
+task.list.who.father.imms=पति
+task.list.who.child.imms=बच्चा
+task.list.age=उम्र (माह)
+task.list.who.imm.anc_1=प्रसव पूर्व जाँच 1
+task.list.who.imm.anc_2=प्रसव पूर्व जाँच 2
+task.list.who.imm.anc_3=प्रसव पूर्व जाँच 3
+task.list.who.imm.anc_4=प्रसव पूर्व जाँच 4
+task.list.who.imm.tt_1=टी.टी - 1
+task.list.who.imm.tt_2=टी.टी - 2 
+task.list.who.imm.tt_b=टी.टी - बूस्टर
+task.list.who.imm.bcg=बी.सी.जी.
+task.list.who.imm.opv_0=पोलियो खुराख - 0
+task.list.who.imm.opv_1=पोलियो खुराख - 1
+task.list.who.imm.opv_2=पोलियो खुराख - 2
+task.list.who.imm.opv_3=पोलियो खुराख - 3
+task.list.who.imm.opv_b=पोलियो - बूस्टर
+task.list.who.imm.dpt_1=डी. पी. टी. - 1
+task.list.who.imm.dpt_2=डी. पी. टी. - 2
+task.list.who.imm.dpt_3=डी. पी. टी. - 3
+task.list.who.imm.dpt_b=डी. पी. टी - बूस्टर
+task.list.who.imm.hep_b_0=हेपेटाइटिस बी - 0
+task.list.who.imm.hep_b_1=हेपेटाइटिस बी - 1
+task.list.who.imm.hep_b_2=हेपेटाइटिस बी - 2
+task.list.who.imm.hep_b_3=हेपेटाइटिस बी - 3
+task.list.who.imm.measles=खसरे का टीका
+task.list.who.imm.measles_b=खसरे का बूस्टर टीका
+task.list.who.imm.vit_a_1=विटामिन ए -1

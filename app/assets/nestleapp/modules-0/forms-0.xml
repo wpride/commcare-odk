@@ -1,0 +1,214 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Overdue Visits</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3922ce8618e5f915d1d903367a6d1a674b6244ef" uiVersion="1" version="954" name="Overdue Visits">
+					<woman_name/>
+					<visit_message/>
+					<open_preg_form/>
+					<open_pp_form/>
+					<is_pregnant/>
+					<edd/>
+					<visit1_date/>
+					<v1_complete/>
+					<v2_complete/>
+					<visit2_date/>
+					<v3_complete/>
+					<visit3_date/>
+					<v4_complete/>
+					<visit4_date/>
+					<next_visit_date/>
+					<next_visit_type/>
+					<next_visit_message/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""/><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/woman_name" type="xsd:string" relevant="1=2" required="true()"/>
+			<bind nodeset="/data/visit_message"/>
+			<bind nodeset="/data/open_preg_form" relevant="/data/next_visit_type = 'pregnancy'"/>
+			<bind nodeset="/data/open_pp_form" relevant="/data/next_visit_type = 'post_partum'"/>
+			<bind nodeset="/data/is_pregnant" relevant="1=2"/>
+			<bind nodeset="/data/edd" type="xsd:date" relevant="1=2"/>
+			<bind nodeset="/data/visit1_date" type="xsd:date" relevant="1=2"/>
+			<bind nodeset="/data/v1_complete" relevant="1=2"/>
+			<bind nodeset="/data/v2_complete" relevant="1=2"/>
+			<bind nodeset="/data/visit2_date" type="xsd:date" relevant="1=2"/>
+			<bind nodeset="/data/v3_complete" relevant="1=2"/>
+			<bind nodeset="/data/visit3_date" type="xsd:date" relevant="1=2"/>
+			<bind nodeset="/data/v4_complete" relevant="1=2"/>
+			<bind nodeset="/data/visit4_date" type="xsd:date" relevant="1=2"/>
+			<bind nodeset="/data/next_visit_date" type="xsd:date" relevant="1=2"/>
+			<bind nodeset="/data/next_visit_type"/>
+			<bind nodeset="/data/next_visit_message"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="woman_name-label">
+						<value>Woman's Name</value>
+						<value form="image">jr://file/commcare/image/data/woman_name.png</value>
+					</text>
+					<text id="visit_message-label">
+						<value>Please visit mother to conduct <output value="/data/next_visit_message"/> </value>
+					</text>
+					<text id="open_preg_form-label">
+						<value>Please open the "Pregnancy Visit" form.</value>
+						<value form="image">jr://file/commcare/image/data/pregnancy_visit.png</value>
+					</text>
+					<text id="open_pp_form-label">
+						<value>Please open the "Post Partum Visit" form.</value>
+						<value form="image">jr://file/commcare/image/data/postpartum_visit.png</value>
+					</text>
+					<text id="is_pregnant-label">
+						<value>Is she pregnant?</value>
+					</text>
+					<text id="is_pregnant-no-label">
+						<value>No</value>
+					</text>
+					<text id="is_pregnant-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="edd-label">
+						<value>Expected Delivery Date</value>
+					</text>
+					<text id="visit1_date-label">
+						<value>Date of First Scheduled Visit</value>
+					</text>
+					<text id="v1_complete-label">
+						<value>Is visit 1 complete?</value>
+					</text>
+					<text id="is_pregnant-1-no-label">
+						<value>No</value>
+					</text>
+					<text id="is_pregnant-1-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="v2_complete-label">
+						<value>Is visit 2 complete?</value>
+					</text>
+					<text id="v1_complete-1-no-label">
+						<value>No</value>
+					</text>
+					<text id="v1_complete-1-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="visit2_date-label">
+						<value>Date of Second Scheduled Visit</value>
+					</text>
+					<text id="v3_complete-label">
+						<value>Is visit 3 complete?</value>
+					</text>
+					<text id="v2_complete-1-no-label">
+						<value>No</value>
+					</text>
+					<text id="v2_complete-1-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="visit3_date-label">
+						<value>Date of Third Scheduled Visit</value>
+					</text>
+					<text id="v4_complete-label">
+						<value>Is visit 4 complete?</value>
+					</text>
+					<text id="v3_complete-1-no-label">
+						<value>No</value>
+					</text>
+					<text id="v3_complete-1-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="visit4_date-label">
+						<value>Date of Fourth Scheduled Visit</value>
+					</text>
+					<text id="next_visit_date-label">
+						<value>Next Scheduled Visit</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><setvalue ref="/data/next_visit_type" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_visit_type"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/woman_name">
+			<label ref="jr:itext('woman_name-label')"/>
+		</input>
+		<trigger ref="/data/visit_message">
+			<label ref="jr:itext('visit_message-label')"/>
+		</trigger>
+		<trigger ref="/data/open_preg_form">
+			<label ref="jr:itext('open_preg_form-label')"/>
+		</trigger>
+		<trigger ref="/data/open_pp_form">
+			<label ref="jr:itext('open_pp_form-label')"/>
+		</trigger>
+		<select1 ref="/data/is_pregnant">
+			<label ref="jr:itext('is_pregnant-label')"/>
+			<item>
+				<label ref="jr:itext('is_pregnant-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('is_pregnant-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/edd">
+			<label ref="jr:itext('edd-label')"/>
+		</input>
+		<input ref="/data/visit1_date">
+			<label ref="jr:itext('visit1_date-label')"/>
+		</input>
+		<select1 ref="/data/v1_complete">
+			<label ref="jr:itext('v1_complete-label')"/>
+			<item>
+				<label ref="jr:itext('is_pregnant-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('is_pregnant-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/v2_complete">
+			<label ref="jr:itext('v2_complete-label')"/>
+			<item>
+				<label ref="jr:itext('v1_complete-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('v1_complete-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/visit2_date">
+			<label ref="jr:itext('visit2_date-label')"/>
+		</input>
+		<select1 ref="/data/v3_complete">
+			<label ref="jr:itext('v3_complete-label')"/>
+			<item>
+				<label ref="jr:itext('v2_complete-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('v2_complete-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/visit3_date">
+			<label ref="jr:itext('visit3_date-label')"/>
+		</input>
+		<select1 ref="/data/v4_complete">
+			<label ref="jr:itext('v4_complete-label')"/>
+			<item>
+				<label ref="jr:itext('v3_complete-1-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('v3_complete-1-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/visit4_date">
+			<label ref="jr:itext('visit4_date-label')"/>
+		</input>
+		<input ref="/data/next_visit_date">
+			<label ref="jr:itext('next_visit_date-label')"/>
+		</input>
+	</h:body>
+</h:html>

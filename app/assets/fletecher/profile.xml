@@ -1,0 +1,41 @@
+<profile version="109" update="https://www.commcarehq.org/a/environmental-incidents/apps/download/6bd531a77c8fce49123ff074c94c00ec/profile.xml?latest=true" requiredMajor="2" requiredMinor="4">
+    <property key="BackupMode" value="file_mode"/>
+    <property key="backup-url" value="file:///E:/CommCare.Backup"/>
+    <property key="restore-url" value="file:///E:/CommCare.Backup"/>
+    <property key="ota-restore-url" value="https://www.commcarehq.org/a/environmental-incidents/phone/restore/"/>
+    <property key="ota-restore-url-testing" value="https://www.commcarehq.org/a/environmental-incidents/phone/restore/"/>
+    <property key="PostURL" value="https://www.commcarehq.org/a/environmental-incidents/receiver/3ada37bb0afa79885f598ebdf9f40da6/" force="true"/>
+    <property key="PostTestURL" value="https://www.commcarehq.org/a/environmental-incidents/receiver/3ada37bb0afa79885f598ebdf9f40da6/" force="true"/>
+    <property key="key_server" value="https://www.commcarehq.org/a/environmental-incidents/phone/keys/"/>
+    <property key="cur_locale" value="en"/>
+    <property key="cc_user_domain" value="environmental-incidents.commcarehq.org"/>
+    <property key="jr_openrosa_api" value="1.0"/>
+
+    <!-- Properties configured on CommCare HQ 1.0 -->
+    
+        <property key="cc-user-mode" value="cc-u-normal" />
+    
+        <property key="log_prop_weekly" value="log_short" />
+    
+
+    <!-- end -->
+
+    <features>
+        <checkoff active="false"/>
+        <reminders active="false">
+            <time>0</time>
+        </reminders>
+        <package active="false"/>
+        
+        <users active="true">
+            
+        </users>
+    </features>
+
+    <suite><resource id="suite" version="109">
+        
+        <location authority="local">jr://resource/suite.xml</location>
+        
+        <location authority="remote">https://www.commcarehq.org/a/environmental-incidents/apps/download/6bd531a77c8fce49123ff074c94c00ec/suite.xml</location>
+    </resource></suite>
+</profile>

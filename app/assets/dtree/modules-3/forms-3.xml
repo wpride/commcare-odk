@@ -1,0 +1,655 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Ufatiliaji baada ya kujifungua</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/8A24E44D-4DB7-4079-9988-BA0F96D841B3" uiVersion="1" version="812" name="Ufatiliaji baada ya kujifungua">
+					<informant/>
+					<status_of_mother/>
+					<cause_of_delth/>
+					<reason_for_dealth/>
+					<date_of_dealth/>
+					<child_stutas/>
+					<why_unknown/>
+					<date_child_death/>
+					<reason_child_death/>
+					<cause_of_death/>
+					<date_of_delivery/>
+					<place_of_delivery/>
+					<assisted_delivery/>
+					<findout_about_HIV/>
+					<advise_nutrition/>
+					<advise_breastmilk/>
+					<advise_personal_hygeine/>
+					<advise_use_ITN/>
+					<advise_checkup/>
+					<end_of_form/>
+				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/informant" required="true()"/>
+			<bind nodeset="/data/status_of_mother" required="true()"/>
+			<bind nodeset="/data/cause_of_delth" relevant="/data/status_of_mother = 'died_during_delivery' or /data/status_of_mother = 'died_during_pregnancy' or /data/status_of_mother = 'died_after_delivery'" required="true()"/>
+			<bind nodeset="/data/reason_for_dealth" type="xsd:string" relevant="/data/cause_of_delth = 'other'" required="true()"/>
+			<bind nodeset="/data/date_of_dealth" type="xsd:date" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('date_of_dealth-constraintMsg')" relevant="/data/status_of_mother = 'died_during_pregnancy' or /data/status_of_mother = 'died_after_delivery'" required="true()"/>
+			<bind nodeset="/data/child_stutas" relevant="/data/status_of_mother = 'alive' or /data/status_of_mother = 'died_during_delivery' or /data/status_of_mother = 'died_after_delivery'" required="true()"/>
+			<bind nodeset="/data/why_unknown" type="xsd:string" relevant="/data/status_of_mother = 'unknown'" required="true()"/>
+			<bind nodeset="/data/date_child_death" type="xsd:date" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('date_child_death-constraintMsg')" relevant="/data/child_stutas = 'died_during_delivery' or /data/child_stutas = 'died_after_delivery'" required="true()"/>
+			<bind nodeset="/data/reason_child_death" relevant="/data/child_stutas = 'died_during_delivery' or /data/child_stutas = 'died_after_delivery'" required="true()"/>
+			<bind nodeset="/data/cause_of_death" type="xsd:string" relevant="/data/reason_child_death = 'other'" required="true()"/>
+			<bind nodeset="/data/date_of_delivery" type="xsd:date" relevant="(/data/status_of_mother = 'died_during_delivery' or /data/status_of_mother = 'alive' or /data/status_of_mother = 'died_after_delivery') and (/data/child_stutas = 'alive' or /data/child_stutas = 'died_during_delivery' or /data/child_stutas = 'died_after_delivery' or /data/child_stutas = 'stillbirth')" required="true()"/>
+			<bind nodeset="/data/place_of_delivery" relevant="/data/child_stutas = 'alive' or /data/child_stutas = 'died_during_delivery' or /data/child_stutas = 'died_after_delivery'" required="true()"/>
+			<bind nodeset="/data/assisted_delivery" relevant="/data/child_stutas = 'alive' or /data/child_stutas = 'died_after_delivery' or /data/child_stutas = 'died_during_delivery'" required="true()"/>
+			<bind nodeset="/data/findout_about_HIV" relevant="/data/status_of_mother = 'alive'" required="true()"/>
+			<bind nodeset="/data/advise_nutrition" relevant="/data/status_of_mother = 'alive'" required="true()"/>
+			<bind nodeset="/data/advise_breastmilk" relevant="/data/status_of_mother = 'alive' and /data/child_stutas = 'alive'" required="true()"/>
+			<bind nodeset="/data/advise_personal_hygeine" relevant="/data/child_stutas = 'alive'" required="true()"/>
+			<bind nodeset="/data/advise_use_ITN" relevant="/data/status_of_mother = 'alive' or /data/child_stutas = 'alive'" required="true()"/>
+			<bind nodeset="/data/advise_checkup" relevant="/data/status_of_mother = 'alive' or /data/child_stutas = 'alive'" required="true()"/>
+			<bind nodeset="/data/end_of_form" required="true()"/>
+			<itext>
+				<translation lang="sw" default="">
+					<text id="informant-label">
+						<value>Chagua mtoa taarifa:</value>
+					</text>
+					<text id="informant-Mother-label">
+						<value>Mama</value>
+					</text>
+					<text id="informant-Father-label">
+						<value>Baba</value>
+					</text>
+					<text id="informant-other-label">
+						<value>Mwanafamilia/mwangalizi</value>
+					</text>
+					<text id="status_of_mother-label">
+						<value>Vipi hali ya mama?</value>
+					</text>
+					<text id="status_of_mother-alive-label">
+						<value>Mzima</value>
+					</text>
+					<text id="status_of_mother-died_during_pregnancy-label">
+						<value>Alifariki wakati wa uja uzito</value>
+					</text>
+					<text id="status_of_mother-died_during_delivery-label">
+						<value>Alifariki wakati wa kujifungua</value>
+					</text>
+					<text id="status_of_mother-died_after_delivery-label">
+						<value>Alifariki baada ya kujifungua</value>
+					</text>
+					<text id="status_of_mother-unknown-label">
+						<value>Haijulikani</value>
+					</text>
+					<text id="cause_of_delth-label">
+						<value>Nini sababu ya kifo cha mama?</value>
+					</text>
+					<text id="cause_of_delth-post-partum_hemorrhage-label">
+						<value>Kutokwa damu nyingi baada ya kujifungua</value>
+					</text>
+					<text id="cause_of_delth-ante-partum_hemorrhage-label">
+						<value>Kutokwa damu kabla ya kujifungua</value>
+					</text>
+					<text id="cause_of_delth-severe_anemia-label">
+						<value>Upungufu mkubwa wa damui</value>
+					</text>
+					<text id="cause_of_delth-hypertensive-label">
+						<value>Matatizo ya presha ya juu wakati wa uja uzito</value>
+					</text>
+					<text id="cause_of_delth-ruptured_uterus-label">
+						<value>Kupasuka mfuko wa uzazi</value>
+					</text>
+					<text id="cause_of_delth-infection-label">
+						<value>Maambukizi</value>
+					</text>
+					<text id="cause_of_delth-other-label">
+						<value>Vinginevyo</value>
+					</text>
+					<text id="cause_of_delth-unknown-label">
+						<value>Haijulikani</value>
+					</text>
+					<text id="reason_for_dealth-label">
+						<value>Ingiza sababu ya kifo</value>
+					</text>
+					<text id="date_of_dealth-label">
+						<value>Kifo kilitokea lini?</value>
+					</text>
+					<text id="date_of_dealth-constraintMsg">
+						<value>Tarehe ya kufariki haiwezi kuwa siku za mbele</value>
+					</text>
+					<text id="child_stutas-label">
+						<value>Ni vipi hali ya mtoto?</value>
+					</text>
+					<text id="child_stutas-alive-label">
+						<value>Mzima</value>
+					</text>
+					<text id="child_stutas-miscarriage-label">
+						<value>Mimba iliharibika/ilitoka</value>
+					</text>
+					<text id="child_stutas-stillbirth-label">
+						<value>Mtoto mfu</value>
+					</text>
+					<text id="child_stutas-died_during_delivery-label">
+						<value>Alifariki wakati wa kuzaliwa</value>
+					</text>
+					<text id="child_stutas-died_after_delivery-label">
+						<value>Alifariki baada ya kuzaliwa</value>
+					</text>
+					<text id="why_unknown-label">
+						<value>Kwa nini?</value>
+					</text>
+					<text id="date_child_death-label">
+						<value>Kifo kilitokea lini?</value>
+					</text>
+					<text id="date_child_death-constraintMsg">
+						<value>Tarehe ya kifo haiwezi kuwa ya mbele</value>
+					</text>
+					<text id="reason_child_death-label">
+						<value>Nini sababu ya kifo cha mtoto?</value>
+					</text>
+					<text id="reason_child_death-asphyxiation-label">
+						<value>Kukosa hewa</value>
+					</text>
+					<text id="reason_child_death-congenital_malformation-label">
+						<value>Ulemavu wa kuzaliwa</value>
+					</text>
+					<text id="reason_child_death-infection-label">
+						<value>Maambukizi</value>
+					</text>
+					<text id="reason_child_death-pre-term_birth-label">
+						<value>Kabla ya muda wa kujifungua</value>
+					</text>
+					<text id="reason_child_death-other-label">
+						<value>Sababu nyenginezo</value>
+					</text>
+					<text id="reason_child_death-unknown-label">
+						<value>Haijulikani</value>
+					</text>
+					<text id="cause_of_death-label">
+						<value>Ingiza sababu ya kifo.</value>
+					</text>
+					<text id="date_of_delivery-label">
+						<value>Ulijifungua lini?</value>
+					</text>
+					<text id="place_of_delivery-label">
+						<value>Ulijifungulia wapi?</value>
+					</text>
+					<text id="place_of_delivery-Home-label">
+						<value>Nyumbani</value>
+					</text>
+					<text id="place_of_delivery-facility_primary-label">
+						<value>Kituo cha afya/kliniki</value>
+					</text>
+					<text id="place_of_delivery-facility_cottage_hospital-label">
+						<value>Koteji hospitali</value>
+					</text>
+					<text id="place_of_delivery-Hospital-label">
+						<value>Hospitali ya wilaya au rufaa</value>
+					</text>
+					<text id="place_of_delivery-on_the_way-label">
+						<value>Njiani ukielekea kituo cha afya</value>
+					</text>
+					<text id="place_of_delivery-other-label">
+						<value>Vinginevyo</value>
+					</text>
+					<text id="assisted_delivery-label">
+						<value>Nani alitoa huduma ya uzalishaji?</value>
+					</text>
+					<text id="assisted_delivery-nurse_midwife_mo_md-label">
+						<value>Muuguzi Mkunga/Daktari</value>
+					</text>
+					<text id="assisted_delivery-lower_health_worker-label">
+						<value>Muhudumu wa afya</value>
+					</text>
+					<text id="assisted_delivery-tba_in_program-label">
+						<value>Mkunga wa jadi nda ya mradi</value>
+					</text>
+					<text id="assisted_delivery-TBA_outside_program-label">
+						<value>Mkunga wa jadi nje ya mradi</value>
+					</text>
+					<text id="assisted_delivery-chw-label">
+						<value>Mfanya kazi wa afya ya jamii</value>
+					</text>
+					<text id="assisted_delivery-family_member-label">
+						<value>Mwana familia</value>
+					</text>
+					<text id="assisted_delivery-other-label">
+						<value>Wengine</value>
+					</text>
+					<text id="findout_about_HIV-label">
+						<value>MSHAURI MAMA: Kila mama anapaswa kujua hali yake ya maambukizi ya VVU. Unaweza kupata taarifa zaidi kuhusu VVU na Ukimwi katika kliniki ya PMTCT. </value>
+					</text>
+					<text id="advise_nutrition-label">
+						<value>MSHAURI MAMA: Jipumuzishe zaidi. Punguza kufanya kazi nzito. Ule chakula bora na unywe maji ya kutosha.</value>
+					</text>
+					<text id="advise_breastmilk-label">
+						<value>MSHAURI MAMA: Kula vizuri. Mnyonyeshe mtoto maziwa yako tu angalau kwa muda wa miezi 6. Muhifadhi mtoto na joto.</value>
+					</text>
+					<text id="advise_personal_hygeine-label">
+						<value>MSHAURI: Aendelee kuwa msafi, ni pamoja na usafi wa mikono na mwili, jinsi ya kuhifadhi nguo zilizotumika na usafishaji wa nguo.</value>
+						<value form="image"/>
+					</text>
+					<text id="advise_use_ITN-label">
+						<value>MSHAURI: Wewe na familia mnahitajika kulala ndani ya chandarua kila siku ili kuzuia malaria.</value>
+						<value form="image"/>
+					</text>
+					<text id="advise_checkup-label">
+						<value>MSHAURI: Usisahau kwenda kituo cha afya ndani ya siku 4 kwa uchunguzi zaidi.</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Fomu yako imekamilika.</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="informant-label">
+						<value>Select informant:</value>
+					</text>
+					<text id="informant-Mother-label">
+						<value>Mother</value>
+					</text>
+					<text id="informant-Father-label">
+						<value>Father</value>
+					</text>
+					<text id="informant-other-label">
+						<value>Other family member/caretaker</value>
+					</text>
+					<text id="status_of_mother-label">
+						<value>What is the status of the mother?</value>
+					</text>
+					<text id="status_of_mother-alive-label">
+						<value>Alive</value>
+					</text>
+					<text id="status_of_mother-died_during_pregnancy-label">
+						<value>Died during pregnancy</value>
+					</text>
+					<text id="status_of_mother-died_during_delivery-label">
+						<value>Died during delivery</value>
+					</text>
+					<text id="status_of_mother-died_after_delivery-label">
+						<value>Died after delivery</value>
+					</text>
+					<text id="status_of_mother-unknown-label">
+						<value>Unknown</value>
+					</text>
+					<text id="cause_of_delth-label">
+						<value>What was the cause of death of the mother?</value>
+					</text>
+					<text id="cause_of_delth-post-partum_hemorrhage-label">
+						<value>Post-partum hemorrhage</value>
+					</text>
+					<text id="cause_of_delth-ante-partum_hemorrhage-label">
+						<value>Ante-partum hemorrhage</value>
+					</text>
+					<text id="cause_of_delth-severe_anemia-label">
+						<value>Severe Anemia</value>
+					</text>
+					<text id="cause_of_delth-hypertensive-label">
+						<value>Hypertensive disorder of pregnancy</value>
+					</text>
+					<text id="cause_of_delth-ruptured_uterus-label">
+						<value>Ruptured Uterus</value>
+					</text>
+					<text id="cause_of_delth-infection-label">
+						<value>Infection</value>
+					</text>
+					<text id="cause_of_delth-other-label">
+						<value>Other</value>
+					</text>
+					<text id="cause_of_delth-unknown-label">
+						<value>Unknown</value>
+					</text>
+					<text id="reason_for_dealth-label">
+						<value>Enter other cause of death. </value>
+					</text>
+					<text id="date_of_dealth-label">
+						<value>When did the death occur?</value>
+					</text>
+					<text id="date_of_dealth-constraintMsg">
+						<value>Date of death can't be in future</value>
+					</text>
+					<text id="child_stutas-label">
+						<value>What is the status of the baby?</value>
+					</text>
+					<text id="child_stutas-alive-label">
+						<value>Alive</value>
+					</text>
+					<text id="child_stutas-miscarriage-label">
+						<value>Miscarriage/abortion</value>
+					</text>
+					<text id="child_stutas-stillbirth-label">
+						<value>Stillbirth</value>
+					</text>
+					<text id="child_stutas-died_during_delivery-label">
+						<value>Died during delivery</value>
+					</text>
+					<text id="child_stutas-died_after_delivery-label">
+						<value>Died after delivery</value>
+					</text>
+					<text id="why_unknown-label">
+						<value>Why?</value>
+					</text>
+					<text id="date_child_death-label">
+						<value>When did the death occur?</value>
+					</text>
+					<text id="date_child_death-constraintMsg">
+						<value>Date death can not be in future</value>
+					</text>
+					<text id="reason_child_death-label">
+						<value>What was the cause of death of the infant? </value>
+					</text>
+					<text id="reason_child_death-asphyxiation-label">
+						<value>Asphyxiation</value>
+					</text>
+					<text id="reason_child_death-congenital_malformation-label">
+						<value>Congenital malformation</value>
+					</text>
+					<text id="reason_child_death-infection-label">
+						<value>Infection</value>
+					</text>
+					<text id="reason_child_death-pre-term_birth-label">
+						<value>Pre-term birth</value>
+					</text>
+					<text id="reason_child_death-other-label">
+						<value>Other</value>
+					</text>
+					<text id="reason_child_death-unknown-label">
+						<value>Unknown</value>
+					</text>
+					<text id="cause_of_death-label">
+						<value>Enter other cause of death. </value>
+					</text>
+					<text id="date_of_delivery-label">
+						<value>When did delivery occur?</value>
+					</text>
+					<text id="place_of_delivery-label">
+						<value>Where did delivery occur?</value>
+					</text>
+					<text id="place_of_delivery-Home-label">
+						<value>Home</value>
+					</text>
+					<text id="place_of_delivery-facility_primary-label">
+						<value>Primary health facility</value>
+					</text>
+					<text id="place_of_delivery-facility_cottage_hospital-label">
+						<value>Cottage hospital</value>
+					</text>
+					<text id="place_of_delivery-Hospital-label">
+						<value>District/referral hospital</value>
+					</text>
+					<text id="place_of_delivery-on_the_way-label">
+						<value>On the way to a health facility</value>
+					</text>
+					<text id="place_of_delivery-other-label">
+						<value>Other</value>
+					</text>
+					<text id="assisted_delivery-label">
+						<value>Who assisted delivery? </value>
+					</text>
+					<text id="assisted_delivery-nurse_midwife_mo_md-label">
+						<value>Nurse midwife/medical officer/doctor</value>
+					</text>
+					<text id="assisted_delivery-lower_health_worker-label">
+						<value>Lower level health worker</value>
+					</text>
+					<text id="assisted_delivery-tba_in_program-label">
+						<value>TBA in program</value>
+					</text>
+					<text id="assisted_delivery-TBA_outside_program-label">
+						<value>TBA outside program</value>
+					</text>
+					<text id="assisted_delivery-chw-label">
+						<value>CHW</value>
+					</text>
+					<text id="assisted_delivery-family_member-label">
+						<value>Family member</value>
+					</text>
+					<text id="assisted_delivery-other-label">
+						<value>Other</value>
+					</text>
+					<text id="findout_about_HIV-label">
+						<value>ADVISE MOTHER: Every mother should know her HIV status. You can find out more about HIV and AIDS at the PMTCT clinic.</value>
+					</text>
+					<text id="advise_nutrition-label">
+						<value>ADVISE MOTHER: Rest well and sleep well. Reduce your workload. Eat good nutritive diet and drink plenty of fluids. </value>
+					</text>
+					<text id="advise_breastmilk-label">
+						<value>ADVISE MOTHER: Feed your baby breastmilk only for at least 6 months. Keep the baby warm.</value>
+					</text>
+					<text id="advise_personal_hygeine-label">
+						<value>ADVISE: Keep good personal hygiene, including hand and body washing, disposal of sanitary pads, washing of clothes.</value>
+						<value form="image"/>
+					</text>
+					<text id="advise_use_ITN-label">
+						<value>ADVISE: You and your family should sleep under a bednet every night to prevent malaria.</value>
+						<value form="image"/>
+					</text>
+					<text id="advise_checkup-label">
+						<value>ADVISE: Don't forget to go to the health facility within 4 days for a complete exam.</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Your form is now complete. </value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/informant">
+			<label ref="jr:itext('informant-label')"/>
+			<item>
+				<label ref="jr:itext('informant-Mother-label')"/>
+				<value>Mother</value>
+			</item>
+			<item>
+				<label ref="jr:itext('informant-Father-label')"/>
+				<value>Father</value>
+			</item>
+			<item>
+				<label ref="jr:itext('informant-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/status_of_mother">
+			<label ref="jr:itext('status_of_mother-label')"/>
+			<item>
+				<label ref="jr:itext('status_of_mother-alive-label')"/>
+				<value>alive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('status_of_mother-died_during_pregnancy-label')"/>
+				<value>died_during_pregnancy</value>
+			</item>
+			<item>
+				<label ref="jr:itext('status_of_mother-died_during_delivery-label')"/>
+				<value>died_during_delivery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('status_of_mother-died_after_delivery-label')"/>
+				<value>died_after_delivery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('status_of_mother-unknown-label')"/>
+				<value>unknown</value>
+			</item>
+		</select1>
+		<select1 ref="/data/cause_of_delth">
+			<label ref="jr:itext('cause_of_delth-label')"/>
+			<item>
+				<label ref="jr:itext('cause_of_delth-post-partum_hemorrhage-label')"/>
+				<value>post-partum_hemorrhage</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_delth-ante-partum_hemorrhage-label')"/>
+				<value>ante-partum_hemorrhage</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_delth-severe_anemia-label')"/>
+				<value>severe_anemia</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_delth-hypertensive-label')"/>
+				<value>hypertensive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_delth-ruptured_uterus-label')"/>
+				<value>ruptured_uterus</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_delth-infection-label')"/>
+				<value>infection</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_delth-other-label')"/>
+				<value>other</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_delth-unknown-label')"/>
+				<value>unknown</value>
+			</item>
+		</select1>
+		<input ref="/data/reason_for_dealth">
+			<label ref="jr:itext('reason_for_dealth-label')"/>
+		</input>
+		<input ref="/data/date_of_dealth">
+			<label ref="jr:itext('date_of_dealth-label')"/>
+		</input>
+		<select1 ref="/data/child_stutas">
+			<label ref="jr:itext('child_stutas-label')"/>
+			<item>
+				<label ref="jr:itext('child_stutas-alive-label')"/>
+				<value>alive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('child_stutas-miscarriage-label')"/>
+				<value>miscarriage</value>
+			</item>
+			<item>
+				<label ref="jr:itext('child_stutas-stillbirth-label')"/>
+				<value>stillbirth</value>
+			</item>
+			<item>
+				<label ref="jr:itext('child_stutas-died_during_delivery-label')"/>
+				<value>died_during_delivery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('child_stutas-died_after_delivery-label')"/>
+				<value>died_after_delivery</value>
+			</item>
+		</select1>
+		<input ref="/data/why_unknown">
+			<label ref="jr:itext('why_unknown-label')"/>
+		</input>
+		<input ref="/data/date_child_death">
+			<label ref="jr:itext('date_child_death-label')"/>
+		</input>
+		<select1 ref="/data/reason_child_death">
+			<label ref="jr:itext('reason_child_death-label')"/>
+			<item>
+				<label ref="jr:itext('reason_child_death-asphyxiation-label')"/>
+				<value>asphyxiation</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_child_death-congenital_malformation-label')"/>
+				<value>congenital_malformation</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_child_death-infection-label')"/>
+				<value>infection</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_child_death-pre-term_birth-label')"/>
+				<value>pre-term_birth</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_child_death-other-label')"/>
+				<value>other</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_child_death-unknown-label')"/>
+				<value>unknown</value>
+			</item>
+		</select1>
+		<input ref="/data/cause_of_death">
+			<label ref="jr:itext('cause_of_death-label')"/>
+		</input>
+		<input ref="/data/date_of_delivery">
+			<label ref="jr:itext('date_of_delivery-label')"/>
+		</input>
+		<select1 ref="/data/place_of_delivery">
+			<label ref="jr:itext('place_of_delivery-label')"/>
+			<item>
+				<label ref="jr:itext('place_of_delivery-Home-label')"/>
+				<value>Home</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_delivery-facility_primary-label')"/>
+				<value>facility_primary</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_delivery-facility_cottage_hospital-label')"/>
+				<value>facility_cottage_hospital</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_delivery-Hospital-label')"/>
+				<value>Hospital</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_delivery-on_the_way-label')"/>
+				<value>on_the_way</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_delivery-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/assisted_delivery">
+			<label ref="jr:itext('assisted_delivery-label')"/>
+			<item>
+				<label ref="jr:itext('assisted_delivery-nurse_midwife_mo_md-label')"/>
+				<value>nurse_midwife_mo_md</value>
+			</item>
+			<item>
+				<label ref="jr:itext('assisted_delivery-lower_health_worker-label')"/>
+				<value>lower_health_worker</value>
+			</item>
+			<item>
+				<label ref="jr:itext('assisted_delivery-tba_in_program-label')"/>
+				<value>tba_in_program</value>
+			</item>
+			<item>
+				<label ref="jr:itext('assisted_delivery-TBA_outside_program-label')"/>
+				<value>TBA_outside_program</value>
+			</item>
+			<item>
+				<label ref="jr:itext('assisted_delivery-chw-label')"/>
+				<value>chw</value>
+			</item>
+			<item>
+				<label ref="jr:itext('assisted_delivery-family_member-label')"/>
+				<value>family_member</value>
+			</item>
+			<item>
+				<label ref="jr:itext('assisted_delivery-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<trigger ref="/data/findout_about_HIV">
+			<label ref="jr:itext('findout_about_HIV-label')"/>
+		</trigger>
+		<trigger ref="/data/advise_nutrition">
+			<label ref="jr:itext('advise_nutrition-label')"/>
+		</trigger>
+		<trigger ref="/data/advise_breastmilk">
+			<label ref="jr:itext('advise_breastmilk-label')"/>
+		</trigger>
+		<trigger ref="/data/advise_personal_hygeine">
+			<label ref="jr:itext('advise_personal_hygeine-label')"/>
+		</trigger>
+		<trigger ref="/data/advise_use_ITN">
+			<label ref="jr:itext('advise_use_ITN-label')"/>
+		</trigger>
+		<trigger ref="/data/advise_checkup">
+			<label ref="jr:itext('advise_checkup-label')"/>
+		</trigger>
+		<trigger ref="/data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

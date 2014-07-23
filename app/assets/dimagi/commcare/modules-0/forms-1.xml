@@ -1,0 +1,65 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Case Update</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/97EB469E-C0DD-4C5D-A459-406F4805CC89" uiVersion="1" version="20" name="Case Update">
+					<question1/>
+					<question16/>
+					<question2/>
+					<question3/>
+					<question4/>
+					<question5/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""/><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
+			<bind nodeset="/data/question1"/>
+			<bind nodeset="/data/question16" type="xsd:string"/>
+			<bind nodeset="/data/question2"/>
+			<bind nodeset="/data/question3"/>
+			<bind nodeset="/data/question4"/>
+			<bind nodeset="/data/question5"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="question1-label">
+						<value>question1</value>
+					</text>
+					<text id="question16-label">
+						<value>question16</value>
+					</text>
+					<text id="question2-label">
+						<value>question2</value>
+					</text>
+					<text id="question3-label">
+						<value>question3</value>
+					</text>
+					<text id="question4-label">
+						<value>question4</value>
+					</text>
+					<text id="question5-label">
+						<value>question5</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><setvalue event="xforms-ready" ref="/data/question16" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/case_name"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/question1" appearance="minimal">
+			<label ref="jr:itext('question1-label')"/>
+		</trigger>
+		<input ref="/data/question16">
+			<label ref="jr:itext('question16-label')"/>
+		</input>
+		<trigger ref="/data/question2" appearance="minimal">
+			<label ref="jr:itext('question2-label')"/>
+		</trigger>
+		<trigger ref="/data/question3" appearance="minimal">
+			<label ref="jr:itext('question3-label')"/>
+		</trigger>
+		<trigger ref="/data/question4" appearance="minimal">
+			<label ref="jr:itext('question4-label')"/>
+		</trigger>
+		<trigger ref="/data/question5" appearance="minimal">
+			<label ref="jr:itext('question5-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

@@ -1,0 +1,11 @@
+--- SendTask.java
++++ SendTask.java
+@@ -45,6 +46,8 @@
+ 	TextView outputTextView;
+ 	File dumpDirectory;
+ 	
++	public static String MALFORMED_FILE_CATEGORY = "malformed-file";
++	
+ 	public static final int BULK_SEND_ID = 12345;
+ 	
+ 	 // 5MB less 1KB overhead

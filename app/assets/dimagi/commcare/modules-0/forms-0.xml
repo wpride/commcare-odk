@@ -1,0 +1,57 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>New Form</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/A5DD5F71-2524-4EC7-BE7F-23DB87C2266B" uiVersion="1" version="20" name="New Form">
+					<name/>
+					<address/>
+					<phone/>
+					<audio/>
+					<icon/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>case</case_type></create><update><address/><phone/></update><attachment><audio from="local" src=""/><icon from="local" src=""/></attachment></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/address" type="xsd:string"/>
+			<bind nodeset="/data/phone" type="xsd:string"/>
+			<bind nodeset="/data/audio" type="binary"/>
+			<bind nodeset="/data/icon" type="binary"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="name-label">
+						<value>Name</value>
+					</text>
+					<text id="address-label">
+						<value>Address</value>
+					</text>
+					<text id="phone-label">
+						<value>Phone</value>
+					</text>
+					<text id="audio-label">
+						<value>Record your Name</value>
+					</text>
+					<text id="icon-label">
+						<value>Picture</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="uuid()"/><bind calculate="/data/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/address" nodeset="/data/case/update/address" relevant="count(/data/address) &gt; 0"/><bind calculate="/data/phone" nodeset="/data/case/update/phone" relevant="count(/data/phone) &gt; 0"/><bind nodeset="/data/case/attachment/audio" relevant="count(/data/audio) = 1"/><bind calculate="/data/audio" nodeset="/data/case/attachment/audio/@src"/><bind nodeset="/data/case/attachment/icon" relevant="count(/data/icon) = 1"/><bind calculate="/data/icon" nodeset="/data/case/attachment/icon/@src"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/name">
+			<label ref="jr:itext('name-label')"/>
+		</input>
+		<input ref="/data/address">
+			<label ref="jr:itext('address-label')"/>
+		</input>
+		<input ref="/data/phone" appearance="numeric">
+			<label ref="jr:itext('phone-label')"/>
+		</input>
+		<upload ref="/data/audio" mediatype="audio/*">
+			<label ref="jr:itext('audio-label')"/>
+		</upload>
+		<upload ref="/data/icon" mediatype="image/*">
+			<label ref="jr:itext('icon-label')"/>
+		</upload>
+	</h:body>
+</h:html>

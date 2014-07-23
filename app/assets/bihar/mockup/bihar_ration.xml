@@ -1,0 +1,380 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Takehome Ration</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/takehome_ration" uiVersion="1" version="1" name="Takehome Ration">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+					</case>
+					
+						
+					<collect_ration />
+					<distribute_ration />
+					<days_ration_given />
+					<cause_not_given />
+					
+					<child_info jr:template="">
+						<cid/>
+					    <index/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						</case>
+						
+						<child_distribute_ration />
+						<child_days_ration_given />
+						<child_amount_given />
+						<child_cause_not_given />
+					</child_info>
+					
+					<success />
+					<addval />
+					<children />
+					<num_children />
+					<cur_children />
+					<mother_rations />
+				</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+	    	<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+    		<setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id"/>
+    		<setvalue event="xforms-ready" ref="/data/children" value="join(' ',instance('casedb')/casedb/case[@case_type='cc_bihar_newborn'][index/mother_id=/data/case/@case_id][@status='open']/@case_id)"/>
+
+	    	<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>	    				
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/num_children" type="int" calculate="count-selected(/data/children)"/>
+			<bind nodeset="/data/cur_children" calculate="count(/data/child_info)"/>
+			
+			<setvalue event="jr-insert" ref="/data/child_info/index" value="int(/data/cur_children) - 1"/>
+			
+			<setvalue event="jr-insert" ref="/data/child_info/cid" value="selected-at(/data/children,../index)"/>
+
+			
+			<bind nodeset="/data/child_info/case/@case_id" type="xsd:string" calculate="../../cid"/>
+			<bind nodeset="/data/child_info/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/child_info/case/@user_id" type="xsd:string" calculate="/data/meta/userID"/>
+			
+			
+			<bind nodeset="/data/collect_ration" required="true()" />
+			<bind nodeset="/data/distribute_ration" relevant="/data/collect_ration = 'yes' and /data/addval &lt; today() + 183" required="true()" />
+			<bind nodeset="/data/days_ration_given" type="xsd:int" constraint=". &gt; 0 and . &lt;= 31" jr:constraintMsg="jr:itext('days_ration_given-constraintMsg')" relevant="/data/addval &lt; today() + 183 and /data/distribute_ration = 'yes'" />
+			<bind nodeset="/data/cause_not_given" relevant="/data/addval &lt; today() + 183 and /data/distribute_ration = 'no'" />
+			<bind nodeset="/data/child_info" relevant="/data/addval &gt;= today() + 183" />
+			<bind nodeset="/data/child_info/child_distribute_ration" relevant="/data/collect_ration = 'yes'" required="true()" />
+			<bind nodeset="/data/child_info/child_days_ration_given" relevant="/data/child_info/child_distribute_ration = 'yes'" type="xsd:int" constraint=". &gt; 0 and . &lt;= 31" jr:constraintMsg="jr:itext('child_days_ration_given-constraintMsg')" />
+			<bind nodeset="/data/child_info/child_amount_given" relevant="/data/child_info/child_distribute_ration = 'yes'" />
+			<bind nodeset="/data/child_info/child_cause_not_given" relevant="/data/child_info/child_distribute_ration = 'no'" />
+			<bind nodeset="/data/success" />
+			<bind nodeset="/data/addval" calculate="date(instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/add)" />
+			<bind nodeset="/data/mother_rations" calculate="if(/data/addval = '' and /data/distribute_ration = 'yes', 'pregnant', if(/data/addval != '' and /data/distribute_ration = 'yes', 'lactating', ''))" />
+
+			<itext>
+				<translation lang="en" default="">
+					<text id="collect_ration-label">
+						<value><output ref="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/mother_name"/> came to collect Take Home Ration?</value>
+						<value form="image">jr://file/commcare/media/images/ration/collect_ration.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/collect_ration_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. Yes</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. No</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/no_hin.mp3</value>
+					</text>
+					<text id="distribute_ration-label">
+						<value>Have you distributed supplementary food to <output ref="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/mother_name"/></value>
+						<value form="image">jr://file/commcare/media/images/ration/distribute_ration.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/distribute_ration_hin.mp3</value>
+					</text>
+					<text id="days_ration_given-label">
+						<value>Total number of days supplementary food distributed today:</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/days_ration_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/days_ration_given.png</value>
+					</text>
+					<text id="days_ration_given-constraintMsg">
+						<value>Must be between 0 and 31 days</value>
+					</text>
+					<text id="cause_not_given-label">
+						<value>Enter the cause: </value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/cause_not_given.png</value>
+					</text>
+					<text id="cause_not_given-xxx-label">
+						<value>1. xxx</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given-xxx_hin.mp3</value>
+					</text>
+					<text id="cause_not_given-yyy-label">
+						<value>2. yyy</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given-yyy_hin.mp3</value>
+					</text>
+					<text id="cause_not_given-zzz-label">
+						<value>3. zzz</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given-zzz_hin.mp3</value>
+					</text>
+					<text id="child_info-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/ration/child_info.png</value>
+					</text>
+					<text id="child_distribute_ration-label">
+						<value>Have you distributed supplementary food to <output ref="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/ration/child_distribute_ration.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_distribute_ration_hin.mp3</value>
+					</text>
+					<text id="child_days_ration_given-label">
+						<value>Total number of days supplementary food distributed today:</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_days_ration_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/child_days_ration_given.png</value>
+					</text>
+					<text id="child_days_ration_given-constraintMsg">
+						<value>Must be between 0 and 31 days</value>
+					</text>
+					<text id="child_amount_given-label">
+						<value>Amount of ration given each day</value>
+						<value form="image">jr://file/commcare/media/images/ration/child_amount_given.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_amount_given_hin.mp3</value>
+					</text>
+					<text id="child_amount_given-normal-label">
+						<value>1. Normal</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_amount_given-normal_hin.mp3</value>
+					</text>
+					<text id="child_amount_given-large-label">
+						<value>2. Large</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_amount_given-large_hin.mp3</value>
+					</text>
+					<text id="child_cause_not_given-label">
+						<value>Enter the cause: </value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/child_cause_not_given.png</value>
+					</text>
+					<text id="child_cause_not_given-xxx-label">
+						<value>1. xxx</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given-xxx_hin.mp3</value>
+					</text>
+					<text id="child_cause_not_given-yyy-label">
+						<value>2. yyy</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given-yyy_hin.mp3</value>
+					</text>
+					<text id="child_cause_not_given-zzz-label">
+						<value>3. zzz</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given-zzz_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>Success. Done with form.</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/success_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/success.png</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="collect_ration-label">
+						<value><output ref="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/mother_name"/> came to collect Take Home Ration?</value>
+						<value form="image">jr://file/commcare/media/images/ration/collect_ration.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/collect_ration_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. हॉ</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. नही</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/no_hin.mp3</value>
+					</text>
+					<text id="distribute_ration-label">
+						<value>Have you distributed supplementary food to <output ref="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/mother_name"/></value>
+						<value form="image">jr://file/commcare/media/images/ration/distribute_ration.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/distribute_ration_hin.mp3</value>
+					</text>
+					<text id="days_ration_given-label">
+						<value>Total number of days supplementary food distributed today:</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/days_ration_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/days_ration_given.png</value>
+					</text>
+					<text id="days_ration_given-constraintMsg">
+						<value>Must be between 0 and 31 days</value>
+					</text>
+					<text id="cause_not_given-label">
+						<value>Enter the cause: </value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/cause_not_given.png</value>
+					</text>
+					<text id="cause_not_given-xxx-label">
+						<value>1. xxx</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given-xxx_hin.mp3</value>
+					</text>
+					<text id="cause_not_given-yyy-label">
+						<value>2. yyy</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given-yyy_hin.mp3</value>
+					</text>
+					<text id="cause_not_given-zzz-label">
+						<value>3. zzz</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/cause_not_given-zzz_hin.mp3</value>
+					</text>
+					<text id="child_info-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/ration/child_info.png</value>
+					</text>
+					<text id="child_distribute_ration-label">
+						<value>Have you distributed supplementary food to <output ref="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/ration/child_distribute_ration.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_distribute_ration_hin.mp3</value>
+					</text>
+					<text id="child_days_ration_given-label">
+						<value>Total number of days supplementary food distributed today:</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_days_ration_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/child_days_ration_given.png</value>
+					</text>
+					<text id="child_days_ration_given-constraintMsg">
+						<value>Must be between 0 and 31 days</value>
+					</text>
+					<text id="child_amount_given-label">
+						<value>Amount of ration given each day</value>
+						<value form="image">jr://file/commcare/media/images/ration/child_amount_given.png</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_amount_given_hin.mp3</value>
+					</text>
+					<text id="child_amount_given-normal-label">
+						<value>1. Normal</value>
+					</text>
+					<text id="child_amount_given-large-label">
+						<value>2. Large</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_amount_given-large_hin.mp3</value>
+					</text>
+					<text id="child_cause_not_given-label">
+						<value>Enter the cause: </value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/child_cause_not_given.png</value>
+					</text>
+					<text id="child_cause_not_given-xxx-label">
+						<value>1. xxx</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given-xxx_hin.mp3</value>
+					</text>
+					<text id="child_cause_not_given-yyy-label">
+						<value>2. yyy</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given-yyy_hin.mp3</value>
+					</text>
+					<text id="child_cause_not_given-zzz-label">
+						<value>3. zzz</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/child_cause_not_given-zzz_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतापूर्वक फार्म समाप्त।</value>
+						<value form="audio">jr://file/commcare/media/audio/ration/success_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/ration/success.png</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/collect_ration">
+			<label ref="jr:itext('collect_ration-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/distribute_ration">
+			<label ref="jr:itext('distribute_ration-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/days_ration_given">
+			<label ref="jr:itext('days_ration_given-label')" />
+		</input>
+		<select1 ref="/data/cause_not_given">
+			<label ref="jr:itext('cause_not_given-label')" />
+			<item>
+				<label ref="jr:itext('cause_not_given-xxx-label')" />
+				<value>xxx</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_not_given-yyy-label')" />
+				<value>yyy</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_not_given-zzz-label')" />
+				<value>zzz</value>
+			</item>
+		</select1>
+		<group>
+			<label ref="jr:itext('child_info-label')" />
+			<repeat nodeset="/data/child_info" jr:count="/data/num_children">
+				<jr:entryHeader><output value="$name"/></jr:entryHeader>
+				<select1 ref="/data/child_info/child_distribute_ration">
+					<label ref="jr:itext('child_distribute_ration-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/child_days_ration_given">
+					<label ref="jr:itext('child_days_ration_given-label')" />
+				</input>
+				<select1 ref="/data/child_info/child_amount_given">
+					<label ref="jr:itext('child_amount_given-label')" />
+					<item>
+						<label ref="jr:itext('child_amount_given-normal-label')" />
+						<value>normal</value>
+					</item>
+					<item>
+						<label ref="jr:itext('child_amount_given-large-label')" />
+						<value>large</value>
+					</item>
+				</select1>
+				<select1 ref="/data/child_info/child_cause_not_given">
+					<label ref="jr:itext('child_cause_not_given-label')" />
+					<item>
+						<label ref="jr:itext('child_cause_not_given-xxx-label')" />
+						<value>xxx</value>
+					</item>
+					<item>
+						<label ref="jr:itext('child_cause_not_given-yyy-label')" />
+						<value>yyy</value>
+					</item>
+					<item>
+						<label ref="jr:itext('child_cause_not_given-zzz-label')" />
+						<value>zzz</value>
+					</item>
+				</select1>
+			</repeat>
+		</group>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+	</h:body>
+</h:html>

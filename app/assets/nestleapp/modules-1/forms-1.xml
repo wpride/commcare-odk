@@ -1,0 +1,152 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Register Child</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2d09d7ad3f11c4fd89e4f45acf0dae85f3490c58" uiVersion="1" version="1493" name="Register Child">
+					<mother_alive/>
+					<registration>
+						<dob/>
+						<child_name/>
+						<gender/>
+						<weight_at_birth/>
+						<register_message/>
+					</registration>
+					<child_id/>
+					<next_child_visit/>
+					<next_visit_type/>
+					<visit_type/>
+					<total_newborn_visits/>
+					<total_infant_visits/>
+					<total_children/>
+					<mother_id/>
+					<prev_total_children/>
+					<phu_id/>
+					<child_v5a_date/>
+					<child_v5b_date/>
+					<child_v5c_date/>
+					<child_v5d_date/>
+					<child_v6_date/>
+					<child_v7_date/>
+					<child_v8_date/>
+					<child_v9_date/>
+					<child_v10_date/>
+					<child_v11_date/>
+					<total_child_visits/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>child</case_type></create><update><visit_type/><mother_id/><child_v10_date/><child_v5a_date/><next_visit_type/><total_newborn_visits/><child_v5b_date/><child_id/><total_child_visits/><child_v5d_date/><child_v5c_date/><total_infant_visits/><next_child_visit/><mother_alive/><child_v7_date/><child_name/><child_v8_date/><child_v6_date/><child_v9_date/><child_v11_date/><dob/><gender/><weight_at_birth/></update><index><parent case_type="mother"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><visit_type/><total_children/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/mother_alive"/>
+			<bind nodeset="/data/registration"/>
+			<bind nodeset="/data/registration/dob" type="xsd:date"/>
+			<bind nodeset="/data/registration/child_name" type="xsd:string"/>
+			<bind nodeset="/data/registration/gender"/>
+			<bind nodeset="/data/registration/weight_at_birth" type="xsd:double"/>
+			<bind nodeset="/data/registration/register_message"/>
+			<bind nodeset="/data/child_id" calculate="concat(/data/mother_id,&quot;-00&quot;,/data/total_children)" required="true()"/>
+			<bind nodeset="/data/next_child_visit" calculate="if(/data/next_visit_type=&quot;newborn&quot;,/data/child_v5a_date,if(/data/next_visit_type=&quot;infant&quot;,/data/child_v6_date,/data/child_v5a_date))"/>
+			<bind nodeset="/data/next_visit_type" calculate="if(today() - /data/registration/dob &lt; 35, 'newborn', 'infant')"/>
+			<bind nodeset="/data/visit_type" calculate="'registration'"/>
+			<bind nodeset="/data/total_newborn_visits" calculate="0"/>
+			<bind nodeset="/data/total_infant_visits" calculate="0"/>
+			<bind nodeset="/data/total_children" calculate="/data/prev_total_children + 1"/>
+			<bind nodeset="/data/mother_id"/>
+			<bind nodeset="/data/prev_total_children"/>
+			<bind nodeset="/data/phu_id"/>
+			<bind nodeset="/data/child_v5a_date" calculate="/data/registration/dob"/>
+			<bind nodeset="/data/child_v5b_date" calculate="date(/data/registration/dob + 2)"/>
+			<bind nodeset="/data/child_v5c_date" calculate="date(/data/registration/dob + 5)"/>
+			<bind nodeset="/data/child_v5d_date" calculate="date(/data/registration/dob + 21)"/>
+			<bind nodeset="/data/child_v6_date" calculate="date(/data/registration/dob + 150)"/>
+			<bind nodeset="/data/child_v7_date" calculate="date(/data/registration/dob + 180)"/>
+			<bind nodeset="/data/child_v8_date" calculate="date(/data/registration/dob + 270)"/>
+			<bind nodeset="/data/child_v9_date" calculate="date(/data/registration/dob + 365)"/>
+			<bind nodeset="/data/child_v10_date" calculate="date(/data/registration/dob + 547)"/>
+			<bind nodeset="/data/child_v11_date" calculate="date(/data/registration/dob + 690)"/>
+			<bind nodeset="/data/total_child_visits"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="mother_alive-label">
+						<value>Is the mother still alive</value>
+					</text>
+					<text id="mother_alive-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="mother_alive-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="registration-label">
+						<value>Registration</value>
+					</text>
+					<text id="dob-label">
+						<value>Date of birth</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+					</text>
+					<text id="child_name-label2">
+						<value>Name of child</value>
+					</text>
+					<text id="gender-label">
+						<value>Sex</value>
+						<value form="image">jr://file/commcare/image/data/gender.png</value>
+					</text>
+					<text id="gender-male-label">
+						<value>Male</value>
+						<value form="image">jr://file/commcare/image/data/male.png</value>
+					</text>
+					<text id="gender-female-label">
+						<value>Female</value>
+						<value form="image">jr://file/commcare/image/data/female.png</value>
+					</text>
+					<text id="weight_at_birth-label">
+						<value>Weight at birth</value>
+						<value form="image">jr://file/commcare/image/data/weight_at_birth.png</value>
+					</text>
+					<text id="register_message-label">
+						<value>Registration is complete. Please open the Child Visit form.</value>
+						<value form="image">jr://file/commcare/image/data/infant_case_large.png</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/visit_type" relevant="count(/data/visit_type) &gt; 0" calculate="/data/visit_type"/><bind nodeset="/data/case/update/total_children" relevant="count(/data/total_children) &gt; 0" calculate="/data/total_children"/><setvalue ref="/data/phu_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/phu_id"/><setvalue ref="/data/mother_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_id"/><setvalue ref="/data/total_children" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_total_children"/><bind nodeset="/data/subcase_0/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/subcase_0/case/@user_id" calculate="/data/meta/userID"/><setvalue ref="/data/subcase_0/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/subcase_0/case/create/case_name" calculate="/data/child_id"/><bind nodeset="/data/subcase_0/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/subcase_0/case/update/visit_type" relevant="count(/data/visit_type) &gt; 0" calculate="/data/visit_type"/><bind nodeset="/data/subcase_0/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/subcase_0/case/update/child_v10_date" relevant="count(/data/child_v10_date) &gt; 0" calculate="/data/child_v10_date"/><bind nodeset="/data/subcase_0/case/update/child_v5a_date" relevant="count(/data/child_v5a_date) &gt; 0" calculate="/data/child_v5a_date"/><bind nodeset="/data/subcase_0/case/update/next_visit_type" relevant="count(/data/next_visit_type) &gt; 0" calculate="/data/next_visit_type"/><bind nodeset="/data/subcase_0/case/update/total_newborn_visits" relevant="count(/data/total_newborn_visits) &gt; 0" calculate="/data/total_newborn_visits"/><bind nodeset="/data/subcase_0/case/update/child_v5b_date" relevant="count(/data/child_v5b_date) &gt; 0" calculate="/data/child_v5b_date"/><bind nodeset="/data/subcase_0/case/update/child_id" relevant="count(/data/child_id) &gt; 0" calculate="/data/child_id"/><bind nodeset="/data/subcase_0/case/update/total_child_visits" relevant="count(/data/total_child_visits) &gt; 0" calculate="/data/total_child_visits"/><bind nodeset="/data/subcase_0/case/update/child_v5d_date" relevant="count(/data/child_v5d_date) &gt; 0" calculate="/data/child_v5d_date"/><bind nodeset="/data/subcase_0/case/update/child_v5c_date" relevant="count(/data/child_v5c_date) &gt; 0" calculate="/data/child_v5c_date"/><bind nodeset="/data/subcase_0/case/update/total_infant_visits" relevant="count(/data/total_infant_visits) &gt; 0" calculate="/data/total_infant_visits"/><bind nodeset="/data/subcase_0/case/update/next_child_visit" relevant="count(/data/next_child_visit) &gt; 0" calculate="/data/next_child_visit"/><bind nodeset="/data/subcase_0/case/update/mother_alive" relevant="count(/data/mother_alive) &gt; 0" calculate="/data/mother_alive"/><bind nodeset="/data/subcase_0/case/update/child_v7_date" relevant="count(/data/child_v7_date) &gt; 0" calculate="/data/child_v7_date"/><bind nodeset="/data/subcase_0/case/update/child_name" relevant="count(/data/registration/child_name) &gt; 0" calculate="/data/registration/child_name"/><bind nodeset="/data/subcase_0/case/update/child_v8_date" relevant="count(/data/child_v8_date) &gt; 0" calculate="/data/child_v8_date"/><bind nodeset="/data/subcase_0/case/update/child_v6_date" relevant="count(/data/child_v6_date) &gt; 0" calculate="/data/child_v6_date"/><bind nodeset="/data/subcase_0/case/update/child_v9_date" relevant="count(/data/child_v9_date) &gt; 0" calculate="/data/child_v9_date"/><bind nodeset="/data/subcase_0/case/update/child_v11_date" relevant="count(/data/child_v11_date) &gt; 0" calculate="/data/child_v11_date"/><bind nodeset="/data/subcase_0/case/update/dob" relevant="count(/data/registration/dob) &gt; 0" calculate="/data/registration/dob"/><bind nodeset="/data/subcase_0/case/update/gender" relevant="count(/data/registration/gender) &gt; 0" calculate="/data/registration/gender"/><bind nodeset="/data/subcase_0/case/update/weight_at_birth" relevant="count(/data/registration/weight_at_birth) &gt; 0" calculate="/data/registration/weight_at_birth"/><bind nodeset="/data/subcase_0/case/index/parent" calculate="/data/case/@case_id"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/mother_alive">
+			<label ref="jr:itext('mother_alive-label')"/>
+			<item>
+				<label ref="jr:itext('mother_alive-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mother_alive-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<group ref="/data/registration">
+			<label ref="jr:itext('registration-label')"/>
+			<input ref="/data/registration/dob">
+				<label ref="jr:itext('dob-label')"/>
+			</input>
+			<input ref="/data/registration/child_name">
+				<label ref="jr:itext('child_name-label2')"/>
+			</input>
+			<select1 ref="/data/registration/gender">
+				<label ref="jr:itext('gender-label')"/>
+				<item>
+					<label ref="jr:itext('gender-male-label')"/>
+					<value>male</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gender-female-label')"/>
+					<value>female</value>
+				</item>
+			</select1>
+			<input ref="/data/registration/weight_at_birth">
+				<label ref="jr:itext('weight_at_birth-label')"/>
+			</input>
+			<trigger ref="/data/registration/register_message">
+				<label ref="jr:itext('register_message-label')"/>
+			</trigger>
+		</group>
+	</h:body>
+</h:html>

@@ -1,0 +1,202 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Case Create</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2B1BD366-56B4-45AF-B81A-2418A75EE5AF" uiVersion="1" version="33" name="Case Create">
+					<firstName/>
+					<lastName/>
+					<age/>
+					<gender/>
+					<village/>
+					<lastEvaluation/>
+					<dob/>
+					<nationalID/>
+					<phoneNumber/>
+					<conditionLastVisit/>
+					<pictureChild/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>case</case_type></create><update><age/><conditionLastVisit/><dob/><firstName/><gender/><lastEvaluation/><lastName/><nationalID/><phoneNumber/><village/></update><attachment><pictureChild from="local" src=""/></attachment></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/firstName" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/lastName" type="xsd:string"/>
+			<bind nodeset="/data/age" type="xsd:int"/>
+			<bind nodeset="/data/gender"/>
+			<bind nodeset="/data/village"/>
+			<bind nodeset="/data/lastEvaluation" type="xsd:date"/>
+			<bind nodeset="/data/dob" type="xsd:date"/>
+			<bind nodeset="/data/nationalID" type="xsd:int"/>
+			<bind nodeset="/data/phoneNumber" type="xsd:string"/>
+			<bind nodeset="/data/conditionLastVisit"/>
+			<bind nodeset="/data/pictureChild" type="binary"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="firstName-label">
+						<value>First Name</value>
+					</text>
+					<text id="lastName-label">
+						<value>Last Name</value>
+					</text>
+					<text id="age-label">
+						<value>Age</value>
+					</text>
+					<text id="gender-label">
+						<value>Gender</value>
+					</text>
+					<text id="gender-m-label">
+						<value>Male</value>
+					</text>
+					<text id="gender-f-label">
+						<value>Female</value>
+					</text>
+					<text id="village-label">
+						<value>Village</value>
+					</text>
+					<text id="village-lanfiera-label">
+						<value>Lanfiera</value>
+					</text>
+					<text id="village-di-label">
+						<value>Di</value>
+					</text>
+					<text id="village-toeni-label">
+						<value>Toeni</value>
+					</text>
+					<text id="village-kiembara-label">
+						<value>Kiembara</value>
+					</text>
+					<text id="village-lankoue-label">
+						<value>Lankoue</value>
+					</text>
+					<text id="village-gomboro-label">
+						<value>Gomboro</value>
+					</text>
+					<text id="village-tougan-label">
+						<value>Tougan</value>
+					</text>
+					<text id="lastEvaluation-label">
+						<value>Last Evaluation</value>
+					</text>
+					<text id="dob-label">
+						<value>Date of Birth</value>
+					</text>
+					<text id="nationalID-label">
+						<value>National ID</value>
+					</text>
+					<text id="phoneNumber-label">
+						<value>Phone Number</value>
+					</text>
+					<text id="conditionLastVisit-label">
+						<value>Condition Last Visit</value>
+					</text>
+					<text id="conditionLastVisit-good-label">
+						<value>Good</value>
+					</text>
+					<text id="conditionLastVisit-fair-label">
+						<value>Fair</value>
+					</text>
+					<text id="conditionLastVisit-bad-label">
+						<value>Bad</value>
+					</text>
+					<text id="conditionLastVisit-sever-label">
+						<value>Severe</value>
+					</text>
+					<text id="pictureChild-label">
+						<value>Picture of Child</value>
+					</text>
+					<text id="question47-label">
+						<value>question47</value>
+					</text>
+					<text id="question48-label">
+						<value>question48</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="uuid()"/><bind calculate="/data/firstName" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/age" nodeset="/data/case/update/age" relevant="count(/data/age) &gt; 0"/><bind calculate="/data/conditionLastVisit" nodeset="/data/case/update/conditionLastVisit" relevant="count(/data/conditionLastVisit) &gt; 0"/><bind calculate="/data/dob" nodeset="/data/case/update/dob" relevant="count(/data/dob) &gt; 0"/><bind calculate="/data/firstName" nodeset="/data/case/update/firstName" relevant="count(/data/firstName) &gt; 0"/><bind calculate="/data/gender" nodeset="/data/case/update/gender" relevant="count(/data/gender) &gt; 0"/><bind calculate="/data/lastEvaluation" nodeset="/data/case/update/lastEvaluation" relevant="count(/data/lastEvaluation) &gt; 0"/><bind calculate="/data/lastName" nodeset="/data/case/update/lastName" relevant="count(/data/lastName) &gt; 0"/><bind calculate="/data/nationalID" nodeset="/data/case/update/nationalID" relevant="count(/data/nationalID) &gt; 0"/><bind calculate="/data/phoneNumber" nodeset="/data/case/update/phoneNumber" relevant="count(/data/phoneNumber) &gt; 0"/><bind calculate="/data/village" nodeset="/data/case/update/village" relevant="count(/data/village) &gt; 0"/><bind nodeset="/data/case/attachment/pictureChild" relevant="count(/data/pictureChild) = 1"/><bind calculate="/data/pictureChild" nodeset="/data/case/attachment/pictureChild/@src"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/firstName">
+			<label ref="jr:itext('firstName-label')"/>
+		</input>
+		<input ref="/data/lastName">
+			<label ref="jr:itext('lastName-label')"/>
+		</input>
+		<input ref="/data/age">
+			<label ref="jr:itext('age-label')"/>
+		</input>
+		<select1 ref="/data/gender">
+			<label ref="jr:itext('gender-label')"/>
+			<item>
+				<label ref="jr:itext('gender-m-label')"/>
+				<value>m</value>
+			</item>
+			<item>
+				<label ref="jr:itext('gender-f-label')"/>
+				<value>f</value>
+			</item>
+		</select1>
+		<select1 ref="/data/village">
+			<label ref="jr:itext('village-label')"/>
+			<item>
+				<label ref="jr:itext('village-lanfiera-label')"/>
+				<value>lanfiera</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-di-label')"/>
+				<value>di</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-toeni-label')"/>
+				<value>toeni</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-kiembara-label')"/>
+				<value>kiembara</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-lankoue-label')"/>
+				<value>lankoue</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-gomboro-label')"/>
+				<value>gomboro</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-tougan-label')"/>
+				<value>tougan</value>
+			</item>
+		</select1>
+		<input ref="/data/lastEvaluation">
+			<label ref="jr:itext('lastEvaluation-label')"/>
+		</input>
+		<input ref="/data/dob">
+			<label ref="jr:itext('dob-label')"/>
+		</input>
+		<input ref="/data/nationalID">
+			<label ref="jr:itext('nationalID-label')"/>
+		</input>
+		<input ref="/data/phoneNumber" appearance="numeric">
+			<label ref="jr:itext('phoneNumber-label')"/>
+		</input>
+		<select1 ref="/data/conditionLastVisit">
+			<label ref="jr:itext('conditionLastVisit-label')"/>
+			<item>
+				<label ref="jr:itext('conditionLastVisit-good-label')"/>
+				<value>good</value>
+			</item>
+			<item>
+				<label ref="jr:itext('conditionLastVisit-fair-label')"/>
+				<value>fair</value>
+			</item>
+			<item>
+				<label ref="jr:itext('conditionLastVisit-bad-label')"/>
+				<value>bad</value>
+			</item>
+			<item>
+				<label ref="jr:itext('conditionLastVisit-sever-label')"/>
+				<value>sever</value>
+			</item>
+		</select1>
+		<upload ref="/data/pictureChild" mediatype="image/*">
+			<label ref="jr:itext('pictureChild-label')"/>
+		</upload>
+	</h:body>
+</h:html>

@@ -1,0 +1,414 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Death Registration</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/death" uiVersion="1" version="2" name="Death Registration">
+				
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						<update>
+							<mother_alive />
+							<status>death</status>
+						</update>
+						<close/>
+					</case>
+					
+					
+					<num_children />
+					<date_death />
+					<site_death />
+					<death_village />
+					<place_death />
+					
+					<children/>
+					
+					<cast_num_children/>
+					<cur_children/>
+					
+					<child_info jr:template="">
+						<index/>
+						<cid/>
+						<child_alive />
+						<chld_date_death />
+						<child_site_death />
+						<child_died_village />
+						<child_place_death />
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<update>
+								<child_alive/>
+							</update>
+							<close/>
+						</case>
+					</child_info>
+					<success />
+				</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+	    	<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+    		<setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id"/>
+    		
+    		
+    		<setvalue event="xforms-ready" ref="/data/children" value="join(' ',instance('casedb')/casedb/case[@case_type='cc_bihar_newborn'][index/mother_id=/data/case/@case_id][@status='open']/@case_id)"/>
+    		
+	    	<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+     			    	
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/case/close" relevant="(not(count(/data/child_info[child_alive = 'yes']) &gt; 0) and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/add != '') or (/data/case/update/mother_alive='no' and instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/add = '')"/>
+			
+			<bind nodeset="/data/cur_children" calculate="count(/data/child_info)"/>
+			
+			<setvalue event="jr-insert" ref="/data/child_info/index" value="int(/data/cur_children) - int(selected-at('0 1'),1)"/>
+			
+			<bind nodeset="/data/child_info/cid" calculate="selected-at(/data/children,../index)"/>
+			
+			<bind nodeset="/data/child_info/case/@case_id" type="xsd:string" calculate="../../cid"/>
+			<bind nodeset="/data/child_info/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/child_info/case/@user_id" type="xsd:string" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/num_children" type="int" calculate="count-selected(/data/children)"/>
+
+			
+			<bind nodeset="/data/case/update/mother_alive" relevant="instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/mother_alive='yes'" required="true()"/>
+			<bind nodeset="/data/case/update/status" relevant="/data/case/update/mother_alive='no'"/>
+			<bind nodeset="/data/date_death" type="xsd:date" constraint=". &gt; today() - 365 and . &lt;= today()" jr:constraintMsg="jr:itext('date_death-constraintMsg')" relevant="/data/case/update/mother_alive = 'no'" required="true()"/>
+			<bind nodeset="/data/site_death" relevant="/data/case/update/mother_alive = 'no'" required="true()"/>
+			<bind nodeset="/data/death_village" relevant="/data/case/update/mother_alive = 'no'" required="true()"/>
+			<bind nodeset="/data/place_death" type="xsd:string" relevant="/data/death_village = 'no'" required="true()"/>
+			<bind nodeset="/data/child_info/case/update/child_alive" calculate="/data/child_info/child_alive"/>
+			<bind nodeset="/data/child_info/child_alive" required="true()" />
+			<bind nodeset="/data/child_info/chld_date_death" type="xsd:date" constraint="if(instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/add != '', . &gt;= date(instance('casedb')/casedb/case[@case_id=/data/case/@case_id]/add) and . &lt;= today(), . &lt;= today())" jr:constraintMsg="jr:itext('chld_date_death-constraintMsg')" relevant="/data/child_info/child_alive = 'no'" required="true()"/>
+			<bind nodeset="/data/child_info/child_site_death" relevant="/data/child_info/child_alive = 'no'" required="true()"/>
+			<bind nodeset="/data/child_info/child_died_village" relevant="/data/child_info/child_alive = 'no'" required="true()"/>
+			<bind nodeset="/data/child_info/child_place_death" type="xsd:string" relevant="/data/child_info/child_died_village = 'no'" required="true()"/>
+			<bind nodeset="/data/cast_num_children" type="xsd:int" calculate="if(/data/num_children = '', 0, int(/data/num_children))" />
+			<bind nodeset="/data/success" />
+			
+			<bind nodeset="/data/child_info/case/close" relevant="/data/child_info/child_alive = 'no'" />
+			<itext>
+				<translation lang="hin" default="">
+					<text id="children-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/death/children.png</value>
+					</text>
+					<text id="mother_alive-label">
+						<value>क्या महिला जीवित है</value>
+						<value form="image">jr://file/commcare/media/images/death/mother_alive.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/mother_alive_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. हॉ</value>
+						<value form="audio">jr://file/commcare/media/audio/death/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. नही</value>
+						<value form="audio">jr://file/commcare/media/audio/death/no_hin.mp3</value>
+					</text>
+					<text id="date_death-label">
+						<value>मृत्यु का तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/death/date_death_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/death/date_death.png</value>
+					</text>
+					<text id="date_death-constraintMsg">
+						<value>भविष्य की तारीख नहीं लिख सकते है</value>
+						<value form="audio">jr://file/commcare/media/audio/death/date_death-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="site_death-label">
+						<value>मृत्यु की जगह </value>
+						<value form="image">jr://file/commcare/media/images/death/site_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death_hin.mp3</value>
+					</text>
+					<text id="site_death-home-label">
+						<value>1. घर मे</value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death-home_hin.mp3</value>
+					</text>
+					<text id="site_death-hospital_death-label">
+						<value>2. हॉस्पिटल मे</value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death-hospital_death_hin.mp3</value>
+					</text>
+					<text id="site_death-transit_death-label">
+						<value>3. यात्रा के दौरान</value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death-transit_death_hin.mp3</value>
+					</text>
+					<text id="death_village-label">
+						<value>इस गॉव मे हुई?</value>
+						<value form="image">jr://file/commcare/media/images/death/death_village.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/death_village_hin.mp3</value>
+					</text>
+					<text id="place_death-label">
+						<value>मृत्यु का स्थान </value>
+						<value form="image">jr://file/commcare/media/images/death/place_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/place_death_hin.mp3</value>
+					</text>
+					<text id="child_alive-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/> क्या बच्चा जीवित है</value>
+						<value form="image">jr://file/commcare/media/images/death/child_alive.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_alive_hin.mp3</value>
+					</text>
+					<text id="chld_date_death-label">
+						<value>मृत्यु का तारीख </value>
+						<value form="audio">jr://file/commcare/media/audio/death/chld_date_death_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/death/chld_date_death.png</value>
+					</text>
+					<text id="chld_date_death-constraintMsg">
+						<value>भविष्य की तारीख नहीं लिख सकते है</value>
+						<value form="audio">jr://file/commcare/media/audio/death/chld_date_death-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="child_site_death-label">
+						<value>मृत्यु की जगह </value>
+						<value form="image">jr://file/commcare/media/images/death/child_site_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death_hin.mp3</value>
+					</text>
+					<text id="child_site_death-home-label">
+						<value>1. घर मे</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death-home_hin.mp3</value>
+					</text>
+					<text id="child_site_death-hospital-label">
+						<value>2. हॉस्पिटल मे</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death-hospital_hin.mp3</value>
+					</text>
+					<text id="child_site_death-transit-label">
+						<value>3. यात्रा के दौरान</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death-transit_hin.mp3</value>
+					</text>
+					<text id="child_died_village-label">
+						<value>इस गॉव मे हुई?</value>
+						<value form="image">jr://file/commcare/media/images/death/child_died_village.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_died_village_hin.mp3</value>
+					</text>
+					<text id="child_place_death-label">
+						<value>मृत्यु का स्थान </value>
+						<value form="image">jr://file/commcare/media/images/death/child_place_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_place_death_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतापूर्वक फार्म समाप्त।</value>
+						<value form="audio">jr://file/commcare/media/audio/death/success_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/death/success.png</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="children-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/cid]/case_name"/></value>
+						<value form="image">jr://file/commcare/media/images/death/children.png</value>
+					</text>
+					<text id="mother_alive-label">
+						<value>Mother alive?</value>
+						<value form="image">jr://file/commcare/media/images/death/mother_alive.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/mother_alive_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. Yes</value>
+						<value form="audio">jr://file/commcare/media/audio/death/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. No</value>
+						<value form="audio">jr://file/commcare/media/audio/death/no_hin.mp3</value>
+					</text>
+					<text id="date_death-label">
+						<value>Date of death</value>
+						<value form="audio">jr://file/commcare/media/audio/death/date_death_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/death/date_death.png</value>
+					</text>
+					<text id="date_death-constraintMsg">
+						<value>Date cannot be in the future</value>
+						<value form="audio">jr://file/commcare/media/audio/death/date_death-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="site_death-label">
+						<value>Site of death</value>
+						<value form="image">jr://file/commcare/media/images/death/site_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death_hin.mp3</value>
+					</text>
+					<text id="site_death-home-label">
+						<value>1. Home</value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death-home_hin.mp3</value>
+					</text>
+					<text id="site_death-hospital_death-label">
+						<value>2. Hospital </value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death-hospital_death_hin.mp3</value>
+					</text>
+					<text id="site_death-transit_death-label">
+						<value>3. Transit</value>
+						<value form="audio">jr://file/commcare/media/audio/death/site_death-transit_death_hin.mp3</value>
+					</text>
+					<text id="death_village-label">
+						<value>Died in this village?</value>
+						<value form="image">jr://file/commcare/media/images/death/death_village.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/death_village_hin.mp3</value>
+					</text>
+					<text id="place_death-label">
+						<value>Place of death?</value>
+						<value form="image">jr://file/commcare/media/images/death/place_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/place_death_hin.mp3</value>
+					</text>
+					<text id="child_alive-label">
+						<value><output value="instance('casedb')/casedb/case[@case_id=current()/../cid]/case_name"/> alive?</value>
+						<value form="image">jr://file/commcare/media/images/death/child_alive.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_alive_hin.mp3</value>
+					</text>
+					<text id="chld_date_death-label">
+						<value>Date of death </value>
+						<value form="audio">jr://file/commcare/media/audio/death/chld_date_death_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/death/chld_date_death.png</value>
+					</text>
+					<text id="chld_date_death-constraintMsg">
+						<value>Date cannot be in the future</value>
+						<value form="audio">jr://file/commcare/media/audio/death/chld_date_death-constraintMsg_hin.mp3</value>
+					</text>
+					<text id="child_site_death-label">
+						<value>Site of death</value>
+						<value form="image">jr://file/commcare/media/images/death/child_site_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death_hin.mp3</value>
+					</text>
+					<text id="child_site_death-home-label">
+						<value>1. Home</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death-home_hin.mp3</value>
+					</text>
+					<text id="child_site_death-hospital-label">
+						<value>2. Hospital</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death-hospital_hin.mp3</value>
+					</text>
+					<text id="child_site_death-transit-label">
+						<value>3. Transit</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_site_death-transit_hin.mp3</value>
+					</text>
+					<text id="child_died_village-label">
+						<value>Died in this village?</value>
+						<value form="image">jr://file/commcare/media/images/death/child_died_village.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_died_village_hin.mp3</value>
+					</text>
+					<text id="child_place_death-label">
+						<value>Place of death?</value>
+						<value form="image">jr://file/commcare/media/images/death/child_place_death.png</value>
+						<value form="audio">jr://file/commcare/media/audio/death/child_place_death_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="audio">jr://file/commcare/media/audio/death/success_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/death/success.png</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/case/update/mother_alive">
+			<label ref="jr:itext('mother_alive-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/date_death">
+			<label ref="jr:itext('date_death-label')" />
+		</input>
+		<select1 ref="/data/site_death">
+			<label ref="jr:itext('site_death-label')" />
+			<item>
+				<label ref="jr:itext('site_death-home-label')" />
+				<value>home</value>
+			</item>
+			<item>
+				<label ref="jr:itext('site_death-hospital_death-label')" />
+				<value>hospital_death</value>
+			</item>
+			<item>
+				<label ref="jr:itext('site_death-transit_death-label')" />
+				<value>transit_death</value>
+			</item>
+		</select1>
+		<select1 ref="/data/death_village">
+			<label ref="jr:itext('death_village-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/place_death">
+			<label ref="jr:itext('place_death-label')" />
+		</input>
+		<group>
+			<label ref="jr:itext('children-label')" />
+			<repeat nodeset="/data/child_info" jr:count="/data/num_children">
+			<jr:entryHeader><output value="$name"/></jr:entryHeader>
+				<select1 ref="/data/child_info/child_alive">
+					<label ref="jr:itext('child_alive-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/chld_date_death">
+					<label ref="jr:itext('chld_date_death-label')" />
+				</input>
+				<select1 ref="/data/child_info/child_site_death">
+					<label ref="jr:itext('child_site_death-label')" />
+					<item>
+						<label ref="jr:itext('child_site_death-home-label')" />
+						<value>home</value>
+					</item>
+					<item>
+						<label ref="jr:itext('child_site_death-hospital-label')" />
+						<value>hospital</value>
+					</item>
+					<item>
+						<label ref="jr:itext('child_site_death-transit-label')" />
+						<value>transit</value>
+					</item>
+				</select1>
+				<select1 ref="/data/child_info/child_died_village">
+					<label ref="jr:itext('child_died_village-label')" />
+					<item>
+						<label ref="jr:itext('yes-label')" />
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('no-label')" />
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/child_info/child_place_death">
+					<label ref="jr:itext('child_place_death-label')" />
+				</input>
+			</repeat>
+		</group>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+	</h:body>
+</h:html>
+		

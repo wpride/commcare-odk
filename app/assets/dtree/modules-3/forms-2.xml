@@ -1,0 +1,2226 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Chunguza dalili za halia ya mama na mtoto</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/5EDDE664-B0F0-4B12-A0E7-43DA71A21B88" uiVersion="1" version="812" name="Chunguza dalili za halia ya mama na mtoto">
+					<filling_during/>
+					<pregnancy_group>
+						<remind_imortance_deliver_at_facility/>
+						<lack_fetal_movement/>
+						<any_of_following_sign_preg/>
+						<bleeding/>
+						<oedema/>
+						<dizziness/>
+						<fits_convulsions/>
+						<severe_headache/>
+						<high_fever/>
+						<advise_anc_referral_dc/>
+						<referral_anc_phcc/>
+						<referral_anc_phcu/>
+						<advise_health/>
+					</pregnancy_group>
+					<labour_and_delivery_group>
+						<every_mother_goto_facility/>
+						<any_of_following_sign_ld/>
+						<labour_12_hours/>
+						<lobour_bleeding/>
+						<pale_pollar/>
+						<abnormal_breathing/>
+						<fits_convusions/>
+						<swallen_face/>
+						<labour_severe_headache/>
+						<fever/>
+						<advise_deliver_dc/>
+						<advise_deliver_health_facility_dc/>
+						<ld_referral_phcc/>
+					</labour_and_delivery_group>
+					<immediately_after_delivery_group>
+						<every_mother_deliver_facility/>
+						<dry_baby/>
+						<number_of_kangas/>
+						<ask_observe_signs/>
+						<mother_fever/>
+						<mother_pale/>
+						<adelivery_abnormal_breathing/>
+						<mother_fits/>
+						<baby_crying/>
+						<baby_blue/>
+						<elevate_baby/>
+						<baby_yellow/>
+						<congenital_abnormality/>
+						<baby_premature/>
+						<baby_small/>
+						<advise_health_no_p/>
+						<mother_referral_phcc/>
+						<infant_referral_phcu/>
+						<infant_referral_hospital/>
+					</immediately_after_delivery_group>
+					<one_day_after_group>
+						<observer_mother_post_delivery/>
+						<post_delivery_fever/>
+						<excessive_bleeding/>
+						<exhaustion/>
+						<severe_abdominal_pain/>
+						<blurred_vision/>
+						<foul_vaginal_discharge/>
+						<breast_mastitis/>
+						<breast_cracking/>
+						<feeling_sad_or_hopeless/>
+						<examine_baby/>
+						<child_fever/>
+						<cord_bleeding/>
+						<stiffness/>
+						<child_convulsions/>
+						<excessive_crying/>
+						<non_responsive/>
+						<unable_to_suck/>
+						<fast_or_diff_breathing/>
+						<excessive_vomiting/>
+						<blue_lips/>
+						<child_pale_pollar/>
+						<eyes_discharge/>
+						<yellow_color_in_eyes_or_body/>
+						<child_congenital_abnormality/>
+						<skin_rashes/>
+						<bulging_anterior_fontanel/>
+						<abdominal_distention/>
+						<baby_passed_urine/>
+						<baby_passed_bowel/>
+						<baby_diarrhea/>
+						<advise_mother_problems_phcc/>
+						<advise_mother_problems_phcu/>
+						<advise_baby_problems_phcc/>
+						<advise_baby_problems_phcu/>
+						<infant_problems_hosipital/>
+						<will_pay_fare/>
+					</one_day_after_group>
+					<call_transport/>
+					<end_of_form/>
+					<lack_fetal_node/>
+					<nearest_dc_health_facility/>
+					<fits_convulsions_node/>
+					<dizziness_node/>
+					<bleeding_node/>
+					<severe_headache_node/>
+					<nearest_PHCC/>
+					<nearest_referral_hospital/>
+					<nearest_phcu/>
+					<oedema_node/>
+					<high_fever_node/>
+					<swallen_face_node/>
+					<fever_node/>
+					<fits_convusions_node/>
+					<abnormal_breathing_node/>
+					<lobour_bleeding_node/>
+					<labour_12_hours_node/>
+					<imed_after_del_baby_crying_node/>
+					<imid_after_baby_blue_node/>
+					<mother_pale_node/>
+					<number_of_kangas_node/>
+					<adelivery_abnormal_breathing_node/>
+					<mother_fits_node/>
+					<congenital_abnormality_node/>
+					<baby_yellow_node/>
+					<baby_premature_node/>
+					<breast_mastitis_node/>
+					<severe_abdominal_pain_node/>
+					<excessive_bleeding_node/>
+					<blurred_vision_node/>
+					<breast_cracking_node/>
+					<foul_vaginal_discharge_node/>
+					<post_delivery_fever_node/>
+					<exhaustion_node/>
+					<feeling_sad_or_hopeless_node/>
+					<stiffness_node/>
+					<child_convulsions_node/>
+					<excessive_crying_node/>
+					<abdominal_distention_node/>
+					<unable_to_suck_node/>
+					<child_fever_node/>
+					<cord_bleeding_node/>
+					<fast_or_diff_breathing_node/>
+					<excessive_vomiting_node/>
+					<blue_lips_node/>
+					<child_pale_pollar_node/>
+					<eyes_discharge_node/>
+					<yellow_color_in_eyes_or_body_node/>
+					<skin_rashes_node/>
+					<baby_passed_urine_node/>
+					<baby_passed_bowel_node/>
+					<baby_diarrhea_node/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""/><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/filling_during" required="true()"/>
+			<bind nodeset="/data/pregnancy_group" relevant="/data/filling_during = 'pregnancy'" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/remind_imortance_deliver_at_facility" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/lack_fetal_movement"/>
+			<bind nodeset="/data/pregnancy_group/any_of_following_sign_preg"/>
+			<bind nodeset="/data/pregnancy_group/bleeding" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/oedema" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/dizziness" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/fits_convulsions" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/severe_headache" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/high_fever"/>
+			<bind nodeset="/data/pregnancy_group/advise_anc_referral_dc" relevant="/data/pregnancy_group/lack_fetal_movement = 'yes' and /data/pregnancy_group/fits_convulsions = 'no' and /data/pregnancy_group/dizziness = 'no' and /data/pregnancy_group/bleeding = 'no' and /data/pregnancy_group/severe_headache = 'no'" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/referral_anc_phcc" relevant="(/data/pregnancy_group/fits_convulsions = 'yes' or /data/pregnancy_group/dizziness = 'yes' or /data/pregnancy_group/bleeding = 'yes' or /data/pregnancy_group/severe_headache = 'yes') and /data/pregnancy_group/oedema = 'no' and /data/pregnancy_group/high_fever = 'no'" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/referral_anc_phcu" relevant="/data/pregnancy_group/oedema = 'yes' or /data/pregnancy_group/high_fever = 'yes'" required="true()"/>
+			<bind nodeset="/data/pregnancy_group/advise_health" relevant="/data/pregnancy_group/lack_fetal_movement = 'no' and /data/pregnancy_group/bleeding = 'no' and /data/pregnancy_group/oedema = 'no' and /data/pregnancy_group/dizziness = 'no' and /data/pregnancy_group/fits_convulsions = 'no' and /data/pregnancy_group/severe_headache = 'no' and /data/pregnancy_group/high_fever = 'no'" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group" relevant="/data/filling_during = 'labour_delivery'" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/every_mother_goto_facility"/>
+			<bind nodeset="/data/labour_and_delivery_group/any_of_following_sign_ld"/>
+			<bind nodeset="/data/labour_and_delivery_group/labour_12_hours" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/lobour_bleeding" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/pale_pollar" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/abnormal_breathing" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/fits_convusions" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/swallen_face" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/labour_severe_headache" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/fever"/>
+			<bind nodeset="/data/labour_and_delivery_group/advise_deliver_dc" relevant="/data/labour_and_delivery_group/labour_severe_headache = 'no' and /data/labour_and_delivery_group/swallen_face = 'no' and /data/labour_and_delivery_group/fits_convusions = 'no' and /data/labour_and_delivery_group/abnormal_breathing = 'no' and /data/labour_and_delivery_group/pale_pollar = 'no' and /data/labour_and_delivery_group/lobour_bleeding = 'no' and /data/labour_and_delivery_group/labour_12_hours = 'no' and /data/labour_and_delivery_group/fever = 'no'" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/advise_deliver_health_facility_dc" relevant="(/data/labour_and_delivery_group/swallen_face = 'yes' or /data/labour_and_delivery_group/fever = 'yes') and /data/labour_and_delivery_group/fits_convusions = 'no' and /data/labour_and_delivery_group/abnormal_breathing = 'no' and /data/labour_and_delivery_group/lobour_bleeding = 'no' and /data/labour_and_delivery_group/labour_12_hours = 'no'" required="true()"/>
+			<bind nodeset="/data/labour_and_delivery_group/ld_referral_phcc" relevant="/data/labour_and_delivery_group/labour_12_hours = 'yes' or /data/labour_and_delivery_group/fits_convusions = 'yes' or /data/labour_and_delivery_group/abnormal_breathing = 'yes' or /data/labour_and_delivery_group/lobour_bleeding = 'yes' or /data/labour_and_delivery_group/labour_severe_headache = 'yes' or /data/labour_and_delivery_group/pale_pollar = 'yes'" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group" relevant="/data/filling_during = 'immediately_after_delivery'" required="false()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/every_mother_deliver_facility"/>
+			<bind nodeset="/data/immediately_after_delivery_group/dry_baby" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/number_of_kangas" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/ask_observe_signs" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/mother_fever" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/mother_pale"/>
+			<bind nodeset="/data/immediately_after_delivery_group/adelivery_abnormal_breathing" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/mother_fits" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/baby_crying" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/baby_blue"/>
+			<bind nodeset="/data/immediately_after_delivery_group/elevate_baby" relevant="/data/immediately_after_delivery_group/baby_crying = 'no' or /data/immediately_after_delivery_group/baby_blue = 'yes'" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/baby_yellow"/>
+			<bind nodeset="/data/immediately_after_delivery_group/congenital_abnormality" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/baby_premature" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/baby_small" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/advise_health_no_p" relevant="/data/immediately_after_delivery_group/congenital_abnormality = 'no' and /data/immediately_after_delivery_group/baby_yellow = 'no' and /data/immediately_after_delivery_group/baby_blue = 'no' and /data/immediately_after_delivery_group/baby_crying = 'yes' and /data/immediately_after_delivery_group/mother_fits = 'no' and /data/immediately_after_delivery_group/adelivery_abnormal_breathing = 'no' and /data/immediately_after_delivery_group/mother_pale = 'no' and /data/immediately_after_delivery_group/number_of_kangas &lt; 4 and /data/immediately_after_delivery_group/baby_premature = 'no'" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/mother_referral_phcc" relevant="(/data/immediately_after_delivery_group/adelivery_abnormal_breathing = 'yes' or /data/immediately_after_delivery_group/number_of_kangas &gt; 3 or /data/immediately_after_delivery_group/mother_pale = 'yes' or /data/immediately_after_delivery_group/mother_fits = 'yes') and (/data/immediately_after_delivery_group/baby_yellow = 'no' and /data/immediately_after_delivery_group/congenital_abnormality = 'no' and /data/immediately_after_delivery_group/baby_premature = 'no')" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/infant_referral_phcu" relevant="(/data/immediately_after_delivery_group/baby_crying = 'no' or /data/immediately_after_delivery_group/baby_blue = 'yes' or /data/immediately_after_delivery_group/baby_small) and (/data/immediately_after_delivery_group/baby_yellow = 'no' and /data/immediately_after_delivery_group/congenital_abnormality = 'no' and /data/immediately_after_delivery_group/baby_premature = 'no')" required="true()"/>
+			<bind nodeset="/data/immediately_after_delivery_group/infant_referral_hospital" relevant="/data/immediately_after_delivery_group/baby_yellow = 'yes' or /data/immediately_after_delivery_group/congenital_abnormality = 'yes' or /data/immediately_after_delivery_group/baby_premature = 'yes'" required="true()"/>
+			<bind nodeset="/data/one_day_after_group" relevant="/data/filling_during = 'one_day_after_delivery'" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/observer_mother_post_delivery" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/post_delivery_fever"/>
+			<bind nodeset="/data/one_day_after_group/excessive_bleeding" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/exhaustion"/>
+			<bind nodeset="/data/one_day_after_group/severe_abdominal_pain" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/blurred_vision" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/foul_vaginal_discharge"/>
+			<bind nodeset="/data/one_day_after_group/breast_mastitis" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/breast_cracking" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/feeling_sad_or_hopeless" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/examine_baby"/>
+			<bind nodeset="/data/one_day_after_group/child_fever" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/cord_bleeding"/>
+			<bind nodeset="/data/one_day_after_group/stiffness"/>
+			<bind nodeset="/data/one_day_after_group/child_convulsions" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/excessive_crying" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/non_responsive" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/unable_to_suck" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/fast_or_diff_breathing" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/excessive_vomiting" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/blue_lips" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/child_pale_pollar"/>
+			<bind nodeset="/data/one_day_after_group/eyes_discharge" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/yellow_color_in_eyes_or_body" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/child_congenital_abnormality" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/skin_rashes" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/bulging_anterior_fontanel" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/abdominal_distention"/>
+			<bind nodeset="/data/one_day_after_group/baby_passed_urine" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/baby_passed_bowel"/>
+			<bind nodeset="/data/one_day_after_group/baby_diarrhea"/>
+			<bind nodeset="/data/one_day_after_group/advise_mother_problems_phcc" relevant="/data/one_day_after_group/blurred_vision = 'yes' or /data/one_day_after_group/excessive_bleeding = 'yes' or /data/one_day_after_group/severe_abdominal_pain = 'yes' or /data/one_day_after_group/breast_mastitis = 'yes' or /data/one_day_after_group/breast_cracking = 'yes'" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/advise_mother_problems_phcu" relevant="/data/one_day_after_group/exhaustion = 'yes' or /data/one_day_after_group/post_delivery_fever = 'yes' or /data/one_day_after_group/foul_vaginal_discharge = 'yes' or /data/one_day_after_group/feeling_sad_or_hopeless = 'yes' and (/data/one_day_after_group/breast_mastitis = 'no' and /data/one_day_after_group/severe_abdominal_pain = 'no' and /data/one_day_after_group/excessive_bleeding = 'no' and /data/one_day_after_group/blurred_vision = 'no' and /data/one_day_after_group/breast_cracking = 'no') " required="true()"/>
+			<bind nodeset="/data/one_day_after_group/advise_baby_problems_phcc" relevant="(/data/one_day_after_group/stiffness = 'yes' or /data/one_day_after_group/child_convulsions = 'yes' or /data/one_day_after_group/excessive_crying = 'yes') and (/data/one_day_after_group/abdominal_distention = 'no' and /data/one_day_after_group/bulging_anterior_fontanel = 'no' and /data/one_day_after_group/non_responsive = 'no')" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/advise_baby_problems_phcu" relevant="/data/one_day_after_group/baby_passed_bowel = 'no' or /data/one_day_after_group/baby_passed_urine = 'no' or /data/one_day_after_group/skin_rashes = 'yes' or /data/one_day_after_group/yellow_color_in_eyes_or_body = 'yes' or /data/one_day_after_group/eyes_discharge = 'yes' or /data/one_day_after_group/child_pale_pollar = 'yes' or /data/one_day_after_group/blue_lips = 'yes' or /data/one_day_after_group/excessive_vomiting = 'yes' or /data/one_day_after_group/fast_or_diff_breathing = 'yes' or /data/one_day_after_group/cord_bleeding = 'yes' or /data/one_day_after_group/child_fever = 'yes' or /data/one_day_after_group/unable_to_suck = 'yes' or /data/one_day_after_group/baby_diarrhea = 'yes' and (/data/one_day_after_group/child_convulsions = 'no' and /data/one_day_after_group/stiffness = 'no' and /data/one_day_after_group/excessive_crying = 'no' and /data/one_day_after_group/abdominal_distention = 'no' and /data/one_day_after_group/abdominal_distention = 'no' and /data/one_day_after_group/non_responsive = 'no')" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/infant_problems_hosipital" relevant="(/data/one_day_after_group/abdominal_distention = 'yes' or /data/one_day_after_group/bulging_anterior_fontanel = 'yes' or /data/one_day_after_group/non_responsive='yes')" required="true()"/>
+			<bind nodeset="/data/one_day_after_group/will_pay_fare" relevant="/data/one_day_after_group/child_pale_pollar = 'yes' or /data/one_day_after_group/blue_lips = 'yes' or /data/one_day_after_group/excessive_vomiting = 'yes' or /data/one_day_after_group/fast_or_diff_breathing = 'yes' or /data/one_day_after_group/unable_to_suck = 'yes' or /data/one_day_after_group/excessive_crying = 'yes' or /data/one_day_after_group/child_convulsions = 'yes' or /data/one_day_after_group/stiffness = 'yes' or /data/one_day_after_group/cord_bleeding = 'yes' or /data/one_day_after_group/child_fever = 'yes' or /data/one_day_after_group/feeling_sad_or_hopeless = 'yes' or /data/one_day_after_group/post_delivery_fever = 'yes' or /data/one_day_after_group/excessive_bleeding = 'yes' or /data/one_day_after_group/exhaustion = 'yes' or /data/one_day_after_group/severe_abdominal_pain = 'yes' or /data/one_day_after_group/blurred_vision = 'yes' or /data/one_day_after_group/foul_vaginal_discharge = 'yes' or /data/one_day_after_group/breast_mastitis = 'yes' or /data/one_day_after_group/breast_cracking = 'yes' or /data/one_day_after_group/feeling_sad_or_hopeless = 'yes' or /data/one_day_after_group/eyes_discharge = 'yes' or /data/one_day_after_group/baby_diarrhea = 'yes' or /data/one_day_after_group/baby_passed_bowel = 'yes' or /data/one_day_after_group/baby_passed_urine = 'yes' or /data/one_day_after_group/abdominal_distention = 'yes' or /data/one_day_after_group/bulging_anterior_fontanel = 'yes' or /data/one_day_after_group/skin_rashes = 'yes' or /data/one_day_after_group/child_congenital_abnormality = 'yes' or /data/one_day_after_group/yellow_color_in_eyes_or_body = 'yes' or /data/one_day_after_group/eyes_discharge = 'yes' or /data/one_day_after_group/child_pale_pollar = 'yes' or /data/one_day_after_group/blue_lips = 'yes' or /data/one_day_after_group/excessive_vomiting = 'yes' or /data/one_day_after_group/fast_or_diff_breathing = 'yes'" required="true()"/>
+			<bind nodeset="/data/call_transport" relevant="/data/labour_and_delivery_group/labour_severe_headache = 'yes' or /data/labour_and_delivery_group/swallen_face = 'yes' or /data/labour_and_delivery_group/fits_convusions = 'yes' or /data/labour_and_delivery_group/abnormal_breathing = 'yes' or /data/labour_and_delivery_group/pale_pollar = 'yes' or /data/labour_and_delivery_group/lobour_bleeding = 'yes' or /data/labour_and_delivery_group/labour_12_hours = 'yes' or /data/pregnancy_group/high_fever = 'yes' or /data/pregnancy_group/severe_headache = 'yes' or /data/pregnancy_group/fits_convulsions = 'yes' or /data/pregnancy_group/dizziness = 'yes' or /data/pregnancy_group/oedema = 'yes' or /data/pregnancy_group/bleeding = 'yes' or /data/pregnancy_group/lack_fetal_movement = 'yes' or /data/labour_and_delivery_group/fever = 'yes' or /data/immediately_after_delivery_group/mother_pale = 'yes' or /data/immediately_after_delivery_group/adelivery_abnormal_breathing = 'yes' or /data/immediately_after_delivery_group/mother_fits = 'yes' or /data/immediately_after_delivery_group/baby_crying = 'no' or /data/immediately_after_delivery_group/baby_blue = 'yes' or /data/immediately_after_delivery_group/baby_yellow = 'yes' or /data/immediately_after_delivery_group/congenital_abnormality = 'yes' or /data/immediately_after_delivery_group/baby_premature = 'yes'" required="true()"/>
+			<bind nodeset="/data/end_of_form" required="true()"/>
+			<bind nodeset="/data/lack_fetal_node" required="false()" calculate="if(/data/pregnancy_group/lack_fetal_movement = 'yes','Mtoto kutokucheza',' ')"/>
+			<bind nodeset="/data/nearest_dc_health_facility"/>
+			<bind nodeset="/data/fits_convulsions_node" calculate="if(/data/pregnancy_group/fits_convulsions = 'yes','Kifafa/kukakamaa',' ')"/>
+			<bind nodeset="/data/dizziness_node" calculate="if(/data/pregnancy_group/dizziness = 'yes','Kizunguzungu','')"/>
+			<bind nodeset="/data/bleeding_node" calculate="if(/data/pregnancy_group/bleeding = 'yes','Kutokwa damu','')"/>
+			<bind nodeset="/data/severe_headache_node" calculate="if(/data/pregnancy_group/severe_headache = 'yes','Kichwa kuuma sana','')"/>
+			<bind nodeset="/data/nearest_PHCC"/>
+			<bind nodeset="/data/nearest_referral_hospital"/>
+			<bind nodeset="/data/nearest_phcu"/>
+			<bind nodeset="/data/oedema_node" calculate="if(/data/pregnancy_group/oedema = 'yes','Kuvimba','')"/>
+			<bind nodeset="/data/high_fever_node" calculate="if(/data/pregnancy_group/high_fever = 'yes','Homa kali','')"/>
+			<bind nodeset="/data/swallen_face_node" calculate="if( /data/labour_and_delivery_group/swallen_face = 'yes','Kuvimba uso','')"/>
+			<bind nodeset="/data/fever_node" calculate="if(/data/labour_and_delivery_group/fever = 'yes','Homa kali','')"/>
+			<bind nodeset="/data/fits_convusions_node" calculate="if(/data/labour_and_delivery_group/fits_convusions = 'yes','Kifafa','')"/>
+			<bind nodeset="/data/abnormal_breathing_node" calculate="if(/data/labour_and_delivery_group/abnormal_breathing = 'yes','kupumua kwa shida','')"/>
+			<bind nodeset="/data/lobour_bleeding_node" calculate="if(/data/labour_and_delivery_group/lobour_bleeding = 'yes','Kutokwa damu','')"/>
+			<bind nodeset="/data/labour_12_hours_node" calculate="if(/data/labour_and_delivery_group/labour_12_hours = 'yes','Uchungu zaidi ya masaa 12','')"/>
+			<bind nodeset="/data/imed_after_del_baby_crying_node" calculate="if(/data/immediately_after_delivery_group/baby_crying = 'no','Mtoto halii','')"/>
+			<bind nodeset="/data/imid_after_baby_blue_node" calculate="if(/data/immediately_after_delivery_group/baby_blue = 'yes','Mtoto wa blue','')"/>
+			<bind nodeset="/data/mother_pale_node" calculate="if(/data/immediately_after_delivery_group/mother_pale = 'yes','Kupauka/upungufu wa damu','')"/>
+			<bind nodeset="/data/number_of_kangas_node" calculate="if(/data/immediately_after_delivery_group/number_of_kangas &gt; 3,'Unatumia idadi kubwa ya kanga','')"/>
+			<bind nodeset="/data/adelivery_abnormal_breathing_node" calculate="if(/data/immediately_after_delivery_group/adelivery_abnormal_breathing = 'yes','Kupumua kusiko kawaida','')"/>
+			<bind nodeset="/data/mother_fits_node" calculate="if(/data/immediately_after_delivery_group/mother_fits,'Degedege','')"/>
+			<bind nodeset="/data/congenital_abnormality_node" calculate="if(/data/immediately_after_delivery_group/congenital_abnormality = 'yes','ulemavu','')"/>
+			<bind nodeset="/data/baby_yellow_node" calculate="if(/data/immediately_after_delivery_group/baby_yellow = 'yes','Mtoto wa njano','')"/>
+			<bind nodeset="/data/baby_premature_node" calculate="if(/data/immediately_after_delivery_group/baby_premature = 'yes','Mtoto njiti','')"/>
+			<bind nodeset="/data/breast_mastitis_node" calculate="if(/data/one_day_after_group/breast_mastitis = 'yes','Kuchanika matiti','')"/>
+			<bind nodeset="/data/severe_abdominal_pain_node" calculate="if(/data/one_day_after_group/severe_abdominal_pain = 'yes','Maumivu makali ya tumbo','')"/>
+			<bind nodeset="/data/excessive_bleeding_node" calculate="if(/data/one_day_after_group/excessive_bleeding = 'yes','kutokwa damu nyingi','')"/>
+			<bind nodeset="/data/blurred_vision_node" calculate="if(/data/one_day_after_group/blurred_vision = 'yes','Kutokuona vizuri','')"/>
+			<bind nodeset="/data/breast_cracking_node" calculate="if(/data/one_day_after_group/breast_cracking = 'yes','Kuchanika matiti','')"/>
+			<bind nodeset="/data/foul_vaginal_discharge_node" calculate="if(/data/one_day_after_group/foul_vaginal_discharge = 'yes','Kutokwa maji yenye harufu ukeni','')"/>
+			<bind nodeset="/data/post_delivery_fever_node" calculate="if(/data/one_day_after_group/post_delivery_fever = 'yes','Homa baada ya kujifungua','')"/>
+			<bind nodeset="/data/exhaustion_node" calculate="if(/data/one_day_after_group/exhaustion = 'yes','Kuchoka','')"/>
+			<bind nodeset="/data/feeling_sad_or_hopeless_node" calculate="if(/data/one_day_after_group/feeling_sad_or_hopeless = 'yes','Kukata tamaa','')"/>
+			<bind nodeset="/data/stiffness_node" calculate="if(/data/one_day_after_group/stiffness = 'yes','Kukakamaa','')"/>
+			<bind nodeset="/data/child_convulsions_node" calculate="if(/data/one_day_after_group/child_convulsions = 'yes','Degedege','')"/>
+			<bind nodeset="/data/excessive_crying_node" calculate="if(/data/one_day_after_group/excessive_crying = 'yes','Kulia sana','')"/>
+			<bind nodeset="/data/abdominal_distention_node" calculate="if(/data/one_day_after_group/abdominal_distention = 'yes','Tumbo kujaa','')"/>
+			<bind nodeset="/data/unable_to_suck_node" calculate="if(/data/one_day_after_group/unable_to_suck = 'yes','Kushindwa kunyonya','') "/>
+			<bind nodeset="/data/child_fever_node" calculate="if(/data/one_day_after_group/child_fever = 'yes','Mtoto ana homa','')"/>
+			<bind nodeset="/data/cord_bleeding_node" calculate="if(/data/one_day_after_group/cord_bleeding = 'yes','Kitovu kuvuja damu','')"/>
+			<bind nodeset="/data/fast_or_diff_breathing_node" calculate="if(/data/one_day_after_group/fast_or_diff_breathing = 'yes','Kupumua kwa shida','')"/>
+			<bind nodeset="/data/excessive_vomiting_node" calculate="if(/data/one_day_after_group/excessive_vomiting = 'yes','kutapika sana','')"/>
+			<bind nodeset="/data/blue_lips_node" calculate="if(/data/one_day_after_group/blue_lips = 'yes','Midomo ya bluu','')"/>
+			<bind nodeset="/data/child_pale_pollar_node" calculate="if(/data/one_day_after_group/child_pale_pollar = 'yes','Kupauka','')"/>
+			<bind nodeset="/data/eyes_discharge_node" calculate="if(/data/one_day_after_group/eyes_discharge = 'yes','Macho kutoa uchafu','')"/>
+			<bind nodeset="/data/yellow_color_in_eyes_or_body_node" calculate="if(/data/one_day_after_group/yellow_color_in_eyes_or_body = 'yes','Macho/ mwili wa njano','')"/>
+			<bind nodeset="/data/skin_rashes_node" calculate="if(/data/one_day_after_group/skin_rashes = 'yes','Upele','')"/>
+			<bind nodeset="/data/baby_passed_urine_node" calculate="if(/data/one_day_after_group/baby_passed_urine = 'no','kutokukojoa','')"/>
+			<bind nodeset="/data/baby_passed_bowel_node" calculate="if(/data/one_day_after_group/baby_passed_bowel = 'no','Kutokupata choo kikubwa','')"/>
+			<bind nodeset="/data/baby_diarrhea_node" calculate="if(/data/one_day_after_group/baby_diarrhea = 'yes','Anaharisha','')"/>
+			<itext>
+				<translation lang="sw" default="">
+					<text id="filling_during-label">
+						<value>Je ni wakati:</value>
+					</text>
+					<text id="filling_during-pregnancy-label">
+						<value>Mimba</value>
+					</text>
+					<text id="filling_during-labour_delivery-label">
+						<value>Uchungu au kujifungua</value>
+					</text>
+					<text id="filling_during-immediately_after_delivery-label">
+						<value>Mara tu baada ya kujifungua</value>
+					</text>
+					<text id="filling_during-one_day_after_delivery-label">
+						<value>Siku moja au zaidi baada ya kujifungua</value>
+					</text>
+					<text id="pregnancy_group-label">
+						<value>mimba</value>
+					</text>
+					<text id="remind_imortance_deliver_at_facility-label">
+						<value>Mkumbushe mama umuhimu wa kuzalia kituo cha afya kwa sababu zifuatazo: - Ni salama kwa afya yako na mtoto. -Kuna ushirikiano wa wataalam wa huduma za afya. -Huwezi kujua ni bahati mbaya gani inaweza kujitokeza. -Huduma za kujifungua ni bure mara nyingi. -Vituo ni visafi na vina dawa halisi.</value>
+					</text>
+					<text id="lack_fetal_movement-label">
+						<value>Uliza mama: Kama alikuwa akihisi mtoto kucheza, ila sasa anahisi mtoto kutokucheza?</value>
+					</text>
+					<text id="fetal_movement-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="fetal_movement-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="any_of_following_sign_preg-label">
+						<value>Muulize mama au mchunguze kama ana haya yafuatayo:</value>
+					</text>
+					<text id="bleeding-label">
+						<value>Kutokwa na damu</value>
+					</text>
+					<text id="question15-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="question15-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="oedema-label">
+						<value>Kuvimba(uso na mwili)</value>
+					</text>
+					<text id="question16-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="question16-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="dizziness-label">
+						<value>Kizunguzungu, kuchoka, kengele za masikioni au kupauka</value>
+					</text>
+					<text id="question17-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="dizziness-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="fits_convulsions-label">
+						<value>Kifafa/kukakamaa</value>
+					</text>
+					<text id="question18-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="question18-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="severe_headache-label">
+						<value>Kichwa kuuma sana.</value>
+					</text>
+					<text id="severe_headache-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="severe_headache-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="high_fever-label">
+						<value>Homa kali</value>
+					</text>
+					<text id="high_fever-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="high_fever-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="advise_anc_referral_dc-label">
+						<value>MSHAURI MAMA: Inaonekana kuwa na matatizo <output value="/data/lack_fetal_node"/> Unalaazimika kwenda <output value="/data/nearest_dc_health_facility"/> sasa hivi. Sisi tutakulipia gharama za usafiri kwenda katika kituo cha afya.</value>
+					</text>
+					<text id="referral_anc_phcc-label">
+						<value>MSHAURI MAMA: Inaonekana kuwa na matatizo <output value="/data/fits_convulsions_node"/>  <output value="/data/dizziness_node"/>  <output value="/data/bleeding_node"/>  <output value="/data/severe_headache_node"/>.  Unalaazimika kwenda <output value="/data/nearest_PHCC"/> sasa hivi. Sisi tutakulipia gharama za usafiri kwenda katika kituo cha afya.</value>
+					</text>
+					<text id="referral_anc_phcu-label">
+						<value>MSHAURI MAMA: Inaonekana kuwa na matatizo <output value="/data/oedema_node"/>  <output value="/data/high_fever_node"/>.  Unalaazimika kwenda <output value="/data/nearest_phcu"/> sasa hivi. Sisi tutakulipia gharama za usafiri kwenda katika kituo cha afya.</value>
+					</text>
+					<text id="advise_health-label">
+						<value>MSHAURI MAMA: Leo wewe kuwa na afya nzuri. Nijulishe kama utatokea mabadiliko. </value>
+					</text>
+					<text id="labour_and_delivery_group-label">
+						<value>Uchungu na kujifungua</value>
+					</text>
+					<text id="every_mother_goto_facility-label">
+						<value>Kila mama anahitajika kupelekwa kituo cha afya kujifungua.</value>
+					</text>
+					<text id="any_of_following_sign_ld-label">
+						<value>Muulize mama au mchunguze kama ana haya yafuatayo:</value>
+					</text>
+					<text id="labour_12_hours-label">
+						<value>Uchungu zaidi ya masaa 12.</value>
+					</text>
+					<text id="labour_12_hours-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="labour_12_hours-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="lobour_bleeding-label">
+						<value>Kutokwa na damu.</value>
+					</text>
+					<text id="lobour_bleeding-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="lobour_bleeding-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="pale_pollar-label">
+						<value>Amepauka mkali.</value>
+					</text>
+					<text id="pale_pollar-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="pale_pollar-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="abnormal_breathing-label">
+						<value>Upumuaji usiyo wa kawaida.</value>
+					</text>
+					<text id="abnormal_breathing-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="abnormal_breathing-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="fits_convusions-label">
+						<value>Kifafa au kukakamaa.</value>
+					</text>
+					<text id="fits_convusions-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="fits_convusions-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="swallen_face-label">
+						<value>Kuvimba uso au mikono</value>
+					</text>
+					<text id="swallen_face-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="swallen_face-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="labour_severe_headache-label">
+						<value>Kuumwa sana kichwa au kutokuona vizuri.</value>
+					</text>
+					<text id="labour_severe_headache-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="labour_severe_headache-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="fever-label">
+						<value>Homa.</value>
+					</text>
+					<text id="question72-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="question72-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="advise_deliver_dc-label">
+						<value>MSHAURI MAMA: Ni usalama zaidi kuzaa mwanao <output value="/data/nearest_dc_health_facility"/> Nitaandaa usafiri.</value>
+					</text>
+					<text id="advise_deliver_health_facility_dc-label">
+						<value>MSHAURI MAMA: Unayo matatizo yafuatayo: <output value="/data/swallen_face_node"/>  <output value="/data/fever_node"/>.  Unanahitajika kwenda <output value="/data/nearest_dc_health_facility"/> haraka. Nitaandaa usafiri. Sisi tutakulipia gharama za usafiri kwenda katika kituo cha afya. </value>
+					</text>
+					<text id="ld_referral_phcc-label">
+						<value>MSHAURI MAMA :Unayo matatizo yafuatayo: <output value="/data/fits_convusions_node"/><output value="/data/abnormal_breathing_node"/> <output value="/data/lobour_bleeding_node"/> <output value="/data/labour_12_hours_node"/> Unanahitajika kwenda .<output value="/data/nearest_PHCC"/> haraka. Nitaandaa usafiri. Sisi tutakulipia gharama za usafiri kwenda katika kituo cha afya. </value>
+					</text>
+					<text id="immediately_after_delivery_group-label">
+						<value>Mara tu baada ya kujifungua</value>
+					</text>
+					<text id="every_mother_deliver_facility-label">
+						<value>Kila mama na mtoto wanahitajika kupelekwa kituo cha afya baada ya kujifungua.</value>
+					</text>
+					<text id="dry_baby-label">
+						<value>Mpanguse mtoto kwa kitambaa kisafi na kikavu,mfunike,mtunze mtoto na joto na mkavu.Kama mama hajambo muhimize amshikilie mtoto kwa karibu na amnyonyeshe.Mwambie anaweza kumnyonyesha mtoto wakati wowote anapohitaji.</value>
+					</text>
+					<text id="number_of_kangas-label">
+						<value>Kanda tumbo la mama chini ya kitovu kuzuia damu kutoka kwa wingi kwenye kizazi. Ni pande ngapi za kanga mama anatakiwa kubadilisha?</value>
+					</text>
+					<text id="ask_observe_signs-label">
+						<value>Muulize na umchunguze kam ana haya yafuatayo:</value>
+					</text>
+					<text id="mother_fever-label">
+						<value>Homa.</value>
+					</text>
+					<text id="mother_fever-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="mother_fever-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="mother_pale-label">
+						<value>ANGALIA: mama amepauka?</value>
+					</text>
+					<text id="mother_pale-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="mother_pale-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="adelivery_abnormal_breathing-label">
+						<value>Je anapumua isivyo kawaida?</value>
+					</text>
+					<text id="adelivery_abnormal_breathing-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="adelivery_abnormal_breathing-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="mother_fits-label">
+						<value>Je mama ana degedege</value>
+					</text>
+					<text id="mother_fits-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="mother_fits-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="baby_crying-label">
+						<value>ANGALIA MTOTO: Je mtoto analia?</value>
+					</text>
+					<text id="baby_crying-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_crying-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="baby_blue-label">
+						<value>Je mtoto ana rangi ya bluu?</value>
+					</text>
+					<text id="baby_blue-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_blue-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="elevate_baby-label">
+						<value>NYANYUA MIGUU YA MTOTO. SAFISHA MDOMO NA PUA YA MTOTO.</value>
+					</text>
+					<text id="baby_yellow-label2">
+						<value>Je mtoto ni wa njano?</value>
+					</text>
+					<text id="baby_yellow-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_yellow-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="congenital_abnormality-label">
+						<value>Je mtoto ana ulemavu wowote?</value>
+					</text>
+					<text id="congenital_abnormality-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="congenital_abnormality-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="baby_premature-label">
+						<value>Uliza mama au angalia kadi yake ya kliniki: Je mtoto  amezaliwa chini ya miezi tisa?</value>
+					</text>
+					<text id="baby_premature-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_premature-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="baby_small-label">
+						<value>ANGALIA MTOTO: Mtoto ni ndogo sana? </value>
+					</text>
+					<text id="baby_small-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_small-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="advise_health_no_p-label">
+						<value>MSHAURI MAMA :Wewe na mtoto wako mnaonekana kuwa na afya nzuri sasa lakini inahitajika kwenda <output value="/data/nearest_phcu"/> kukaguliwa na mtaalamu wa afya. </value>
+					</text>
+					<text id="mother_referral_phcc-label">
+						<value>MSHAURI MAMA: Mama, wewe una tatizo <output value="/data/mother_pale_node"/> <output value="/data/number_of_kangas_node"/> <output value="/data/adelivery_abnormal_breathing_node"/> <output value="/data/mother_fits_node"/>. Tunahitaji kwenda <output value="/data/nearest_PHCC"/></value>
+					</text>
+					<text id="infant_referral_phcu-label">
+						<value>MSHAURI MAMA: Mama, mtoto ana tatizo <output value="/data/imid_after_baby_blue_node"/> <output value="/data/imed_after_del_baby_crying_node"/>  Tunahitaji kwenda <output value="/data/nearest_phcu"/></value>
+					</text>
+					<text id="infant_referral_hospital-label">
+						<value>MSHAURI MAMA: Mama, wewe/mtoto mna matatizo <output value="/data/mother_pale_node"/> <output value="/data/number_of_kangas_node"/> <output value="/data/adelivery_abnormal_breathing_node"/> <output value="/data/mother_fits_node"/> <output value="/data/baby_yellow_node"/> <output value="/data/congenital_abnormality_node"/> <output value="/data/baby_premature_node"/>. Tunahitaji kwenda <output value="/data/nearest_referral_hospital"/></value>
+					</text>
+					<text id="one_day_after_group-label">
+						<value>Siku baada ya kujifungua</value>
+					</text>
+					<text id="observer_mother_post_delivery-label">
+						<value>ULIZIA NA CHUNGUZA MAMA: Tangu kujifungua, je mama ameona kati ya haya yafuatayo:</value>
+					</text>
+					<text id="post_delivery_fever-label">
+						<value>Homa?</value>
+					</text>
+					<text id="post_delivery_fever-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="post_delivery_fever-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="excessive_bleeding-label">
+						<value>Kutokwa damu nyingi baada ya kujifungua?</value>
+					</text>
+					<text id="excessive_bleeding-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="excessive_bleeding-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="exhaustion-label">
+						<value>Kuchoka sana?</value>
+					</text>
+					<text id="exhaustion-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="exhaustion-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="severe_abdominal_pain-label">
+						<value>Tumbo kuuma sana?</value>
+					</text>
+					<text id="severe_abdominal_pain-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="severe_abdominal_pain-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="blurred_vision-label">
+						<value>Kutokuona vizuri?</value>
+					</text>
+					<text id="blurred_vision-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="blurred_vision-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="foul_vaginal_discharge-label">
+						<value>Majimaji yenye harufu mbaya kutoka ukeni?</value>
+					</text>
+					<text id="foul_vaginal_discharge-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="foul_vaginal_discharge-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="breast_mastitis-label">
+						<value>Kuvimba na kuuma kwa matiti?</value>
+					</text>
+					<text id="breast_mastitis-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="breast_mastitis-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="breast_cracking-label">
+						<value>Kuchanika kwa matiti</value>
+					</text>
+					<text id="breast_cracking-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="breast_cracking-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="feeling_sad_or_hopeless-label">
+						<value>Umekuwa ukijisikia huzuni au kukata tamaa? </value>
+					</text>
+					<text id="feeling_sad_or_hopeless-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="feeling_sad_or_hopeless-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="examine_baby-label">
+						<value>MUULIZE MAMA KAMA MNAWEZA KUMCHUNGUZA MTOTO PAMOJA: kama mtoto ana haya yafuatayo?	</value>
+					</text>
+					<text id="child_fever-label">
+						<value>Homa?</value>
+					</text>
+					<text id="child_fever-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="child_fever-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="cord_bleeding-label">
+						<value>Kitovu kuvuja damu,chekundu au kinatoa uchafu?</value>
+					</text>
+					<text id="cord_bleeding-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="cord_bleeding-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="stiffness-label">
+						<value>Kukakamaa?</value>
+					</text>
+					<text id="stiffness-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="stiffness-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="child_convulsions-label">
+						<value>Kifafa, mishituko ya mishipa, kuumwa mgongo</value>
+					</text>
+					<text id="child_convulsions-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="child_convulsions-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="excessive_crying-label">
+						<value>Kulia sana au kutapatapa?</value>
+					</text>
+					<text id="excessive_crying-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="excessive_crying-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="non_responsive-label">
+						<value>Kutojifahamu</value>
+					</text>
+					<text id="non_responsive-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="non_responsive-item482-label">
+						<value>Hapana</value>
+					</text>
+					<text id="unable_to_suck-label">
+						<value>Kushindwa kunyonya?</value>
+					</text>
+					<text id="unable_to_suck-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="unable_to_suck-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="fast_or_diff_breathing-label">
+						<value>Kupumua kwa shida au haraka haraka?</value>
+					</text>
+					<text id="fast_or_diff_breathing-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="fast_or_diff_breathing-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="excessive_vomiting-label">
+						<value>kutapika sana?</value>
+					</text>
+					<text id="excessive_vomiting-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="excessive_vomiting-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="blue_lips-label">
+						<value>midomo ya bluu?</value>
+					</text>
+					<text id="blue_lips-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="blue_lips-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="child_pale_pollar-label">
+						<value>kupauka sana?</value>
+					</text>
+					<text id="child_pale_pollar-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="child_pale_pollar-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="eyes_discharge-label">
+						<value>Uchafu wa macho au kuvimba macho?</value>
+					</text>
+					<text id="eyes_discharge-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="eyes_discharge-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="yellow_color_in_eyes_or_body-label">
+						<value>rangi ya njano machoni au mwilini? </value>
+					</text>
+					<text id="yellow_color_in_eyes_or_body-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="yellow_color_in_eyes_or_body-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="child_congenital_abnormality-label">
+						<value>ulemavu wa kuzaliwa?</value>
+					</text>
+					<text id="child_congenital_abnormality-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="child_congenital_abnormality-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="skin_rashes-label">
+						<value>upele wa ngozi? </value>
+					</text>
+					<text id="skin_rashes-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="skin_rashes-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="bulging_anterior_fontanel-label">
+						<value>Kutuna kwa utosi wa mbele?</value>
+					</text>
+					<text id="bulging_anterior_fontanel-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="bulging_anterior_fontanel-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="abdominal_distention-label">
+						<value>Tumbo kujaa?</value>
+					</text>
+					<text id="abdominal_distention-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="abdominal_distention-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="baby_passed_urine-label">
+						<value>Je mtoto anakojoa?</value>
+					</text>
+					<text id="baby_passed_urine-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_passed_urine-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="baby_passed_bowel-label">
+						<value>Je mtoto amepata choo kikubwa? </value>
+					</text>
+					<text id="baby_passed_bowel-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_passed_bowel-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="baby_diarrhea-label">
+						<value>Je mtoto anaharisha? </value>
+					</text>
+					<text id="baby_diarrhea-yes-label">
+						<value>Ndiyo</value>
+					</text>
+					<text id="baby_diarrhea-no-label">
+						<value>Hapana</value>
+					</text>
+					<text id="advise_mother_problems_phcc-label">
+						<value>MSHAURI MAMA: Mama, wewe una tatizo <output value="/data/breast_mastitis_node"/> <output value="/data/severe_abdominal_pain_node "/> <output value="/data/excessive_bleeding_node"/> <output value="/data/blurred_vision_node"/> <output value="/data/breast_cracking_node"/>. Tunahitaji kukupeleka katika <output value="/data/nearest_PHCC"/></value>
+					</text>
+					<text id="advise_mother_problems_phcu-label">
+						<value>MSHAURI MAMA: Mama, wewe una tatizo <output value="/data/foul_vaginal_discharge_node"/> <output value="/data/post_delivery_fever_node"/> <output value="/data/exhaustion_node"/> <output value="/data/feeling_sad_or_hopeless_node"/>. Tunahitaji kukupeleka katika <output value="/data/nearest_dc_health_facility"/></value>
+					</text>
+					<text id="advise_baby_problems_phcc-label">
+						<value>MSHAURI MAMA: Mama, mtoto wako ana matatizo <output value="/data/stiffness_node"/><output value="/data/child_convulsions_node"/> <output value="/data/excessive_crying_node"/> Tunahitaji kumpeleka katika kituo cha afya <output value="/data/nearest_PHCC"/></value>
+					</text>
+					<text id="advise_baby_problems_phcu-label">
+						<value>MSHAURI MAMA: Mama, mtoto wako ana matatizo <output value="/data/unable_to_suck_node"/> <output value="/data/child_fever_node"/> <output value="/data/cord_bleeding_node"/> <output value="/data/fast_or_diff_breathing_node"/> <output value="/data/excessive_vomiting_node"/> <output value="/data/blue_lips_node"/> <output value="/data/child_pale_pollar_node"/> <output value="/data/eyes_discharge_node"/> <output value="/data/yellow_color_in_eyes_or_body_node"/> <output value="/data/skin_rashes_node"/> <output value="/data/baby_passed_urine_node"/> <output value="/data/baby_passed_bowel_node"/> <output value="/data/baby_diarrhea_node"/>Tunahitaji kumpeleka katika kituo cha afya <output value="/data/nearest_dc_health_facility"/></value>
+					</text>
+					<text id="infant_problems_hosipital-label">
+						<value>MSHAURI MAMA: Mama, mtoto wako ana matatizo <output value="/data/abdominal_distention_node"/>. Tunahitaji kumpeleka katika kituo cha afya <output value="/data/nearest_referral_hospital"/></value>
+					</text>
+					<text id="will_pay_fare-label">
+						<value>MSHAURI MAMA: Sisi tutakulipia gharama za usafiri kwenda katika kituo cha afya. </value>
+					</text>
+					<text id="call_transport-label">
+						<value>ITA USAFIRI. PIGA SIMU KITUO CHA AFYA. ANZISHA RUFAA.</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Fomu yako imekamilika.</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="filling_during-label">
+						<value>Is this during?</value>
+					</text>
+					<text id="filling_during-pregnancy-label">
+						<value>Pregnancy</value>
+					</text>
+					<text id="filling_during-labour_delivery-label">
+						<value>Labor or delivery</value>
+					</text>
+					<text id="filling_during-immediately_after_delivery-label">
+						<value>Immediately after delivery</value>
+					</text>
+					<text id="filling_during-one_day_after_delivery-label">
+						<value>One day or more after delivery</value>
+					</text>
+					<text id="pregnancy_group-label">
+						<value>pregnancy</value>
+					</text>
+					<text id="remind_imortance_deliver_at_facility-label">
+						<value>Remind mother of the importance of facility delivery for the following reasons: - It's safer for your health and your baby. - There is a team of skilled health workers. - You cannot predict what might go wrong. - Delivery is free in most cases. -Facility is clean and hygienic and has the right medicines.</value>
+					</text>
+					<text id="lack_fetal_movement-label">
+						<value>Ask the mother: Have you felt fetal movement before but now are experiencing a lack of fetal movement?</value>
+					</text>
+					<text id="fetal_movement-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="fetal_movement-no-label">
+						<value>No</value>
+					</text>
+					<text id="any_of_following_sign_preg-label">
+						<value>Ask mother and observe if she has any of the following:</value>
+					</text>
+					<text id="bleeding-label">
+						<value>Bleeding.</value>
+					</text>
+					<text id="question15-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="question15-no-label">
+						<value>no</value>
+					</text>
+					<text id="oedema-label">
+						<value>oedema (face and body).</value>
+					</text>
+					<text id="question16-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="question16-no-label">
+						<value>No</value>
+					</text>
+					<text id="dizziness-label">
+						<value>Dizziness, fatigue, tinnitus (tingling in ears) or pale pallor. </value>
+					</text>
+					<text id="question17-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="dizziness-no-label">
+						<value>No</value>
+					</text>
+					<text id="fits_convulsions-label">
+						<value>Fits/convulsions.</value>
+					</text>
+					<text id="question18-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="question18-no-label">
+						<value>No</value>
+					</text>
+					<text id="severe_headache-label">
+						<value>Severe headache</value>
+					</text>
+					<text id="severe_headache-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="severe_headache-no-label">
+						<value>No</value>
+					</text>
+					<text id="high_fever-label">
+						<value>High fever.</value>
+					</text>
+					<text id="high_fever-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="high_fever-no-label">
+						<value>No</value>
+					</text>
+					<text id="advise_anc_referral_dc-label">
+						<value>ADVISE MOTHER: You are experiencing <output value="/data/lack_fetal_node"/> You should go to <output value="/data/nearest_dc_health_facility"/> immediately.</value>
+					</text>
+					<text id="referral_anc_phcc-label">
+						<value>ADVISE MOTHER: You are experiencing <output value="/data/fits_convulsions_node"/>  <output value="/data/dizziness_node"/>  <output value="/data/bleeding_node"/>  <output value="/data/severe_headache_node"/>. You should go to <output value="/data/nearest_PHCC"/> immediately.</value>
+					</text>
+					<text id="referral_anc_phcu-label">
+						<value>ADVISE MOTHER: You are experiencing <output value="/data/oedema_node"/>  <output value="/data/high_fever_node"/>. You should go to <output value="/data/nearest_phcu"/> immediately.</value>
+					</text>
+					<text id="advise_health-label">
+						<value>ADVISE MOTHER: Today you seem healthy. Contact me if anything changes.</value>
+					</text>
+					<text id="labour_and_delivery_group-label">
+						<value>labour and delivery</value>
+					</text>
+					<text id="every_mother_goto_facility-label">
+						<value>Every mother should be taken to a health facility for delivery. </value>
+					</text>
+					<text id="any_of_following_sign_ld-label">
+						<value>Ask mother and observe if she has any of the following:</value>
+					</text>
+					<text id="labour_12_hours-label">
+						<value>Been in labor over 12 hours.</value>
+					</text>
+					<text id="labour_12_hours-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="labour_12_hours-no-label">
+						<value>No</value>
+					</text>
+					<text id="lobour_bleeding-label">
+						<value>Bleeding.</value>
+					</text>
+					<text id="lobour_bleeding-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="lobour_bleeding-no-label">
+						<value>No</value>
+					</text>
+					<text id="pale_pollar-label">
+						<value>Pale pallor.</value>
+					</text>
+					<text id="pale_pollar-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="pale_pollar-no-label">
+						<value>No</value>
+					</text>
+					<text id="abnormal_breathing-label">
+						<value>Abnormal breathing.</value>
+					</text>
+					<text id="abnormal_breathing-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="abnormal_breathing-no-label">
+						<value>No</value>
+					</text>
+					<text id="fits_convusions-label">
+						<value>Fits or convulsions.</value>
+					</text>
+					<text id="fits_convusions-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="fits_convusions-no-label">
+						<value>No</value>
+					</text>
+					<text id="swallen_face-label">
+						<value>Swollen face or hands.</value>
+					</text>
+					<text id="swallen_face-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="swallen_face-no-label">
+						<value>No</value>
+					</text>
+					<text id="labour_severe_headache-label">
+						<value>Severe headache or blurred vision.</value>
+					</text>
+					<text id="labour_severe_headache-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="labour_severe_headache-no-label">
+						<value>no</value>
+					</text>
+					<text id="fever-label">
+						<value>fever.</value>
+					</text>
+					<text id="question72-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="question72-no-label">
+						<value>No</value>
+					</text>
+					<text id="advise_deliver_dc-label">
+						<value>ADVISE MOTHER: It is safest for you to deliver your baby at <output value="/data/nearest_dc_health_facility"/>. I will arrange tranport.</value>
+					</text>
+					<text id="advise_deliver_health_facility_dc-label">
+						<value>ADVISE MOTHER: You are having these problems  <output value="/data/swallen_face_node"/>  <output value="/data/fever_node"/> : You should go to <output value="/data/nearest_dc_health_facility"/>  immediately. I will arrange and pay for transport. </value>
+					</text>
+					<text id="ld_referral_phcc-label">
+						<value>You are having these problems <output value="/data/fits_convusions_node"/><output value="/data/abnormal_breathing_node"/> <output value="/data/lobour_bleeding_node"/> <output value="/data/labour_12_hours_node"/>: You should go to <output value="/data/nearest_PHCC"/>. immediately. I will arrange transport.</value>
+					</text>
+					<text id="immediately_after_delivery_group-label">
+						<value>Just after delivery</value>
+					</text>
+					<text id="every_mother_deliver_facility-label">
+						<value>Every mother and baby should be taken to a health facility after  birth.</value>
+					</text>
+					<text id="dry_baby-label">
+						<value>Dry the baby using a clean, dry cloth. Wrap the baby. Keep the baby dry and warm. If the mother is OK, encourage her to hold the baby close to her body and breastfeed. Tell her she should breastfeed anytime the baby wants. </value>
+					</text>
+					<text id="number_of_kangas-label">
+						<value>MASSAGE MOTHER'S STOMACH BELOW THE NAVEL TO STOP UTERINE BLEEDING. How many kangas per hour does the mother need to change?</value>
+					</text>
+					<text id="ask_observe_signs-label">
+						<value>Ask and observe if she has any of the following: </value>
+					</text>
+					<text id="mother_fever-label">
+						<value>Fever.</value>
+					</text>
+					<text id="mother_fever-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="mother_fever-no-label">
+						<value>No</value>
+					</text>
+					<text id="mother_pale-label">
+						<value>Is the mother pale?</value>
+					</text>
+					<text id="mother_pale-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="mother_pale-no-label">
+						<value>No</value>
+					</text>
+					<text id="adelivery_abnormal_breathing-label">
+						<value>Does she have abnormal breathing?</value>
+					</text>
+					<text id="adelivery_abnormal_breathing-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="adelivery_abnormal_breathing-no-label">
+						<value>No</value>
+					</text>
+					<text id="mother_fits-label">
+						<value>Does mother have fits?</value>
+					</text>
+					<text id="mother_fits-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="mother_fits-no-label">
+						<value>no</value>
+					</text>
+					<text id="baby_crying-label">
+						<value>OBSERVE BABY: Is baby crying?</value>
+					</text>
+					<text id="baby_crying-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_crying-no-label">
+						<value>No</value>
+					</text>
+					<text id="baby_blue-label">
+						<value>Is baby blue?</value>
+					</text>
+					<text id="baby_blue-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_blue-no-label">
+						<value>No</value>
+					</text>
+					<text id="elevate_baby-label">
+						<value>ELEVATE BABY'S FEET. CLEAN BABY'S MOUTH AND NOSE. </value>
+					</text>
+					<text id="baby_yellow-label2">
+						<value>Is baby yellow?</value>
+					</text>
+					<text id="baby_yellow-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_yellow-no-label">
+						<value>No</value>
+					</text>
+					<text id="congenital_abnormality-label">
+						<value>Does baby have any congenital abnormality?</value>
+					</text>
+					<text id="congenital_abnormality-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="congenital_abnormality-no-label">
+						<value>No</value>
+					</text>
+					<text id="baby_premature-label">
+						<value> Ask mother or look at her RCH4 card. Is the baby premature (less than 36 weeks)?</value>
+					</text>
+					<text id="baby_premature-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_premature-no-label">
+						<value>No</value>
+					</text>
+					<text id="baby_small-label">
+						<value>OBSERVE BABY: Is the baby very small? </value>
+					</text>
+					<text id="baby_small-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_small-no-label">
+						<value>No</value>
+					</text>
+					<text id="advise_health_no_p-label">
+						<value>Advise mother: You and your baby may seem healthy now, but you need to go to <output value="/data/nearest_phcu"/> to be checked out by a skilled health worker. </value>
+					</text>
+					<text id="mother_referral_phcc-label">
+						<value>ADVISE mother: You have <output value="/data/mother_pale_node"/> <output value="/data/number_of_kangas_node"/> <output value="/data/adelivery_abnormal_breathing_node"/> <output value="/data/mother_fits_node"/> We need to go to the <output value="/data/nearest_PHCC"/></value>
+					</text>
+					<text id="infant_referral_phcu-label">
+						<value>ADVISE mother: Your child has <output value="/data/imid_after_baby_blue_node"/> <output value="/data/imed_after_del_baby_crying_node"/> We need to go to the <output value="/data/nearest_phcu"/></value>
+					</text>
+					<text id="infant_referral_hospital-label">
+						<value>ADVISE mother: You/your child have <output value="/data/mother_pale_node"/> <output value="/data/number_of_kangas_node"/> <output value="/data/adelivery_abnormal_breathing_node"/> <output value="/data/mother_fits_node"/> <output value="/data/baby_yellow_node"/> <output value="/data/congenital_abnormality_node"/> <output value="/data/baby_premature_node"/>: We need to go to the <output value="/data/nearest_referral_hospital"/></value>
+					</text>
+					<text id="one_day_after_group-label">
+						<value>Postnatal period.</value>
+					</text>
+					<text id="observer_mother_post_delivery-label">
+						<value>ASK AND OBSERVE MOTHER: Since delivery, have you had any of the following?</value>
+					</text>
+					<text id="post_delivery_fever-label">
+						<value>Fever?</value>
+					</text>
+					<text id="post_delivery_fever-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="post_delivery_fever-no-label">
+						<value>No</value>
+					</text>
+					<text id="excessive_bleeding-label">
+						<value>excessive bleeding? </value>
+					</text>
+					<text id="excessive_bleeding-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="excessive_bleeding-no-label">
+						<value>No</value>
+					</text>
+					<text id="exhaustion-label">
+						<value>Exhaustion? </value>
+					</text>
+					<text id="exhaustion-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="exhaustion-no-label">
+						<value>No</value>
+					</text>
+					<text id="severe_abdominal_pain-label">
+						<value>Severe abdominal pain?</value>
+					</text>
+					<text id="severe_abdominal_pain-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="severe_abdominal_pain-no-label">
+						<value>No</value>
+					</text>
+					<text id="blurred_vision-label">
+						<value>Blurred vision?</value>
+					</text>
+					<text id="blurred_vision-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="blurred_vision-no-label">
+						<value>No</value>
+					</text>
+					<text id="foul_vaginal_discharge-label">
+						<value>Foul smelling vaginal discharge?</value>
+					</text>
+					<text id="foul_vaginal_discharge-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="foul_vaginal_discharge-no-label">
+						<value>No</value>
+					</text>
+					<text id="breast_mastitis-label">
+						<value>Breast mastitis?</value>
+					</text>
+					<text id="breast_mastitis-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="breast_mastitis-no-label">
+						<value>No</value>
+					</text>
+					<text id="breast_cracking-label">
+						<value>Breast Cracking</value>
+					</text>
+					<text id="breast_cracking-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="breast_cracking-no-label">
+						<value>No</value>
+					</text>
+					<text id="feeling_sad_or_hopeless-label">
+						<value>Have you been feeling sad or hopeless? </value>
+					</text>
+					<text id="feeling_sad_or_hopeless-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="feeling_sad_or_hopeless-no-label">
+						<value>No</value>
+					</text>
+					<text id="examine_baby-label">
+						<value>ASK MOTHER TO EXAMINE BABY TOGETHER. Does baby have any of the following?</value>
+					</text>
+					<text id="child_fever-label">
+						<value>fever?</value>
+					</text>
+					<text id="child_fever-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="child_fever-no-label">
+						<value>No</value>
+					</text>
+					<text id="cord_bleeding-label">
+						<value>Cord bleeding, red, or discharge?</value>
+					</text>
+					<text id="cord_bleeding-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="cord_bleeding-no-label">
+						<value>no</value>
+					</text>
+					<text id="stiffness-label">
+						<value> stiffness?</value>
+					</text>
+					<text id="stiffness-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="stiffness-no-label">
+						<value>No</value>
+					</text>
+					<text id="child_convulsions-label">
+						<value>Convulsions, spasms, or arching of back?</value>
+					</text>
+					<text id="child_convulsions-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="child_convulsions-no-label">
+						<value>No</value>
+					</text>
+					<text id="excessive_crying-label">
+						<value> excessive crying or restlessness?</value>
+					</text>
+					<text id="excessive_crying-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="excessive_crying-no-label">
+						<value>No</value>
+					</text>
+					<text id="non_responsive-label">
+						<value>Non-responsive/non- alert</value>
+					</text>
+					<text id="non_responsive-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="non_responsive-item482-label">
+						<value>No</value>
+					</text>
+					<text id="unable_to_suck-label">
+						<value>Unable to suck?</value>
+					</text>
+					<text id="unable_to_suck-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="unable_to_suck-no-label">
+						<value>No</value>
+					</text>
+					<text id="fast_or_diff_breathing-label">
+						<value> Difficult or fast breathing?</value>
+					</text>
+					<text id="fast_or_diff_breathing-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="fast_or_diff_breathing-no-label">
+						<value>No</value>
+					</text>
+					<text id="excessive_vomiting-label">
+						<value>excessive vomiting?</value>
+					</text>
+					<text id="excessive_vomiting-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="excessive_vomiting-no-label">
+						<value>No</value>
+					</text>
+					<text id="blue_lips-label">
+						<value>blue lips?</value>
+					</text>
+					<text id="blue_lips-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="blue_lips-no-label">
+						<value>No</value>
+					</text>
+					<text id="child_pale_pollar-label">
+						<value>pale pallor?</value>
+					</text>
+					<text id="child_pale_pollar-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="child_pale_pollar-no-label">
+						<value>No</value>
+					</text>
+					<text id="eyes_discharge-label">
+						<value>Discharge from eyes, swollen eyes? </value>
+					</text>
+					<text id="eyes_discharge-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="eyes_discharge-no-label">
+						<value>No</value>
+					</text>
+					<text id="yellow_color_in_eyes_or_body-label">
+						<value>yellow color in eyes or body?</value>
+					</text>
+					<text id="yellow_color_in_eyes_or_body-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="yellow_color_in_eyes_or_body-no-label">
+						<value>No</value>
+					</text>
+					<text id="child_congenital_abnormality-label">
+						<value>congenital abnormality?</value>
+					</text>
+					<text id="child_congenital_abnormality-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="child_congenital_abnormality-no-label">
+						<value>No</value>
+					</text>
+					<text id="skin_rashes-label">
+						<value>skin rashes?</value>
+					</text>
+					<text id="skin_rashes-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="skin_rashes-no-label">
+						<value>no</value>
+					</text>
+					<text id="bulging_anterior_fontanel-label">
+						<value>Bulging anterior fontanel? (Look and touch with baby upright)</value>
+					</text>
+					<text id="bulging_anterior_fontanel-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="bulging_anterior_fontanel-no-label">
+						<value>No</value>
+					</text>
+					<text id="abdominal_distention-label">
+						<value>abdominal distention?</value>
+					</text>
+					<text id="abdominal_distention-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="abdominal_distention-no-label">
+						<value>No</value>
+					</text>
+					<text id="baby_passed_urine-label">
+						<value>Has the baby passed urine?</value>
+					</text>
+					<text id="baby_passed_urine-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_passed_urine-no-label">
+						<value>No</value>
+					</text>
+					<text id="baby_passed_bowel-label">
+						<value>Has the baby passed a bowel movement? </value>
+					</text>
+					<text id="baby_passed_bowel-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_passed_bowel-no-label">
+						<value>No</value>
+					</text>
+					<text id="baby_diarrhea-label">
+						<value>Does baby have diarrhea?</value>
+					</text>
+					<text id="baby_diarrhea-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="baby_diarrhea-no-label">
+						<value>No</value>
+					</text>
+					<text id="advise_mother_problems_phcc-label">
+						<value>ADVISE MOTHER: You have <output value="/data/breast_mastitis_node"/> <output value="/data/severe_abdominal_pain_node"/> <output value="/data/excessive_bleeding_node"/> <output value="/data/blurred_vision_node"/> <output value="/data/breast_cracking_node"/>. We need to go to <output value="/data/nearest_PHCC"/></value>
+					</text>
+					<text id="advise_mother_problems_phcu-label">
+						<value>ADVISE MOTHER: You have <output value="/data/foul_vaginal_discharge_node"/> <output value="/data/post_delivery_fever_node"/> <output value="/data/exhaustion_node"/> <output value="/data/feeling_sad_or_hopeless_node"/> We need to go to <output value="/data/nearest_dc_health_facility"/></value>
+					</text>
+					<text id="advise_baby_problems_phcc-label">
+						<value>ADVISE MOTHER: Your baby has <output value="/data/stiffness_node"/><output value="/data/child_convulsions_node"/> <output value="/data/excessive_crying_node"/> and needs to go to the facility <output value="/data/nearest_PHCC"/> and get care.</value>
+					</text>
+					<text id="advise_baby_problems_phcu-label">
+						<value>ADVISE MOTHER: Your baby has <output value="/data/unable_to_suck_node"/> <output value="/data/child_fever_node"/> <output value="/data/cord_bleeding_node"/> <output value="/data/fast_or_diff_breathing_node"/> <output value="/data/excessive_vomiting_node"/> <output value="/data/blue_lips_node"/> <output value="/data/child_pale_pollar_node"/> <output value="/data/eyes_discharge_node"/> <output value="/data/yellow_color_in_eyes_or_body_node"/> <output value="/data/skin_rashes_node"/> <output value="/data/baby_passed_urine_node"/> <output value="/data/baby_passed_bowel_node"/> <output value="/data/baby_diarrhea_node"/> and needs to go to the facility <output value="/data/nearest_dc_health_facility"/> and get care.</value>
+					</text>
+					<text id="infant_problems_hosipital-label">
+						<value>ADVISE MOTHER: Your baby has <output value="/data/abdominal_distention_node"/> and needs to go to the facility <output value="/data/nearest_referral_hospital"/> and get care.</value>
+					</text>
+					<text id="will_pay_fare-label">
+						<value>ADVISE MOTHER: We will pay for your transport to the health facility</value>
+					</text>
+					<text id="call_transport-label">
+						<value>CALL TRANSPORT. CALL HEALTH FACILITY. INITIATE REFERRAL. ITAUSAFIRI.</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Your form is now complete.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><setvalue ref="/data/nearest_PHCC" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/nearest_PHCC"/><setvalue ref="/data/nearest_phcu" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/clinic_name"/><setvalue ref="/data/nearest_referral_hospital" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/nearest_referral_hospital"/><setvalue ref="/data/nearest_dc_health_facility" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/nearest_dc_health_facility"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/filling_during">
+			<label ref="jr:itext('filling_during-label')"/>
+			<item>
+				<label ref="jr:itext('filling_during-pregnancy-label')"/>
+				<value>pregnancy</value>
+			</item>
+			<item>
+				<label ref="jr:itext('filling_during-labour_delivery-label')"/>
+				<value>labour_delivery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('filling_during-immediately_after_delivery-label')"/>
+				<value>immediately_after_delivery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('filling_during-one_day_after_delivery-label')"/>
+				<value>one_day_after_delivery</value>
+			</item>
+		</select1>
+		<group ref="/data/pregnancy_group">
+			<label ref="jr:itext('pregnancy_group-label')"/>
+			<trigger ref="/data/pregnancy_group/remind_imortance_deliver_at_facility">
+				<label ref="jr:itext('remind_imortance_deliver_at_facility-label')"/>
+			</trigger>
+			<select1 ref="/data/pregnancy_group/lack_fetal_movement">
+				<label ref="jr:itext('lack_fetal_movement-label')"/>
+				<item>
+					<label ref="jr:itext('fetal_movement-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fetal_movement-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/pregnancy_group/any_of_following_sign_preg">
+				<label ref="jr:itext('any_of_following_sign_preg-label')"/>
+			</trigger>
+			<select1 ref="/data/pregnancy_group/bleeding">
+				<label ref="jr:itext('bleeding-label')"/>
+				<item>
+					<label ref="jr:itext('question15-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question15-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_group/oedema">
+				<label ref="jr:itext('oedema-label')"/>
+				<item>
+					<label ref="jr:itext('question16-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question16-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_group/dizziness">
+				<label ref="jr:itext('dizziness-label')"/>
+				<item>
+					<label ref="jr:itext('question17-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('dizziness-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_group/fits_convulsions">
+				<label ref="jr:itext('fits_convulsions-label')"/>
+				<item>
+					<label ref="jr:itext('question18-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question18-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_group/severe_headache">
+				<label ref="jr:itext('severe_headache-label')"/>
+				<item>
+					<label ref="jr:itext('severe_headache-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('severe_headache-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_group/high_fever">
+				<label ref="jr:itext('high_fever-label')"/>
+				<item>
+					<label ref="jr:itext('high_fever-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('high_fever-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/pregnancy_group/advise_anc_referral_dc">
+				<label ref="jr:itext('advise_anc_referral_dc-label')"/>
+			</trigger>
+			<trigger ref="/data/pregnancy_group/referral_anc_phcc">
+				<label ref="jr:itext('referral_anc_phcc-label')"/>
+			</trigger>
+			<trigger ref="/data/pregnancy_group/referral_anc_phcu">
+				<label ref="jr:itext('referral_anc_phcu-label')"/>
+			</trigger>
+			<trigger ref="/data/pregnancy_group/advise_health">
+				<label ref="jr:itext('advise_health-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/labour_and_delivery_group">
+			<label ref="jr:itext('labour_and_delivery_group-label')"/>
+			<trigger ref="/data/labour_and_delivery_group/every_mother_goto_facility">
+				<label ref="jr:itext('every_mother_goto_facility-label')"/>
+			</trigger>
+			<trigger ref="/data/labour_and_delivery_group/any_of_following_sign_ld">
+				<label ref="jr:itext('any_of_following_sign_ld-label')"/>
+			</trigger>
+			<select1 ref="/data/labour_and_delivery_group/labour_12_hours">
+				<label ref="jr:itext('labour_12_hours-label')"/>
+				<item>
+					<label ref="jr:itext('labour_12_hours-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labour_12_hours-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/labour_and_delivery_group/lobour_bleeding">
+				<label ref="jr:itext('lobour_bleeding-label')"/>
+				<item>
+					<label ref="jr:itext('lobour_bleeding-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('lobour_bleeding-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/labour_and_delivery_group/pale_pollar">
+				<label ref="jr:itext('pale_pollar-label')"/>
+				<item>
+					<label ref="jr:itext('pale_pollar-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pale_pollar-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/labour_and_delivery_group/abnormal_breathing">
+				<label ref="jr:itext('abnormal_breathing-label')"/>
+				<item>
+					<label ref="jr:itext('abnormal_breathing-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abnormal_breathing-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/labour_and_delivery_group/fits_convusions">
+				<label ref="jr:itext('fits_convusions-label')"/>
+				<item>
+					<label ref="jr:itext('fits_convusions-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fits_convusions-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/labour_and_delivery_group/swallen_face">
+				<label ref="jr:itext('swallen_face-label')"/>
+				<item>
+					<label ref="jr:itext('swallen_face-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('swallen_face-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/labour_and_delivery_group/labour_severe_headache">
+				<label ref="jr:itext('labour_severe_headache-label')"/>
+				<item>
+					<label ref="jr:itext('labour_severe_headache-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labour_severe_headache-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/labour_and_delivery_group/fever">
+				<label ref="jr:itext('fever-label')"/>
+				<item>
+					<label ref="jr:itext('question72-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('question72-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/labour_and_delivery_group/advise_deliver_dc">
+				<label ref="jr:itext('advise_deliver_dc-label')"/>
+			</trigger>
+			<trigger ref="/data/labour_and_delivery_group/advise_deliver_health_facility_dc">
+				<label ref="jr:itext('advise_deliver_health_facility_dc-label')"/>
+			</trigger>
+			<trigger ref="/data/labour_and_delivery_group/ld_referral_phcc">
+				<label ref="jr:itext('ld_referral_phcc-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/immediately_after_delivery_group">
+			<label ref="jr:itext('immediately_after_delivery_group-label')"/>
+			<trigger ref="/data/immediately_after_delivery_group/every_mother_deliver_facility">
+				<label ref="jr:itext('every_mother_deliver_facility-label')"/>
+			</trigger>
+			<trigger ref="/data/immediately_after_delivery_group/dry_baby">
+				<label ref="jr:itext('dry_baby-label')"/>
+			</trigger>
+			<input ref="/data/immediately_after_delivery_group/number_of_kangas">
+				<label ref="jr:itext('number_of_kangas-label')"/>
+			</input>
+			<trigger ref="/data/immediately_after_delivery_group/ask_observe_signs">
+				<label ref="jr:itext('ask_observe_signs-label')"/>
+			</trigger>
+			<select1 ref="/data/immediately_after_delivery_group/mother_fever">
+				<label ref="jr:itext('mother_fever-label')"/>
+				<item>
+					<label ref="jr:itext('mother_fever-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('mother_fever-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/mother_pale">
+				<label ref="jr:itext('mother_pale-label')"/>
+				<item>
+					<label ref="jr:itext('mother_pale-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('mother_pale-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/adelivery_abnormal_breathing">
+				<label ref="jr:itext('adelivery_abnormal_breathing-label')"/>
+				<item>
+					<label ref="jr:itext('adelivery_abnormal_breathing-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('adelivery_abnormal_breathing-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/mother_fits">
+				<label ref="jr:itext('mother_fits-label')"/>
+				<item>
+					<label ref="jr:itext('mother_fits-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('mother_fits-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/baby_crying">
+				<label ref="jr:itext('baby_crying-label')"/>
+				<item>
+					<label ref="jr:itext('baby_crying-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_crying-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/baby_blue">
+				<label ref="jr:itext('baby_blue-label')"/>
+				<item>
+					<label ref="jr:itext('baby_blue-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_blue-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/immediately_after_delivery_group/elevate_baby">
+				<label ref="jr:itext('elevate_baby-label')"/>
+			</trigger>
+			<select1 ref="/data/immediately_after_delivery_group/baby_yellow">
+				<label ref="jr:itext('baby_yellow-label2')"/>
+				<item>
+					<label ref="jr:itext('baby_yellow-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_yellow-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/congenital_abnormality">
+				<label ref="jr:itext('congenital_abnormality-label')"/>
+				<item>
+					<label ref="jr:itext('congenital_abnormality-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('congenital_abnormality-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/baby_premature">
+				<label ref="jr:itext('baby_premature-label')"/>
+				<item>
+					<label ref="jr:itext('baby_premature-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_premature-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/immediately_after_delivery_group/baby_small">
+				<label ref="jr:itext('baby_small-label')"/>
+				<item>
+					<label ref="jr:itext('baby_small-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_small-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/immediately_after_delivery_group/advise_health_no_p">
+				<label ref="jr:itext('advise_health_no_p-label')"/>
+			</trigger>
+			<trigger ref="/data/immediately_after_delivery_group/mother_referral_phcc">
+				<label ref="jr:itext('mother_referral_phcc-label')"/>
+			</trigger>
+			<trigger ref="/data/immediately_after_delivery_group/infant_referral_phcu">
+				<label ref="jr:itext('infant_referral_phcu-label')"/>
+			</trigger>
+			<trigger ref="/data/immediately_after_delivery_group/infant_referral_hospital">
+				<label ref="jr:itext('infant_referral_hospital-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/one_day_after_group">
+			<label ref="jr:itext('one_day_after_group-label')"/>
+			<trigger ref="/data/one_day_after_group/observer_mother_post_delivery">
+				<label ref="jr:itext('observer_mother_post_delivery-label')"/>
+			</trigger>
+			<select1 ref="/data/one_day_after_group/post_delivery_fever">
+				<label ref="jr:itext('post_delivery_fever-label')"/>
+				<item>
+					<label ref="jr:itext('post_delivery_fever-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('post_delivery_fever-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/excessive_bleeding">
+				<label ref="jr:itext('excessive_bleeding-label')"/>
+				<item>
+					<label ref="jr:itext('excessive_bleeding-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('excessive_bleeding-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/exhaustion">
+				<label ref="jr:itext('exhaustion-label')"/>
+				<item>
+					<label ref="jr:itext('exhaustion-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('exhaustion-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/severe_abdominal_pain">
+				<label ref="jr:itext('severe_abdominal_pain-label')"/>
+				<item>
+					<label ref="jr:itext('severe_abdominal_pain-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('severe_abdominal_pain-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/blurred_vision">
+				<label ref="jr:itext('blurred_vision-label')"/>
+				<item>
+					<label ref="jr:itext('blurred_vision-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('blurred_vision-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/foul_vaginal_discharge">
+				<label ref="jr:itext('foul_vaginal_discharge-label')"/>
+				<item>
+					<label ref="jr:itext('foul_vaginal_discharge-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('foul_vaginal_discharge-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/breast_mastitis">
+				<label ref="jr:itext('breast_mastitis-label')"/>
+				<item>
+					<label ref="jr:itext('breast_mastitis-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('breast_mastitis-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/breast_cracking">
+				<label ref="jr:itext('breast_cracking-label')"/>
+				<item>
+					<label ref="jr:itext('breast_cracking-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('breast_cracking-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/feeling_sad_or_hopeless">
+				<label ref="jr:itext('feeling_sad_or_hopeless-label')"/>
+				<item>
+					<label ref="jr:itext('feeling_sad_or_hopeless-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('feeling_sad_or_hopeless-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/one_day_after_group/examine_baby">
+				<label ref="jr:itext('examine_baby-label')"/>
+			</trigger>
+			<select1 ref="/data/one_day_after_group/child_fever">
+				<label ref="jr:itext('child_fever-label')"/>
+				<item>
+					<label ref="jr:itext('child_fever-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('child_fever-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/cord_bleeding">
+				<label ref="jr:itext('cord_bleeding-label')"/>
+				<item>
+					<label ref="jr:itext('cord_bleeding-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('cord_bleeding-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/stiffness">
+				<label ref="jr:itext('stiffness-label')"/>
+				<item>
+					<label ref="jr:itext('stiffness-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('stiffness-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/child_convulsions">
+				<label ref="jr:itext('child_convulsions-label')"/>
+				<item>
+					<label ref="jr:itext('child_convulsions-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('child_convulsions-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/excessive_crying">
+				<label ref="jr:itext('excessive_crying-label')"/>
+				<item>
+					<label ref="jr:itext('excessive_crying-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('excessive_crying-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/non_responsive">
+				<label ref="jr:itext('non_responsive-label')"/>
+				<item>
+					<label ref="jr:itext('non_responsive-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('non_responsive-item482-label')"/>
+					<value>item482</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/unable_to_suck">
+				<label ref="jr:itext('unable_to_suck-label')"/>
+				<item>
+					<label ref="jr:itext('unable_to_suck-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('unable_to_suck-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/fast_or_diff_breathing">
+				<label ref="jr:itext('fast_or_diff_breathing-label')"/>
+				<item>
+					<label ref="jr:itext('fast_or_diff_breathing-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fast_or_diff_breathing-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/excessive_vomiting">
+				<label ref="jr:itext('excessive_vomiting-label')"/>
+				<item>
+					<label ref="jr:itext('excessive_vomiting-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('excessive_vomiting-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/blue_lips">
+				<label ref="jr:itext('blue_lips-label')"/>
+				<item>
+					<label ref="jr:itext('blue_lips-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('blue_lips-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/child_pale_pollar">
+				<label ref="jr:itext('child_pale_pollar-label')"/>
+				<item>
+					<label ref="jr:itext('child_pale_pollar-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('child_pale_pollar-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/eyes_discharge">
+				<label ref="jr:itext('eyes_discharge-label')"/>
+				<item>
+					<label ref="jr:itext('eyes_discharge-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('eyes_discharge-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/yellow_color_in_eyes_or_body">
+				<label ref="jr:itext('yellow_color_in_eyes_or_body-label')"/>
+				<item>
+					<label ref="jr:itext('yellow_color_in_eyes_or_body-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('yellow_color_in_eyes_or_body-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/child_congenital_abnormality">
+				<label ref="jr:itext('child_congenital_abnormality-label')"/>
+				<item>
+					<label ref="jr:itext('child_congenital_abnormality-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('child_congenital_abnormality-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/skin_rashes">
+				<label ref="jr:itext('skin_rashes-label')"/>
+				<item>
+					<label ref="jr:itext('skin_rashes-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('skin_rashes-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/bulging_anterior_fontanel">
+				<label ref="jr:itext('bulging_anterior_fontanel-label')"/>
+				<item>
+					<label ref="jr:itext('bulging_anterior_fontanel-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bulging_anterior_fontanel-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/abdominal_distention">
+				<label ref="jr:itext('abdominal_distention-label')"/>
+				<item>
+					<label ref="jr:itext('abdominal_distention-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abdominal_distention-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/baby_passed_urine">
+				<label ref="jr:itext('baby_passed_urine-label')"/>
+				<item>
+					<label ref="jr:itext('baby_passed_urine-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_passed_urine-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/baby_passed_bowel">
+				<label ref="jr:itext('baby_passed_bowel-label')"/>
+				<item>
+					<label ref="jr:itext('baby_passed_bowel-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_passed_bowel-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/one_day_after_group/baby_diarrhea">
+				<label ref="jr:itext('baby_diarrhea-label')"/>
+				<item>
+					<label ref="jr:itext('baby_diarrhea-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('baby_diarrhea-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/one_day_after_group/advise_mother_problems_phcc">
+				<label ref="jr:itext('advise_mother_problems_phcc-label')"/>
+			</trigger>
+			<trigger ref="/data/one_day_after_group/advise_mother_problems_phcu">
+				<label ref="jr:itext('advise_mother_problems_phcu-label')"/>
+			</trigger>
+			<trigger ref="/data/one_day_after_group/advise_baby_problems_phcc">
+				<label ref="jr:itext('advise_baby_problems_phcc-label')"/>
+			</trigger>
+			<trigger ref="/data/one_day_after_group/advise_baby_problems_phcu">
+				<label ref="jr:itext('advise_baby_problems_phcu-label')"/>
+			</trigger>
+			<trigger ref="/data/one_day_after_group/infant_problems_hosipital">
+				<label ref="jr:itext('infant_problems_hosipital-label')"/>
+			</trigger>
+			<trigger ref="/data/one_day_after_group/will_pay_fare">
+				<label ref="jr:itext('will_pay_fare-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/call_transport">
+			<label ref="jr:itext('call_transport-label')"/>
+		</trigger>
+		<trigger ref="/data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

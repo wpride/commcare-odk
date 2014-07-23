@@ -1,0 +1,1576 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Primeiro</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2E5C67B9-041A-413C-9F03-4243ED502016" uiVersion="1" version="660" name="Primeiro">
+					<name/>
+					<sex/>
+					<dob/>
+					<confirm_dob/>
+					<locality/>
+					<village/>
+					<home_visit/>
+					<sick_baby/>
+					<danger_signs>
+						<ask_danger_signs/>
+						<can_breastfeed/>
+						<lethargic/>
+						<red_cord_with_pus/>
+						<eyes_with_pus/>
+						<moaning/>
+						<fever/>
+						<diarrhoea/>
+						<swollen_fontanelle/>
+						<blue_baby/>
+						<high_resp_rate/>
+					</danger_signs>
+					<non_severe_symptoms>
+						<ask_other_symptoms/>
+						<red_cord_no_pus/>
+						<red_eyes_little_pus/>
+						<low_birthweight/>
+						<other_problem/>
+						<describe_other_problem/>
+					</non_severe_symptoms>
+					<breastfeeding_advice>
+						<breastfeeding_difficulty/>
+						<breastfeeding_24hours/>
+						<other_food/>
+						<how_feeding/>
+						<how_connecting/>
+						<educ_feeding_advice/>
+						<educ_exclusive_breastfeeding/>
+						<educ_breastfeeding/>
+					</breastfeeding_advice>
+					<vaccinations>
+						<vaccination_complete/>
+						<educ_vaccinations/>
+					</vaccinations>
+					<diagnosis>
+						<diag_ds/>
+						<diag_non_severe/>
+						<diag_breastfeeding_urgent/>
+					</diagnosis>
+					<treatment_advice>
+						<treatment_ds/>
+						<treatment_not_severe/>
+						<educ_low_birthweight/>
+						<educ_umbilical/>
+						<treatment_other/>
+						<treatment_breastfeeding/>
+						<referral_1_day/>
+						<educ_ape_no_treatment/>
+						<educ_umbilical_care/>
+						<educ_sick_baby/>
+					</treatment_advice>
+					<self_report>
+						<treatment_given/>
+						<treatment_given_other/>
+						<referral_reported/>
+						<referral_given_reason/>
+					</self_report>
+					<fill_referral/>
+					<referral_summary/>
+					<fill_registry/>
+					<registry_display/>
+					<has_danger_sign/>
+					<trouble_breastfeeding/>
+					<age_days/>
+					<has_infection/>
+					<has_low_birthweight/>
+					<has_other_problem/>
+					<has_umbilicial_infection/>
+					<diagnosis_display/>
+					<referral_display/>
+					<treatment_display/>
+					<trouble_breastfeeding_non_severe/>
+					<ds_display/>
+					<referral_given/>
+					<referral_needed/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>newborn</case_type></create><update><locality/><referral_given/><age_days/><sex/><has_danger_sign/><village/><case_name/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/sex" required="true()"/>
+			<bind nodeset="/data/dob" type="xsd:date" constraint=". &gt; today() - 60 and . &lt;= today()" jr:constraintMsg="jr:itext('dob-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/confirm_dob" required="true()"/>
+			<bind nodeset="/data/locality" required="true()"/>
+			<bind nodeset="/data/village" required="true()"/>
+			<bind nodeset="/data/home_visit" required="true()"/>
+			<bind nodeset="/data/sick_baby"/>
+			<bind nodeset="/data/danger_signs"/>
+			<bind nodeset="/data/danger_signs/ask_danger_signs"/>
+			<bind nodeset="/data/danger_signs/can_breastfeed" required="true()"/>
+			<bind nodeset="/data/danger_signs/lethargic" required="true()"/>
+			<bind nodeset="/data/danger_signs/red_cord_with_pus" required="true()"/>
+			<bind nodeset="/data/danger_signs/eyes_with_pus" required="true()"/>
+			<bind nodeset="/data/danger_signs/moaning" required="true()"/>
+			<bind nodeset="/data/danger_signs/fever" required="true()"/>
+			<bind nodeset="/data/danger_signs/diarrhoea" required="true()"/>
+			<bind nodeset="/data/danger_signs/swollen_fontanelle" required="true()"/>
+			<bind nodeset="/data/danger_signs/blue_baby" required="true()"/>
+			<bind nodeset="/data/danger_signs/high_resp_rate" required="true()"/>
+			<bind nodeset="/data/non_severe_symptoms" relevant="/data/has_danger_sign = 'no'"/>
+			<bind nodeset="/data/non_severe_symptoms/ask_other_symptoms"/>
+			<bind nodeset="/data/non_severe_symptoms/red_cord_no_pus" required="true()"/>
+			<bind nodeset="/data/non_severe_symptoms/red_eyes_little_pus" required="true()"/>
+			<bind nodeset="/data/non_severe_symptoms/low_birthweight" required="true()"/>
+			<bind nodeset="/data/non_severe_symptoms/other_problem" required="true()"/>
+			<bind nodeset="/data/non_severe_symptoms/describe_other_problem" type="xsd:string" relevant="/data/non_severe_symptoms/other_problem = '1'"/>
+			<bind nodeset="/data/breastfeeding_advice" relevant="/data/has_danger_sign = 'no'"/>
+			<bind nodeset="/data/breastfeeding_advice/breastfeeding_difficulty" required="true()"/>
+			<bind nodeset="/data/breastfeeding_advice/breastfeeding_24hours" required="true()"/>
+			<bind nodeset="/data/breastfeeding_advice/other_food" required="true()"/>
+			<bind nodeset="/data/breastfeeding_advice/how_feeding" required="true()"/>
+			<bind nodeset="/data/breastfeeding_advice/how_connecting" required="true()"/>
+			<bind nodeset="/data/breastfeeding_advice/educ_feeding_advice"/>
+			<bind nodeset="/data/breastfeeding_advice/educ_exclusive_breastfeeding"/>
+			<bind nodeset="/data/breastfeeding_advice/educ_breastfeeding"/>
+			<bind nodeset="/data/vaccinations" relevant="/data/has_danger_sign = 'no' or /data/trouble_breastfeeding = 'no'"/>
+			<bind nodeset="/data/vaccinations/vaccination_complete" required="true()"/>
+			<bind nodeset="/data/vaccinations/educ_vaccinations"/>
+			<bind nodeset="/data/diagnosis" relevant="/data/has_danger_sign = 'yes' or /data/has_infection = 'yes' or /data/trouble_breastfeeding = 'yes'"/>
+			<bind nodeset="/data/diagnosis/diag_ds" relevant="/data/has_danger_sign = 'yes'" required="true()"/>
+			<bind nodeset="/data/diagnosis/diag_non_severe" relevant="/data/has_infection = 'yes'"/>
+			<bind nodeset="/data/diagnosis/diag_breastfeeding_urgent" relevant="/data/trouble_breastfeeding = 'yes'"/>
+			<bind nodeset="/data/treatment_advice" relevant="/data/has_umbilicial_infection = 'yes' or /data/has_low_birthweight = 'yes' or /data/has_infection = 'yes' or /data/has_danger_sign = 'yes' or /data/has_other_problem = 'yes' or /data/trouble_breastfeeding = 'yes' or /data/trouble_breastfeeding_non_severe = 'yes'"/>
+			<bind nodeset="/data/treatment_advice/treatment_ds" relevant="/data/has_danger_sign = 'yes' or /data/trouble_breastfeeding = 'yes'"/>
+			<bind nodeset="/data/treatment_advice/treatment_not_severe" relevant="/data/has_infection = 'yes'" required="true()"/>
+			<bind nodeset="/data/treatment_advice/educ_low_birthweight" relevant="/data/non_severe_symptoms/low_birthweight = '1'" required="true()"/>
+			<bind nodeset="/data/treatment_advice/educ_umbilical" relevant="/data/has_umbilicial_infection = 'yes'" required="true()"/>
+			<bind nodeset="/data/treatment_advice/treatment_other" relevant="/data/non_severe_symptoms/other_problem = '1'"/>
+			<bind nodeset="/data/treatment_advice/treatment_breastfeeding" relevant="/data/trouble_breastfeeding_non_severe = 'yes'"/>
+			<bind nodeset="/data/treatment_advice/referral_1_day" relevant="/data/referral_needed = 'yes'" required="true()"/>
+			<bind nodeset="/data/treatment_advice/educ_ape_no_treatment" relevant="/data/referral_needed = 'yes'"/>
+			<bind nodeset="/data/treatment_advice/educ_umbilical_care" relevant="/data/has_danger_sign != 'yes'"/>
+			<bind nodeset="/data/treatment_advice/educ_sick_baby" relevant="/data/has_danger_sign = 'severe_illness'"/>
+			<bind nodeset="/data/self_report"/>
+			<bind nodeset="/data/self_report/treatment_given" required="true()"/>
+			<bind nodeset="/data/self_report/treatment_given_other" type="xsd:string" relevant="/data/self_report/treatment_given = '0'"/>
+			<bind nodeset="/data/self_report/referral_reported" required="true()"/>
+			<bind nodeset="/data/self_report/referral_given_reason" relevant="/data/self_report/referral_reported = '1'" required="true()"/>
+			<bind nodeset="/data/fill_referral" relevant="/data/referral_given = 'yes'"/>
+			<bind nodeset="/data/referral_summary" relevant="/data/referral_given = 'yes'"/>
+			<bind nodeset="/data/fill_registry"/>
+			<bind nodeset="/data/registry_display"/>
+			<bind nodeset="/data/has_danger_sign" calculate="if (/data/danger_signs/can_breastfeed = '0' or /data/danger_signs/lethargic = '1' or /data/danger_signs/red_cord_with_pus = '1' or /data/danger_signs/eyes_with_pus = '1' or /data/danger_signs/moaning = '1' or /data/danger_signs/fever = '1' or /data/danger_signs/diarrhoea = '1' or /data/danger_signs/swollen_fontanelle = '1' or /data/danger_signs/blue_baby = '1' or /data/danger_signs/high_resp_rate = '1', 'yes', 'no')"/>
+			<bind nodeset="/data/trouble_breastfeeding" calculate="if(/data/breastfeeding_advice/breastfeeding_difficulty = '1' or /data/breastfeeding_advice/how_feeding = '0', 'yes', 'no')"/>
+			<bind nodeset="/data/age_days" calculate="int(today() - date(/data/dob))"/>
+			<bind nodeset="/data/has_infection" calculate="if(/data/non_severe_symptoms/red_cord_no_pus = '1' or /data/non_severe_symptoms/red_eyes_little_pus = '1', 'yes', 'no')"/>
+			<bind nodeset="/data/has_low_birthweight" calculate="if (/data/non_severe_symptoms/low_birthweight = '1', 'yes', 'no')"/>
+			<bind nodeset="/data/has_other_problem" calculate="if(/data/non_severe_symptoms/other_problem = '1', 'yes', 'no')"/>
+			<bind nodeset="/data/has_umbilicial_infection" calculate="if (/data/danger_signs/red_cord_with_pus = '1' or /data/non_severe_symptoms/red_cord_no_pus = '1', 'yes', 'no') "/>
+			<bind nodeset="/data/diagnosis_display" calculate="if(/data/danger_signs/diarrhoea = '1', 'diarreia', 'outra doen&#231;a')"/>
+			<bind nodeset="/data/referral_display" calculate="if(/data/self_report/referral_given_reason = '1', 'sinais de perigo', if(/data/self_report/referral_given_reason = '2', 'outra causa - sintomas n&#227;o graves', if(/data/self_report/referral_given_reason = '3', 'vacina incompleta', if(/data/self_report/referral_given_reason = '4', 'outra causa - problemas em comer', if(/data/self_report/referral_given_reason = '0', 'outra causa', 'n&#227;o transferido')))))"/>
+			<bind nodeset="/data/treatment_display" calculate="if(/data/self_report/treatment_given =&quot;1&quot;, 'amoxicilina', if(/data/self_report/treatment_given =&quot;0&quot;, 'outro', 'n&#227;o deu tratamento'))"/>
+			<bind nodeset="/data/trouble_breastfeeding_non_severe" calculate="if (/data/breastfeeding_advice/breastfeeding_24hours = '0' or /data/breastfeeding_advice/other_food = '1' or /data/breastfeeding_advice/how_connecting = '0', 'yes', 'no')"/>
+			<bind nodeset="/data/ds_display" calculate="if (/data/danger_signs/can_breastfeed = &quot;0&quot;, 'N&#227;o beber ou mamar', if(/data/danger_signs/swollen_fontanelle = &quot;1&quot;, 'Fontanela abaulada', if(/data/has_danger_sign = 'no', 'n&#227;o aplic&#225;vel', 'Outros sinais')))"/>
+			<bind nodeset="/data/referral_given" calculate="if(/data/self_report/referral_reported = '1', 'yes', 'no')"/>
+			<bind nodeset="/data/referral_needed" calculate="if(/data/has_danger_sign = 'yes' or /data/trouble_breastfeeding = 'yes' or /data/has_infection = 'yes' or /data/has_umbilicial_infection = 'yes' or /data/has_low_birthweight = 'yes', 'yes', 'no')"/>
+			<itext>
+				<translation lang="por" default="">
+					<text id="name-label">
+						<value>Nome completo do paciente</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="sex-label">
+						<value>Sexo</value>
+						<value form="image">jr://file/commcare/image/data/sex.png</value>
+					</text>
+					<text id="sex-1-label">
+						<value>Masculino</value>
+					</text>
+					<text id="sex-0-label">
+						<value>Feminino</value>
+					</text>
+					<text id="dob-label">
+						<value>Data de nascimento</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+					</text>
+					<text id="dob-constraintMsg">
+						<value>Idade deve ser inferior a 2 meses.</value>
+					</text>
+					<text id="confirm_dob-label">
+						<value>Idade da crian&#231;a em dias &#233; <output value="/data/age_days"/>. Se n&#227;o, por favor, volte e responda novamente.</value>
+					</text>
+					<text id="locality-label">
+						<value>Localidade</value>
+					</text>
+					<text id="locality-03-label">
+						<value>Cidade de Maxixe</value>
+					</text>
+					<text id="village-label">
+						<value>Comunidade</value>
+					</text>
+					<text id="locality-1-01-label">
+						<value>Bembe</value>
+					</text>
+					<text id="village-2-label">
+						<value>Mabil</value>
+					</text>
+					<text id="village-3-label">
+						<value>Macuamane</value>
+					</text>
+					<text id="village-4-label">
+						<value>Macapula</value>
+					</text>
+					<text id="village-5-label">
+						<value>Malalane</value>
+					</text>
+					<text id="village-6-label">
+						<value>Manhala</value>
+					</text>
+					<text id="village-7-label">
+						<value>Nhabanda</value>
+					</text>
+					<text id="village-8-label">
+						<value>Nhamaxaxa</value>
+					</text>
+					<text id="village-9-label">
+						<value>Rumbana</value>
+					</text>
+					<text id="village-10-label">
+						<value>Chambone</value>
+					</text>
+					<text id="village-11-label">
+						<value>Tinga Tinga</value>
+					</text>
+					<text id="village-12-label">
+						<value>Bato </value>
+					</text>
+					<text id="village-13-label">
+						<value>Agostinho Neto</value>
+					</text>
+					<text id="village-14-label">
+						<value>Dambo</value>
+					</text>
+					<text id="village-15-label">
+						<value>Barrane</value>
+					</text>
+					<text id="home_visit-label">
+						<value>&#201; uma visita domicili&#225;ria?</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="home_visit-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="sick_baby-label">
+						<value>Perguntar como &#233; que est&#225; a crian&#231;a.</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="danger_signs-label">
+						<value>Sinais de perigo</value>
+					</text>
+					<text id="ask_danger_signs-label">
+						<value>Agora vamos verificar se tem sinais de perigo.</value>
+						<value form="image">jr://file/commcare/image/data/ds_newborn.png</value>
+					</text>
+					<text id="can_breastfeed-label">
+						<value>Consegue mamar?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding.png</value>
+					</text>
+					<text id="not_breastfeeding-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="not_breastfeeding-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="lethargic-label">
+						<value>Move-se menos do que o normal (let&#225;rgico)?</value>
+						<value form="image">jr://file/commcare/image/data/lethargic.png</value>
+					</text>
+					<text id="lethargic-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="lethargic-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="red_cord_with_pus-label">
+						<value>Umbigo vermelho con sujidade?</value>
+						<value form="image">jr://file/commcare/image/data/red_cord_pus.png</value>
+					</text>
+					<text id="red_cord_with_pus-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="red_cord_with_pus-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="eyes_with_pus-label">
+						<value>Olhos con muita sujidade?</value>
+						<value form="image">jr://file/commcare/image/data/eyes_with_pus.png</value>
+					</text>
+					<text id="pus_in_eyes-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="pus_in_eyes-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="moaning-label">
+						<value>Gemido?</value>
+						<value form="image">jr://file/commcare/image/data/moaning.png</value>
+					</text>
+					<text id="moaning-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="moaning-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="fever-label">
+						<value>Febre?</value>
+						<value form="image">jr://file/commcare/image/data/fever_newborn.png</value>
+					</text>
+					<text id="low_birthweight-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="low_birthweight-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="diarrhoea-label">
+						<value>Diarreia?</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="fever-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="fever-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="swollen_fontanelle-label">
+						<value>Fontanela abaulada?</value>
+						<value form="image">jr://file/commcare/image/data/swollen_fontanelle.png</value>
+					</text>
+					<text id="diarrhoea-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="diarrhoea-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="blue_baby-label">
+						<value>Crian&#231;a est&#225; com corpo muito frio/com cor azulada/ tem l&#225;bios/unhas azuis?</value>
+						<value form="image">jr://file/commcare/image/data/ds_newborn.png</value>
+					</text>
+					<text id="swollen_fontanelle-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="swollen_fontanelle-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="high_resp_rate-label">
+						<value>Tem frequ&#234;ncia respiratoria mais de 60 respira&#231;oes por minuto?</value>
+						<value form="image">jr://file/commcare/image/data/moaning.png</value>
+					</text>
+					<text id="blue_baby-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="blue_baby-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="non_severe_symptoms-label">
+						<value>Sintomas n&#225;o graves</value>
+					</text>
+					<text id="ask_other_symptoms-label">
+						<value>Agora vamos verificar se tem outros sintomas.</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="red_cord_no_pus-label">
+						<value>Umbigo vermelho , sem sujidade ou com pouca sujidade?</value>
+						<value form="image">jr://file/commcare/image/data/red_cord.png</value>
+					</text>
+					<text id="high_resp_rate-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="high_resp_rate-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="red_eyes_little_pus-label">
+						<value>Olhos poucos avermelhados e com alguma sujidade?</value>
+						<value form="image">jr://file/commcare/image/data/red_eyes.png</value>
+					</text>
+					<text id="red_cord_no_pus-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="red_cord_no_pus-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="low_birthweight-label">
+						<value>Peso menos de 2.5 kg no nascimento?</value>
+						<value form="image">jr://file/commcare/image/data/low_birthweight.png</value>
+					</text>
+					<text id="moaning-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="moaning-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="other_problem-label">
+						<value>Outro problema?</value>
+					</text>
+					<text id="low_birthweight-1-1-label2">
+						<value>Sim</value>
+					</text>
+					<text id="low_birthweight-1-0-label2">
+						<value>N&#227;o</value>
+					</text>
+					<text id="describe_other_problem-label">
+						<value>Descreva outro problema:</value>
+					</text>
+					<text id="breastfeeding_advice-label">
+						<value>Aleitamento materno</value>
+					</text>
+					<text id="breastfeeding_difficulty-label">
+						<value>H&#225; alguma dificuldade de amamentar a crian&#231;a com o leite do peito?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_difficulty.png</value>
+					</text>
+					<text id="other_problem-1-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="other_problem-1-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="breastfeeding_24hours-label">
+						<value>Quantas vezes d&#225; de mamar em um dia?</value>
+						<value form="image">jr://file/commcare/image/data/24hr.png</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-1-label">
+						<value>Mais de 8 vezes/dia</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-0-label">
+						<value>Menos de 8 vezes/dia</value>
+					</text>
+					<text id="other_food-label">
+						<value>Se d&#225; outros alimentos ou l&#237;quidos ao beb&#233; para al&#233;m do leite materno?</value>
+						<value form="image">jr://file/commcare/image/data/food.png</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-1-label2">
+						<value>Sim</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-0-label2">
+						<value>N&#227;o</value>
+					</text>
+					<text id="how_feeding-label">
+						<value>Como est&#225; a alimentar a crian&#231;a?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding.png</value>
+					</text>
+					<text id="other_food-1-1-label">
+						<value>Bem</value>
+					</text>
+					<text id="other_food-1-0-label">
+						<value>Mal</value>
+					</text>
+					<text id="how_connecting-label">
+						<value>Como &#233; que o beb&#234; pega a mama da m&#227;e?</value>
+						<value form="image">jr://file/commcare/image/data/how_connecting.png</value>
+					</text>
+					<text id="how_feeding-1-1-label">
+						<value>Bem</value>
+					</text>
+					<text id="how_feeding-1-0-label">
+						<value>Mal</value>
+					</text>
+					<text id="educ_feeding_advice-label">
+						<value>Amamente com o leite materno pelo menos 10 vezes em 24 horas. </value>
+						<value form="image">jr://file/commcare/image/data/24hr.png</value>
+					</text>
+					<text id="educ_exclusive_breastfeeding-label">
+						<value>Dar s&#243; o leite do peito durante os 6 primeiros meses da vida. &#201; a comida melhor e mais segura para o beb&#234;.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_exclusive.png</value>
+					</text>
+					<text id="educ_breastfeeding-label">
+						<value>Aconselhar a m&#227;e: Se o beb&#233; estiver numa boa posi&#231;&#227;o ele poder&#225; chupar bem e o leite sair&#225; mais facilmente.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_position.png</value>
+					</text>
+					<text id="vaccinations-label">
+						<value>Vacina&#231;&#227;os</value>
+					</text>
+					<text id="vaccination_complete-label">
+						<value>Por favor consulte o cart&#227;o da crian&#231;a. Recebeu as vacinas de BCG e p&#243;lio?</value>
+						<value form="image">jr://file/commcare/image/data/vaccination.png</value>
+					</text>
+					<text id="bcg_polio_vaccine-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="bcg_polio_vaccine-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="educ_vaccinations-label">
+						<value>A vacina&#231;&#227;o prot&#233;g&#233; e refor&#231;a o corpo da crian&#231;a para combater as doen&#231;as.</value>
+						<value form="image">jr://file/commcare/image/data/vaccination_newborn.png</value>
+					</text>
+					<text id="diagnosis-label">
+						<value>Diagn&#243;stico</value>
+					</text>
+					<text id="diag_ds-label">
+						<value>Tem signais de perigo e uma Tem signais de perigo e uma POSS&#205;VEL INFEC&#199;&#195;O BACTERIANA GRAVE.</value>
+						<value form="image">jr://file/commcare/image/data/ds.png</value>
+					</text>
+					<text id="diag_non_severe-label">
+						<value>Tem sintoma de INFEC&#199;&#195;O BACTERIANA LOCALIZADA.</value>
+						<value form="image">jr://file/commcare/image/data/ds.png</value>
+					</text>
+					<text id="diag_breastfeeding_urgent-label">
+						<value>A crian&#231;a n&#227;o &#233; capaz de comer.</value>
+						<value form="image">jr://file/commcare/image/data/ds.png</value>
+					</text>
+					<text id="treatment_advice-label">
+						<value>Tratamento</value>
+					</text>
+					<text id="treatment_ds-label">
+						<value>A vida do beb&#234; corre perigo. Ir imediatamente &#224; US mais pr&#243;xima.</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="treatment_not_severe-label">
+						<value>Ensinar a m&#227;e a cuidar da infec&#231;&#227;o em casa e tranferir para a US.</value>
+						<value form="image">jr://file/commcare/image/data/clean_cord.png</value>
+					</text>
+					<text id="educ_low_birthweight-label">
+						<value>Os rec&#233;m-nascidos s&#227;o muito fr&#225;geis. Beb&#234;s de menos de 2.5kg devem ser transferidos &#225; US para bons cuidados.</value>
+						<value form="image">jr://file/commcare/image/data/low_birthweight.png</value>
+					</text>
+					<text id="educ_umbilical-label">
+						<value>Um beb&#234; com umbigo avermelhado ou com pus e um sinal de doen&#231;a grave.</value>
+						<value form="image">jr://file/commcare/image/data/red_cord.png</value>
+					</text>
+					<text id="treatment_other-label">
+						<value>Aconselhar a m&#227;e sobre o tratamento dependendo dos sintomas e transferir para a US.</value>
+					</text>
+					<text id="treatment_breastfeeding-label">
+						<value>Tem problemas em comer. Aconselhar a m&#227;e sobre as pr&#225;ticas apropriadas de alimentar a crian&#231;a.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_position.png</value>
+					</text>
+					<text id="referral_1_day-label">
+						<value>Fa&#231;a o seguimento da crian&#231;a depois de 1 dia para ter a certeza de que foi para a US; e depois durante sua visita de rotina para verificar se a crian&#231;a melhorou.</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="educ_ape_no_treatment-label">
+						<value>Lembre-se que as crian&#231;as menores de 2 meses n&#227;o podem receber qualquer tratamento do APE.</value>
+						<value form="image">jr://file/commcare/image/data/remember.png</value>
+					</text>
+					<text id="educ_umbilical_care-label">
+						<value>O cord&#227;o umbilical deve ser mantido limpo e seco. N&#227;o colocar qualquer coisa no cord&#227;o. Espera at&#233; que caia naturalmente.</value>
+						<value form="image">jr://file/commcare/image/data/clean_cord.png</value>
+					</text>
+					<text id="educ_sick_baby-label">
+						<value>Beb&#234;s doentes devem ser levados imediatamente &#224; US. Ponha o beb&#234; em contacto pele a pele com a m&#227;e no caminho &#224; US.</value>
+						<value form="image">jr://file/commcare/image/data/kangaroo.png</value>
+					</text>
+					<text id="treatment_given-label">
+						<value>Qual foi o tratamento que deu?</value>
+					</text>
+					<text id="treatment_given-1-label">
+						<value>Amoxicilina cor de rosa</value>
+					</text>
+					<text id="treatment_given-0-label">
+						<value>Outro</value>
+					</text>
+					<text id="treatment_given-99-label">
+						<value>N&#227;o deu tratamento</value>
+					</text>
+					<text id="treatment_given_other-label">
+						<value>Outro:</value>
+					</text>
+					<text id="referral_reported-label">
+						<value>A crian&#231;a foi transferida para uma US?</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="referral_given-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="other_food-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="referral_given_reason-label">
+						<value>Porqu&#234; a crian&#231;a foi transferida?</value>
+					</text>
+					<text id="referral_given_reason-1-label">
+						<value>Sinal de perigo</value>
+					</text>
+					<text id="referral_given_reason-2-label">
+						<value>Sintomas n&#227;o graves</value>
+					</text>
+					<text id="referral_given_reason-3-label">
+						<value>Vacina&#231;&#227;o incompleta</value>
+					</text>
+					<text id="referral_given_reason-4-label">
+						<value>Dificuldade de se alimentar</value>
+					</text>
+					<text id="referral_given_reason-0-label">
+						<value>Outra causa</value>
+					</text>
+					<text id="fill_referral-label">
+						<value>Preencha o guia de refer&#234;ncia com dos dados do ecr&#227; seguinte.</value>
+						<value form="image">jr://file/commcare/image/data/fill_referral.png</value>
+					</text>
+					<text id="referral_summary-label">
+						<value>Guia de Refer&#234;ncia
+ 
+Data: <output value="today()"/> 
+Nome de doente: <output value="/data/name"/> 
+Idade: <output value="/data/age_days"/> 
+Comunidade: <output value="/data/village"/> 
+Sinal geral de perigo: <output value="/data/ds_display"/>  
+Motivo de transfer&#234;ncia: <output value="/data/referral_display"/> 
+Tratamento: <output value="/data/treatment_display"/></value>
+					</text>
+					<text id="fill_registry-label">
+						<value>Preencha o livro de registo do paciente com dos dados do ecr&#227; seguinte.</value>
+						<value form="image">jr://file/commcare/image/data/fill_registry.png</value>
+					</text>
+					<text id="registry_display-label">
+						<value>Livro de Registro 
+
+Data: <output value="today()"/> 
+Nome completo: <output value="/data/name"/> 
+Residencia (localidade): <output value="/data/locality"/> 
+Residencia (comunidade): <output value="/data/village"/> 
+Atendimento: Primeiro 
+Grupo-alvo: Rec&#233;m nascido 
+Laboratorio TDR: n&#227;o aplic&#225;vel 
+Diagn&#243;stico: <output value="/data/diagnosis_display"/> 
+Tratamento: <output value="/data/treatment_display"/> 
+Resultado final: n&#227;o aplic&#225;vel 
+Transfer&#234;ncia: <output value="/data/referral_display"/></value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="name-label">
+						<value>Complete patient name</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="sex-label">
+						<value>Sex</value>
+						<value form="image">jr://file/commcare/image/data/sex.png</value>
+					</text>
+					<text id="sex-1-label">
+						<value>Male</value>
+					</text>
+					<text id="sex-0-label">
+						<value>Female</value>
+					</text>
+					<text id="dob-label">
+						<value>Date of birth</value>
+						<value form="image">jr://file/commcare/image/data/dob.png</value>
+					</text>
+					<text id="dob-constraintMsg">
+						<value>Age should be less than 2 months.</value>
+					</text>
+					<text id="confirm_dob-label">
+						<value>Child's age in days is <output value="/data/age_days"/>. If not, please go back and answer again.</value>
+					</text>
+					<text id="locality-label">
+						<value>Locality</value>
+					</text>
+					<text id="locality-03-label">
+						<value>City of Maxixe</value>
+					</text>
+					<text id="village-label">
+						<value>Village</value>
+					</text>
+					<text id="locality-1-01-label">
+						<value>Bembe</value>
+					</text>
+					<text id="village-2-label">
+						<value>Mabil</value>
+					</text>
+					<text id="village-3-label">
+						<value>Macuamane</value>
+					</text>
+					<text id="village-4-label">
+						<value>Macapula</value>
+					</text>
+					<text id="village-5-label">
+						<value>Malalane</value>
+					</text>
+					<text id="village-6-label">
+						<value>Manhala</value>
+					</text>
+					<text id="village-7-label">
+						<value>Nhabanda</value>
+					</text>
+					<text id="village-8-label">
+						<value>Nhamaxaxa</value>
+					</text>
+					<text id="village-9-label">
+						<value>Rumbana</value>
+					</text>
+					<text id="village-10-label">
+						<value>Chambone</value>
+					</text>
+					<text id="village-11-label">
+						<value>Tinga Tinga</value>
+					</text>
+					<text id="village-12-label">
+						<value>Bato</value>
+					</text>
+					<text id="village-13-label">
+						<value>Agostinho Neto</value>
+					</text>
+					<text id="village-14-label">
+						<value>Dambo</value>
+					</text>
+					<text id="village-15-label">
+						<value>Barrane</value>
+					</text>
+					<text id="home_visit-label">
+						<value>Is it a home visit?</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="home_visit-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>No</value>
+					</text>
+					<text id="sick_baby-label">
+						<value>Ask about the baby.</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="danger_signs-label">
+						<value>Danger signs</value>
+					</text>
+					<text id="ask_danger_signs-label">
+						<value>Now we will check for danger signs.</value>
+						<value form="image">jr://file/commcare/image/data/ds_newborn.png</value>
+					</text>
+					<text id="can_breastfeed-label">
+						<value>Able to breastfeed?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding.png</value>
+					</text>
+					<text id="not_breastfeeding-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="not_breastfeeding-0-label">
+						<value>No</value>
+					</text>
+					<text id="lethargic-label">
+						<value>Moving less than normal (lethargic)?</value>
+						<value form="image">jr://file/commcare/image/data/lethargic.png</value>
+					</text>
+					<text id="lethargic-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="lethargic-0-label">
+						<value>No</value>
+					</text>
+					<text id="red_cord_with_pus-label">
+						<value>Red umbilical cord with pus?</value>
+						<value form="image">jr://file/commcare/image/data/red_cord_pus.png</value>
+					</text>
+					<text id="red_cord_with_pus-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="red_cord_with_pus-0-label">
+						<value>No</value>
+					</text>
+					<text id="eyes_with_pus-label">
+						<value>Pus in the eyes?</value>
+						<value form="image">jr://file/commcare/image/data/eyes_with_pus.png</value>
+					</text>
+					<text id="pus_in_eyes-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="pus_in_eyes-0-label">
+						<value>No</value>
+					</text>
+					<text id="moaning-label">
+						<value>Moaning?</value>
+						<value form="image">jr://file/commcare/image/data/moaning.png</value>
+					</text>
+					<text id="moaning-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="moaning-0-label">
+						<value>No</value>
+					</text>
+					<text id="fever-label">
+						<value>Fever?</value>
+						<value form="image">jr://file/commcare/image/data/fever_newborn.png</value>
+					</text>
+					<text id="low_birthweight-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="low_birthweight-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="diarrhoea-label">
+						<value>Diarrhoea?</value>
+						<value form="image">jr://file/commcare/image/data/diarrhoea.png</value>
+					</text>
+					<text id="fever-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="fever-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="swollen_fontanelle-label">
+						<value>Swollen fontanelle?</value>
+						<value form="image">jr://file/commcare/image/data/swollen_fontanelle.png</value>
+					</text>
+					<text id="diarrhoea-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="diarrhoea-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="blue_baby-label">
+						<value>Baby too cold / blue in color / has blue lips or nails?</value>
+						<value form="image">jr://file/commcare/image/data/ds_newborn.png</value>
+					</text>
+					<text id="swollen_fontanelle-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="swollen_fontanelle-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="high_resp_rate-label">
+						<value>Respiratory rate higher than 60 breaths/min?</value>
+						<value form="image">jr://file/commcare/image/data/moaning.png</value>
+					</text>
+					<text id="blue_baby-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="blue_baby-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="non_severe_symptoms-label">
+						<value>Non-severe symptoms</value>
+					</text>
+					<text id="ask_other_symptoms-label">
+						<value>Now we will check for other symptoms.</value>
+						<value form="image">jr://file/commcare/image/data/name_newborn.png</value>
+					</text>
+					<text id="red_cord_no_pus-label">
+						<value>Red umbilical cord with little or no pus?</value>
+						<value form="image">jr://file/commcare/image/data/red_cord.png</value>
+					</text>
+					<text id="high_resp_rate-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="high_resp_rate-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="red_eyes_little_pus-label">
+						<value>Red eyes with a little pus?</value>
+						<value form="image">jr://file/commcare/image/data/red_eyes.png</value>
+					</text>
+					<text id="red_cord_no_pus-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="red_cord_no_pus-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="low_birthweight-label">
+						<value>Birthweight less than 2.5kg?</value>
+						<value form="image">jr://file/commcare/image/data/low_birthweight.png</value>
+					</text>
+					<text id="moaning-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="moaning-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="other_problem-label">
+						<value>Other problem?</value>
+					</text>
+					<text id="low_birthweight-1-1-label2">
+						<value>Yes</value>
+					</text>
+					<text id="low_birthweight-1-0-label2">
+						<value>No</value>
+					</text>
+					<text id="describe_other_problem-label">
+						<value>Describe other problem:</value>
+					</text>
+					<text id="breastfeeding_advice-label">
+						<value>Breastfeeding counseling</value>
+					</text>
+					<text id="breastfeeding_difficulty-label">
+						<value>Does she have difficulty breastfeeding?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_difficulty.png</value>
+					</text>
+					<text id="other_problem-1-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="other_problem-1-0-label">
+						<value>No</value>
+					</text>
+					<text id="breastfeeding_24hours-label">
+						<value>How many times does the baby breastfeed in one day?</value>
+						<value form="image">jr://file/commcare/image/data/24hr.png</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-1-label">
+						<value>More than 8 times/day</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-0-label">
+						<value>Less than 8 times/day</value>
+					</text>
+					<text id="other_food-label">
+						<value>Does she give other food or liquids to the baby other than breastmilk?</value>
+						<value form="image">jr://file/commcare/image/data/food.png</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-1-label2">
+						<value>Yes</value>
+					</text>
+					<text id="breastfeeding_difficulty-1-0-label2">
+						<value>No</value>
+					</text>
+					<text id="how_feeding-label">
+						<value>How is the baby feeding?</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding.png</value>
+					</text>
+					<text id="other_food-1-1-label">
+						<value>Well</value>
+					</text>
+					<text id="other_food-1-0-label">
+						<value>Bad</value>
+					</text>
+					<text id="how_connecting-label">
+						<value>How is the baby connecting to the breast?</value>
+						<value form="image">jr://file/commcare/image/data/how_connecting.png</value>
+					</text>
+					<text id="how_feeding-1-1-label">
+						<value>Well</value>
+					</text>
+					<text id="how_feeding-1-0-label">
+						<value>Bad</value>
+					</text>
+					<text id="educ_feeding_advice-label">
+						<value>Breastfeed at least 10 times in 24 hours.</value>
+						<value form="image">jr://file/commcare/image/data/24hr.png</value>
+					</text>
+					<text id="educ_exclusive_breastfeeding-label">
+						<value>Only give breast milk during the first 6 months of life. It is the best for the baby.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_exclusive.png</value>
+					</text>
+					<text id="educ_breastfeeding-label">
+						<value>Advice to mother: If the baby is in a good position, he/she will be able to feed well and the milk will come out easier.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_position.png</value>
+					</text>
+					<text id="vaccinations-label">
+						<value>Vaccinations</value>
+					</text>
+					<text id="vaccination_complete-label">
+						<value>Please check the child's card. S/He received the BCG and Polio vaccine?</value>
+						<value form="image">jr://file/commcare/image/data/vaccination.png</value>
+					</text>
+					<text id="bcg_polio_vaccine-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="bcg_polio_vaccine-0-label">
+						<value>No</value>
+					</text>
+					<text id="educ_vaccinations-label">
+						<value>Vaccination protects and reinforces the infant's body against dangerous diseases.</value>
+						<value form="image">jr://file/commcare/image/data/vaccination_newborn.png</value>
+					</text>
+					<text id="diagnosis-label">
+						<value>Diagnosis</value>
+					</text>
+					<text id="diag_ds-label">
+						<value>He/she has a danger sign and a possible serious bacterial infection.</value>
+						<value form="image">jr://file/commcare/image/data/ds.png</value>
+					</text>
+					<text id="diag_non_severe-label">
+						<value>He/she has a symtom of a localized bacterial infeccion.</value>
+						<value form="image">jr://file/commcare/image/data/ds.png</value>
+					</text>
+					<text id="diag_breastfeeding_urgent-label">
+						<value>The child is not able to feed.</value>
+						<value form="image">jr://file/commcare/image/data/ds.png</value>
+					</text>
+					<text id="treatment_advice-label">
+						<value>Treatment</value>
+					</text>
+					<text id="treatment_ds-label">
+						<value>The baby's life is at risk. You need to take the child immediately to the nearest HF.</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="treatment_not_severe-label">
+						<value>Show the mother how to treat the infection at home and transfer the baby to the HF.</value>
+						<value form="image">jr://file/commcare/image/data/clean_cord.png</value>
+					</text>
+					<text id="educ_low_birthweight-label">
+						<value>Newborns are very fragile. Babys below 2.5kg must be taken to the US to receive special care.</value>
+						<value form="image">jr://file/commcare/image/data/low_birthweight.png</value>
+					</text>
+					<text id="educ_umbilical-label">
+						<value>An infected umbilical cord is a sign of serious infection.</value>
+						<value form="image">jr://file/commcare/image/data/red_cord.png</value>
+					</text>
+					<text id="treatment_other-label">
+						<value>Educate the mother on the proper treatment based on the symptoms and transfer to the HC.</value>
+					</text>
+					<text id="treatment_breastfeeding-label">
+						<value>He/she has problems feeding.  Counsel the mother on proper feeding practices.</value>
+						<value form="image">jr://file/commcare/image/data/breastfeeding_position.png</value>
+					</text>
+					<text id="referral_1_day-label">
+						<value>Follow up on the child after one day to make sure that referral took place and then during their routine visit to see if the infant has improved.</value>
+						<value form="image">jr://file/commcare/image/data/home_visit.png</value>
+					</text>
+					<text id="educ_ape_no_treatment-label">
+						<value>Remember that infants less than 2 months old shouldn't receive any treatment from an APE.</value>
+						<value form="image">jr://file/commcare/image/data/remember.png</value>
+					</text>
+					<text id="educ_umbilical_care-label">
+						<value>The umbilical cord should be kept clean and dry. Don't put anything on the cord. Wait until the cord falls off naturally.</value>
+						<value form="image">jr://file/commcare/image/data/clean_cord.png</value>
+					</text>
+					<text id="educ_sick_baby-label">
+						<value>Sick babies require immediate referral. Put the baby in skin to skin contact with the mother on the way to the US.</value>
+						<value form="image">jr://file/commcare/image/data/kangaroo.png</value>
+					</text>
+					<text id="treatment_given-label">
+						<value>What was the treatment you gave?</value>
+					</text>
+					<text id="treatment_given-1-label">
+						<value>Pink amoxicillan</value>
+					</text>
+					<text id="treatment_given-0-label">
+						<value>Other</value>
+					</text>
+					<text id="treatment_given-99-label">
+						<value>No treatment given</value>
+					</text>
+					<text id="treatment_given_other-label">
+						<value>Other:</value>
+					</text>
+					<text id="referral_reported-label">
+						<value>Was the baby referred to a HF?</value>
+						<value form="image">jr://file/commcare/image/data/transfer.png</value>
+					</text>
+					<text id="referral_given-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="other_food-0-label">
+						<value>No</value>
+					</text>
+					<text id="referral_given_reason-label">
+						<value>Why was the baby referred?</value>
+					</text>
+					<text id="referral_given_reason-1-label">
+						<value>Danger sign</value>
+					</text>
+					<text id="referral_given_reason-2-label">
+						<value>Non-severe symptoms</value>
+					</text>
+					<text id="referral_given_reason-3-label">
+						<value>Incomplete vaccination</value>
+					</text>
+					<text id="referral_given_reason-4-label">
+						<value>Difficulty eating</value>
+					</text>
+					<text id="referral_given_reason-0-label">
+						<value>Other cause</value>
+					</text>
+					<text id="fill_referral-label">
+						<value>Fill in the referral form using the following screen.</value>
+						<value form="image">jr://file/commcare/image/data/fill_referral.png</value>
+					</text>
+					<text id="referral_summary-label">
+						<value>Guia de Refer&#234;ncia
+ 
+Data: <output value="today()"/> 
+Nome de doente: <output value="/data/name"/> 
+Idade: <output value="/data/age_days"/> 
+Comunidade: <output value="/data/village"/> 
+Sinal geral de perigo: <output value="/data/ds_display"/>  
+Motivo de transfer&#234;ncia: <output value="/data/referral_display"/> 
+Tratamento: <output value="/data/treatment_display"/></value>
+					</text>
+					<text id="fill_registry-label">
+						<value>Fill in the registry using the following screen.</value>
+						<value form="image">jr://file/commcare/image/data/fill_registry.png</value>
+					</text>
+					<text id="registry_display-label">
+						<value>Livro de Registro 
+
+Data: <output value="today()"/> 
+Nome completo: <output value="/data/name"/> 
+Residencia (localidade): <output value="/data/locality"/> 
+Residencia (comunidade): <output value="/data/village"/> 
+Atendimento: Primeiro 
+Grupo-alvo: Rec&#233;m nascido 
+Laboratorio TDR: n&#227;o aplic&#225;vel 
+Diagn&#243;stico: <output value="/data/diagnosis_display"/> 
+Tratamento: <output value="/data/treatment_display"/> 
+Resultado final: n&#227;o aplic&#225;vel 
+Transfer&#234;ncia: <output value="/data/referral_display"/></value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case" relevant="/data/self_report/referral_reported = '1'"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/name"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/update/locality" relevant="count(/data/locality) &gt; 0" calculate="/data/locality"/><bind nodeset="/data/case/update/referral_given" relevant="count(/data/referral_given) &gt; 0" calculate="/data/referral_given"/><bind nodeset="/data/case/update/age_days" relevant="count(/data/age_days) &gt; 0" calculate="/data/age_days"/><bind nodeset="/data/case/update/sex" relevant="count(/data/sex) &gt; 0" calculate="/data/sex"/><bind nodeset="/data/case/update/has_danger_sign" relevant="count(/data/has_danger_sign) &gt; 0" calculate="/data/has_danger_sign"/><bind nodeset="/data/case/update/village" relevant="count(/data/village) &gt; 0" calculate="/data/village"/><bind nodeset="/data/case/update/case_name" relevant="count(/data/name) &gt; 0" calculate="/data/name"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/name">
+			<label ref="jr:itext('name-label')"/>
+		</input>
+		<select1 ref="/data/sex">
+			<label ref="jr:itext('sex-label')"/>
+			<item>
+				<label ref="jr:itext('sex-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('sex-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<input ref="/data/dob">
+			<label ref="jr:itext('dob-label')"/>
+		</input>
+		<trigger ref="/data/confirm_dob">
+			<label ref="jr:itext('confirm_dob-label')"/>
+		</trigger>
+		<select1 ref="/data/locality">
+			<label ref="jr:itext('locality-label')"/>
+			<item>
+				<label ref="jr:itext('locality-03-label')"/>
+				<value>03</value>
+			</item>
+		</select1>
+		<select1 ref="/data/village">
+			<label ref="jr:itext('village-label')"/>
+			<item>
+				<label ref="jr:itext('locality-1-01-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-2-label')"/>
+				<value>2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-3-label')"/>
+				<value>3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-4-label')"/>
+				<value>4</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-5-label')"/>
+				<value>5</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-6-label')"/>
+				<value>6</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-7-label')"/>
+				<value>7</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-8-label')"/>
+				<value>8</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-9-label')"/>
+				<value>9</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-10-label')"/>
+				<value>10</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-11-label')"/>
+				<value>11</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-12-label')"/>
+				<value>12</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-13-label')"/>
+				<value>13</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-14-label')"/>
+				<value>14</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-15-label')"/>
+				<value>15</value>
+			</item>
+		</select1>
+		<select1 ref="/data/home_visit">
+			<label ref="jr:itext('home_visit-label')"/>
+			<item>
+				<label ref="jr:itext('home_visit-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('home_visit-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<trigger ref="/data/sick_baby">
+			<label ref="jr:itext('sick_baby-label')"/>
+		</trigger>
+		<group ref="/data/danger_signs">
+			<label ref="jr:itext('danger_signs-label')"/>
+			<trigger ref="/data/danger_signs/ask_danger_signs">
+				<label ref="jr:itext('ask_danger_signs-label')"/>
+			</trigger>
+			<select1 ref="/data/danger_signs/can_breastfeed">
+				<label ref="jr:itext('can_breastfeed-label')"/>
+				<item>
+					<label ref="jr:itext('not_breastfeeding-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('not_breastfeeding-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/lethargic">
+				<label ref="jr:itext('lethargic-label')"/>
+				<item>
+					<label ref="jr:itext('lethargic-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('lethargic-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/red_cord_with_pus">
+				<label ref="jr:itext('red_cord_with_pus-label')"/>
+				<item>
+					<label ref="jr:itext('red_cord_with_pus-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('red_cord_with_pus-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/eyes_with_pus">
+				<label ref="jr:itext('eyes_with_pus-label')"/>
+				<item>
+					<label ref="jr:itext('pus_in_eyes-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pus_in_eyes-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/moaning">
+				<label ref="jr:itext('moaning-label')"/>
+				<item>
+					<label ref="jr:itext('moaning-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('moaning-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/fever">
+				<label ref="jr:itext('fever-label')"/>
+				<item>
+					<label ref="jr:itext('low_birthweight-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('low_birthweight-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/diarrhoea">
+				<label ref="jr:itext('diarrhoea-label')"/>
+				<item>
+					<label ref="jr:itext('fever-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fever-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/swollen_fontanelle">
+				<label ref="jr:itext('swollen_fontanelle-label')"/>
+				<item>
+					<label ref="jr:itext('diarrhoea-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('diarrhoea-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/blue_baby">
+				<label ref="jr:itext('blue_baby-label')"/>
+				<item>
+					<label ref="jr:itext('swollen_fontanelle-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('swollen_fontanelle-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/high_resp_rate">
+				<label ref="jr:itext('high_resp_rate-label')"/>
+				<item>
+					<label ref="jr:itext('blue_baby-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('blue_baby-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/non_severe_symptoms">
+			<label ref="jr:itext('non_severe_symptoms-label')"/>
+			<trigger ref="/data/non_severe_symptoms/ask_other_symptoms">
+				<label ref="jr:itext('ask_other_symptoms-label')"/>
+			</trigger>
+			<select1 ref="/data/non_severe_symptoms/red_cord_no_pus">
+				<label ref="jr:itext('red_cord_no_pus-label')"/>
+				<item>
+					<label ref="jr:itext('high_resp_rate-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('high_resp_rate-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/non_severe_symptoms/red_eyes_little_pus">
+				<label ref="jr:itext('red_eyes_little_pus-label')"/>
+				<item>
+					<label ref="jr:itext('red_cord_no_pus-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('red_cord_no_pus-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/non_severe_symptoms/low_birthweight">
+				<label ref="jr:itext('low_birthweight-label')"/>
+				<item>
+					<label ref="jr:itext('moaning-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('moaning-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/non_severe_symptoms/other_problem">
+				<label ref="jr:itext('other_problem-label')"/>
+				<item>
+					<label ref="jr:itext('low_birthweight-1-1-label2')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('low_birthweight-1-0-label2')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<input ref="/data/non_severe_symptoms/describe_other_problem">
+				<label ref="jr:itext('describe_other_problem-label')"/>
+			</input>
+		</group>
+		<group ref="/data/breastfeeding_advice">
+			<label ref="jr:itext('breastfeeding_advice-label')"/>
+			<select1 ref="/data/breastfeeding_advice/breastfeeding_difficulty">
+				<label ref="jr:itext('breastfeeding_difficulty-label')"/>
+				<item>
+					<label ref="jr:itext('other_problem-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('other_problem-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/breastfeeding_advice/breastfeeding_24hours">
+				<label ref="jr:itext('breastfeeding_24hours-label')"/>
+				<item>
+					<label ref="jr:itext('breastfeeding_difficulty-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('breastfeeding_difficulty-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/breastfeeding_advice/other_food">
+				<label ref="jr:itext('other_food-label')"/>
+				<item>
+					<label ref="jr:itext('breastfeeding_difficulty-1-1-label2')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('breastfeeding_difficulty-1-0-label2')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/breastfeeding_advice/how_feeding">
+				<label ref="jr:itext('how_feeding-label')"/>
+				<item>
+					<label ref="jr:itext('other_food-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('other_food-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/breastfeeding_advice/how_connecting">
+				<label ref="jr:itext('how_connecting-label')"/>
+				<item>
+					<label ref="jr:itext('how_feeding-1-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('how_feeding-1-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<trigger ref="/data/breastfeeding_advice/educ_feeding_advice">
+				<label ref="jr:itext('educ_feeding_advice-label')"/>
+			</trigger>
+			<trigger ref="/data/breastfeeding_advice/educ_exclusive_breastfeeding">
+				<label ref="jr:itext('educ_exclusive_breastfeeding-label')"/>
+			</trigger>
+			<trigger ref="/data/breastfeeding_advice/educ_breastfeeding">
+				<label ref="jr:itext('educ_breastfeeding-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/vaccinations">
+			<label ref="jr:itext('vaccinations-label')"/>
+			<select1 ref="/data/vaccinations/vaccination_complete">
+				<label ref="jr:itext('vaccination_complete-label')"/>
+				<item>
+					<label ref="jr:itext('bcg_polio_vaccine-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bcg_polio_vaccine-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<trigger ref="/data/vaccinations/educ_vaccinations">
+				<label ref="jr:itext('educ_vaccinations-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/diagnosis">
+			<label ref="jr:itext('diagnosis-label')"/>
+			<trigger ref="/data/diagnosis/diag_ds">
+				<label ref="jr:itext('diag_ds-label')"/>
+			</trigger>
+			<trigger ref="/data/diagnosis/diag_non_severe">
+				<label ref="jr:itext('diag_non_severe-label')"/>
+			</trigger>
+			<trigger ref="/data/diagnosis/diag_breastfeeding_urgent">
+				<label ref="jr:itext('diag_breastfeeding_urgent-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/treatment_advice">
+			<label ref="jr:itext('treatment_advice-label')"/>
+			<trigger ref="/data/treatment_advice/treatment_ds">
+				<label ref="jr:itext('treatment_ds-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/treatment_not_severe">
+				<label ref="jr:itext('treatment_not_severe-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/educ_low_birthweight">
+				<label ref="jr:itext('educ_low_birthweight-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/educ_umbilical">
+				<label ref="jr:itext('educ_umbilical-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/treatment_other">
+				<label ref="jr:itext('treatment_other-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/treatment_breastfeeding">
+				<label ref="jr:itext('treatment_breastfeeding-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/referral_1_day">
+				<label ref="jr:itext('referral_1_day-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/educ_ape_no_treatment">
+				<label ref="jr:itext('educ_ape_no_treatment-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/educ_umbilical_care">
+				<label ref="jr:itext('educ_umbilical_care-label')"/>
+			</trigger>
+			<trigger ref="/data/treatment_advice/educ_sick_baby">
+				<label ref="jr:itext('educ_sick_baby-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/self_report">
+			<select1 ref="/data/self_report/treatment_given">
+				<label ref="jr:itext('treatment_given-label')"/>
+				<item>
+					<label ref="jr:itext('treatment_given-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-0-label')"/>
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-99-label')"/>
+					<value>99</value>
+				</item>
+			</select1>
+			<input ref="/data/self_report/treatment_given_other">
+				<label ref="jr:itext('treatment_given_other-label')"/>
+			</input>
+			<select1 ref="/data/self_report/referral_reported">
+				<label ref="jr:itext('referral_reported-label')"/>
+				<item>
+					<label ref="jr:itext('referral_given-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('other_food-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/self_report/referral_given_reason">
+				<label ref="jr:itext('referral_given_reason-label')"/>
+				<item>
+					<label ref="jr:itext('referral_given_reason-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<trigger ref="/data/fill_referral">
+			<label ref="jr:itext('fill_referral-label')"/>
+		</trigger>
+		<trigger ref="/data/referral_summary">
+			<label ref="jr:itext('referral_summary-label')"/>
+		</trigger>
+		<trigger ref="/data/fill_registry">
+			<label ref="jr:itext('fill_registry-label')"/>
+		</trigger>
+		<trigger ref="/data/registry_display">
+			<label ref="jr:itext('registry_display-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

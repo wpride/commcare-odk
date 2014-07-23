@@ -1,0 +1,2790 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Pregnancy Visit</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/25f2882cae56d47defea3c9f280c1a1e5d5f4a83" uiVersion="1" version="1494" name="Pregnancy Visit">
+					<debug_mode/>
+					<mother_id_label/>
+					<mother_name/>
+					<mother_phone_number/>
+					<deregister_message/>
+					<is_pregnant/>
+					<is_married/>
+					<using_fp/>
+					<fp_method/>
+					<gave_birth/>
+					<message_open_pp_form/>
+					<experience_miscarriage/>
+					<message_open_pp_form-1/>
+					<edd_message/>
+					<edd/>
+					<pregnancy_visit>
+						<lifetime_pregnancies/>
+						<living_children/>
+						<give_birth_prev/>
+						<high_risk/>
+						<number_ancs_attended_during_preg/>
+						<first_anc_16_weeks/>
+						<birth_plan/>
+						<number_tetanus/>
+						<dewormed/>
+						<hiv_test/>
+						<hiv_results/>
+						<iron_supp/>
+						<iptp/>
+						<net/>
+						<eat_less/>
+						<father_present/>
+						<danger_sign/>
+						<pregnant_danger_sign/>
+					</pregnancy_visit>
+					<deregister>
+						<dereg_message/>
+						<reason_for_closure/>
+						<date_of_death/>
+						<type_of_death/>
+						<place_of_death/>
+						<time_of_death_child/>
+						<time_of_death_maternal/>
+						<cause_of_death/>
+						<thank_you/>
+					</deregister>
+					<debug>
+						<visit_type_note/>
+						<visit_type_note-5/>
+						<question502/>
+						<question502-1/>
+						<question502-2/>
+						<question502-3/>
+						<question502-5/>
+						<question502-13/>
+						<question502-14/>
+						<question502-14-1/>
+						<question502-14-2/>
+						<question502-4/>
+						<question502-6/>
+						<question502-7/>
+						<question502-8/>
+						<question502-9/>
+						<question502-11/>
+						<question502-12/>
+						<question502-10/>
+						<question502-11-1/>
+						<question502-12-1/>
+						<question502-10-1/>
+						<question502-11-2/>
+						<question502-12-2/>
+						<visit_type_note-4/>
+						<visit_type_note-1/>
+						<visit_type_note-2/>
+						<visit_type_note-3/>
+					</debug>
+					<referrals>
+						<referral_message/>
+						<referral_id_message/>
+						<referring_location/>
+						<type_of_patient/>
+						<labor_danger_sign/>
+						<date_symptoms/>
+						<hours_first_symptoms/>
+						<condition/>
+						<prior_treatments/>
+						<medicine_taken/>
+						<dose/>
+						<date_taken/>
+						<prior_treat_admin/>
+						<other_prior_treatments/>
+						<other_medicine_taken/>
+						<other_dose/>
+						<other_date_taken/>
+						<other_prior_treat_admin/>
+						<next_of_kin/>
+						<referral_complete_message/>
+					</referrals>
+					<form_complete/>
+					<visit_type/>
+					<next_visit_type/>
+					<next_visit_date/>
+					<conception_date/>
+					<prev_total_preg_visits/>
+					<total_preg_visits/>
+					<prev_next_preg_visit/>
+					<next_preg_visit/>
+					<pv1_date/>
+					<pv1_late_date/>
+					<pv1_actual_date/>
+					<pv2_date/>
+					<pv2_late_date/>
+					<pv2_actual_date/>
+					<pv3_date/>
+					<pv3_late_date/>
+					<pv3_actual_date/>
+					<pv4_date/>
+					<pv4_late_date/>
+					<pv4_actual_date/>
+					<prev_is_pregnant/>
+					<prev_total_preg_checks/>
+					<prev_total_pp_visits/>
+					<time_of_death/>
+					<prev_deworm/>
+					<prev_hiv_test/>
+					<prev_hiv_results/>
+					<total_referrals/>
+					<prev_total_referrals/>
+					<phu/>
+					<reason_for_evacuation/>
+					<create_referral/>
+					<total_preg_checks/>
+					<total_pp_visits/>
+					<next_preg_check_date/>
+					<anc1_date/>
+					<anc2_date/>
+					<anc3_date/>
+					<anc4_date/>
+					<next_anc_date/>
+					<prev_total_anc_visits/>
+					<total_anc_visits/>
+					<mother_id/>
+					<date_of_visit/>
+					<still_alive/>
+					<referral_id/>
+					<prev_edd/>
+					<followup_date/>
+					<followup_type/>
+					<followup_needed/>
+					<prev_first_anc_16_weeks/>
+					<anc_followup_needed/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>referral</case_type></create><update><next_of_kin/><type_of_patient/><date_taken/><other_prior_treatments/><referring_location/><mother_id/><prior_treatments/><medicine_taken/><patient_name/><prior_treat_admin/><date_symptoms/><referred_to/><hours_first_symptoms/><other_date_taken/><reason_for_evacuation/><other_medicine_taken/><dose/><other_dose/><other_prior_treat_admin/><condition/><referral_date/></update><index><parent case_type="mother"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><edd/><total_preg_visits/><father_present/><mother_id/><next_visit_type/><pv2_date/><total_preg_checks/><anc4_date/><anc3_date/><mother_name/><visit_type/><dewormed/><anc1_date/><total_pp_visits/><anc2_date/><number_tetanus/><first_anc_16_weeks/><total_anc_visits/><is_married/><net/><next_preg_check_date/><eat_less/><next_visit_date/><conception_date/><gave_birth/><pv4_date/><pv1_date/><mother_phone_number/><date_of_visit/><experience_miscarriage/><pv3_date/><still_alive/><total_referrals/><cause_of_death/><is_pregnant/><hiv_test/><next_preg_visit/><iron_supp/><using_fp/><high_risk/><next_anc_date/><birth_plan/><create_referral/><danger_sign/><hiv_results/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/debug_mode" relevant="1=2"/>
+			<bind nodeset="/data/mother_id_label" relevant="1=2"/>
+			<bind nodeset="/data/mother_name" type="xsd:string" relevant="1=2" required="true()"/>
+			<bind nodeset="/data/mother_phone_number" type="xsd:int"/>
+			<bind nodeset="/data/deregister_message" relevant="/data/still_alive = 'no'"/>
+			<bind nodeset="/data/is_pregnant" relevant="/data/still_alive = 'yes'" required="true()"/>
+			<bind nodeset="/data/is_married" relevant="/data/still_alive = 'yes'"/>
+			<bind nodeset="/data/using_fp" relevant="/data/still_alive = 'yes' and /data/is_pregnant = 'no'"/>
+			<bind nodeset="/data/fp_method" relevant="/data/using_fp = 'yes'"/>
+			<bind nodeset="/data/gave_birth" relevant="/data/prev_is_pregnant = &quot;yes&quot; and /data/is_pregnant = &quot;no&quot; and /data/still_alive = 'yes'" required="true()"/>
+			<bind nodeset="/data/message_open_pp_form" relevant="/data/gave_birth = 'yes'"/>
+			<bind nodeset="/data/experience_miscarriage" relevant="/data/prev_is_pregnant = &quot;yes&quot; and /data/is_pregnant = &quot;no&quot; and /data/gave_birth = &quot;no&quot; and /data/still_alive = 'yes'" required="true()"/>
+			<bind nodeset="/data/message_open_pp_form-1" relevant="/data/experience_miscarriage = 'yes'"/>
+			<bind nodeset="/data/edd_message" relevant="/data/prev_edd != ''"/>
+			<bind nodeset="/data/edd" type="xsd:date" relevant="(/data/still_alive = 'yes' and /data/is_pregnant = 'yes' and /data/prev_edd = '') or (/data/edd_message = 'yes')"/>
+			<bind nodeset="/data/pregnancy_visit" relevant="/data/still_alive = 'yes' and /data/visit_type = 'pregnancy' and /data/is_pregnant != 'no'"/>
+			<bind nodeset="/data/pregnancy_visit/lifetime_pregnancies" type="xsd:int" relevant="/data/total_preg_visits = 1" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/living_children" type="xsd:int" relevant="/data/total_preg_visits = 1" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/give_birth_prev" relevant="1=2 and /data/total_preg_visits = 1 and /data/pregnancy_visit/lifetime_pregnancies &gt; 0" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/high_risk" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/number_ancs_attended_during_preg" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/first_anc_16_weeks" relevant="/data/prev_first_anc_16_weeks != ''" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/birth_plan" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/number_tetanus" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/dewormed" relevant="/data/total_preg_visits &gt; 1 and /data/prev_deworm != 'yes'" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/hiv_test" relevant="/data/total_preg_visits = 1 or /data/prev_hiv_test != 'yes'" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/hiv_results" relevant="/data/pregnancy_visit/hiv_test = 'yes' and /data/prev_hiv_results != 'yes'" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/iron_supp" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/iptp" relevant="/data/total_preg_visits = 2 and /data/total_preg_visits = 3" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/net" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/eat_less" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/father_present" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/danger_sign" required="true()"/>
+			<bind nodeset="/data/pregnancy_visit/pregnant_danger_sign" relevant="/data/pregnancy_visit/danger_sign = 'yes'" required="true()"/>
+			<bind nodeset="/data/deregister" relevant="/data/visit_type = 'deregister' and /data/still_alive = 'yes'"/>
+			<bind nodeset="/data/deregister/dereg_message"/>
+			<bind nodeset="/data/deregister/reason_for_closure" required="true()"/>
+			<bind nodeset="/data/deregister/date_of_death" type="xsd:date" relevant="/data/deregister/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/deregister/type_of_death" relevant="/data/deregister/reason_for_closure = 'death'" required="true()"/>
+			<bind nodeset="/data/deregister/place_of_death" relevant="/data/deregister/reason_for_closure = 'death'" required="true()"/>
+			<bind nodeset="/data/deregister/time_of_death_child" relevant="/data/deregister/reason_for_closure = 'death' and /data/deregister/type_of_death = 'newborn_death'"/>
+			<bind nodeset="/data/deregister/time_of_death_maternal" relevant="/data/deregister/reason_for_closure = 'death' and /data/deregister/type_of_death = 'maternal'"/>
+			<bind nodeset="/data/deregister/cause_of_death" relevant="/data/deregister/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/deregister/thank_you"/>
+			<bind nodeset="/data/debug"/>
+			<bind nodeset="/data/debug/visit_type_note"/>
+			<bind nodeset="/data/debug/visit_type_note-5"/>
+			<bind nodeset="/data/debug/question502"/>
+			<bind nodeset="/data/debug/question502-1"/>
+			<bind nodeset="/data/debug/question502-2"/>
+			<bind nodeset="/data/debug/question502-3"/>
+			<bind nodeset="/data/debug/question502-5"/>
+			<bind nodeset="/data/debug/question502-13"/>
+			<bind nodeset="/data/debug/question502-14"/>
+			<bind nodeset="/data/debug/question502-14-1"/>
+			<bind nodeset="/data/debug/question502-14-2"/>
+			<bind nodeset="/data/debug/question502-4"/>
+			<bind nodeset="/data/debug/question502-6"/>
+			<bind nodeset="/data/debug/question502-7"/>
+			<bind nodeset="/data/debug/question502-8"/>
+			<bind nodeset="/data/debug/question502-9"/>
+			<bind nodeset="/data/debug/question502-11"/>
+			<bind nodeset="/data/debug/question502-12"/>
+			<bind nodeset="/data/debug/question502-10"/>
+			<bind nodeset="/data/debug/question502-11-1"/>
+			<bind nodeset="/data/debug/question502-12-1"/>
+			<bind nodeset="/data/debug/question502-10-1"/>
+			<bind nodeset="/data/debug/question502-11-2"/>
+			<bind nodeset="/data/debug/question502-12-2"/>
+			<bind nodeset="/data/debug/visit_type_note-4"/>
+			<bind nodeset="/data/debug/visit_type_note-1"/>
+			<bind nodeset="/data/debug/visit_type_note-2"/>
+			<bind nodeset="/data/debug/visit_type_note-3"/>
+			<bind nodeset="/data/referrals" relevant="/data/create_referral = 'yes' and /data/still_alive = 'yes'"/>
+			<bind nodeset="/data/referrals/referral_message"/>
+			<bind nodeset="/data/referrals/referral_id_message"/>
+			<bind nodeset="/data/referrals/referring_location"/>
+			<bind nodeset="/data/referrals/type_of_patient"/>
+			<bind nodeset="/data/referrals/labor_danger_sign" relevant="/data/referrals/type_of_patient = 'labor'"/>
+			<bind nodeset="/data/referrals/date_symptoms" type="xsd:date"/>
+			<bind nodeset="/data/referrals/hours_first_symptoms"/>
+			<bind nodeset="/data/referrals/condition"/>
+			<bind nodeset="/data/referrals/prior_treatments"/>
+			<bind nodeset="/data/referrals/medicine_taken" type="xsd:string" relevant="/data/referrals/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/dose" type="xsd:string" relevant="/data/referrals/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/date_taken" type="xsd:date" relevant="/data/referrals/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/prior_treat_admin" relevant="/data/referrals/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/other_prior_treatments" relevant="/data/referrals/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/other_medicine_taken" type="xsd:string" relevant="/data/referrals/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/other_dose" type="xsd:string" relevant="/data/referrals/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/other_date_taken" type="xsd:date" relevant="/data/referrals/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/other_prior_treat_admin" relevant="/data/referrals/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/referrals/next_of_kin" type="xsd:int"/>
+			<bind nodeset="/data/referrals/referral_complete_message"/>
+			<bind nodeset="/data/form_complete"/>
+			<bind nodeset="/data/visit_type" calculate="if(/data/gave_birth = &quot;yes&quot;,  &quot;post_partum&quot;,  if(date(/data/prev_next_preg_visit) &lt; today(),   &quot;pregnancy&quot;,   if(date(/data/followup_date) &lt; today(),    &quot;followup&quot;,    &quot;pregnancy&quot;)))"/>
+			<bind nodeset="/data/next_visit_type" calculate="if(/data/gave_birth = &quot;yes&quot;,  &quot;post_partum&quot;,  if(date(/data/next_preg_visit) &lt; date(/data/followup_date),   &quot;pregnancy&quot;,   &quot;followup&quot;))"/>
+			<bind nodeset="/data/next_visit_date" calculate="if(/data/next_visit_type = &quot;post_partum&quot;,  today(),  if(/data/next_visit_type = &quot;pregnancy&quot;,   date(/data/next_preg_visit),   if(/data/followup_needed = 'yes',    date(/data/followup_date),    date(/data/next_preg_visit))))   "/>
+			<bind nodeset="/data/conception_date" calculate="date(/data/edd - 280)"/>
+			<bind nodeset="/data/prev_total_preg_visits"/>
+			<bind nodeset="/data/total_preg_visits" calculate="if(/data/visit_type=&quot;pregnancy&quot;,  coalesce(/data/prev_total_preg_visits,0) + 1,  coalesce(/data/prev_total_preg_visits,0))"/>
+			<bind nodeset="/data/prev_next_preg_visit"/>
+			<bind nodeset="/data/next_preg_visit" calculate="if(/data/total_preg_visits = 0,  date(/data/pv1_date),  if(/data/total_preg_visits = 1,   min(date(today() + 7), date(/data/pv2_date)),   if(/data/total_preg_visits = 2,    min(date(today() + 7), date(/data/pv3_date)),    if(/data/total_preg_visits = 3,     min(date(today() + 7), date(/data/pv4_date)),     min(date(today() + 7), /data/edd)))))"/>
+			<bind nodeset="/data/pv1_date" calculate="date(/data/conception_date + 28)"/>
+			<bind nodeset="/data/pv1_late_date" calculate="date(/data/conception_date + 112)"/>
+			<bind nodeset="/data/pv1_actual_date" calculate="if(/data/visit_type = &quot;pregnancy&quot; and /data/total_preg_visits = 1, today(),&quot;&quot;)"/>
+			<bind nodeset="/data/pv2_date" calculate="date(/data/conception_date + 126)"/>
+			<bind nodeset="/data/pv2_late_date" calculate="date(/data/conception_date + 182)"/>
+			<bind nodeset="/data/pv2_actual_date" calculate="if(/data/visit_type = &quot;pregnancy&quot; and /data/total_preg_visits = 2, today(),&quot;&quot;)"/>
+			<bind nodeset="/data/pv3_date" calculate="date(/data/conception_date + 192)"/>
+			<bind nodeset="/data/pv3_late_date" calculate="date(/data/conception_date + 224)"/>
+			<bind nodeset="/data/pv3_actual_date" calculate="if(/data/visit_type = &quot;pregnancy&quot; and /data/total_preg_visits = 3, today(),&quot;&quot;)"/>
+			<bind nodeset="/data/pv4_date" calculate="date(/data/conception_date + 252)"/>
+			<bind nodeset="/data/pv4_late_date" calculate="date(/data/conception_date + 266)"/>
+			<bind nodeset="/data/pv4_actual_date" calculate="if(/data/visit_type = &quot;pregnancy&quot; and /data/total_preg_visits = 4, today(),&quot;&quot;)"/>
+			<bind nodeset="/data/prev_is_pregnant"/>
+			<bind nodeset="/data/prev_total_preg_checks"/>
+			<bind nodeset="/data/prev_total_pp_visits"/>
+			<bind nodeset="/data/time_of_death" relevant="1=2" calculate="coalesce(/data/deregister/time_of_death_child,/data/deregister/time_of_death_maternal)"/>
+			<bind nodeset="/data/prev_deworm"/>
+			<bind nodeset="/data/prev_hiv_test"/>
+			<bind nodeset="/data/prev_hiv_results"/>
+			<bind nodeset="/data/total_referrals" calculate="if(/data/create_referral=&quot;yes&quot;, coalesce(/data/prev_total_referrals,0) + 1, /data/prev_total_referrals)"/>
+			<bind nodeset="/data/prev_total_referrals"/>
+			<bind nodeset="/data/phu"/>
+			<bind nodeset="/data/reason_for_evacuation" calculate="if(/data/pregnancy_visit/danger_sign = 'yes', /data/pregnancy_visit/pregnant_danger_sign, /data/referrals/labor_danger_sign)"/>
+			<bind nodeset="/data/create_referral" calculate="if(/data/pregnancy_visit/danger_sign = 'yes', 'yes', 'no')"/>
+			<bind nodeset="/data/total_preg_checks" calculate="if(/data/visit_type=&quot;check&quot;, coalesce(/data/prev_total_preg_checks,1), /data/prev_total_preg_checks)"/>
+			<bind nodeset="/data/total_pp_visits" calculate="0"/>
+			<bind nodeset="/data/next_preg_check_date" calculate="if(/data/is_pregnant = 'no' and /data/pregnancy_visit/high_risk = 'no', date(today() + 180), date(today() + 90))"/>
+			<bind nodeset="/data/anc1_date" calculate="date(/data/conception_date + 84)"/>
+			<bind nodeset="/data/anc2_date" calculate="date(/data/conception_date + 168)"/>
+			<bind nodeset="/data/anc3_date" calculate="date(/data/conception_date + 224)"/>
+			<bind nodeset="/data/anc4_date" calculate="date(/data/conception_date + 252)"/>
+			<bind nodeset="/data/next_anc_date" calculate="if(/data/total_anc_visits &lt; 1, date(/data/anc1_date), if(/data/total_anc_visits &lt;  2, date(/data/anc2_date), if(/data/total_anc_visits &lt; 3, date(/data/anc3_date), if(/data/total_anc_visits &lt; 4, date(/data/anc4_date), ''))))"/>
+			<bind nodeset="/data/prev_total_anc_visits"/>
+			<bind nodeset="/data/total_anc_visits" calculate="/data/pregnancy_visit/number_ancs_attended_during_preg"/>
+			<bind nodeset="/data/mother_id"/>
+			<bind nodeset="/data/date_of_visit" calculate="today()"/>
+			<bind nodeset="/data/still_alive" calculate="'yes'"/>
+			<bind nodeset="/data/referral_id" calculate="concat(/data/mother_id,'-',/data/total_referrals)" required="true()"/>
+			<bind nodeset="/data/prev_edd"/>
+			<bind nodeset="/data/followup_date" calculate="if(/data/anc_followup_needed = 'yes', date(today() + 14), date(today() + 30))"/>
+			<bind nodeset="/data/followup_type"/>
+			<bind nodeset="/data/followup_needed" calculate="if(/data/anc_followup_needed = 'yes'  or  /data/pregnancy_visit/iron_supp = 'no'  or  /data/pregnancy_visit/net = 'no'  or  /data/pregnancy_visit/eat_less = 'same'  or  /data/pregnancy_visit/eat_less = 'less',  'yes','no')"/>
+			<bind nodeset="/data/prev_first_anc_16_weeks"/>
+			<bind nodeset="/data/anc_followup_needed" calculate="if(today() - /data/conception_date &gt; 84 and /data/total_anc_visits &lt; 1,  'yes',  if(today() - /data/conception_date &gt; 168 and /data/total_anc_visits &lt; 2,   'yes',   if(today() - /data/conception_date &gt; 224 and /data/total_anc_visits &lt; 3,    'yes',    if(today() - /data/conception_date &gt; 252 and /data/total_anc_visits &lt; 4,     'yes',     'no'))))"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="debug_mode-label">
+						<value>Debug Mode?</value>
+						<value form="audio">jr://file/commcare/audio/data/chirp.mp3</value>
+					</text>
+					<text id="debug_mode-no-label">
+						<value>No</value>
+					</text>
+					<text id="debug_mode-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="mother_id_label-label">
+						<value>Mother ID is <output value="/data/mother_id"/></value>
+						<value form="audio">jr://file/commcare/audio/data/mother_id_label.mp3</value>
+					</text>
+					<text id="mother_name-label">
+						<value>Name</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_name.mp3</value>
+					</text>
+					<text id="mother_phone_number-label">
+						<value>Phone Number</value>
+						<value form="image">jr://file/commcare/image/data/phone.png</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_phone_number.mp3</value>
+					</text>
+					<text id="deregister_message-label">
+						<value>Please close this form and open the "Deregister Mother"</value>
+						<value form="image">jr://file/commcare/image/data/close_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/deregister_message.mp3</value>
+						<value form="video">jr://file/commcare/audio/data/chirp.mp3</value>
+					</text>
+					<text id="is_pregnant-label">
+						<value>Is pregnant?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant.png</value>
+						<value form="audio">jr://file/commcare/audio/data/is_pregnant.mp3</value>
+					</text>
+					<text id="is_pregnant-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="is_pregnant-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="is_married-label">
+						<value>Is married?</value>
+						<value form="image">jr://file/commcare/image/data/is_married.png</value>
+						<value form="audio">jr://file/commcare/audio/data/is_married.mp3</value>
+					</text>
+					<text id="is_married-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="is_married-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="using_fp-label">
+						<value>Using family planning method?</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+						<value form="audio">jr://file/commcare/audio/data/using_fp.mp3</value>
+					</text>
+					<text id="using_fp-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="using_fp-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="fp_method-label">
+						<value>Which method?</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+						<value form="audio">jr://file/commcare/audio/data/fp_method.mp3</value>
+					</text>
+					<text id="fp_mehtod-condom-label">
+						<value>Condom</value>
+						<value form="image">jr://file/commcare/image/data/condom.png</value>
+					</text>
+					<text id="fp_mehtod-iud-label">
+						<value>IUD</value>
+						<value form="image">jr://file/commcare/image/data/iud.png</value>
+					</text>
+					<text id="fp_mehtod-pill-label">
+						<value>Contraceptive pill</value>
+						<value form="image">jr://file/commcare/image/data/pill.png</value>
+					</text>
+					<text id="fp_mehtod-depo_provera-label">
+						<value>Depo-provera injection or implant</value>
+						<value form="image">jr://file/commcare/image/data/depo.png</value>
+					</text>
+					<text id="fp_mehtod-permanent-label">
+						<value>Permanent method (vasectomy / ligation)</value>
+					</text>
+					<text id="gave_birth-label">
+						<value>Gave birth?</value>
+						<value form="audio">jr://file/commcare/audio/data/gave_birth.mp3</value>
+					</text>
+					<text id="gave_birth-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="gave_birth-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="message_open_pp_form-label">
+						<value>Please use the Post-Partum form.</value>
+						<value form="image">jr://file/commcare/image/data/postpartum_visit_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/message_open_pp_form.mp3</value>
+					</text>
+					<text id="experience_miscarriage-label">
+						<value>Did the mother experience miscarriage or abortion since the last visit?</value>
+						<value form="audio">jr://file/commcare/audio/data/experience_miscarriage.mp3</value>
+					</text>
+					<text id="experience_miscarriage-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="experience_miscarriage-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="message_open_pp_form-1-label">
+						<value>Please use the Post-Partum form.</value>
+					</text>
+					<text id="edd_message-label">
+						<value>The delivery date is <output value="format-date(/data/prev_edd, '%e/%n/%y')"/>. Would you like to change it?</value>
+						<value form="audio">jr://file/commcare/audio/data/edd_message.mp3</value>
+					</text>
+					<text id="edd_message-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="edd_message-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="edd-label">
+						<value>Expected Delivery Date</value>
+						<value form="image">jr://file/commcare/image/data/edd.png</value>
+						<value form="audio">jr://file/commcare/audio/data/edd.mp3</value>
+					</text>
+					<text id="pregnancy_visit-label">
+						<value>Pregnancy Visit Questions</value>
+						<value form="audio">jr://file/commcare/audio/data/pregnancy_visit.mp3</value>
+					</text>
+					<text id="lifetime_pregnancies-label">
+						<value>Number of lifetime pregnancies</value>
+						<value form="image">jr://file/commcare/image/data/lifetime_pregnancies.png</value>
+						<value form="audio">jr://file/commcare/audio/data/lifetime_pregnancies.mp3</value>
+					</text>
+					<text id="living_children-label">
+						<value>Number of living children</value>
+						<value form="image">jr://file/commcare/image/data/living_children.png</value>
+						<value form="audio">jr://file/commcare/audio/data/living_children.mp3</value>
+					</text>
+					<text id="give_birth_prev-label">
+						<value>Where did you give birth previously?</value>
+						<value form="audio">jr://file/commcare/audio/data/give_birth_prev.mp3</value>
+					</text>
+					<text id="give_birth_prev-home-label">
+						<value>at  home</value>
+						<value form="image">jr://file/commcare/image/data/born_at_home.png</value>
+					</text>
+					<text id="give_birth_prev-health_centre-label">
+						<value>health centre</value>
+						<value form="image">jr://file/commcare/image/data/born_at_health_centre.png</value>
+					</text>
+					<text id="give_birth_prev-hospital-label">
+						<value>in hospital</value>
+					</text>
+					<text id="give_birth_prev-other-label">
+						<value>other</value>
+					</text>
+					<text id="high_risk-label">
+						<value>Have you been told this is a high-risk pregnancy?</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/high_risk.mp3</value>
+					</text>
+					<text id="high_risk-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="high_risk-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="high_risk-dont_know-label">
+						<value>Don't know</value>
+					</text>
+					<text id="number_ancs_attended_during_preg-label">
+						<value>How many ANCs have been attended during this pregnancy</value>
+						<value form="image">jr://file/commcare/image/data/anc_visits.png</value>
+						<value form="audio">jr://file/commcare/audio/data/number_ancs_attended_during_preg.mp3</value>
+					</text>
+					<text id="number_ancs_attended-0-label">
+						<value>0</value>
+					</text>
+					<text id="number_ancs_attended-1-label">
+						<value>1</value>
+					</text>
+					<text id="number_ancs_attended-2-label">
+						<value>2</value>
+					</text>
+					<text id="number_ancs_attended-3-label">
+						<value>3</value>
+					</text>
+					<text id="number_ancs_attended-4-label">
+						<value>4</value>
+					</text>
+					<text id="number_ancs_attended-5-label">
+						<value>5</value>
+					</text>
+					<text id="first_anc_16_weeks-label">
+						<value>Attend your first ANC before 16 weeks of pregnancy?</value>
+						<value form="image">jr://file/commcare/image/data/anc_1.png</value>
+						<value form="audio">jr://file/commcare/audio/data/first_anc_16_weeks.mp3</value>
+					</text>
+					<text id="first_anc_16_weeks-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="first_anc_16_weeks-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="first_anc_16_weeks-dont_konw-label">
+						<value>Don't know</value>
+					</text>
+					<text id="birth_plan-label">
+						<value>Completed birth plan?</value>
+						<value form="image">jr://file/commcare/image/data/birth_plan.png</value>
+						<value form="audio">jr://file/commcare/audio/data/birth_plan.mp3</value>
+					</text>
+					<text id="birth_plan-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="birth_plan-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="number_tetanus-label">
+						<value>Tetanus shots?</value>
+						<value form="image">jr://file/commcare/image/data/tetanus.png</value>
+						<value form="audio">jr://file/commcare/audio/data/number_tetanus.mp3</value>
+					</text>
+					<text id="number_tetanus-0-label">
+						<value>0</value>
+					</text>
+					<text id="number_tetanus-tt1-label">
+						<value>TT1</value>
+					</text>
+					<text id="number_tetanus-tt2-label">
+						<value>TT2</value>
+					</text>
+					<text id="number_tetanus-tt3-label">
+						<value>TT3 or more</value>
+					</text>
+					<text id="number_tetanus-dont_know-label">
+						<value>Don't know</value>
+					</text>
+					<text id="dewormed-label">
+						<value>De-wormed?</value>
+						<value form="image">jr://file/commcare/image/data/deworming_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dewormed.mp3</value>
+					</text>
+					<text id="dewormed-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="dewormed-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="dewormed-dont_know-label">
+						<value>Don't know</value>
+					</text>
+					<text id="hiv_test-label">
+						<value>HIV test?</value>
+						<value form="image">jr://file/commcare/image/data/hiv_test.png</value>
+						<value form="audio">jr://file/commcare/audio/data/hiv_test.mp3</value>
+					</text>
+					<text id="hiv_test-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="hiv_test-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="hiv_results-label">
+						<value>Receive results of the HIV test?</value>
+						<value form="image">jr://file/commcare/image/data/hiv_results.png</value>
+						<value form="audio">jr://file/commcare/audio/data/hiv_results.mp3</value>
+					</text>
+					<text id="hiv_test-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="hiv_test-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="iron_supp-label">
+						<value>Iron folate supplements every day this month?</value>
+						<value form="image">jr://file/commcare/image/data/iron_folate.png</value>
+						<value form="audio">jr://file/commcare/audio/data/iron_supp.mp3</value>
+					</text>
+					<text id="hiv_results-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="hiv_results-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="iptp-label">
+						<value>How many IPTp doses were you given during antenatal care?</value>
+						<value form="image">jr://file/commcare/image/data/ipt.png</value>
+						<value form="audio">jr://file/commcare/audio/data/iptp.mp3</value>
+					</text>
+					<text id="iptp-0-label">
+						<value>0</value>
+					</text>
+					<text id="iptp-1-label">
+						<value>1</value>
+					</text>
+					<text id="iptp-2-label">
+						<value>2</value>
+					</text>
+					<text id="iptp-3-label">
+						<value>3</value>
+					</text>
+					<text id="iptp-dont_know-label">
+						<value>don't know</value>
+					</text>
+					<text id="net-label">
+						<value>Did you sleep under an insecticide net every night in last month?</value>
+						<value form="image">jr://file/commcare/image/data/itn_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/net.mp3</value>
+					</text>
+					<text id="net-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="net-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="eat_less-label">
+						<value>Has the mother eaten less, more, or same as before getting pregnant</value>
+						<value form="image">jr://file/commcare/image/data/eat_more.png</value>
+						<value form="audio">jr://file/commcare/audio/data/eat_less.mp3</value>
+					</text>
+					<text id="eat_less-less-label">
+						<value>less</value>
+						<value form="image">jr://file/commcare/image/data/less.png</value>
+					</text>
+					<text id="eat_less-same-label">
+						<value>same</value>
+						<value form="image">jr://file/commcare/image/data/same.png</value>
+					</text>
+					<text id="eat_less-more-label">
+						<value>more</value>
+						<value form="image">jr://file/commcare/image/data/more.png</value>
+					</text>
+					<text id="father_present-label">
+						<value>Was the father or chosen supporter present during this visit</value>
+						<value form="image">jr://file/commcare/image/data/male_present.png</value>
+						<value form="audio">jr://file/commcare/audio/data/father_present.mp3</value>
+					</text>
+					<text id="father_present-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="father_present-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="danger_sign-label">
+						<value>Does the mother have a danger sign?</value>
+						<value form="image">jr://file/commcare/image/data/danger_sign_mother.png</value>
+						<value form="audio">jr://file/commcare/audio/data/danger_sign.mp3</value>
+					</text>
+					<text id="danger_sign-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="danger_sign-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="pregnant_danger_sign-label">
+						<value>What danger signs?</value>
+						<value form="image">jr://file/commcare/image/data/danger_sign_mother.png</value>
+						<value form="audio">jr://file/commcare/audio/data/pregnant_danger_sign.mp3</value>
+					</text>
+					<text id="pregnant_danger_sign-high_temp-label">
+						<value>High temperature / fever</value>
+						<value form="image">jr://file/commcare/image/data/thermometer.png</value>
+					</text>
+					<text id="pregnant_danger_sign-vaginal_bleeding-label">
+						<value>Vaginal Bleeding</value>
+						<value form="image">jr://file/commcare/image/data/vaginal_bleeding.png</value>
+					</text>
+					<text id="pregnant_danger_sign-vaginal_irritation-label">
+						<value>Vaginal irritation or discharge</value>
+					</text>
+					<text id="pregnant_danger_sign-swelling-label">
+						<value>Swelling</value>
+						<value form="image">jr://file/commcare/image/data/hand_feet.png</value>
+					</text>
+					<text id="pregnant_danger_sign-pain_in_abdomen-label">
+						<value>Abdomen pain</value>
+						<value form="image">jr://file/commcare/image/data/pain_lower_abdomen.png</value>
+					</text>
+					<text id="pregnant_danger_sign-headache-label">
+						<value>Severe Headache</value>
+						<value form="image">jr://file/commcare/image/data/severe_headache.png</value>
+					</text>
+					<text id="pregnant_danger_sign-fainting-label">
+						<value>Fainting, dizziness and severe fatigue</value>
+						<value form="image">jr://file/commcare/image/data/dizzy.png</value>
+					</text>
+					<text id="pregnant_danger_sign-no_movement-label">
+						<value>No movement from baby in 24 hours</value>
+						<value form="image">jr://file/commcare/image/data/no_movement.png</value>
+					</text>
+					<text id="pregnant_danger_sign-other-label">
+						<value>Other</value>
+					</text>
+					<text id="deregister-label">
+						<value>Deregistration Visit Questions</value>
+					</text>
+					<text id="dereg_message-label">
+						<value>This woman will be discharged.  Please answer the following questions about discharge.</value>
+						<value form="audio">jr://file/commcare/audio/data/dereg_message.mp3</value>
+					</text>
+					<text id="reason_for_closure-label">
+						<value>Reason for closure</value>
+					</text>
+					<text id="reason_for_closure-death-label">
+						<value>Death</value>
+						<value form="image">jr://file/commcare/image/data/death.png</value>
+					</text>
+					<text id="reason_for_closure-change_of_location-label">
+						<value>Change of household location</value>
+					</text>
+					<text id="reason_for_closure-does_not_want_to_participate-label">
+						<value>Does not want to participate</value>
+					</text>
+					<text id="reason_for_closure-end_of_pregnancy-label">
+						<value>End of Pregnancy</value>
+					</text>
+					<text id="reason_for_closure-not_pregnant-label">
+						<value>Not Pregnant</value>
+					</text>
+					<text id="date_of_death-label">
+						<value>Date of death</value>
+					</text>
+					<text id="type_of_death-label">
+						<value>Type of death</value>
+					</text>
+					<text id="type_of_death-newborn_death-label">
+						<value>Newborn death (0 - 28d)</value>
+					</text>
+					<text id="type_of_death-infant-label">
+						<value>Infant Death (29d - 12m)</value>
+					</text>
+					<text id="type_of_death-child-label">
+						<value>Child Death (12m - 24m)</value>
+					</text>
+					<text id="type_of_death-maternal-label">
+						<value>Maternal Death (pregnancy to 45d post partum)</value>
+					</text>
+					<text id="place_of_death-label">
+						<value>Place of death</value>
+					</text>
+					<text id="place_of_death-home-label">
+						<value>Home</value>
+						<value form="image">jr://file/commcare/image/data/born_at_home.png</value>
+					</text>
+					<text id="place_of_death-health_centre-label">
+						<value>Health centre</value>
+					</text>
+					<text id="place_of_death-hospital-label">
+						<value>Hospital</value>
+					</text>
+					<text id="place_of_death-other-label">
+						<value>Other</value>
+					</text>
+					<text id="time_of_death_child-label">
+						<value>Time of death</value>
+						<value form="image">jr://file/commcare/image/data/calendar.png</value>
+					</text>
+					<text id="time_of_death-still_birth-label">
+						<value>Still birth</value>
+					</text>
+					<text id="time_of_death-early_neonatal-label">
+						<value>Early neonatal (0-7 days)</value>
+					</text>
+					<text id="time_of_death-late_neonatal-label">
+						<value>Late neonatal (7-28 days)</value>
+					</text>
+					<text id="time_of_death_maternal-label">
+						<value>Did death occur within 45 days of birth</value>
+					</text>
+					<text id="time_of_death_maternal-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="time_of_death_maternal-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="cause_of_death-label">
+						<value>Cause of death</value>
+					</text>
+					<text id="cause_of_death_mother-eclampsia-label">
+						<value>Eclampsia</value>
+					</text>
+					<text id="cause_of_death_mother-hypersensitive-label">
+						<value>Hypersensitive illness</value>
+					</text>
+					<text id="cause_of_death_mother-hemorrhage-label">
+						<value>Post-partum hemorrhage</value>
+					</text>
+					<text id="cause_of_death_mother-infection-label">
+						<value>Post-partum infection</value>
+					</text>
+					<text id="cause_of_death_mother-other-label">
+						<value>Other</value>
+					</text>
+					<text id="thank_you-label">
+						<value>Thank you. This patient has been deregistered.</value>
+					</text>
+					<text id="debug-label">
+						<value>DEBUG</value>
+					</text>
+					<text id="visit_type_note-label">
+						<value>DEBUG: visit_type is <output value="/data/visit_type"/></value>
+					</text>
+					<text id="visit_type_note-5-label">
+						<value>DEBUG: next_visit_type is <output value="/data/next_visit_type"/></value>
+					</text>
+					<text id="question502-label">
+						<value>DEBUG: next_visit_date is: <output value="format-date(/data/next_visit_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-1-label">
+						<value>DEBUG: conception_date is <output value="format-date(/data/conception_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-2-label">
+						<value>DEBUG: prev_total_preg_visits is <output value="/data/prev_total_preg_visits"/></value>
+					</text>
+					<text id="question502-3-label">
+						<value>DEBUG: total_preg_visits is <output value="/data/total_preg_visits"/></value>
+					</text>
+					<text id="question502-5-label">
+						<value>DEBUG: next_preg_visit is <output value="format-date(/data/next_preg_visit, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-13-label">
+						<value>DEBUG: followup_date is <output value="format-date(/data/followup_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-14-label">
+						<value>DEBUG: followup_type is <output value="/data/followup_type"/></value>
+					</text>
+					<text id="question502-14-1-label">
+						<value>DEBUG: followup_needed is <output value="/data/followup_needed"/></value>
+					</text>
+					<text id="question502-14-2-label">
+						<value>DEBUG: anc_followup_needed is <output value="/data/anc_followup_needed "/></value>
+					</text>
+					<text id="question502-4-label">
+						<value>DEBUG: prev_next_preg_visit is <output value="format-date(/data/prev_next_preg_visit, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-6-label">
+						<value>DEBUG: pv1_date is <output value="format-date(/data/pv1_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-7-label">
+						<value>DEBUG: pv1_late_date is <output value="format-date(/data/pv1_late_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-8-label">
+						<value>DEBUG: pv1_actual_date is <output value="format-date(/data/pv1_actual_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-9-label">
+						<value>DEBUG: pv2_date is <output value="format-date(/data/pv2_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-11-label">
+						<value>DEBUG: pv2_late_date is <output value="format-date(/data/pv2_late_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-12-label">
+						<value>DEBUG: pv2_actual_date is <output value="format-date(/data/pv2_actual_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-10-label">
+						<value>DEBUG: pv3_date is <output value="format-date(/data/pv3_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-11-1-label">
+						<value>DEBUG: pv3_late_date is <output value="format-date(/data/pv3_late_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-12-1-label">
+						<value>DEBUG: pv3_actual_date is <output value="format-date(/data/pv3_actual_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-10-1-label">
+						<value>DEBUG: pv4_date is <output value="format-date(/data/pv4_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-11-2-label">
+						<value>DEBUG: pv4_late_date is <output value="format-date(/data/pv4_late_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-12-2-label">
+						<value>DEBUG: pv4_actual_date is <output value="format-date(/data/pv4_actual_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="visit_type_note-4-label">
+						<value>DEBUG: total_pp_visits is <output value="/data/total_pp_visits"/></value>
+					</text>
+					<text id="visit_type_note-1-label">
+						<value>DEBUG: prev_total_referrals is <output value="/data/prev_total_referrals"/></value>
+					</text>
+					<text id="visit_type_note-2-label">
+						<value>DEBUG: total_referrals is <output value="/data/total_referrals "/></value>
+					</text>
+					<text id="visit_type_note-3-label">
+						<value>DEBUG: create_referral is <output value="/data/create_referral "/></value>
+					</text>
+					<text id="referrals-label">
+						<value>Referral</value>
+					</text>
+					<text id="referral_message-label">
+						<value>This woman has a danger sign and requires a referral. Please answer this referral information.</value>
+						<value form="image">jr://file/commcare/image/data/referral_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/referral_message.mp3</value>
+					</text>
+					<text id="referral_id_message-label">
+						<value>The referral ID is <output value="/data/referral_id"/></value>
+						<value form="audio">jr://file/commcare/audio/data/referral_id_message.mp3</value>
+					</text>
+					<text id="referring_location-label">
+						<value>Referring Location</value>
+						<value form="audio">jr://file/commcare/audio/data/referring_location.mp3</value>
+					</text>
+					<text id="referring_locatoin-village-label">
+						<value>MCHP</value>
+					</text>
+					<text id="referring_locatoin-health_centre-label">
+						<value>CHP</value>
+					</text>
+					<text id="referring_locatoin-health_post-label">
+						<value>CHC</value>
+					</text>
+					<text id="referring_location-hospital-label">
+						<value>Hospital</value>
+					</text>
+					<text id="type_of_patient-label2">
+						<value>Type of patient</value>
+						<value form="audio">jr://file/commcare/audio/data/type_of_patient.mp3</value>
+					</text>
+					<text id="type_of_patient-pregnant-label">
+						<value>Pregnant</value>
+					</text>
+					<text id="type_of_patient-labor-label">
+						<value>Woman in labor</value>
+					</text>
+					<text id="labor_danger_sign-label">
+						<value>Which danger signs?</value>
+						<value form="audio">jr://file/commcare/audio/data/labor_danger_sign.mp3</value>
+					</text>
+					<text id="labor_danger_sign-excessive_bleeding-label">
+						<value>Excessive bleeding</value>
+					</text>
+					<text id="labor_danger_sign-fever-label">
+						<value>Fever and chills</value>
+					</text>
+					<text id="labor_danger_sign-loss_consciousness-label">
+						<value>Fits or loss of consciousness</value>
+					</text>
+					<text id="labor_danger_sign-dark_liquid-label">
+						<value>Dark liquid expelled from womb</value>
+					</text>
+					<text id="labor_danger_sign-prolonged_labor-label">
+						<value>Prolonged labor / birth delay (12 hours or more)</value>
+						<value form="image">jr://file/commcare/image/data/prolonged_labor.png</value>
+					</text>
+					<text id="labor_danger_sign-water_break-label">
+						<value>Water breaks without labor commencing</value>
+					</text>
+					<text id="labor_danger_sign-placenta-label">
+						<value>Placenta is not delivered or incomplete</value>
+					</text>
+					<text id="date_symptoms-label">
+						<value>Date of first symptoms</value>
+						<value form="audio">jr://file/commcare/audio/data/date_symptoms.mp3</value>
+					</text>
+					<text id="hours_first_symptoms-label">
+						<value>How many  hours since mother first noticed symptoms?</value>
+						<value form="audio">jr://file/commcare/audio/data/hours_first_symptoms.mp3</value>
+					</text>
+					<text id="hours_first_symptoms-12-label">
+						<value>less than 12 hours</value>
+					</text>
+					<text id="hours_first_symptoms-24-label">
+						<value>less than 24 hours</value>
+					</text>
+					<text id="hours_first_symptoms-48-label">
+						<value>less than 48</value>
+					</text>
+					<text id="hours_first_symptoms-48_plus-label">
+						<value>more than 48</value>
+					</text>
+					<text id="condition-label">
+						<value>Condition upon departure</value>
+						<value form="audio">jr://file/commcare/audio/data/condition.mp3</value>
+					</text>
+					<text id="condition-normal-label">
+						<value>Normal</value>
+					</text>
+					<text id="condition-moderate-label">
+						<value>Moderate</value>
+					</text>
+					<text id="condition-severe-label">
+						<value>Severe</value>
+					</text>
+					<text id="condition-critical-label">
+						<value>Critical</value>
+					</text>
+					<text id="prior_treatments-label">
+						<value>Prior treatments?</value>
+						<value form="audio">jr://file/commcare/audio/data/prior_treatments.mp3</value>
+					</text>
+					<text id="prior_treatments-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="prior_treatments-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="medicine_taken-label">
+						<value>Medicine taken</value>
+						<value form="audio">jr://file/commcare/audio/data/medicine_taken.mp3</value>
+					</text>
+					<text id="dose-label">
+						<value>Dose</value>
+						<value form="audio">jr://file/commcare/audio/data/dose.mp3</value>
+					</text>
+					<text id="date_taken-label">
+						<value>Date</value>
+						<value form="audio">jr://file/commcare/audio/data/date_taken.mp3</value>
+					</text>
+					<text id="prior_treat_admin-label">
+						<value>Prior treatments administrator?</value>
+						<value form="audio">jr://file/commcare/audio/data/prior_treat_admin.mp3</value>
+					</text>
+					<text id="prior_treat_admin-phu-label">
+						<value>PHU worker</value>
+					</text>
+					<text id="prior_treat_admin-chw-label">
+						<value>CHW</value>
+					</text>
+					<text id="prior_treat_admin-pharmacy-label">
+						<value>Private pharmacy</value>
+					</text>
+					<text id="prior_treat_admin-supplier-label">
+						<value>Unofficial medical supplier</value>
+					</text>
+					<text id="prior_treat_admin-home_remedy-label">
+						<value>Home remedy</value>
+					</text>
+					<text id="prior_treat_admin-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_prior_treatments-label">
+						<value>Any other prior treatments?</value>
+						<value form="audio">jr://file/commcare/audio/data/other_prior_treatments.mp3</value>
+					</text>
+					<text id="prior_treatments-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="prior_treatments-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="other_medicine_taken-label">
+						<value>Medicine taken</value>
+						<value form="audio">jr://file/commcare/audio/data/medicine_taken.mp3</value>
+					</text>
+					<text id="other_dose-label">
+						<value>Dose</value>
+						<value form="audio">jr://file/commcare/audio/data/dose.mp3</value>
+					</text>
+					<text id="other_date_taken-label">
+						<value>Date</value>
+						<value form="audio">jr://file/commcare/audio/data/date_taken.mp3</value>
+					</text>
+					<text id="other_prior_treat_admin-label">
+						<value>Prior treatments administrator?</value>
+						<value form="audio">jr://file/commcare/audio/data/prior_treat_admin.mp3</value>
+					</text>
+					<text id="prior_treat_admin-1-phu-label">
+						<value>PHU worker</value>
+					</text>
+					<text id="prior_treat_admin-1-chw-label">
+						<value>CHW</value>
+					</text>
+					<text id="prior_treat_admin-1-pharmacy-label">
+						<value>Private pharmacy</value>
+					</text>
+					<text id="prior_treat_admin-1-supplier-label">
+						<value>Unofficial medical supplier</value>
+					</text>
+					<text id="prior_treat_admin-1-home_remedy-label">
+						<value>Home remedy</value>
+					</text>
+					<text id="prior_treat_admin-1-other-label">
+						<value>Other</value>
+					</text>
+					<text id="next_of_kin-label">
+						<value>Next of kin contact number?</value>
+						<value form="audio">jr://file/commcare/audio/data/next_of_kin.mp3</value>
+					</text>
+					<text id="referral_complete_message-label">
+						<value>This referral is complete. Referral Id is <output value="/data/referral_id"/>.  Please check back with patient in 48 hours.</value>
+						<value form="audio">jr://file/commcare/audio/data/referral_complete_message.mp3</value>
+					</text>
+					<text id="form_complete-label2">
+						<value>This form is complete. The next step is to submit your form.</value>
+					</text>
+				</translation>
+				<translation lang="men">
+					<text id="debug_mode-label">
+						<value>Debug Mode?</value>
+						<value form="audio">jr://file/commcare/audio/data/chirp.mp3</value>
+					</text>
+					<text id="debug_mode-no-label">
+						<value>aha</value>
+					</text>
+					<text id="debug_mode-yes-label">
+						<value>ohor</value>
+					</text>
+					<text id="mother_id_label-label">
+						<value>conyahin ji numbeh</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_id_label.mp3</value>
+					</text>
+					<text id="mother_name-label">
+						<value>Konya ji beyea?</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_name.mp3</value>
+					</text>
+					<text id="mother_phone_number-label">
+						<value>Bi fone numbae?</value>
+						<value form="image">jr://file/commcare/image/data/phone.png</value>
+						<value form="audio">jr://file/commcare/audio/data/mother_phone_number.mp3</value>
+					</text>
+					<text id="deregister_message-label">
+						<value>needed</value>
+						<value form="image">jr://file/commcare/image/data/close_case_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/deregister_message.mp3</value>
+						<value form="video">jr://file/commcare/audio/data/chirp.mp3</value>
+					</text>
+					<text id="is_pregnant-label">
+						<value>Bia kuihun?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant.png</value>
+						<value form="audio">jr://file/commcare/audio/data/is_pregnant.mp3</value>
+					</text>
+					<text id="is_pregnant-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="is_pregnant-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="is_married-label">
+						<value>Bia hini weh bu?</value>
+						<value form="image">jr://file/commcare/image/data/is_married.png</value>
+						<value form="audio">jr://file/commcare/audio/data/is_married.mp3</value>
+					</text>
+					<text id="is_married-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="is_married-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="using_fp-label">
+						<value>Ta loni kpanbi gbima kor ar ngoo?</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+						<value form="audio">jr://file/commcare/audio/data/using_fp.mp3</value>
+					</text>
+					<text id="using_fp-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="using_fp-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="fp_method-label">
+						<value>Kpanbi yea gboh ee loni ma?</value>
+						<value form="image">jr://file/commcare/image/data/family_planning.png</value>
+						<value form="audio">jr://file/commcare/audio/data/fp_method.mp3</value>
+					</text>
+					<text id="fp_mehtod-condom-label">
+						<value>sanyiki condomi mai ar usie</value>
+						<value form="image">jr://file/commcare/image/data/condom.png</value>
+					</text>
+					<text id="fp_mehtod-iud-label">
+						<value>captin ban mia ngi kpakihum or koili</value>
+						<value form="image">jr://file/commcare/image/data/iud.png</value>
+					</text>
+					<text id="fp_mehtod-pill-label">
+						<value>halie mia ar kpoi</value>
+						<value form="image">jr://file/commcare/image/data/pill.png</value>
+					</text>
+					<text id="fp_mehtod-depo_provera-label">
+						<value>mboi mia ar bumbu</value>
+						<value form="image">jr://file/commcare/image/data/depo.png</value>
+					</text>
+					<text id="fp_mehtod-permanent-label">
+						<value>ngi lolay bolay mia tee poteaa</value>
+					</text>
+					<text id="gave_birth-label">
+						<value>E ndo lenga?</value>
+						<value form="audio">jr://file/commcare/audio/data/gave_birth.mp3</value>
+					</text>
+					<text id="gave_birth-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="gave_birth-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="message_open_pp_form-label">
+						<value>or kuima gorleh</value>
+						<value form="image">jr://file/commcare/image/data/postpartum_visit_large.png</value>
+						<value form="audio">jr://file/commcare/audio/data/message_open_pp_form.mp3</value>
+					</text>
+					<text id="experience_miscarriage-label">
+						<value>Bi ko nyani jua sa ge ngi gboa wu gama?</value>
+						<value form="audio">jr://file/commcare/audio/data/experience_miscarriage.mp3</value>
+					</text>
+					<text id="experience_miscarriage-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="experience_miscarriage-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="message_open_pp_form-1-label">
+						<value>or kuima gorleh</value>
+					</text>
+					<text id="edd_message-label">
+						<value>The delivery date is <output value="format-date(/data/prev_edd, '%e/%n/%y')"/>. Would you like to change it?</value>
+						<value form="audio">jr://file/commcare/audio/data/edd_message.mp3</value>
+					</text>
+					<text id="edd_message-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="edd_message-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="edd-label">
+						<value>Ngawi yea gboh bi geli ngo ba ndui ley?</value>
+						<value form="image">jr://file/commcare/image/data/edd.png</value>
+						<value form="audio">jr://file/commcare/audio/data/edd.mp3</value>
+					</text>
+					<text id="pregnancy_visit-label">
+						<value>Pregnanct Visit Questions</value>
+						<value form="audio">jr://file/commcare/audio/data/pregnancy_visit.mp3</value>
+					</text>
+					<text id="lifetime_pregnancies-label">
+						<value>Bi goah na hema loleh?</value>
+						<value form="image">jr://file/commcare/image/data/lifetime_pregnancies.png</value>
+						<value form="audio">jr://file/commcare/audio/data/lifetime_pregnancies.mp3</value>
+					</text>
+					<text id="living_children-label">
+						<value>Bi lenge na a ti ndevuihun, ti loleg?</value>
+						<value form="image">jr://file/commcare/image/data/living_children.png</value>
+						<value form="audio">jr://file/commcare/audio/data/living_children.mp3</value>
+					</text>
+					<text id="give_birth_prev-label">
+						<value>Me lor bibe gelema lui lani na?</value>
+						<value form="audio">jr://file/commcare/audio/data/give_birth_prev.mp3</value>
+					</text>
+					<text id="give_birth_prev-home-label">
+						<value>pie la</value>
+						<value form="image">jr://file/commcare/image/data/born_at_home.png</value>
+					</text>
+					<text id="give_birth_prev-health_centre-label">
+						<value>clinikihun</value>
+						<value form="image">jr://file/commcare/image/data/born_at_health_centre.png</value>
+					</text>
+					<text id="give_birth_prev-hospital-label">
+						<value>hospituihun</value>
+					</text>
+					<text id="give_birth_prev-other-label">
+						<value>me loho bi ndui laynina</value>
+					</text>
+					<text id="high_risk-label">
+						<value>Ji bi kwi ji Humbua hale bea ti dia bima ke bi guiji kpundeh lor ma?</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/high_risk.mp3</value>
+					</text>
+					<text id="high_risk-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="high_risk-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="high_risk-dont_know-label">
+						<value>ngi koh</value>
+					</text>
+					<text id="number_ancs_attended_during_preg-label">
+						<value>Hema loleh mia bihya kliniki hun nji bi kui ji hun?</value>
+						<value form="image">jr://file/commcare/image/data/anc_visits.png</value>
+						<value form="audio">jr://file/commcare/audio/data/number_ancs_attended_during_preg.mp3</value>
+					</text>
+					<text id="number_ancs_attended-0-label">
+						<value>be ya tatoni</value>
+					</text>
+					<text id="number_ancs_attended-1-label">
+						<value>bi ya hei ma yela</value>
+					</text>
+					<text id="number_ancs_attended-2-label">
+						<value>be ya heima feiley</value>
+					</text>
+					<text id="number_ancs_attended-3-label">
+						<value>be ya heima sawa </value>
+					</text>
+					<text id="number_ancs_attended-4-label">
+						<value>heima nani</value>
+					</text>
+					<text id="number_ancs_attended-5-label">
+						<value>heima lurlui</value>
+					</text>
+					<text id="first_anc_16_weeks-label">
+						<value>Beli lor Clinicki hun pen be gui ayeh ar ngawu naani?</value>
+						<value form="image">jr://file/commcare/image/data/anc_1.png</value>
+						<value form="audio">jr://file/commcare/audio/data/first_anc_16_weeks.mp3</value>
+					</text>
+					<text id="first_anc_16_weeks-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="first_anc_16_weeks-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="first_anc_16_weeks-dont_konw-label">
+						<value>ngi koh</value>
+					</text>
+					<text id="birth_plan-label">
+						<value>Bibi maa gbatia dulele jivah a &#8230; Navo we, ja heng hum we, ke gi ma heng ndo lava?</value>
+						<value form="image">jr://file/commcare/image/data/birth_plan.png</value>
+						<value form="audio">jr://file/commcare/audio/data/birth_plan.mp3</value>
+					</text>
+					<text id="birth_plan-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="birth_plan-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="number_tetanus-label">
+						<value>Tibi gonga a maclete djibi kujun? He ma loleh?</value>
+						<value form="image">jr://file/commcare/image/data/tetanus.png</value>
+						<value form="audio">jr://file/commcare/audio/data/number_tetanus.mp3</value>
+					</text>
+					<text id="number_tetanus-0-label">
+						<value>0</value>
+					</text>
+					<text id="number_tetanus-tt1-label">
+						<value>TT1</value>
+					</text>
+					<text id="number_tetanus-tt2-label">
+						<value>TT2</value>
+					</text>
+					<text id="number_tetanus-tt3-label">
+						<value>hema sawa or monugor</value>
+					</text>
+					<text id="number_tetanus-dont_know-label">
+						<value>ngi koh</value>
+					</text>
+					<text id="dewormed-label">
+						<value>Ti kpoli hali via buweh djibi kuijihun? </value>
+						<value form="image">jr://file/commcare/image/data/deworming_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/dewormed.mp3</value>
+					</text>
+					<text id="dewormed-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="dewormed-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="dewormed-dont_know-label">
+						<value>ngi koh</value>
+					</text>
+					<text id="hiv_test-label">
+						<value>Bi bondauteh teste wiah djibi kuijihun?</value>
+						<value form="image">jr://file/commcare/image/data/hiv_test.png</value>
+						<value form="audio">jr://file/commcare/audio/data/hiv_test.mp3</value>
+					</text>
+					<text id="hiv_test-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="hiv_test-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="hiv_results-label">
+						<value>Ti resulti ve lo buweh? (ba hungeh angeh gbo resulti leh)?</value>
+						<value form="image">jr://file/commcare/image/data/hiv_results.png</value>
+						<value form="audio">jr://file/commcare/audio/data/hiv_results.mp3</value>
+					</text>
+					<text id="hiv_test-1-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="hiv_test-1-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="iron_supp-label">
+						<value>Be ah ngamahali na tifia boweh clinickihun gboeh ma fo gbi?</value>
+						<value form="image">jr://file/commcare/image/data/iron_folate.png</value>
+						<value form="audio">jr://file/commcare/audio/data/iron_supp.mp3</value>
+					</text>
+					<text id="hiv_results-1-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="hiv_results-1-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="iptp-label">
+						<value>Ti be ngoga ar malaria halie clinickihun?</value>
+						<value form="image">jr://file/commcare/image/data/ipt.png</value>
+						<value form="audio">jr://file/commcare/audio/data/iptp.mp3</value>
+					</text>
+					<text id="iptp-0-label">
+						<value>0</value>
+					</text>
+					<text id="iptp-1-label">
+						<value>1</value>
+					</text>
+					<text id="iptp-2-label">
+						<value>2</value>
+					</text>
+					<text id="iptp-3-label">
+						<value>3</value>
+					</text>
+					<text id="iptp-dont_know-label">
+						<value>ngi koh</value>
+					</text>
+					<text id="net-label">
+						<value>Be yee lo tenti bu gbi di gbi ha ngawina gboya hun?</value>
+						<value form="image">jr://file/commcare/image/data/itn_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/net.mp3</value>
+					</text>
+					<text id="net-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="net-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="eat_less-label">
+						<value>Be a na mehe mema djibi kujun i le wati nama big gbama gor? </value>
+						<value form="image">jr://file/commcare/image/data/eat_more.png</value>
+						<value form="audio">jr://file/commcare/audio/data/eat_less.mp3</value>
+					</text>
+					<text id="eat_less-less-label">
+						<value>be mehe meley mahun yeingor</value>
+						<value form="image">jr://file/commcare/image/data/less.png</value>
+					</text>
+					<text id="eat_less-same-label">
+						<value>be mehe meley e leh ni taio e yeini</value>
+						<value form="image">jr://file/commcare/image/data/same.png</value>
+					</text>
+					<text id="eat_less-more-label">
+						<value>be mehe meley matuah</value>
+						<value form="image">jr://file/commcare/image/data/more.png</value>
+					</text>
+					<text id="father_present-label">
+						<value>Ji CHW awa wogama bihini aye lona ji ayeh yepema wogama? </value>
+						<value form="image">jr://file/commcare/image/data/male_present.png</value>
+						<value form="audio">jr://file/commcare/audio/data/father_present.mp3</value>
+					</text>
+					<text id="father_present-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="father_present-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="danger_sign-label">
+						<value>Bi sawula nyamu gbi lua bema Ehijay  wati nama ngi wu longa?</value>
+						<value form="image">jr://file/commcare/image/data/danger_sign_mother.png</value>
+						<value form="audio">jr://file/commcare/audio/data/danger_sign.mp3</value>
+					</text>
+					<text id="danger_sign-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="danger_sign-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="pregnant_danger_sign-label">
+						<value>Bie sawula nyamu gbi loa gibi kuijihum sa nyiki?</value>
+						<value form="image">jr://file/commcare/image/data/danger_sign_mother.png</value>
+						<value form="audio">jr://file/commcare/audio/data/pregnant_danger_sign.mp3</value>
+					</text>
+					<text id="pregnant_danger_sign-high_temp-label">
+						<value>koleh wu lor bima</value>
+						<value form="image">jr://file/commcare/image/data/thermometer.png</value>
+					</text>
+					<text id="pregnant_danger_sign-vaginal_bleeding-label">
+						<value>ba blidi or hola</value>
+						<value form="image">jr://file/commcare/image/data/vaginal_bleeding.png</value>
+					</text>
+					<text id="pregnant_danger_sign-vaginal_irritation-label">
+						<value>bema ar yange</value>
+					</text>
+					<text id="pregnant_danger_sign-swelling-label">
+						<value>ba vaefae</value>
+						<value form="image">jr://file/commcare/image/data/hand_feet.png</value>
+					</text>
+					<text id="pregnant_danger_sign-pain_in_abdomen-label">
+						<value>be ngombui ar gbaleh</value>
+						<value form="image">jr://file/commcare/image/data/pain_lower_abdomen.png</value>
+					</text>
+					<text id="pregnant_danger_sign-headache-label">
+						<value>be wei ar gbaleh waa</value>
+						<value form="image">jr://file/commcare/image/data/severe_headache.png</value>
+					</text>
+					<text id="pregnant_danger_sign-fainting-label">
+						<value>be levumi ar ley, or be weihun a mbaimbay</value>
+						<value form="image">jr://file/commcare/image/data/dizzy.png</value>
+					</text>
+					<text id="pregnant_danger_sign-no_movement-label">
+						<value>be gui eeh yar gissa han gaboi keh haa</value>
+						<value form="image">jr://file/commcare/image/data/no_movement.png</value>
+					</text>
+					<text id="pregnant_danger_sign-other-label">
+						<value>sawula nyamu weika gbi lor na</value>
+					</text>
+					<text id="deregister-label">
+						<value>Deregistration Questions</value>
+					</text>
+					<text id="dereg_message-label">
+						<value>Ti nyapui ji gbiama ha ti ngi yoyo pela fa ley moli gia gbembo hoi.</value>
+						<value form="audio">jr://file/commcare/audio/data/dereg_message.mp3</value>
+					</text>
+					<text id="reason_for_closure-label">
+						<value>Reason for closure</value>
+					</text>
+					<text id="reason_for_closure-death-label">
+						<value>Death</value>
+						<value form="image">jr://file/commcare/image/data/death.png</value>
+					</text>
+					<text id="reason_for_closure-change_of_location-label">
+						<value>Change of household location</value>
+					</text>
+					<text id="reason_for_closure-does_not_want_to_participate-label">
+						<value>Does not want to participate</value>
+					</text>
+					<text id="reason_for_closure-end_of_pregnancy-label">
+						<value>End of Pregnancy</value>
+					</text>
+					<text id="reason_for_closure-not_pregnant-label">
+						<value>Not Pregnant</value>
+					</text>
+					<text id="date_of_death-label">
+						<value>Date of death</value>
+					</text>
+					<text id="type_of_death-label">
+						<value>Type of death</value>
+					</text>
+					<text id="type_of_death-newborn_death-label">
+						<value>Newborn death (0 - 28d)</value>
+					</text>
+					<text id="type_of_death-infant-label">
+						<value>Infant Death (29d - 12m)</value>
+					</text>
+					<text id="type_of_death-child-label">
+						<value>Child Death (12m - 24m)</value>
+					</text>
+					<text id="type_of_death-maternal-label">
+						<value>Maternal Death (pregnancy to 45d post partum)</value>
+					</text>
+					<text id="place_of_death-label">
+						<value>Place of death</value>
+					</text>
+					<text id="place_of_death-home-label">
+						<value>Home</value>
+						<value form="image">jr://file/commcare/image/data/born_at_home.png</value>
+					</text>
+					<text id="place_of_death-health_centre-label">
+						<value>Health centre</value>
+					</text>
+					<text id="place_of_death-hospital-label">
+						<value>Hospital</value>
+					</text>
+					<text id="place_of_death-other-label">
+						<value>Other</value>
+					</text>
+					<text id="time_of_death_child-label">
+						<value>Time of death</value>
+						<value form="image">jr://file/commcare/image/data/calendar.png</value>
+					</text>
+					<text id="time_of_death-still_birth-label">
+						<value>Still birth</value>
+					</text>
+					<text id="time_of_death-early_neonatal-label">
+						<value>Early neonatal (0-7 days)</value>
+					</text>
+					<text id="time_of_death-late_neonatal-label">
+						<value>Late neonatal (7-28 days)</value>
+					</text>
+					<text id="time_of_death_maternal-label">
+						<value>Did death occur within 45 days of birth</value>
+					</text>
+					<text id="time_of_death_maternal-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="time_of_death_maternal-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="cause_of_death-label">
+						<value>Cause of death</value>
+					</text>
+					<text id="cause_of_death_mother-eclampsia-label">
+						<value>Eclampsia</value>
+					</text>
+					<text id="cause_of_death_mother-hypersensitive-label">
+						<value>Hypersensitive illness</value>
+					</text>
+					<text id="cause_of_death_mother-hemorrhage-label">
+						<value>Post-partum hemorrhage</value>
+					</text>
+					<text id="cause_of_death_mother-infection-label">
+						<value>Post-partum infection</value>
+					</text>
+					<text id="cause_of_death_mother-other-label">
+						<value>Other</value>
+					</text>
+					<text id="thank_you-label">
+						<value>Thank you. This patient has been deregistered.</value>
+					</text>
+					<text id="debug-label">
+						<value>debug label</value>
+					</text>
+					<text id="visit_type_note-label">
+						<value>DEBUG: Visit type is <output value="/data/visit_type"/></value>
+					</text>
+					<text id="visit_type_note-5-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-label">
+						<value>DEBUG: Conception Date is: <output value="format-date(/data/conception_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="question502-1-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-2-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-3-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-5-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-13-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-14-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-14-1-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-14-2-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-4-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-6-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-7-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-8-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-9-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-11-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-12-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-10-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-11-1-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-12-1-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-10-1-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-11-2-label">
+						<value>debug</value>
+					</text>
+					<text id="question502-12-2-label">
+						<value>debug</value>
+					</text>
+					<text id="visit_type_note-4-label">
+						<value>DEBUG: total_pp_visits is <output value="/data/total_pp_visits"/></value>
+					</text>
+					<text id="visit_type_note-1-label">
+						<value>DEBUG: prev_total_referrals is <output value="/data/prev_total_referrals"/></value>
+					</text>
+					<text id="visit_type_note-2-label">
+						<value>DEBUG: total_referrals is <output value="/data/total_referrals "/></value>
+					</text>
+					<text id="visit_type_note-3-label">
+						<value>DEBUG: create_referral is <output value="/data/create_referral "/></value>
+					</text>
+					<text id="referrals-label">
+						<value>Referral</value>
+					</text>
+					<text id="referral_message-label">
+						<value>Nyapui ghi ,kugoi ti ngi yoyo clinikihun sawula nyamui gi va ngi menga</value>
+						<value form="image">jr://file/commcare/image/data/referral_pregnancy.png</value>
+						<value form="audio">jr://file/commcare/audio/data/referral_message.mp3</value>
+					</text>
+					<text id="referral_id_message-label">
+						<value>needed</value>
+						<value form="audio">jr://file/commcare/audio/data/referral_id_message.mp3</value>
+					</text>
+					<text id="referring_location-label">
+						<value>Milor  tingi yoyo mana?</value>
+						<value form="audio">jr://file/commcare/audio/data/referring_location.mp3</value>
+					</text>
+					<text id="referring_locatoin-village-label">
+						<value>Center la or hailey webu</value>
+					</text>
+					<text id="referring_locatoin-health_centre-label">
+						<value>Center la or hailey webu</value>
+					</text>
+					<text id="referring_locatoin-health_post-label">
+						<value>Center la or hailey webu</value>
+					</text>
+					<text id="referring_location-hospital-label">
+						<value>Hospituihun</value>
+					</text>
+					<text id="type_of_patient-label2">
+						<value>Himgbemoi ye gboh ti njoyoma?</value>
+						<value form="audio">jr://file/commcare/audio/data/type_of_patient.mp3</value>
+					</text>
+					<text id="type_of_patient-pregnant-label">
+						<value>nko nyahamia</value>
+					</text>
+					<text id="type_of_patient-labor-label">
+						<value>ndoley ngogba mai  ngi ma</value>
+					</text>
+					<text id="labor_danger_sign-label">
+						<value>Sawula nyamui gbo ngi hoa?</value>
+						<value form="audio">jr://file/commcare/audio/data/labor_danger_sign.mp3</value>
+					</text>
+					<text id="labor_danger_sign-excessive_bleeding-label">
+						<value>ngami mia teai ngi ma or aa hola</value>
+					</text>
+					<text id="labor_danger_sign-fever-label">
+						<value>korlay mia ar wu ngi ma</value>
+					</text>
+					<text id="labor_danger_sign-loss_consciousness-label">
+						<value>hyway ar ngi gula or eh yepeh</value>
+					</text>
+					<text id="labor_danger_sign-dark_liquid-label">
+						<value>nja nyamui ar gbua ngi ma</value>
+					</text>
+					<text id="labor_danger_sign-prolonged_labor-label">
+						<value>ee lembia ndolay kongbai hun  na tae ngo hawa pumahu fele ma</value>
+						<value form="image">jr://file/commcare/image/data/prolonged_labor.png</value>
+					</text>
+					<text id="labor_danger_sign-water_break-label">
+						<value>kpulu yea woi lor keh ngi goie ya gbaleh</value>
+					</text>
+					<text id="labor_danger_sign-placenta-label">
+						<value>ndowoma hine gba lor</value>
+					</text>
+					<text id="date_symptoms-label">
+						<value>Fulie yegbo ndoley sawulay geni ar ngiyae?</value>
+						<value form="audio">jr://file/commcare/audio/data/date_symptoms.mp3</value>
+					</text>
+					<text id="hours_first_symptoms-label">
+						<value>Hunye ngua gee sawulayji sia tee tato ga a gelah?</value>
+						<value form="audio">jr://file/commcare/audio/data/hours_first_symptoms.mp3</value>
+					</text>
+					<text id="hours_first_symptoms-12-label">
+						<value>ee ya nguni ar hawa pu mahun fele</value>
+					</text>
+					<text id="hours_first_symptoms-24-label">
+						<value>ee ya guni ar folo yeala</value>
+					</text>
+					<text id="hours_first_symptoms-48-label">
+						<value>ee ya guni ar nji sawa</value>
+					</text>
+					<text id="hours_first_symptoms-48_plus-label">
+						<value>or tae ngoh nji sawa ma</value>
+					</text>
+					<text id="condition-label">
+						<value>Ngi ngahuin yea yena ngi te lini ar ngeyae?</value>
+						<value form="audio">jr://file/commcare/audio/data/condition.mp3</value>
+					</text>
+					<text id="condition-normal-label">
+						<value>kayae eeyeh ngawor ma</value>
+					</text>
+					<text id="condition-moderate-label">
+						<value>kpaley yelor ngi ma kuloe</value>
+					</text>
+					<text id="condition-severe-label">
+						<value>kpaley gem beh ngo vuli ngi ma</value>
+					</text>
+					<text id="condition-critical-label">
+						<value>ngi hinda gbongor</value>
+					</text>
+					<text id="prior_treatments-label">
+						<value>Tee yeh lor ar ngi haley penta ya wa ar ngiea?</value>
+						<value form="audio">jr://file/commcare/audio/data/prior_treatments.mp3</value>
+					</text>
+					<text id="prior_treatments-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="prior_treatments-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="medicine_taken-label">
+						<value>Halie ye ngboh tee faenga ngueh?</value>
+						<value form="audio">jr://file/commcare/audio/data/medicine_taken.mp3</value>
+					</text>
+					<text id="dose-label">
+						<value>Halae loleh mia tee fea nguweh?</value>
+						<value form="audio">jr://file/commcare/audio/data/dose.mp3</value>
+					</text>
+					<text id="date_taken-label">
+						<value>Fulie ye gbehmia te fea nguweh?</value>
+						<value form="audio">jr://file/commcare/audio/data/date_taken.mp3</value>
+					</text>
+					<text id="prior_treat_admin-label">
+						<value>Yor halie na vae nguweh?</value>
+						<value form="audio">jr://file/commcare/audio/data/prior_treat_admin.mp3</value>
+					</text>
+					<text id="prior_treat_admin-phu-label">
+						<value>clinikihun nursie mia halie vae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-chw-label">
+						<value>CHW mai fae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-pharmacy-label">
+						<value>halae maje shopinghun mia tee fae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-supplier-label">
+						<value>ngia ta lay ar halie sia tia ma te fae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-home_remedy-label">
+						<value>pela mia te yeah ngi halay na</value>
+					</text>
+					<text id="prior_treat_admin-other-label">
+						<value>hinda waka ngbi</value>
+					</text>
+					<text id="other_prior_treatments-label">
+						<value>Tee halae hinda waka bgi way lor pen ta ya wa ar ngiae?</value>
+						<value form="audio">jr://file/commcare/audio/data/other_prior_treatments.mp3</value>
+					</text>
+					<text id="prior_treatments-1-no-label">
+						<value>aha</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="prior_treatments-1-yes-label">
+						<value>ohor</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="other_medicine_taken-label">
+						<value>Halie ye ngboh tee faenga ngueh?</value>
+						<value form="audio">jr://file/commcare/audio/data/medicine_taken.mp3</value>
+					</text>
+					<text id="other_dose-label">
+						<value>Halae loleh mia tee fea nguweh?</value>
+						<value form="audio">jr://file/commcare/audio/data/dose.mp3</value>
+					</text>
+					<text id="other_date_taken-label">
+						<value>Fulie ye gbehmia te fea nguweh?</value>
+						<value form="audio">jr://file/commcare/audio/data/date_taken.mp3</value>
+					</text>
+					<text id="other_prior_treat_admin-label">
+						<value>Yor halie na vae nguweh?</value>
+						<value form="audio">jr://file/commcare/audio/data/prior_treat_admin.mp3</value>
+					</text>
+					<text id="prior_treat_admin-1-phu-label">
+						<value>clinikihun nursie mia halie vae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-1-chw-label">
+						<value>CHW mai fae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-1-pharmacy-label">
+						<value>halae maje shopinghun mia tee fae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-1-supplier-label">
+						<value>ngia ta lay ar halie sia tia ma te fae ngi weh</value>
+					</text>
+					<text id="prior_treat_admin-1-home_remedy-label">
+						<value>pela mia te yeah ngi halay na</value>
+					</text>
+					<text id="prior_treat_admin-1-other-label">
+						<value>hinda waka ngbi</value>
+					</text>
+					<text id="next_of_kin-label">
+						<value>Yor ngi numu ley nawae ar loe ngi va?</value>
+						<value form="audio">jr://file/commcare/audio/data/next_of_kin.mp3</value>
+					</text>
+					<text id="referral_complete_message-label">
+						<value>Mu kpoya. Ba waa lor nji sawa lango woma.</value>
+						<value form="audio">jr://file/commcare/audio/data/referral_complete_message.mp3</value>
+					</text>
+					<text id="form_complete-label2">
+						<value>form is complete</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/edd" relevant="count(/data/edd) &gt; 0" calculate="/data/edd"/><bind nodeset="/data/case/update/total_preg_visits" relevant="count(/data/total_preg_visits) &gt; 0" calculate="/data/total_preg_visits"/><bind nodeset="/data/case/update/father_present" relevant="count(/data/pregnancy_visit/father_present) &gt; 0" calculate="/data/pregnancy_visit/father_present"/><bind nodeset="/data/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/case/update/next_visit_type" relevant="count(/data/next_visit_type) &gt; 0" calculate="/data/next_visit_type"/><bind nodeset="/data/case/update/pv2_date" relevant="count(/data/pv2_date) &gt; 0" calculate="/data/pv2_date"/><bind nodeset="/data/case/update/total_preg_checks" relevant="count(/data/total_preg_checks) &gt; 0" calculate="/data/total_preg_checks"/><bind nodeset="/data/case/update/anc4_date" relevant="count(/data/anc4_date) &gt; 0" calculate="/data/anc4_date"/><bind nodeset="/data/case/update/anc3_date" relevant="count(/data/anc3_date) &gt; 0" calculate="/data/anc3_date"/><bind nodeset="/data/case/update/mother_name" relevant="count(/data/mother_name) &gt; 0" calculate="/data/mother_name"/><bind nodeset="/data/case/update/visit_type" relevant="count(/data/visit_type) &gt; 0" calculate="/data/visit_type"/><bind nodeset="/data/case/update/dewormed" relevant="count(/data/pregnancy_visit/dewormed) &gt; 0" calculate="/data/pregnancy_visit/dewormed"/><bind nodeset="/data/case/update/anc1_date" relevant="count(/data/anc1_date) &gt; 0" calculate="/data/anc1_date"/><bind nodeset="/data/case/update/total_pp_visits" relevant="count(/data/total_pp_visits) &gt; 0" calculate="/data/total_pp_visits"/><bind nodeset="/data/case/update/anc2_date" relevant="count(/data/anc2_date) &gt; 0" calculate="/data/anc2_date"/><bind nodeset="/data/case/update/number_tetanus" relevant="count(/data/pregnancy_visit/number_tetanus) &gt; 0" calculate="/data/pregnancy_visit/number_tetanus"/><bind nodeset="/data/case/update/first_anc_16_weeks" relevant="count(/data/pregnancy_visit/first_anc_16_weeks) &gt; 0" calculate="/data/pregnancy_visit/first_anc_16_weeks"/><bind nodeset="/data/case/update/total_anc_visits" relevant="count(/data/pregnancy_visit/number_ancs_attended_during_preg) &gt; 0" calculate="/data/pregnancy_visit/number_ancs_attended_during_preg"/><bind nodeset="/data/case/update/is_married" relevant="count(/data/is_married) &gt; 0" calculate="/data/is_married"/><bind nodeset="/data/case/update/net" relevant="count(/data/pregnancy_visit/net) &gt; 0" calculate="/data/pregnancy_visit/net"/><bind nodeset="/data/case/update/next_preg_check_date" relevant="count(/data/next_preg_check_date) &gt; 0" calculate="/data/next_preg_check_date"/><bind nodeset="/data/case/update/eat_less" relevant="count(/data/pregnancy_visit/eat_less) &gt; 0" calculate="/data/pregnancy_visit/eat_less"/><bind nodeset="/data/case/update/next_visit_date" relevant="count(/data/next_visit_date) &gt; 0" calculate="/data/next_visit_date"/><bind nodeset="/data/case/update/conception_date" relevant="count(/data/conception_date) &gt; 0" calculate="/data/conception_date"/><bind nodeset="/data/case/update/gave_birth" relevant="count(/data/gave_birth) &gt; 0" calculate="/data/gave_birth"/><bind nodeset="/data/case/update/pv4_date" relevant="count(/data/pv4_date) &gt; 0" calculate="/data/pv4_date"/><bind nodeset="/data/case/update/pv1_date" relevant="count(/data/pv1_date) &gt; 0" calculate="/data/pv1_date"/><bind nodeset="/data/case/update/mother_phone_number" relevant="count(/data/mother_phone_number) &gt; 0" calculate="/data/mother_phone_number"/><bind nodeset="/data/case/update/date_of_visit" relevant="count(/data/date_of_visit) &gt; 0" calculate="/data/date_of_visit"/><bind nodeset="/data/case/update/experience_miscarriage" relevant="count(/data/experience_miscarriage) &gt; 0" calculate="/data/experience_miscarriage"/><bind nodeset="/data/case/update/pv3_date" relevant="count(/data/pv3_date) &gt; 0" calculate="/data/pv3_date"/><bind nodeset="/data/case/update/still_alive" relevant="count(/data/still_alive) &gt; 0" calculate="/data/still_alive"/><bind nodeset="/data/case/update/total_referrals" relevant="count(/data/total_referrals) &gt; 0" calculate="/data/total_referrals"/><bind nodeset="/data/case/update/cause_of_death" relevant="count(/data/deregister/cause_of_death) &gt; 0" calculate="/data/deregister/cause_of_death"/><bind nodeset="/data/case/update/is_pregnant" relevant="count(/data/is_pregnant) &gt; 0" calculate="/data/is_pregnant"/><bind nodeset="/data/case/update/hiv_test" relevant="count(/data/pregnancy_visit/hiv_test) &gt; 0" calculate="/data/pregnancy_visit/hiv_test"/><bind nodeset="/data/case/update/next_preg_visit" relevant="count(/data/next_preg_visit) &gt; 0" calculate="/data/next_preg_visit"/><bind nodeset="/data/case/update/iron_supp" relevant="count(/data/pregnancy_visit/iron_supp) &gt; 0" calculate="/data/pregnancy_visit/iron_supp"/><bind nodeset="/data/case/update/using_fp" relevant="count(/data/using_fp) &gt; 0" calculate="/data/using_fp"/><bind nodeset="/data/case/update/high_risk" relevant="count(/data/pregnancy_visit/high_risk) &gt; 0" calculate="/data/pregnancy_visit/high_risk"/><bind nodeset="/data/case/update/next_anc_date" relevant="count(/data/next_anc_date) &gt; 0" calculate="/data/next_anc_date"/><bind nodeset="/data/case/update/birth_plan" relevant="count(/data/pregnancy_visit/birth_plan) &gt; 0" calculate="/data/pregnancy_visit/birth_plan"/><bind nodeset="/data/case/update/create_referral" relevant="count(/data/create_referral) &gt; 0" calculate="/data/create_referral"/><bind nodeset="/data/case/update/danger_sign" relevant="count(/data/pregnancy_visit/danger_sign) &gt; 0" calculate="/data/pregnancy_visit/danger_sign"/><bind nodeset="/data/case/update/hiv_results" relevant="count(/data/pregnancy_visit/hiv_results) &gt; 0" calculate="/data/pregnancy_visit/hiv_results"/><setvalue ref="/data/gave_birth" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/gave_birth"/><setvalue ref="/data/prev_next_preg_visit" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_preg_visit"/><setvalue ref="/data/pregnancy_visit/dewormed" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_dewormed"/><setvalue ref="/data/pregnancy_visit/iron_supp" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/iron_supp"/><setvalue ref="/data/mother_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_id"/><setvalue ref="/data/pregnancy_visit/net" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/net"/><setvalue ref="/data/deregister/cause_of_death" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/cause_of_death"/><setvalue ref="/data/pv1_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pv1_date"/><setvalue ref="/data/pregnancy_visit/hiv_results" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_hiv_results"/><setvalue ref="/data/pregnancy_visit/number_ancs_attended_during_preg" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/total_anc_visits"/><setvalue ref="/data/date_of_visit" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/date_of_visit"/><setvalue ref="/data/pv2_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pv2_date"/><setvalue ref="/data/pregnancy_visit/lifetime_pregnancies" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/lifetime_pregnancies"/><setvalue ref="/data/prev_total_preg_visits" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/total_preg_visits"/><setvalue ref="/data/prev_total_referrals" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/total_referrals"/><setvalue ref="/data/next_anc_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_anc_date"/><setvalue ref="/data/mother_phone_number" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_phone_number"/><setvalue ref="/data/prev_total_preg_checks" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/total_preg_checks"/><setvalue ref="/data/is_pregnant" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/is_pregnant"/><setvalue ref="/data/prev_first_anc_16_weeks" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_anc_16_weeks"/><setvalue ref="/data/conception_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/conception_date"/><setvalue ref="/data/experience_miscarriage" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/experience_miscarriage"/><setvalue ref="/data/followup_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/followup_date"/><setvalue ref="/data/edd" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/edd"/><setvalue ref="/data/next_preg_check_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_preg_check_date"/><setvalue ref="/data/next_visit_type" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_visit_type"/><setvalue ref="/data/pregnancy_visit/eat_less" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/eat_less"/><setvalue ref="/data/pv4_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pv4_date"/><setvalue ref="/data/total_pp_visits" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_total_pp_visits"/><setvalue ref="/data/pregnancy_visit/danger_sign" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/danger_sign"/><setvalue ref="/data/pregnancy_visit/high_risk" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/high_risk"/><setvalue ref="/data/pv3_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pv3_date"/><setvalue ref="/data/mother_name" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_name"/><setvalue ref="/data/followup_needed" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/followup_needed"/><setvalue ref="/data/pregnancy_visit/hiv_test" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_hiv_test"/><setvalue ref="/data/next_preg_visit" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_preg_visit"/><setvalue ref="/data/total_preg_checks" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prev_total_preg_checks"/><setvalue ref="/data/next_visit_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_visit_date"/><setvalue ref="/data/prev_is_pregnant" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/is_pregnant"/><setvalue ref="/data/followup_type" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/followup_type"/><setvalue ref="/data/pregnancy_visit/give_birth_prev" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/give_birth_prev"/><setvalue ref="/data/total_anc_visits" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/total_anc_visits"/><setvalue ref="/data/prev_edd" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/edd"/><setvalue ref="/data/still_alive" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/still_alive"/><setvalue ref="/data/pregnancy_visit/living_children" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/living_children"/><setvalue ref="/data/visit_type" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/visit_type"/><bind nodeset="/data/subcase_0/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/subcase_0/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/subcase_0/case" relevant="/data/create_referral = 'yes'"/><setvalue ref="/data/subcase_0/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/subcase_0/case/create/case_name" calculate="/data/referral_id"/><bind nodeset="/data/subcase_0/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/subcase_0/case/update/next_of_kin" relevant="count(/data/referrals/next_of_kin) &gt; 0" calculate="/data/referrals/next_of_kin"/><bind nodeset="/data/subcase_0/case/update/type_of_patient" relevant="count(/data/referrals/type_of_patient) &gt; 0" calculate="/data/referrals/type_of_patient"/><bind nodeset="/data/subcase_0/case/update/date_taken" relevant="count(/data/referrals/date_taken) &gt; 0" calculate="/data/referrals/date_taken"/><bind nodeset="/data/subcase_0/case/update/other_prior_treatments" relevant="count(/data/referrals/other_prior_treatments) &gt; 0" calculate="/data/referrals/other_prior_treatments"/><bind nodeset="/data/subcase_0/case/update/referring_location" relevant="count(/data/referrals/referring_location) &gt; 0" calculate="/data/referrals/referring_location"/><bind nodeset="/data/subcase_0/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/subcase_0/case/update/prior_treatments" relevant="count(/data/referrals/prior_treatments) &gt; 0" calculate="/data/referrals/prior_treatments"/><bind nodeset="/data/subcase_0/case/update/medicine_taken" relevant="count(/data/referrals/medicine_taken) &gt; 0" calculate="/data/referrals/medicine_taken"/><bind nodeset="/data/subcase_0/case/update/patient_name" relevant="count(/data/mother_name) &gt; 0" calculate="/data/mother_name"/><bind nodeset="/data/subcase_0/case/update/prior_treat_admin" relevant="count(/data/referrals/prior_treat_admin) &gt; 0" calculate="/data/referrals/prior_treat_admin"/><bind nodeset="/data/subcase_0/case/update/date_symptoms" relevant="count(/data/referrals/date_symptoms) &gt; 0" calculate="/data/referrals/date_symptoms"/><bind nodeset="/data/subcase_0/case/update/referred_to" relevant="count(/data/phu) &gt; 0" calculate="/data/phu"/><bind nodeset="/data/subcase_0/case/update/hours_first_symptoms" relevant="count(/data/referrals/hours_first_symptoms) &gt; 0" calculate="/data/referrals/hours_first_symptoms"/><bind nodeset="/data/subcase_0/case/update/other_date_taken" relevant="count(/data/referrals/other_date_taken) &gt; 0" calculate="/data/referrals/other_date_taken"/><bind nodeset="/data/subcase_0/case/update/reason_for_evacuation" relevant="count(/data/reason_for_evacuation) &gt; 0" calculate="/data/reason_for_evacuation"/><bind nodeset="/data/subcase_0/case/update/other_medicine_taken" relevant="count(/data/referrals/other_medicine_taken) &gt; 0" calculate="/data/referrals/other_medicine_taken"/><bind nodeset="/data/subcase_0/case/update/dose" relevant="count(/data/referrals/dose) &gt; 0" calculate="/data/referrals/dose"/><bind nodeset="/data/subcase_0/case/update/other_dose" relevant="count(/data/referrals/other_dose) &gt; 0" calculate="/data/referrals/other_dose"/><bind nodeset="/data/subcase_0/case/update/other_prior_treat_admin" relevant="count(/data/referrals/other_prior_treat_admin) &gt; 0" calculate="/data/referrals/other_prior_treat_admin"/><bind nodeset="/data/subcase_0/case/update/condition" relevant="count(/data/referrals/condition) &gt; 0" calculate="/data/referrals/condition"/><bind nodeset="/data/subcase_0/case/update/referral_date" relevant="count(/data/date_of_visit) &gt; 0" calculate="/data/date_of_visit"/><bind nodeset="/data/subcase_0/case/index/parent" calculate="/data/case/@case_id"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/debug_mode">
+			<label ref="jr:itext('debug_mode-label')"/>
+			<item>
+				<label ref="jr:itext('debug_mode-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('debug_mode-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<trigger ref="/data/mother_id_label">
+			<label ref="jr:itext('mother_id_label-label')"/>
+		</trigger>
+		<input ref="/data/mother_name">
+			<label ref="jr:itext('mother_name-label')"/>
+		</input>
+		<input ref="/data/mother_phone_number">
+			<label ref="jr:itext('mother_phone_number-label')"/>
+		</input>
+		<trigger ref="/data/deregister_message">
+			<label ref="jr:itext('deregister_message-label')"/>
+		</trigger>
+		<select1 ref="/data/is_pregnant">
+			<label ref="jr:itext('is_pregnant-label')"/>
+			<item>
+				<label ref="jr:itext('is_pregnant-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('is_pregnant-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/is_married">
+			<label ref="jr:itext('is_married-label')"/>
+			<item>
+				<label ref="jr:itext('is_married-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('is_married-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/using_fp">
+			<label ref="jr:itext('using_fp-label')"/>
+			<item>
+				<label ref="jr:itext('using_fp-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('using_fp-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/fp_method">
+			<label ref="jr:itext('fp_method-label')"/>
+			<item>
+				<label ref="jr:itext('fp_mehtod-condom-label')"/>
+				<value>condom</value>
+			</item>
+			<item>
+				<label ref="jr:itext('fp_mehtod-iud-label')"/>
+				<value>iud</value>
+			</item>
+			<item>
+				<label ref="jr:itext('fp_mehtod-pill-label')"/>
+				<value>pill</value>
+			</item>
+			<item>
+				<label ref="jr:itext('fp_mehtod-depo_provera-label')"/>
+				<value>depo_provera</value>
+			</item>
+			<item>
+				<label ref="jr:itext('fp_mehtod-permanent-label')"/>
+				<value>permanent</value>
+			</item>
+		</select1>
+		<select1 ref="/data/gave_birth">
+			<label ref="jr:itext('gave_birth-label')"/>
+			<item>
+				<label ref="jr:itext('gave_birth-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('gave_birth-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<trigger ref="/data/message_open_pp_form">
+			<label ref="jr:itext('message_open_pp_form-label')"/>
+		</trigger>
+		<select1 ref="/data/experience_miscarriage">
+			<label ref="jr:itext('experience_miscarriage-label')"/>
+			<item>
+				<label ref="jr:itext('experience_miscarriage-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('experience_miscarriage-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<trigger ref="/data/message_open_pp_form-1">
+			<label ref="jr:itext('message_open_pp_form-1-label')"/>
+		</trigger>
+		<select1 ref="/data/edd_message">
+			<label ref="jr:itext('edd_message-label')"/>
+			<item>
+				<label ref="jr:itext('edd_message-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('edd_message-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<input ref="/data/edd">
+			<label ref="jr:itext('edd-label')"/>
+		</input>
+		<group ref="/data/pregnancy_visit">
+			<label ref="jr:itext('pregnancy_visit-label')"/>
+			<input ref="/data/pregnancy_visit/lifetime_pregnancies">
+				<label ref="jr:itext('lifetime_pregnancies-label')"/>
+			</input>
+			<input ref="/data/pregnancy_visit/living_children">
+				<label ref="jr:itext('living_children-label')"/>
+			</input>
+			<select ref="/data/pregnancy_visit/give_birth_prev">
+				<label ref="jr:itext('give_birth_prev-label')"/>
+				<item>
+					<label ref="jr:itext('give_birth_prev-home-label')"/>
+					<value>home</value>
+				</item>
+				<item>
+					<label ref="jr:itext('give_birth_prev-health_centre-label')"/>
+					<value>health_centre</value>
+				</item>
+				<item>
+					<label ref="jr:itext('give_birth_prev-hospital-label')"/>
+					<value>hospital</value>
+				</item>
+				<item>
+					<label ref="jr:itext('give_birth_prev-other-label')"/>
+					<value>other</value>
+				</item>
+			</select>
+			<select1 ref="/data/pregnancy_visit/high_risk">
+				<label ref="jr:itext('high_risk-label')"/>
+				<item>
+					<label ref="jr:itext('high_risk-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('high_risk-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('high_risk-dont_know-label')"/>
+					<value>dont_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/number_ancs_attended_during_preg">
+				<label ref="jr:itext('number_ancs_attended_during_preg-label')"/>
+				<item>
+					<label ref="jr:itext('number_ancs_attended-0-label')"/>
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_ancs_attended-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_ancs_attended-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_ancs_attended-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_ancs_attended-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_ancs_attended-5-label')"/>
+					<value>5</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/first_anc_16_weeks">
+				<label ref="jr:itext('first_anc_16_weeks-label')"/>
+				<item>
+					<label ref="jr:itext('first_anc_16_weeks-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('first_anc_16_weeks-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('first_anc_16_weeks-dont_konw-label')"/>
+					<value>dont_konw</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/birth_plan">
+				<label ref="jr:itext('birth_plan-label')"/>
+				<item>
+					<label ref="jr:itext('birth_plan-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('birth_plan-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/number_tetanus">
+				<label ref="jr:itext('number_tetanus-label')"/>
+				<item>
+					<label ref="jr:itext('number_tetanus-0-label')"/>
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_tetanus-tt1-label')"/>
+					<value>tt1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_tetanus-tt2-label')"/>
+					<value>tt2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_tetanus-tt3-label')"/>
+					<value>tt3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('number_tetanus-dont_know-label')"/>
+					<value>dont_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/dewormed">
+				<label ref="jr:itext('dewormed-label')"/>
+				<item>
+					<label ref="jr:itext('dewormed-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('dewormed-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('dewormed-dont_know-label')"/>
+					<value>dont_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/hiv_test">
+				<label ref="jr:itext('hiv_test-label')"/>
+				<item>
+					<label ref="jr:itext('hiv_test-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hiv_test-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/hiv_results">
+				<label ref="jr:itext('hiv_results-label')"/>
+				<item>
+					<label ref="jr:itext('hiv_test-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hiv_test-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/iron_supp">
+				<label ref="jr:itext('iron_supp-label')"/>
+				<item>
+					<label ref="jr:itext('hiv_results-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hiv_results-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/iptp">
+				<label ref="jr:itext('iptp-label')"/>
+				<item>
+					<label ref="jr:itext('iptp-0-label')"/>
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('iptp-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('iptp-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('iptp-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('iptp-dont_know-label')"/>
+					<value>dont_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/net">
+				<label ref="jr:itext('net-label')"/>
+				<item>
+					<label ref="jr:itext('net-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('net-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/eat_less">
+				<label ref="jr:itext('eat_less-label')"/>
+				<item>
+					<label ref="jr:itext('eat_less-less-label')"/>
+					<value>less</value>
+				</item>
+				<item>
+					<label ref="jr:itext('eat_less-same-label')"/>
+					<value>same</value>
+				</item>
+				<item>
+					<label ref="jr:itext('eat_less-more-label')"/>
+					<value>more</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/father_present">
+				<label ref="jr:itext('father_present-label')"/>
+				<item>
+					<label ref="jr:itext('father_present-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('father_present-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pregnancy_visit/danger_sign">
+				<label ref="jr:itext('danger_sign-label')"/>
+				<item>
+					<label ref="jr:itext('danger_sign-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_sign-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select ref="/data/pregnancy_visit/pregnant_danger_sign">
+				<label ref="jr:itext('pregnant_danger_sign-label')"/>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-high_temp-label')"/>
+					<value>high_temp</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-vaginal_bleeding-label')"/>
+					<value>vaginal_bleeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-vaginal_irritation-label')"/>
+					<value>vaginal_irritation</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-swelling-label')"/>
+					<value>swelling</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-pain_in_abdomen-label')"/>
+					<value>pain_in_abdomen</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-headache-label')"/>
+					<value>headache</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-fainting-label')"/>
+					<value>fainting</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-no_movement-label')"/>
+					<value>no_movement</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pregnant_danger_sign-other-label')"/>
+					<value>other</value>
+				</item>
+			</select>
+		</group>
+		<group ref="/data/deregister">
+			<label ref="jr:itext('deregister-label')"/>
+			<trigger ref="/data/deregister/dereg_message">
+				<label ref="jr:itext('dereg_message-label')"/>
+			</trigger>
+			<select ref="/data/deregister/reason_for_closure">
+				<label ref="jr:itext('reason_for_closure-label')"/>
+				<item>
+					<label ref="jr:itext('reason_for_closure-death-label')"/>
+					<value>death</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_for_closure-change_of_location-label')"/>
+					<value>change_of_location</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_for_closure-does_not_want_to_participate-label')"/>
+					<value>does_not_want_to_participate</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_for_closure-end_of_pregnancy-label')"/>
+					<value>end_of_pregnancy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_for_closure-not_pregnant-label')"/>
+					<value>not_pregnant</value>
+				</item>
+			</select>
+			<input ref="/data/deregister/date_of_death">
+				<label ref="jr:itext('date_of_death-label')"/>
+			</input>
+			<select ref="/data/deregister/type_of_death">
+				<label ref="jr:itext('type_of_death-label')"/>
+				<item>
+					<label ref="jr:itext('type_of_death-newborn_death-label')"/>
+					<value>newborn_death</value>
+				</item>
+				<item>
+					<label ref="jr:itext('type_of_death-infant-label')"/>
+					<value>infant</value>
+				</item>
+				<item>
+					<label ref="jr:itext('type_of_death-child-label')"/>
+					<value>child</value>
+				</item>
+				<item>
+					<label ref="jr:itext('type_of_death-maternal-label')"/>
+					<value>maternal</value>
+				</item>
+			</select>
+			<select1 ref="/data/deregister/place_of_death">
+				<label ref="jr:itext('place_of_death-label')"/>
+				<item>
+					<label ref="jr:itext('place_of_death-home-label')"/>
+					<value>home</value>
+				</item>
+				<item>
+					<label ref="jr:itext('place_of_death-health_centre-label')"/>
+					<value>health_centre</value>
+				</item>
+				<item>
+					<label ref="jr:itext('place_of_death-hospital-label')"/>
+					<value>hospital</value>
+				</item>
+				<item>
+					<label ref="jr:itext('place_of_death-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/deregister/time_of_death_child">
+				<label ref="jr:itext('time_of_death_child-label')"/>
+				<item>
+					<label ref="jr:itext('time_of_death-still_birth-label')"/>
+					<value>still_birth</value>
+				</item>
+				<item>
+					<label ref="jr:itext('time_of_death-early_neonatal-label')"/>
+					<value>early_neonatal</value>
+				</item>
+				<item>
+					<label ref="jr:itext('time_of_death-late_neonatal-label')"/>
+					<value>late_neonatal</value>
+				</item>
+			</select1>
+			<select1 ref="/data/deregister/time_of_death_maternal">
+				<label ref="jr:itext('time_of_death_maternal-label')"/>
+				<item>
+					<label ref="jr:itext('time_of_death_maternal-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('time_of_death_maternal-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<select1 ref="/data/deregister/cause_of_death">
+				<label ref="jr:itext('cause_of_death-label')"/>
+				<item>
+					<label ref="jr:itext('cause_of_death_mother-eclampsia-label')"/>
+					<value>eclampsia</value>
+				</item>
+				<item>
+					<label ref="jr:itext('cause_of_death_mother-hypersensitive-label')"/>
+					<value>hypersensitive</value>
+				</item>
+				<item>
+					<label ref="jr:itext('cause_of_death_mother-hemorrhage-label')"/>
+					<value>hemorrhage</value>
+				</item>
+				<item>
+					<label ref="jr:itext('cause_of_death_mother-infection-label')"/>
+					<value>infection</value>
+				</item>
+				<item>
+					<label ref="jr:itext('cause_of_death_mother-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<trigger ref="/data/deregister/thank_you">
+				<label ref="jr:itext('thank_you-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/debug">
+			<label ref="jr:itext('debug-label')"/>
+			<trigger ref="/data/debug/visit_type_note">
+				<label ref="jr:itext('visit_type_note-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/visit_type_note-5">
+				<label ref="jr:itext('visit_type_note-5-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502">
+				<label ref="jr:itext('question502-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-1">
+				<label ref="jr:itext('question502-1-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-2">
+				<label ref="jr:itext('question502-2-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-3">
+				<label ref="jr:itext('question502-3-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-5">
+				<label ref="jr:itext('question502-5-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-13">
+				<label ref="jr:itext('question502-13-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-14">
+				<label ref="jr:itext('question502-14-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-14-1">
+				<label ref="jr:itext('question502-14-1-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-14-2">
+				<label ref="jr:itext('question502-14-2-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-4">
+				<label ref="jr:itext('question502-4-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-6">
+				<label ref="jr:itext('question502-6-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-7">
+				<label ref="jr:itext('question502-7-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-8">
+				<label ref="jr:itext('question502-8-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-9">
+				<label ref="jr:itext('question502-9-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-11">
+				<label ref="jr:itext('question502-11-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-12">
+				<label ref="jr:itext('question502-12-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-10">
+				<label ref="jr:itext('question502-10-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-11-1">
+				<label ref="jr:itext('question502-11-1-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-12-1">
+				<label ref="jr:itext('question502-12-1-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-10-1">
+				<label ref="jr:itext('question502-10-1-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-11-2">
+				<label ref="jr:itext('question502-11-2-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/question502-12-2">
+				<label ref="jr:itext('question502-12-2-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/visit_type_note-4">
+				<label ref="jr:itext('visit_type_note-4-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/visit_type_note-1">
+				<label ref="jr:itext('visit_type_note-1-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/visit_type_note-2">
+				<label ref="jr:itext('visit_type_note-2-label')"/>
+			</trigger>
+			<trigger ref="/data/debug/visit_type_note-3">
+				<label ref="jr:itext('visit_type_note-3-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/referrals">
+			<label ref="jr:itext('referrals-label')"/>
+			<trigger ref="/data/referrals/referral_message">
+				<label ref="jr:itext('referral_message-label')"/>
+			</trigger>
+			<trigger ref="/data/referrals/referral_id_message">
+				<label ref="jr:itext('referral_id_message-label')"/>
+			</trigger>
+			<select1 ref="/data/referrals/referring_location">
+				<label ref="jr:itext('referring_location-label')"/>
+				<item>
+					<label ref="jr:itext('referring_locatoin-village-label')"/>
+					<value>mchp</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referring_locatoin-health_centre-label')"/>
+					<value>chp</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referring_locatoin-health_post-label')"/>
+					<value>chc</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referring_location-hospital-label')"/>
+					<value>hospital</value>
+				</item>
+			</select1>
+			<select1 ref="/data/referrals/type_of_patient">
+				<label ref="jr:itext('type_of_patient-label2')"/>
+				<item>
+					<label ref="jr:itext('type_of_patient-pregnant-label')"/>
+					<value>pregnant</value>
+				</item>
+				<item>
+					<label ref="jr:itext('type_of_patient-labor-label')"/>
+					<value>labor</value>
+				</item>
+			</select1>
+			<select ref="/data/referrals/labor_danger_sign">
+				<label ref="jr:itext('labor_danger_sign-label')"/>
+				<item>
+					<label ref="jr:itext('labor_danger_sign-excessive_bleeding-label')"/>
+					<value>excessive_bleeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labor_danger_sign-fever-label')"/>
+					<value>fever</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labor_danger_sign-loss_consciousness-label')"/>
+					<value>loss_consciousness</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labor_danger_sign-dark_liquid-label')"/>
+					<value>dark_liquid</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labor_danger_sign-prolonged_labor-label')"/>
+					<value>prolonged_labor</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labor_danger_sign-water_break-label')"/>
+					<value>water_break</value>
+				</item>
+				<item>
+					<label ref="jr:itext('labor_danger_sign-placenta-label')"/>
+					<value>placenta</value>
+				</item>
+			</select>
+			<input ref="/data/referrals/date_symptoms">
+				<label ref="jr:itext('date_symptoms-label')"/>
+			</input>
+			<select1 ref="/data/referrals/hours_first_symptoms">
+				<label ref="jr:itext('hours_first_symptoms-label')"/>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-12-label')"/>
+					<value>12</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-24-label')"/>
+					<value>24</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-48-label')"/>
+					<value>48</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-48_plus-label')"/>
+					<value>48_plus</value>
+				</item>
+			</select1>
+			<select1 ref="/data/referrals/condition">
+				<label ref="jr:itext('condition-label')"/>
+				<item>
+					<label ref="jr:itext('condition-normal-label')"/>
+					<value>normal</value>
+				</item>
+				<item>
+					<label ref="jr:itext('condition-moderate-label')"/>
+					<value>moderate</value>
+				</item>
+				<item>
+					<label ref="jr:itext('condition-severe-label')"/>
+					<value>severe</value>
+				</item>
+				<item>
+					<label ref="jr:itext('condition-critical-label')"/>
+					<value>critical</value>
+				</item>
+			</select1>
+			<select1 ref="/data/referrals/prior_treatments">
+				<label ref="jr:itext('prior_treatments-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treatments-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treatments-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<input ref="/data/referrals/medicine_taken">
+				<label ref="jr:itext('medicine_taken-label')"/>
+			</input>
+			<input ref="/data/referrals/dose">
+				<label ref="jr:itext('dose-label')"/>
+			</input>
+			<input ref="/data/referrals/date_taken">
+				<label ref="jr:itext('date_taken-label')"/>
+			</input>
+			<select1 ref="/data/referrals/prior_treat_admin">
+				<label ref="jr:itext('prior_treat_admin-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-phu-label')"/>
+					<value>phu</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-chw-label')"/>
+					<value>chw</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-pharmacy-label')"/>
+					<value>pharmacy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-supplier-label')"/>
+					<value>supplier</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-home_remedy-label')"/>
+					<value>home_remedy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/referrals/other_prior_treatments">
+				<label ref="jr:itext('other_prior_treatments-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treatments-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treatments-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<input ref="/data/referrals/other_medicine_taken">
+				<label ref="jr:itext('other_medicine_taken-label')"/>
+			</input>
+			<input ref="/data/referrals/other_dose">
+				<label ref="jr:itext('other_dose-label')"/>
+			</input>
+			<input ref="/data/referrals/other_date_taken">
+				<label ref="jr:itext('other_date_taken-label')"/>
+			</input>
+			<select1 ref="/data/referrals/other_prior_treat_admin">
+				<label ref="jr:itext('other_prior_treat_admin-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-phu-label')"/>
+					<value>phu</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-chw-label')"/>
+					<value>chw</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-pharmacy-label')"/>
+					<value>pharmacy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-supplier-label')"/>
+					<value>supplier</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-home_remedy-label')"/>
+					<value>home_remedy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<input ref="/data/referrals/next_of_kin">
+				<label ref="jr:itext('next_of_kin-label')"/>
+			</input>
+			<trigger ref="/data/referrals/referral_complete_message">
+				<label ref="jr:itext('referral_complete_message-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/form_complete">
+			<label ref="jr:itext('form_complete-label2')"/>
+		</trigger>
+	</h:body>
+</h:html>

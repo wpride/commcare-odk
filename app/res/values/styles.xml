@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="NotificationText">
+      <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="NotificationTitle">
+      <item name="android:textColor">#FFFFFF</item>
+      <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TopPane">
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    
+    <style name="MiddlePane">
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+    
+    <style name="MainSidePaneLeft">
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">15dp</item>
+    </style>
+    
+    <style name="MainSidePaneRight">
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+    
+    <style name="MainPane">
+        <item name="android:paddingRight">15dp</item>
+    </style>
+    
+    <style name="EntityItemTextView">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+    
+   <style name="EntityItemText" parent="@android:style/TextAppearance.Large">
+       
+   </style>
+   
+   <style name="VersionIdText">
+       <item name="android:textSize">10dp</item> 
+   </style>
+   
+   <style name = "WarningTextStyle">
+       <item name ="android:textStyle">bold</item>
+       <item name ="android:textColor">#FFFFFF</item>
+   </style>
+   
+   <dimen name="interactive_font_size">20sp</dimen>
+   
+   <color name="solid_black">#000</color>
+   <color name="light_grey">#D3D3D3</color>
+   <color name="dark_grey">#A3A3A3</color>
+   
+   <color name="blue_grad_end">#903867AD</color>
+   <color name="blue_grad_start">#806884AD</color>
+  
+   <color name="grey_grad_start">#80D3D3D3</color>
+   <color name="grey_grad_end">#A0D3D3D3</color>
+   
+   
+   <color name="border_grey">#20959699</color>
+   <color name="search_highlight">#FFE88F</color>
+   
+   <color name="title_border">#444444</color>
+   <color name="title_neutral_grad_end">#FFB3B3B3</color>
+   <color name="title_neutral_grad_start">#FFE4E4E4</color>
+  
+   <color name="title_case_grad_end">#FF3867AD</color>
+   <color name="title_case_grad_start">#FF6884AD</color>
+   
+   
+      
+   <style name="Animation" />
+   
+   <style name="Animation.ScreenAnimations">
+    <item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>
+    <item name="android:activityOpenExitAnimation">@anim/push_left_out</item>
+    <item name="android:activityCloseEnterAnimation">@anim/push_right_in</item>
+    <item name="android:activityCloseExitAnimation">@anim/push_right_out</item>
+   </style>
+   
+   <style name="ButtonBottom">
+       <item name="android:layout_marginLeft">10dp</item>
+       <item name="android:layout_marginRight">10dp</item>
+       <item name="android:layout_marginBottom">10dp</item>
+   </style>
+   
+   
+   
+      
+   <style name="TextInteractiveFreeFloating">
+       <item name="android:background">@drawable/info_bubble</item>
+       <item name="android:paddingTop">5dp</item>
+       <item name="android:paddingBottom">5dp</item>
+       <item name="android:layout_marginLeft">2dp</item>
+       <item name="android:paddingLeft">5dp</item>
+       <item name="android:paddingRight">5dp</item>
+       <item name="android:layout_marginRight">2dp</item>
+       <item name="android:gravity">center</item>
+   </style>
+   
+   
+   <style name="TextInteractive">
+       <item name="android:background">@drawable/bubble</item>
+       <item name="android:paddingTop">2dp</item>
+       <item name="android:paddingBottom">2dp</item>
+       <item name="android:layout_marginLeft">2dp</item>
+       <item name="android:paddingLeft">5dp</item>
+       <item name="android:paddingRight">5dp</item>
+       <item name="android:layout_marginRight">2dp</item>
+       <item name="android:gravity">center</item>
+   </style>
+   
+   <style name="TextInteractiveProblem">
+       <item name="android:background">@drawable/bubble_danger</item>
+       <item name="android:paddingTop">2dp</item>
+       <item name="android:paddingBottom">2dp</item>
+       <item name="android:layout_marginLeft">2dp</item>
+       <item name="android:paddingLeft">5dp</item>
+       <item name="android:paddingRight">5dp</item>
+       <item name="android:layout_marginRight">2dp</item>
+       <item name="android:gravity">center</item>
+       <item name ="android:textStyle">bold</item>
+       <item name ="android:textColor">@color/red</item>
+   </style>
+   
+</resources>

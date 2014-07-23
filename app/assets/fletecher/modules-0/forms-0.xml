@@ -1,0 +1,383 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Log an Incident</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/CEC4D2C0-B5F3-4ADE-A99C-2C46C8325783" uiVersion="1" version="103" name="Log an Incident">
+					<new_incident/>
+					<date/>
+					<incident_time/>
+					<what_type_of_incident/>
+					<crime_type/>
+					<crime_other-specify/>
+					<traffic_type/>
+					<traffic_other_specify/>
+					<urban_management_type/>
+					<urban_management_other_specify/>
+					<built_environment_type/>
+					<built_environment_other_specify/>
+					<number_people>1</number_people>
+					<people_involved jr:template="">
+						<who/>
+						<involved_other_specify/>
+					</people_involved>
+					<prev_status/>
+					<incident_date/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>incident</case_type></create><update><incident_date/><what_type_of_incident/><incident_time/><prev_status/><new_incident/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/new_incident" required="true()"/>
+			<bind nodeset="/data/date" type="xsd:date" required="true()"/>
+			<bind nodeset="/data/incident_time" type="xsd:time"/>
+			<bind nodeset="/data/what_type_of_incident" required="true()"/>
+			<bind nodeset="/data/crime_type" relevant="/data/what_type_of_incident = 'crime'"/>
+			<bind nodeset="/data/crime_other-specify" type="xsd:string" relevant="/data/crime_type = 'crime_other'"/>
+			<bind nodeset="/data/traffic_type" relevant="/data/what_type_of_incident = 'traffic'"/>
+			<bind nodeset="/data/traffic_other_specify" type="xsd:string" relevant="/data/traffic_type = 'traffic_other'"/>
+			<bind nodeset="/data/urban_management_type" relevant="/data/what_type_of_incident = 'urban_management'"/>
+			<bind nodeset="/data/urban_management_other_specify" type="xsd:string" relevant="/data/urban_management_type = 'urban_management_other'"/>
+			<bind nodeset="/data/built_environment_type" relevant="/data/what_type_of_incident = 'built_environment'"/>
+			<bind nodeset="/data/built_environment_other_specify" type="xsd:string" relevant="/data/built_environment_type = 'environmental_hazard'"/>
+			<bind nodeset="/data/number_people" type="xsd:int" constraint=". &gt;= 1 or . &lt; 5" required="true()"/>
+			<bind nodeset="/data/people_involved" required="false()"/>
+			<bind nodeset="/data/people_involved/who"/>
+			<bind nodeset="/data/people_involved/involved_other_specify" type="xsd:string" relevant="/data/people_involved/who = 'involved_other'"/>
+			<bind nodeset="/data/prev_status"/>
+			<bind nodeset="/data/incident_date"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="new_incident-label">
+						<value>New Incident?</value>
+					</text>
+					<text id="new_incident-incident_yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="new_incident-no-label">
+						<value>No</value>
+					</text>
+					<text id="date-label">
+						<value>Date of incident</value>
+					</text>
+					<text id="incident_time-label">
+						<value>Time of Incident</value>
+					</text>
+					<text id="what_type_of_incident-label">
+						<value>What type of incident is it?</value>
+					</text>
+					<text id="what_type_of_incident-crime-label">
+						<value>Crime</value>
+					</text>
+					<text id="what_type_of_incident-traffic-label">
+						<value>Traffic</value>
+					</text>
+					<text id="what_type_of_incident-urban_management-label">
+						<value>Urban Management</value>
+					</text>
+					<text id="what_type_of_incident-built_environment-label">
+						<value>Built Environment</value>
+					</text>
+					<text id="crime_type-label">
+						<value>What type of Crime?</value>
+					</text>
+					<text id="crime_type-business_theft-label">
+						<value>Theft from business</value>
+					</text>
+					<text id="crime_type-residence_theft-label">
+						<value>Theft from residence</value>
+					</text>
+					<text id="crime_type-theft_from_car-label">
+						<value>Theft from car</value>
+					</text>
+					<text id="crime_type-car_theft-label">
+						<value>Car theft</value>
+					</text>
+					<text id="crime_type-theft_from_person-label">
+						<value>Theft from person</value>
+					</text>
+					<text id="crime_type-violence-label">
+						<value>Violence</value>
+					</text>
+					<text id="crime_type-drug_related-label">
+						<value>Drug related</value>
+					</text>
+					<text id="crime_type-crime_other-label">
+						<value>Other</value>
+					</text>
+					<text id="crime_other-specify-label">
+						<value>Specify</value>
+					</text>
+					<text id="traffic_type-label">
+						<value>What type of traffic enfringement?</value>
+					</text>
+					<text id="traffic_type-car_accident-label">
+						<value>Car accident</value>
+					</text>
+					<text id="traffic_type-pedestrian_accident-label">
+						<value>Accident involving a pedestrian</value>
+					</text>
+					<text id="traffic_type-illegal_parking-label">
+						<value>Illegal Parking</value>
+					</text>
+					<text id="traffic_type-reckless_driving-label">
+						<value>Reckless Driving</value>
+					</text>
+					<text id="traffic_type-parked_sidewalk-label">
+						<value>Car parked on sidewalk</value>
+					</text>
+					<text id="traffic_type-unroadworthy_car-label">
+						<value>Unroadworthy car</value>
+					</text>
+					<text id="traffic_type-traffic_other-label">
+						<value>Other</value>
+					</text>
+					<text id="traffic_other_specify-label">
+						<value>Specify</value>
+					</text>
+					<text id="urban_management_type-label">
+						<value>What urban management issue?</value>
+					</text>
+					<text id="urban_management_type-refuse_not_collected-label">
+						<value>Refuse not collected</value>
+					</text>
+					<text id="urban_management_type-informal_trading-label">
+						<value>Unregulated informal trading</value>
+					</text>
+					<text id="urban_management_type-urban_management_other-label">
+						<value>Other</value>
+					</text>
+					<text id="urban_management_other_specify-label">
+						<value>Specify</value>
+					</text>
+					<text id="built_environment_type-label">
+						<value>What built environment issue?</value>
+					</text>
+					<text id="built_environment_type-environmental_hazard-label">
+						<value>Environmental hazard</value>
+					</text>
+					<text id="built_environment_type-faulty_street_light-label">
+						<value>Faulty Street Light</value>
+					</text>
+					<text id="built_environment_type-unclear_missing_street_sign-label">
+						<value>Unclear/missing street sign</value>
+					</text>
+					<text id="built_environment_type-pothole-label">
+						<value>Pothole</value>
+					</text>
+					<text id="built_environment_type-overgrown_shrubbery-label">
+						<value>Overgrown Shrubbery</value>
+					</text>
+					<text id="built_environment_type-dead_tree-label">
+						<value>Dead Tree</value>
+					</text>
+					<text id="built_environment_type-built_environment_other-label">
+						<value>Other</value>
+					</text>
+					<text id="built_environment_other_specify-label">
+						<value>Specify</value>
+					</text>
+					<text id="number_people-label">
+						<value>How many people are involved?</value>
+					</text>
+					<text id="people_involved-label">
+						<value>People involved?</value>
+					</text>
+					<text id="who-label">
+						<value>Who was involved?</value>
+					</text>
+					<text id="who-unknown_person-label">
+						<value>Unknown</value>
+					</text>
+					<text id="who-involved_other-label">
+						<value>Other</value>
+					</text>
+					<text id="involved_other_specify-label">
+						<value>Specify</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case" relevant="/data/new_incident = 'incident_yes'"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/what_type_of_incident"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/update/incident_date" relevant="count(/data/date) &gt; 0" calculate="/data/date"/><bind nodeset="/data/case/update/what_type_of_incident" relevant="count(/data/what_type_of_incident) &gt; 0" calculate="/data/what_type_of_incident"/><bind nodeset="/data/case/update/incident_time" relevant="count(/data/incident_time) &gt; 0" calculate="/data/incident_time"/><bind nodeset="/data/case/update/prev_status" relevant="count(/data/prev_status) &gt; 0" calculate="/data/prev_status"/><bind nodeset="/data/case/update/new_incident" relevant="count(/data/new_incident) &gt; 0" calculate="/data/new_incident"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/new_incident">
+			<label ref="jr:itext('new_incident-label')"/>
+			<item>
+				<label ref="jr:itext('new_incident-incident_yes-label')"/>
+				<value>incident_yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('new_incident-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/date">
+			<label ref="jr:itext('date-label')"/>
+		</input>
+		<input ref="/data/incident_time">
+			<label ref="jr:itext('incident_time-label')"/>
+		</input>
+		<select1 ref="/data/what_type_of_incident">
+			<label ref="jr:itext('what_type_of_incident-label')"/>
+			<item>
+				<label ref="jr:itext('what_type_of_incident-crime-label')"/>
+				<value>crime</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_type_of_incident-traffic-label')"/>
+				<value>traffic</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_type_of_incident-urban_management-label')"/>
+				<value>urban_management</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_type_of_incident-built_environment-label')"/>
+				<value>built_environment</value>
+			</item>
+		</select1>
+		<select1 ref="/data/crime_type">
+			<label ref="jr:itext('crime_type-label')"/>
+			<item>
+				<label ref="jr:itext('crime_type-business_theft-label')"/>
+				<value>business_theft</value>
+			</item>
+			<item>
+				<label ref="jr:itext('crime_type-residence_theft-label')"/>
+				<value>residence_theft</value>
+			</item>
+			<item>
+				<label ref="jr:itext('crime_type-theft_from_car-label')"/>
+				<value>theft_from_car</value>
+			</item>
+			<item>
+				<label ref="jr:itext('crime_type-car_theft-label')"/>
+				<value>car_theft</value>
+			</item>
+			<item>
+				<label ref="jr:itext('crime_type-theft_from_person-label')"/>
+				<value>theft_from_person</value>
+			</item>
+			<item>
+				<label ref="jr:itext('crime_type-violence-label')"/>
+				<value>violence</value>
+			</item>
+			<item>
+				<label ref="jr:itext('crime_type-drug_related-label')"/>
+				<value>drug_related</value>
+			</item>
+			<item>
+				<label ref="jr:itext('crime_type-crime_other-label')"/>
+				<value>crime_other</value>
+			</item>
+		</select1>
+		<input ref="/data/crime_other-specify">
+			<label ref="jr:itext('crime_other-specify-label')"/>
+		</input>
+		<select1 ref="/data/traffic_type">
+			<label ref="jr:itext('traffic_type-label')"/>
+			<item>
+				<label ref="jr:itext('traffic_type-car_accident-label')"/>
+				<value>car_accident</value>
+			</item>
+			<item>
+				<label ref="jr:itext('traffic_type-pedestrian_accident-label')"/>
+				<value>pedestrian_accident</value>
+			</item>
+			<item>
+				<label ref="jr:itext('traffic_type-illegal_parking-label')"/>
+				<value>illegal_parking</value>
+			</item>
+			<item>
+				<label ref="jr:itext('traffic_type-reckless_driving-label')"/>
+				<value>reckless_driving</value>
+			</item>
+			<item>
+				<label ref="jr:itext('traffic_type-parked_sidewalk-label')"/>
+				<value>parked_sidewalk</value>
+			</item>
+			<item>
+				<label ref="jr:itext('traffic_type-unroadworthy_car-label')"/>
+				<value>unroadworthy_car</value>
+			</item>
+			<item>
+				<label ref="jr:itext('traffic_type-traffic_other-label')"/>
+				<value>traffic_other</value>
+			</item>
+		</select1>
+		<input ref="/data/traffic_other_specify">
+			<label ref="jr:itext('traffic_other_specify-label')"/>
+		</input>
+		<select1 ref="/data/urban_management_type">
+			<label ref="jr:itext('urban_management_type-label')"/>
+			<item>
+				<label ref="jr:itext('urban_management_type-refuse_not_collected-label')"/>
+				<value>refuse_not_collected</value>
+			</item>
+			<item>
+				<label ref="jr:itext('urban_management_type-informal_trading-label')"/>
+				<value>informal_trading</value>
+			</item>
+			<item>
+				<label ref="jr:itext('urban_management_type-urban_management_other-label')"/>
+				<value>urban_management_other</value>
+			</item>
+		</select1>
+		<input ref="/data/urban_management_other_specify">
+			<label ref="jr:itext('urban_management_other_specify-label')"/>
+		</input>
+		<select1 ref="/data/built_environment_type">
+			<label ref="jr:itext('built_environment_type-label')"/>
+			<item>
+				<label ref="jr:itext('built_environment_type-environmental_hazard-label')"/>
+				<value>environmental_hazard</value>
+			</item>
+			<item>
+				<label ref="jr:itext('built_environment_type-faulty_street_light-label')"/>
+				<value>faulty_street_light</value>
+			</item>
+			<item>
+				<label ref="jr:itext('built_environment_type-unclear_missing_street_sign-label')"/>
+				<value>unclear_missing_street_sign</value>
+			</item>
+			<item>
+				<label ref="jr:itext('built_environment_type-pothole-label')"/>
+				<value>pothole</value>
+			</item>
+			<item>
+				<label ref="jr:itext('built_environment_type-overgrown_shrubbery-label')"/>
+				<value>overgrown_shrubbery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('built_environment_type-dead_tree-label')"/>
+				<value>dead_tree</value>
+			</item>
+			<item>
+				<label ref="jr:itext('built_environment_type-built_environment_other-label')"/>
+				<value>built_environment_other</value>
+			</item>
+		</select1>
+		<input ref="/data/built_environment_other_specify">
+			<label ref="jr:itext('built_environment_other_specify-label')"/>
+		</input>
+		<input ref="/data/number_people">
+			<label ref="jr:itext('number_people-label')"/>
+		</input>
+		<group>
+			<label ref="jr:itext('people_involved-label')"/>
+			<repeat nodeset="/data/people_involved" jr:count="/data/number_people">
+				<select1 ref="/data/people_involved/who">
+					<label ref="jr:itext('who-label')"/>
+					<item>
+						<label ref="jr:itext('who-unknown_person-label')"/>
+						<value>unknown_person</value>
+					</item>
+					<item>
+						<label ref="jr:itext('who-involved_other-label')"/>
+						<value>involved_other</value>
+					</item>
+				</select1>
+				<input ref="/data/people_involved/involved_other_specify">
+					<label ref="jr:itext('involved_other_specify-label')"/>
+				</input>
+			</repeat>
+		</group>
+	</h:body>
+</h:html>

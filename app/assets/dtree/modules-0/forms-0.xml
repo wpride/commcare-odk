@@ -1,0 +1,317 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Usajili- Orodha ya malipo ya usafiri</h:title>
+		<model>
+			<instance>
+				<route_data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/DDBAAC3E-ECF7-4603-A194-EBC2DAA9F0EF" uiVersion="1" version="812" name="Usajili- Orodha ya malipo ya usafiri">
+					<route_name/>
+					<district_name/>
+					<shehia/>
+					<origin/>
+					<destination/>
+					<price/>
+
+					<end_of_form />
+
+					<case
+					    case_id=""
+					    date_modified=""
+					    user_id=""
+					    xmlns="http://commcarehq.org/case/transaction/v2" >
+
+					    <create>
+					        <case_name />
+					        <owner_id />
+					        <case_type>route</case_type>
+					    </create>
+
+					    <update>
+					        <origin />
+					        <price />
+					        <destination />
+					        <route_name />
+					    </update>
+					</case>
+
+					<orx:meta xmlns:cc="http://commcarehq.org/xforms" >
+
+					    <orx:deviceID />
+
+					    <orx:timeStart />
+
+					    <orx:timeEnd />
+
+					    <orx:username />
+
+					    <orx:userID />
+
+					    <orx:instanceID />
+
+					    <cc:appVersion />
+					</orx:meta>
+</route_data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/route_data/route_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/route_data/district_name" required="true()"/>
+			<bind nodeset="/route_data/shehia" type="xsd:string" required="true()"/>
+			<bind nodeset="/route_data/origin" type="xsd:string" required="true()"/>
+			<bind nodeset="/route_data/destination" type="xsd:string" required="true()"/>
+			<bind nodeset="/route_data/price" type="xsd:int" required="true()"/>
+			<bind nodeset="/route_data/end_of_form" required="true()"/>
+			<itext>
+				<translation lang="sw" default="">
+					<text id="route_name-label">
+						<value>Njia</value>
+					</text>
+					<text id="district_name-label">
+						<value>Jina la wilaya</value>
+					</text>
+					<text id="district_name-central-label2">
+						<value>Wilaya ya kati</value>
+					</text>
+					<text id="district_name-north_A-label">
+						<value>Kasikazini A</value>
+					</text>
+					<text id="district_name-north_B-label">
+						<value>Kaskazini B</value>
+					</text>
+					<text id="district_name-west-label">
+						<value>Wilaya ya magharibi</value>
+					</text>
+					<text id="district_name-urban-label">
+						<value>Wilaya ya Mjini</value>
+					</text>
+					<text id="district_name-south-label">
+						<value>Wilaya ya kusini</value>
+					</text>
+					<text id="district_name-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="district_name-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="district_name-chakechake-label">
+						<value>Chake chake</value>
+					</text>
+					<text id="district_name-mkoani-label">
+						<value>Mkoani</value>
+					</text>
+					<text id="shehia-label">
+						<value>Shehia</value>
+					</text>
+					<text id="origin-label">
+						<value>Mwanzo wa safari (Shehia au kituo cha afya)</value>
+					</text>
+					<text id="destination-label">
+						<value>Mwisho wa safari (Kituo cha afya)</value>
+					</text>
+					<text id="price-label">
+						<value>Bei iliyokubalika (Tsh)</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Fomu yako imekamilika.</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="route_name-label">
+						<value>Route name</value>
+					</text>
+					<text id="district_name-label">
+						<value>District name</value>
+					</text>
+					<text id="district_name-central-label2">
+						<value>Central</value>
+					</text>
+					<text id="district_name-north_A-label">
+						<value>North A</value>
+					</text>
+					<text id="district_name-north_B-label">
+						<value>North B</value>
+					</text>
+					<text id="district_name-west-label">
+						<value>West</value>
+					</text>
+					<text id="district_name-urban-label">
+						<value>Urban</value>
+					</text>
+					<text id="district_name-south-label">
+						<value>South</value>
+					</text>
+					<text id="district_name-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="district_name-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="district_name-chakechake-label">
+						<value>Chake chake</value>
+					</text>
+					<text id="district_name-mkoani-label">
+						<value>Mkoani</value>
+					</text>
+					<text id="shehia-label">
+						<value>Shehia</value>
+					</text>
+					<text id="origin-label">
+						<value>Origin (Shehia or facility)</value>
+					</text>
+					<text id="destination-label">
+						<value>Destination (facility)</value>
+					</text>
+					<text id="price-label">
+						<value>Agreed price (Tshs)</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Form is complete</value>
+					</text>
+				</translation>
+			</itext><bind
+                calculate="/route_data/meta/timeEnd"
+                nodeset="/route_data/case/@date_modified"
+                type="dateTime" />
+
+            <bind
+                calculate="/route_data/meta/userID"
+                nodeset="/route_data/case/@user_id" />
+
+            <setvalue
+                event="xforms-ready"
+                ref="/route_data/case/@case_id"
+                value="uuid()" />
+
+            <bind
+                calculate="/route_data/route_name"
+                nodeset="/route_data/case/create/case_name" />
+
+            <bind
+                calculate="/route_data/meta/userID"
+                nodeset="/route_data/case/create/owner_id" />
+
+            <bind
+                calculate="/route_data/origin"
+                nodeset="/route_data/case/update/origin"
+                relevant="count(/route_data/origin) > 0" />
+
+            <bind
+                calculate="/route_data/price"
+                nodeset="/route_data/case/update/price"
+                relevant="count(/route_data/price) > 0" />
+
+            <bind
+                calculate="/route_data/destination"
+                nodeset="/route_data/case/update/destination"
+                relevant="count(/route_data/destination) > 0" />
+
+            <bind
+                calculate="/route_data/route_name"
+                nodeset="/route_data/case/update/route_name"
+                relevant="count(/route_data/route_name) > 0" />
+
+            <setvalue
+                event="xforms-ready"
+                ref="/route_data/meta/deviceID"
+                value="instance(&apos;commcaresession&apos;)/session/context/deviceid" />
+
+            <setvalue
+                event="xforms-ready"
+                ref="/route_data/meta/timeStart"
+                value="now()" />
+
+            <bind
+                nodeset="/route_data/meta/timeStart"
+                type="xsd:dateTime" />
+
+            <setvalue
+                event="xforms-revalidate"
+                ref="/route_data/meta/timeEnd"
+                value="now()" />
+
+            <bind
+                nodeset="/route_data/meta/timeEnd"
+                type="xsd:dateTime" />
+
+            <setvalue
+                event="xforms-ready"
+                ref="/route_data/meta/username"
+                value="instance(&apos;commcaresession&apos;)/session/context/username" />
+
+            <setvalue
+                event="xforms-ready"
+                ref="/route_data/meta/userID"
+                value="instance(&apos;commcaresession&apos;)/session/context/userid" />
+
+            <setvalue
+                event="xforms-ready"
+                ref="/route_data/meta/instanceID"
+                value="uuid()" />
+
+            <setvalue
+                event="xforms-ready"
+                ref="/route_data/meta/appVersion"
+                value="instance(&apos;commcaresession&apos;)/session/context/appversion" />
+        </model>
+</h:head>
+	<h:body>
+		<input ref="/route_data/route_name">
+			<label ref="jr:itext('route_name-label')"/>
+		</input>
+		<select1 ref="/route_data/district_name">
+			<label ref="jr:itext('district_name-label')"/>
+			<item>
+				<label ref="jr:itext('district_name-central-label2')"/>
+				<value>central</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-north_A-label')"/>
+				<value>north_A</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-north_B-label')"/>
+				<value>north_B</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-west-label')"/>
+				<value>west</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-urban-label')"/>
+				<value>urban</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-south-label')"/>
+				<value>south</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-micheweni-label')"/>
+				<value>micheweni</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-wete-label')"/>
+				<value>wete</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-chakechake-label')"/>
+				<value>chakechake</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district_name-mkoani-label')"/>
+				<value>mkoani</value>
+			</item>
+		</select1>
+		<input ref="/route_data/shehia">
+			<label ref="jr:itext('shehia-label')"/>
+		</input>
+		<input ref="/route_data/origin">
+			<label ref="jr:itext('origin-label')"/>
+		</input>
+		<input ref="/route_data/destination">
+			<label ref="jr:itext('destination-label')"/>
+		</input>
+		<input ref="/route_data/price">
+			<label ref="jr:itext('price-label')"/>
+		</input>
+		<trigger ref="/route_data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

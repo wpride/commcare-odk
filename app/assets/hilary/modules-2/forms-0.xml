@@ -1,0 +1,874 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Primiero</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/35af30a99b8343e4dc6f15fe3a7c61d3207fa8e2" uiVersion="1" version="660" name="Primiero">
+					<patient_name/>
+					<sex/>
+					<dob_known/>
+					<dob/>
+					<age/>
+					<confirm_dob/>
+					<locality/>
+					<village/>
+					<home_visit/>
+					<pregnant/>
+					<sick_patient/>
+					<preg_danger_signs>
+						<danger_signs_list/>
+						<treatment_preg_ds/>
+						<has_tablets/>
+						<has_too_many_tablets/>
+						<has_too_little_tablets/>
+						<educ_preg_visits/>
+					</preg_danger_signs>
+					<treat_patient/>
+					<self_report>
+						<treatment_given/>
+						<treatment_given_other/>
+						<referral_given/>
+						<referral_given_reason/>
+					</self_report>
+					<referral_advice>
+						<referral_form/>
+						<referral_1_day/>
+					</referral_advice>
+					<fill_registry/>
+					<calc_age_years/>
+					<has_danger_sign/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>adult</case_type></create><update><treatment_given/><pregnant/><age/><referral_given/><sex/><referral_given_reason/><locality/><village/><case_name/><has_danger_sign/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/patient_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/sex" required="true()"/>
+			<bind nodeset="/data/dob_known" required="true()"/>
+			<bind nodeset="/data/dob" type="xsd:date" constraint=". &gt; today() - 43830 and . &lt; today() - 1826.25" jr:constraintMsg="jr:itext('dob-constraintMsg')" relevant="/data/dob_known = '1'" required="true()"/>
+			<bind nodeset="/data/age" type="xsd:int" constraint=". &lt; '120' and . &gt;= '5'" jr:constraintMsg="jr:itext('age-constraintMsg')" relevant="/data/dob_known = '0'" required="true()"/>
+			<bind nodeset="/data/confirm_dob"/>
+			<bind nodeset="/data/locality" required="true()"/>
+			<bind nodeset="/data/village" required="true()"/>
+			<bind nodeset="/data/home_visit" required="true()"/>
+			<bind nodeset="/data/pregnant" relevant="/data/sex = '0'" required="true()"/>
+			<bind nodeset="/data/sick_patient"/>
+			<bind nodeset="/data/preg_danger_signs" relevant="/data/pregnant = '1'"/>
+			<bind nodeset="/data/preg_danger_signs/danger_signs_list" constraint="not(selected(., '7') and count-selected(.) &gt; 1)" jr:constraintMsg="jr:itext('danger_signs_list-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/preg_danger_signs/treatment_preg_ds" relevant="not(selected(/data/preg_danger_signs/danger_signs_list, '7'))"/>
+			<bind nodeset="/data/preg_danger_signs/has_tablets" relevant="selected(/data/preg_danger_signs/danger_signs_list, '7')" required="true()"/>
+			<bind nodeset="/data/preg_danger_signs/has_too_many_tablets" relevant="/data/preg_danger_signs/has_tablets = '1'"/>
+			<bind nodeset="/data/preg_danger_signs/has_too_little_tablets" relevant="/data/preg_danger_signs/has_tablets = '2'"/>
+			<bind nodeset="/data/preg_danger_signs/educ_preg_visits"/>
+			<bind nodeset="/data/treat_patient" relevant="/data/has_danger_sign = 'no'"/>
+			<bind nodeset="/data/self_report"/>
+			<bind nodeset="/data/self_report/treatment_given" constraint="not(selected(., '99') and count-selected(.) &gt; 1)" jr:constraintMsg="jr:itext('treatment_given-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/self_report/treatment_given_other" type="xsd:string" relevant="/data/self_report/treatment_given = '0'" required="true()"/>
+			<bind nodeset="/data/self_report/referral_given" required="true()"/>
+			<bind nodeset="/data/self_report/referral_given_reason" relevant="/data/self_report/referral_given = '1'" required="true()"/>
+			<bind nodeset="/data/referral_advice" relevant="/data/self_report/referral_given = '1'"/>
+			<bind nodeset="/data/referral_advice/referral_form"/>
+			<bind nodeset="/data/referral_advice/referral_1_day"/>
+			<bind nodeset="/data/fill_registry"/>
+			<bind nodeset="/data/calc_age_years" calculate="if(/data/age != '', /data/age, int((today() - /data/dob) div 365.25))"/>
+			<bind nodeset="/data/has_danger_sign" calculate="if(not(selected(/data/preg_danger_signs/danger_signs_list, '7')), 'yes', 'no')"/>
+			<itext>
+				<translation lang="por" default="">
+					<text id="patient_name-label">
+						<value>Nome completo do paciente</value>
+					</text>
+					<text id="sex-label">
+						<value>Sexo</value>
+					</text>
+					<text id="sex-1-label">
+						<value>Masculino</value>
+					</text>
+					<text id="sex-0-label">
+						<value>Feminino</value>
+					</text>
+					<text id="dob_known-label">
+						<value>Sabe a data de nascimento?</value>
+					</text>
+					<text id="dob_known-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="dob_known-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="dob-label">
+						<value>Data de nascimento</value>
+					</text>
+					<text id="dob-constraintMsg">
+						<value>idade deve ser igual ou superior a 5 anos.</value>
+					</text>
+					<text id="age-label">
+						<value>Idade en anos</value>
+					</text>
+					<text id="age-constraintMsg">
+						<value>idade deve ser igual ou superior a 5 anos.</value>
+					</text>
+					<text id="confirm_dob-label">
+						<value>Idade do paciente em anos &#233; <output ref="/data/calc_age_years"/>. Se n&#227;o, por favor, volte e responda novamente</value>
+					</text>
+					<text id="locality-label">
+						<value>Localidade</value>
+					</text>
+					<text id="question12-3-label">
+						<value>Cidade de Maxixe</value>
+					</text>
+					<text id="village-label">
+						<value>Comunidade</value>
+					</text>
+					<text id="question12-1-1-label">
+						<value>Bembe</value>
+					</text>
+					<text id="question12-1-2-label">
+						<value>Mabil</value>
+					</text>
+					<text id="question12-1-3-label">
+						<value>Macuamene</value>
+					</text>
+					<text id="village-4-label">
+						<value>Macupula</value>
+					</text>
+					<text id="village-5-label">
+						<value>Malalane</value>
+					</text>
+					<text id="village-6-label">
+						<value>Manhala</value>
+					</text>
+					<text id="village-7-label">
+						<value>Nhabanda</value>
+					</text>
+					<text id="village-8-label">
+						<value>Nhamaxaxa</value>
+					</text>
+					<text id="village-9-label">
+						<value>Rumbana</value>
+					</text>
+					<text id="village-10-label">
+						<value>Chambone</value>
+					</text>
+					<text id="village-11-label">
+						<value>Tinga Tinga</value>
+					</text>
+					<text id="village-12-label">
+						<value>Bato </value>
+					</text>
+					<text id="village-13-label">
+						<value>Agostinho Neto</value>
+					</text>
+					<text id="village-14-label">
+						<value>Dambo</value>
+					</text>
+					<text id="village-15-label">
+						<value>Barrane</value>
+					</text>
+					<text id="home_visit-label">
+						<value>&#201; uma visita domicili&#225;ria?</value>
+					</text>
+					<text id="home_visit-1-label2">
+						<value>Sim</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="pregnant-label">
+						<value>Est&#225; gravida?</value>
+					</text>
+					<text id="pregnant-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="pregnant-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="sick_child-label2">
+						<value>Preguntar o que tem o paciente?</value>
+					</text>
+					<text id="preg_danger_signs-label">
+						<value>Sinais de Perigo</value>
+					</text>
+					<text id="danger_signs_list-label">
+						<value>Ela tem um sinal de perigo?</value>
+					</text>
+					<text id="danger_signs_list-constraintMsg">
+						<value>Esta selec&#231;&#227;o n&#227;o &#233; poss&#237;vel.</value>
+					</text>
+					<text id="danger_signs_list-1-label">
+						<value>Perda de sangue</value>
+					</text>
+					<text id="danger_signs_list-2-label">
+						<value>Febre</value>
+					</text>
+					<text id="danger_signs_list-3-label">
+						<value>Convuls&#245;es</value>
+					</text>
+					<text id="danger_signs_list-4-label">
+						<value>Incha&#231;o dos membros</value>
+					</text>
+					<text id="danger_signs_list-5-label">
+						<value>Dores forte do ventre</value>
+					</text>
+					<text id="danger_signs_list-6-label">
+						<value>Dor de Cabe&#231;a</value>
+					</text>
+					<text id="danger_signs_list-7-label">
+						<value>N&#227;o tem sinal de perigo</value>
+					</text>
+					<text id="treatment_preg_ds-label">
+						<value>Esta mulher gravida tem sinais de perigo. Transferir imediatamente &#224; US mais pr&#243;xima.</value>
+					</text>
+					<text id="has_tablets-label">
+						<value>Tem a quantidade correcta de compromidos de sal ferroso e &#225;cido f&#243;lico?</value>
+					</text>
+					<text id="has_tablets-1-label">
+						<value>Demaisada</value>
+					</text>
+					<text id="has_tablets-2-label">
+						<value>Muito pouca</value>
+					</text>
+					<text id="has_tablets-3-label">
+						<value>Quantidade correcta</value>
+					</text>
+					<text id="has_too_many_tablets-label">
+						<value>Explique-lhe a import&#226;ncia de tomar os compromidos.</value>
+					</text>
+					<text id="has_too_little_tablets-label">
+						<value>Dar a quantidade de compromidos em falta, e transferir para a US.</value>
+					</text>
+					<text id="educ_preg_visits-label">
+						<value>Explicar la import&#226;ncia de facer 4 consultas pr&#233;-natais para a sua saude e o bem estar do beb&#234;.</value>
+					</text>
+					<text id="treat_patient-label">
+						<value>Avaliar, clasificar e tratar o paciente dependendo dos sintomas.</value>
+					</text>
+					<text id="treatment_given-label">
+						<value>Qual foi o tratamento que deu?</value>
+					</text>
+					<text id="treatment_given-constraintMsg">
+						<value>Esta selec&#231;&#227;o n&#227;o &#233; poss&#237;vel.</value>
+					</text>
+					<text id="treatment_given-1-label">
+						<value>Amoxicilina cor de rosa</value>
+					</text>
+					<text id="treatment_given-2-label">
+						<value>Amoxicilina verde</value>
+					</text>
+					<text id="treatment_given-3-label">
+						<value>SRO</value>
+					</text>
+					<text id="treatment_given-4-label">
+						<value> Artesunato Rectal (50 mg)</value>
+					</text>
+					<text id="treatment_given-5-label">
+						<value> Artesunato Rectal (200 mg)</value>
+					</text>
+					<text id="treatment_given-6-label">
+						<value>Zinco</value>
+					</text>
+					<text id="treatment_given-7-label">
+						<value>Coartem amarelo</value>
+					</text>
+					<text id="treatment_given-8-label">
+						<value>Coartem azul</value>
+					</text>
+					<text id="treatment_given-9-label">
+						<value>Coartem verde</value>
+					</text>
+					<text id="treatment_given-10-label">
+						<value>Coartem castanho</value>
+					</text>
+					<text id="treatment_given-11-label">
+						<value>Parecetamol</value>
+					</text>
+					<text id="treatment_given-0-label">
+						<value>Outro</value>
+					</text>
+					<text id="treatment_given-99-label">
+						<value>N&#227;o deu tratamento</value>
+					</text>
+					<text id="treatment_given_other-label">
+						<value>Descreva outro tratamento</value>
+					</text>
+					<text id="referral_given-label">
+						<value>O paciente foi transferida para uma US?</value>
+					</text>
+					<text id="referral_given-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="referral_given-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="referral_given_reason-label">
+						<value>Porqu&#234; o paciente foi transferida?</value>
+					</text>
+					<text id="referral_given_reason-1-label">
+						<value>Sinal de perigo</value>
+					</text>
+					<text id="referral_given_reason-3-label">
+						<value>Vacina&#231;&#227;o incompleta</value>
+					</text>
+					<text id="referral_given_reason-5-label">
+						<value>Malnutri&#231;&#227;o</value>
+					</text>
+					<text id="referral_given_reason-0-label">
+						<value>Outra causa</value>
+					</text>
+					<text id="referral_form-label2">
+						<value>Preencha a guia de refer&#234;ncia</value>
+					</text>
+					<text id="referral_1_day-label">
+						<value>Fa&#231;a o seguimento do paciente depois de 1 dia para ter a certeza de que foi para a US.</value>
+					</text>
+					<text id="fill_registry-label">
+						<value>Preencha o livro de registo do paciente.</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="patient_name-label">
+						<value>Complete patient name</value>
+					</text>
+					<text id="sex-label">
+						<value>Sex</value>
+					</text>
+					<text id="sex-1-label">
+						<value>Male</value>
+					</text>
+					<text id="sex-0-label">
+						<value>Female</value>
+					</text>
+					<text id="dob_known-label">
+						<value>Is the date of birth known?</value>
+					</text>
+					<text id="dob_known-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="dob_known-0-label">
+						<value>No</value>
+					</text>
+					<text id="dob-label">
+						<value>Date of birth</value>
+					</text>
+					<text id="dob-constraintMsg">
+						<value>Age should be greater than or equal to 5 years.</value>
+					</text>
+					<text id="age-label">
+						<value>Age in years</value>
+					</text>
+					<text id="age-constraintMsg">
+						<value>Age should be equal or greater than 5 years.</value>
+					</text>
+					<text id="confirm_dob-label">
+						<value>Child's age in months is <output ref="/data/calc_age_years"/>. If not, please go back and answer again. </value>
+					</text>
+					<text id="locality-label">
+						<value>Locality</value>
+					</text>
+					<text id="question12-3-label">
+						<value>City of Maxixe</value>
+					</text>
+					<text id="village-label">
+						<value>Village</value>
+					</text>
+					<text id="question12-1-1-label">
+						<value>Bembe</value>
+					</text>
+					<text id="question12-1-2-label">
+						<value>Mabil</value>
+					</text>
+					<text id="question12-1-3-label">
+						<value>Macuamene</value>
+					</text>
+					<text id="village-4-label">
+						<value>Macupula</value>
+					</text>
+					<text id="village-5-label">
+						<value>Malalane</value>
+					</text>
+					<text id="village-6-label">
+						<value>Manhala</value>
+					</text>
+					<text id="village-7-label">
+						<value>Nhabanda</value>
+					</text>
+					<text id="village-8-label">
+						<value>Nhamaxaxa</value>
+					</text>
+					<text id="village-9-label">
+						<value>Rumbana</value>
+					</text>
+					<text id="village-10-label">
+						<value>Chambone</value>
+					</text>
+					<text id="village-11-label">
+						<value>Tinga Tinga</value>
+					</text>
+					<text id="village-12-label">
+						<value>Bato </value>
+					</text>
+					<text id="village-13-label">
+						<value>Agostinho Neto</value>
+					</text>
+					<text id="village-14-label">
+						<value>Dambo</value>
+					</text>
+					<text id="village-15-label">
+						<value>Barrane</value>
+					</text>
+					<text id="home_visit-label">
+						<value>Is it a home visit?</value>
+					</text>
+					<text id="home_visit-1-label2">
+						<value>Yes</value>
+					</text>
+					<text id="home_visit-0-label">
+						<value>No</value>
+					</text>
+					<text id="pregnant-label">
+						<value>Is she currently pregnant?</value>
+					</text>
+					<text id="pregnant-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="pregnant-0-label">
+						<value>No</value>
+					</text>
+					<text id="sick_child-label2">
+						<value>Ask what the patient has.</value>
+					</text>
+					<text id="preg_danger_signs-label">
+						<value>Danger Signs</value>
+					</text>
+					<text id="danger_signs_list-label">
+						<value>Does she have a danger sign?</value>
+					</text>
+					<text id="danger_signs_list-constraintMsg">
+						<value>This selection is not possible.</value>
+					</text>
+					<text id="danger_signs_list-1-label">
+						<value>Haemorage</value>
+					</text>
+					<text id="danger_signs_list-2-label">
+						<value>Fever</value>
+					</text>
+					<text id="danger_signs_list-3-label">
+						<value>Convulsions</value>
+					</text>
+					<text id="danger_signs_list-4-label">
+						<value>Swollen arms/legs</value>
+					</text>
+					<text id="danger_signs_list-5-label">
+						<value>Severe stomach pain</value>
+					</text>
+					<text id="danger_signs_list-6-label">
+						<value>Headache</value>
+					</text>
+					<text id="danger_signs_list-7-label">
+						<value>None of the above</value>
+					</text>
+					<text id="treatment_preg_ds-label">
+						<value>This pregnant woman has a danger sign. Transfer her immediately to the nearest HF.</value>
+					</text>
+					<text id="has_tablets-label">
+						<value>Does she have the correct number of iron tablets and folic acid?</value>
+					</text>
+					<text id="has_tablets-1-label">
+						<value>Too many</value>
+					</text>
+					<text id="has_tablets-2-label">
+						<value>Too little</value>
+					</text>
+					<text id="has_tablets-3-label">
+						<value>Right amount</value>
+					</text>
+					<text id="has_too_many_tablets-label">
+						<value>Explain the importance of taking the pills.</value>
+					</text>
+					<text id="has_too_little_tablets-label">
+						<value>Give her the pills she is missing and transfer to the HF.</value>
+					</text>
+					<text id="educ_preg_visits-label">
+						<value>Explain the importance of having 4 prenatal visits for the mother and the baby's health.</value>
+					</text>
+					<text id="treat_patient-label">
+						<value>Evaluate, classify and treat the patient as needed based on his/her symptoms.</value>
+					</text>
+					<text id="treatment_given-label">
+						<value>What was the treatment you gave?</value>
+					</text>
+					<text id="treatment_given-constraintMsg">
+						<value>This selection is not possible.</value>
+					</text>
+					<text id="treatment_given-1-label">
+						<value>Pink amoxicillin</value>
+					</text>
+					<text id="treatment_given-2-label">
+						<value>Green amoxicillin</value>
+					</text>
+					<text id="treatment_given-3-label">
+						<value>ORS</value>
+					</text>
+					<text id="treatment_given-4-label">
+						<value>RA (50mg)</value>
+					</text>
+					<text id="treatment_given-5-label">
+						<value>RA (200mg)</value>
+					</text>
+					<text id="treatment_given-6-label">
+						<value>Zinc</value>
+					</text>
+					<text id="treatment_given-7-label">
+						<value>Yellow Coartem</value>
+					</text>
+					<text id="treatment_given-8-label">
+						<value>Blue Coartem</value>
+					</text>
+					<text id="treatment_given-9-label">
+						<value>Green Coartem</value>
+					</text>
+					<text id="treatment_given-10-label">
+						<value>Brown Coartem</value>
+					</text>
+					<text id="treatment_given-11-label">
+						<value>Parecetamol</value>
+					</text>
+					<text id="treatment_given-0-label">
+						<value>Other</value>
+					</text>
+					<text id="treatment_given-99-label">
+						<value>No treatment</value>
+					</text>
+					<text id="treatment_given_other-label">
+						<value>Describe other treatment</value>
+					</text>
+					<text id="referral_given-label">
+						<value>Was the pacient referred to a HF?</value>
+					</text>
+					<text id="referral_given-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="referral_given-0-label">
+						<value>No</value>
+					</text>
+					<text id="referral_given_reason-label">
+						<value>Why was the patient referred?</value>
+					</text>
+					<text id="referral_given_reason-1-label">
+						<value>Danger sign</value>
+					</text>
+					<text id="referral_given_reason-3-label">
+						<value>Incomplete vaccination</value>
+					</text>
+					<text id="referral_given_reason-5-label">
+						<value>Malnutricion</value>
+					</text>
+					<text id="referral_given_reason-0-label">
+						<value>Other cause</value>
+					</text>
+					<text id="referral_form-label2">
+						<value>Fill in the referral form.</value>
+					</text>
+					<text id="referral_1_day-label">
+						<value>Follow up on the patient after one day to make sure that referral took place.</value>
+					</text>
+					<text id="fill_registry-label">
+						<value>Please fill in the registry book.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case" relevant="/data/self_report/referral_given = '1'"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/patient_name"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/update/treatment_given" relevant="count(/data/self_report/treatment_given) &gt; 0" calculate="/data/self_report/treatment_given"/><bind nodeset="/data/case/update/pregnant" relevant="count(/data/pregnant) &gt; 0" calculate="/data/pregnant"/><bind nodeset="/data/case/update/age" relevant="count(/data/calc_age_years) &gt; 0" calculate="/data/calc_age_years"/><bind nodeset="/data/case/update/referral_given" relevant="count(/data/self_report/referral_given) &gt; 0" calculate="/data/self_report/referral_given"/><bind nodeset="/data/case/update/sex" relevant="count(/data/sex) &gt; 0" calculate="/data/sex"/><bind nodeset="/data/case/update/referral_given_reason" relevant="count(/data/self_report/referral_given_reason) &gt; 0" calculate="/data/self_report/referral_given_reason"/><bind nodeset="/data/case/update/locality" relevant="count(/data/locality) &gt; 0" calculate="/data/locality"/><bind nodeset="/data/case/update/village" relevant="count(/data/village) &gt; 0" calculate="/data/village"/><bind nodeset="/data/case/update/case_name" relevant="count(/data/patient_name) &gt; 0" calculate="/data/patient_name"/><bind nodeset="/data/case/update/has_danger_sign" relevant="count(/data/has_danger_sign) &gt; 0" calculate="/data/has_danger_sign"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/patient_name">
+			<label ref="jr:itext('patient_name-label')"/>
+		</input>
+		<select1 ref="/data/sex">
+			<label ref="jr:itext('sex-label')"/>
+			<item>
+				<label ref="jr:itext('sex-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('sex-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<select1 ref="/data/dob_known">
+			<label ref="jr:itext('dob_known-label')"/>
+			<item>
+				<label ref="jr:itext('dob_known-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('dob_known-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<input ref="/data/dob">
+			<label ref="jr:itext('dob-label')"/>
+		</input>
+		<input ref="/data/age">
+			<label ref="jr:itext('age-label')"/>
+		</input>
+		<trigger ref="/data/confirm_dob">
+			<label ref="jr:itext('confirm_dob-label')"/>
+		</trigger>
+		<select1 ref="/data/locality">
+			<label ref="jr:itext('locality-label')"/>
+			<item>
+				<label ref="jr:itext('question12-3-label')"/>
+				<value>1</value>
+			</item>
+		</select1>
+		<select1 ref="/data/village">
+			<label ref="jr:itext('village-label')"/>
+			<item>
+				<label ref="jr:itext('question12-1-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question12-1-2-label')"/>
+				<value>2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question12-1-3-label')"/>
+				<value>3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-4-label')"/>
+				<value>4</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-5-label')"/>
+				<value>5</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-6-label')"/>
+				<value>6</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-7-label')"/>
+				<value>7</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-8-label')"/>
+				<value>8</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-9-label')"/>
+				<value>9</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-10-label')"/>
+				<value>10</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-11-label')"/>
+				<value>11</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-12-label')"/>
+				<value>12</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-13-label')"/>
+				<value>13</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-14-label')"/>
+				<value>14</value>
+			</item>
+			<item>
+				<label ref="jr:itext('village-15-label')"/>
+				<value>15</value>
+			</item>
+		</select1>
+		<select1 ref="/data/home_visit">
+			<label ref="jr:itext('home_visit-label')"/>
+			<item>
+				<label ref="jr:itext('home_visit-1-label2')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('home_visit-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<select1 ref="/data/pregnant">
+			<label ref="jr:itext('pregnant-label')"/>
+			<item>
+				<label ref="jr:itext('pregnant-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('pregnant-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<trigger ref="/data/sick_patient">
+			<label ref="jr:itext('sick_child-label2')"/>
+		</trigger>
+		<group ref="/data/preg_danger_signs">
+			<label ref="jr:itext('preg_danger_signs-label')"/>
+			<select ref="/data/preg_danger_signs/danger_signs_list">
+				<label ref="jr:itext('danger_signs_list-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs_list-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs_list-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs_list-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs_list-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs_list-5-label')"/>
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs_list-6-label')"/>
+					<value>6</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs_list-7-label')"/>
+					<value>7</value>
+				</item>
+			</select>
+			<trigger ref="/data/preg_danger_signs/treatment_preg_ds">
+				<label ref="jr:itext('treatment_preg_ds-label')"/>
+			</trigger>
+			<select1 ref="/data/preg_danger_signs/has_tablets">
+				<label ref="jr:itext('has_tablets-label')"/>
+				<item>
+					<label ref="jr:itext('has_tablets-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('has_tablets-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('has_tablets-3-label')"/>
+					<value>3</value>
+				</item>
+			</select1>
+			<trigger ref="/data/preg_danger_signs/has_too_many_tablets">
+				<label ref="jr:itext('has_too_many_tablets-label')"/>
+			</trigger>
+			<trigger ref="/data/preg_danger_signs/has_too_little_tablets">
+				<label ref="jr:itext('has_too_little_tablets-label')"/>
+			</trigger>
+			<trigger ref="/data/preg_danger_signs/educ_preg_visits">
+				<label ref="jr:itext('educ_preg_visits-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/treat_patient">
+			<label ref="jr:itext('treat_patient-label')"/>
+		</trigger>
+		<group ref="/data/self_report">
+			<select1 ref="/data/self_report/treatment_given">
+				<label ref="jr:itext('treatment_given-label')"/>
+				<item>
+					<label ref="jr:itext('treatment_given-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-5-label')"/>
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-6-label')"/>
+					<value>6</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-7-label')"/>
+					<value>7</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-8-label')"/>
+					<value>8</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-9-label')"/>
+					<value>9</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-10-label')"/>
+					<value>10</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-11-label')"/>
+					<value>11</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-0-label')"/>
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('treatment_given-99-label')"/>
+					<value>99</value>
+				</item>
+			</select1>
+			<input ref="/data/self_report/treatment_given_other">
+				<label ref="jr:itext('treatment_given_other-label')"/>
+			</input>
+			<select1 ref="/data/self_report/referral_given">
+				<label ref="jr:itext('referral_given-label')"/>
+				<item>
+					<label ref="jr:itext('referral_given-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+			<select1 ref="/data/self_report/referral_given_reason">
+				<label ref="jr:itext('referral_given_reason-label')"/>
+				<item>
+					<label ref="jr:itext('referral_given_reason-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-5-label')"/>
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_given_reason-0-label')"/>
+					<value>0</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/referral_advice">
+			<trigger ref="/data/referral_advice/referral_form">
+				<label ref="jr:itext('referral_form-label2')"/>
+			</trigger>
+			<trigger ref="/data/referral_advice/referral_1_day">
+				<label ref="jr:itext('referral_1_day-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/fill_registry">
+			<label ref="jr:itext('fill_registry-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

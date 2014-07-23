@@ -1,0 +1,174 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Usajili - Vituo vya afya</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/5fa275b6c048ea083687e8d7758cc591dbe75201" uiVersion="1" version="812" name="Usajili - Vituo vya afya">
+					<district/>
+					<health_facility_name/>
+					<point_contact_name/>
+					<point_contact_number/>
+					<end_of_form/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>health_facility</case_type></create><update><health_facility_name/><point_contact_name/><point_contact_number/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/district" required="true()"/>
+			<bind nodeset="/data/health_facility_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/point_contact_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/point_contact_number" type="xsd:long" required="true()"/>
+			<bind nodeset="/data/end_of_form" required="true()"/>
+			<itext>
+				<translation lang="sw" default="">
+					<text id="district-label">
+						<value>Jina la wilaya</value>
+					</text>
+					<text id="district-north_A-label">
+						<value>Kaskazini A</value>
+					</text>
+					<text id="district-north_B-label">
+						<value>Kaskazini B</value>
+					</text>
+					<text id="district-west-label">
+						<value>Wilaya ya Magharibi</value>
+					</text>
+					<text id="district-item40-label">
+						<value>Wilaya ya kati</value>
+					</text>
+					<text id="district-urban-label">
+						<value>Wilaya ya mjini</value>
+					</text>
+					<text id="district-south-label">
+						<value>Kusini</value>
+					</text>
+					<text id="district-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="district-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="district-chake_ckake-label">
+						<value>Chake chake</value>
+					</text>
+					<text id="district-mkoani-label">
+						<value>Mkoani</value>
+					</text>
+					<text id="health_facility_name-label">
+						<value>Jina la kituo cha afya</value>
+					</text>
+					<text id="point_contact_name-label">
+						<value>Jina la mtu unayewasiliana nae</value>
+					</text>
+					<text id="point_contact_number-label">
+						<value>Namba ya simu ya mtu unayowasiliana nae</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Fomu yako imekamilika</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="district-label">
+						<value>District Name</value>
+					</text>
+					<text id="district-north_A-label">
+						<value>North A</value>
+					</text>
+					<text id="district-north_B-label">
+						<value>North B</value>
+					</text>
+					<text id="district-west-label">
+						<value>West</value>
+					</text>
+					<text id="district-item40-label">
+						<value>Central</value>
+					</text>
+					<text id="district-urban-label">
+						<value>Urban</value>
+					</text>
+					<text id="district-south-label">
+						<value>South</value>
+					</text>
+					<text id="district-micheweni-label">
+						<value>Micheweni</value>
+					</text>
+					<text id="district-wete-label">
+						<value>Wete</value>
+					</text>
+					<text id="district-chake_ckake-label">
+						<value>Chake chake</value>
+					</text>
+					<text id="district-mkoani-label">
+						<value>Mkoani</value>
+					</text>
+					<text id="health_facility_name-label">
+						<value>Health facility name</value>
+					</text>
+					<text id="point_contact_name-label">
+						<value>Point of Contact Name</value>
+					</text>
+					<text id="point_contact_number-label">
+						<value>Point of Contact phone number</value>
+					</text>
+					<text id="end_of_form-label">
+						<value>Your form is now complete.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/health_facility_name"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/update/health_facility_name" relevant="count(/data/health_facility_name) &gt; 0" calculate="/data/health_facility_name"/><bind nodeset="/data/case/update/point_contact_name" relevant="count(/data/point_contact_name) &gt; 0" calculate="/data/point_contact_name"/><bind nodeset="/data/case/update/point_contact_number" relevant="count(/data/point_contact_number) &gt; 0" calculate="/data/point_contact_number"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/district">
+			<label ref="jr:itext('district-label')"/>
+			<item>
+				<label ref="jr:itext('district-north_A-label')"/>
+				<value>north_A</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-north_B-label')"/>
+				<value>north_B</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-west-label')"/>
+				<value>west</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-item40-label')"/>
+				<value>item40</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-urban-label')"/>
+				<value>urban</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-south-label')"/>
+				<value>south</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-micheweni-label')"/>
+				<value>micheweni</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-wete-label')"/>
+				<value>wete</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-chake_ckake-label')"/>
+				<value>chake_ckake</value>
+			</item>
+			<item>
+				<label ref="jr:itext('district-mkoani-label')"/>
+				<value>mkoani</value>
+			</item>
+		</select1>
+		<input ref="/data/health_facility_name">
+			<label ref="jr:itext('health_facility_name-label')"/>
+		</input>
+		<input ref="/data/point_contact_name">
+			<label ref="jr:itext('point_contact_name-label')"/>
+		</input>
+		<input ref="/data/point_contact_number">
+			<label ref="jr:itext('point_contact_number-label')"/>
+		</input>
+		<trigger ref="/data/end_of_form">
+			<label ref="jr:itext('end_of_form-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

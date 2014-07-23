@@ -1,0 +1,544 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Resumo Semanal das Activadades</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7EFB54F1-337B-42A7-9C6A-460AE8B0CDD8" uiVersion="1" version="504" name="Resumo Semanal das Activadades">
+					<talk_given/>
+					<he>
+						<he_number/>
+						<he_number_participants/>
+						<he_label/>
+						<he_topics/>
+						<he_other/>
+						<he_groups/>
+					</he>
+					<stock>
+						<stock_label/>
+						<stock_amox_pink/>
+						<stock_amox_green/>
+						<stock_ors/>
+						<stock_ra_50/>
+						<stock_ra_200/>
+						<stock_zinc/>
+						<stock_coartem_yellow/>
+						<stock_coartem_blue/>
+						<stock_coartem_green/>
+						<stock_coartem_brown/>
+						<stock_paracetamol/>
+						<stock_rdt_kits/>
+						<stock_gloves/>
+					</stock>
+					<deaths>
+						<deaths_label/>
+						<deaths_newborns/>
+						<deaths_children/>
+						<deaths_mothers/>
+						<deaths_others/>
+					</deaths>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><create><case_name/><owner_id/><case_type>report</case_type></create><update/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/>
+			<bind nodeset="/data/talk_given"/>
+			<bind nodeset="/data/he" relevant="/data/talk_given = '1'"/>
+			<bind nodeset="/data/he/he_number" type="xsd:int"/>
+			<bind nodeset="/data/he/he_number_participants" type="xsd:int"/>
+			<bind nodeset="/data/he/he_label"/>
+			<bind nodeset="/data/he/he_topics"/>
+			<bind nodeset="/data/he/he_other" type="xsd:string" relevant="/data/he/he_topics = '0'"/>
+			<bind nodeset="/data/he/he_groups"/>
+			<bind nodeset="/data/stock"/>
+			<bind nodeset="/data/stock/stock_label"/>
+			<bind nodeset="/data/stock/stock_amox_pink" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/stock/stock_amox_green" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_ors" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_ra_50" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_ra_200" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_zinc" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_coartem_yellow" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_coartem_blue" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_coartem_green" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_coartem_brown" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_paracetamol" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_rdt_kits" type="xsd:int"/>
+			<bind nodeset="/data/stock/stock_gloves" type="xsd:int"/>
+			<bind nodeset="/data/deaths"/>
+			<bind nodeset="/data/deaths/deaths_label"/>
+			<bind nodeset="/data/deaths/deaths_newborns" type="xsd:int"/>
+			<bind nodeset="/data/deaths/deaths_children" type="xsd:int"/>
+			<bind nodeset="/data/deaths/deaths_mothers" type="xsd:int"/>
+			<bind nodeset="/data/deaths/deaths_others" type="xsd:int"/>
+			<itext>
+				<translation lang="por" default="">
+					<text id="talk_given-label">
+						<value>Fez uma palestra nesta semana?</value>
+					</text>
+					<text id="talk_given-1-label">
+						<value>Sim</value>
+					</text>
+					<text id="talk_given-0-label">
+						<value>N&#227;o</value>
+					</text>
+					<text id="he_number-label">
+						<value>Quantas palestras?</value>
+					</text>
+					<text id="he_number_participants-label">
+						<value>Total n&#250;mero de participants</value>
+					</text>
+					<text id="he_label-label">
+						<value>Cada palestra deve ser focado em temas de Tratamento e Preven&#231;&#227;o de saude.</value>
+					</text>
+					<text id="he_topics-label">
+						<value>Quais os temas que voc&#234; cobre?</value>
+					</text>
+					<text id="he_topics-1-label">
+						<value>Febre/malaria</value>
+					</text>
+					<text id="he_topics-2-label">
+						<value>Diarreia/pr&#225;ticas de higiene</value>
+					</text>
+					<text id="he_topics-3-label">
+						<value>Pneumonia/IRAs</value>
+					</text>
+					<text id="he_topics-4-label">
+						<value>VIH/SIDA</value>
+					</text>
+					<text id="he_topics-5-label">
+						<value>Tuberculos</value>
+					</text>
+					<text id="he_topics-6-label">
+						<value>Imuniza&#231;&#227;o</value>
+					</text>
+					<text id="he_topics-7-label">
+						<value>Controlo do crescimento e malnutri&#231;&#227;o</value>
+					</text>
+					<text id="he_topics-8-label">
+						<value>Nutri&#231;&#227;o da crian&#231;a</value>
+					</text>
+					<text id="he_topics-9-label">
+						<value>Consulta pr&#233;natal</value>
+					</text>
+					<text id="he_topics-10-label">
+						<value>Cuidados p&#243;s-parto e da crian&#231;a rec&#233;m-nascida</value>
+					</text>
+					<text id="he_topics-11-label">
+						<value>Aleitamento materno</value>
+					</text>
+					<text id="he_topics-12-label">
+						<value>Planeamento familiar</value>
+					</text>
+					<text id="he_topics-13-label">
+						<value>Cuidados do APE</value>
+					</text>
+					<text id="he_topics-14-label">
+						<value>Cuidados de sa&#250;de/Campanhas de sa&#250;de</value>
+					</text>
+					<text id="he_topics-0-label">
+						<value>Outros</value>
+					</text>
+					<text id="he_other-label">
+						<value>Quais foram os outros temas?</value>
+					</text>
+					<text id="he_groups-label">
+						<value>Quem eram os participantes?</value>
+					</text>
+					<text id="he_groups-0-label">
+						<value>Grupo misturado</value>
+					</text>
+					<text id="he_groups-1-label">
+						<value>Mulheres gr&#225;vidas</value>
+					</text>
+					<text id="he_groups-2-label">
+						<value>Mulheres s&#243;</value>
+					</text>
+					<text id="he_groups-3-label">
+						<value>Jovens</value>
+					</text>
+					<text id="stock-label">
+						<value>Stock do Medicamento</value>
+					</text>
+					<text id="stock_label-label">
+						<value>Conte o saldo de estoque dos seus medicamentos e suprimentos em sua kit. Entra o n&#250;mero de pacotes que voc&#234; tem em seu kit para cada medicamento.</value>
+					</text>
+					<text id="stock_amox_pink-label">
+						<value>Amoxicilina cor de rosa</value>
+					</text>
+					<text id="stock_amox_green-label">
+						<value>Amoxicilina verde</value>
+					</text>
+					<text id="stock_ors-label">
+						<value>Pacotes SRO</value>
+					</text>
+					<text id="stock_ra_50-label">
+						<value>Artesunato Rectal (50mg)</value>
+					</text>
+					<text id="stock_ra_200-label">
+						<value>Artesunato Rectal (200mg)</value>
+					</text>
+					<text id="stock_zinc-label">
+						<value>Zinco</value>
+					</text>
+					<text id="stock_coartem_yellow-label">
+						<value>Coartem amarelo</value>
+					</text>
+					<text id="stock_coartem_blue-label">
+						<value>Coartem azul</value>
+					</text>
+					<text id="stock_coartem_green-label">
+						<value>Coartem verde</value>
+					</text>
+					<text id="stock_coartem_brown-label">
+						<value>Coartem castanho</value>
+					</text>
+					<text id="stock_paracetamol-label">
+						<value>Paracetamol</value>
+					</text>
+					<text id="stock_rdt_kits-label">
+						<value>TDR</value>
+					</text>
+					<text id="stock_gloves-label">
+						<value>Pares de luvas</value>
+					</text>
+					<text id="deaths-label">
+						<value>Mortes na Comunidade</value>
+					</text>
+					<text id="deaths_label-label">
+						<value>Relatar o n&#250;mero de mortes na comunidade desde o seu &#250;ltimo relat&#243;rio.</value>
+					</text>
+					<text id="deaths_newborns-label">
+						<value>Rec&#233;m nascido (0-1 mes)</value>
+					</text>
+					<text id="deaths_children-label">
+						<value>Crian&#231;a (2-59 meses)</value>
+					</text>
+					<text id="deaths_mothers-label">
+						<value>Mortes maternas</value>
+					</text>
+					<text id="deaths_others-label">
+						<value>Outros grupos</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="talk_given-label">
+						<value>Did you give a talk this week?</value>
+					</text>
+					<text id="talk_given-1-label">
+						<value>Yes</value>
+					</text>
+					<text id="talk_given-0-label">
+						<value>No</value>
+					</text>
+					<text id="he_number-label">
+						<value>How many talks?</value>
+					</text>
+					<text id="he_number_participants-label">
+						<value>Total number of participants</value>
+					</text>
+					<text id="he_label-label">
+						<value>Each health education talk should be focused on Treatment and Prevention topics.</value>
+					</text>
+					<text id="he_topics-label">
+						<value>Which topics did you cover?</value>
+					</text>
+					<text id="he_topics-1-label">
+						<value>Fever/malaria</value>
+					</text>
+					<text id="he_topics-2-label">
+						<value>Diarrhoea/hygiene practices</value>
+					</text>
+					<text id="he_topics-3-label">
+						<value>Pneumonia/ARIs</value>
+					</text>
+					<text id="he_topics-4-label">
+						<value>HIV and AIDS</value>
+					</text>
+					<text id="he_topics-5-label">
+						<value>TB</value>
+					</text>
+					<text id="he_topics-6-label">
+						<value>Immunisation</value>
+					</text>
+					<text id="he_topics-7-label">
+						<value>Growth monitoring and malnutrition</value>
+					</text>
+					<text id="he_topics-8-label">
+						<value>Child nutrition</value>
+					</text>
+					<text id="he_topics-9-label">
+						<value>Care during pregnancy</value>
+					</text>
+					<text id="he_topics-10-label">
+						<value>Post natal and newborn care</value>
+					</text>
+					<text id="he_topics-11-label">
+						<value>Breastfeeding</value>
+					</text>
+					<text id="he_topics-12-label">
+						<value>Family planning</value>
+					</text>
+					<text id="he_topics-13-label">
+						<value>APE services</value>
+					</text>
+					<text id="he_topics-14-label">
+						<value>Health service / Campaigns / Events</value>
+					</text>
+					<text id="he_topics-0-label">
+						<value>Other</value>
+					</text>
+					<text id="he_other-label">
+						<value>What other topics did you cover?</value>
+					</text>
+					<text id="he_groups-label">
+						<value>What groups of people participated?</value>
+					</text>
+					<text id="he_groups-0-label">
+						<value>Mixed group</value>
+					</text>
+					<text id="he_groups-1-label">
+						<value>Pregnant women</value>
+					</text>
+					<text id="he_groups-2-label">
+						<value>Women only</value>
+					</text>
+					<text id="he_groups-3-label">
+						<value>Young people</value>
+					</text>
+					<text id="stock-label">
+						<value>Drug Stock</value>
+					</text>
+					<text id="stock_label-label">
+						<value>Count the remaining stock balance of your medicines and supplies in your medicine box.  Enter the number packets you have in your box for each medicine. </value>
+					</text>
+					<text id="stock_amox_pink-label">
+						<value>Pink amoxicillin</value>
+					</text>
+					<text id="stock_amox_green-label">
+						<value>Green amoxicillan</value>
+					</text>
+					<text id="stock_ors-label">
+						<value>ORS sachets</value>
+					</text>
+					<text id="stock_ra_50-label">
+						<value>RA (50mg)</value>
+					</text>
+					<text id="stock_ra_200-label">
+						<value>RA (200mg)</value>
+					</text>
+					<text id="stock_zinc-label">
+						<value>Zinc</value>
+					</text>
+					<text id="stock_coartem_yellow-label">
+						<value>Yellow Coartem</value>
+					</text>
+					<text id="stock_coartem_blue-label">
+						<value>Blue Coartem</value>
+					</text>
+					<text id="stock_coartem_green-label">
+						<value>Green Coartem</value>
+					</text>
+					<text id="stock_coartem_brown-label">
+						<value>Brown Coartem</value>
+					</text>
+					<text id="stock_paracetamol-label">
+						<value>Paracetamol</value>
+					</text>
+					<text id="stock_rdt_kits-label">
+						<value>RDT test kits</value>
+					</text>
+					<text id="stock_gloves-label">
+						<value>Pairs of gloves</value>
+					</text>
+					<text id="deaths-label">
+						<value>Deaths in Community</value>
+					</text>
+					<text id="deaths_label-label">
+						<value>Report on the number of deaths in the community since your last report. </value>
+					</text>
+					<text id="deaths_newborns-label">
+						<value>Newborns (0-1 months)</value>
+					</text>
+					<text id="deaths_children-label">
+						<value>Children (2-59 months)</value>
+					</text>
+					<text id="deaths_mothers-label">
+						<value>Mothers</value>
+					</text>
+					<text id="deaths_others-label">
+						<value>Others</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><setvalue ref="/data/case/@case_id" event="xforms-ready" value="uuid()"/><bind nodeset="/data/case/create/case_name" calculate="/data/stock/stock_amox_pink"/><bind nodeset="/data/case/create/owner_id" calculate="/data/meta/userID"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/talk_given">
+			<label ref="jr:itext('talk_given-label')"/>
+			<item>
+				<label ref="jr:itext('talk_given-1-label')"/>
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('talk_given-0-label')"/>
+				<value>0</value>
+			</item>
+		</select1>
+		<group ref="/data/he">
+			<input ref="/data/he/he_number">
+				<label ref="jr:itext('he_number-label')"/>
+			</input>
+			<input ref="/data/he/he_number_participants">
+				<label ref="jr:itext('he_number_participants-label')"/>
+			</input>
+			<trigger ref="/data/he/he_label">
+				<label ref="jr:itext('he_label-label')"/>
+			</trigger>
+			<select ref="/data/he/he_topics">
+				<label ref="jr:itext('he_topics-label')"/>
+				<item>
+					<label ref="jr:itext('he_topics-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-5-label')"/>
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-6-label')"/>
+					<value>6</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-7-label')"/>
+					<value>7</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-8-label')"/>
+					<value>8</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-9-label')"/>
+					<value>9</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-10-label')"/>
+					<value>10</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-11-label')"/>
+					<value>11</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-12-label')"/>
+					<value>12</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-13-label')"/>
+					<value>13</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-14-label')"/>
+					<value>14</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_topics-0-label')"/>
+					<value>0</value>
+				</item>
+			</select>
+			<input ref="/data/he/he_other">
+				<label ref="jr:itext('he_other-label')"/>
+			</input>
+			<select1 ref="/data/he/he_groups">
+				<label ref="jr:itext('he_groups-label')"/>
+				<item>
+					<label ref="jr:itext('he_groups-0-label')"/>
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_groups-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_groups-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('he_groups-3-label')"/>
+					<value>3</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/stock">
+			<label ref="jr:itext('stock-label')"/>
+			<trigger ref="/data/stock/stock_label">
+				<label ref="jr:itext('stock_label-label')"/>
+			</trigger>
+			<input ref="/data/stock/stock_amox_pink">
+				<label ref="jr:itext('stock_amox_pink-label')"/>
+			</input>
+			<input ref="/data/stock/stock_amox_green">
+				<label ref="jr:itext('stock_amox_green-label')"/>
+			</input>
+			<input ref="/data/stock/stock_ors">
+				<label ref="jr:itext('stock_ors-label')"/>
+			</input>
+			<input ref="/data/stock/stock_ra_50">
+				<label ref="jr:itext('stock_ra_50-label')"/>
+			</input>
+			<input ref="/data/stock/stock_ra_200">
+				<label ref="jr:itext('stock_ra_200-label')"/>
+			</input>
+			<input ref="/data/stock/stock_zinc">
+				<label ref="jr:itext('stock_zinc-label')"/>
+			</input>
+			<input ref="/data/stock/stock_coartem_yellow">
+				<label ref="jr:itext('stock_coartem_yellow-label')"/>
+			</input>
+			<input ref="/data/stock/stock_coartem_blue">
+				<label ref="jr:itext('stock_coartem_blue-label')"/>
+			</input>
+			<input ref="/data/stock/stock_coartem_green">
+				<label ref="jr:itext('stock_coartem_green-label')"/>
+			</input>
+			<input ref="/data/stock/stock_coartem_brown">
+				<label ref="jr:itext('stock_coartem_brown-label')"/>
+			</input>
+			<input ref="/data/stock/stock_paracetamol">
+				<label ref="jr:itext('stock_paracetamol-label')"/>
+			</input>
+			<input ref="/data/stock/stock_rdt_kits">
+				<label ref="jr:itext('stock_rdt_kits-label')"/>
+			</input>
+			<input ref="/data/stock/stock_gloves">
+				<label ref="jr:itext('stock_gloves-label')"/>
+			</input>
+		</group>
+		<group ref="/data/deaths">
+			<label ref="jr:itext('deaths-label')"/>
+			<trigger ref="/data/deaths/deaths_label">
+				<label ref="jr:itext('deaths_label-label')"/>
+			</trigger>
+			<input ref="/data/deaths/deaths_newborns">
+				<label ref="jr:itext('deaths_newborns-label')"/>
+			</input>
+			<input ref="/data/deaths/deaths_children">
+				<label ref="jr:itext('deaths_children-label')"/>
+			</input>
+			<input ref="/data/deaths/deaths_mothers">
+				<label ref="jr:itext('deaths_mothers-label')"/>
+			</input>
+			<input ref="/data/deaths/deaths_others">
+				<label ref="jr:itext('deaths_others-label')"/>
+			</input>
+		</group>
+	</h:body>
+</h:html>

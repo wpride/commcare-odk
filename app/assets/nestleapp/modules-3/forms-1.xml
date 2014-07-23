@@ -1,0 +1,285 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Deregister Child</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/ba5feb9f7529d5081234abb981effd89a7291053" uiVersion="1" version="942" name="Deregister Child">
+					<discharge_date/>
+					<reason_for_closure/>
+					<date_of_death/>
+					<name_of_deceased/>
+					<place_of_death/>
+					<type_of_death/>
+					<time_of_death_child/>
+					<cause_of_death_child/>
+					<are_you_sure/>
+					<done/>
+					<mother_id/>
+					<child_id/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><type_of_death/><discharge_date/><name_of_deceased/><mother_id/><date_of_death/><cause_of_death_child/><time_of_death_child/><are_you_sure/><reason_for_closure/><place_of_death/><child_id/></update><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/discharge_date" type="xsd:date" calculate="today()"/>
+			<bind nodeset="/data/reason_for_closure"/>
+			<bind nodeset="/data/date_of_death" type="xsd:date" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/name_of_deceased" type="xsd:string" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/place_of_death" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/type_of_death" relevant="/data/reason_for_closure = 'death'"/>
+			<bind nodeset="/data/time_of_death_child" relevant="/data/type_of_death = 'newborn'"/>
+			<bind nodeset="/data/cause_of_death_child" relevant="/data/type_of_death = 'newborn' or /data/type_of_death = 'infant' or /data/type_of_death = 'child'"/>
+			<bind nodeset="/data/are_you_sure"/>
+			<bind nodeset="/data/done"/>
+			<bind nodeset="/data/mother_id"/>
+			<bind nodeset="/data/child_id"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="discharge_date-label">
+						<value>Date</value>
+					</text>
+					<text id="reason_for_closure-label">
+						<value>Reason for closure</value>
+					</text>
+					<text id="closure_reason-death-label">
+						<value>Death</value>
+					</text>
+					<text id="reason_for_closure-change_of_location-label">
+						<value>Change of HH location outside of ttC area</value>
+					</text>
+					<text id="reason_for_closure-does_not_want_to_participate-label">
+						<value>HH does not want to participate</value>
+					</text>
+					<text id="date_of_death-label">
+						<value>Date of death</value>
+					</text>
+					<text id="name_of_deceased-label">
+						<value>Name of deceased</value>
+					</text>
+					<text id="place_of_death-label">
+						<value>Place of death</value>
+					</text>
+					<text id="place_of_death-home-label">
+						<value>Home</value>
+					</text>
+					<text id="place_of_death-health_centre-label">
+						<value>Health centre</value>
+					</text>
+					<text id="place_of_death-hospital-label">
+						<value>Hospital</value>
+					</text>
+					<text id="place_of_death-other-label">
+						<value>Other</value>
+					</text>
+					<text id="type_of_death-label">
+						<value>Type of death</value>
+					</text>
+					<text id="type_of_death-newborn_death-label">
+						<value>Newborn death (0 - 28d)</value>
+					</text>
+					<text id="type_of_death-infant-label">
+						<value>Infant death (29d - 12m)</value>
+					</text>
+					<text id="type_of_death-child-label">
+						<value>Child death (12 - 24m)</value>
+					</text>
+					<text id="type_of_death-other-label">
+						<value>Other</value>
+					</text>
+					<text id="time_of_death_child-label">
+						<value>Time of death</value>
+					</text>
+					<text id="time_of_death-still_birth-label">
+						<value>Still birth</value>
+					</text>
+					<text id="time_of_death-early_neonatal-label">
+						<value>Early neonatal (0 - 7d)</value>
+					</text>
+					<text id="time_of_death-late_neonatal-label">
+						<value>Late neonatal (8 - 28d)</value>
+					</text>
+					<text id="cause_of_death_child-label">
+						<value>Cause of death</value>
+					</text>
+					<text id="cause_of_death_child-ari-label">
+						<value>ARI</value>
+					</text>
+					<text id="cause_of_death_child-fever-label">
+						<value>Fever</value>
+					</text>
+					<text id="cause_of_death_child-dysentery-label">
+						<value>Dysentery</value>
+					</text>
+					<text id="cause_of_death_child-diarrhea-label">
+						<value>Diarrhea</value>
+					</text>
+					<text id="cause_of_death_child-injury-label">
+						<value>Injury or accident</value>
+					</text>
+					<text id="cause_of_death_child-malnutrition-label">
+						<value>Malnutrition</value>
+					</text>
+					<text id="cause_of_death_child-cholera-label">
+						<value>Cholera</value>
+					</text>
+					<text id="cause_of_death_child-measles-label">
+						<value>Measles</value>
+					</text>
+					<text id="cause_of_death_child-meningitis-label">
+						<value>Meningitis</value>
+					</text>
+					<text id="cause_of_death_child-other-label">
+						<value>Other</value>
+					</text>
+					<text id="are_you_sure-label">
+						<value>Are you sure you wish to deregister this child?</value>
+					</text>
+					<text id="are_you_sure-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="are_you_sure-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="done-label">
+						<value>This child will now be de-registered.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/type_of_death" relevant="count(/data/type_of_death) &gt; 0" calculate="/data/type_of_death"/><bind nodeset="/data/case/update/discharge_date" relevant="count(/data/discharge_date) &gt; 0" calculate="/data/discharge_date"/><bind nodeset="/data/case/update/name_of_deceased" relevant="count(/data/name_of_deceased) &gt; 0" calculate="/data/name_of_deceased"/><bind nodeset="/data/case/update/mother_id" relevant="count(/data/mother_id) &gt; 0" calculate="/data/mother_id"/><bind nodeset="/data/case/update/date_of_death" relevant="count(/data/date_of_death) &gt; 0" calculate="/data/date_of_death"/><bind nodeset="/data/case/update/cause_of_death_child" relevant="count(/data/cause_of_death_child) &gt; 0" calculate="/data/cause_of_death_child"/><bind nodeset="/data/case/update/time_of_death_child" relevant="count(/data/time_of_death_child) &gt; 0" calculate="/data/time_of_death_child"/><bind nodeset="/data/case/update/are_you_sure" relevant="count(/data/are_you_sure) &gt; 0" calculate="/data/are_you_sure"/><bind nodeset="/data/case/update/reason_for_closure" relevant="count(/data/reason_for_closure) &gt; 0" calculate="/data/reason_for_closure"/><bind nodeset="/data/case/update/place_of_death" relevant="count(/data/place_of_death) &gt; 0" calculate="/data/place_of_death"/><bind nodeset="/data/case/update/child_id" relevant="count(/data/child_id) &gt; 0" calculate="/data/child_id"/><bind nodeset="/data/case/close" relevant="/data/are_you_sure = 'yes'"/><setvalue ref="/data/name_of_deceased" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/child_name"/><setvalue ref="/data/mother_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_id"/><setvalue ref="/data/child_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/child_id"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/discharge_date">
+			<label ref="jr:itext('discharge_date-label')"/>
+		</input>
+		<select1 ref="/data/reason_for_closure">
+			<label ref="jr:itext('reason_for_closure-label')"/>
+			<item>
+				<label ref="jr:itext('closure_reason-death-label')"/>
+				<value>death</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_for_closure-change_of_location-label')"/>
+				<value>change_of_location</value>
+			</item>
+			<item>
+				<label ref="jr:itext('reason_for_closure-does_not_want_to_participate-label')"/>
+				<value>does_not_want_to_participate</value>
+			</item>
+		</select1>
+		<input ref="/data/date_of_death">
+			<label ref="jr:itext('date_of_death-label')"/>
+		</input>
+		<input ref="/data/name_of_deceased">
+			<label ref="jr:itext('name_of_deceased-label')"/>
+		</input>
+		<select1 ref="/data/place_of_death">
+			<label ref="jr:itext('place_of_death-label')"/>
+			<item>
+				<label ref="jr:itext('place_of_death-home-label')"/>
+				<value>home</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_death-health_centre-label')"/>
+				<value>health_centre</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_death-hospital-label')"/>
+				<value>hospital</value>
+			</item>
+			<item>
+				<label ref="jr:itext('place_of_death-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/type_of_death">
+			<label ref="jr:itext('type_of_death-label')"/>
+			<item>
+				<label ref="jr:itext('type_of_death-newborn_death-label')"/>
+				<value>newborn_death</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_death-infant-label')"/>
+				<value>infant</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_death-child-label')"/>
+				<value>child</value>
+			</item>
+			<item>
+				<label ref="jr:itext('type_of_death-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/time_of_death_child">
+			<label ref="jr:itext('time_of_death_child-label')"/>
+			<item>
+				<label ref="jr:itext('time_of_death-still_birth-label')"/>
+				<value>still_birth</value>
+			</item>
+			<item>
+				<label ref="jr:itext('time_of_death-early_neonatal-label')"/>
+				<value>early_neonatal</value>
+			</item>
+			<item>
+				<label ref="jr:itext('time_of_death-late_neonatal-label')"/>
+				<value>late_neonatal</value>
+			</item>
+		</select1>
+		<select1 ref="/data/cause_of_death_child">
+			<label ref="jr:itext('cause_of_death_child-label')"/>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-ari-label')"/>
+				<value>ari</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-fever-label')"/>
+				<value>fever</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-dysentery-label')"/>
+				<value>dysentery</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-diarrhea-label')"/>
+				<value>diarrhea</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-injury-label')"/>
+				<value>injury</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-malnutrition-label')"/>
+				<value>malnutrition</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-cholera-label')"/>
+				<value>cholera</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-measles-label')"/>
+				<value>measles</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-meningitis-label')"/>
+				<value>meningitis</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cause_of_death_child-other-label')"/>
+				<value>other</value>
+			</item>
+		</select1>
+		<select1 ref="/data/are_you_sure">
+			<label ref="jr:itext('are_you_sure-label')"/>
+			<item>
+				<label ref="jr:itext('are_you_sure-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('are_you_sure-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<trigger ref="/data/done">
+			<label ref="jr:itext('done-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

@@ -1,0 +1,329 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Beneficiary</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/new" uiVersion="1" version="2" name="New Beneficiary">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+				
+				
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+	    			<create>
+	    				<case_type>cc_bihar_pregnancy</case_type>
+	        			<owner_id/>
+	        			<case_name/>
+	    			</create>
+	    			<update>
+	    			    <last_visit_type>new</last_visit_type>
+            			<date_last_visit/>
+						<date_next_reg/>
+						<nextvisittype>reg</nextvisittype>
+						<nextvisitdate/>
+	    			
+					<!-- case properties for logic (1) -->
+						<mother_alive/>
+					
+					<!-- case properties for MCTS (5)-->
+	    				<mother_name/>
+						<husband_name/>
+						<hh_number />
+						<ward_number />
+						<family_number />
+						<mother_dob />
+	    			</update>
+				</case>
+					<manual_group/>
+					<full_name />
+					<husband_name />
+					<ward_number/>
+					<hh_number />
+					<family_number />
+					<dob_known />
+					<dob />
+					<show_age />
+					<caste />
+					<success />
+					<age_calc />
+				</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="groups" src="jr://fixture/user-groups"/>
+			
+			<!-- metadata -->
+	    	<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+    		
+	    	<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>    	
+    		<setvalue event="xforms-revalidate" ref="/data/case/create/owner_id" value="if(/data/manual_group = '', instance('groups')/groups/group/@id, /data/manual_group)"/>
+    		<setvalue event="xforms-revalidate" ref="/data/case/update/date_next_reg" value="date(today()+7)"/>
+			<setvalue event="xforms-revalidate" ref="/data/case/update/date_last_visit" value="date(today())"/>
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+	    
+	    	<bind nodeset="/data/manual_group" relevant="count(instance('groups')/groups/group) &gt; 1" required="true()"/>
+	    	<bind nodeset="/data/case/@case_id" type="xsd:string" calculate="uuid()"/>
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<!-- case binds -->
+			<bind nodeset="/data/case/create/case_name" calculate="/data/full_name"/>
+			<bind nodeset="/data/case/update/mother_alive" calculate="'yes'" />
+			<bind nodeset="/data/case/update/mother_name"  calculate="/data/full_name" />
+			<bind nodeset="/data/case/update/husband_name"  calculate="/data/husband_name" />
+			<bind nodeset="/data/case/update/hh_number"  calculate="/data/hh_number" />
+			<bind nodeset="/data/case/update/ward_number"  calculate="/data/ward_number" />
+			<bind nodeset="/data/case/update/family_number"  calculate="/data/family_number" />
+			<bind nodeset="/data/case/update/mother_dob"  calculate="/data/dob" />
+			<bind nodeset="/data/case/update/nextvisitdate"  calculate="date(today() + 7)" />
+			
+			<!-- form logic binds -->
+			<bind nodeset="/data/full_name" type="xsd:string" required="true()" />
+			<bind nodeset="/data/husband_name" type="xsd:string" required="true()" />
+			<bind nodeset="/data/ward_number" type="xsd:int" constraint="string-length(.) &lt;= 2 and . &gt; 0" jr:constraintMsg="jr:itext('ward_number-constraintMsg')" required="true()" />
+			<bind nodeset="/data/hh_number" type="xsd:int" constraint="string-length(.) &lt; 4 and . &gt; 0" jr:constraintMsg="jr:itext('hh_number-constraintMsg')" required="true()" />
+			<bind nodeset="/data/family_number" type="xsd:int" constraint="string-length(.) &lt; 3 and . &gt; 0" jr:constraintMsg="jr:itext('family_number-constraintMsg')" required="true()" />
+			<bind nodeset="/data/dob_known" required="true()" />
+			<bind nodeset="/data/dob" type="xsd:date" constraint="(today() - . &lt; (365*60)) and (today()-.) &gt;(365*12)" relevant="/data/dob_known = 'yes'" required="true()" />
+			<bind nodeset="/data/show_age" relevant="/data/dob_known = 'yes'" />
+			<bind nodeset="/data/caste" required="true()" />
+			<bind nodeset="/data/success" />
+			<bind nodeset="/data/age_calc" type="xsd:int" calculate="int((today() - /data/dob) div 365)" />
+			
+			<itext>
+				<translation lang="hin" default="">
+					<text id="group_select">
+						<value>इस गर्भावस्था को किस ग्रुप के साथ जोरना है?</value>
+					</text>
+					<text id="full_name-label">
+						<value>महिला का पूरा नाम </value>
+						<value form="image">jr://file/commcare/media/images/prereg/full_name.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/full_name_hin.mp3</value>
+					</text>
+					<text id="husband_name-label">
+						<value>पति का नाम </value>
+						<value form="image">jr://file/commcare/media/images/prereg/husband_name.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/husband_name_hin.mp3</value>
+					</text>
+					<text id="ward_number-label">
+						<value>वार्ड संख्या भरें</value>
+						<value form="image">jr://file/commcare/media/images/prereg/ward_number.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/ward_number_hin.mp3</value>
+					</text>
+					<text id="ward_number-constraintMsg">
+						<value>संख्या दो अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/ward_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="dob_known-label">
+						<value>महिला को अपने जन्म की तारीख पता है?</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/dob_known_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/dob_known.png</value>
+					</text>
+					<text id="dob-label">
+						<value>महिला की जन्म तारीख क्या है?</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/dob_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/dob.png</value>
+					</text>
+					<text id="show_age-label">
+						<value>उम्र   <output ref="/data/age_calc"/></value>
+						<value form="image">jr://file/commcare/media/images/prereg/show_age.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/show_age_hin.mp3</value>
+					</text>
+					<text id="caste-label">
+						<value>जाति</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/caste_hin.mp3</value>
+					</text>
+					<text id="caste-sc_st-label">
+						<value>1. अनुसुचित जाति / जनजाति</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/caste-sc_st_hin.mp3</value>
+					</text>
+					<text id="caste-other-label">
+						<value>2. अन्य</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/caste-other_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतापूर्वक फार्म समाप्त।</value>
+						<value form="image">jr://file/commcare/media/images/prereg/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/success_hin.mp3</value>
+					</text>
+					<text id="hh_number-label">
+						<value>परिवार संख्या </value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/hh_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/hh_number.png</value>
+					</text>
+					<text id="hh_number-constraintMsg">
+						<value>संख्या तीन अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/hh_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="family_number-label">
+						<value>परिवार मे सदस्य की क्रम संख्या</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/family_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/family_number.png</value>
+					</text>
+					<text id="family_number-constraintMsg">
+						<value>संख्या दो अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/family_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="dob_known-yes-label">
+						<value>1. हॉ</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/yes_hin.mp3</value>
+					</text>
+					<text id="dob_known-no-label">
+						<value>2. नही</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/no_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="en">
+					<text id="group_select">
+						<value>Which group should this pregnancy be shared with?</value>
+					</text>
+					<text id="full_name-label">
+						<value>Full Name</value>
+						<value form="image">jr://file/commcare/media/images/prereg/full_name.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/full_name_hin.mp3</value>
+					</text>
+					<text id="husband_name-label">
+						<value>Husband's Name</value>
+						<value form="image">jr://file/commcare/media/images/prereg/husband_name.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/husband_name_hin.mp3</value>
+					</text>
+					<text id="ward_number-label">
+						<value>Enter Ward number</value>
+						<value form="image">jr://file/commcare/media/images/prereg/ward_number.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/ward_number_hin.mp3</value>
+					</text>
+					<text id="ward_number-constraintMsg">
+						<value>Must be 2 digits or fewer</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/ward_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="dob_known-label">
+						<value>Do you know your birth date?</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/dob_known_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/dob_known.png</value>
+					</text>
+					<text id="dob-label">
+						<value>What is your date of birth?</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/dob_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/dob.png</value>
+					</text>
+					<text id="show_age-label">
+						<value>Age: <output ref="/data/age_calc"/></value>
+						<value form="image">jr://file/commcare/media/images/prereg/show_age.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/show_age_hin.mp3</value>
+					</text>
+					<text id="caste-label">
+						<value>Caste</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/caste_hin.mp3</value>
+					</text>
+					<text id="caste-sc_st-label">
+						<value>1. SC / ST</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/caste-sc_st_hin.mp3</value>
+					</text>
+					<text id="caste-other-label">
+						<value>2. Other</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/caste-other_hin.mp3</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="image">jr://file/commcare/media/images/prereg/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/success_hin.mp3</value>
+					</text>
+					<text id="hh_number-label">
+						<value>Enter Household Number</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/hh_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/hh_number.png</value>
+					</text>
+					<text id="hh_number-constraintMsg">
+						<value>Number should be 3 digits</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/family_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="family_number-label">
+						<value>Enter Family Number</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/family_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/prereg/family_number.png</value>
+					</text>
+					<text id="family_number-constraintMsg">
+						<value>Number should be 2 digits</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/family_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="dob_known-yes-label">
+						<value>1. Yes</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/yes_hin.mp3</value>
+					</text>
+					<text id="dob_known-no-label">
+						<value>2. No</value>
+						<value form="audio">jr://file/commcare/media/audio/prereg/no_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/manual_group">
+			<label ref="jr:itext('group_select')"/>
+			<itemset nodeset="instance('groups')/groups/group">
+		         <label ref="name"/>
+		         <value ref="@id"/>
+			</itemset>
+		</select1>
+		<input ref="/data/full_name">
+			<label ref="jr:itext('full_name-label')" />
+		</input>
+		<input ref="/data/husband_name">
+			<label ref="jr:itext('husband_name-label')" />
+		</input>
+		<input ref="/data/ward_number">
+			<label ref="jr:itext('ward_number-label')" />
+		</input>
+		<input ref="/data/hh_number">
+			<label ref="jr:itext('hh_number-label')" />
+		</input>
+		<input ref="/data/family_number">
+			<label ref="jr:itext('family_number-label')" />
+		</input>
+		<select1 ref="/data/dob_known">
+			<label ref="jr:itext('dob_known-label')" />
+			<item>
+				<label ref="jr:itext('dob_known-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('dob_known-no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/dob">
+			<label ref="jr:itext('dob-label')" />
+		</input>
+		<trigger ref="/data/show_age">
+			<label ref="jr:itext('show_age-label')" />
+		</trigger>
+		<select1 ref="/data/caste">
+			<label ref="jr:itext('caste-label')" />
+			<item>
+				<label ref="jr:itext('caste-sc_st-label')" />
+				<value>sc_st</value>
+			</item>
+			<item>
+				<label ref="jr:itext('caste-other-label')" />
+				<value>other</value>
+			</item>
+		</select1>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+	</h:body>
+</h:html>

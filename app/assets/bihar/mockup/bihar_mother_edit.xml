@@ -1,0 +1,530 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Mother edit</h:title>
+		<model>
+			<instance>
+				<data xmlns:cc="http://commcarehq.org/xforms" xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://bihar.commcarehq.org/pregnancy/mother_edit" uiVersion="1" version="2" name="Mother Edit">
+					<orx:meta>
+						<orx:deviceID/>
+						<orx:timeStart/>
+						<orx:timeEnd/>
+						<orx:username/>
+						<orx:userID/>
+						<orx:instanceID/>
+						<cc:appVersion/>
+					</orx:meta>
+					<referral_info/>
+			
+					<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+						<update>
+							<case_name/>
+							<mother_name />
+							<hh_number />
+							<mother_dob />
+							<husband_name />
+							<family_number />
+							<mobile_number />
+							<ward_number />
+							<age />
+							<mobile_number_whose/>
+						</update>
+					</case>
+					
+					<update_mother_name />
+					<update_hh_number />
+					<update_family_number />
+					<update_ward_number />
+					<update_husband_name />
+					<update_mother_dob />
+					<update_mobile_number />
+					<update_mobile_number_whose />
+					
+					<success />
+					
+				</data>
+			</instance>
+			
+			<instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
+			
+			
+			<setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
+	    	<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
+			<setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/>
+			
+			<setvalue event="xforms-ready" ref="/data/case/update/mother_name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_name"/>
+	    	<setvalue event="xforms-ready" ref="/data/case/update/husband_name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/husband_name"/>
+	    	<setvalue event="xforms-ready" ref="/data/case/update/mother_dob" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_dob"/>
+	    	<setvalue event="xforms-ready" ref="/data/case/update/hh_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/hh_number"/>
+	    	<setvalue event="xforms-ready" ref="/data/case/update/family_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/family_number"/>
+			<setvalue event="xforms-ready" ref="/data/case/update/ward_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/ward_number"/>
+	    	<setvalue event="xforms-ready" ref="/data/case/update/mobile_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mobile_number"/>
+			<setvalue event="xforms-ready" ref="/data/case/update/mobile_number_whose" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mobile_number_whose"/>
+			
+			<bind nodeset="/data/meta/timeStart" type="dateTime"/>
+     		<bind nodeset="/data/meta/timeEnd" type="dateTime"/>
+			
+			<setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id"/>
+			<bind nodeset="/data/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/case/update/age" type="xsd:int" relevant="/data/update_mother_dob = 'yes'" calculate="(today() - date(/data/case/update/mother_dob)) div 365.25" />			
+			
+			<bind nodeset="/data/case/update/hh_number" type="xsd:int" constraint="string-length(.) &lt;= 3" relevant="/data/update_hh_number = 'yes'" jr:constraintMsg="jr:itext('hh_number-constraintMsg')" required="true()" />
+			<bind nodeset="/data/case/update/mother_name" type="xsd:string" relevant="/data/update_mother_name = 'yes'" required="true()" />
+			<bind nodeset="/data/case/update/family_number" type="xsd:int" relevant="/data/update_family_number = 'yes'" constraint="string-length(.) &lt;= 2 and . &gt; 0" jr:constraintMsg="jr:itext('family_number-constraintMsg')" required="true()" />
+			<bind nodeset="/data/case/update/ward_number" type="xsd:int" relevant="/data/update_ward_number = 'yes'" constraint="string-length(.) &lt;= 2 and . &gt; 0" jr:constraintMsg="jr:itext('ward_number-constraintMsg')" required="true()" />
+			<bind nodeset="/data/case/update/husband_name" type="xsd:string" relevant="/data/update_husband_name = 'yes'" required="true()" />
+			<bind nodeset="/data/case/update/mother_dob" type="xsd:date" constraint="(today() - . &lt; (365.25*60)) and (today()-.) &gt;(365.25*12)" relevant="/data/update_mother_dob = 'yes'" required="true()" />
+			<bind nodeset="/data/case/update/mobile_number" type="xsd:string" constraint="string-length(.) &gt; 9 and string-length(.) &lt;= 10" jr:constraintMsg="jr:itext('mobile_number-constraintMsg')" relevant="/data/update_mobile_number = 'yes'" required="true()" />
+			<bind nodeset="/data/case/update/mobile_number_whose" relevant="/data/update_mobile_number_whose = 'yes'" required="true()" />
+			
+			<bind nodeset="/data/case/update/case_name" relevant="count(/data/case/update/mother_name) &gt; 0" calculate="/data/case/update/mother_name" />
+			
+			<bind nodeset="/data/update_family_number" required="true()" />
+			<bind nodeset="/data/update_ward_number" required="true()" />
+			<bind nodeset="/data/update_mother_name" required="true()" />
+			<bind nodeset="/data/update_mother_dob" required="true()" />
+			<bind nodeset="/data/update_husband_name" required="true()" />
+			<bind nodeset="/data/update_hh_number" required="true()" />
+			<bind nodeset="/data/update_mobile_number" required="true()" />
+			<bind nodeset="/data/update_mobile_number_whose" required="true()" relevant="/data/update_mobile_number = 'yes'" />
+
+			<itext>
+				<translation lang="en" default="">
+					<text id="mother_name-label">
+						<value>Full Name</value>
+						<value form="image">jr://file/commcare/media/images/edit/full_name.png</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/full_name_hin.mp3</value>
+					</text>
+					<text id="hh_number-label">
+						<value>Enter Household Number</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/hh_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/hh_number.png</value>
+					</text>
+					<text id="hh_number-constraintMsg">
+						<value>Number should be 3 digits</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/hh_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="mobile_number-label">
+						<value>Edit Mobile Number</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/mobile_number.png</value>
+					</text>
+					<text id="mobile_number-constraintMsg">
+						<value>Number should be 10 digits</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="update_mobile_number_whose-label">
+						<value>Update Whose Mobile Number?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mobile_number_whose_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mobile_number_whose.png</value>
+					</text>
+					<text id="mobile_number_whose-label">
+						<value>Whose Mobile Number</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_mine-label">
+						<value>1. Mine</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_mine_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_relative-label">
+						<value>2. Relative</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_relative_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_neighbor-label">
+						<value>3. Neighbor</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_neighbor_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_asha-label">
+						<value>4. ASHA</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_asha_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_aww-label">
+						<value>5. AWW</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_aww_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_anm-label">
+						<value>6. ANM</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_anm_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_other-label">
+						<value>7. Other</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_other_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. Yes</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. No</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/no_hin.mp3</value>
+					</text>
+					<text id="family_number-label">
+						<value>Edit Family Number</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/family_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/family_number.png</value>
+					</text>
+					<text id="family_number-constraintMsg">
+						<value>Number should be 2 digits</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/family_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="update_family_number-label">
+						<value>Update Family Number?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_family_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_family_number.png</value>
+					</text>
+					<text id="update_mother_name-label">
+						<value>Update Mother Name?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mother_name_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mother_name.png</value>
+					</text>
+					<text id="update_mother_dob-label">
+						<value>Update Mother Date of Birth?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mother_dob_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mother_dob.png</value>
+					</text>
+					<text id="update_husband_name-label">
+						<value>Update Husband Name?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_husband_name_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_husband_name.png</value>
+					</text>
+					<text id="update_hh_number-label">
+						<value>Update Household Number?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_hh_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_hh_number.png</value>
+					</text>
+					<text id="update_mobile_number-label">
+						<value>Update Mobile Number?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mobile_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mobile_number.png</value>
+					</text>
+					<text id="mother_dob-label">
+						<value>Enter Mother Date of Birth?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mother_dob_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/mother_dob.png</value>
+					</text>
+					<text id="husband_name-label">
+						<value>Husband's Name</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/husband_name_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/husband_name.png</value>
+					</text>
+					<text id="ward_number-label">
+						<value>Enter Ward Number</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/ward_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/ward_number.png</value>
+					</text>
+					<text id="ward_number-constraintMsg">
+						<value>Must be less than 2 digits</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/ward_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="update_ward_number-label">
+						<value>Update Ward Number?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_ward_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_ward_number.png</value>
+					</text>
+					<text id="success-label">
+						<value>Success.  Done with form.</value>
+						<value form="image">jr://file/commcare/media/images/edit/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/success_hin.mp3</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+				    <text id="mother_name-label">
+						<value>महिला का पूरा नाम </value>
+						<value form="image">jr://file/commcare/media/images/edit/full_name.png</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/full_name_hin.mp3</value>
+					</text>
+					<text id="hh_number-label">
+						<value>परिवार संख्या </value>
+						<value form="audio">jr://file/commcare/media/audio/edit/hh_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/hh_number.png</value>
+					</text>
+					<text id="hh_number-constraintMsg">
+						<value>संख्या तीन अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/hh_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="mobile_number-label">
+						<value>मोबाइल नम्बर बदलें</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/mobile_number.png</value>
+					</text>
+					<text id="mobile_number-constraintMsg">
+						<value>10  अंको का मोबाइल नम्बर भरे</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="update_mobile_number_whose-label">
+						<value>किनका मोबाइल नम्बर बदला ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mobile_number_whose_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mobile_number_whose.png</value>
+					</text>
+					<text id="mobile_number_whose-label">
+						<value>ये मोबाइल नम्बर किसका है? </value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_mine-label">
+						<value>1. खुद का</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_mine_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_relative-label">
+						<value>2. सम्बंधी का</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_relative_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_neighbor-label">
+						<value>3. पडोसी का</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_neighbor_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_asha-label">
+						<value>4. आशा का</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_asha_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_aww-label">
+						<value>5. आँगनवाड़ी कार्यकर्ता का</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_aww_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_anm-label">
+						<value>6. ए.एन.एम का </value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_anm_hin.mp3</value>
+					</text>
+					<text id="mobile_number_whose-mobile_other-label">
+						<value>7. अन्य</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mobile_number_whose-mobile_other_hin.mp3</value>
+					</text>
+					<text id="yes-label">
+						<value>1. हॉ</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/yes_hin.mp3</value>
+					</text>
+					<text id="no-label">
+						<value>2. नही</value>
+						<value form="audio">jr://file/commcare/media/audio/bp/no_hin.mp3</value>
+					</text>
+					<text id="family_number-label">
+						<value>परिवार मे सदस्य की क्रम संख्या ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/family_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/family_number.png</value>
+					</text>
+					<text id="family_number-constraintMsg">
+						<value>संख्या दो अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/family_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="update_family_number-label">
+						<value>परिवार मे सदस्य की क्रम संख्या बदलें ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_family_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_family_number.png</value>
+					</text>
+					<text id="update_mother_name-label">
+						<value>माँ का नाम बदलें ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mother_name_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mother_name.png</value>
+					</text>
+					<text id="update_mother_dob-label">
+						<value>माँ की जन्म की तारीख बदलें ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mother_dob_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mother_dob.png</value>
+					</text>
+					<text id="update_husband_name-label">
+						<value>पति का नाम बदलें ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_husband_name_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_husband_name.png</value>
+					</text>
+					<text id="update_hh_number-label">
+						<value>गृह संख्या बदलें ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_hh_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_hh_number.png</value>
+					</text>
+					<text id="update_mobile_number-label">
+						<value>इस मोबाईल नम्बर को बदलना चाहते है ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_mobile_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_mobile_number.png</value>
+					</text>
+					<text id="mother_dob-label">
+						<value>महिला की जन्म तारीख क्या है?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/mother_dob_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/mother_dob.png</value>
+					</text>
+					<text id="husband_name-label">
+						<value>पति का नाम</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/husband_name_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/husband_name.png</value>
+					</text>
+					<text id="ward_number-label">
+						<value>वार्ड संख्या बदलें</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/ward_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/ward_number.png</value>
+					</text>
+					<text id="ward_number-constraintMsg">
+						<value>संख्या दो अंक होना चाहिए</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/ward_number_constraintMsg_hin.mp3</value>
+					</text>
+					<text id="update_ward_number-label">
+						<value>वार्ड संख्या बदलें ?</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/update_ward_number_hin.mp3</value>
+						<value form="image">jr://file/commcare/media/images/edit/update_ward_number.png</value>
+					</text>
+					<text id="success-label">
+						<value>सफलतापूर्वक फार्म समाप्त।</value>
+						<value form="image">jr://file/commcare/media/images/edit/success.png</value>
+						<value form="audio">jr://file/commcare/media/audio/edit/success_hin.mp3</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/update_mother_name">
+			<label ref="jr:itext('update_mother_name-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/case/update/mother_name">
+			<label ref="jr:itext('mother_name-label')" />
+		</input>
+		
+		<select1 ref="/data/update_husband_name">
+			<label ref="jr:itext('update_husband_name-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/case/update/husband_name">
+			<label ref="jr:itext('husband_name-label')" />
+		</input>
+		
+		<select1 ref="/data/update_hh_number">
+			<label ref="jr:itext('update_hh_number-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/case/update/hh_number">
+			<label ref="jr:itext('hh_number-label')" />
+		</input> 
+		
+		<select1 ref="/data/update_family_number">
+			<label ref="jr:itext('update_family_number-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/case/update/family_number">
+			<label ref="jr:itext('family_number-label')" />
+		</input>
+		
+		<select1 ref="/data/update_ward_number">
+			<label ref="jr:itext('update_ward_number-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/case/update/ward_number">
+			<label ref="jr:itext('ward_number-label')" />
+		</input>
+		
+		<select1 ref="/data/update_mother_dob">
+			<label ref="jr:itext('update_mother_dob-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>	   
+		<input ref="/data/case/update/mother_dob">
+			<label ref="jr:itext('mother_dob-label')" />
+		</input>
+		
+		<select1 ref="/data/update_mobile_number">
+			<label ref="jr:itext('update_mobile_number-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>	   
+		<input ref="/data/case/update/mobile_number" appearance="numeric">
+			<label ref="jr:itext('mobile_number-label')" />
+		</input>
+		
+		<select1 ref="/data/update_mobile_number_whose">
+			<label ref="jr:itext('update_mobile_number_whose-label')" />
+			<item>
+				<label ref="jr:itext('yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no-label')" />
+				<value>no</value>
+			</item>
+		</select1>	   
+		<select1 ref="/data/case/update/mobile_number_whose">
+			<label ref="jr:itext('mobile_number_whose-label')" />
+			<item>
+				<label ref="jr:itext('mobile_number_whose-mobile_mine-label')" />
+				<value>mobile_mine</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mobile_number_whose-mobile_relative-label')" />
+				<value>mobile_relative</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mobile_number_whose-mobile_neighbor-label')" />
+				<value>mobile_neighbor</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mobile_number_whose-mobile_asha-label')" />
+				<value>mobile_asha</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mobile_number_whose-mobile_aww-label')" />
+				<value>mobile_aww</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mobile_number_whose-mobile_anm-label')" />
+				<value>mobile_anm</value>
+			</item>
+			<item>
+				<label ref="jr:itext('mobile_number_whose-mobile_other-label')" />
+				<value>mobile_other</value>
+			</item>
+		</select1>
+		<trigger ref="/data/success">
+			<label ref="jr:itext('success-label')" />
+		</trigger>
+		
+	</h:body>
+</h:html>

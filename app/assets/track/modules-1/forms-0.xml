@@ -1,0 +1,369 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Form</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/4478E2D5-15AF-4805-95E6-22C4B3F67F34" uiVersion="1" version="11" name="New Form">
+					<shelved_in_groups/>
+					<airtight_containers/>
+					<liquid_on_middle_shelves/>
+					<surgical_items_on_bottom/>
+					<cold_chains_in_refrigerator/>
+					<controlled_substances_locked/>
+					<alphabetical_order/>
+					<easy_to_count/>
+					<no_expired_items/>
+					<shorter_expiry_date_in_front/>
+					<new_items_behind/>
+					<no_expiry_stored_in_order_received/>
+					<manufacture_date_ordered/>
+					<no_poor_quality_items/>
+					<no_overstocked_items/>
+					<record_of_removal_of_items/>
+				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/shelved_in_groups"/>
+			<bind nodeset="/data/airtight_containers"/>
+			<bind nodeset="/data/liquid_on_middle_shelves"/>
+			<bind nodeset="/data/surgical_items_on_bottom"/>
+			<bind nodeset="/data/cold_chains_in_refrigerator"/>
+			<bind nodeset="/data/controlled_substances_locked"/>
+			<bind nodeset="/data/alphabetical_order"/>
+			<bind nodeset="/data/easy_to_count"/>
+			<bind nodeset="/data/no_expired_items"/>
+			<bind nodeset="/data/shorter_expiry_date_in_front"/>
+			<bind nodeset="/data/new_items_behind"/>
+			<bind nodeset="/data/no_expiry_stored_in_order_received"/>
+			<bind nodeset="/data/manufacture_date_ordered"/>
+			<bind nodeset="/data/no_poor_quality_items"/>
+			<bind nodeset="/data/no_overstocked_items"/>
+			<bind nodeset="/data/record_of_removal_of_items"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="shelved_in_groups-label">
+						<value>Supplies are shelved in groups: external, internals, and injectables.</value>
+					</text>
+					<text id="shelved_in_groups-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="shelved_in_groups-no-label">
+						<value>No</value>
+					</text>
+					<text id="airtight_containers-label">
+						<value>Tablets, capsules, and other dry medicines (such as ORS packets) are stored in airtight containers on the upper shelves</value>
+					</text>
+					<text id="airtight_containers-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="airtight_containers-no-label">
+						<value>No</value>
+					</text>
+					<text id="liquid_on_middle_shelves-label">
+						<value>Liquids, ointments, and injectables are stored on the middle shelves.</value>
+					</text>
+					<text id="liquid_on_middle_shelves-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="liquid_on_middle_shelves-no-label">
+						<value>No</value>
+					</text>
+					<text id="surgical_items_on_bottom-label">
+						<value>Supplies, such as surgical items, condoms, and labels, are stored on teh bottom shelves.</value>
+					</text>
+					<text id="surgical_items_on_bottom-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="surgical_items_on_bottom-no-label">
+						<value>No</value>
+					</text>
+					<text id="cold_chains_in_refrigerator-label">
+						<value>Cold-chain items are stored in teh refrigerator.</value>
+					</text>
+					<text id="cold_chains_in_refrigerator-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="cold_chains_in_refrigerator-no-label">
+						<value>No</value>
+					</text>
+					<text id="controlled_substances_locked-label">
+						<value>Controlled substances are kept separate in a double-locked storage space.</value>
+					</text>
+					<text id="controlled_substances_locked-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="controlled_substances_locked-no-label">
+						<value>No</value>
+					</text>
+					<text id="alphabetical_order-label">
+						<value>Supplies are arranged on the shelves in alphabetical order by generic name.</value>
+					</text>
+					<text id="alphabetical_order-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="alphabetical_order-no-label">
+						<value>No</value>
+					</text>
+					<text id="easy_to_count-label">
+						<value>Items are grouped in amounts that are easy to count.</value>
+					</text>
+					<text id="easy_to_count-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="easy_to_count-no-label">
+						<value>No</value>
+					</text>
+					<text id="no_expired_items-label">
+						<value>There are no expired items in the store.</value>
+					</text>
+					<text id="no_expired_items-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="no_expired_items-no-label">
+						<value>No</value>
+					</text>
+					<text id="shorter_expiry_date_in_front-label">
+						<value>Items with shorter expiry dates are placed in front of those with later expiry dates.</value>
+					</text>
+					<text id="shorter_expiry_date_in_front-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="shorter_expiry_date_in_front-no-label">
+						<value>No</value>
+					</text>
+					<text id="new_items_behind-label">
+						<value>For items with the same expiry date, newly received items are placed behind those already on the shelves.</value>
+					</text>
+					<text id="new_items_behind-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="new_items_behind-no-label">
+						<value>No</value>
+					</text>
+					<text id="no_expiry_stored_in_order_received-label">
+						<value>Supplies with no expiry or manufacture dates are stored in order received.</value>
+					</text>
+					<text id="no_expiry_stored_in_order_received-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="no_expiry_stored_in_order_received-no-label">
+						<value>No</value>
+					</text>
+					<text id="manufacture_date_ordered-label">
+						<value>Supplies with no expiry date but with a manufacture date are placed with later dates behind shorter dates.</value>
+					</text>
+					<text id="manufacture_date_ordered-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="manufacture_date_ordered-no-label">
+						<value>No</value>
+					</text>
+					<text id="no_poor_quality_items-label">
+						<value>There are no poor quality items on the shelves.</value>
+					</text>
+					<text id="no_poor_quality_items-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="no_poor_quality_items-no-label">
+						<value>No</value>
+					</text>
+					<text id="no_overstocked_items-label">
+						<value>There are no overstocked or no longer used items on the shelves.</value>
+					</text>
+					<text id="no_overstocked_items-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="no_overstocked_items-no-label">
+						<value>No</value>
+					</text>
+					<text id="record_of_removal_of_items-label">
+						<value>There is a record of the removal of items; the record includes date, time, witness, and manner of removal.</value>
+					</text>
+					<text id="record_of_removal_of_items-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="record_of_removal_of_items-no-label">
+						<value>No</value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/shelved_in_groups">
+			<label ref="jr:itext('shelved_in_groups-label')"/>
+			<item>
+				<label ref="jr:itext('shelved_in_groups-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('shelved_in_groups-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/airtight_containers">
+			<label ref="jr:itext('airtight_containers-label')"/>
+			<item>
+				<label ref="jr:itext('airtight_containers-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('airtight_containers-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/liquid_on_middle_shelves">
+			<label ref="jr:itext('liquid_on_middle_shelves-label')"/>
+			<item>
+				<label ref="jr:itext('liquid_on_middle_shelves-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('liquid_on_middle_shelves-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/surgical_items_on_bottom">
+			<label ref="jr:itext('surgical_items_on_bottom-label')"/>
+			<item>
+				<label ref="jr:itext('surgical_items_on_bottom-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('surgical_items_on_bottom-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/cold_chains_in_refrigerator">
+			<label ref="jr:itext('cold_chains_in_refrigerator-label')"/>
+			<item>
+				<label ref="jr:itext('cold_chains_in_refrigerator-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('cold_chains_in_refrigerator-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/controlled_substances_locked">
+			<label ref="jr:itext('controlled_substances_locked-label')"/>
+			<item>
+				<label ref="jr:itext('controlled_substances_locked-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('controlled_substances_locked-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/alphabetical_order">
+			<label ref="jr:itext('alphabetical_order-label')"/>
+			<item>
+				<label ref="jr:itext('alphabetical_order-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('alphabetical_order-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/easy_to_count">
+			<label ref="jr:itext('easy_to_count-label')"/>
+			<item>
+				<label ref="jr:itext('easy_to_count-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('easy_to_count-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/no_expired_items">
+			<label ref="jr:itext('no_expired_items-label')"/>
+			<item>
+				<label ref="jr:itext('no_expired_items-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no_expired_items-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/shorter_expiry_date_in_front">
+			<label ref="jr:itext('shorter_expiry_date_in_front-label')"/>
+			<item>
+				<label ref="jr:itext('shorter_expiry_date_in_front-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('shorter_expiry_date_in_front-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/new_items_behind">
+			<label ref="jr:itext('new_items_behind-label')"/>
+			<item>
+				<label ref="jr:itext('new_items_behind-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('new_items_behind-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/no_expiry_stored_in_order_received">
+			<label ref="jr:itext('no_expiry_stored_in_order_received-label')"/>
+			<item>
+				<label ref="jr:itext('no_expiry_stored_in_order_received-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no_expiry_stored_in_order_received-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/manufacture_date_ordered">
+			<label ref="jr:itext('manufacture_date_ordered-label')"/>
+			<item>
+				<label ref="jr:itext('manufacture_date_ordered-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('manufacture_date_ordered-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/no_poor_quality_items">
+			<label ref="jr:itext('no_poor_quality_items-label')"/>
+			<item>
+				<label ref="jr:itext('no_poor_quality_items-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no_poor_quality_items-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/no_overstocked_items">
+			<label ref="jr:itext('no_overstocked_items-label')"/>
+			<item>
+				<label ref="jr:itext('no_overstocked_items-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('no_overstocked_items-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/record_of_removal_of_items">
+			<label ref="jr:itext('record_of_removal_of_items-label')"/>
+			<item>
+				<label ref="jr:itext('record_of_removal_of_items-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('record_of_removal_of_items-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+	</h:body>
+</h:html>

@@ -1,0 +1,825 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Update Referral</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/1B8BECBA-AB97-4D8F-BF1B-A5F4B76BA18E" uiVersion="1" version="1493" name="Update Referral">
+					<referral_date/>
+					<referral_date_message/>
+					<patient_name_message/>
+					<close_referral/>
+					<see_info/>
+					<past_info>
+						<patient_name/>
+						<referring_location/>
+						<type_of_patient/>
+						<referred_to/>
+						<reason_pregnant/>
+						<reason_post_partum/>
+						<reason_labor/>
+						<reason_newborn/>
+						<reason_infant_child/>
+						<date_symptoms/>
+						<hours_first_symptoms/>
+						<condition/>
+						<prior_treatments/>
+						<medicine_taken/>
+						<dose/>
+						<date_taken/>
+						<next_of_kin/>
+						<other_prior_treat_admin/>
+						<prior_treat_admin/>
+						<other_prior_treatments/>
+						<other_medicine_taken/>
+						<other_dose/>
+						<other_date_taken/>
+					</past_info>
+					<done/>
+					<reason_for_evacuation/>
+					<referral_id/>
+					<mother_id/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" user_id="" date_modified=""><update><next_of_kin/><date_taken/><close_referral/><referring_location/><dose/><date_symptoms/><other_prior_treatments/><referred_to/><medicine_taken/><patient_name/><prior_treat_admin/><other_medicine_taken/><other_prior_treat_admin/><reason_newborn/><reason_pregnant/><prior_treatments/><hours_first_symptoms/><reason_infant_child/><other_date_taken/><reason_for_evacuation/><condition/><referral_date/><reason_labor/><type_of_patient/><reason_post_partum/></update><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance src="jr://instance/session" id="commcaresession"/><instance src="jr://instance/casedb" id="casedb"/>
+			<bind nodeset="/data/referral_date" type="xsd:date" relevant="1=2" required="true()"/>
+			<bind nodeset="/data/referral_date_message"/>
+			<bind nodeset="/data/patient_name_message"/>
+			<bind nodeset="/data/close_referral"/>
+			<bind nodeset="/data/see_info" required="true()"/>
+			<bind nodeset="/data/past_info" relevant="/data/see_info = 'yes'"/>
+			<bind nodeset="/data/past_info/patient_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/past_info/referring_location" required="true()"/>
+			<bind nodeset="/data/past_info/type_of_patient" required="true()"/>
+			<bind nodeset="/data/past_info/referred_to" required="true()"/>
+			<bind nodeset="/data/past_info/reason_pregnant" relevant="/data/past_info/type_of_patient = 'pregnant'" calculate="/data/reason_for_evacuation"/>
+			<bind nodeset="/data/past_info/reason_post_partum" relevant="/data/past_info/type_of_patient = 'post_partum'" calculate="/data/reason_for_evacuation"/>
+			<bind nodeset="/data/past_info/reason_labor" relevant="/data/past_info/type_of_patient = 'labor'" calculate="/data/reason_for_evacuation"/>
+			<bind nodeset="/data/past_info/reason_newborn" relevant="/data/past_info/type_of_patient = 'newborn'" calculate="/data/reason_for_evacuation"/>
+			<bind nodeset="/data/past_info/reason_infant_child" relevant="/data/past_info/type_of_patient = 'infant' or /data/past_info/type_of_patient = 'child'" calculate="/data/reason_for_evacuation"/>
+			<bind nodeset="/data/past_info/date_symptoms" type="xsd:date"/>
+			<bind nodeset="/data/past_info/hours_first_symptoms"/>
+			<bind nodeset="/data/past_info/condition"/>
+			<bind nodeset="/data/past_info/prior_treatments"/>
+			<bind nodeset="/data/past_info/medicine_taken" type="xsd:string" relevant="/data/past_info/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/dose" type="xsd:string" relevant="/data/past_info/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/date_taken" type="xsd:date" relevant="/data/past_info/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/next_of_kin" type="xsd:int"/>
+			<bind nodeset="/data/past_info/other_prior_treat_admin" relevant="/data/past_info/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/prior_treat_admin" relevant="/data/past_info/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/other_prior_treatments" relevant="/data/past_info/prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/other_medicine_taken" type="xsd:string" relevant="/data/past_info/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/other_dose" type="xsd:string" relevant="/data/past_info/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/past_info/other_date_taken" type="xsd:date" relevant="/data/past_info/other_prior_treatments = 'yes'"/>
+			<bind nodeset="/data/done" relevant="/data/close_referral = 'yes'"/>
+			<bind nodeset="/data/reason_for_evacuation"/>
+			<bind nodeset="/data/referral_id"/>
+			<bind nodeset="/data/mother_id"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="referral_date-label">
+						<value>Date of Referral</value>
+					</text>
+					<text id="referral_date_message-label">
+						<value>The referral date is <output value="format-date(/data/referral_date, '%e/%n/%y')"/></value>
+					</text>
+					<text id="patient_name_message-label">
+						<value>The patient name is  <output value="/data/past_info/patient_name"/></value>
+					</text>
+					<text id="close_referral-label">
+						<value>Was this referral completed?</value>
+					</text>
+					<text id="close_referral-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="close_referral-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="see_info-label">
+						<value>Would you like to see the referral details?</value>
+					</text>
+					<text id="see_info-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="see_info-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="past_info-label">
+						<value>Referral Information</value>
+					</text>
+					<text id="patient_name-label">
+						<value>Patient Name</value>
+					</text>
+					<text id="referring_location-label">
+						<value>Referring Location</value>
+					</text>
+					<text id="referring_location-village-label">
+						<value>Village</value>
+					</text>
+					<text id="referring_location-health_post-label">
+						<value>Health post</value>
+					</text>
+					<text id="referring_location-health_centre-label">
+						<value>Health centre</value>
+					</text>
+					<text id="type_of_patient-label">
+						<value>Type of Patient</value>
+					</text>
+					<text id="Type_of_patient-pregnant-label">
+						<value>Pregnant</value>
+					</text>
+					<text id="Type_of_patient-newborn-label">
+						<value>Newborn (0-28 days)</value>
+					</text>
+					<text id="Type_of_patient-post_partum-label">
+						<value>Post Partum mother (0-45 days)</value>
+					</text>
+					<text id="Type_of_patient-labor-label">
+						<value>Woman in Labor</value>
+					</text>
+					<text id="Type_of_patient-infant-label">
+						<value>Infant (2-11 months)</value>
+					</text>
+					<text id="Type_of_patient-child-label">
+						<value>Child (12-59 months)</value>
+					</text>
+					<text id="Type_of_patient-other-label">
+						<value>Other</value>
+					</text>
+					<text id="referred_to-label">
+						<value>Referred To</value>
+					</text>
+					<text id="referred_to-phu1-label">
+						<value>PHU1</value>
+					</text>
+					<text id="referred_to-phu2-label">
+						<value>PHU2</value>
+					</text>
+					<text id="referred_to-phu3-label">
+						<value>PHU3</value>
+					</text>
+					<text id="referred_to-phu4-label">
+						<value>PHU4</value>
+					</text>
+					<text id="reason_pregnant-label">
+						<value>Reason for Evacuation</value>
+					</text>
+					<text id="reason_pregnant-high_temp-label">
+						<value>High temperature / fever</value>
+					</text>
+					<text id="reason_pregnant-vaginal_bleeding-label">
+						<value>Vaginal Bleeding</value>
+					</text>
+					<text id="reason_pregnant-vaginal_irritation-label">
+						<value>Vaginal irritation or discharge</value>
+					</text>
+					<text id="reason_pregnant-swelling-label">
+						<value>Swelling of feet hands or face</value>
+					</text>
+					<text id="reason_pregnant-pain_in_abdomen-label">
+						<value>Pain in the lower abdomen</value>
+					</text>
+					<text id="reason_pregnant-headache-label">
+						<value>Severe Headache</value>
+					</text>
+					<text id="reason_pregnant-fainting-label">
+						<value>Fainting, dizziness and severe fatigue</value>
+					</text>
+					<text id="reason_pregnant-no_movement-label">
+						<value>No movements from the baby in 24 hours (4th - 9th month)</value>
+					</text>
+					<text id="reason_pregnant-other-label">
+						<value>Other</value>
+					</text>
+					<text id="reason_post_partum-label">
+						<value>Reason for Evacuation</value>
+					</text>
+					<text id="reason_post_partum-high_temp-label">
+						<value>High temperature / fever</value>
+					</text>
+					<text id="reason_post_partum-pain_in_abdomen-label">
+						<value>Pain in lower abdomen</value>
+					</text>
+					<text id="reason_post_partum-vaginal_bleeding-label">
+						<value>Vaginal bleeding</value>
+					</text>
+					<text id="reason_post_partum-vaginal_irritation-label">
+						<value>Vaginal irritation or discharge</value>
+					</text>
+					<text id="reason_post_partum-fainting-label">
+						<value>Fainting, dizziness and severe fatigue</value>
+					</text>
+					<text id="reason_labor-label">
+						<value>Reason for Evacuation</value>
+					</text>
+					<text id="reason_labor-excessive_bleeding-label">
+						<value>Excessive bleeding</value>
+					</text>
+					<text id="reason_labor-fever-label">
+						<value>Fever and chills</value>
+					</text>
+					<text id="reason_labor-loss_consciousness-label">
+						<value>Fits or loss of consciousness</value>
+					</text>
+					<text id="reason_labor-dark_liquid-label">
+						<value>Dark liquid expelled from womb</value>
+					</text>
+					<text id="reason_labor-prolonged_labor-label">
+						<value>Prolonged labor / birth delay (12 hours or more)</value>
+					</text>
+					<text id="reason_labor-water_break-label">
+						<value>Water breaks without labor commencing</value>
+					</text>
+					<text id="reason_newborn-label">
+						<value>Reason for Evacuation</value>
+					</text>
+					<text id="reason_newborn-diff_breastfeeding-label">
+						<value>Unable or difficulty breastfeeding</value>
+					</text>
+					<text id="reason_newborn-convulsion-label">
+						<value>Convulsion / fits</value>
+					</text>
+					<text id="reason_newborn-lethargy-label">
+						<value>Lethargy, unconsciousness</value>
+					</text>
+					<text id="reason_newborn-fever-label">
+						<value>Fever (baby warm to touch)</value>
+					</text>
+					<text id="reason_newborn-shrill_cry-label">
+						<value>Shrill cry</value>
+					</text>
+					<text id="reason_newborn-respiratory-label">
+						<value>Acute respiratory infection (fast noisy or difficult breathing, lower chest indrawing)</value>
+					</text>
+					<text id="reason_newborn-cord_stump-label">
+						<value>Cord stump with pus or foul smell</value>
+					</text>
+					<text id="reason_newborn-no_movement-label">
+						<value>Movement only when stimulated</value>
+					</text>
+					<text id="reason_newborn-hypothermia-label">
+						<value>Hypothermia (baby cold to touch)</value>
+					</text>
+					<text id="reason_newborn-yellow-label">
+						<value>Yellow discoloration before 24 hours (jaundice observed on the palms and soles)</value>
+					</text>
+					<text id="reason_newborn-cord_stump_red-label">
+						<value>Cord stump with redness, or swelling extending to the skin</value>
+					</text>
+					<text id="reason_newborn-postules-label">
+						<value>More than 10 postules (or spots) found in the skin</value>
+					</text>
+					<text id="reason_infant_child-label">
+						<value>Reason for Evacuation</value>
+					</text>
+					<text id="reason_infant_child-fever-label">
+						<value>Fever</value>
+					</text>
+					<text id="reason_infant_child-respiratory-label">
+						<value>Acute respiratory infection (fast, noisy or difficult breathing, lower chest indrawing)</value>
+					</text>
+					<text id="reason_infant_child-diarrhea_dehydration-label">
+						<value>Diarrhea with dehydration</value>
+					</text>
+					<text id="reason_infant_child-diarrhea_blood-label">
+						<value>Diarrhea with blood in stool</value>
+					</text>
+					<text id="reason_infant_child-other-label">
+						<value>Other</value>
+					</text>
+					<text id="date_symptoms-label">
+						<value>Date of first symptoms</value>
+					</text>
+					<text id="hours_first_symptoms-label">
+						<value>How many  hours since mother first noticed symptoms?</value>
+					</text>
+					<text id="hours_first_symptoms-12-label">
+						<value>less than 12 hours</value>
+					</text>
+					<text id="hours_first_symptoms-24-label">
+						<value>less than 24 hours</value>
+					</text>
+					<text id="hours_first_symptoms-48-label">
+						<value>less than 48 hours</value>
+					</text>
+					<text id="hours_first_symptoms-48_plus-label">
+						<value>more than 48</value>
+					</text>
+					<text id="condition-label">
+						<value>Condition upon departure</value>
+					</text>
+					<text id="condition-normal-label">
+						<value>Normal</value>
+					</text>
+					<text id="condition-moderate-label">
+						<value>Moderate</value>
+					</text>
+					<text id="condition-severe-label">
+						<value>Severe</value>
+					</text>
+					<text id="condition-critical-label">
+						<value>Critical</value>
+					</text>
+					<text id="next_of_kin-label">
+						<value>Next of kin contact number</value>
+					</text>
+					<text id="prior_treatments-label">
+						<value>Prior treatments?</value>
+					</text>
+					<text id="prior_treatments-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="prior_treatments-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="medicine_taken-label">
+						<value>Medicine taken</value>
+					</text>
+					<text id="dose-label">
+						<value>Dose</value>
+					</text>
+					<text id="date_taken-label">
+						<value>Date</value>
+					</text>
+					<text id="prior_treat_admin-label">
+						<value>Prior treatments administrator</value>
+					</text>
+					<text id="prior_treat_admin-phu-label">
+						<value>PHU worker</value>
+					</text>
+					<text id="prior_treat_admin-chw-label">
+						<value>CHW</value>
+					</text>
+					<text id="prior_treat_admin-pharmacy-label">
+						<value>Private pharmacy</value>
+					</text>
+					<text id="prior_treat_admin-supplier-label">
+						<value>Unofficial medical supplier</value>
+					</text>
+					<text id="prior_treat_admin-home_remedy-label">
+						<value>Home remedy</value>
+					</text>
+					<text id="prior_treat_admin-other-label">
+						<value>Other</value>
+					</text>
+					<text id="other_prior_treatments-label">
+						<value>Other prior treatments?</value>
+					</text>
+					<text id="prior_treatments-1-no-label">
+						<value>No</value>
+						<value form="image">jr://file/commcare/image/data/no.png</value>
+					</text>
+					<text id="prior_treatments-1-yes-label">
+						<value>Yes</value>
+						<value form="image">jr://file/commcare/image/data/yes.png</value>
+					</text>
+					<text id="other_medicine_taken-label">
+						<value>Medicine taken</value>
+					</text>
+					<text id="other_dose-label">
+						<value>Dose</value>
+					</text>
+					<text id="other_date_taken-label">
+						<value>Date</value>
+					</text>
+					<text id="other_prior_treat_admin-label">
+						<value>Prior treatments administrator</value>
+					</text>
+					<text id="prior_treat_admin-1-phu-label">
+						<value>PHU worker</value>
+					</text>
+					<text id="prior_treat_admin-1-chw-label">
+						<value>CHW</value>
+					</text>
+					<text id="prior_treat_admin-1-pharmacy-label">
+						<value>Private pharmacy</value>
+					</text>
+					<text id="prior_treat_admin-1-supplier-label">
+						<value>Unofficial medical supplier</value>
+					</text>
+					<text id="prior_treat_admin-1-home_remedy-label">
+						<value>Home remedy</value>
+					</text>
+					<text id="prior_treat_admin-1-other-label">
+						<value>Other</value>
+					</text>
+					<text id="done-label">
+						<value>This referral will be closed. Please use the "back" option if you do not want to close this referral.</value>
+					</text>
+				</translation>
+			</itext>
+		<bind nodeset="/data/case/@date_modified" type="dateTime" calculate="/data/meta/timeEnd"/><bind nodeset="/data/case/@user_id" calculate="/data/meta/userID"/><bind nodeset="/data/case/@case_id" calculate="instance('commcaresession')/session/data/case_id"/><bind nodeset="/data/case/update/next_of_kin" relevant="count(/data/past_info/next_of_kin) &gt; 0" calculate="/data/past_info/next_of_kin"/><bind nodeset="/data/case/update/date_taken" relevant="count(/data/past_info/date_taken) &gt; 0" calculate="/data/past_info/date_taken"/><bind nodeset="/data/case/update/close_referral" relevant="count(/data/close_referral) &gt; 0" calculate="/data/close_referral"/><bind nodeset="/data/case/update/referring_location" relevant="count(/data/past_info/referring_location) &gt; 0" calculate="/data/past_info/referring_location"/><bind nodeset="/data/case/update/dose" relevant="count(/data/past_info/dose) &gt; 0" calculate="/data/past_info/dose"/><bind nodeset="/data/case/update/date_symptoms" relevant="count(/data/past_info/date_symptoms) &gt; 0" calculate="/data/past_info/date_symptoms"/><bind nodeset="/data/case/update/other_prior_treatments" relevant="count(/data/past_info/other_prior_treatments) &gt; 0" calculate="/data/past_info/other_prior_treatments"/><bind nodeset="/data/case/update/referred_to" relevant="count(/data/past_info/referred_to) &gt; 0" calculate="/data/past_info/referred_to"/><bind nodeset="/data/case/update/medicine_taken" relevant="count(/data/past_info/medicine_taken) &gt; 0" calculate="/data/past_info/medicine_taken"/><bind nodeset="/data/case/update/patient_name" relevant="count(/data/past_info/patient_name) &gt; 0" calculate="/data/past_info/patient_name"/><bind nodeset="/data/case/update/prior_treat_admin" relevant="count(/data/past_info/prior_treat_admin) &gt; 0" calculate="/data/past_info/prior_treat_admin"/><bind nodeset="/data/case/update/other_medicine_taken" relevant="count(/data/past_info/other_medicine_taken) &gt; 0" calculate="/data/past_info/other_medicine_taken"/><bind nodeset="/data/case/update/other_prior_treat_admin" relevant="count(/data/past_info/other_prior_treat_admin) &gt; 0" calculate="/data/past_info/other_prior_treat_admin"/><bind nodeset="/data/case/update/reason_newborn" relevant="count(/data/past_info/reason_newborn) &gt; 0" calculate="/data/past_info/reason_newborn"/><bind nodeset="/data/case/update/reason_pregnant" relevant="count(/data/past_info/reason_pregnant) &gt; 0" calculate="/data/past_info/reason_pregnant"/><bind nodeset="/data/case/update/prior_treatments" relevant="count(/data/past_info/prior_treatments) &gt; 0" calculate="/data/past_info/prior_treatments"/><bind nodeset="/data/case/update/hours_first_symptoms" relevant="count(/data/past_info/hours_first_symptoms) &gt; 0" calculate="/data/past_info/hours_first_symptoms"/><bind nodeset="/data/case/update/reason_infant_child" relevant="count(/data/past_info/reason_infant_child) &gt; 0" calculate="/data/past_info/reason_infant_child"/><bind nodeset="/data/case/update/other_date_taken" relevant="count(/data/past_info/other_date_taken) &gt; 0" calculate="/data/past_info/other_date_taken"/><bind nodeset="/data/case/update/reason_for_evacuation" relevant="count(/data/reason_for_evacuation) &gt; 0" calculate="/data/reason_for_evacuation"/><bind nodeset="/data/case/update/condition" relevant="count(/data/past_info/condition) &gt; 0" calculate="/data/past_info/condition"/><bind nodeset="/data/case/update/referral_date" relevant="count(/data/referral_date) &gt; 0" calculate="/data/referral_date"/><bind nodeset="/data/case/update/reason_labor" relevant="count(/data/past_info/reason_labor) &gt; 0" calculate="/data/past_info/reason_labor"/><bind nodeset="/data/case/update/type_of_patient" relevant="count(/data/past_info/type_of_patient) &gt; 0" calculate="/data/past_info/type_of_patient"/><bind nodeset="/data/case/update/reason_post_partum" relevant="count(/data/past_info/reason_post_partum) &gt; 0" calculate="/data/past_info/reason_post_partum"/><bind nodeset="/data/case/close" relevant="/data/close_referral = 'yes'"/><setvalue ref="/data/past_info/reason_post_partum" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/reason_post_partum"/><setvalue ref="/data/past_info/medicine_taken" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/medicine_taken"/><setvalue ref="/data/past_info/type_of_patient" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/type_of_patient"/><setvalue ref="/data/past_info/reason_infant_child" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/reason_infant_child"/><setvalue ref="/data/mother_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mother_id"/><setvalue ref="/data/past_info/other_dose" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/other_dose"/><setvalue ref="/data/past_info/prior_treat_admin" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prior_treat_admin"/><setvalue ref="/data/past_info/dose" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/dose"/><setvalue ref="/data/past_info/hours_first_symptoms" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/hours_first_symptoms"/><setvalue ref="/data/past_info/referred_to" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/referred_to"/><setvalue ref="/data/past_info/patient_name" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/patient_name"/><setvalue ref="/data/past_info/other_medicine_taken" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/other_medicine_taken"/><setvalue ref="/data/past_info/condition" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/condition"/><setvalue ref="/data/past_info/other_prior_treatments" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/other_prior_treatments"/><setvalue ref="/data/past_info/reason_pregnant" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/reason_pregnant"/><setvalue ref="/data/past_info/referring_location" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/referring_location"/><setvalue ref="/data/referral_id" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/referral_id"/><setvalue ref="/data/past_info/other_date_taken" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/other_date_taken"/><setvalue ref="/data/past_info/reason_labor" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/reason_labor"/><setvalue ref="/data/past_info/prior_treatments" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/prior_treatments"/><setvalue ref="/data/referral_date" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/referral_date"/><setvalue ref="/data/past_info/next_of_kin" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/next_of_kin"/><setvalue ref="/data/past_info/date_symptoms" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/date_symptoms"/><setvalue ref="/data/past_info/date_taken" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/date_taken"/><setvalue ref="/data/past_info/other_prior_treat_admin" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/other_prior_treat_admin"/><setvalue ref="/data/close_referral" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/close_referral"/><setvalue ref="/data/past_info/reason_newborn" event="xforms-ready" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/reason_newborn"/><setvalue ref="/data/meta/deviceID" event="xforms-ready" value="instance('commcaresession')/session/context/deviceid"/><setvalue ref="/data/meta/timeStart" event="xforms-ready" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue ref="/data/meta/timeEnd" event="xforms-revalidate" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue ref="/data/meta/username" event="xforms-ready" value="instance('commcaresession')/session/context/username"/><setvalue ref="/data/meta/userID" event="xforms-ready" value="instance('commcaresession')/session/context/userid"/><setvalue ref="/data/meta/instanceID" event="xforms-ready" value="uuid()"/><setvalue ref="/data/meta/appVersion" event="xforms-ready" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/referral_date">
+			<label ref="jr:itext('referral_date-label')"/>
+		</input>
+		<trigger ref="/data/referral_date_message">
+			<label ref="jr:itext('referral_date_message-label')"/>
+		</trigger>
+		<trigger ref="/data/patient_name_message">
+			<label ref="jr:itext('patient_name_message-label')"/>
+		</trigger>
+		<select1 ref="/data/close_referral">
+			<label ref="jr:itext('close_referral-label')"/>
+			<item>
+				<label ref="jr:itext('close_referral-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('close_referral-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<select1 ref="/data/see_info">
+			<label ref="jr:itext('see_info-label')"/>
+			<item>
+				<label ref="jr:itext('see_info-no-label')"/>
+				<value>no</value>
+			</item>
+			<item>
+				<label ref="jr:itext('see_info-yes-label')"/>
+				<value>yes</value>
+			</item>
+		</select1>
+		<group ref="/data/past_info">
+			<label ref="jr:itext('past_info-label')"/>
+			<input ref="/data/past_info/patient_name">
+				<label ref="jr:itext('patient_name-label')"/>
+			</input>
+			<select1 ref="/data/past_info/referring_location">
+				<label ref="jr:itext('referring_location-label')"/>
+				<item>
+					<label ref="jr:itext('referring_location-village-label')"/>
+					<value>village</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referring_location-health_post-label')"/>
+					<value>health_post</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referring_location-health_centre-label')"/>
+					<value>health_centre</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/type_of_patient">
+				<label ref="jr:itext('type_of_patient-label')"/>
+				<item>
+					<label ref="jr:itext('Type_of_patient-pregnant-label')"/>
+					<value>pregnant</value>
+				</item>
+				<item>
+					<label ref="jr:itext('Type_of_patient-newborn-label')"/>
+					<value>newborn</value>
+				</item>
+				<item>
+					<label ref="jr:itext('Type_of_patient-post_partum-label')"/>
+					<value>post_partum</value>
+				</item>
+				<item>
+					<label ref="jr:itext('Type_of_patient-labor-label')"/>
+					<value>labor</value>
+				</item>
+				<item>
+					<label ref="jr:itext('Type_of_patient-infant-label')"/>
+					<value>infant</value>
+				</item>
+				<item>
+					<label ref="jr:itext('Type_of_patient-child-label')"/>
+					<value>child</value>
+				</item>
+				<item>
+					<label ref="jr:itext('Type_of_patient-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/referred_to">
+				<label ref="jr:itext('referred_to-label')"/>
+				<item>
+					<label ref="jr:itext('referred_to-phu1-label')"/>
+					<value>phu1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referred_to-phu2-label')"/>
+					<value>phu2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referred_to-phu3-label')"/>
+					<value>phu3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referred_to-phu4-label')"/>
+					<value>phu4</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/reason_pregnant">
+				<label ref="jr:itext('reason_pregnant-label')"/>
+				<item>
+					<label ref="jr:itext('reason_pregnant-high_temp-label')"/>
+					<value>high_temp</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-vaginal_bleeding-label')"/>
+					<value>vaginal_bleeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-vaginal_irritation-label')"/>
+					<value>vaginal_irritation</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-swelling-label')"/>
+					<value>swelling</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-pain_in_abdomen-label')"/>
+					<value>pain_in_abdomen</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-headache-label')"/>
+					<value>headache</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-fainting-label')"/>
+					<value>fainting</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-no_movement-label')"/>
+					<value>no_movement</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_pregnant-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/reason_post_partum">
+				<label ref="jr:itext('reason_post_partum-label')"/>
+				<item>
+					<label ref="jr:itext('reason_post_partum-high_temp-label')"/>
+					<value>high_temp</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_post_partum-pain_in_abdomen-label')"/>
+					<value>pain_in_abdomen</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_post_partum-vaginal_bleeding-label')"/>
+					<value>vaginal_bleeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_post_partum-vaginal_irritation-label')"/>
+					<value>vaginal_irritation</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_post_partum-fainting-label')"/>
+					<value>fainting</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/reason_labor">
+				<label ref="jr:itext('reason_labor-label')"/>
+				<item>
+					<label ref="jr:itext('reason_labor-excessive_bleeding-label')"/>
+					<value>excessive_bleeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_labor-fever-label')"/>
+					<value>fever</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_labor-loss_consciousness-label')"/>
+					<value>loss_consciousness</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_labor-dark_liquid-label')"/>
+					<value>dark_liquid</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_labor-prolonged_labor-label')"/>
+					<value>prolonged_labor</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_labor-water_break-label')"/>
+					<value>water_break</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/reason_newborn">
+				<label ref="jr:itext('reason_newborn-label')"/>
+				<item>
+					<label ref="jr:itext('reason_newborn-diff_breastfeeding-label')"/>
+					<value>diff_breastfeeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-convulsion-label')"/>
+					<value>convulsion</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-lethargy-label')"/>
+					<value>lethargy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-fever-label')"/>
+					<value>fever</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-shrill_cry-label')"/>
+					<value>shrill_cry</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-respiratory-label')"/>
+					<value>respiratory</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-cord_stump-label')"/>
+					<value>cord_stump</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-no_movement-label')"/>
+					<value>no_movement</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-hypothermia-label')"/>
+					<value>hypothermia</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-yellow-label')"/>
+					<value>yellow</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-cord_stump_red-label')"/>
+					<value>cord_stump_red</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_newborn-postules-label')"/>
+					<value>postules</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/reason_infant_child">
+				<label ref="jr:itext('reason_infant_child-label')"/>
+				<item>
+					<label ref="jr:itext('reason_infant_child-fever-label')"/>
+					<value>fever</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_infant_child-respiratory-label')"/>
+					<value>respiratory</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_infant_child-diarrhea_dehydration-label')"/>
+					<value>diarrhea_dehydration</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_infant_child-diarrhea_blood-label')"/>
+					<value>diarrhea_blood</value>
+				</item>
+				<item>
+					<label ref="jr:itext('reason_infant_child-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<input ref="/data/past_info/date_symptoms">
+				<label ref="jr:itext('date_symptoms-label')"/>
+			</input>
+			<select1 ref="/data/past_info/hours_first_symptoms">
+				<label ref="jr:itext('hours_first_symptoms-label')"/>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-12-label')"/>
+					<value>12</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-24-label')"/>
+					<value>24</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-48-label')"/>
+					<value>48</value>
+				</item>
+				<item>
+					<label ref="jr:itext('hours_first_symptoms-48_plus-label')"/>
+					<value>48_plus</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/condition">
+				<label ref="jr:itext('condition-label')"/>
+				<item>
+					<label ref="jr:itext('condition-normal-label')"/>
+					<value>normal</value>
+				</item>
+				<item>
+					<label ref="jr:itext('condition-moderate-label')"/>
+					<value>moderate</value>
+				</item>
+				<item>
+					<label ref="jr:itext('condition-severe-label')"/>
+					<value>severe</value>
+				</item>
+				<item>
+					<label ref="jr:itext('condition-critical-label')"/>
+					<value>critical</value>
+				</item>
+			</select1>
+			<input ref="/data/past_info/next_of_kin">
+				<label ref="jr:itext('next_of_kin-label')"/>
+			</input>
+			<select1 ref="/data/past_info/prior_treatments">
+				<label ref="jr:itext('prior_treatments-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treatments-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treatments-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<input ref="/data/past_info/medicine_taken">
+				<label ref="jr:itext('medicine_taken-label')"/>
+			</input>
+			<input ref="/data/past_info/dose">
+				<label ref="jr:itext('dose-label')"/>
+			</input>
+			<input ref="/data/past_info/date_taken">
+				<label ref="jr:itext('date_taken-label')"/>
+			</input>
+			<select1 ref="/data/past_info/prior_treat_admin">
+				<label ref="jr:itext('prior_treat_admin-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-phu-label')"/>
+					<value>phu</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-chw-label')"/>
+					<value>chw</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-pharmacy-label')"/>
+					<value>pharmacy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-supplier-label')"/>
+					<value>supplier</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-home_remedy-label')"/>
+					<value>home_remedy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/past_info/other_prior_treatments">
+				<label ref="jr:itext('other_prior_treatments-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treatments-1-no-label')"/>
+					<value>no</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treatments-1-yes-label')"/>
+					<value>yes</value>
+				</item>
+			</select1>
+			<input ref="/data/past_info/other_medicine_taken">
+				<label ref="jr:itext('other_medicine_taken-label')"/>
+			</input>
+			<input ref="/data/past_info/other_dose">
+				<label ref="jr:itext('other_dose-label')"/>
+			</input>
+			<input ref="/data/past_info/other_date_taken">
+				<label ref="jr:itext('other_date_taken-label')"/>
+			</input>
+			<select1 ref="/data/past_info/other_prior_treat_admin">
+				<label ref="jr:itext('other_prior_treat_admin-label')"/>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-phu-label')"/>
+					<value>phu</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-chw-label')"/>
+					<value>chw</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-pharmacy-label')"/>
+					<value>pharmacy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-supplier-label')"/>
+					<value>supplier</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-home_remedy-label')"/>
+					<value>home_remedy</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prior_treat_admin-1-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+		</group>
+		<trigger ref="/data/done">
+			<label ref="jr:itext('done-label')"/>
+		</trigger>
+	</h:body>
+</h:html>
